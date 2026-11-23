@@ -2,7 +2,8 @@
 
 > 本文件只作导航，不替代规则书。规则裁定必须回到原文段落和页码。
 > 来源：p33333333333333l/triangle-agency-ai-zh，v22，2026-08-25。
-> 主规则书：497 个 PDF 页面，印刷页约 1–308；Markdown 母稿约 14,781 行。
+> 原始文件：[中文 v22 PDF](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/main/最终交付_v22/triangle_agency_zh.pdf)｜[完整 Markdown](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/main/最终交付_v22/triangle_agency_zh.md)。
+> 主规则书：497 个 PDF 页面，印刷页约 1–308；Markdown 母稿约 14,781 行。PDF 文件大小 10,251,018 bytes；SHA-256：`0a1af15308c2a42266089e20235a0090f35276fc624b2a899c175945a5c6923d`。
 > 资料性质：非官方中文精翻阅读版；英文原版尚待逐项校勘。
 
 ## 资料结构
