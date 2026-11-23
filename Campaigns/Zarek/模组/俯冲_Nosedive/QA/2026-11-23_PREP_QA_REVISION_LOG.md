@@ -1,7 +1,7 @@
 # 《俯冲》独立 Prep QA｜修订与验收记录
 
 > GM-only。对应独立审查报告《俯冲_独立Prep_QA_GM-only.pdf》（2026-11-23，25页）。
-> 报告原始结论：不通过；2 Critical、11 Major、5 Minor。此记录是修订工作台，不替代官方模组原文或中文 v22 规则。
+ > 报告原始结论：不通过；2 Critical、11 Major、5 Minor。此记录是修订工作台，不替代官方模组原文或中文 v22 规则。
 
 ## 阶段边界
 
@@ -32,7 +32,7 @@
 | M06 | Cass 信息层级／拒警条件；Julie 电视干预双条件 | 已修订 | 01 GM Prep、03 NPC Ledger、04 Clue Ledger 均已同步基础／深层信息、拒警条件与 Julie 双触发 |
 | M07 | “所有 Host 同意 Leyden 入包”对象范围 | 已修订 | 01 GM Prep、06 Quick Reference；不再误写成所有 Host 同意自己被收容 |
 | M08 | Feast 当前能力、满轨牺牲与未来 W8 Sacrifice 分离 | 已修订 | 03 NPC Behavior Ledger；当前移除物质、共振者防护与牺牲例外分开，W8 未解锁不调用 |
-| M09 | Aftermath 的“交给机构”范围与逐 Host 后续 | 已修订 | 01 GM Prep 已区分交由机构处理、成为 Agent 与 A3 Requisition；06 Quick Reference 增加逐 Host 结算入口。具体结局发生后仍按原文逐项结算 |
+| M09 | Aftermath 的“交给机构”范围与逐 Host 后续 | 已修订并复核 | 01 GM Prep 第7节已修正旧句，分别处理逃脱交友、创造新补给、从被消灭成员获益；不再把逃脱设为所有后续的共同前置条件。06 Quick Reference 保留逐 Host 结算入口。具体结局发生后仍按原文逐项结算 |
 | M10 | Newborn 力竭释放应为“让世界更像你” | 已修订 | 扎雷克正式人物卡；自我塑造轨道当前进度须回查既往事件，不自动填 0 |
 | M11 | Leyden 无需外部电源、当前不能成为 Agent；装备目标限制 | 已修订 | 01 GM Prep、06 Quick Reference；公文包与涟漪枪适用条件明确 |
 | m01 | P10 旧轨道阻断结论过时 | 已修订 | 10 Community and Playflow Research 已将轨道机械进度更新为已核验，只保留预填格故事来源 UNKNOWN |
@@ -74,13 +74,14 @@
 
 - [x] C01：已检查主要权威运行文件；普通 Pool 明确公开，个人轨道仍保密。最终全目录搜索仍可在提交前再做一次。
 - [x] C02：正式人物卡、Runtime State、战役交接与当前场次副本均已同步 13/13 恢复后值；历史场次快照保留历史标签。
-- [ ] M01–M11：逐项检查权威文件与 Quick Reference 是否仍残留相互冲突的旧句。
-- [x] m01–m03：P10 过时轨道阻断已清理、ID 映射已统一、Quick Reference 直接入口已补足。
-- [ ] 确认 README 与阶段标记一致：Prep QA 不通过，修订复核中，首次 Preflight 未执行。
-- [ ] 完成后记录定向复核结果；不执行 Preflight。
+- [x] M01–M11：逐项检查权威文件与 Quick Reference；M09 残留条件已修正，Leyden 的警察识别触发条件另已补回权威 Prep 与 Quick Reference。
+- [x] m01–m05：P10 过时轨道阻断已清理、ID 映射已统一、Quick Reference 直接入口已补足、资源流水与场地空间摘要已核对。
+- [x] README 与阶段标记已统一：Prep QA 原始结论不通过，修订与定向复核已完成，首次 Preflight 尚未执行。
+- [x] 最终定向复核已完成；本记录不把它表述为新一轮 Prep QA。首次 Preflight 另按当前会话独立执行。
 
 ## 变更记录
 
 - 2026-11-23：收到独立审查报告；建立本修订记录。
-- 2026-11-23：完成普通 Pool 公开性、扎雷克任务间 QA、Wodge/Gabe 关系、效果表、防护、舞池自愿性、社交分支、可选目标、Feast/W8 边界、Newborn 条件、装备边界、线索 ID 与部分运行账本修订。
-- 当前整体状态：**主要修订已落地；仍需最后一次定向复核，尚不放行首次 Preflight。**
+- 2026-11-23：完成普通 Pool 公开性、扎雷克任务间 QA、Wodge/Gabe 关系、效果表、防护、舞池自愿性、社交分支、可选目标、Feast/W8 边界、Newborn 条件、装备边界、线索 ID 与运行账本修订。
+- 2026-11-23：最终定向复核发现并修正 M09 Aftermath 条件残留；另补齐 Leyden 对“像警察”识别后的 Encounter 触发，并统一阶段状态标记。
+- 当前整体状态：**原始 Prep QA 结论保留为 FAIL；报告指定修订与最终定向复核已完成，允许进入首次 Preflight。此处不是新一轮 Prep QA。**
