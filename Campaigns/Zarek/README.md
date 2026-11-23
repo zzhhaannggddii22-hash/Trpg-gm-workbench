@@ -2,13 +2,13 @@
 
 > 扎雷克（Zarek）在 Triangle Agency 世界中的正式战役总目录。
 > 规则唯一权威：用户指定的《Triangle Agency》中文 v22。
-> 当前状态：正式完成《死寂》（Dead Quiet）与《冰淇淋车》（Ice Cream Truck）；模组独立结案，人物与世界连续。
+> 当前状态：正式完成《死寂》（Dead Quiet）与《冰淇淋车》（Ice Cream Truck）；《俯冲》（Nosedive）已完成备团、Prep QA 关闭与首次 Preflight，等待玩家明确开团指令。模组独立结案，人物与世界连续。
 
 ## 目录
 - [人物档案](./人物档案/README.md)：扎雷克正式人物卡、当前场次副本、凯瑟琳长期档案。
 - [模组：死寂](./模组/死寂/README.md)：首个正式任务结案、奖励、复盘、余波与历史记录。
 - [模组：冰淇淋车（Ice Cream Truck）](./模组/冰淇淋车_Ice_Cream_Truck/README.md)：第二场正式任务结案、成长、密库补给与复盘资料。
-- [模组：俯冲（Nosedive）](./模组/俯冲_Nosedive/README.md)：第三场正式任务已选定，当前备团中；尚未 Prep QA、Preflight 或开团。
+- [模组：俯冲（Nosedive）](./模组/俯冲_Nosedive/README.md)：第三场正式任务已选定；Prep QA 已关闭，首次 Preflight 已完成；开团确认项已完成，尚未开团。
 - [模组：F-33《静默楼层》测试短团](./模组/F-33_静默楼层_测试短团/README.md)：独立 GM 能力测试存档，不属于正式战役 CANON。
 - [战役交接与当前状态](./战役记录/战役交接与当前状态.md)：主持方式、人物资源状态与后续连续性。
 
