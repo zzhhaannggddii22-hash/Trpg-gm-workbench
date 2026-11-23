@@ -76,8 +76,8 @@
 - [x] C02：正式人物卡、Runtime State、战役交接与当前场次副本均已同步 13/13 恢复后值；历史场次快照保留历史标签。
 - [x] M01–M11：逐项检查权威文件与 Quick Reference；M09 残留条件已修正，Leyden 的警察识别触发条件另已补回权威 Prep 与 Quick Reference。
 - [x] m01–m05：P10 过时轨道阻断已清理、ID 映射已统一、Quick Reference 直接入口已补足、资源流水与场地空间摘要已核对。
-- [x] README 与阶段标记已统一：Prep QA 原始结论不通过，修订与定向复核已完成，首次 Preflight 尚未执行。
-- [x] 最终定向复核已完成；本记录不把它表述为新一轮 Prep QA。首次 Preflight 另按当前会话独立执行。
+- [x] README 与阶段标记已统一：Prep QA 原始结论不通过，修订与定向复核已完成；首次 Preflight 已执行，等待玩家审核与开团前最终确认。
+- [x] 最终定向复核已完成；本记录不把它表述为新一轮 Prep QA。首次 Preflight 已于 2026-11-23 执行，Prep QA 窗口关闭。
 
 ## 变更记录
 
