@@ -29,15 +29,15 @@
 | M03 | 舞池连接的拒绝权、退出权与无负面效果 | 已修订 | 01 GM Prep；需在场景入口呈现，不接入者仍可观察与调查 |
 | M04 | 三楼准入、友谊保护与夜末和平会面 | 已修订 | 01 GM Prep、06 Quick Reference；准入、吸引 Venice 注意、质询、后巷会面分开处理 |
 | M05 | 可选目标条件与奖励 | 已修订 | 01 GM Prep、06 Quick Reference；金子目标改为“辨明是否为金子”，舞蹈不要求玩家亲自编舞，自嘲不限书写 |
-| M06 | Cass 信息层级／拒警条件；Julie 电视干预双条件 | 部分修订 | 01 GM Prep 已补基础／深层信息区分、Cass 拒警条件及 Julie 双条件；仍须复核 04 调查账本及 NPC 知识摘要是否无旧句残留 |
+| M06 | Cass 信息层级／拒警条件；Julie 电视干预双条件 | 已修订 | 01 GM Prep、03 NPC Ledger、04 Clue Ledger 均已同步基础／深层信息、拒警条件与 Julie 双触发 |
 | M07 | “所有 Host 同意 Leyden 入包”对象范围 | 已修订 | 01 GM Prep、06 Quick Reference；不再误写成所有 Host 同意自己被收容 |
 | M08 | Feast 当前能力、满轨牺牲与未来 W8 Sacrifice 分离 | 已修订 | 03 NPC Behavior Ledger；当前移除物质、共振者防护与牺牲例外分开，W8 未解锁不调用 |
-| M09 | Aftermath 的“交给机构”范围与逐 Host 后续 | 部分修订 | 已在 01 GM Prep 标明“交给机构”不等于成为 Agent／普通 A3；需复核 06 快速入口和逐 Host 结算段是否齐备 |
+| M09 | Aftermath 的“交给机构”范围与逐 Host 后续 | 已修订 | 01 GM Prep 已区分交由机构处理、成为 Agent 与 A3 Requisition；06 Quick Reference 增加逐 Host 结算入口。具体结局发生后仍按原文逐项结算 |
 | M10 | Newborn 力竭释放应为“让世界更像你” | 已修订 | 扎雷克正式人物卡；自我塑造轨道当前进度须回查既往事件，不自动填 0 |
 | M11 | Leyden 无需外部电源、当前不能成为 Agent；装备目标限制 | 已修订 | 01 GM Prep、06 Quick Reference；公文包与涟漪枪适用条件明确 |
-| m01 | P10 旧轨道阻断结论过时 | 待复核 | 轨道机械进度已确认，需清理 10 文件是否仍保留旧 UNKNOWN／阻断句 |
+| m01 | P10 旧轨道阻断结论过时 | 已修订 | 10 Community and Playflow Research 已将轨道机械进度更新为已核验，只保留预填格故事来源 UNKNOWN |
 | m02 | CLUE ID 错位 | 已修订 | 02 Name Index 与 04 Clue Ledger 的编号已统一为 05–09 |
-| m03 | Runtime Quick Reference 缺直接链接与 Aftermath 入口 | 待修订 | 需补到 01／03／04／规则装备段落的直接锚点，并增加 Aftermath 调用入口 |
+| m03 | Runtime Quick Reference 缺直接链接与 Aftermath 入口 | 已修订 | 06 Quick Reference 已补充直达 01／03／04／07／08 的入口与逐 Host Aftermath 结算提示 |
 | m04 | 资源流水过度拆行 | 已修订 | 08 Runtime State 改为“一次关键因果事件一行”；连续转化等需按先后顺序拆分 |
 | m05 | La Cave 空间摘要缺少楼梯、平台视线、桌椅堆放及 Feast 插曲位置 | 已修订 | 01 GM Prep 补空间事实，不补造精确距离或战棋坐标 |
 
@@ -83,4 +83,4 @@
 
 - 2026-11-23：收到独立审查报告；建立本修订记录。
 - 2026-11-23：完成普通 Pool 公开性、扎雷克任务间 QA、Wodge/Gabe 关系、效果表、防护、舞池自愿性、社交分支、可选目标、Feast/W8 边界、Newborn 条件、装备边界、线索 ID 与部分运行账本修订。
-- 当前整体状态：**修订进行中，尚未完成定向复核，不放行首次 Preflight。**
+- 当前整体状态：**主要修订已落地；仍需最后一次定向复核，尚不放行首次 Preflight。**
