@@ -89,6 +89,7 @@
 |---|---|---|
 | Venice ↔ Leyden | 彼此紧密；Venice 不愿 Leyden 被分开或交给机构实验 | 站位、设备投影、对收容提案的即时反应；不必反复说“我们不能分开” |
 | Gabe → Venice | Gabe 对 Venice 有强烈吸引；斗殴中另一名未具名男子因嫉妒挑衅，Gabe 先出拳 | Gabe 的关注与自我认同困惑；不把斗殴动机归给 Wodge |
+| Wodge ↔ Venice | 原文没有确认 Wodge 爱慕 Venice 或参与相关嫉妒斗殴 | 不添加该关系；依 Wodge 随和、信任他人的已知行为演出 |
 | Wodge ↔ Mimi | 大学室友；与同一个 Growth Anomaly 结合，能力不同 | Wodge 能为 Mimi 引荐；熟悉彼此但不替对方说话 |
 | Feast → 全体成员 | 最年长、最担心；照料来客与成员；愿为他人牺牲 | 先处理现场问题，再表达担忧；重大决定仍交给 Venice |
 | Cass ↔ Mimi | 朋友；Cass 曾自愿接受 Mimi 的身体改变；因能力应帮助谁而争论 | Cass 信任建立后才说；不主动出卖 Nosedive |
