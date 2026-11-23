@@ -54,7 +54,7 @@
 ### 5.1 资源边界
 - Leyden 是本模组唯一使用普通 Chaos Pool 的成员；她已是异常。**开场 Chaos Pool = 0**：模组原文未指定其他初始值，按本桌已确认的默认值记录。普通 Chaos Pool 的当前数值及变化始终向玩家公开；个人轨道与 NPC 后台信息仍保密。
 - Venice、Wodge、Mimi、Feast 的九格个人轨道是模组独特机制，不得与 Leyden 的 Chaos Pool 混为一谈。她们为创造 Nosedive、让人开心而使用能力时免费；其他用途按 Minor/Major/Extreme 的 1/2/3 费用标记各自轨道。每一格变化都记录到对应成员，不从 Leyden 的 Pool 中扣除，除非规则原文明确要求。
-- Leyden 在自己的 Domain 内适用 Domain Benefits。必须分别记录效果是否因 Domain 规则免费显现，以及实际发生的 Chaos 支出；凡实际支出的 Chaos，按中文 v22 的 Domain 规则处理三倍费用。不要把 Domain 免费显现与实际支出混成同一个步骤，也不要把该规则套给四位无焦点共振者。
+- Leyden 在自己的 Domain 内适用 Domain Benefits。必须分别记录效果是否因 Domain 规则免费显现，以及实际发生的 Chaos 支出；凡实际支出的 Chaos，按中文 v22 规则计算三倍；非整除结果按用户确认的本桌裁定向上取整（TABLE CANON，见系统规则疑点记录 Q02）。不要把 Domain 免费显现与实际支出混成同一个步骤，也不要把该规则套给四位无焦点共振者。
 - 若某项规则、初始池数值或倍率交互不确定，暂停该项高影响裁定并回查中文 v22 原文；不得凭印象估算。
 
 ### 5.2 逐次流水（每次触发立即记录）
