@@ -14,7 +14,7 @@
 - [06_RUNTIME_QUICK_REFERENCE.md](./06_RUNTIME_QUICK_REFERENCE.md)：现场运行入口与关键索引。
 - [07_SOURCE_AND_RULE_CROSSCHECK.md](./07_SOURCE_AND_RULE_CROSSCHECK.md)：来源、版本、规则核验与资料缺口。
 - [08_RUNTIME_STATE.md](./08_RUNTIME_STATE.md)：本模组唯一有效的当前运行状态；开团前从正式人物卡同步。
-- [PREFLIGHT_2026-11-23.md](./PREFLIGHT_2026-11-23.md)：首次 Preflight 记录；等待玩家审核与最终开团确认。
+- [PREFLIGHT_2026-11-23.md](./PREFLIGHT_2026-11-23.md)：首次 Preflight 记录；玩家确认项已完成，等待明确开团指令。
 - [09_PLAYER_NOTES.md](./09_PLAYER_NOTES.md)：玩家角色已知信息；目前为空。
 - [10_COMMUNITY_AND_PLAYFLOW_RESEARCH.md](./10_COMMUNITY_AND_PLAYFLOW_RESEARCH.md)：官方任务流程、社区主持经验、实际游玩反馈及其对本桌的可执行建议。
 - `Sessions/`：每个 Session 的事实日志。开团后按序建立，不预写玩家行动。
