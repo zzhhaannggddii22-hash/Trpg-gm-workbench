@@ -70,7 +70,7 @@
 
 ## 现场直达入口
 
-- [核心场景、谈判与余波](./01_GM_PREP.md#la-cave-与派对场景)
+- [核心场景、谈判与余波](./01_GM_PREP.md#4-la-cave-与派对场景)
 - [NPC 动机、知识边界与关系](./03_NPC_BEHAVIOR_LEDGER.md)
 - [调查线索、获取门槛与替代路径](./04_CLUE_AND_SOURCE_LEDGER.md)
 - [Runtime State 与 Chaos 流水](./08_RUNTIME_STATE.md)
