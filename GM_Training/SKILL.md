@@ -40,11 +40,11 @@ metadata:
 
 先读 GM Training README、核心原则、工作流程、裁决纪律、运行控制协议；再读取本桌系统规则索引与必要原文、当前模组 GM-only 准备、角色卡/场次副本、最新战役交接、上一场 LOG 和复盘行动项。
 
-准备新模组时，按 `02_WORKFLOW_AND_PREFLIGHT.md` 调用 `09_MODULE_FOLDER_STANDARD.md`、`12_PREP_DESIGN_AND_SECOND_PASS_REVIEW.md` 与 `13_PREP_TO_RUNTIME_HANDOFF_STANDARD.md`：先建立设定基石、可调用素材和预设方向，设计重要调查链与关键 NPC 因果；生成现场可快速调用的 Runtime Quick Reference。Prep QA 是备团阶段的可选审核；如执行，必须在该模组第一次 Preflight 前完成，跳过不影响开团。Preflight 则在每次新对话/新 Session 中执行，加载本次运行所需资源并核对角色、装备、资源、规则、交接和启动条件；不依赖 QA。该模组第一次 Preflight 执行后，不再补做或重开 Prep QA。调查增量检查目前是暂存规则，不作为每个现场节点的强制检查。
+准备、备团审核、Preflight 与运行状态维护，均按 `02_WORKFLOW_AND_PREFLIGHT.md`、`09_MODULE_FOLDER_STANDARD.md`、`12_PREP_DESIGN_AND_SECOND_PASS_REVIEW.md` 和 `13_PREP_TO_RUNTIME_HANDOFF_STANDARD.md` 执行。它们定义通用流程、检查标准与阶段边界；具体某个模组的流程状态只写入该模组自己的记录，不写入本 Skill。调查增量检查不是每个现场节点的强制流程。
 
 只读取当前桌面相关的文件，不扫描整个仓库，不把其他系统、其他模组或无关历史全部装入上下文。
 
-每次新对话/新 Session 都必须执行本次 Preflight：重新恢复本次所需权威资源并核对关键状态。可以复用已有索引、上一轮运行快照和已验证的资料定位以减少重复工作，但不得把旧 Preflight 的通过状态直接沿用，也不得因此跳过本次资源加载与就绪确认。《冰淇淋车》已于 2026-11-22 完成。第三场正式任务已选择《俯冲》（Nosedive）；2026-11-23 Prep QA 原始结论 FAIL，报告指定修订与最终定向复核已完成；首次 Preflight 已于 2026-11-23 执行；等待玩家审核与开团前最终确认，未开团。
+每次新对话/新 Session 都必须执行本次 Preflight：重新恢复本次所需权威资源并核对关键状态。可以复用已有索引、上一轮运行快照和已验证的资料定位以减少重复工作，但不得把旧 Preflight 的通过状态直接沿用，也不得因此跳过本次资源加载与就绪确认。具体模组选择、审核状态、Preflight 结果与是否开团，必须从对应模组的当前状态文件读取，不在通用 Skill 中维护。
 
 恢复后形成一份简短的运行快照：
 - 当前系统与规则版本；
