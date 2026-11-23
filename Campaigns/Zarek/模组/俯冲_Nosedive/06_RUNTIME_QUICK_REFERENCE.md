@@ -83,6 +83,9 @@
 - [来源、规则与装备边界](./07_SOURCE_AND_RULE_CROSSCHECK.md)
 - 结案时：回到 [01_GM_PREP.md 第7节余波与任务结算](./01_GM_PREP.md#7-余波与任务结算)，逐 Host 记录捕获、收容、招募、消灭或逃脱，再核对奖励、处分、Loose Ends 与后续权限；不要只按“逃脱”一个条件批量套用所有后续。
 
+## 叙事素材入口
+- [11_NARRATIVE_PRESENTATION_MATERIALS.md](./11_NARRATIVE_PRESENTATION_MATERIALS.md)：按需调用晨会、受害者、La Cave、舞池、Mimi、Feast、Leyden、Venice 与谈判场景的呈现素材。建议为非强制演出，不改变 SOURCE、规则或已关闭 QA 内容。
+
 ## 节奏
 - 只在另一条线出现新行动、新信息、新风险、新选择或人物变化时切镜头。
 - 重要场景展开；重复文书、重复询问和机械过程压缩。
