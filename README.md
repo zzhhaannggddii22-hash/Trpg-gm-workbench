@@ -1,2 +1,15 @@
-# triangle-agency-gm-workbench
-For Trpg
+# Triangle Agency GM Workbench
+
+独立的 TRPG GM 专业工作台：规则研究、备团、运行、复盘、训练与能力迭代。
+
+## 目录
+- GM_Training/：通用 GM 原则、Preflight、裁定纪律、运行控制、线索管理、备团审核与专业能力模块。
+- GM_Training/Systems/Triangle_Agency/：系统规则检阅协议与裁定记录。
+- Campaigns/Zarek/：扎雷克人物档案、战役状态、NPC 索引和模组资料。
+- Research/：AI GM 架构、规则索引、单人适配与历史研究。
+
+## 工作流程
+备团前读取 GM 核心原则、工作流及对应系统资料；按模组文件夹标准建立事实/线索台账、NPC 行为记录和运行状态；完成第二轮审核与 Prep-to-Runtime Handoff；运行后维护场次副本并复盘。区分规则原文、模组事实、桌面约定、GM 推断与未确认事项。
+
+## 信息与版权边界
+GM-only 文件含秘密和剧透，不得作为玩家资料发送。本仓库公开，任何人均可读取。第三方受版权保护规则书及完整翻译全文不在此分发；原私人仓库保留为备份。历史文件不自动构成当前运行指令；通用经验经验证后再升级为规范。
