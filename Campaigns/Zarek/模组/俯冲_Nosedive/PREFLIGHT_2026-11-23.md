@@ -66,3 +66,12 @@
 **资料准备与首次 Preflight 已完成；Prep QA 已关闭。**
 
 **尚未取得开团许可。** 只有玩家明确表示「开始」后，才建立《俯冲》Session 01 场次副本并进入游戏。
+
+
+## 7. 首次运行事故后的重启说明（2026-11-23）
+
+- 本文件第1–6节保留首次 Preflight 当时的历史核对结果，不将其改写成重新执行过的新 Preflight。
+- 后续首次 Session 01 尝试从 Cass 首次出场起严重偏离模组原文，整次尝试已标记 NON-CANON；详见 `QA/2026-11-23_RUNTIME_INCIDENT_POSTMORTEM.md` 与 `Sessions/SESSION_01_ABORTED_2026-11-23.md`。
+- Prep QA 仍保持历史 CLOSED，不重开；本次修复属于 Runtime Incident Recovery。
+- 下次正式开团前必须重新执行 Runtime Readiness：回读当前规则、模组原文、首次接触卡、角色状态、装备/持有人、当前 Runtime State 与 Session Log；执行 Cass 冷启动事实核验；确认所有状态文件一致后再等用户开始。
+- 当前 Session 01 已重置为空白正式日志；下一次有效游戏从机构简报室开始。此前作废尝试的场景、信息、线索、位置、人物知识和机构行动一律不继承。
