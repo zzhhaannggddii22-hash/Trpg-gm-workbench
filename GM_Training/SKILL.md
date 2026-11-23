@@ -135,7 +135,7 @@ metadata:
 
 ### 叙事表现
 
-调用 `NARRATIVE_PRESENTATION_SKILL.md`，并遵循 `narrative-writing-style.md`：
+调用 `NARRATIVE_PRESENTATION_SKILL.md`：
 - 按玩家当前需要控制远景/中景/近景焦距，不越权叙述玩家角色内心；
 - 动作、行为和环境优先于解释性情绪标签，但重要事实应清楚直说；
 - 对话有信息、关系、人物声音或情境功能；
