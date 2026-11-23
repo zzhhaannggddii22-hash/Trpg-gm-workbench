@@ -1,6 +1,6 @@
 # 《俯冲》（Nosedive）｜模组档案
 
- > 状态：**Prep QA 原始结论不通过；报告指定修订与最终定向复核已完成**。用户已确认选择本模组并授权备团；第一次 Preflight 尚未执行，尚未开团。
+ > 状态：**Prep QA 原始结论不通过；报告指定修订与最终定向复核已完成**。用户已确认选择本模组并授权备团；第一次 Preflight 已执行（2026-11-23），等待玩家审核与最终确认；尚未开团。
 > 系统：Triangle Agency 中文 v22。规则唯一权威为用户指定的中文 v22。
 > 信息等级：本目录除明确标注玩家侧的文件外，均为 GM-only。
 
@@ -14,6 +14,7 @@
 - [06_RUNTIME_QUICK_REFERENCE.md](./06_RUNTIME_QUICK_REFERENCE.md)：现场运行入口与关键索引。
 - [07_SOURCE_AND_RULE_CROSSCHECK.md](./07_SOURCE_AND_RULE_CROSSCHECK.md)：来源、版本、规则核验与资料缺口。
 - [08_RUNTIME_STATE.md](./08_RUNTIME_STATE.md)：本模组唯一有效的当前运行状态；开团前从正式人物卡同步。
+- [PREFLIGHT_2026-11-23.md](./PREFLIGHT_2026-11-23.md)：首次 Preflight 记录；等待玩家审核与最终开团确认。
 - [09_PLAYER_NOTES.md](./09_PLAYER_NOTES.md)：玩家角色已知信息；目前为空。
 - [10_COMMUNITY_AND_PLAYFLOW_RESEARCH.md](./10_COMMUNITY_AND_PLAYFLOW_RESEARCH.md)：官方任务流程、社区主持经验、实际游玩反馈及其对本桌的可执行建议。
 - `Sessions/`：每个 Session 的事实日志。开团后按序建立，不预写玩家行动。
@@ -38,14 +39,14 @@
 | 官方/社区流程研究 | 已完成初轮；见 10 号文件 |
 | 运行索引与状态文件 | 已建立 |
 | Prep QA | 已执行（2026-11-23）；原始结论不通过，报告指定修订与最终定向复核已完成 |
-| 第一次 Preflight | 尚未执行；待用户准备开团时执行 |
+| 第一次 Preflight | 已执行（2026-11-23）；等待玩家审核与开团前最终确认 |
 | Session 01 | 未开始 |
 
 ## 已解决的备团核验项
 
 四条九格轨道的初始填色已由用户上传的官方样章 PDF 核验：PDF 第 17 页（印刷页 202–203）清晰显示 Feast 0/9、Venice 1/9、Wodge 3/9、Mimi 6/9 已标记。结合同页“每花费 1 Chaos 标记一格”的规则，按开场已标记进度处理；剩余空间分别为 9、8、6、3 格。原文未说明预标记对应的具体过往事件，不补写。
 
-独立 Prep QA 原始结论为 FAIL（2 项 Critical、11 项 Major、5 项 Minor）。报告指定修订与最终定向复核已完成，允许进入首次 Preflight；原始 FAIL 作为历史审查结论保留，不将定向复核伪装成新一轮 Prep QA。逐项处理见 [QA 修订与验收记录](./QA/2026-11-23_PREP_QA_REVISION_LOG.md)。原始 25 页 PDF 为本次对话上传的 GM-only 审查附件；GitHub 连接不支持通过此流程上传二进制 PDF，因此此处保存可追溯的逐项记录，不声称 PDF 已入库。Minor Effect 防护用途已按官方样章明确落实。
+独立 Prep QA 原始结论为 FAIL（2 项 Critical、11 项 Major、5 项 Minor）。报告指定修订与最终定向复核已完成，首次 Preflight 已于 2026-11-23 执行，Prep QA 窗口关闭；原始 FAIL 作为历史审查结论保留，不将定向复核伪装成新一轮 Prep QA。逐项处理见 [QA 修订与验收记录](./QA/2026-11-23_PREP_QA_REVISION_LOG.md)。原始 25 页 PDF 为本次对话上传的 GM-only 审查附件；GitHub 连接不支持通过此流程上传二进制 PDF，因此此处保存可追溯的逐项记录，不声称 PDF 已入库。Minor Effect 防护用途已按官方样章明确落实。
 
 ## 保密约定
 
