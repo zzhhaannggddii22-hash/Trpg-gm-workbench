@@ -63,7 +63,7 @@
 - 四条共振者九格轨道（官方样章 PDF 第 17 页 / 印刷页 202–203）：Feast 0/9（剩 9）、Venice 1/9（剩 8）、Wodge 3/9（剩 6）、Mimi 6/9（剩 3）。预填色是开场已标记的轨道进度；同页规则规定每花费 1 Chaos 再标记一格。原文未说明预标记的具体过往事件，不补写。
 - 能力免费条件：使人开心/创造 Nosedive；其他用途按效果等级支付 1/2/3 Chaos，并标记轨道。
 - 轨道填满：立即转化，+21 Chaos，成为拥有 Nosedive 安全焦点的强大异常；Feast 可牺牲自己清空目标轨道。注意 Mimi 开场只剩 3 格，Wodge 剩 6 格。
-- 效果等级：Minor 1 格，可造成 1 Harm，或保护自己／他人最多 3 Harm；Major 2 格、3 Harm；Extreme 3 格、5 Harm。费用按对应 Host 的个人轨道支付，不扣普通 Chaos Pool。
+- 效果等级：Minor 1 格，可造成 1 Harm，或保护自己／他人最多 3 Harm；Major 2 格、3 Harm（需要专注的重大效果；四名共振者无 Focus，不得把此处译义理解为要求其拥有异常 Focus）；Extreme 3 格、5 Harm。费用按对应 Host 的个人轨道支付，不扣普通 Chaos Pool。
 - Encounter 的 Special Rules 交叉引用指向模组 Unique Rules 系统；没有独立的传统战斗数值卡。
 - 不猜测 Urgency / Urgents 译名与背景。
 - 规则以用户指定中文 v22 为准。
