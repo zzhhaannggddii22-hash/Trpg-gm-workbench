@@ -179,7 +179,7 @@ Charlie 会说明派对规则。特工到达时，一组三位朋友正请求进
 
 ### 谈判选项（SOURCE）
 
-- 让 Leyden 进入常规公文包：理论上可以说服所有成员，但 Venice 最难说服；若成功，Venice 会永远憎恨特工。Leyden 只有在所有成员都认为应当如此时才自愿进入。
+- 让 Leyden 进入常规公文包：最终可说服所有 Host 同意 Leyden 入包；Leyden 只有在全体 Host 一致同意后才会自愿进入。不是所有 Host 同意自己被收容。Venice 最难说服；若成功，Venice 会永远憎恨特工。
 - 让成员加入 Urgents：最终可以说服所有人，但 Wodge 只有在其他所有人都去的情况下才会去。
 - Feast 与 Wodge 可以成为特工；Venice 与 Mimi 永远不会。
 - Feast 与 Wodge 可被说服让 Leyden 去 Vault，前提是他们不知道密库研究的真实细节。若特工把 Vault 描述为安全之地，或谎称机构可能帮助 Leyden 恢复人形，他们会最先同意；这是玩家可选的欺瞒，不替玩家预设。
