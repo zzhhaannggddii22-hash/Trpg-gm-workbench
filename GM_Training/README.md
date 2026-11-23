@@ -18,7 +18,7 @@
 - 用户偏好规则负担相对轻、叙事驱动、强调人物与场景体验的系统玩法；尤其重视单人游玩中的探索、调查、世界理解和人物互动。
 - 暂不主动投入 D&D 5R 等规则负担较重系统的专项备团、规则索引与长期训练；除非用户之后明确提出。
 - 这是一项资源优先级安排，不代表永久排斥重规则系统。引入新系统时，仍须建立独立规则权威来源、系统专属 Skill 与 Preflight，不混用不同系统机制。
-- 长期候选系统及研究原则见 [TRPG 规则体系长期研究候选池](../Research/SYSTEM_RESEARCH_ROADMAP.md)。当前记录包括《匕首之心》、Mothership、《刀锋之影》（Blades in the Dark）、《铁誓》（Ironsworn）和《千年吸血鬼》（Thousand Year Old Vampire）。候选池不代表近期排期；不同单人/多人及 GM/无 GM 模式需要实际体验后再判断。
+- 长期候选系统及研究原则见 [TRPG 规则体系长期研究候选池](../Research/SYSTEM_RESEARCH_ROADMAP.md)。当前记录包括《匕首之心》、Mothership、《刀锋之影》（Blades in the Dark）、《铁誓》（Ironsworn）和《千年吸血鬼》（Thousand Year Old Vampire），以及《死亡之地》（Deadlands）／SWADE。候选池不代表近期排期；不同单人/多人及 GM/无 GM 模式需要实际体验后再判断。
 
 ## 核心文件
 - [通用 GM 原则](./01_CORE_GM_PRINCIPLES.md)
