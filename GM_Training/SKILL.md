@@ -30,7 +30,7 @@ metadata:
 - `07_RUNTIME_CONTROL_PROTOCOL.md`：风险分档、状态与错误恢复。
 - `08_CLUE_AND_SOURCE_LEDGER.md`：调查信息与来源。
 - 系统规则、模组原文、角色卡、当前运行状态和 Session Log：对应桌面的事实与规则权威。
-- `../preferences/narrative-writing-style.md`：叙事技法基线。
+- `NARRATIVE_PRESENTATION_SKILL.md`：叙事技法基线。
 
 本 Skill 只规定如何选择和调用这些资料。发生冲突时，以既有权威层级为准。
 
