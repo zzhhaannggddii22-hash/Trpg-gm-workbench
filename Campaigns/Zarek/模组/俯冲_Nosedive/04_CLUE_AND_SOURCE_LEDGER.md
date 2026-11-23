@@ -14,10 +14,11 @@
 | CLUE-ND-02 | Gabe Knox | 双臂对称灼伤、斗殴伤；提到派对和 Venice | Leyden 的电流干预了斗殴；Gabe 的嫉妒与自我认同困惑是事件背景 | 交谈；在 Big Cheesy 找到他 | Cody 联系路径；Gabe 的情感线是人物遭遇与社群入口 |
 | CLUE-ND-03 | Julie Bennett | 手机灼伤、拍摄时屏幕出现女性面孔与“NO PHONES” | Leyden 监控派对，阻止拍摄并电击手机 | 医院探访 | 线上观众/派对口碑；若泄露过多，Leyden 会干预 |
 | CLUE-ND-04 | Cody | 可联系派对相关人士 | Cody 是 Gabe 的供货人，能牵线 | Gabe 提供联系 | 回复可能延迟至午夜；延迟期间可走其他调查路径 |
-| CLUE-ND-05 | 酷儿社群 Relationship | 对方已计划参加派对，等待朋友通知 | 社群信息网络帮助派对保持移动与隐蔽 | 联系相关 Relationship | 若玩家没有合适 Relationship，市中心探索仍可定位 |
-| CLUE-ND-06 | 市中心酒吧/街区 | 老年富裕客人抱怨“那个派对”毁了夜晚 | La Cave 正在举办 Nosedive | 自主探索 | 直接定位 La Cave |
-| CLUE-ND-07 | 舞池与 Wodge | 舞池连接感；Wodge 的身体分裂能力 | 群体连接来自 Wodge 的原子级分裂/蜂群意识效果 | 进入舞池并观察/建立连接 | 可通过异常手段识别；不是必须成功检定才能观察 |
-| CLUE-ND-08 | Leyden 的屏幕干预 | 屏幕出现人物影像、设备行为异常 | Leyden 通过技术设备行动 | 触发监控或她的警觉 | Julie 的经历提供先行证据 |
+| CLUE-ND-05 | 派对场地流动 | 派对地点不断移动；本晚位于 La Cave | Nosedive 通过社群网络保持移动与隐蔽 | 社群 Relationship 或其他定位渠道 | 与单一社群关系线索区分 |
+| CLUE-ND-06 | 酷儿社群 Relationship | 对方已计划参加派对，等待朋友通知 | 社群信息网络帮助派对保持移动与隐蔽 | 联系相关 Relationship | 若玩家没有合适 Relationship，市中心探索仍可定位 |
+| CLUE-ND-07 | 市中心酒吧/街区 | 老年富裕客人抱怨“那个派对”毁了夜晚 | La Cave 正在举办 Nosedive | 自主探索 | 直接定位 La Cave |
+| CLUE-ND-08 | 舞池与 Wodge | 舞池连接感；Wodge 的身体分裂能力 | 群体连接来自 Wodge 的原子级分裂/蜂群意识效果 | 观察、参与或使用合理异常手段 | 接入自愿；拒绝或退出无负面效果，不要求成功检定才能观察 |
+| CLUE-ND-09 | Leyden 的屏幕干预 | 屏幕出现人物影像、设备行为异常 | Leyden 通过技术设备行动 | 触发监控或她的警觉 | Julie 的经历提供先行证据 |
 
 ## 3. 调查链结构
 
