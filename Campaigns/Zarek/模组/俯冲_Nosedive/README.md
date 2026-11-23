@@ -1,6 +1,6 @@
 # 《俯冲》（Nosedive）｜模组档案
 
- > 状态：**Prep QA 保持 CLOSED（历史结论）；首次 Preflight 已执行。Session 01 的第一次运行因重大事实偏离而整场作废，已归档为 NON-CANON；运行规范与首次接触资料已修订，当前等待从机构简报室重新开团。
+> 状态：**Prep QA 保持 CLOSED（历史结论）；首次 Preflight 已执行。Session 01 首次尝试因重大事实偏离整场作废（NON-CANON）；相关运行规范、首次接触卡和状态文件已修订，当前等待从机构简报室重新开团。**
 > 系统：Triangle Agency 中文 v22。规则唯一权威为用户指定的中文 v22。
 > 信息等级：本目录除明确标注玩家侧的文件外，均为 GM-only。
 
