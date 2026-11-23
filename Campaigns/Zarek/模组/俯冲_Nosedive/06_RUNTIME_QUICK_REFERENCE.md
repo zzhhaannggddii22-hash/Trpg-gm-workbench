@@ -13,7 +13,7 @@
 - 派对安静时无法定位；派对人群涌入后 La Cave 快速超员。
 
 ## Domain
-- Nosedive 的 Domain 随派对移动；本晚位于 La Cave。该 Domain 属于目标异常 Leyden（GM 推断）；核心规则：Domain 内 3 Chaos 及以下效果免费显现，实际花费的 Chaos 按三倍计算。仅用于 Leyden/异常的 Domain 规则，不自动套给其他成员。
+- Nosedive 的 Domain 随派对移动；本晚位于 La Cave。该 Domain 属于目标异常 Leyden（GM 推断）；核心规则：Domain 内 3 Chaos 及以下效果免费显现，实际花费的 Chaos 按三倍计算；非整除结果按本桌裁定向上取整（TABLE CANON）。仅用于 Leyden/异常的 Domain 规则，不自动套给其他成员。
 - Leyden 的 Focus 是 Nosedive 安全；让派对不安全直接威胁她的生命。
 
 ## 五位成员
@@ -55,7 +55,7 @@
 ## Chaos 运行纪律（每次行动即时结算）
 - Leyden 是本模组唯一使用普通 Chaos Pool 的成员；开场 Pool = 0（模组未指定其他初始值）。普通 Pool 的当前数量及变化向玩家公开。
 - 四位共振者（Venice/Wodge/Mimi/Feast）的个人九格轨道与 Leyden 的 Pool 分开记录；非免费能力使用按效果等级标记各自轨道，不混扣普通 Pool。个人轨道仍属 GM-only。
-- Leyden 在 Domain 内的免费显现与实际 Chaos 支出分开判定；实际支出按中文 v22 Domain 规则处理三倍费用。
+- Leyden 在 Domain 内的免费显现与实际 Chaos 支出分开判定；实际支出按中文 v22 规则计算三倍；非整除结果按用户确认的本桌裁定向上取整（TABLE CANON）。
 - 每次生成、发动效果、免费/倍率判定、实际消耗、Pool 前后值、个人轨道变化均即时记账；结束时复算并按规则结算 Pool 去向。
 - 普通 Chaos Pool 当前数量及变化始终向玩家公开；这是规则明确的公开信息。GM-only 仅保留个人九格轨道、NPC 动机、隐藏触发和后台计划等确属秘密的内容。
 
