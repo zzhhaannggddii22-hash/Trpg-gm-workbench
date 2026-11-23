@@ -3,9 +3,13 @@
 > 现场入口；不是完整备团。详细事实见对应权威文件。
 
 ## 当前阶段
-- Session 01 已于 2026-11-23 开始；当前处于机构简报场景。扎雷克场次副本与 Runtime State 已建立。
+- Session 01 上一次尝试已作废；模组状态已重置，当前等待重新开团。下一次正式 Session 01 从机构简报室开始。
 - 任务目标：调查电击伤，定位异常来源，处理 Leyden/Nosedive 的现状。
 - 原文页码：印刷 198–215；源 PDF 102–110。
+
+## 首次接触事实卡（开场前必须读取）
+- [NPC 首次接触卡](./12_NPC_FIRST_CONTACT_CARDS.md)：Cass / Gabe / Julie 的身份、初始场景、可见信息、信息门槛与禁止混淆项。
+- 接触任何命名 NPC 前，先按 GM_Training/07_RUNTIME_CONTROL_PROTOCOL.md 第12节执行事实锁定；不得仅凭速查摘要即兴生成首次场景。
 
 ## 主要入口
 - 机构简报 → 三名受害者（Cass / Gabe / Julie）→ 多路径定位 Nosedive → La Cave → 五位成员 → 谈判/遭遇 → 余波。
