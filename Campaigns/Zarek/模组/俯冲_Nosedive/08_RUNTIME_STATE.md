@@ -16,7 +16,7 @@
 
 - 职级：Associate；职能 R&D；Good Standing。
 - Harm 0；Demerits 0；Commendations 7。
-- QA 上限/任务间可用：Professionalism 3、Empathy 3、Subtlety 3、Attentiveness 1、Duplicity 1、Dynamism 1、Initiative 1、Persistence 0、Presence 0；总上限 13。活力与主动当前可用值为 0/1，其余按人物卡。
+- QA 上限/任务间恢复后可用：Professionalism 3/3、Empathy 3/3、Subtlety 3/3、Attentiveness 1/1、Duplicity 1/1、Dynamism 1/1、Initiative 1/1、Persistence 0/0、Presence 0/0；总上限 13。任务间所有 QA 自动、完全恢复。
 - Time：已花费 2/30，剩余 28。
 - A3 补给「Scoop 的小小心意」1 份；本模组每场正式任务可用一次。
 - 橡皮鸭：完好；本场是否使用待玩家决定。
@@ -52,7 +52,7 @@
 **不得因玩家能力提升、场景顺利或叙事节奏而省略资源结算。** Chaos 是异常威胁与任务难度的一部分；漏记生成、消耗或倍率会直接改变遭遇难度。
 
 ### 5.1 资源边界
-- Leyden 是本模组唯一使用普通 Chaos Pool 的成员；她已是异常。**Chaos Pool 初始值默认 0；只有模组原文明确给出其他初始值时，才按模组数值设置。** 当前《俯冲》模组原文未明确指定 Leyden 的开场 Chaos Pool，因此本模组初始值为 **0**，不再标记 UNKNOWN。若 Preflight 查到模组明确指定值，则以该明确值覆盖默认值并记录来源。
+- Leyden 是本模组唯一使用普通 Chaos Pool 的成员；她已是异常。**开场 Chaos Pool = 0**：模组原文未指定其他初始值，按本桌已确认的默认值记录。普通 Chaos Pool 的当前数值及变化始终向玩家公开；个人轨道与 NPC 后台信息仍保密。
 - Venice、Wodge、Mimi、Feast 的九格个人轨道是模组独特机制，不得与 Leyden 的 Chaos Pool 混为一谈。她们为创造 Nosedive、让人开心而使用能力时免费；其他用途按 Minor/Major/Extreme 的 1/2/3 费用标记各自轨道。每一格变化都记录到对应成员，不从 Leyden 的 Pool 中扣除，除非规则原文明确要求。
 - Leyden 在自己的 Domain 内适用 Domain Benefits。必须分别记录效果是否因 Domain 规则免费显现，以及实际发生的 Chaos 支出；凡实际支出的 Chaos，按中文 v22 的 Domain 规则处理三倍费用。不要把 Domain 免费显现与实际支出混成同一个步骤，也不要把该规则套给四位无焦点共振者。
 - 若某项规则、初始池数值或倍率交互不确定，暂停该项高影响裁定并回查中文 v22 原文；不得凭印象估算。
@@ -69,7 +69,7 @@
 - 核对四位共振者轨道的每次增减、是否填满、是否转化，以及 Feast 牺牲机制是否触发。
 - 按中文 v22 规则确认任务结束时 Chaos Pool 的处置；不得擅自把未用 Chaos 带入下一任务，也不得未经规则依据自行清零。
 - 若发生漏记，明确标为记录缺口；回查对话/事件与规则，能确认的修复，无法确认的保留 UNKNOWN，不以有利于玩家或 GM 的方向猜数。
-- GM-only 账本保留准确数值；玩家侧只呈现角色能够观察到的异常征兆，不主动泄漏隐藏池数、触发公式或 NPC 后台轨道。
+- GM-only 账本保留个人轨道、NPC 后台状态及隐藏触发；普通 Chaos Pool 数值和变化必须向玩家公开。不要因此公开个人九格轨道或 NPC 后台计划。
 
 ## 6. 本场事件日志索引
 
@@ -80,7 +80,7 @@
 ## 7. 待办/UNKNOWN
 
 - 轨道初始进度已由官方样章 PDF 第 17 页（印刷页 202–203）核验；无需再作为待办。
-- 确认 Minor Effect 对自己/他人承受或躲过 Harm 的句式在中文 v22 规则语境中的准确结算。
+- Minor Effect 的防护用途已由官方样章原文确认：支付 1 格，可保护自己或他人最多 3 Harm；不是增加 HP，也不扣普通 Chaos Pool。
 - 核对 Urgency / Urgents 术语及 Playwalled Document W8 的可用性；未解锁前不提供机械能力。
 - 结案时回查目标异常、其他成员捕获/逃脱、报告惩罚、奖励与 Loose Ends 规则。
 - 确认扎雷克与凯瑟琳的开团装备、补给与防护状态。
