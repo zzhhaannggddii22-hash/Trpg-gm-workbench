@@ -73,7 +73,7 @@
 
 ## 6. 本场事件日志索引
 
-- Session 01：进行中；场次日志 `./Sessions/SESSION_01.md`。
+- Session 01：重置后待开始；正式日志 `./Sessions/SESSION_01.md` 目前为空，作废尝试另见 `./Sessions/SESSION_01_ABORTED_2026-11-23.md`。
 
 ## 7. 重启约束
 - 本次重启前，禁止引用作废尝试中的公寓前台、工作室、音频设备、设备客户、R&D 回收、客户电话及其衍生信息。
