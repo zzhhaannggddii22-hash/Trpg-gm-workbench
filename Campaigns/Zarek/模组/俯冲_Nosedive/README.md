@@ -1,6 +1,6 @@
 # 《俯冲》（Nosedive）｜模组档案
 
- > 状态：**Prep QA 已关闭；报告指定阻断项全部修订并完成定向复核，无开放阻断项。** 首次 Preflight 已执行（2026-11-23）；玩家已确认装备、Session 时长策略、凯瑟琳装备原则与 Newborn UNKNOWN；尚未开团。
+ > 状态：**Prep QA 保持 CLOSED（历史结论）；首次 Preflight 已执行。Session 01 的第一次运行因重大事实偏离而整场作废，已归档为 NON-CANON；运行规范与首次接触资料已修订，当前等待从机构简报室重新开团。
 > 系统：Triangle Agency 中文 v22。规则唯一权威为用户指定的中文 v22。
 > 信息等级：本目录除明确标注玩家侧的文件外，均为 GM-only。
 
@@ -17,7 +17,9 @@
 - [PREFLIGHT_2026-11-23.md](./PREFLIGHT_2026-11-23.md)：首次 Preflight 记录；玩家确认项已完成，等待明确开团指令。
 - [09_PLAYER_NOTES.md](./09_PLAYER_NOTES.md)：玩家角色已知信息；目前为空。
 - [10_COMMUNITY_AND_PLAYFLOW_RESEARCH.md](./10_COMMUNITY_AND_PLAYFLOW_RESEARCH.md)：官方任务流程、社区主持经验、实际游玩反馈及其对本桌的可执行建议。
-- [11_NARRATIVE_PRESENTATION_MATERIALS.md](./11_NARRATIVE_PRESENTATION_MATERIALS.md)：仅补充场景感官锚点、异常呈现、动作节拍与对话演出建议；不修改已通过 Prep QA 的结构与事实。
+- [11_NARRATIVE_PRESENTATION_MATERIALS.md](./11_NARRATIVE_PRESENTATION_MATERIALS.md)：场景感官锚点、异常呈现、动作节拍与对话演出建议。
+- [12_NPC_FIRST_CONTACT_CARDS.md](./12_NPC_FIRST_CONTACT_CARDS.md)：受害者首次接触事实卡；开场与首次拜访前必须读取。
+- [运行事故复盘](./QA/2026-11-23_RUNTIME_INCIDENT_POSTMORTEM.md)：本次事实偏离的根因、影响范围、修复与回归验证。
 - `Sessions/`：每个 Session 的事实日志。开团后按序建立，不预写玩家行动。
 
 ## 模组信息
@@ -41,7 +43,7 @@
 | 运行索引与状态文件 | 已建立 |
 | Prep QA | CLOSED（2026-11-23）；报告指定阻断项全部关闭，无开放阻断项 |
 | 第一次 Preflight | 已执行（2026-11-23）；开团前玩家确认项已完成 |
-| Session 01 | 未开始 |
+| Session 01 | 首次尝试已作废；修复后等待重新开团 |
 
 ## 已解决的备团核验项
 
