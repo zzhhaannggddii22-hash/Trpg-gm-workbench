@@ -4,7 +4,7 @@
 
 ## A. 开团前：恢复权威上下文
 
-每次主持前同时调用 [叙事表现与行为描写规范](../preferences/narrative-writing-style.md)，将其作为叙事呈现方法参考；它不替代规则、模组原文或玩家能动性原则。
+每次主持前调用 [叙事呈现 Skill](./NARRATIVE_PRESENTATION_SKILL.md)，并按当前模组需要回顾对应的 [叙事专项研究](../Research/NARRATIVE_CRAFT_RESEARCH_2026-11-23.md)。叙事 Skill 提供现场执行方法，研究记录提供技法来源与适用边界；二者均不替代规则、模组原文或玩家能动性原则。
 
 
 每次新开团或新对话继续游戏时，都必须执行一次 Preflight。新对话是本次 Session 的运行入口：按以下顺序恢复本次所需权威资源并核对启动条件；不得用上一次 Session 的 Preflight 记录代替本次恢复：
