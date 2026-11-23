@@ -12,7 +12,7 @@
 |---|---|---|---|---|---|
 | CLUE-ND-01 | Cass Gilmore | 接触导电物会产生持续静电；她对派对话题回避 | 她在 Nosedive 与成员争论后被电击警告；持续效果在减弱 | 基础静电为可观察事实；正常交谈可得一般信息；深层内容需信任、已知 Nosedive／Mimi 或异常手段。若她怀疑来者接近警方，会一言不发 | 可从其他受害者及派对场景交叉验证电力能力 |
 | CLUE-ND-02 | Gabe Knox | 双臂对称灼伤、斗殴伤；提到派对和 Venice | Leyden 的电流干预了斗殴；Gabe 的嫉妒与自我认同困惑是事件背景 | 交谈；在 Big Cheesy 找到他 | Cody 联系路径；Gabe 的情感线是人物遭遇与社群入口 |
-| CLUE-ND-03 | Julie Bennett | 手机灼伤、拍摄时屏幕出现女性面孔与“NO PHONES” | Leyden 监控派对，阻止拍摄并电击手机 | 医院探访 | 线上观众/派对口碑；若泄露过多，Leyden 会干预 |
+| CLUE-ND-03 | Julie Bennett | 手机灼伤、拍摄时屏幕出现女性面孔与“NO PHONES” | Leyden 监控派对，阻止拍摄并电击手机 | 医院探访；Julie 愿意分享信息，但若特工显得有威胁且她已泄露过多信息，Leyden 才会通过电视节目干预（双条件） | 线上观众/派对口碑 |
 | CLUE-ND-04 | Cody | 可联系派对相关人士 | Cody 是 Gabe 的供货人，能牵线 | Gabe 提供联系 | 回复可能延迟至午夜；延迟期间可走其他调查路径 |
 | CLUE-ND-05 | 派对场地流动 | 派对地点不断移动；本晚位于 La Cave | Nosedive 通过社群网络保持移动与隐蔽 | 社群 Relationship 或其他定位渠道 | 与单一社群关系线索区分 |
 | CLUE-ND-06 | 酷儿社群 Relationship | 对方已计划参加派对，等待朋友通知 | 社群信息网络帮助派对保持移动与隐蔽 | 联系相关 Relationship | 若玩家没有合适 Relationship，市中心探索仍可定位 |
