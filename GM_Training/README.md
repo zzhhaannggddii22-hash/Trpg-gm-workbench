@@ -1,25 +1,19 @@
 # GM 能力长期培养项目
 
-本目录用于培养、验证和迭代凯西的 TRPG GM 能力。它是跨系统专业能力工程；具体战役事实、人物卡与模组运行状态归档在 [Campaigns/Zarek](../Campaigns/Zarek/README.md)。
+本目录维护跨模组、跨系统可复用的 TRPG GM 专业能力：原则、方法、运行技能、叙事与角色模拟规范、评估框架及工作流程。
+
+具体战役事实、人物卡、模组资料、Session 进度、Prep QA 与 Preflight 的执行记录，统一保存在对应 Campaign / Module / Session 目录。本目录不登记某个模组当前进行到哪一步，也不维护单次流程的状态。
 
 ## 权威原则
 - 本公开仓库是 TRPG 专业资料的唯一工作主仓库。
 - 规则以用户指定/提供的系统版本为准；模组事实以合法取得的原文为准。
-- 每次新对话/新 Session 必须执行 Preflight；旧 Preflight 不可沿用。
-- Prep QA 与 Preflight 是不同阶段：QA 审备团质量，Preflight 恢复本次运行上下文。
 - 区分 SOURCE、TABLE CANON、GM ADAPTATION、GM INFERENCE 与 UNKNOWN。
 - 不把文档完善等同于能力提升；能力结论须由实际场景和复盘证据支持。
-
-## 当前训练路线
-1. 《死寂》（Dead Quiet）：首个正式任务，已完成。
-2. 《冰淇淋车》（Ice Cream Truck）：第二场正式任务，已完成并复盘。
-3. 《俯冲》（Nosedive）：第三场正式任务，已选定；2026-11-23 Prep QA 原始结论 FAIL，报告指定修订与最终定向复核已完成；首次 Preflight 已于 2026-11-23 执行；等待玩家审核与开团前最终确认，未开团。
-4. 后续进行跨作者模组与多 Session 连续性验证，再考虑跨系统迁移。
-5. F-33《静默楼层》仅为 GM 能力测试，不属于扎雷克正式战役 CANON。
+- GM-only 资料与玩家可见信息严格隔离；向玩家输出时只提供角色可知且当前有用的信息。
 
 ## 核心文件
 - [通用 GM 原则](./01_CORE_GM_PRINCIPLES.md)
-- [工作流程与 Preflight](./02_WORKFLOW_AND_PREFLIGHT.md)
+- [工作流程与 Preflight](./02_WORKFLOW_AND_PREFLIGHT.md)：流程定义、检查标准与执行要求。
 - [备团设计与二次审核](./12_PREP_DESIGN_AND_SECOND_PASS_REVIEW.md)
 - [高级模型 Prep QA 交接协议](./ADVANCED_MODEL_PREP_QA_PROTOCOL.md)
 - [备团—带团联动与运行效率](./13_PREP_TO_RUNTIME_HANDOFF_STANDARD.md)
@@ -32,17 +26,13 @@
 - [TRPG GM Skill](./SKILL.md)
 - [角色模拟 Skill](./CHARACTER_SIMULATION_SKILL.md)
 - [叙事呈现 Skill](./NARRATIVE_PRESENTATION_SKILL.md)
-- [叙事专项研究：推理、公怖、对白与场景调度](../Research/NARRATIVE_CRAFT_RESEARCH_2026-11-23.md)
 - [专业能力迁移机制](../CAPABILITY_TRANSFER.md)
 
-## 当前已确认的重点改进
-- 双线叙事按信息/行动/风险/选择增量切换；另一条线没有新变化时不机械切镜头。
-- NPC 对话不得重复已表达观点；凯瑟琳不使用 GM 交接提示语催促玩家。
-- 普通文书、重复流程与无新选择的等待应压缩；重要探索、危险和决策保留细节。
-- 重要调查链必须有节点功能、预期回报、替代路径和结束条件。
-- NPC 的行为、衣着、生理状态、动机、知识与环境条件必须一致；无意矛盾不能伪装成悬念。
-- 重要扩写必须具备结构功能，并维护其对人物、线索、时间线和结局的后续影响。
-- Campaign、Module、Session 分层维护；Session 只记增量，Runtime State 保持唯一当前快照。
+## 能力迭代原则
+- 从实际运行与复盘中识别问题，区分备团设计、资料调用、现场执行、规则理解和模型推理等不同根因。
+- 只把有证据、可复用的改进沉淀为通用规范；单一模组的事实与流程留在模组目录。
+- 新增流程前评估其必要性、预期收益和维护成本，避免把偶发问题变成全局强制步骤。
+- 训练目标与能力结论由评估框架及具体复盘记录维护，不在本 README 或通用 Skill 中登记单次战役进度。
 
 ## 项目边界
-本目录维护 GM 专业方法，不重复存放战役人物卡和模组状态。GM-only 资料不得泄露给玩家。高能力模型可审查 GM-only 备团草稿，但不自动获得玩家私密日志或其他无关档案。
+本目录维护 GM 专业方法，不重复存放战役人物卡、模组事实或当前运行状态。GM-only 资料不得进入玩家侧输出。高能力模型审查仅限获准的 GM-only 备团草稿，不自动获得玩家私密日志或其他无关档案。
