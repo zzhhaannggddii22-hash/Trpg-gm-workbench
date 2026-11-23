@@ -1,10 +1,12 @@
 # Triangle Agency 系统资料
 
-本目录保存 Triangle Agency 的系统级工作资料与规则检阅入口。
+本目录保存 Triangle Agency 的系统级规则检阅入口、裁定记录与检索规范。
 
-## 规则检索资料
-- [规则检索与审查资料](./Rule_Reference/README.md)：规则检阅协议、疑点与裁定记录、原文定位和复核方法。
-- [版权来源说明](./Rule_Reference/README_COPYRIGHTED_SOURCE.md)：说明为何本公开仓库不分发第三方规则书或完整翻译全文。
+## 规则权威与原始来源
+本桌以用户指定/提供的中文 v22 规则材料为最终裁判标准。当前规则原始 PDF 与对应中文 Markdown 母稿位于上游资料仓库：
 
-## 规则权威
-本桌以用户指定/提供的中文 v22 规则材料为最终裁判标准。摘要和速查仅用于定位；具体裁定必须回查合法取得的规则原文。规则全文保留在私人资料来源中，不随本公开工作台分发。
+- [中文 v22 主规则书 PDF（triangle_agency_zh.pdf）](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/main/最终交付_v22/triangle_agency_zh.pdf)
+- [中文 v22 主规则书 Markdown（triangle_agency_zh.md）](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/main/最终交付_v22/triangle_agency_zh.md)
+- [上游 v22 交付目录](https://github.com/p33333333333333l/triangle-agency-ai-zh/tree/main/最终交付_v22)
+
+规则检阅工作文件见 [Rule_Reference](./Rule_Reference/README.md)。摘要与速查用于定位和恢复知识，具体裁定必须回查原始 PDF/完整文本及页码；历史 ZIP 备份不作为常规检阅入口。
