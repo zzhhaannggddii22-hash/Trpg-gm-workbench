@@ -32,6 +32,7 @@
 - [TRPG GM Skill](./SKILL.md)
 - [角色模拟 Skill](./CHARACTER_SIMULATION_SKILL.md)
 - [叙事呈现 Skill](./NARRATIVE_PRESENTATION_SKILL.md)
+- [叙事专项研究：推理、公怖、对白与场景调度](../Research/NARRATIVE_CRAFT_RESEARCH_2026-11-23.md)
 - [专业能力迁移机制](../CAPABILITY_TRANSFER.md)
 
 ## 当前已确认的重点改进
