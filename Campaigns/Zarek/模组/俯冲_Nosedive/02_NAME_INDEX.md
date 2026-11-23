@@ -35,6 +35,10 @@
 | CLUE-ND-03 | Julie 的手机灼伤 | Julie's Phone Burns | 线索 | 禁止拍摄规则与 Leyden 介入 |
 | CLUE-ND-04 | Cody 联系渠道 | Cody Contact | 线索/渠道 | 延迟获得派对地点 |
 | CLUE-ND-05 | 派对场地流动 | Mobile Party Location | 线索 | 通过社群关系或市中心探索定位 |
+| CLUE-ND-06 | 酷儿社群 Relationship | Queer Community Relationship | 线索/渠道 | 对方已计划参加派对，等待朋友通知 |
+| CLUE-ND-07 | 市中心酒吧/街区 | Downtown Bar District | 地点线索 | 年长富裕客人抱怨派对扰乱夜晚 |
+| CLUE-ND-08 | 舞池与 Wodge | Dance Floor / Wodge | 场景线索 | 舞池连接与 Wodge 的能力 |
+| CLUE-ND-09 | Leyden 的屏幕干预 | Leyden Screen Intervention | 异常线索 | 设备与屏幕异常行为 |
 
 ## 命名规则
 
