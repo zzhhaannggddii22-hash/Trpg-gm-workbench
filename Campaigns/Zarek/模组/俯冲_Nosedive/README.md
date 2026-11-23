@@ -17,6 +17,7 @@
 - [PREFLIGHT_2026-11-23.md](./PREFLIGHT_2026-11-23.md)：首次 Preflight 记录；玩家确认项已完成，等待明确开团指令。
 - [09_PLAYER_NOTES.md](./09_PLAYER_NOTES.md)：玩家角色已知信息；目前为空。
 - [10_COMMUNITY_AND_PLAYFLOW_RESEARCH.md](./10_COMMUNITY_AND_PLAYFLOW_RESEARCH.md)：官方任务流程、社区主持经验、实际游玩反馈及其对本桌的可执行建议。
+- [11_NARRATIVE_PRESENTATION_MATERIALS.md](./11_NARRATIVE_PRESENTATION_MATERIALS.md)：仅补充场景感官锚点、异常呈现、动作节拍与对话演出建议；不修改已通过 Prep QA 的结构与事实。
 - `Sessions/`：每个 Session 的事实日志。开团后按序建立，不预写玩家行动。
 
 ## 模组信息
