@@ -45,7 +45,7 @@
 
 四条九格轨道的初始填色已由用户上传的官方样章 PDF 核验：PDF 第 17 页（印刷页 202–203）清晰显示 Feast 0/9、Venice 1/9、Wodge 3/9、Mimi 6/9 已标记。结合同页“每花费 1 Chaos 标记一格”的规则，按开场已标记进度处理；剩余空间分别为 9、8、6、3 格。原文未说明预标记对应的具体过往事件，不补写。
 
-独立 Prep QA 已定位 2 项 Critical、11 项 Major、5 项 Minor；结论不通过，修订完成前不进入首次 Preflight。报告及逐项修订记录归档于本目录 QA 记录。Minor Effect 防护用途已按官方样章明确落实；第一次 Preflight 仍待用户准备开团时执行。
+独立 Prep QA 已定位 2 项 Critical、11 项 Major、5 项 Minor；结论不通过，修订完成前不进入首次 Preflight。逐项处理见 [QA 修订与验收记录](./QA/2026-11-23_PREP_QA_REVISION_LOG.md)。原始 25 页 PDF 为本次对话上传的 GM-only 审查附件；GitHub 连接不支持通过此流程上传二进制 PDF，因此此处保存可追溯的逐项记录，不声称 PDF 已入库。Minor Effect 防护用途已按官方样章明确落实；第一次 Preflight 仍待用户准备开团时执行。
 
 ## 保密约定
 
