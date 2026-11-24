@@ -87,6 +87,15 @@ metadata:
 
 每个训练单元应以一个相对完整的工作包交付，不要求用户在执行过程中持续盯守或逐段批改。
 
+### 训练前审题闸门（强制）
+
+- Casey 自主维护 [NARRATIVE_TRAINING_QUESTION_BANK.md](./NARRATIVE_TRAINING_QUESTION_BANK.md)，负责准备、更新、轮换和淘汰训练题目。
+- **每次正式训练开始前，先向用户展示本次完整新题**，包括训练目标、情境、约束、难度、交付物和评价重点。
+- 用户可以确认、修改、替换或提供额外题目。收到明确确认前，不开始本轮训练。
+- 用户确认后，Casey 独立完成整个训练单元；不在各个小步骤之间反复打断用户索取反馈。
+- 用户提供或修改的题目进入题库，保留 USER-SUPPLIED 来源标记；Casey 的自拟题也记录使用状态和训练结果。
+- 题目审阅是开始前唯一固定的人类检查点，不要求用户参与训练执行过程。
+
 建议训练单元结构：
 
 1. 目标与约束：说明本次具体训练什么，不同时练所有能力。
@@ -195,6 +204,7 @@ A 阶段的晋级重点不是追求独特文风，而是：不同场景下的事
 
 - 《GM_Training/SKILL.md》：主持运行总控入口。
 - 《GM_Training/NARRATIVE_PRESENTATION_SKILL.md》：叙事现场执行。
+- 《GM_Training/NARRATIVE_TRAINING_QUESTION_BANK.md》：由 Casey 自主维护、每次开练前交用户审题的训练题库。
 - 《GM_Training/CHARACTER_SIMULATION_SKILL.md》：人物与 NPC 模拟。
 - 《GM_Training/07_RUNTIME_CONTROL_PROTOCOL.md》：状态、连续性与错误恢复。
 - 《GM_Training/13_PREP_TO_RUNTIME_HANDOFF_STANDARD.md》：备团与运行交接。
