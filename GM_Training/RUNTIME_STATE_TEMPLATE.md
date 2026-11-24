@@ -77,7 +77,7 @@
 - [ ] 资源、伤害、关系、承诺与事件阶段一致。
 - [ ] 场景入口和关键内容是否已经向玩家呈现有明确标记。
 - [ ] 当前待处理行动没有被误当成已完成。
-- [ ] 回滚分支已标记 NON-CANON，且未残留在有效状态中。
+- [ ] 若曾发生错误分支处置，已保留原始呈现/玩家行动记录；仅在有依据且经授权时将后续状态分支标记 NON-CANON，未静默删除历史。
 
 ## 自上次检查点以来的增量
 
@@ -112,7 +112,7 @@ checkpoint:
   last_event_id: "<event-id>"
   unapplied_event_ids: []
   applied_event_ids: []
-  reconciliation_manifest_ref: "<immutable reconciliation record for this checkpoint>"
+  reconciliation_manifest_refs: [] # immutable manifest refs; authoritative application proof
 resume:
   mode: "NEW START | CONTINUE"
   can_advance: true
@@ -124,10 +124,7 @@ resume:
 persistence:
   batch_id: "<batch-id>"
   status: "PUBLISHED | PREPARED | INCOMPLETE | PENDING_EXTERNAL_WRITE"
-incident:
-  status: "CLEAR | T0 | DISPUTED | CONTAINED"
-  affected_scope: []
-  player_decision: null
+t0_incidents: [] # 具体结构见下方 P1-0C 补充契约
 ~~~
 
 ### 跨文件批次清单（重要事件保存时填写）
@@ -160,7 +157,7 @@ persistence:
 
 ### 保存与恢复规则
 - Runtime State 是当前值权威；Session Log 是事件历史；正式人物卡只在任务/Session 规定结点核验回写；Player Notes 是角色知识投影。
-- 已呈现但尚未合并的事件必须列入 unapplied_event_ids。已合并事件必须能在 checkpoint.applied_event_ids 或其不可变 reconciliation_manifest_ref 中逐项定位；仅凭 revision 较新、PUBLISHED 或 unapplied_event_ids 为空，不得推断某个事件已合并。恢复时先核对未合并及存在冲突的事件，不得用旧快照覆盖。
+- 已呈现但尚未合并的事件必须列入 unapplied_event_ids。已合并事件必须能在 checkpoint.reconciliation_manifest_refs 指向的不可变 manifest 中逐项定位；applied_event_ids 仅为索引；仅凭 revision 较新、PUBLISHED 或 unapplied_event_ids 为空，不得推断某个事件已合并。恢复时先核对未合并及存在冲突的事件，不得用旧快照覆盖。
 - 多文件写入时先准备批次，按字段所有者应用，再读回核对，最后标记 PUBLISHED。任何环节失败均保留 INCOMPLETE，不声称保存完成。
 - 对同一 event_id 的重试必须幂等：先查是否已应用；不得重复扣资源、发奖励、转移物品或推进事件。
 - 旧记录缺少系统锁、版本或检查点时，标记 LEGACY_UNMIGRATED，并走完整 Preflight；不能用摘要推断。
@@ -221,3 +218,53 @@ runtime_application:
 - 任一侧缺失、引用不可读取、event_id 不匹配或 revision 冲突，均按 UNKNOWN 处理。
 - NOT_APPLIED 事件必须留在 unapplied_event_ids；UNKNOWN 不得自动归入已应用或未应用。
 - 对旧存档不得补造历史应用标记。无法回溯证明时保留 UNKNOWN，并按运行协议 §14.10 处理字段级争议。
+
+
+## P1-0C 补充｜规范 Runtime 状态契约（C2/C3）
+
+~~~yaml
+checkpoint:
+  revision: "<immutable-revision-id>"
+  reconciliation_manifest_refs: [] # 完整应用证明；权威
+  applied_event_ids: []             # 可选索引，不构成应用证明
+  unapplied_event_ids: []
+  manifest_chain_head: "<manifest-id-or-UNKNOWN>"
+
+state_disputes:
+  - dispute_id: "<stable-id>"
+    object_id: "<object>"
+    field_path: "<canonical.path>"
+    runtime_value_ref: "<immutable-ref>"
+    log_value_ref: "<immutable-ref>"
+    source_refs: []
+    related_event_ids: []
+    dependency_refs: []
+    status: OPEN | CONTAINED | RESOLVED
+    detected_at: "<timestamp-or-UNKNOWN>"
+    resolution_ref: null
+
+t0_incidents:
+  - incident_id: "<stable-id>"
+    status: OPEN | CONTAINED | RESOLVED | TERMINATED
+    affected_claim_ids: []
+    affected_field_paths: []
+    affected_threads: []
+    dependency_edges:
+      - from_claim_id: "<claim-id>"
+        to_action_id: "<action-id>"
+        dependency_type: DIRECT | DERIVED | ROUTE_SELECTION | NPC_CONTACT | LOCATION_MOVE | EVIDENCE_GENERATION
+        status: ACTIVE | BLOCKED | RESOLVED
+    allowed_threads: []
+    blocked_threads: []
+    last_valid_authorization_event_id: "<event-id-or-UNKNOWN>"
+    authorization_scope: "<exact-scope-or-NONE>"
+    player_choice: CONTINUE_SAFE_SCOPE | PAUSE_AUDIT | TERMINATE | UNKNOWN
+    resolution_ref: null
+~~~
+
+- reconciliation_manifest_refs 指向不可变 manifest；applied_event_ids 仅为索引。索引存在但 manifest 缺失/不可读时，应用状态 UNKNOWN。
+- Manifest 必须绑定 event_id、event_revision_id、payload_version/fingerprint、batch_id、base/target revision、sequence、精确 applied_fields（object_id、field_path、before/after value ref）和 application_status。
+- Manifest 不可原地修改；修订产生新 manifest_id 并通过 supersedes_ref 建立谱系。部分字段应用标 PARTIAL。
+- 当前值必须与从 checkpoint 基线起按 sequence 应用的有效 manifest 链相符。断链、跳 revision、字段缺项或值不符均建立 state_disputes。
+- state_disputes 是领域字段争议；persistence.disputes 仅记录跨文件持久化冲突，不可混用。
+- T0 授权只在相同 incident_id、相同范围、依赖未变化且未撤销时延续。旧存档缺字段保持 UNKNOWN，不得从聊天摘要或模型印象回填。

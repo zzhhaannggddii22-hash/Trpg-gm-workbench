@@ -120,7 +120,7 @@
 - event_id：稳定事件 ID；重试/修订沿用原 ID 并追加版本，不重复结算。
 - base_revision：事件基于哪个已发布 Runtime checkpoint revision；如需兼容旧记录，旧字段 base_rev / checkpoint_rev 仅作为历史别名读取，不在新记录中混用。
 - occurred_at：游戏内时间；未知则 UNKNOWN，不推算绝对日期。
-- presentation_status：NOT_PRESENTED / PRESENTED / PARTIALLY_PRESENTED。
+- presentation_status：NOT_PRESENTED / PRESENTED / PARTIALLY_PRESENTED / UNKNOWN。
 - response_status：NOT_AWAITING_PLAYER / AWAITING_PLAYER / RESPONDED。
 - visibility：GM_ONLY / PLAYER_VISIBLE / RECIPIENT_SCOPED。
 - affected_entities：实际发生变化的对象与字段。
@@ -193,7 +193,7 @@ presentation_status: NOT_PRESENTED | PRESENTED | PARTIALLY_PRESENTED
 response_status: NOT_AWAITING_PLAYER | AWAITING_PLAYER | RESPONDED
 gm_response_ref: <exact player-visible response locator or UNKNOWN>
 runtime_application:
-  status: APPLIED | NOT_APPLIED | UNKNOWN
+  status: APPLIED | PARTIAL | NOT_APPLIED | UNKNOWN
   applied_to_revision: <exact revision or null>
   reconciliation_ref: <immutable reconciliation manifest ref or null>
 ~~~
@@ -202,3 +202,51 @@ runtime_application:
 - gm_response_ref 应定位实际玩家可见内容，而不是仅引用 GM 内部摘要。
 - 事件已呈现但未合并进 Runtime 时，保留在 unapplied_event_ids；应用状态未知时不得自行推断。
 - 新记录按本结构填写；旧记录缺少字段时按 UNKNOWN 处理，不回填猜测。
+
+
+## P1-0C 补充｜事件修订、应用和接收者片段契约（C2/C3/C5）
+
+~~~yaml
+event_id: "<stable-id>"
+event_revision_id: "<immutable-revision-id>"
+revision_of: "<prior-event-id-or-null>"
+batch_id: "<batch-id-or-NOT_APPLICABLE>"
+base_revision: "<exact-runtime-revision-or-UNKNOWN>"
+target_revision: "<exact-runtime-revision-or-UNKNOWN>"
+payload_version: "<version>"
+payload_fingerprint: "<fingerprint-or-NOT_AVAILABLE>"
+runtime_application:
+  status: APPLIED | PARTIAL | NOT_APPLIED | UNKNOWN
+  applied_to_revision: "<exact-revision-or-null>"
+  reconciliation_ref: "<immutable-manifest-id-or-null>"
+  applied_field_paths: []
+presentation_segments:
+  - segment_id: "<stable-segment-id>"
+    content_ref: "<exact-message-span-or-content-ref>"
+    recipient_scope: "<recipient-id-or-scope>"
+    delivery_channel: "<channel>"
+    delivery_state: PRESENTED | NOT_PRESENTED | UNKNOWN
+    presented_at: "<timestamp-or-UNKNOWN>"
+    evidence_ref: "<message-or-delivery-evidence>"
+action_semantics: PLAYER_INTENT | PC_DECLARED_SPEECH | PC_ACTION_COMMITTED | GM_PROPOSED_ACTION | NPC_FUTURE_INTENT | NPC_ACTION_EXECUTED
+incident_id: "<incident-id-or-NOT_APPLICABLE>"
+dependency_refs: []
+action_id: "<stable-action-id>"
+decision_scope: "<exact-authorized-scope-or-NONE>"
+player_decision: CONTINUE_SAFE_SCOPE | PAUSE_AUDIT | TERMINATE | UNKNOWN
+decision_event_id: "<event-id-or-UNKNOWN>"
+~~~
+
+- Runtime 应用证明遵循 Runtime §14.14；事件 ID 相同不代表修订相同或全部字段已应用。
+- PARTIALLY_PRESENTED 按接收者和内容片段记录；未知送达片段为 UNKNOWN。
+- RESPONDED 不证明每个回应片段均已送达。gm_response_ref 定位实际可见回复，并与片段记录对应。
+- 玩家意图、角色发言、已提交行动、GM 建议和 NPC 意向不可互相转换。
+- 旧记录缺字段按 UNKNOWN，不补造历史应用、呈现或授权证据。
+
+
+## P1-0C 补充｜字段级应用和接收者片段
+新事件应用证明必须按 Runtime §14.14 的不可变 reconciliation manifest 记录 event_revision_id、payload_version/fingerprint、batch_id、base/target revision、sequence 和精确 applied_field_paths。checkpoint 的 applied_event_ids 仅为索引，不是证明。部分应用标 PARTIAL。
+
+对 PARTIALLY_PRESENTED 事件按 Runtime §14.16 记录 presentation_segments[]，每个片段绑定内容定位、recipient_scope、delivery_channel、delivery_state、presented_at 和 evidence_ref。RESPONDED 不代表所有片段已送达；未知送达状态保持 UNKNOWN。
+
+新事件另记录 action_semantics：PLAYER_INTENT / PC_DECLARED_SPEECH / PC_ACTION_COMMITTED / GM_PROPOSED_ACTION / NPC_FUTURE_INTENT / NPC_ACTION_EXECUTED。不得把玩家意图写成角色发言或执行，也不得把 NPC 未来意向写成实际行动。

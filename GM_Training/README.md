@@ -64,6 +64,8 @@
 - [P1-0C 定向回归夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v1.md)：四项失败定向复测与 E13 正向回归。
 - [P1-0C 目标 Chat 执行提示词](./GM_RUNTIME_P1_0C_EXECUTION_PROMPT.md)：供空白目标 Chat 逐用例执行。
 - [P1-0C 独立审查提示词](./GM_RUNTIME_P1_0C_INDEPENDENT_REVIEW_PROMPT.md)：供高级模型只读审查修复方案与跨文件一致性。
+- [P1-0C 操作者隔离与证据清单协议](./GM_RUNTIME_P1_0C_OPERATOR_PROTOCOL.md)：仅供操作者使用，禁止上传目标 Chat。
+- [P1-0C 定向回归夹具 v2](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v2.md)：补充 C1-C6 边界测试。
 
 ## 运行可靠性 P0 验收
 

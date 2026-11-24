@@ -214,11 +214,10 @@ NPC 按自己的知识、动机、性格、能力、关系、资源和机会行�
 - GM INFERENCE：暂定解释，不得升级成事实；
 - UNKNOWN：未知。
 
-若 GM 发现自己刚生成的内容与来源不符：
-- 立即停止沿该内容推进；
-- 不让 NPC、机构或玩家角色继续基于该错误行动；
-- 回到最后一个有效场景节点；
-- 将错误分支标记 NON-CANON，记录其影响；
+若 GM 发现自己刚生成的内容与来源不符，按 §14.13 的呈现状态分流：
+- 仅存在于 GM 内部、尚未向玩家或任何玩家可访问通道呈现的草稿：可以丢弃或替换，并保留必要的内部纠错记录。
+- 已向玩家呈现、玩家已据此行动，或呈现范围无法确认的内容：禁止自动回滚、删除、覆盖、静默改写或直接标记 NON-CANON。立即停止受影响推进，保留原始事件与玩家选择，按 T0 §6/§11 和 §14.1 建立事故/争议记录；纠错只能追加勘误、补充说明或经授权的分支处理。
+- 无法确认是否已呈现时，按“可能已呈现”处理，先保留现场；不得以“模型刚生成”“内容明显错误”推定它仍是草稿。
 - 不把回滚责任转嫁给玩家，也不要求玩家替 GM 圆场。
 
 ### 12.4 开始首次 NPC 场景前的快速回读
@@ -577,3 +576,129 @@ Runtime State 是当前值快照，Session Log 是状态变化历史。两者权
 7. 发现泄漏时立即停止后续投影，保留证据，追踪已发送范围及派生副本，按 T0 处理。修复后生成新版本，不覆盖原失败产物。
 
 审计完整性不得以玩家隐私为代价。玩家文件不承担向玩家解释内部过滤器如何运作的职责。
+
+
+## 14.13 已呈现内容的纠错、勘误与分支处置（C1 · P0）
+
+本节优先于本文件旧版任何“回到最后有效节点”“回滚错误分支”“标记 NON-CANON”的概括。发生冲突时，以本节与 T0 §6、§11、§14.1 为准。
+
+### 14.13.1 呈现状态是处置前置条件
+每个待纠错内容必须先确定 `delivery_state`: INTERNAL_DRAFT / STAGED_PRIVATE / PLAYER_VISIBLE / RECIPIENT_VISIBLE / UNKNOWN；记录实际接收者、通道、玩家行动依赖、source_event_id、response_ref 和 artifact_ref。UNKNOWN 不得降格为草稿。
+
+### 14.13.2 允许丢弃的唯一情形
+只有同时满足以下条件，内容才可作为草稿丢弃：未进入任何玩家可见回复；未写入玩家可访问文件/通知/预览/附件；未被 NPC 或外部工具实际执行；没有玩家行动依赖。仅 GM 私有暂存且访问隔离可核验的内容属于 STAGED_PRIVATE。无法证明上述条件时不得自动丢弃。
+
+### 14.13.3 已呈现内容的唯一纠错路径
+1. 保留原始事件、原始回复、玩家后续选择及其时间顺序，不覆盖历史。
+2. 暂停受影响命题及派生行动，不冻结有独立依据的无关行动。
+3. 记录事故 ID、最早偏离点、受影响 claim/event/field、接收者、呈现证据、玩家依赖、风险与隔离范围。
+4. 向玩家提供最小必要的非剧透说明，并按 T0 协议取得继续/暂停/终止决定。
+5. 纠错以新事件追加：CORRECTION / RETRACTION_NOTICE / BRANCH_RESOLUTION。明确旧内容哪些部分不再作为可靠依据，但不得假装玩家从未看到。
+6. 若需 NON-CANON，必须有可核验依据、明确适用授权/玩家决定及影响范围；NON-CANON 只标记后续世界状态分支，不删除历史呈现记录。
+7. 更新 Runtime、Session Log 与玩家记录时遵循事件信封和双侧读回；未读回前标 INCOMPLETE / NOT_PERSISTED。
+
+### 14.13.4 禁止行为
+禁止以“上一节点恢复”“重新生成正确版本”“旧分支作废”等措辞绕过上述步骤；禁止撤销玩家已作出的选择或把其成本归零，除非有明确规则依据且经过适用授权。玩家选择回溯/重开时创建新分支并保留原分支历史。
+
+## 14.14 字段级事件应用证明与不可变 Manifest（C2 · P1）
+
+同一 event_id 或批次引用本身不足以证明特定字段已应用。事件应用必须以不可变 manifest 为证据；索引字段只用于定位。
+
+~~~yaml
+reconciliation_manifest:
+  manifest_id: "<immutable-id>"
+  manifest_version: 1
+  batch_id: "<batch-id>"
+  base_revision: "<exact-revision>"
+  target_revision: "<exact-revision>"
+  created_at: "<timestamp-or-UNKNOWN>"
+  ordered_applications:
+    - event_id: "<stable-event-id>"
+      event_revision_id: "<immutable-event-revision>"
+      payload_version: "<version>"
+      payload_fingerprint: "<fingerprint-or-NOT_AVAILABLE>"
+      sequence: 1
+      applied_fields:
+        - object_id: "<object>"
+          field_path: "<canonical.path>"
+          before_value_ref: "<immutable-value-ref-or-NOT_AVAILABLE>"
+          after_value_ref: "<immutable-value-ref-or-NOT_AVAILABLE>"
+      application_status: APPLIED | PARTIAL | NOT_APPLIED
+      source_event_ref: "<exact-log-record-ref>"
+  manifest_fingerprint: "<fingerprint-or-NOT_AVAILABLE>"
+~~~
+
+- Runtime checkpoint 保存 `reconciliation_manifest_refs[]`（完整 manifest 权威引用）和可选 `applied_event_ids[]`（仅索引）；二者不可互相替代。
+- Session Log 事件保存 `runtime_application.status`、`event_revision_id`、`applied_to_revision`、`reconciliation_ref`、`applied_field_paths[]`。
+- APPLIED 只表示该事件修订的全部声明字段均按序应用；部分字段标 PARTIAL 并列出字段，不得折叠成 APPLIED。
+- Manifest 不可原地修改；更正产生新 manifest_id，通过 supersedes_ref 指向旧 manifest，旧版本保留。
+- 应用到 r5 后，r6 的当前值仍须沿 r5→r6 后续 manifest 链验证。不得把旧 manifest 当作对 r6 当前值的直接证明。
+- 当前值须与按 sequence 排序的应用链相符；断链、重复序号、revision 跳跃、字段集合不匹配或值不符，均为 UNKNOWN/DISPUTED。
+- Runtime State 的 `state_disputes[]` 保存领域字段争议；`persistence.disputes[]` 仅保存文件持久化争议。领域争议至少包含 dispute_id、object_id、field_path、runtime_value_ref、log_value_ref、source_refs[]、related_event_ids[]、dependency_refs[]、status、detected_at、resolution_ref。
+- 健康绿色互动只用已核验 checkpoint；仅在恢复、字段冲突、重要状态写入、应用不明或争议解除时读取相关 manifest 链，不全量扫描历史。
+
+## 14.15 T0 授权、行动语义与冻结恢复状态（C3 · P1）
+
+本节补足 §14.11 的可恢复状态和玩家能动性边界；§14.11 仍是行动路由唯一规范。
+
+~~~yaml
+t0_incident:
+  incident_id: "<stable-id>"
+  status: OPEN | CONTAINED | RESOLVED | TERMINATED
+  affected_claim_ids: []
+  affected_field_paths: []
+  affected_threads: []
+  dependency_edges: []
+  allowed_threads: []
+  blocked_threads: []
+  last_valid_authorization_event_id: "<event-id-or-UNKNOWN>"
+  authorization_scope: "<exact-scope-or-NONE>"
+  player_choice: CONTINUE_SAFE_SCOPE | PAUSE_AUDIT | TERMINATE | UNKNOWN
+  resolution_ref: null
+~~~
+
+Runtime State 是事故/授权范围的权威快照；Session Log 追加 T0_TRIGGER、AUTHORIZATION、ROUTE_DECISION、RESOLUTION 事件。两侧使用同一 incident_id 并独立读回。任一侧缺失时保持 INCOMPLETE，不声称授权或冻结已持久化。
+
+行动语义必须区分：
+- PLAYER_INTENT：玩家向 GM 提出的行动请求，不代表角色已执行。
+- PC_DECLARED_SPEECH：玩家明确写出角色说了什么，才可记录为已发言。
+- PC_ACTION_COMMITTED：玩家明确选择执行的角色行动；确认风险/成本/权限后进入执行。
+- GM_PROPOSED_ACTION：GM 建议或选项，不是玩家选择。
+- NPC_FUTURE_INTENT：NPC 表达将来打算，不代表已联系、移动、调查或取得结果。
+- NPC_ACTION_EXECUTED：NPC 实际执行，必须有动机、机会、权限、时间依据，并检查冻结依赖。
+GM 不得把 PLAYER_INTENT / GM_PROPOSED_ACTION 代述为 PC_DECLARED_SPEECH / PC_ACTION_COMMITTED。
+
+混合行动拆成最小子动作，分别判断目的、依赖和权限；只暂停受影响子动作。初次 T0 后模糊授权不开争议线；已有安全授权仅延续原范围。目的含糊且可能依赖争议命题时，暂缓该子动作并澄清。冻结线程中的 NPC 主动行为同样过依赖检查。解除冻结须追加 RESOLUTION，引用证据和授权并核对 Runtime/Log 双侧状态。
+
+## 14.16 接收者与片段级呈现、续接去重（C5 · P1）
+
+- PARTIALLY_PRESENTED 事件必须记录 `presentation_segments[]`：segment_id、content_ref/hash、recipient_scope、delivery_channel、delivery_state、presented_at、evidence_ref。只对实际交付给该接收者的片段记 PRESENTED。
+- 一条回复含多个信息片段/接收者时分别记录。无法确定送达的片段为 UNKNOWN；不得将整条回复统一标记 PRESENTED 或 NOT_PRESENTED。
+- CONTINUE 去重以目标接收者已收到内容为准。Player Notes 是索引，实际回复/交付记录是证据；不一致时保留 UNKNOWN/DISPUTED，不自动重播。
+- 允许例外：玩家明确请求回顾；或当前决策必须提醒已知条件、代价、期限。回顾须标记“回顾”，只向该接收者复述其已获知片段；必要提醒只简短引用既有条件，不包装成新发现/新事件。
+- 仅对重要信息、多人接收、部分呈现或跨对话恢复中的关键回应启用片段级记录；普通互动不逐句建账。
+
+## 14.17 发布前隔离与交付门禁（C4 · P0）
+
+安全扫描必须发生在首次对玩家可见之前。写入成功不等于可发布；扫描后才发现泄漏无法撤销第一次披露。
+
+1. 生成前确认工具支持私有暂存、目标接收者控制、独立读回和明确发布动作。生成即公开、自动附加到玩家可见消息、无法确认预览/临时路径访问边界或无法独立读回时，不得生成玩家可访问产物。
+2. 仅在可核验私有暂存区 BUILD_PRIVATE，分别生成 Player Artifact 与 GM Audit；GM Audit 只能进入具备真实隔离的 GM-only 通道。
+3. READ_BACK：从暂存区独立读取实际成品，核对身份、完整内容、大小/哈希（可用时）。
+4. SCAN：扫描 Player Artifact 全部可读内容、元数据、附件和隐藏对象；不可读部分标 NOT_VERIFIABLE。若可能承载受限内容且无法排除，拒绝发布。
+5. AUTHORIZE：核对 recipient_scope、字段白名单、呈现证据、目标交付通道和访问权限。
+6. PUBLISH：仅当前五步均有可核验证据且不存在未排除风险时执行独立发布动作。任一步失败/不可观察即 INCOMPLETE / NOT_PUBLISHED。
+7. 生成即公开或无私有暂存/独立发布控制：只能在 GM 私有对话中提供 NOT_PUBLISHED 拟稿，不得附带 GM Audit。无访问控制证据时不得称 GM-only。
+8. 纯文本完整读回可证明文本内容完整性，仍须证明接收者和交付对象；复杂格式不可读元数据/嵌入对象未排除时拒绝发布。
+9. 已泄漏时停止后续发布、保留原件、确认接收者和传播范围并按 T0 处置；修复版使用新身份，不删除原件。
+
+## 14.18 P1-0C 盲测材料、版本和准入纪律（C6 · P1）
+
+- 目标 Chat 只接收通用 Skill/运行规范入口、本轮最小合成附件和当轮玩家输入；不得接收夹具、OPERATOR、预期答案、硬断言、评分表或后续轮次输入。
+- 执行提示词仅说明通用纪律，不列用例名称、触发方式、预期动作或通过标准；具体输入由操作者逐轮发送。
+- 操作者独立维护 RUN_MANIFEST：run_id、case_id、空白 Chat 证据、产品/模型/Thinking 档、规范提交、每轮附件名与 SHA-256、上传时间、原始输入/输出、可见工具轨迹、产物哈希、读回证据和异常。不得上传目标 Chat。
+- 附件哈希须对操作者持有的原始字节在上传前计算；目标端无法独立计算时注明证据边界。历史哈希不得冒充本次附件验证。
+- 目标 Chat 提前读取后续附件或操作者材料，该试次标 CONTAMINATED，保留但不计有效盲测通过。
+- 必测项若仅有自报、缺少有效输入时序，或缺少该用例要求的真实工具轨迹/产物/独立读回，阶段准入 NOT MET。其他用例 PASS 不可抵消。
+- E13 行为评分与证据等级分开；历史 PARTIAL 永久保留。P1-0C 通过后仍须单独评估 P1-0R，不自动进入 P1-1。
+
