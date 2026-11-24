@@ -119,3 +119,34 @@ NPC 陈述独立记录 speaker、statement_event、recipient、knowledge_basis�
 
 ### 9.4 最小化原则
 普通闲谈、无后续影响的细节和不改变认知的重复台词无需逐条编码。只有当信息可能影响行动、线索可信度、人物判断、任务目标或持续状态时才建立稳定 ID。
+
+
+## 10. T0 原始污染证据与传播链（P0 第三轮补充）
+
+当错误命题可能影响调查方向、规则裁定、任务状态或玩家选择时，不能只保存审计结论。每个污染入口至少保存以下原始证据，便于独立复盘：
+
+| 字段 | 含义 |
+|---|---|
+| incident_id | 稳定事故 ID |
+| entry_path | LIVE_DISCOVERY / STRUCTURAL_IMPROVISATION / POST_SESSION_AUDIT |
+| earliest_bad_event_id | 最早出现错误的事件 |
+| original_bad_record_ref | 最初坏记录的原始定位；保留写入前原文 |
+| original_bad_claim | 当时实际写入/表达的错误命题，逐字或精确字段值 |
+| source_statement_ref | 触发该错误的 NPC 陈述、文件、规则或模型生成内容 |
+| field_path | 错误进入的具体字段路径 |
+| field_scope | GM_ONLY / PLAYER_VISIBLE / RECIPIENT_SCOPED |
+| before_state_ref / after_state_ref | 写入前后状态快照或差异 |
+| detection_event_id | 发现并触发审计的事件 |
+| trigger_basis | 为什么此处触发 T0 |
+| derived_event_ids | 由错误命题派生的事件 ID |
+| derived_claim_ids | 由错误命题派生的命题 ID |
+| propagation_edges | source_event → derived_event/claim 的有向关系 |
+| player_presentation_refs | 已向玩家呈现的相关内容 |
+| containment_status | OPEN / CONTAINED / DISPUTED / RESOLVED |
+| resolution_ref | 追加更正或解决事件 |
+
+执行要求：
+- 三条入口路径分别建立事故记录，不将不同路径合并成一个泛化案例。
+- 保存原始坏命题、原始字段、最早写入位置和派生链；仅保存最终结论、摘要或“发生过偏移”不算完整证据。
+- 原始记录只追加引用，不静默修订；纠正通过新事件完成，并保留玩家实际看到过的内容。
+- 找不到原始写入证据时，标记 EVIDENCE_GAP / NOT TESTABLE，不得用事后重构冒充原始记录。
