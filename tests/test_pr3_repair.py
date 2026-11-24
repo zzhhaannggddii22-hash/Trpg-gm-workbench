@@ -95,6 +95,17 @@ class RepositoryChecks(unittest.TestCase):
             self.assertIn("#141-唯一事故处置路径", read(GM + path + ".md"))
         self.assertNotIn("删除/标记", read(GM + "08_CLUE_AND_SOURCE_LEDGER.md"))
 
+    def test_RT19_natural_language_action_routes(self):
+        runtime = read(GM + "07_RUNTIME_CONTROL_PROTOCOL.md")
+        route = runtime.split("## 14.11 T0 发现与行动路由必须闭环")[1].split("## 14.12")[0]
+        for term in ("事实前提", "待核实的问题/假设", "独立依据", "UNKNOWN / DISPUTED",
+                     "核验行动与后续依赖行动分开裁定", "只暂缓该子行动"):
+            self.assertIn(term, route)
+        cases = read("tests/T0_NATURAL_LANGUAGE_CASES.md")
+        for case_id in ("NL-01", "NL-04", "NL-06", "NL-07", "NL-09", "NL-14", "NL-16"):
+            self.assertIn(case_id, cases)
+        self.assertIn("不计为独立盲测", cases)
+
     def test_RT09_closed_metadata(self):
         raw = read(ND + "08_RUNTIME_STATE.md")
         historic = raw.split("## 9.")[1].split("## 10.")[0]
