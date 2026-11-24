@@ -180,3 +180,25 @@ Player Notes / 玩家导出只允许投影：
 - 未实际呈现的 claim、其他玩家/角色的 recipient-scoped 内容
 
 如果记录混合权限且无法可靠拆分，整条记录不得进入玩家投影；先拆分并逐字段核验。玩家投影必须记录 projection_schema_version、recipient_scope、源 event_id 与实际导出的字段清单。导出前后检查字段白名单，不能只检查行级 visibility。
+
+
+### 2026-11-24 补充｜事件回应、呈现与 Runtime 合并标记（P1）
+
+重要事件按实际情况增加以下关联字段：
+
+~~~yaml
+event_id: <stable-event-id>
+responds_to_event_id: <player-action-or-prior-event-id, if applicable>
+presentation_status: NOT_PRESENTED | PRESENTED | PARTIALLY_PRESENTED
+response_status: NOT_AWAITING_PLAYER | AWAITING_PLAYER | RESPONDED
+gm_response_ref: <exact player-visible response locator or UNKNOWN>
+runtime_application:
+  status: APPLIED | NOT_APPLIED | UNKNOWN
+  applied_to_revision: <exact revision or null>
+  reconciliation_ref: <immutable reconciliation manifest ref or null>
+~~~
+
+- RESPONDED 表示玩家行动已获得有效 GM 回应；PRESENTED 表示该回应/信息确实已向目标接收者呈现。二者不可互相替代。
+- gm_response_ref 应定位实际玩家可见内容，而不是仅引用 GM 内部摘要。
+- 事件已呈现但未合并进 Runtime 时，保留在 unapplied_event_ids；应用状态未知时不得自行推断。
+- 新记录按本结构填写；旧记录缺少字段时按 UNKNOWN 处理，不回填猜测。
