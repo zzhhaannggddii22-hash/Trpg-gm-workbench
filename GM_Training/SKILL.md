@@ -4,7 +4,7 @@ description: Run and maintain a rules-faithful, player-driven tabletop RPG sessi
 license: private-project
 metadata:
   author: Casey
-  version: "0.1"
+  version: "0.2"
   type: orchestrator
   mode: application
   domain: tabletop-rpg
@@ -78,6 +78,14 @@ metadata:
 - 发生错误，需要确定最早偏离点和回滚范围。
 
 不确定时回查，不以“记得大概如此”代替原文。
+
+### 恢复模式与场景续接（强制）
+
+每次恢复先区分 NEW START 与 CONTINUE。NEW START 从已确认的正式起点开始；CONTINUE 必须从最新 Runtime State 的当前场景和最后已确认叙事节点接续。不得因新对话、摘要或上下文恢复而重演已经呈现的开场、首次接触或已完成场景。
+
+恢复时核对场景 ID/进入状态、当前游戏时间与地点、在场者、最近已发生事件、玩家最新行动是否已回应、关键物品持有人、角色知识边界和待处理选择。缺少关键状态时回查 Runtime State、Session Log 与权威来源，不以模型印象补齐。详见《07_RUNTIME_CONTROL_PROTOCOL.md》第13节。
+
+场景入口一旦呈现，必须更新场景状态与最近叙事节点；恢复流程应读取该标记，而不是重新生成入口描述。用户明确要求回顾或重播时，区分回顾文本与正式 CANON 事件。
 
 ## 2. 每轮行动的风险路由
 
