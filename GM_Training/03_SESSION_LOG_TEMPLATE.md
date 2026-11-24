@@ -96,3 +96,20 @@
 - Session 日志记录本次新增事实与变化，不重复复制模组全部线索、完整人物卡或前次 Session 全文。
 - Session 结束时必须给出可用于下一对话恢复的状态快照；模组最终奖励和完整复盘留到 Module 结团。
 - 下一 Session 以最新 Runtime State 为当前状态权威，最近 Session Log 作为变更依据；更早日志仅在需要追溯时读取。
+
+
+## 场景续接信息（供下一次 CONTINUE 恢复）
+
+- 当前场景 ID：
+- 场景状态：NOT ENTERED / ENTERED / ACTIVE / CLOSED / NON-CANON
+- 本场模式：NEW START / CONTINUE
+- 入口描述是否已向玩家呈现：
+- 最后一个已确认的叙事节点 / Event ID：
+- 最近一次有效 GM 回应：
+- 玩家最近一次行动：
+- 当前尚待回应的玩家意图/选择：
+- Session 结束时游戏内时间与地点：
+- 在场人物及重要位置关系：
+- 是否存在尚未合并进 Runtime State 的事件增量：
+
+下一场恢复时以最新 Runtime State 为当前值权威，以本日志及其后的 Session Log 追溯变化。CONTINUE 从最后一个已确认叙事节点接续；不得重新演出已经呈现的开场、首次接触或已结束场景。
