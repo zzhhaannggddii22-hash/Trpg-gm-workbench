@@ -59,8 +59,10 @@
 
 - [P0 合成验收夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_FIXTURE_v1.md)：RT-01 至 RT-18 的基线隔离测试。
 - [P0 第二轮回归夹具 v2](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_REGRESSION_v2.md)：D01/D02/D16/D18 修复回归、RT-16 对抗矩阵与 PARTIAL 证据补测。
+- [P0 第三轮回归夹具 v3](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_REGRESSION_v3.md)：争议持久化与冷恢复、E13 风险摘要、E12 原始污染证据、字段级权限负例。
 - [第一轮独立执行提示词](./GM_RUNTIME_P0_INDEPENDENT_EXECUTION_PROMPT.md)：基线独立执行要求。
 - [第二轮独立复测提示词](./GM_RUNTIME_P0_SECOND_ROUND_EXECUTION_PROMPT.md)：要求独立模型复测 v1 全集与 v2 回归矩阵。
+- [第三轮独立复测提示词](./GM_RUNTIME_P0_THIRD_ROUND_EXECUTION_PROMPT.md)：只读规范与夹具，独立执行 v1+v2+v3，并要求真实持久化、独立冷读及字段级权限扫描。
 - [全系统质量验收提示词](./GM_SYSTEM_ACCEPTANCE_PROMPT.md)：用于更广泛的系统架构、规范引用、流程与风险审查；不替代 P0 行为执行测试。
 
 P0 测试必须在隔离临时状态空间执行。不得修改正式 Campaign、Module、Runtime State、Session Log、Player Notes 或战役 CANON。模拟通过不等于真实工具写入、跨会话冷恢复或产品级性能已通过。
