@@ -1,6 +1,6 @@
 # 《俯冲》（Nosedive）｜模组档案
 
-> 状态：**Prep QA CLOSED；首次 Preflight 已执行。2026-11-23 的第一次 Session 01 尝试作废（NON-CANON）；随后已从机构简报室重新开团。有效 Session 01 现已保存并暂停，当前续接点为咖啡馆会面结束、等待次日下午与 Marcus 的约见。权威进度见 08_RUNTIME_STATE.md 与 Sessions/SESSION_01.md。**
+> 状态：**CLOSED / NARRATIVE RESOLVED / NO REWARDS / NO PENALTIES。** 2026-11-24 用户确认结案；历史运行过程见 Sessions/SESSION_01.md，最终状态见 08_RUNTIME_STATE.md 第10节。旧 Handoff 不再是续团指令。
 > 系统：Triangle Agency 中文 v22。规则唯一权威为用户指定的中文 v22。
 > 信息等级：本目录除明确标注玩家侧的文件外，均为 GM-only。
 
