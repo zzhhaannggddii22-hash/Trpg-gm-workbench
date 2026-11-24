@@ -1,8 +1,5 @@
 # 001｜雨前过桥
 
-<text>
-</text>
-
 **场景类型：** 问题解决型（次要：社交 / 轻探索）  
 **规则绑定：** SYSTEM-NEUTRAL  
 **状态：** READY FOR FIRST PLAYTEST  
