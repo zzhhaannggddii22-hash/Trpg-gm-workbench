@@ -77,7 +77,7 @@
 - [ ] 资源、伤害、关系、承诺与事件阶段一致。
 - [ ] 场景入口和关键内容是否已经向玩家呈现有明确标记。
 - [ ] 当前待处理行动没有被误当成已完成。
-- [ ] 回滚分支已标记 NON-CANON，且未残留在有效状态中。
+- [ ] 若曾发生错误分支处置，已保留原始呈现/玩家行动记录；仅在有依据且经授权时将后续状态分支标记 NON-CANON，未静默删除历史。
 
 ## 自上次检查点以来的增量
 
@@ -252,7 +252,11 @@ t0_incidents:
     affected_claim_ids: []
     affected_field_paths: []
     affected_threads: []
-    dependency_edges: []
+    dependency_edges:
+      - from_claim_id: "<claim-id>"
+        to_action_id: "<action-id>"
+        dependency_type: DIRECT | DERIVED | ROUTE_SELECTION | NPC_CONTACT | LOCATION_MOVE | EVIDENCE_GENERATION
+        status: ACTIVE | BLOCKED | RESOLVED
     allowed_threads: []
     blocked_threads: []
     last_valid_authorization_event_id: "<event-id-or-UNKNOWN>"
