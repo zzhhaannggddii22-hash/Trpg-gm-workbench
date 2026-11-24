@@ -54,3 +54,11 @@
 
 ## 项目边界
 本目录维护 GM 专业方法，不重复存放战役人物卡、模组事实或当前运行状态。GM-only 资料不得进入玩家侧输出。高能力模型审查仅限获准的 GM-only 备团草稿，不自动获得玩家私密日志或其他无关档案。
+
+## 运行可靠性 P0 验收
+
+- [P0 合成验收夹具](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_FIXTURE_v1.md)：RT-01 至 RT-18 的隔离测试输入、初始状态、硬性断言与失败记录格式。仅供测试，不属于任何正式 Campaign。
+- [高级模型独立执行提示词](./GM_RUNTIME_P0_INDEPENDENT_EXECUTION_PROMPT.md)：要求独立模型在当前 main 上实际执行夹具、区分模拟与真实持久化证据，并提交独立验收报告。
+- [全系统质量验收提示词](./GM_SYSTEM_ACCEPTANCE_PROMPT.md)：用于更广泛的系统架构、规范引用、流程与风险审查；不替代 P0 行为执行测试。
+
+P0 测试必须在隔离临时状态空间执行。不得修改正式 Campaign、Module、Runtime State、Session Log、Player Notes 或战役 CANON。模拟通过不等于真实工具写入、跨会话冷恢复或产品级性能已通过。
