@@ -1,15 +1,16 @@
-# Multi-System TRPG GM Workbench
+# Trpg-gm-workbench
 
 跨规则系统的 TRPG GM 专业工作台：规则研究、备团、运行、复盘、训练与能力迭代。
 
 ## 核心架构
 
+- [项目目录与文件职责](PROJECT_STRUCTURE.md)：仓库结构、权威归属与迁移约定。
 - [GM 能力架构](GM_Training/00_GM_CAPABILITY_ARCHITECTURE.md)：定义通用 GM 能力如何在真实场景中有机联动，以及整体优秀的验收原则。
 - [GM Training](GM_Training/README.md)：通用主持原则、运行 Skill、人物模拟、叙事呈现、备团流程、训练与评价。
 - [多系统架构与上下文隔离协议](SYSTEM_CONTEXT_PROTOCOL.md)：系统选择、加载、锁定与切换规则。
 - [规则系统目录](Systems/README.md)：各套 TRPG 系统的独立规则环境与专属资料。
 - [战役目录](Campaigns/README.md)：各战役的系统绑定与独立状态。
-- [通用研究与候选池](Research/)：跨系统研究方法与尚未正式引入的候选系统。
+- [通用研究与候选池](Research/README.md)：跨系统研究方法与尚未成熟的候选系统。
 - [专业能力迁移机制](CAPABILITY_TRANSFER.md)：从 TRPG 实战中提取可跨场景验证的通用能力。
 
 ## 工作分工
@@ -17,7 +18,7 @@
 1. **GM_Training**：只维护跨系统通用 GM 能力、运行方法、备团/复盘流程、训练和评价。
 2. **Systems**：维护系统专属规则、术语、机制、官方裁定和适配方法。
 3. **Campaigns**：维护具体战役、模组、人物、CANON、Runtime State 与 Session Log。
-4. **Research**：维护研究材料和尚未成熟的候选方法；经过验证的方法再进入正式规范。
+4. **Research**：维护跨系统研究材料和尚未成熟的候选方法；系统专属研究留在对应 Systems 子目录。
 
 ## 工作流程
 

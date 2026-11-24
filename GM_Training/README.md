@@ -61,7 +61,7 @@
 
 - [GM 系统质量验收提示词](./GM_SYSTEM_ACCEPTANCE_PROMPT.md)
 - [P0/P1 验收报告与测试夹具](./Acceptance_Reports/)
-- [验收测试夹具](./Acceptance_Test_Fixtures/)
+- [验收测试夹具与执行提示](./Acceptance_Test_Fixtures/README.md)：合成夹具、目标 Chat 执行提示与操作者协议。
 
 合成测试、盲测和真实跑团分别报告。未执行的测试必须标记 NOT STARTED / NOT TESTED；不得以文件已更新推断运行可靠性通过。
 
@@ -76,6 +76,9 @@
 
 ## 8. 运行可靠性与综合验收材料
 
+- [执行提示词与操作者协议](./Acceptance_Test_Fixtures/Execution_Prompts/README.md)：按目标 Chat 执行、独立审查和操作者隔离分类归档。
+- [P1 性能与执行效率验证计划](./Optimization_Reports/GM_RUNTIME_P1_PERFORMANCE_PLAN.md)：性能验证阶段门槛与测量方案。
+
 以下文件属于工程验收和测试执行资料，不代表测试已通过：
 
 - [GM 系统质量验收报告](./Acceptance_Reports/GM_SYSTEM_ACCEPTANCE_REPORT_2026-11-24.md)
@@ -89,7 +92,6 @@
 - [P1-0C 定向回归夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v1.md)
 - [P1-0C 定向回归夹具 v2](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v2.md)
 - [T0 自然语言盲测执行状态](./Acceptance_Reports/T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_PREPARATION_AND_EXECUTION_STATUS_2026-11-24.md)
-- [T0 盲测目标 Chat 执行提示](./GM_T0_BLIND_EXECUTION_PROMPT_v1.md)
-- [T0 盲测操作者隔离协议](./GM_T0_BLIND_OPERATOR_PROTOCOL_v1.md)
+- [验收执行提示词与操作者协议](./Acceptance_Test_Fixtures/Execution_Prompts/README.md)：P0/P1/T0 执行提示与操作者隔离资料。
 
 运行可靠性测试、叙事综合能力评估和真实跑团体验分别报告。合成测试通过不能证明实际跑团整体优秀；训练样本优秀也不能证明运行可靠性验收通过。
