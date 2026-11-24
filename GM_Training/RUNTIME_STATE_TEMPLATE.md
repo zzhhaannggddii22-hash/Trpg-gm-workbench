@@ -112,7 +112,7 @@ checkpoint:
   last_event_id: "<event-id>"
   unapplied_event_ids: []
   applied_event_ids: []
-  reconciliation_manifest_ref: "<immutable reconciliation record for this checkpoint>"
+  reconciliation_manifest_refs: [] # immutable manifest refs; authoritative application proof
 resume:
   mode: "NEW START | CONTINUE"
   can_advance: true
@@ -160,7 +160,7 @@ persistence:
 
 ### 保存与恢复规则
 - Runtime State 是当前值权威；Session Log 是事件历史；正式人物卡只在任务/Session 规定结点核验回写；Player Notes 是角色知识投影。
-- 已呈现但尚未合并的事件必须列入 unapplied_event_ids。已合并事件必须能在 checkpoint.applied_event_ids 或其不可变 reconciliation_manifest_ref 中逐项定位；仅凭 revision 较新、PUBLISHED 或 unapplied_event_ids 为空，不得推断某个事件已合并。恢复时先核对未合并及存在冲突的事件，不得用旧快照覆盖。
+- 已呈现但尚未合并的事件必须列入 unapplied_event_ids。已合并事件必须能在 checkpoint.reconciliation_manifest_refs 指向的不可变 manifest 中逐项定位；applied_event_ids 仅为索引；仅凭 revision 较新、PUBLISHED 或 unapplied_event_ids 为空，不得推断某个事件已合并。恢复时先核对未合并及存在冲突的事件，不得用旧快照覆盖。
 - 多文件写入时先准备批次，按字段所有者应用，再读回核对，最后标记 PUBLISHED。任何环节失败均保留 INCOMPLETE，不声称保存完成。
 - 对同一 event_id 的重试必须幂等：先查是否已应用；不得重复扣资源、发奖励、转移物品或推进事件。
 - 旧记录缺少系统锁、版本或检查点时，标记 LEGACY_UNMIGRATED，并走完整 Preflight；不能用摘要推断。
