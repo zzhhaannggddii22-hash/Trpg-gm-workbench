@@ -11,7 +11,7 @@
 - README.md：入口、文件索引、状态、保密边界。
 - 01_GM_PREP.md：GM-only 原文摘要、场景、线索、NPC动机、异常机制、触发、分支与结局。
 - 02_NAME_INDEX.md：唯一名称映射表。
-- 03_RUNTIME_STATE.md：本场角色状态、装备、资源、NPC/线索账本。
+- 03_RUNTIME_STATE.md：当前唯一有效运行快照，按 [RUNTIME_STATE_TEMPLATE.md](./RUNTIME_STATE_TEMPLATE.md) 维护；Session Log 保留历史事件，不与快照重复维护两份当前状态。
 - 04_SESSION_LOG.md：只记实际发生的桌面事实。
 - 05_PLAYER_NOTES.md：玩家侧可知信息，不含隐藏真相。
 - 06_POSTMORTEM.md：复盘、证据、下一轮训练行动。
@@ -134,3 +134,23 @@
 - Session 结束创建本次编号日志、更新 Runtime State，并同步必要的 Campaign 持续状态。
 - Module 结束时才完成整体奖励、Loose Ends、模组结算与完整复盘；系统另有 Session 结算要求时遵循系统规则。
 - 验证只检查本次变更涉及的权威字段与 GM-only/玩家侧边界，不做无差别全库全文复读。
+
+
+## 10. 运行状态文件与场景续接标记
+
+每个多 Session 模组只维护一份当前有效的 Runtime State。推荐按 [RUNTIME_STATE_TEMPLATE.md](./RUNTIME_STATE_TEMPLATE.md) 建立或更新，不在每份 Session Log 中另造一套不同的当前状态格式。
+
+Runtime State 至少标记：
+- 本次是 NEW START 还是 CONTINUE；
+- 当前场景 ID 与 NOT ENTERED / ENTERED / ACTIVE / CLOSED / NON-CANON 状态；
+- 入口描述是否已经向玩家呈现，以及最后一个已确认叙事节点；
+- 当前游戏时间、地点、在场者和重要位置关系；
+- 玩家最近行动、GM 最近回应和当前待处理意图；
+- 角色资源、关键物品持有人、玩家已知信息、NPC 实际知识；
+- 活跃事件、触发条件、承诺、待办与最后确认事件 ID。
+
+CONTINUE 不得从模组开场重新生成叙述。先读取最新 Runtime State 和最近 Session Log，确认最后已发生的事件与玩家最后收到的内容，再从尚未处理的节点继续。
+
+Session Log 记录事件历史；Runtime State 记录当前值。某项变化写入 Session Log 后，同步更新 Runtime State。若两者出现冲突，以最新可追溯事件和权威来源修复，不静默选择一个方便继续的值。
+
+新 Session 只有在真正开始一个新的正式场景/冒险时使用 NEW START。新对话、上下文重建或模型切换都不是 NEW START 的理由。
