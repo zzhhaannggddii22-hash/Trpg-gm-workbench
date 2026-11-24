@@ -111,6 +111,8 @@ checkpoint:
   branch: "ACTIVE | CLOSED | NON-CANON | DISPUTED"
   last_event_id: "<event-id>"
   unapplied_event_ids: []
+  applied_event_ids: []
+  reconciliation_manifest_ref: "<immutable reconciliation record for this checkpoint>"
 resume:
   mode: "NEW START | CONTINUE"
   can_advance: true
@@ -158,7 +160,7 @@ persistence:
 
 ### 保存与恢复规则
 - Runtime State 是当前值权威；Session Log 是事件历史；正式人物卡只在任务/Session 规定结点核验回写；Player Notes 是角色知识投影。
-- 已呈现但尚未合并的事件必须列入 unapplied_event_ids。恢复时先核对这些事件，不得用旧快照覆盖。
+- 已呈现但尚未合并的事件必须列入 unapplied_event_ids。已合并事件必须能在 checkpoint.applied_event_ids 或其不可变 reconciliation_manifest_ref 中逐项定位；仅凭 revision 较新、PUBLISHED 或 unapplied_event_ids 为空，不得推断某个事件已合并。恢复时先核对未合并及存在冲突的事件，不得用旧快照覆盖。
 - 多文件写入时先准备批次，按字段所有者应用，再读回核对，最后标记 PUBLISHED。任何环节失败均保留 INCOMPLETE，不声称保存完成。
 - 对同一 event_id 的重试必须幂等：先查是否已应用；不得重复扣资源、发奖励、转移物品或推进事件。
 - 旧记录缺少系统锁、版本或检查点时，标记 LEGACY_UNMIGRATED，并走完整 Preflight；不能用摘要推断。
@@ -201,3 +203,21 @@ persistence:
 - 发现冲突后，必须将争议对象写入 Runtime State，并在 Session Log 追加同 dispute_id 的事件；分别读回核验。任何一个目标未成功，整体仍 INCOMPLETE。
 - 不删除冲突记录。解除争议时追加 resolution 事件并保留原始对象及证据链。
 - DISPUTED 状态阻断受影响事件的玩家投影与依赖该事件的推进；不相关且能证明隔离的内容可继续。
+
+
+### Runtime / Session Log 事件合并证明（P1）
+
+每个会改变 Runtime 字段的 Session Log 事件，必须在事件记录中增加：
+
+~~~yaml
+runtime_application:
+  status: APPLIED | NOT_APPLIED | UNKNOWN
+  applied_to_revision: <exact runtime revision or null>
+  reconciliation_ref: <same immutable reconciliation manifest referenced by Runtime checkpoint>
+~~~
+
+规则：
+- APPLIED 必须同时满足：Session Log 有上述完整标记；Runtime checkpoint 的 applied_event_ids 或 reconciliation manifest 包含该 event_id；revision 与事件顺序相容。
+- 任一侧缺失、引用不可读取、event_id 不匹配或 revision 冲突，均按 UNKNOWN 处理。
+- NOT_APPLIED 事件必须留在 unapplied_event_ids；UNKNOWN 不得自动归入已应用或未应用。
+- 对旧存档不得补造历史应用标记。无法回溯证明时保留 UNKNOWN，并按运行协议 §14.10 处理字段级争议。
