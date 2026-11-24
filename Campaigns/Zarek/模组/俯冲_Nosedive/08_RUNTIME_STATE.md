@@ -2,6 +2,24 @@
 
  > 当前状态：**上一次 Session 01 尝试已作废；模组已重置，等待重新开始。** 本文件现为新的干净开场快照；作废尝试不构成战役 CANON。
 
+## 0. 场景续接锚点（2026-11-24 补充）
+
+- Resume Mode：**NEW START**。正式有效的 Session 01 尚未开始；这不是从作废尝试继续。
+- Current Scene ID：**ORG-BRIEFING-ROOM**（机构简报室）。
+- Current Scene Status：**NOT ENTERED**。本次有效开场尚未向玩家呈现。
+- Entry Narration Delivered：**No**。
+- Last Confirmed Event ID：**无（正式 Session 01 尚无有效事件）**。
+- Pending Player Action：等待玩家明确开始指令；开始后从机构简报室正式开场。
+- Previous Attempt：**NON-CANON**。此前 Cass 首访及其音频设备/客户/R&D 回收分支全部作废，不继承为角色经历、世界事件、物品、伤害、线索或 NPC 知识。
+- Player/Character Knowledge Boundary：玩家可能记得作废尝试中的内容；扎雷克与凯瑟琳在正式 CANON 中没有经历该分支，也不得据此行动或获得角色知识。
+
+启动后的更新要求：
+1. 机构简报室入口第一次实际呈现后，将场景状态改为 ENTERED / ACTIVE，并记录最后已呈现叙事节点。
+2. 后续同一 Session 内或跨对话恢复一律使用 CONTINUE，从最后确认节点接续，不重演机构简报室入口。
+3. 只有玩家明确要求重播/回顾时才重新呈现旧内容；回顾不能被记为新的 CANON 事件。
+4. 若正式开场前发现状态文件、Session Log 或 Preflight 互相冲突，先修复状态，不开始叙事。
+
+
 ## 1. 模组进度
 
 - 状态：已重置，等待重新开始。
