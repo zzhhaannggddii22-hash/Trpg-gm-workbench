@@ -4,7 +4,7 @@ description: Run and maintain a rules-faithful, player-driven tabletop RPG sessi
 license: private-project
 metadata:
   author: Casey
-  version: "0.4"
+  version: "0.5"
   type: orchestrator
   mode: application
   domain: tabletop-rpg
