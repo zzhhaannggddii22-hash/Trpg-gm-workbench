@@ -83,8 +83,12 @@ class RepositoryChecks(unittest.TestCase):
         self.assertEqual(runtime.count("唯一 T0 操作入口"), 1)
         self.assertNotIn("回到最后一个有效场景节点", runtime)
         entry = runtime.split("### 14.1 唯一事故处置路径")[1].split("### 14.2")[0]
-        for term in ("立即暂停", "原事件", "已发生的成本", "拒绝", "明确适用授权"):
+        for term in ("立即暂停", "原事件", "已发生的成本", "拒绝", "明确适用授权", "§14.1.1"):
             self.assertIn(term, entry)
+        semantic_gate = runtime.split("### 14.1.1 补救身份、语义封锁与替代方案准入")[1].split("### 14.2")[0]
+        for term in ("action_kind", "operation_ref", "target_ref", "scope_ref", "action_atoms[]",
+                     "不同 remedy_id", "拆成多个子步骤", "available_remedies", "HOLD"):
+            self.assertIn(term, semantic_gate)
         for path in ("SKILL", "GM_RELIABILITY_AND_EXPERIENCE_CONTROL_PROTOCOL",
                      "13_PREP_TO_RUNTIME_HANDOFF_STANDARD", "02_WORKFLOW_AND_PREFLIGHT"):
             self.assertIn("#141-唯一事故处置路径", read(GM + path + ".md"))
@@ -215,24 +219,78 @@ class ReferenceExercises(unittest.TestCase):
                         self.assertEqual(len(observed["choices_offered"]), 3)
                         self.assertEqual(observed["allowed_threads"],
                                          ["safe"] if expected == "CONTAINED" else [])
-        remedy = {**base, "remedy_id": "restore-source-claim", "declined_remedies": [],
-                  "proposed_remedies": [{"remedy_id": "restore-source-claim",
-                                         "description": "恢复原始来源声明"},
-                                        {"remedy_id": "independent-audit",
-                                         "description": "独立核验不受影响的旁支"}]}
+        refused = {
+            "remedy_id": "restore-source-claim-v1",
+            "action_kind": "RESTORE_SOURCE_ASSERTION",
+            "operation_ref": "REINSERT_ORIGINAL_SOURCE_CLAIM",
+            "target_ref": "claim:source-origin-17",
+            "scope_ref": "incident:INC-01:claim-17",
+            "action_atoms": ["restore:claim-17:source-assertion"],
+            "description": "恢复原始来源声明",
+        }
+        independent = {
+            "remedy_id": "independent-audit",
+            "action_kind": "AUDIT_UNAFFECTED_BRANCH",
+            "operation_ref": "VERIFY_SEPARATE_EVIDENCE_CHAIN",
+            "target_ref": "branch:unaffected-02",
+            "scope_ref": "incident:INC-01:unaffected-branch-02",
+            "action_atoms": ["audit:branch-02:independent-evidence"],
+            "description": "独立核验不受影响的旁支",
+        }
+        remedy = {**base, "remedy": refused, "declined_remedies": [],
+                  "proposed_remedies": [refused, independent]}
         rejected = route_incident(remedy, "REJECT_REMEDY")
-        self.assertEqual(rejected["declined_remedies"], ["restore-source-claim"])
-        self.assertEqual([item["remedy_id"] for item in rejected["available_remedies"]],
-                         ["independent-audit"])
-        reworded = {**remedy, "remedy_id": "restore-source-claim",
-                    "declined_remedies": rejected["declined_remedies"],
-                    "proposed_remedies": [{"remedy_id": "restore-source-claim",
-                                           "description": "重新整理并补回来源声明"}]}
-        retried = route_incident(reworded, "PAUSE_AUDIT")
-        self.assertEqual(retried["declined_remedies"], ["restore-source-claim"])
+        self.assertEqual(rejected["remedy_recording_status"], "RECORDED")
+        self.assertEqual(rejected["declined_remedies"][0]["remedy_id"], refused["remedy_id"])
+        self.assertEqual(rejected["declined_remedies"][0]["semantic_signature"],
+                         ["restore_source_assertion", "reinsert_original_source_claim",
+                          "claim:source-origin-17", "incident:inc-01:claim-17"])
+        self.assertEqual(rejected["available_remedies"], [],
+                         "a GM must not volunteer an alternative after refusal")
+
+        # Same operation, target, scope and atomic effect; new ID and new wording do not help.
+        reworded_new_id = {**refused, "remedy_id": "fresh-remedy-id",
+                           "target_label": "另一种写法的来源目标描述",
+                           "description": "重新梳理材料，再把来源声明补进去"}
+        retried = route_incident({**base, "declined_remedies": rejected["declined_remedies"],
+                                  "proposed_remedies": [reworded_new_id],
+                                  "player_permission": "ASKED"}, "PAUSE_AUDIT")
         self.assertEqual(retried["available_remedies"], [])
-        self.assertEqual(retried["history"], history)
-        print("\nT0 reference: 24 routes + declined-remedy rewording negative; history preserved", flush=True)
+
+        # A decomposed sub-step remains blocked through its shared atomic action reference.
+        split_step = {"remedy_id": "small-step-2", "action_kind": "APPEND_NOTE",
+                      "operation_ref": "ADD_SOURCE_LINE_TO_APPENDIX",
+                      "target_ref": "claim:source-origin-17", "scope_ref": "incident:INC-01:claim-17",
+                      "action_atoms": ["restore:claim-17:source-assertion"],
+                      "description": "只在附录中补一行来源声明"}
+        split_result = route_incident({**base, "declined_remedies": rejected["declined_remedies"],
+                                       "proposed_remedies": [split_step],
+                                       "player_permission": "AUTHORIZED"}, "PAUSE_AUDIT")
+        self.assertEqual(split_result["available_remedies"], [])
+
+        # A genuinely distinct proposal is still withheld until the player asks/authorizes.
+        no_permission = route_incident({**base, "declined_remedies": rejected["declined_remedies"],
+                                        "proposed_remedies": [independent]}, "PAUSE_AUDIT")
+        self.assertEqual(no_permission["available_remedies"], [])
+        asked = route_incident({**base, "declined_remedies": rejected["declined_remedies"],
+                                "proposed_remedies": [independent], "player_permission": "ASKED"},
+                               "PAUSE_AUDIT")
+        self.assertEqual([item["remedy_id"] for item in asked["available_remedies"]], ["independent-audit"])
+
+        # Missing semantic identity is fail-closed, even after the player asks for alternatives.
+        incomplete = {"remedy_id": "unknown-semantics", "description": "another way to fix it"}
+        incomplete_result = route_incident({**base, "declined_remedies": rejected["declined_remedies"],
+                                            "proposed_remedies": [incomplete],
+                                            "player_permission": "ASKED"}, "PAUSE_AUDIT")
+        self.assertEqual(incomplete_result["available_remedies"], [])
+        # If the refusal itself cannot be assigned a complete semantic identity, fail closed.
+        malformed_refusal = route_incident({**base, "remedy": incomplete,
+                                            "proposed_remedies": [independent],
+                                            "player_permission": "AUTHORIZED"}, "REJECT_REMEDY")
+        self.assertEqual(malformed_refusal["remedy_recording_status"], "INCOMPLETE")
+        self.assertEqual(malformed_refusal["available_remedies"], [])
+        self.assertEqual(rejected["history"], history)
+        print("\\nT0 reference: refusal survives new ID/rewording/split action; alternatives require player inquiry; history preserved", flush=True)
 
     def test_RT11_process_faults(self):
         event = {"event_id": "RWD-1", "event_revision_id": "RWD-1-v1", "batch_id": "B1",
