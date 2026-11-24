@@ -120,7 +120,7 @@
 - event_id：稳定事件 ID；重试/修订沿用原 ID 并追加版本，不重复结算。
 - base_revision：事件基于哪个已发布 Runtime checkpoint revision；如需兼容旧记录，旧字段 base_rev / checkpoint_rev 仅作为历史别名读取，不在新记录中混用。
 - occurred_at：游戏内时间；未知则 UNKNOWN，不推算绝对日期。
-- presentation_status：NOT_PRESENTED / PRESENTED / PARTIALLY_PRESENTED。
+- presentation_status：NOT_PRESENTED / PRESENTED / PARTIALLY_PRESENTED / UNKNOWN。
 - response_status：NOT_AWAITING_PLAYER / AWAITING_PLAYER / RESPONDED。
 - visibility：GM_ONLY / PLAYER_VISIBLE / RECIPIENT_SCOPED。
 - affected_entities：实际发生变化的对象与字段。
@@ -193,7 +193,7 @@ presentation_status: NOT_PRESENTED | PRESENTED | PARTIALLY_PRESENTED
 response_status: NOT_AWAITING_PLAYER | AWAITING_PLAYER | RESPONDED
 gm_response_ref: <exact player-visible response locator or UNKNOWN>
 runtime_application:
-  status: APPLIED | NOT_APPLIED | UNKNOWN
+  status: APPLIED | PARTIAL | NOT_APPLIED | UNKNOWN
   applied_to_revision: <exact revision or null>
   reconciliation_ref: <immutable reconciliation manifest ref or null>
 ~~~
