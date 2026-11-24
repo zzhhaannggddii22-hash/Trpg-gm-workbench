@@ -1,84 +1,94 @@
-# GM 能力长期培养项目
+# GM 能力培养与运行体系
 
-本目录只维护跨模组、跨规则系统可复用的 TRPG GM 专业能力：原则、方法、运行技能、叙事与角色模拟规范、评估框架及工作流程。系统规则、术语、机制摘要与系统专属研究统一归入仓库根目录 `Systems/` 中对应的已登记目录；战役事实归入 `Campaigns/`。
+本目录维护跨规则系统可复用的 GM 能力、运行编排、训练与评价。核心原则是：**GM 能力必须在真实场景中有机联动，最终以综合表现验收；专项文件只负责专业方法，不是彼此隔离的运行模块。**
 
-具体战役事实、人物卡、模组资料、Session 进度、Prep QA 与 Preflight 的执行记录，统一保存在对应 Campaign / Module / Session 目录。本目录不登记某个模组当前进行到哪一步，也不维护单次流程的状态。
+## 1. 首要入口
 
-## 权威原则
-- 本公开仓库是 TRPG 专业资料的唯一工作主仓库。
-- 规则以用户指定/提供的系统版本为准；模组事实以合法取得的原文为准。
-- 区分 SOURCE、TABLE CANON、GM ADAPTATION、GM INFERENCE 与 UNKNOWN。
-- 不把文档完善等同于能力提升；能力结论须由实际场景和复盘证据支持。
-- GM-only 资料与玩家可见信息严格隔离；向玩家输出时只提供角色可知且当前有用的信息。
+- [GM 能力架构](./00_GM_CAPABILITY_ARCHITECTURE.md)：全体系的权威结构、能力联动模型、综合优秀标准和文件职责。
+- [TRPG GM Skill](./SKILL.md)：运行入口和现场编排。新对话恢复、风险路由、人物/叙事联动、状态维护与 Session 收束。
+- [综合能力评估框架](./04_EVALUATION_FRAMEWORK.md)：硬门槛、综合体验维度、场景联动评价和整体优秀判定。
 
-## 系统边界与资源规划
+## 2. 专业能力规范
 
-- 本目录不指定当前使用哪套规则，也不维护系统候选优先级；当前桌面由 Campaign 的 SYSTEM_BINDING 锁定。
-- 各系统的正式状态、权威来源与专属资料入口见 [Systems/README.md](../Systems/README.md)。
-- 尚未采用的系统及长期研究方向见 [TRPG 规则体系长期研究候选池](../Research/SYSTEM_RESEARCH_ROADMAP.md)。
-- 引入新系统时，先建立独立规则权威来源、索引、专属 Skill 与系统 Preflight，再由 Campaign Manifest 绑定。未被当前桌面绑定的系统资料不得进入运行上下文。
+| 文件 | 职责 |
+|---|---|
+| [通用 GM 原则](./01_CORE_GM_PRINCIPLES.md) | 跨系统主持底线、玩家能动性、世界自主性、公平与纠错 |
+| [人物模拟 Skill](./CHARACTER_SIMULATION_SKILL.md) | 人物目标、知识、动机、关系、个人印记、行为与自主性 |
+| [叙事呈现 Skill](./NARRATIVE_PRESENTATION_SKILL.md) | 空间、环境、信息、对白/动作、场景焦距与节奏 |
+| [主持独立性与裁决纪律](./06_IMPARTIALITY_AND_ADJUDICATION_DISCIPLINE.md) | 公平裁定、反迎合与反刁难 |
+| [运行控制协议](./07_RUNTIME_CONTROL_PROTOCOL.md) | 风险路由、事实/权限、连续性、T0 与错误恢复 |
+| [线索与来源账本](./08_CLUE_AND_SOURCE_LEDGER.md) | 线索、公平获取路径、来源和知识边界 |
 
-## 系统隔离入口
+人物模拟与叙事呈现不是两个独立的现场阶段。人物决定行动，环境影响行动，玩家行动改变局势，叙事呈现把结果交给玩家；主 Skill 负责统一调度。
 
-- [多系统上下文隔离协议](../SYSTEM_CONTEXT_PROTOCOL.md)：系统绑定、加载顺序、切换和性能边界。
-- [系统目录](../Systems/README.md)：各系统的唯一资料入口。
+## 3. 备团、带团与连续性
 
-## 核心文件
-- [通用 GM 原则](./01_CORE_GM_PRINCIPLES.md)
-- [工作流程与 Preflight](./02_WORKFLOW_AND_PREFLIGHT.md)：流程定义、检查标准与执行要求。
-- [备团设计与二次审核](./12_PREP_DESIGN_AND_SECOND_PASS_REVIEW.md)
-- [高级模型 Prep QA 交接协议](./ADVANCED_MODEL_PREP_QA_PROTOCOL.md)
-- [备团—带团联动与运行效率](./13_PREP_TO_RUNTIME_HANDOFF_STANDARD.md)
-- [模组文件夹标准](./09_MODULE_FOLDER_STANDARD.md)
-- [主持独立性与裁决纪律](./06_IMPARTIALITY_AND_ADJUDICATION_DISCIPLINE.md)
-- [运行控制协议](./07_RUNTIME_CONTROL_PROTOCOL.md)
-- [运行状态快照模板](./RUNTIME_STATE_TEMPLATE.md)：当前状态、事件增量与场景续接锚点。
-- [线索与来源账本](./08_CLUE_AND_SOURCE_LEDGER.md)
+- [工作流程与 Preflight](./02_WORKFLOW_AND_PREFLIGHT.md)
 - [Session Log 模板](./03_SESSION_LOG_TEMPLATE.md)
-- [能力评估框架](./04_EVALUATION_FRAMEWORK.md)
-- [TRPG GM Skill](./SKILL.md)
-- [GM 可靠性与体验方向控制协议（T0）](./GM_RELIABILITY_AND_EXPERIENCE_CONTROL_PROTOCOL.md)：模组体验契约、NPC 真相/认知/玩家信息隔离、即兴准入、低成本方向检查、T0 熔断与 GM-only 审计。
-- [GM 系统质量验收提示词](./GM_SYSTEM_ACCEPTANCE_PROMPT.md)：交由高级模型对全套 GM 系统进行独立质量验收。
-- [角色模拟 Skill](./CHARACTER_SIMULATION_SKILL.md)
-- [叙事呈现 Skill](./NARRATIVE_PRESENTATION_SKILL.md)
-- [叙事与主持能力训练体系](./NARRATIVE_TRAINING_PROGRAM.md)：训练课程、小说技法迁移、Prep/Runtime 分工与 Skill 沉淀门槛。
-- [叙事训练题库](./NARRATIVE_TRAINING_QUESTION_BANK.md)：Casey 自主维护训练题，默认自主选题、训练后交用户审核。
-- [叙事训练记录](./Training_Logs/2026-11-24_NPC_DIALOGUE_AND_CONVERSATIONAL_FLOW.md)：NPC 对话压缩、玩家常规表达代述与 L1 人物塑造的首轮训练及用户反馈。
+- [系统/模组登记](./05_MODULE_AND_SYSTEM_REGISTER.md)
+- [模组文件夹标准](./09_MODULE_FOLDER_STANDARD.md)
+- [技能研究与适配](./10_SKILL_RESEARCH_AND_ADAPTATION.md)
+- [模组设计与即兴复盘模板](./11_MODULE_DESIGN_AND_IMPROVISATION_REVIEW_TEMPLATE.md)
+- [备团设计与第二轮审核](./12_PREP_DESIGN_AND_SECOND_PASS_REVIEW.md)
+- [备团到运行交接](./13_PREP_TO_RUNTIME_HANDOFF_STANDARD.md)
+- [高级模型 Prep QA 协议](./ADVANCED_MODEL_PREP_QA_PROTOCOL.md)
+- [运行状态模板](./RUNTIME_STATE_TEMPLATE.md)
+- [可靠性与体验方向控制协议](./GM_RELIABILITY_AND_EXPERIENCE_CONTROL_PROTOCOL.md)
+
+## 4. 训练、复盘与缺陷追踪
+
+- [综合训练体系](./NARRATIVE_TRAINING_PROGRAM.md)：综合诊断、专项修复、重新整合、跨场景迁移与实战验证。
+- [训练题库](./NARRATIVE_TRAINING_QUESTION_BANK.md)：专项题与综合题候选；题库不定义能力标准。
+- [开放训练问题清单](./Training_Logs/OPEN_TRAINING_BACKLOG.md)：尚未解决的问题及后续验证要求。
+- [2026-11-24 场景描绘与动态叙事综合训练记录](./Training_Logs/2026-11-24_SCENE_AND_DYNAMIC_NARRATIVE_INTEGRATED_TRAINING.md)：便利店、搬家夫妻、仓库交接、医院走廊、旧办公楼、人物兴趣与日常场景等完整训练沉淀。
+- [2026-11-24 NPC 对话与交流流畅度训练](./Training_Logs/2026-11-24_NPC_DIALOGUE_AND_CONVERSATIONAL_FLOW.md)
+- [人物塑造与互动研究](../Research/CHARACTER_AND_INTERACTION_TRAINING_2026-11-24.md)
+- [叙事工艺研究](../Research/NARRATIVE_CRAFT_RESEARCH_2026-11-23.md)
 - [专业能力迁移机制](../CAPABILITY_TRANSFER.md)
 
-## 能力迭代原则
-- 从实际运行与复盘中识别问题，区分备团设计、资料调用、现场执行、规则理解和模型推理等不同根因。
-- 只把有证据、可复用的改进沉淀为通用规范；单一模组的事实与流程留在模组目录。
-- 新增流程前评估其必要性、预期收益和维护成本，避免把偶发问题变成全局强制步骤。
-- 训练目标与能力结论由评估框架及具体复盘记录维护，不在本 README 或通用 Skill 中登记单次战役进度。
+训练成果只有经过重复验证，才能进入正式运行规范；文档更新不代表能力提升。新能力必须经过综合场景验证，确认没有造成旧能力退化。
 
-## 项目边界
-本目录维护 GM 专业方法，不重复存放战役人物卡、模组事实或当前运行状态。GM-only 资料不得进入玩家侧输出。高能力模型审查仅限获准的 GM-only 备团草稿，不自动获得玩家私密日志或其他无关档案。
+## 5. 多系统隔离
 
-## P0 第三轮结论与 P1 准备
+- [多系统上下文隔离协议](../SYSTEM_CONTEXT_PROTOCOL.md)
+- [系统目录](../Systems/README.md)
+- [规则研究路线图](../Research/SYSTEM_RESEARCH_ROADMAP.md)
 
-- [P0 第三轮报告处理记录与 P1 交接](./Acceptance_Reports/GM_RUNTIME_P0_THIRD_ROUND_REVIEW_AND_P1_HANDOFF.md)：记录 CONDITIONAL PASS、产品层证据缺口、残余风险和后续工作顺序。
-- [P1 性能与执行效率验证计划](./GM_RUNTIME_P1_PERFORMANCE_PLAN.md)：先建立目标 Chat 可靠性基线，再开展隔离台架性能测量；严格区分模型时延、工具 I/O 与人工计时。
-- [P1-0 目标 Chat 执行提示词](./GM_RUNTIME_P1_TARGET_CHAT_EXECUTION_PROMPT.md)：原始基线执行说明与历史记录。
-- [P1-0 最终分析与修复交接](./Acceptance_Reports/GM_RUNTIME_P1_0_REMEDIATION_AND_P1_0C_HANDOFF.md)：记录 4 FAIL、1 PARTIAL 的根因、规范修订和回归门槛。
-- [P1-0C 定向回归夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v1.md)：四项失败定向复测与 E13 正向回归。
-- [P1-0C 目标 Chat 执行提示词](./GM_RUNTIME_P1_0C_EXECUTION_PROMPT.md)：供空白目标 Chat 逐用例执行。
-- [P1-0C 独立审查提示词](./GM_RUNTIME_P1_0C_INDEPENDENT_REVIEW_PROMPT.md)：供高级模型只读审查修复方案与跨文件一致性。
-- [P1-0C 操作者隔离与证据清单协议](./GM_RUNTIME_P1_0C_OPERATOR_PROTOCOL.md)：仅供操作者使用，禁止上传目标 Chat。
-- [T0 自然语言盲测 v1｜目标 Chat 执行提示](./GM_T0_BLIND_EXECUTION_PROMPT_v1.md)：通用执行纪律，不含测试用例和预期答案。
-- [T0 自然语言盲测 v1｜操作者隔离协议](./GM_T0_BLIND_OPERATOR_PROTOCOL_v1.md)：八个独立空白 Chat 的执行时序、污染判定和证据清单。
-- [T0 自然语言盲测 v1｜32 轮操作者夹具](./Acceptance_Test_Fixtures/T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_OPERATOR.md)：仅供操作者评分，严禁上传目标 Chat。
-- [T0 自然语言盲测 v1｜准备审查与执行状态](./Acceptance_Reports/T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_PREPARATION_AND_EXECUTION_STATUS_2026-11-24.md)：记录准备成果、设计审查与当前 NOT MET 执行状态。
-- [P1-0C 定向回归夹具 v2](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v2.md)：补充 C1-C6 边界测试。
+通用 GM 能力不包含任何具体系统的规则机制。规则、术语、官方裁定与系统专属适配统一归入 Systems 对应系统目录；战役人物、CANON、模组和状态归入 Campaigns。
 
-## 运行可靠性 P0 验收
+## 6. 验收与可靠性测试
 
-- [P0 合成验收夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_FIXTURE_v1.md)：RT-01 至 RT-18 的基线隔离测试。
-- [P0 第二轮回归夹具 v2](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_REGRESSION_v2.md)：D01/D02/D16/D18 修复回归、RT-16 对抗矩阵与 PARTIAL 证据补测。
-- [P0 第三轮回归夹具 v3](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_REGRESSION_v3.md)：争议持久化与冷恢复、E13 风险摘要、E12 原始污染证据、字段级权限负例。
-- [第一轮独立执行提示词](./GM_RUNTIME_P0_INDEPENDENT_EXECUTION_PROMPT.md)：基线独立执行要求。
-- [第二轮独立复测提示词](./GM_RUNTIME_P0_SECOND_ROUND_EXECUTION_PROMPT.md)：要求独立模型复测 v1 全集与 v2 回归矩阵。
-- [第三轮独立复测提示词](./GM_RUNTIME_P0_THIRD_ROUND_EXECUTION_PROMPT.md)：只读规范与夹具，独立执行 v1+v2+v3，并要求真实持久化、独立冷读及字段级权限扫描。
-- [全系统质量验收提示词](./GM_SYSTEM_ACCEPTANCE_PROMPT.md)：用于更广泛的系统架构、规范引用、流程与风险审查；不替代 P0 行为执行测试。
+- [GM 系统质量验收提示词](./GM_SYSTEM_ACCEPTANCE_PROMPT.md)
+- [P0/P1 验收报告与测试夹具](./Acceptance_Reports/)
+- [验收测试夹具](./Acceptance_Test_Fixtures/)
 
-P0 测试必须在隔离临时状态空间执行。不得修改正式 Campaign、Module、Runtime State、Session Log、Player Notes 或战役 CANON。模拟通过不等于真实工具写入、跨会话冷恢复或产品级性能已通过。
+合成测试、盲测和真实跑团分别报告。未执行的测试必须标记 NOT STARTED / NOT TESTED；不得以文件已更新推断运行可靠性通过。
+
+## 7. 维护原则
+
+1. 不把具体系统机制写入通用 GM Skill。
+2. 不让训练样本变成正式 Campaign CANON。
+3. 不以模块分数平均值掩盖关键短板或硬失败。
+4. 专项训练后必须进行综合再整合。
+5. 不为了目录整齐而进行没有收益的大规模路径搬迁；优先保持现有稳定链接和权威入口。
+
+
+## 8. 运行可靠性与综合验收材料
+
+以下文件属于工程验收和测试执行资料，不代表测试已通过：
+
+- [GM 系统质量验收报告](./Acceptance_Reports/GM_SYSTEM_ACCEPTANCE_REPORT_2026-11-24.md)
+- [GM 系统优化方案](./Optimization_Reports/GM_SYSTEM_OPTIMIZATION_PLAN_2026-11-24.md)
+- [GM 系统实施记录](./Optimization_Reports/GM_SYSTEM_IMPLEMENTATION_RECORD_2026-11-24.md)
+- [P0 第三轮复核与 P1 交接](./Acceptance_Reports/GM_RUNTIME_P0_THIRD_ROUND_REVIEW_AND_P1_HANDOFF.md)
+- [P1-0 修复与 P1-0C 交接](./Acceptance_Reports/GM_RUNTIME_P1_0_REMEDIATION_AND_P1_0C_HANDOFF.md)
+- [P0 合成验收夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_FIXTURE_v1.md)
+- [P0 回归夹具 v2](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_REGRESSION_v2.md)
+- [P0 回归夹具 v3](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_REGRESSION_v3.md)
+- [P1-0C 定向回归夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v1.md)
+- [P1-0C 定向回归夹具 v2](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v2.md)
+- [T0 自然语言盲测执行状态](./Acceptance_Reports/T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_PREPARATION_AND_EXECUTION_STATUS_2026-11-24.md)
+- [T0 盲测目标 Chat 执行提示](./GM_T0_BLIND_EXECUTION_PROMPT_v1.md)
+- [T0 盲测操作者隔离协议](./GM_T0_BLIND_OPERATOR_PROTOCOL_v1.md)
+
+运行可靠性测试、叙事综合能力评估和真实跑团体验分别报告。合成测试通过不能证明实际跑团整体优秀；训练样本优秀也不能证明运行可靠性验收通过。
