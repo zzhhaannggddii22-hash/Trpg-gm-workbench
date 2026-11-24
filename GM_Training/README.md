@@ -38,6 +38,7 @@
 ## 4. 训练、复盘与缺陷追踪
 
 - [综合训练体系](./NARRATIVE_TRAINING_PROGRAM.md)：综合诊断、专项修复、重新整合、跨场景迁移与实战验证。
+- [微型箱庭实验室](./MICRO_SANDBOX_LAB/README.md)：可玩的短小开放场景，用于综合互动训练、稳定性观察和游戏体验验证。
 - [训练题库](./NARRATIVE_TRAINING_QUESTION_BANK.md)：专项题与综合题候选；题库不定义能力标准。
 - [开放训练问题清单](./Training_Logs/OPEN_TRAINING_BACKLOG.md)：尚未解决的问题及后续验证要求。
 - [2026-11-24 场景描绘与动态叙事综合训练记录](./Training_Logs/2026-11-24_SCENE_AND_DYNAMIC_NARRATIVE_INTEGRATED_TRAINING.md)：便利店、搬家夫妻、仓库交接、医院走廊、旧办公楼、人物兴趣与日常场景等完整训练沉淀。
@@ -60,7 +61,7 @@
 
 - [GM 系统质量验收提示词](./GM_SYSTEM_ACCEPTANCE_PROMPT.md)
 - [P0/P1 验收报告与测试夹具](./Acceptance_Reports/)
-- [验收测试夹具](./Acceptance_Test_Fixtures/)
+- [验收测试夹具与执行提示](./Acceptance_Test_Fixtures/README.md)：合成夹具、目标 Chat 执行提示与操作者协议。
 
 合成测试、盲测和真实跑团分别报告。未执行的测试必须标记 NOT STARTED / NOT TESTED；不得以文件已更新推断运行可靠性通过。
 
@@ -75,6 +76,9 @@
 
 ## 8. 运行可靠性与综合验收材料
 
+- [执行提示词与操作者协议](./Acceptance_Test_Fixtures/Execution_Prompts/README.md)：按目标 Chat 执行、独立审查和操作者隔离分类归档。
+- [P1 性能与执行效率验证计划](./Optimization_Reports/GM_RUNTIME_P1_PERFORMANCE_PLAN.md)：性能验证阶段门槛与测量方案。
+
 以下文件属于工程验收和测试执行资料，不代表测试已通过：
 
 - [GM 系统质量验收报告](./Acceptance_Reports/GM_SYSTEM_ACCEPTANCE_REPORT_2026-11-24.md)
@@ -88,7 +92,6 @@
 - [P1-0C 定向回归夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v1.md)
 - [P1-0C 定向回归夹具 v2](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v2.md)
 - [T0 自然语言盲测执行状态](./Acceptance_Reports/T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_PREPARATION_AND_EXECUTION_STATUS_2026-11-24.md)
-- [T0 盲测目标 Chat 执行提示](./GM_T0_BLIND_EXECUTION_PROMPT_v1.md)
-- [T0 盲测操作者隔离协议](./GM_T0_BLIND_OPERATOR_PROTOCOL_v1.md)
+- [验收执行提示词与操作者协议](./Acceptance_Test_Fixtures/Execution_Prompts/README.md)：P0/P1/T0 执行提示与操作者隔离资料。
 
 运行可靠性测试、叙事综合能力评估和真实跑团体验分别报告。合成测试通过不能证明实际跑团整体优秀；训练样本优秀也不能证明运行可靠性验收通过。

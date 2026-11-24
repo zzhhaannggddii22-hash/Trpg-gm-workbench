@@ -1,0 +1,12 @@
+# GM Runtime｜Acceptance Reports
+
+本目录保存已经完成的可靠性验收、独立复核、缺陷交接和盲测执行状态。报告应明确测试分支/commit、实际执行范围、证据等级、FAIL 与 NOT TESTABLE 项。
+
+## 当前报告
+
+- [GM 系统质量验收报告（2026-11-24）](./GM_SYSTEM_ACCEPTANCE_REPORT_2026-11-24.md)
+- [P0 第三轮复核与 P1 交接](./GM_RUNTIME_P0_THIRD_ROUND_REVIEW_AND_P1_HANDOFF.md)
+- [P1-0 修复与 P1-0C 交接](./GM_RUNTIME_P1_0_REMEDIATION_AND_P1_0C_HANDOFF.md)
+- [T0 自然语言盲测执行状态（2026-11-24）](./T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_PREPARATION_AND_EXECUTION_STATUS_2026-11-24.md)
+
+验收报告记录的是对应测试时点的结果，不自动代表当前 main 的最新状态。后续复测应新增报告，不覆盖历史结论。
