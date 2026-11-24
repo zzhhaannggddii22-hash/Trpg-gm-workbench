@@ -113,3 +113,18 @@
 - 是否存在尚未合并进 Runtime State 的事件增量：
 
 下一场恢复时以最新 Runtime State 为当前值权威，以本日志及其后的 Session Log 追溯变化。CONTINUE 从最后一个已确认叙事节点接续；不得重新演出已经呈现的开场、首次接触或已结束场景。
+
+## 2026-11-24 补充｜事件发布与认知来源字段
+
+对重要事件追加记录时，按需增加以下字段；普通闲谈不强制逐条记录：
+- event_id：稳定事件 ID；重试/修订沿用原 ID 并追加版本，不重复结算。
+- base_rev / checkpoint_rev：事件基于哪个已发布检查点。
+- occurred_at：游戏内时间；未知则 UNKNOWN，不推算绝对日期。
+- presentation_status：NOT_PRESENTED / PRESENTED / PARTIALLY_PRESENTED。
+- response_status：NOT_AWAITING_PLAYER / AWAITING_PLAYER / RESPONDED。
+- visibility：GM_ONLY / PLAYER_VISIBLE / RECIPIENT_SCOPED。
+- affected_entities：实际发生变化的对象与字段。
+- source_ref / claim_id：依据与关键命题 ID。
+- commit_status：DRAFT / PREPARED / PUBLISHED / INCOMPLETE。
+
+玩家已经看到/听到的内容即使尚未写入 Runtime，也必须在恢复时作为待合并事件保留。无法确认是否已呈现时，标记 DISPUTED 并核对，不得重演或擅自补完。

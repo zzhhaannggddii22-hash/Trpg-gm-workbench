@@ -1,15 +1,15 @@
 # 《俯冲》｜Runtime State（GM-only）
 
- > 当前状态：**有效 Session 01 已开始；当前暂停保存，等待跨对话 CONTINUE。** 2026-11-23 的第一次尝试仍为 NON-CANON；本文件后文第 9 节是当前权威运行状态，覆盖下方历史重置快照。
+ > 当前状态：**模组已结案（CLOSED）。** 第9节及此前内容均为历史运行快照；最新状态以第10节最终结案检查点为准。2026-11-23 首次尝试继续为 NON-CANON。
 
 ## 0. 场景续接锚点（2026-11-24 补充）
 
-- Resume Mode：**CONTINUE**。有效 Session 01 已从重置后的机构简报室重新开始；不得从作废尝试续接。
+- Resume Mode：**CLOSED / NO RESUME**。本模组已结案；此前 CONTINUE 仅为历史保存状态。
 - Current Scene ID：**CAFE-MEETING-END**（咖啡馆会面结束）。
-- Current Scene Status：**PAUSED / SAVED**。
+- Current Scene Status：**CLOSED**。
 - Entry Narration Delivered：**Yes**（机构简报室开场已在本轮有效 Session 發生）。
 - Last Confirmed Event ID：Daniel 已联系 Marcus，約次日下午 3 点在市中心“老地方”见面；Venice 已接受朋友式合作。
-- Pending Player Action：续接时先取得“老地方”酒吧准确名称/地址，再准备次日下午会面；不得重演已完成调查。
+- Pending Player Action：**NONE**。此前取得地址、准备会面均为未执行计划，结案后不再待办。
 - Previous Attempt：**NON-CANON**。此前 Cass 首访及其音频设备/客户/R&D 回收分支全部作废，不继承为角色经历、世界事件、物品、伤害、线索或 NPC 知识。
 - Player/Character Knowledge Boundary：玩家可能记得作废尝试中的内容；扎雷克与凯瑟琳在正式 CANON 中没有经历该分支，也不得据此行动或获得角色知识。
 
@@ -22,8 +22,8 @@
 
 ## 1. 模组进度
 
-- 状态：有效 Session 01 已运行至咖啡馆会面结束，当前暂停保存。
-- Session：01；Resume Mode CONTINUE。
+- 历史状态：有效 Session 01 曾运行至咖啡馆会面结束并暂停；当前已由第10节结案检查点关闭。
+- Session：01；当前状态 CLOSED（旧保存点当时曾为 CONTINUE）。
 - 游戏内绝对日期：UNKNOWN；相对时间为受害者调查、三晚 Nosedive、次日下午咖啡馆会面。
 - 当前地点/场景：咖啡馆会面自然结束；Daniel 是否已离开未确认。
 - 当前在场/相关人物：Zarek、Catherine、Venice、Daniel Morris。
@@ -141,3 +141,20 @@
 - NPC 自述：Daniel 对 Cass、Matthew、盒子、源头、Marcus、旧仓库的陈述；Erin 对哥哥行为、照片时间地点的陈述；Venice 对合作范围的承诺。
 - 转述：Daniel 对 Matthew 的理论，属于 Daniel 转述 Matthew，未经独立核验。
 - 推断：照片中的男子可能是 Marcus；多辆深色车是否相关；异常是否沿物品接触传播。以上都不能写成事实。
+
+## 10. 最终结案检查点（2026-11-24｜用户明确确认）
+
+> 本节为最新且唯一有效的最终状态。第9节及此前保存点保留为历史快照，不再作为当前活动状态或续团入口。
+
+- Module Status：**CLOSED / NARRATIVE RESOLVED**。
+- Session 01 Status：**CLOSED**；不再 CONTINUE，不再请求 Marcus 地址，不再推进此前计划中的会面。
+- Active Branch：CLOSED；历史有效 Session 01 的已呈现事件仍是 TABLE CANON。第一次作废尝试继续保持 NON-CANON。
+- Final Narrative Outcome：五名成员与扎雷克一方达成一致；另一名转变为异常的成员处于控制状态，未收容、未消灭。
+- Institutional Handoff：机构直接接手后续处理。具体接手过程、人员、方式、地点、处置结果和后续细节均 UNKNOWN；扎雷克与凯瑟琳均不知情。
+- Rewards：NONE。无嘉奖、无 Mission MVP、无职能轨迹成长、无 Time 奖励或其他奖励。
+- Penalties：NONE。无新增 Demerits、处分或负面评级。
+- Character state：本模组结案不改变扎雷克/凯瑟琳的 Harm、QA、装备、持有人、补给、能力或其他资源；保留最后一次实际跑团可核验的值，未知项继续 UNKNOWN。
+- Catherine/Zarek relationship：本模组期间关系有进展，记录为质性历史变化；不自动改变机械 Connection。
+- Memory boundary：二人共同记忆仅延续至最后一次实际跑团中实际发生/呈现的内容。其后机构接手及处理过程不属于二人记忆，也不属于玩家角色已知信息。
+- Pending player action：NONE。No further investigation / no open scene / no next scene.
+- Persistence：此节为追加的结案检查点；Session Log、Player Notes、Campaign Handoff 与人物档案需同步引用本检查点。不得删除或覆盖第9节历史记录。

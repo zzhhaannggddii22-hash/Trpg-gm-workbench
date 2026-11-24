@@ -95,3 +95,43 @@
 - 相关权威文件与定位：
 
 > 不要为了填满模板而编造字段。没有信息就留空或标记 UNKNOWN。普通绿色互动无需为每轮单独建立完整快照；状态变化时更新受影响字段即可。
+
+## 2026-11-24 补充｜系统锁、检查点与保存状态
+
+在现有状态头中按需补充以下字段；旧存档缺字段时必须标记为历史/未迁移，不得凭空补齐：
+
+~~~yaml
+active_system:
+  system_id: "<exact-system-id>"
+  ruleset_version: "<exact-version>"
+  campaign_id: "<campaign-id>"
+  module_id: "<module-id>"
+checkpoint:
+  revision: "<monotonic-revision>"
+  branch: "ACTIVE | CLOSED | NON-CANON | DISPUTED"
+  last_event_id: "<event-id>"
+  unapplied_event_ids: []
+resume:
+  mode: "NEW START | CONTINUE"
+  can_advance: true
+  scene_id: "<scene-id>"
+  entry_presented: true
+  last_presented_event_id: "<event-id>"
+  last_answered_event_id: "<event-id>"
+  pending_player_action: null
+persistence:
+  batch_id: "<batch-id>"
+  status: "PUBLISHED | PREPARED | INCOMPLETE | PENDING_EXTERNAL_WRITE"
+incident:
+  status: "CLEAR | T0 | DISPUTED | CONTAINED"
+  affected_scope: []
+  player_decision: null
+~~~
+
+### 保存与恢复规则
+- Runtime State 是当前值权威；Session Log 是事件历史；正式人物卡只在任务/Session 规定结点核验回写；Player Notes 是角色知识投影。
+- 已呈现但尚未合并的事件必须列入 unapplied_event_ids。恢复时先核对这些事件，不得用旧快照覆盖。
+- 多文件写入时先准备批次，按字段所有者应用，再读回核对，最后标记 PUBLISHED。任何环节失败均保留 INCOMPLETE，不声称保存完成。
+- 对同一 event_id 的重试必须幂等：先查是否已应用；不得重复扣资源、发奖励、转移物品或推进事件。
+- 旧记录缺少系统锁、版本或检查点时，标记 LEGACY_UNMIGRATED，并走完整 Preflight；不能用摘要推断。
+- 新对话必须验证系统、Campaign、Module、规则版本、活动分支、场景入口状态、最后已呈现/已回应事件、待回应行动、物品资源、知识权限和事故授权。

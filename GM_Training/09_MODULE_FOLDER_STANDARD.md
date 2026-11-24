@@ -154,3 +154,12 @@ CONTINUE 不得从模组开场重新生成叙述。先读取最新 Runtime State
 Session Log 记录事件历史；Runtime State 记录当前值。某项变化写入 Session Log 后，同步更新 Runtime State。若两者出现冲突，以最新可追溯事件和权威来源修复，不静默选择一个方便继续的值。
 
 新 Session 只有在真正开始一个新的正式场景/冒险时使用 NEW START。新对话、上下文重建或模型切换都不是 NEW START 的理由。
+
+## 2026-11-24｜模组关闭与只读归档状态
+
+模组生命周期状态至少区分 PREP / READY / ACTIVE / PAUSED / CLOSED / ARCHIVED。CLOSED 表示剧情与玩家层结算已由用户/规则确认完成；ARCHIVED 表示不再作为日常活动入口。关闭时追加最终检查点，不覆盖旧 Session、Runtime 或 Handoff 历史。
+- 模组 README 的首屏状态、Runtime 最新检查点、Campaign 索引和 Handoff 退役标记必须一致。
+- 未执行计划继续标为未执行，不因结案而补写成发生；未知后续保留 UNKNOWN。
+- 奖励、惩罚、资源和角色成长逐项按规则与实际事件结算；用户明确指定 NONE 时，不从模板默认流程补发。
+- 玩家角色可知内容与 GM-only 后续分开保存。机构接手、场外处置或时间跳跃不得自动进入角色记忆。
+- 结案记录只写入用户确认的结果、必要的系统结算和已知信息边界；不为了“补完整故事”虚构空白过程。

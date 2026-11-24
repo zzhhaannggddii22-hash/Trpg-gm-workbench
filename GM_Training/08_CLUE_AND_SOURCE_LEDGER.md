@@ -91,3 +91,31 @@
 ## 8. 验证标准
 
 成功运行时应观察到：不同来源可以自然确认同一事实；NPC 的知识范围与经历一致；同一来源可以在新问题/新事件下继续提供信息；重复信息简短、不冗长；没有为了填充探索而制造新线索；玩家能自行组合信息，GM 不替玩家总结唯一答案。
+
+## 9. 关键命题的证据根与认知传播（2026-11-24）
+
+本节只用于会影响调查方向、裁定、任务状态、玩家选择或长期 CANON 的重要命题，不要求为普通对话逐句建档。
+
+### 9.1 命题记录
+| 字段 | 用途 |
+|---|---|
+| claim_id | 稳定命题 ID；措辞修订不另造事实 |
+| proposition | 可被支持、反驳或保持未知的具体命题 |
+| nature | SOURCE / TABLE CANON / GM ADAPTATION / GM INFERENCE / UNKNOWN |
+| source_ref | 直接来源事件、原文定位或证据 ID |
+| root_claim_or_event | 独立证据根；转述/复制沿用原根 |
+| status | SUPPORTED / DISPUTED / UNVERIFIED / REFUTED / UNKNOWN |
+| scope | 适用 Campaign、Module、Session 与时间范围 |
+
+### 9.2 陈述与认知事件
+NPC 陈述独立记录 speaker、statement_event、recipient、knowledge_basis、disclosure_condition。PLAYER-KNOWN 记录玩家角色实际接收的事件、方式与可知限制；NPC KNOWLEDGE 记录该 NPC 实际亲历、观察、可靠/不可靠转述、推断、误解、隐瞒或谎言。GM 掌握的客观信息不自动成为 NPC 或玩家知识。
+
+### 9.3 独立证据与跨文件投影
+- 多人重复同一说法、同一证人转述、同源照片/文件或多个文件复制同一摘要，仍只有一个证据根；除非证明来源独立，否则不提升客观可信度。
+- 多个独立来源分别记录，不将独立证据压成一个模糊的已确认。
+- Runtime、Player Notes、NPC Ledger 和 Handoff 是各自权限范围内的投影，引用 claim/event ID，不自行创造新的证据根。
+- 后台更正不自动改写角色认知；角色是否获知更正，必须有实际披露事件。
+- 纠错采用追加更正事件，保留原说法、传播链、已呈现内容和受影响分支。
+
+### 9.4 最小化原则
+普通闲谈、无后续影响的细节和不改变认知的重复台词无需逐条编码。只有当信息可能影响行动、线索可信度、人物判断、任务目标或持续状态时才建立稳定 ID。
