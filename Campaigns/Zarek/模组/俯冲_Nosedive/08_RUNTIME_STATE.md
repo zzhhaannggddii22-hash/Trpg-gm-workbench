@@ -1,15 +1,15 @@
 # 《俯冲》｜Runtime State（GM-only）
 
- > 当前状态：**上一次 Session 01 尝试已作废；模组已重置，等待重新开始。** 本文件现为新的干净开场快照；作废尝试不构成战役 CANON。
+ > 当前状态：**有效 Session 01 已开始；当前暂停保存，等待跨对话 CONTINUE。** 2026-11-23 的第一次尝试仍为 NON-CANON；本文件后文第 9 节是当前权威运行状态，覆盖下方历史重置快照。
 
 ## 0. 场景续接锚点（2026-11-24 补充）
 
-- Resume Mode：**NEW START**。正式有效的 Session 01 尚未开始；这不是从作废尝试继续。
-- Current Scene ID：**ORG-BRIEFING-ROOM**（机构简报室）。
-- Current Scene Status：**NOT ENTERED**。本次有效开场尚未向玩家呈现。
-- Entry Narration Delivered：**No**。
-- Last Confirmed Event ID：**无（正式 Session 01 尚无有效事件）**。
-- Pending Player Action：等待玩家明确开始指令；开始后从机构简报室正式开场。
+- Resume Mode：**CONTINUE**。有效 Session 01 已从重置后的机构简报室重新开始；不得从作废尝试续接。
+- Current Scene ID：**CAFE-MEETING-END**（咖啡馆会面结束）。
+- Current Scene Status：**PAUSED / SAVED**。
+- Entry Narration Delivered：**Yes**（机构简报室开场已在本轮有效 Session 發生）。
+- Last Confirmed Event ID：Daniel 已联系 Marcus，約次日下午 3 点在市中心“老地方”见面；Venice 已接受朋友式合作。
+- Pending Player Action：续接时先取得“老地方”酒吧准确名称/地址，再准备次日下午会面；不得重演已完成调查。
 - Previous Attempt：**NON-CANON**。此前 Cass 首访及其音频设备/客户/R&D 回收分支全部作废，不继承为角色经历、世界事件、物品、伤害、线索或 NPC 知识。
 - Player/Character Knowledge Boundary：玩家可能记得作废尝试中的内容；扎雷克与凯瑟琳在正式 CANON 中没有经历该分支，也不得据此行动或获得角色知识。
 
@@ -22,13 +22,13 @@
 
 ## 1. 模组进度
 
-- 状态：已重置，等待重新开始。
-- Session：01（重新开场）。
-- 游戏内日期/时间：尚未建立；正式开场时由场景确立。
-- 当前地点/场景：尚未进入本次有效游戏；重启后从 Triangle Agency 机构简报室开始。
-- 当前在场人物：重启前尚未建立；预定开场为扎雷克、凯瑟琳及机构简报人员。
-- 玩家可知信息：本次有效 Session 尚未向玩家呈现任务简报。
-- 本模组 TABLE CANON：除任务开始前已存在的角色/战役状态外，本次《俯冲》尚无有效 Session 事件。此前作废尝试中的地点、NPC 表现、线索、机构行动与物品均不继承。
+- 状态：有效 Session 01 已运行至咖啡馆会面结束，当前暂停保存。
+- Session：01；Resume Mode CONTINUE。
+- 游戏内绝对日期：UNKNOWN；相对时间为受害者调查、三晚 Nosedive、次日下午咖啡馆会面。
+- 当前地点/场景：咖啡馆会面自然结束；Daniel 是否已离开未确认。
+- 当前在场/相关人物：Zarek、Catherine、Venice、Daniel Morris。
+- 玩家可知信息：详见 09_PLAYER_NOTES.md。
+- 本模组 TABLE CANON：详见 Sessions/SESSION_01.md；2026-11-23 作废尝试仍 NON-CANON，不继承。
 
 ## 2. 扎雷克 Session 01 开场状态（已从正式人物卡同步）
 
@@ -91,9 +91,9 @@
 
 ## 6. 本场事件日志索引
 
-- Session 01：重置后待开始；正式日志 `./Sessions/SESSION_01.md` 目前为空，作废尝试另见 `./Sessions/SESSION_01_ABORTED_2026-11-23.md`。
+- Session 01：有效日志 `./Sessions/SESSION_01.md`；当前保存点为咖啡馆会面结束。新对话提示词：`./Sessions/SESSION_01_HANDOFF_PROMPT.md`；作废尝试另见 `./Sessions/SESSION_01_ABORTED_2026-11-23.md`。
 
-## 7. 重启约束
+## 7. 历史重启约束（仅用于隔离作废尝试；当前已完成重启）
 - 本次重启前，禁止引用作废尝试中的公寓前台、工作室、音频设备、设备客户、R&D 回收、客户电话及其衍生信息。
 - 扎雷克没有因此次作废剧情获得新线索、物品、伤害、QA 变化、奖励或机构委托。
 - 凯瑟琳没有因此次作废剧情获得新线索、承诺或资源变化。
