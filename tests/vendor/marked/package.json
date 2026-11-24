@@ -1,0 +1,7 @@
+{
+  "name": "marked",
+  "version": "4.0.19",
+  "description": "Pinned vendored Markdown parser for repository link tests",
+  "license": "MIT",
+  "main": "marked.js"
+}

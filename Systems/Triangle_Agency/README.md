@@ -6,10 +6,16 @@
 
 本目录是《三角机构》全部**系统级**规则知识的唯一入口。战役人物、CANON、NPC 与模组过程记录仍保存在 `Campaigns/Zarek/`，并通过其 SYSTEM_BINDING 绑定本系统。
 
+```yaml
+system_id: triangle_agency
+ruleset_versions: ["中文 v22"]
+status: active
+```
+
 ## 权威规则来源
 
 - [中文 v22 主规则书 PDF](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/main/最终交付_v22/triangle_agency_zh.pdf)
-- [中文 v22 主规则书 Markdown](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/main/最终交付_v22/triangle_agency_zh.md)
+- [中文 v22 主规则书 Markdown](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1/最终交付_v22/triangle_agency_zh.md)
 - [上游 v22 交付目录](https://github.com/p33333333333333l/triangle-agency-ai-zh/tree/main/最终交付_v22)
 
 规则摘要、索引与速查用于定位和恢复知识，不替代完整原文。具体裁定必须回查当前 Campaign 指定版本的相关原文、页码和适用条件。

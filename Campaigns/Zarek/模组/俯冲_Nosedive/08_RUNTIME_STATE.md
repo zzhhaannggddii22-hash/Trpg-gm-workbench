@@ -2,7 +2,9 @@
 
  > 当前状态：**模组已结案（CLOSED）。** 第9节及此前内容均为历史运行快照；最新状态以第10节最终结案检查点为准。2026-11-23 首次尝试继续为 NON-CANON。
 
-## 0. 场景续接锚点（2026-11-24 补充）
+## 0. 历史场景续接锚点（已退役，仅供追溯）
+
+> 本节保留旧运行时的指令，只供追溯。当前恢复许可见 §10。
 
 - Resume Mode：**CLOSED / NO RESUME**。本模组已结案；此前 CONTINUE 仅为历史保存状态。
 - Current Scene ID：**CAFE-MEETING-END**（咖啡馆会面结束）。
@@ -13,11 +15,13 @@
 - Previous Attempt：**NON-CANON**。此前 Cass 首访及其音频设备/客户/R&D 回收分支全部作废，不继承为角色经历、世界事件、物品、伤害、线索或 NPC 知识。
 - Player/Character Knowledge Boundary：玩家可能记得作废尝试中的内容；扎雷克与凯瑟琳在正式 CANON 中没有经历该分支，也不得据此行动或获得角色知识。
 
-启动后的更新要求：
-1. 机构简报室入口第一次实际呈现后，将场景状态改为 ENTERED / ACTIVE，并记录最后已呈现叙事节点。
-2. 后续同一 Session 内或跨对话恢复一律使用 CONTINUE，从最后确认节点接续，不重演机构简报室入口。
-3. 只有玩家明确要求重播/回顾时才重新呈现旧内容；回顾不能被记为新的 CANON 事件。
-4. 若正式开场前发现状态文件、Session Log 或 Preflight 互相冲突，先修复状态，不开始叙事。
+> **历史流程说明：** 以下条目记录旧运行阶段的流程设计，已被本文件 §10 的 CLOSED 检查点取代，不构成当前启动、续团或推进指令。任何未来新运行均须遵循通用 Runtime 协议 §14.4-B，建立新的 run/session identity。
+
+### 历史启动流程（已被结案状态取代）
+1. 旧流程曾要求机构简报室入口第一次实际呈现后，将场景状态记录为 ENTERED / ACTIVE，并记录最后已呈现叙事节点。
+2. 旧流程曾要求同一 Session 内或跨对话恢复使用 CONTINUE，从最后确认节点接续；该要求现已失效。
+3. 旧流程允许玩家明确要求重播/回顾旧内容；回顾不能被记为新的 CANON 事件。
+4. 旧流程要求正式开场前发现状态文件、Session Log 或 Preflight 冲突时先修复状态，不开始叙事。
 
 
 ## 1. 模组进度
@@ -112,7 +116,7 @@
 
 ## 9. 有效 Session 01 运行状态（2026-11-24 保存点）
 
-> 本节覆盖文件顶部旧的“重置待开场”状态。旧重置说明保留作历史审计；当前正式 CANON 是重置后重新开始并运行至本节保存点的这一轮。
+> 本节为当时的有效保存点，保留当时的事件和续接指令，仅供追溯。当前运行状态和恢复许可见 §10。
 
 - 当前状态：**ACTIVE / PAUSED FOR CROSS-SESSION SAVE**。Session 01 已有效开始，现暂停在咖啡馆会面结束后。
 - Resume Mode：**CONTINUE**，不是 NEW START。不得重演机构简报室、三名受害者首次调查、前三晚派对或咖啡馆会面。
@@ -143,6 +147,22 @@
 - 推断：照片中的男子可能是 Marcus；多辆深色车是否相关；异常是否沿物品接触传播。以上都不能写成事实。
 
 ## 10. 最终结案检查点（2026-11-24｜用户明确确认）
+
+```yaml
+active_system:
+  system_id: triangle_agency
+  ruleset_version: "中文 v22"
+  campaign_id: zarek
+  module_id: nosedive
+session_id: SESSION_01
+checkpoint:
+  checkpoint_id: zarek/nosedive/SESSION_01/closure-2026-11-24
+  revision: UNKNOWN
+  branch: CLOSED
+resume:
+  mode: CLOSED
+  can_advance: false
+```
 
 > 本节为最新且唯一有效的最终状态。第9节及此前保存点保留为历史快照，不再作为当前活动状态或续团入口。
 

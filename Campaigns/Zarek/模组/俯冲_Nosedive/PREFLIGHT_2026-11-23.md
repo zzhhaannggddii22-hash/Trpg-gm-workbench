@@ -2,7 +2,7 @@
 
 > GM-only 运行记录；本文件只记录开团准备状态，不向玩家复述隐藏剧情或后台主持资料。
 > 执行日期：2026-11-23（UTC+8）。
-> 状态：**本记录保留首次 Preflight 当时的核对结果；其后首次 Session 01 尝试已整体作废，当前为修复后的重新开团待命状态。**
+> 状态：**历史 Preflight 记录。** 本文件保留当时修复后的重新开团待命状态；其后用户于 2026-11-24 确认本模组结案，当前唯一权威状态见 [Runtime State](./08_RUNTIME_STATE.md) §10（CLOSED）。本记录不构成开团、续团或推进许可。
 
 ## 1. 阶段状态
 
@@ -14,7 +14,7 @@
 
 ## 2. 权威资料入口
 
-- 系统：Triangle Agency 中文 v22。日常检阅从 [系统规则工作区](../../../../GM_Training/Systems/Triangle_Agency/Rule_Reference/README.md) 开始。
+- 系统：Triangle Agency 中文 v22。日常检阅从 [系统规则工作区](../../../../Systems/Triangle_Agency/Rule_Reference/README.md) 开始（现行迁移入口）。
 - 原始规则 PDF：[triangle_agency_zh.pdf](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/main/最终交付_v22/triangle_agency_zh.pdf)；完整中文文本：[triangle_agency_zh.md](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/main/最终交付_v22/triangle_agency_zh.md)。
 - 历史 ZIP 仅为留存，不作为每次 Preflight 的常规读取入口。
 - 模组来源：《The Vault》中文 v22 母稿及官方模组资料；模组工作文件位于本目录。

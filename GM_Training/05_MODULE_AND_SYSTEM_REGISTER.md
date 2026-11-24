@@ -5,7 +5,7 @@
 ## 系统登记
 
 - 系统清单与唯一资料入口见仓库根目录 [Systems/README.md](../Systems/README.md)。
-- 每套正式引入的规则系统必须拥有独立的 `Systems/<system_id>/README.md`，记录名称、版本、规则权威来源、状态、索引和专属 Skill。
+- 每套正式引入的规则系统必须拥有独立的 已登记的系统入口 README，记录名称、版本、规则权威来源、状态、索引和专属 Skill。
 - 候选系统与比较研究见 [Research/SYSTEM_RESEARCH_ROADMAP.md](../Research/SYSTEM_RESEARCH_ROADMAP.md)。候选不代表已学习完成、已采用或已可开团。
 - 当前桌面使用哪个系统，以对应 Campaign 的 `SYSTEM_BINDING.md` 为唯一入口；不得以本文件或仓库历史默认值推断。
 

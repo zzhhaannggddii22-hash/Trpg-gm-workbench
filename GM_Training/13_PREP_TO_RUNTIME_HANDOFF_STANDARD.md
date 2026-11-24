@@ -269,3 +269,4 @@ Handoff 是恢复入口，不是独立权威状态，不得凌驾于 Campaign Bi
 - 若 Handoff 与 Runtime/Log 冲突，停止相关推进，按事件历史和字段所有者核验；不得按提示词文本的日期或最近编辑时间自动选值。
 - 活动存档缺少上述字段时标记 LEGACY_UNMIGRATED，走完整 Preflight；不允许快路径默认补齐。
 - 已结案模组的 Handoff 必须明确标记 RETIRED / CLOSED，不再作为 CONTINUE 指令。
+- 交接发现 T0 时统一进入 [Runtime §14.1](./07_RUNTIME_CONTROL_PROTOCOL.md#141-唯一事故处置路径)。恢复许可须依 Runtime §14.4-B 从当前权威检查点取得。

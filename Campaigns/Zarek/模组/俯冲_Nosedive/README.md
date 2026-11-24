@@ -1,6 +1,6 @@
 # 《俯冲》（Nosedive）｜模组档案
 
-> 状态：**CLOSED / NARRATIVE RESOLVED / NO REWARDS / NO PENALTIES。** 2026-11-24 用户确认结案；历史运行过程见 Sessions/SESSION_01.md，最终状态见 08_RUNTIME_STATE.md 第10节。旧 Handoff 不再是续团指令。
+> 状态：**CLOSED / NARRATIVE RESOLVED / NO REWARDS / NO PENALTIES。** 2026-11-24 用户确认结案；历史运行过程见 Sessions/SESSION_01.md，最终状态见 [Runtime State 最终结案检查点](./08_RUNTIME_STATE.md) §10。旧 Handoff 不再是续团指令。
 > 系统：Triangle Agency 中文 v22。规则唯一权威为用户指定的中文 v22。
 > 信息等级：本目录除明确标注玩家侧的文件外，均为 GM-only。
 
@@ -13,8 +13,8 @@
 - [05_SOLO_ADAPTATION_AND_SESSION_PLAN.md](./05_SOLO_ADAPTATION_AND_SESSION_PLAN.md)：单人桌适配边界、多 Session 节奏与叙事执行。
 - [06_RUNTIME_QUICK_REFERENCE.md](./06_RUNTIME_QUICK_REFERENCE.md)：现场运行入口与关键索引。
 - [07_SOURCE_AND_RULE_CROSSCHECK.md](./07_SOURCE_AND_RULE_CROSSCHECK.md)：来源、版本、规则核验与资料缺口。
-- [08_RUNTIME_STATE.md](./08_RUNTIME_STATE.md)：本模组唯一有效的当前运行状态；开团前从正式人物卡同步。
-- [PREFLIGHT_2026-11-23.md](./PREFLIGHT_2026-11-23.md)：首次 Preflight 记录；玩家确认项已完成，等待明确开团指令。
+- [08_RUNTIME_STATE.md](./08_RUNTIME_STATE.md)：本模组当前状态的唯一权威；当前为 CLOSED。未来新运行须先按通用协议建立新的 run/session identity，再核对角色状态。
+- [PREFLIGHT_2026-11-23.md](./PREFLIGHT_2026-11-23.md)：首次 Preflight 历史记录；当时的玩家确认项已完成。当前模组为 CLOSED，该记录仅供追溯，不构成开团、续团或推进许可。
 - [09_PLAYER_NOTES.md](./09_PLAYER_NOTES.md)：玩家角色已知信息；目前为空。
 - [10_COMMUNITY_AND_PLAYFLOW_RESEARCH.md](./10_COMMUNITY_AND_PLAYFLOW_RESEARCH.md)：官方任务流程、社区主持经验、实际游玩反馈及其对本桌的可执行建议。
 - [11_NARRATIVE_PRESENTATION_MATERIALS.md](./11_NARRATIVE_PRESENTATION_MATERIALS.md)：场景感官锚点、异常呈现、动作节拍与对话演出建议。

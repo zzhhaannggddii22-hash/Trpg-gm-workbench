@@ -205,7 +205,7 @@ A 阶段的晋级重点不是追求独特文风，而是：不同场景下的事
 
 - 《GM_Training/SKILL.md》：主持运行总控入口。
 - 《GM_Training/NARRATIVE_PRESENTATION_SKILL.md》：叙事现场执行。
-- 《GM_Training/NARRATIVE_TRAINING_QUESTION_BANK.md》：由 Casey 自主维护、每次开练前交用户审题的训练题库。
+- 《GM_Training/NARRATIVE_TRAINING_QUESTION_BANK.md》：由 Casey 自主维护的训练题库。选题和审核依本文件「训练选题与复盘审核」。
 - 《GM_Training/CHARACTER_SIMULATION_SKILL.md》：人物与 NPC 模拟。
 - 《GM_Training/07_RUNTIME_CONTROL_PROTOCOL.md》：状态、连续性与错误恢复。
 - 《GM_Training/13_PREP_TO_RUNTIME_HANDOFF_STANDARD.md》：备团与运行交接。
