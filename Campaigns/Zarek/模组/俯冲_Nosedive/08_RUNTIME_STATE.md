@@ -141,3 +141,20 @@
 - NPC 自述：Daniel 对 Cass、Matthew、盒子、源头、Marcus、旧仓库的陈述；Erin 对哥哥行为、照片时间地点的陈述；Venice 对合作范围的承诺。
 - 转述：Daniel 对 Matthew 的理论，属于 Daniel 转述 Matthew，未经独立核验。
 - 推断：照片中的男子可能是 Marcus；多辆深色车是否相关；异常是否沿物品接触传播。以上都不能写成事实。
+
+## 10. 最终结案检查点（2026-11-24｜用户明确确认）
+
+> 本节为最新且唯一有效的最终状态。第9节及此前保存点保留为历史快照，不再作为当前活动状态或续团入口。
+
+- Module Status：**CLOSED / NARRATIVE RESOLVED**。
+- Session 01 Status：**CLOSED**；不再 CONTINUE，不再请求 Marcus 地址，不再推进此前计划中的会面。
+- Active Branch：CLOSED；历史有效 Session 01 的已呈现事件仍是 TABLE CANON。第一次作废尝试继续保持 NON-CANON。
+- Final Narrative Outcome：五名成员与扎雷克一方达成一致；另一名转变为异常的成员处于控制状态，未收容、未消灭。
+- Institutional Handoff：机构直接接手后续处理。具体接手过程、人员、方式、地点、处置结果和后续细节均 UNKNOWN；扎雷克与凯瑟琳均不知情。
+- Rewards：NONE。无嘉奖、无 Mission MVP、无职能轨迹成长、无 Time 奖励或其他奖励。
+- Penalties：NONE。无新增 Demerits、处分或负面评级。
+- Character state：本模组结案不改变扎雷克/凯瑟琳的 Harm、QA、装备、持有人、补给、能力或其他资源；保留最后一次实际跑团可核验的值，未知项继续 UNKNOWN。
+- Catherine/Zarek relationship：本模组期间关系有进展，记录为质性历史变化；不自动改变机械 Connection。
+- Memory boundary：二人共同记忆仅延续至最后一次实际跑团中实际发生/呈现的内容。其后机构接手及处理过程不属于二人记忆，也不属于玩家角色已知信息。
+- Pending player action：NONE。No further investigation / no open scene / no next scene.
+- Persistence：此节为追加的结案检查点；Session Log、Player Notes、Campaign Handoff 与人物档案需同步引用本检查点。不得删除或覆盖第9节历史记录。
