@@ -65,6 +65,10 @@
 - [P1-0C 目标 Chat 执行提示词](./GM_RUNTIME_P1_0C_EXECUTION_PROMPT.md)：供空白目标 Chat 逐用例执行。
 - [P1-0C 独立审查提示词](./GM_RUNTIME_P1_0C_INDEPENDENT_REVIEW_PROMPT.md)：供高级模型只读审查修复方案与跨文件一致性。
 - [P1-0C 操作者隔离与证据清单协议](./GM_RUNTIME_P1_0C_OPERATOR_PROTOCOL.md)：仅供操作者使用，禁止上传目标 Chat。
+- [T0 自然语言盲测 v1｜目标 Chat 执行提示](./GM_T0_BLIND_EXECUTION_PROMPT_v1.md)：通用执行纪律，不含测试用例和预期答案。
+- [T0 自然语言盲测 v1｜操作者隔离协议](./GM_T0_BLIND_OPERATOR_PROTOCOL_v1.md)：八个独立空白 Chat 的执行时序、污染判定和证据清单。
+- [T0 自然语言盲测 v1｜32 轮操作者夹具](./Acceptance_Test_Fixtures/T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_OPERATOR.md)：仅供操作者评分，严禁上传目标 Chat。
+- [T0 自然语言盲测 v1｜准备审查与执行状态](./Acceptance_Reports/T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_PREPARATION_AND_EXECUTION_STATUS_2026-11-24.md)：记录准备成果、设计审查与当前 NOT MET 执行状态。
 - [P1-0C 定向回归夹具 v2](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v2.md)：补充 C1-C6 边界测试。
 
 ## 运行可靠性 P0 验收
