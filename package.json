@@ -1,0 +1,9 @@
+{
+  "name": "triangle-agency-gm-workbench-tests",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Reproducible test dependencies for the TRPG GM Workbench",
+  "devDependencies": {
+    "marked": "file:tests/vendor/marked"
+  }
+}

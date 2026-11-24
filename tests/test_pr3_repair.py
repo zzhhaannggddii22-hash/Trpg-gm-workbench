@@ -97,6 +97,15 @@ class RepositoryChecks(unittest.TestCase):
         handoff = metadata(read(ND + "Sessions/SESSION_01_HANDOFF_PROMPT.md"))
         self.assertEqual(handoff["handoff_status"], "RETIRED")
         self.assertEqual(handoff["checkpoint_id"], close["checkpoint"]["checkpoint_id"])
+        self.assertNotIn("一律使用 CONTINUE", raw.split("## 0.")[1].split("## 1.")[0])
+        self.assertIn("已被本文件 §10 的 CLOSED 检查点取代", raw)
+        readme = read(ND + "README.md")
+        preflight_line = next(line for line in readme.splitlines() if "PREFLIGHT_2026-11-23.md" in line)
+        self.assertIn("仅供追溯", preflight_line)
+        self.assertNotIn("等待明确开团指令", preflight_line)
+        preflight = read(ND + "PREFLIGHT_2026-11-23.md")
+        self.assertIn("历史 Preflight 记录", preflight)
+        self.assertIn("不构成开团、续团或推进许可", preflight)
         self.assertEqual(resume(metadata(historic), close["active_system"]), "HOLD")
         self.assertEqual(resume(handoff, close["active_system"]), "HOLD")
         self.assertEqual(resume({"mode": "CONTINUE"}, close["active_system"]), "HOLD")
@@ -206,7 +215,24 @@ class ReferenceExercises(unittest.TestCase):
                         self.assertEqual(len(observed["choices_offered"]), 3)
                         self.assertEqual(observed["allowed_threads"],
                                          ["safe"] if expected == "CONTAINED" else [])
-        print("\nT0 reference: 24 routes; original history, choice and cost preserved", flush=True)
+        remedy = {**base, "remedy_id": "restore-source-claim", "declined_remedies": [],
+                  "proposed_remedies": [{"remedy_id": "restore-source-claim",
+                                         "description": "恢复原始来源声明"},
+                                        {"remedy_id": "independent-audit",
+                                         "description": "独立核验不受影响的旁支"}]}
+        rejected = route_incident(remedy, "REJECT_REMEDY")
+        self.assertEqual(rejected["declined_remedies"], ["restore-source-claim"])
+        self.assertEqual([item["remedy_id"] for item in rejected["available_remedies"]],
+                         ["independent-audit"])
+        reworded = {**remedy, "remedy_id": "restore-source-claim",
+                    "declined_remedies": rejected["declined_remedies"],
+                    "proposed_remedies": [{"remedy_id": "restore-source-claim",
+                                           "description": "重新整理并补回来源声明"}]}
+        retried = route_incident(reworded, "PAUSE_AUDIT")
+        self.assertEqual(retried["declined_remedies"], ["restore-source-claim"])
+        self.assertEqual(retried["available_remedies"], [])
+        self.assertEqual(retried["history"], history)
+        print("\nT0 reference: 24 routes + declined-remedy rewording negative; history preserved", flush=True)
 
     def test_RT11_process_faults(self):
         event = {"event_id": "RWD-1", "event_revision_id": "RWD-1-v1", "batch_id": "B1",

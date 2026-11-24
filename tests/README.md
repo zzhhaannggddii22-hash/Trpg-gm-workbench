@@ -1,8 +1,9 @@
 # PR #3 修复回归
 
-在仓库根目录运行以下命令。依赖 Python 3.12、PyYAML、Node.js 和 Node 可解析的 `marked`。在提交或暂存所有待核 Markdown 后运行，链接扫描以 Git 索引的文件集合为准。
+在仓库根目录运行以下命令。依赖 Python 3.12、PyYAML、Node.js 与 npm。Markdown 解析器 `marked` 固定为仓库内随附的 4.0.19（MIT License），通过 `package.json` 的本地 file dependency 和 `package-lock.json` 锁定；无需访问 npm registry。首次安装或依赖变更后执行 `npm ci --ignore-scripts --offline`。在提交或暂存所有待核 Markdown 后运行，链接扫描以 Git 索引的文件集合为准。
 
 ```sh
+npm ci --ignore-scripts --offline
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
 git diff --check 6c6109202d92d7bbacd638d5aa37d00418262d2b..HEAD
 ```

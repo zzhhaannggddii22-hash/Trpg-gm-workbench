@@ -110,14 +110,22 @@ class Batch:
 
 
 def route_incident(record, choice):
-    """Reference policy driven by delivery evidence, including unresolved receipts."""
+    """Reference policy; declined remedies remain closed across reworded proposals."""
     private = record["delivery"] in ("INTERNAL_DRAFT", "STAGED_PRIVATE")
     if private and record.get("isolated") and not any(record[k] for k in ("accessed", "executed", "depended")):
         return {"phase": "DRAFT_DISCARDED", "history": record["history"]}
+    declined = list(record.get("declined_remedies", []))
+    remedy_id = record.get("remedy_id")
+    if choice == "REJECT_REMEDY" and remedy_id and remedy_id not in declined:
+        declined.append(remedy_id)
+    proposed = list(record.get("proposed_remedies", []))
+    available = [item for item in proposed if item.get("remedy_id") not in declined]
     status = {"CONTINUE_SAFE_SCOPE": "CONTAINED", "PAUSE_AUDIT": "OPEN",
               "TERMINATE": "TERMINATED"}.get(choice, "OPEN")
     return {"phase": status, "history": record["history"], "affected_advances": 0,
-            "player_choice": choice, "allowed_threads": ["safe"] if status == "CONTAINED" else [],
+            "player_choice": choice, "declined_remedies": declined,
+            "available_remedies": available,
+            "allowed_threads": ["safe"] if status == "CONTAINED" else [],
             "notice": "此前的调查依据待核，沿该线继续可能影响后续判断。",
             "choices_offered": ["CONTINUE_SAFE_SCOPE", "PAUSE_AUDIT", "TERMINATE"]}
 
