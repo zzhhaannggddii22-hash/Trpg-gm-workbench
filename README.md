@@ -1,4 +1,4 @@
-# Triangle Agency GM Workbench
+# Multi-System TRPG GM Workbench
 
 独立的 TRPG GM 专业工作台：规则研究、备团、运行、复盘、训练与能力迭代。
 
