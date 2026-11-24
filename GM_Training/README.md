@@ -55,6 +55,11 @@
 ## 项目边界
 本目录维护 GM 专业方法，不重复存放战役人物卡、模组事实或当前运行状态。GM-only 资料不得进入玩家侧输出。高能力模型审查仅限获准的 GM-only 备团草稿，不自动获得玩家私密日志或其他无关档案。
 
+## P0 第三轮结论与 P1 准备
+
+- [P0 第三轮报告处理记录与 P1 交接](./Acceptance_Reports/GM_RUNTIME_P0_THIRD_ROUND_REVIEW_AND_P1_HANDOFF.md)：记录 CONDITIONAL PASS、产品层证据缺口、残余风险和后续工作顺序。
+- [P1 性能与执行效率验证计划](./GM_RUNTIME_P1_PERFORMANCE_PLAN.md)：先建立目标 Chat 可靠性基线，再开展隔离台架性能测量；严格区分模型时延、工具 I/O 与人工计时。
+
 ## 运行可靠性 P0 验收
 
 - [P0 合成验收夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_FIXTURE_v1.md)：RT-01 至 RT-18 的基线隔离测试。
