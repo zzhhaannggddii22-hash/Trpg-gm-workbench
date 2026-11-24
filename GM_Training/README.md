@@ -38,6 +38,7 @@
 ## 4. 训练、复盘与缺陷追踪
 
 - [综合训练体系](./NARRATIVE_TRAINING_PROGRAM.md)：综合诊断、专项修复、重新整合、跨场景迁移与实战验证。
+- [微型箱庭实验室](./MICRO_SANDBOX_LAB/README.md)：可玩的短小开放场景，用于综合互动训练、稳定性观察和游戏体验验证。
 - [训练题库](./NARRATIVE_TRAINING_QUESTION_BANK.md)：专项题与综合题候选；题库不定义能力标准。
 - [开放训练问题清单](./Training_Logs/OPEN_TRAINING_BACKLOG.md)：尚未解决的问题及后续验证要求。
 - [2026-11-24 场景描绘与动态叙事综合训练记录](./Training_Logs/2026-11-24_SCENE_AND_DYNAMIC_NARRATIVE_INTEGRATED_TRAINING.md)：便利店、搬家夫妻、仓库交接、医院走廊、旧办公楼、人物兴趣与日常场景等完整训练沉淀。
