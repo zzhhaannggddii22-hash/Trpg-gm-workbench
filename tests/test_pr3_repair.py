@@ -293,6 +293,7 @@ class ReferenceExercises(unittest.TestCase):
                                        "proposed_remedies": [alias_laundered],
                                        "player_permission": "ASKED"}, "PAUSE_AUDIT")
         self.assertEqual(alias_result["available_remedies"], [])
+        self.assertEqual(alias_result["clarification_required"], [])
 
         # Same broad goal and target, but a genuinely different investigative method is not the refused action.
         alternate_investigation = {
@@ -326,6 +327,8 @@ class ReferenceExercises(unittest.TestCase):
                                          "proposed_remedies": [unclear],
                                          "player_permission": "ASKED"}, "PAUSE_AUDIT")
         self.assertEqual(unclear_result["available_remedies"], [])
+        self.assertEqual([item["remedy_id"] for item in unclear_result["clarification_required"]],
+                         ["unclear-route"])
 
         # A genuinely distinct proposal is still withheld until the player asks/authorizes.
         no_permission = route_incident({**base, "declined_remedies": rejected["declined_remedies"],
