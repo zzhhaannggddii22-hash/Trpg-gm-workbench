@@ -269,3 +269,12 @@ Preflight 应在首次正式开场前建立本 Session 的初始 Runtime State�
 - 运行状态只维护当前值与变化依据，完整历史留在 Session Log / Event Log。
 - 素材必须能在现场快速定位；若现场无法找到或无法判断是否适用，应改进索引，而不是继续堆叠描述。
 
+## 2026-11-24｜Handoff 与运行检查点一致性补充
+
+Handoff 是恢复入口，不是独立权威状态，不得凌驾于 Campaign Binding、Runtime State、Session Log、角色卡或模组原文。
+- 必须声明 system_id、ruleset_version、campaign_id、module_id、活动分支、Runtime 修订/检查点、Resume Mode。
+- 必须列出最后已呈现事件、最后已回应事件、待回应玩家行动、未合并 event_id、保存发布状态、当前事故状态及玩家授权范围。
+- 对每项关键状态引用权威文件/字段，不复制另一套可独立编辑的“当前值”。
+- 若 Handoff 与 Runtime/Log 冲突，停止相关推进，按事件历史和字段所有者核验；不得按提示词文本的日期或最近编辑时间自动选值。
+- 活动存档缺少上述字段时标记 LEGACY_UNMIGRATED，走完整 Preflight；不允许快路径默认补齐。
+- 已结案模组的 Handoff 必须明确标记 RETIRED / CLOSED，不再作为 CONTINUE 指令。
