@@ -109,21 +109,77 @@ class Batch:
         return {**self.inspect(), "writes": writes}
 
 
+def _canonical_ref(value):
+    """Canonicalize stable identifiers, never free-form natural-language descriptions."""
+    if not isinstance(value, str) or not value.strip():
+        return None
+    return " ".join(value.split()).casefold()
+
+
+def _remedy_identity(remedy):
+    """Return the complete semantic identity; incomplete proposals fail closed."""
+    if not isinstance(remedy, dict):
+        return None
+    fields = ("action_kind", "operation_ref", "target_ref", "scope_ref")
+    values = tuple(_canonical_ref(remedy.get(field)) for field in fields)
+    atoms = remedy.get("action_atoms")
+    if any(value is None for value in values) or not isinstance(atoms, list) or not atoms:
+        return None
+    canonical_atoms = [_canonical_ref(atom) for atom in atoms]
+    if any(atom is None for atom in canonical_atoms):
+        return None
+    return {"signature": values, "action_atoms": frozenset(canonical_atoms)}
+
+
+def _same_declined_action(candidate, declined_records):
+    identity = _remedy_identity(candidate)
+    if identity is None:
+        return True  # Unknown semantics are not safe to re-offer as a distinct remedy.
+    for refused in declined_records:
+        prior = _remedy_identity(refused)
+        if prior is None:
+            return True  # A malformed historical refusal must fail closed.
+        if identity["signature"] == prior["signature"]:
+            return True
+        if identity["action_atoms"] & prior["action_atoms"]:
+            return True  # Includes a re-proposal split into one or more sub-actions.
+        derived_signature = candidate.get("derived_from_signature")
+        if derived_signature is not None and derived_signature == refused.get("semantic_signature"):
+            return True
+        derived_id = candidate.get("derived_from_remedy_id")
+        if derived_id is not None and derived_id == refused.get("remedy_id"):
+            return True
+    return False
+
+
 def route_incident(record, choice):
-    """Reference policy; declined remedies remain closed across reworded proposals."""
+    """Synthetic policy: semantic refusals persist; alternatives require player inquiry/authorization."""
     private = record["delivery"] in ("INTERNAL_DRAFT", "STAGED_PRIVATE")
     if private and record.get("isolated") and not any(record[k] for k in ("accessed", "executed", "depended")):
         return {"phase": "DRAFT_DISCARDED", "history": record["history"]}
     declined = list(record.get("declined_remedies", []))
-    remedy_id = record.get("remedy_id")
-    if choice == "REJECT_REMEDY" and remedy_id and remedy_id not in declined:
-        declined.append(remedy_id)
+    refused = record.get("remedy")
+    refusal_status = "NOT_APPLICABLE"
+    if choice == "REJECT_REMEDY":
+        identity = _remedy_identity(refused)
+        if identity is None:
+            refusal_status = "INCOMPLETE"
+        else:
+            refusal_record = {**refused, "semantic_signature": list(identity["signature"]),
+                              "action_atoms": sorted(identity["action_atoms"])}
+            if not any(_same_declined_action(refusal_record, [item]) for item in declined):
+                declined.append(refusal_record)
+            refusal_status = "RECORDED"
+    permission = record.get("player_permission", "NONE")
+    may_discuss = permission in ("ASKED", "AUTHORIZED") and refusal_status != "INCOMPLETE"
     proposed = list(record.get("proposed_remedies", []))
-    available = [item for item in proposed if item.get("remedy_id") not in declined]
+    available = ([item for item in proposed if not _same_declined_action(item, declined)]
+                 if may_discuss else [])
     status = {"CONTINUE_SAFE_SCOPE": "CONTAINED", "PAUSE_AUDIT": "OPEN",
               "TERMINATE": "TERMINATED"}.get(choice, "OPEN")
     return {"phase": status, "history": record["history"], "affected_advances": 0,
             "player_choice": choice, "declined_remedies": declined,
+            "remedy_recording_status": refusal_status,
             "available_remedies": available,
             "allowed_threads": ["safe"] if status == "CONTAINED" else [],
             "notice": "此前的调查依据待核，沿该线继续可能影响后续判断。",
