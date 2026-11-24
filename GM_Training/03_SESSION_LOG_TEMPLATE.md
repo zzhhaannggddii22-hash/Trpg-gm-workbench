@@ -133,3 +133,50 @@
 - payload_version / payload_fingerprint：事件内容版本或稳定摘要；无法生成时明确标 NOT_AVAILABLE。
 
 玩家已经看到/听到的内容即使尚未写入 Runtime，也必须在恢复时作为待合并事件保留。无法确认是否已呈现时，标记 DISPUTED 并核对，不得重演或擅自补完。
+
+
+## 2026-11-24 补充｜争议事件、字段级权限与安全投影
+
+### 争议/事故事件记录
+
+发现跨文件重复、版本漂移、revision 漂移或权限冲突时，追加记录，不覆盖原事件：
+
+| 字段 | 内容 |
+|---|---|
+| dispute_id | 稳定争议 ID |
+| affected_batch_id / event_ids / targets | 受影响批次、事件和目标 |
+| conflict_type | DUPLICATE_EVENT / PAYLOAD_VERSION_DRIFT / REVISION_DRIFT / RECIPIENT_MISMATCH / VISIBILITY_MISMATCH / OTHER |
+| observed_records | 每条冲突记录的精确定位、身份字段、版本、权限字段 |
+| raw_record_refs | 原始记录/写入前后证据的不可变引用 |
+| prepare_evidence_ref | 原始 PREPARE 清单 |
+| prior_fault_evidence_ref | 旧 Fault，仅作诊断证据 |
+| detection_event_id | 本次发现事件 |
+| persistence_readback | Runtime State 与 Session Log 的独立读回结果 |
+| resolution | UNRESOLVED，或追加记录 resolved_by、basis_ref、resolution_event_id |
+
+重复项必须分别保留，禁止只记“有重复”。版本变化必须保存旧、新 payload 版本与 fingerprint；revision 变化必须保存旧、新 base/target revision。争议解除只能追加，不删除原始异常。
+
+### 玩家投影字段白名单
+
+整行 visibility 不足以授权整行导出。一条记录包含不同权限字段时，必须逐字段筛选，或拆成彼此关联的公开记录与 GM-only 记录。
+
+推荐结构：
+- public_utterance：NPC 实际说出且玩家听见的原文/摘要；
+- public_observation：玩家角色实际观察到的内容；
+- player_known_claims：角色已获得的命题及来源；
+- gm_knowledge：NPC 客观知识、隐藏真相、谎言意图、GM 裁定与幕后备注，只保留在 GM-only；
+- private_notes：内部准备和审计信息，只保留在 GM-only。
+
+Player Notes / 玩家导出只允许投影：
+- public_utterance
+- public_observation
+- player_known_claims 中已实际呈现且属于目标 recipient_scope 的条目
+- 与上述内容直接相关、玩家有权知道的时间/地点/行动结果
+
+默认拒绝投影：
+- gm_knowledge
+- private_notes
+- GM adjudication / hidden truth / undisclosed clue / NPC deception intent
+- 未实际呈现的 claim、其他玩家/角色的 recipient-scoped 内容
+
+如果记录混合权限且无法可靠拆分，整条记录不得进入玩家投影；先拆分并逐字段核验。玩家投影必须记录 projection_schema_version、recipient_scope、源 event_id 与实际导出的字段清单。导出前后检查字段白名单，不能只检查行级 visibility。
