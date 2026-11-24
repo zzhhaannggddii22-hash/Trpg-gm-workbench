@@ -63,6 +63,7 @@
 - [P1-0 最终分析与修复交接](./Acceptance_Reports/GM_RUNTIME_P1_0_REMEDIATION_AND_P1_0C_HANDOFF.md)：记录 4 FAIL、1 PARTIAL 的根因、规范修订和回归门槛。
 - [P1-0C 定向回归夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v1.md)：四项失败定向复测与 E13 正向回归。
 - [P1-0C 目标 Chat 执行提示词](./GM_RUNTIME_P1_0C_EXECUTION_PROMPT.md)：供空白目标 Chat 逐用例执行。
+- [P1-0C 独立审查提示词](./GM_RUNTIME_P1_0C_INDEPENDENT_REVIEW_PROMPT.md)：供高级模型只读审查修复方案与跨文件一致性。
 
 ## 运行可靠性 P0 验收
 
