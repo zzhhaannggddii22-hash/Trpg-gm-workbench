@@ -167,7 +167,8 @@ def route_incident(record, choice):
         else:
             refusal_record = {**refused, "semantic_signature": list(identity["signature"]),
                               "action_atoms": sorted(identity["action_atoms"])}
-            if not any(_same_declined_action(refusal_record, [item]) for item in declined):
+            if not any(_remedy_identity(item) is not None
+                       and _same_declined_action(refusal_record, [item]) for item in declined):
                 declined.append(refusal_record)
             refusal_status = "RECORDED"
     permission = record.get("player_permission", "NONE")
