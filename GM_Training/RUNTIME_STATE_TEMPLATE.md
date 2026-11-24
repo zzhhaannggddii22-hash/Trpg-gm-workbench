@@ -128,6 +128,34 @@ incident:
   player_decision: null
 ~~~
 
+### 跨文件批次清单（重要事件保存时填写）
+
+```yaml
+persistence:
+  batch_id: "<stable-batch-id>"
+  status: "PREPARED | INCOMPLETE | PENDING_EXTERNAL_WRITE | DISPUTED | PUBLISHED"
+  base_revision: "<published-revision>"
+  target_revision: "<expected-revision>"
+  required_targets:
+    - target: "SESSION_LOG"
+      event_id: "<event-id>"
+      status: "PENDING | APPLIED | VERIFIED | DISPUTED"
+    - target: "RUNTIME_STATE"
+      event_id: "<event-id>"
+      status: "PENDING | APPLIED | VERIFIED | DISPUTED"
+    - target: "PLAYER_NOTES"
+      event_id: "<event-id>"
+      status: "PENDING | APPLIED | VERIFIED | DISPUTED"
+  reconciliation:
+    checked_event_ids: []
+    unresolved_targets: []
+    mismatch_reasons: []
+```
+
+- 上述清单是模板示例；按实际需要列出目标，不适用的目标不得强行创建。
+- 每个目标记录必须能反向定位同一 event_id 与 batch_id；Player Notes 还必须匹配 visibility 与 recipient_scope。
+- 不得仅凭写入成功、文件条数、旧故障记录或缓存结果将目标标为 VERIFIED。
+
 ### 保存与恢复规则
 - Runtime State 是当前值权威；Session Log 是事件历史；正式人物卡只在任务/Session 规定结点核验回写；Player Notes 是角色知识投影。
 - 已呈现但尚未合并的事件必须列入 unapplied_event_ids。恢复时先核对这些事件，不得用旧快照覆盖。
