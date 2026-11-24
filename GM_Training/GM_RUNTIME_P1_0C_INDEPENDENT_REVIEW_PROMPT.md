@@ -14,6 +14,8 @@
 - GM_Training/GM_RUNTIME_P1_PERFORMANCE_PLAN.md
 - GM_Training/Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v1.md
 - GM_Training/GM_RUNTIME_P1_0C_EXECUTION_PROMPT.md
+- GM_Training/GM_RUNTIME_P1_0C_OPERATOR_PROTOCOL.md（GM-only，仅审查，不上传目标 Chat）
+- GM_Training/Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v2.md（GM-only，仅审查，不上传目标 Chat）
 - GM_Training/Acceptance_Reports/GM_RUNTIME_P1_0_REMEDIATION_AND_P1_0C_HANDOFF.md
 - GM_Training/README.md
 - 原始基线报告：GM_RUNTIME_P1_0_BASELINE_REPORT_2026-11-24.md（由操作者另行提供）
