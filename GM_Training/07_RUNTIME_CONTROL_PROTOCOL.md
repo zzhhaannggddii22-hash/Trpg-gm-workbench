@@ -367,5 +367,40 @@ NPC 按自己的知识、动机、性格、能力、关系、资源和机会行�
 - 多文件写入无法原子完成时，使用批次/修订标记识别保存未完成；读回核验前不得声称保存成功。重试先按 event_id 查重，防止重复结算。
 - 无写权限时给出明确标记为待持久化的增量；不得把聊天中生成的文本说成已归档。
 
+### 14.4-A 保存批次的跨文件一致性校验（P0）
+
+多文件保存不是“每个文件都写入成功”就算完成。对每个需要跨文件投影的重要事件，必须以同一个事件身份与批次身份完成核对。
+
+**规范事件信封**（字段按事件适用性填写；未知值不得猜测）：
+- `event_id`：稳定事件身份；
+- `batch_id`：本次跨文件保存批次；
+- `base_revision`：事件基于的已发布 Runtime checkpoint revision；
+- `target_revision`：本批次预期产生的 Runtime revision；
+- `visibility`：GM_ONLY / PLAYER_VISIBLE / RECIPIENT_SCOPED；
+- `recipient_scope`：适用的玩家/角色/接收者；非定向事件可标 NOT_APPLICABLE；
+- `projection_targets`：该事件应写入的目标文件/视图及各自预期记录 ID；
+- `payload_fingerprint`：用于识别同一事件内容版本的稳定摘要或等价字段；若运行环境无法计算，明确标 NOT_AVAILABLE，不伪称已校验。
+
+**提交与恢复必须按以下顺序执行：**
+1. PREPARE：先建立唯一 batch_id，固定 event_id、base_revision、target_revision、可见性、接收者范围、目标投影及待写内容版本。
+2. APPLY：按字段所有权分别写入 Runtime State、Session Log、Player Notes 等目标；每个目标记录其写入结果，不把部分成功折叠成整体成功。
+3. RECONCILE：恢复/重试时，重新读取当前 Runtime State、Session Log 与所有目标投影。不得仅依赖旧 Fault 记录、调用方缓存或“文件存在/条数相同”判断成功。
+4. 对每个 event_id，核对：
+   - 当前 Session Log 中存在且仅存在一条有效事件记录（修订须沿同一 event_id 明确递增版本）；
+   - 该记录的 batch_id、base_revision、target_revision 与批次清单一致；
+   - Runtime State 的 revision、last_event_id / unapplied_event_ids 与事件应用状态一致；
+   - 每个应接收的投影中，存在且仅存在对应 event_id / batch_id 的记录；
+   - Player Notes 的可见性与 recipient_scope 和事件信封完全一致；GM_ONLY 事件不得进入玩家投影；
+   - 目标记录的事件内容/版本与事件信封一致，而不只是 event_id 字段存在。
+5. 若目标记录缺失，可只补写该缺项；若发现错 event_id、错 batch_id、版本变化、重复记录、接收者/可见性不符、同一事件多重候选或当前日志与旧故障记录不一致，立即保持 INCOMPLETE 或 DISPUTED，不得发布任何可疑投影。
+6. 只有所有必需目标逐件读回，并通过身份、批次、版本、接收者、可见性与内容核对后，才可将批次标记 PUBLISHED。PUBLISHED 是一致性结论，不是单纯写入状态。
+
+**冲突处理：**
+- 缺行与错行必须区分。缺行可以在其他权威字段一致时补写；错行不能覆盖或“就近匹配”。
+- 多条匹配、无匹配、revision 不一致、事件内容被替换、目标接收者或可见性不一致，均进入 DISPUTED/INCOMPLETE 并保留证据。
+- 不得用批次总条数、文件更新时间、单一旧 event_id 或成功写入响应替代逐事件读回核对。
+- 重试必须幂等：已正确写入的目标不重复应用状态变化；错误目标先隔离，再按已核实事件信封修复。
+- 无法读取某个必需目标时，状态保持 INCOMPLETE / PENDING_EXTERNAL_WRITE；明确列出未核验目标。
+
 ### 14.5 效率与体验边界
 普通轮不重读全量 Skill/模组原文，不重复运行完整 Preflight，不输出审计过程。首次命名 NPC 仍须读取对应原文与首次卡；红色规则仍须核对完整适用条文。压缩只删除无用重复，不删除否定词、条件、例外、成本、未知项、玩家未回应选择或角色知识边界。回复速度评估分别记录首个有效反馈、完整回复、工具等待与可见生成吞吐；没有可观测数据时标 UNKNOWN。
