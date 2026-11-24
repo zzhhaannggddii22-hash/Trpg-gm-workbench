@@ -3,11 +3,11 @@
 你是独立技术审查者。请只审查，不修改仓库、不代替目标 Chat 执行测试、不读取或接触任何正式 Campaign/真实玩家资料。
 
 ## 审查目标
-判断 P1-0 最终报告所暴露的四项硬失败是否被当前修订完整、最小且一致地覆盖；重点找遗漏、冲突、重复、无法执行的要求和过度承诺。
+判断 P1-0 最终报告所暴露的四项历史硬失败及独立审查 C1-C6 是否被当前修订完整、最小且一致地覆盖；重点找遗漏、冲突、重复、无法执行的要求和过度承诺。
 
 ## 必须读取
-- GM_Training/07_RUNTIME_CONTROL_PROTOCOL.md（重点 §13、§14.1–14.12）
-- GM_Training/GM_RELIABILITY_AND_EXPERIENCE_CONTROL_PROTOCOL.md（重点 §6、§11、§12）
+- GM_Training/07_RUNTIME_CONTROL_PROTOCOL.md（重点 §12.3、§13、§14.1–14.18）
+- GM_Training/GM_RELIABILITY_AND_EXPERIENCE_CONTROL_PROTOCOL.md（重点 §6、§11、§12，注意仅保留一套授权/路由职责）
 - GM_Training/RUNTIME_STATE_TEMPLATE.md
 - GM_Training/03_SESSION_LOG_TEMPLATE.md
 - GM_Training/SKILL.md
@@ -21,12 +21,12 @@
 - 原始基线报告：GM_RUNTIME_P1_0_BASELINE_REPORT_2026-11-24.md（由操作者另行提供）
 
 ## 审查问题
-1. REG-14：last_answered_event_id、实际 GM 回复、presentation_status 与 Player Notes 的关系是否足以阻止近义重播？是否存在玩家明确要求回顾时的正确例外？
-2. REG-17：Runtime checkpoint 与 Session Log 的应用标记是否构成真正可交叉核验的证据？字段缺失、旧存档、部分合并、后续事件、事件排序和 revision 变化是否处理一致？模板是否有歧义或重复字段？
-3. REG-11：T0 原则、风险摘要、授权规则与 Runtime 行动路由是否只有一套明确操作流程？每轮是否覆盖 GM 建议、NPC 接触、玩家代述、地点移动和派生事件？安全互动是否可能被错误放宽？
-4. 隐私导出：Player Artifact 与 GM Audit Artifact 的访问边界是否真实可执行？扫描范围是否准确区分可读与不可读部分？NOT_VERIFIABLE 是否会被错误当作通过？纯文本/复杂文档的判据是否明确？
-5. E13：现有正向路由是否被保留？第四轮 Sol 的未来意向是否被误当作实际联系或调查推进？PARTIAL 证据等级是否仍被保留？
-6. Skill、Runtime、T0、模板、P1 计划、夹具和执行提示词之间是否存在引用断裂、字段不一致、相互矛盾或重复维护？
+1. C1 / REG-14：last_answered_event_id、实际 GM 回复、presentation_status 与 Player Notes 的关系是否足以阻止近义重播？是否存在玩家明确要求回顾时的正确例外？
+2. C2 / REG-17：Runtime checkpoint 与 Session Log 的应用标记是否构成真正可交叉核验的证据？字段缺失、旧存档、部分合并、后续事件、事件排序和 revision 变化是否处理一致？模板是否有歧义或重复字段？
+3. C3 / REG-11：T0 原则、风险摘要、授权规则与 Runtime 行动路由是否只有一套明确操作流程？每轮是否覆盖 GM 建议、NPC 接触、玩家代述、地点移动和派生事件？安全互动是否可能被错误放宽？
+4. C4 / 隐私导出：Player Artifact 与 GM Audit Artifact 的访问边界是否真实可执行？扫描范围是否准确区分可读与不可读部分？NOT_VERIFIABLE 是否会被错误当作通过？纯文本/复杂文档的判据是否明确？
+5. C5 / E13：现有正向路由是否被保留？第四轮 Sol 的未来意向是否被误当作实际联系或调查推进？PARTIAL 证据等级是否仍被保留？
+6. C6 与跨文件一致性：Skill、Runtime、T0、模板、P1 计划、夹具、执行提示词和操作者协议之间是否存在引用断裂、字段不一致、相互矛盾或重复维护？
 7. 修订是否增加了不必要的每轮审计成本，是否会损害普通绿色互动速度？能否只在必要触发点执行？
 8. 是否有新增的安全性或连续性回归风险？哪些是规范问题，哪些必须靠真实目标 Chat 行为才能验证？
 
