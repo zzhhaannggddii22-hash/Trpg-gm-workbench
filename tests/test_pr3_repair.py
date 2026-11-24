@@ -87,7 +87,8 @@ class RepositoryChecks(unittest.TestCase):
             self.assertIn(term, entry)
         semantic_gate = runtime.split("### 14.1.1 补救身份、语义封锁与替代方案准入")[1].split("### 14.2")[0]
         for term in ("action_kind", "operation_ref", "target_ref", "scope_ref", "action_atoms[]",
-                     "不同 remedy_id", "拆成多个子步骤", "available_remedies", "HOLD"):
+                     "玩家可以使用自然语言", "不同 remedy_id", "拆成一个或多个子步骤",
+                     "SAME_ACTION", "DISTINCT_ACTION", "UNCLEAR", "available_remedies"):
             self.assertIn(term, semantic_gate)
         for path in ("SKILL", "GM_RELIABILITY_AND_EXPERIENCE_CONTROL_PROTOCOL",
                      "13_PREP_TO_RUNTIME_HANDOFF_STANDARD", "02_WORKFLOW_AND_PREFLIGHT"):
