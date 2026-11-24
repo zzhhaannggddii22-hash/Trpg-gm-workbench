@@ -108,3 +108,36 @@
 - 结案时回查目标异常、其他成员捕获/逃脱、报告惩罚、奖励与 Loose Ends 规则。
 - 确认扎雷克与凯瑟琳的开团装备、补给与防护状态。
 - Session 01 场次副本已建立；后续状态变动即时写入本文件及场次日志。
+
+
+## 9. 有效 Session 01 运行状态（2026-11-24 保存点）
+
+> 本节覆盖文件顶部旧的“重置待开场”状态。旧重置说明保留作历史审计；当前正式 CANON 是重置后重新开始并运行至本节保存点的这一轮。
+
+- 当前状态：**ACTIVE / PAUSED FOR CROSS-SESSION SAVE**。Session 01 已有效开始，现暂停在咖啡馆会面结束后。
+- Resume Mode：**CONTINUE**，不是 NEW START。不得重演机构简报室、三名受害者首次调查、前三晚派对或咖啡馆会面。
+- Current Scene ID：**CAFE-MEETING-END**。
+- Last Confirmed Event：Daniel 已通过短信联系 Marcus；Marcus 回复并约定次日下午 3 点在市中心“老地方”酒吧见面，要求 Daniel 一个人来；Venice 已与 Zarek 握手，接受朋友式合作。
+- Next Planned Scene：Daniel 确认酒吧具体名称/地址；次日下午三点，Daniel 单独与 Marcus 会面，Zarek 与 Catherine 在附近观察。此为计划，不是已发生事件。
+- 游戏内绝对日期：UNKNOWN；只记录相对时间“次日下午三点”。不得补造日历日期。
+- 游戏内时间跨度：受害者调查、三晚 Nosedive 及次日下午咖啡馆会面；没有精确日期/小时的事件不得自行细化。
+- 当前场景在场/相关人物：Zarek、Catherine、Venice、Daniel Morris；咖啡馆会面已自然收束。Daniel 是否已离开场所未确认。
+- 关键 NPC 知识边界：Daniel、Erin、Venice、Cass、Mimi 各自只知道其实际经历与陈述；Catherine 的跟踪、观察与承诺按其独立行动记录，不自动获得 GM-only 真相。
+- 玩家角色状态：Harm 0；Demerits 0；Commendations 7；QA 13/13（Professionalism 3、Empathy 3、Subtlety 3、Attentiveness 1、Duplicity 1、Dynamism 1、Initiative 1）；Time 已花费 2/30，剩余 28；装备与补给无已确认变化；Rubber Duck 未用；Ripple Gun 1 发；A3 补给 1 份未用；Newborn 轨道 UNKNOWN。
+- Catherine 防护 QA：9/9；无已确认消耗。
+- 本次暂停不是正式任务结案，也未确认结束正式 Session；因此固定 +1 Time 的 Session 结束奖励尚未结算。
+- 本 Session 无已记录骰检、异常能力使用、Harm、QA 消耗、Chaos 变化或个人轨道变化。
+- NPC/线索的详细增量分别见 03_NPC_BEHAVIOR_LEDGER.md、04_CLUE_AND_SOURCE_LEDGER.md、09_PLAYER_NOTES.md 与 Sessions/SESSION_01.md。
+
+### 9.1 车辆身份隔离（强制）
+1. Daniel Morris 的深蓝色四门轿车：已确认车主为 Daniel；Cass 曾接触其门把手并被电击。
+2. Marcus 所驾驶的另一辆深色轿车：由 Daniel 描述；尚未实地见到或核实车牌。
+3. Erin 照片中的另一名男子：身份未确认；可能是 Daniel 所说的 Marcus，但不得先行认定。
+4. 第二晚黑色 SUV、第三晚白色两厢车、第一晚灰色面包车：均是独立目击记录，目前无证据与上述两辆深色轿车关联。
+5. 任何新出现车辆必须独立记录颜色、车身类型、车牌（仅当实际可读）、驾驶员和目击来源；禁止仅凭“深色车”合并。
+
+### 9.2 关键事实的证据等级
+- 直接观察/物证：深蓝色车牌重复匹配；Daniel 自愿打开后备箱；万用表当时未测出明显电压（仪表电池状态有疑点）；Erin 提供照片（原始拍摄时间地点未核）。
+- NPC 自述：Daniel 对 Cass、Matthew、盒子、源头、Marcus、旧仓库的陈述；Erin 对哥哥行为、照片时间地点的陈述；Venice 对合作范围的承诺。
+- 转述：Daniel 对 Matthew 的理论，属于 Daniel 转述 Matthew，未经独立核验。
+- 推断：照片中的男子可能是 Marcus；多辆深色车是否相关；异常是否沿物品接触传播。以上都不能写成事实。
