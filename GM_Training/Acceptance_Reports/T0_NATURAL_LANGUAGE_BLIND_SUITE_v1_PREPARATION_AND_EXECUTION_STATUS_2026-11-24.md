@@ -78,7 +78,7 @@ GitHub Actions PR validation Run #12（run id `45425686349`）：
 - Python 回归：12/12 tests passed。
 - Markdown 检查：161 个 Markdown 文件、193 条本地链接、0 个断链、0 个候选锚点错误。
 - `git diff --check` 首次失败，原因是本报告日期与基线行末尾有两个 Markdown 硬换行空格；已删除这两个空格。
-- 修复后的完整 CI 结果在本报告更新时尚未取得。当前 13 个新增/索引文件已从 PR 分支逐一读回，静态扫描未发现行尾空格。
+- 修复后的 GitHub Actions PR validation Run #17（run id `45426457208`）已完成并成功：12/12 回归测试通过，Markdown 扫描仍为 161 个文件、193 条本地链接、0 个断链，`git diff --check` 通过。当前 13 个新增/索引文件已从 PR 分支逐一读回，静态扫描未发现行尾空格。
 
 这次 CI 的 12 项测试和 Markdown 扫描只验证仓库回归与链接，不执行 32 轮目标 Chat 行为测试。
 
