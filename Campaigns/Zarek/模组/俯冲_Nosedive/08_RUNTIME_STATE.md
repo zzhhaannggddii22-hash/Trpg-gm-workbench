@@ -4,12 +4,12 @@
 
 ## 0. 场景续接锚点（2026-11-24 补充）
 
-- Resume Mode：**CONTINUE**。有效 Session 01 已从重置后的机构简报室重新开始；不得从作废尝试续接。
+- Resume Mode：**CLOSED / NO RESUME**。本模组已结案；此前 CONTINUE 仅为历史保存状态。
 - Current Scene ID：**CAFE-MEETING-END**（咖啡馆会面结束）。
-- Current Scene Status：**PAUSED / SAVED**。
+- Current Scene Status：**CLOSED**。
 - Entry Narration Delivered：**Yes**（机构简报室开场已在本轮有效 Session 發生）。
 - Last Confirmed Event ID：Daniel 已联系 Marcus，約次日下午 3 点在市中心“老地方”见面；Venice 已接受朋友式合作。
-- Pending Player Action：续接时先取得“老地方”酒吧准确名称/地址，再准备次日下午会面；不得重演已完成调查。
+- Pending Player Action：**NONE**。此前取得地址、准备会面均为未执行计划，结案后不再待办。
 - Previous Attempt：**NON-CANON**。此前 Cass 首访及其音频设备/客户/R&D 回收分支全部作废，不继承为角色经历、世界事件、物品、伤害、线索或 NPC 知识。
 - Player/Character Knowledge Boundary：玩家可能记得作废尝试中的内容；扎雷克与凯瑟琳在正式 CANON 中没有经历该分支，也不得据此行动或获得角色知识。
 
@@ -22,8 +22,8 @@
 
 ## 1. 模组进度
 
-- 状态：有效 Session 01 已运行至咖啡馆会面结束，当前暂停保存。
-- Session：01；Resume Mode CONTINUE。
+- 历史状态：有效 Session 01 曾运行至咖啡馆会面结束并暂停；当前已由第10节结案检查点关闭。
+- Session：01；当前状态 CLOSED（旧保存点当时曾为 CONTINUE）。
 - 游戏内绝对日期：UNKNOWN；相对时间为受害者调查、三晚 Nosedive、次日下午咖啡馆会面。
 - 当前地点/场景：咖啡馆会面自然结束；Daniel 是否已离开未确认。
 - 当前在场/相关人物：Zarek、Catherine、Venice、Daniel Morris。
