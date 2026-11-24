@@ -236,6 +236,11 @@ class ReferenceExercises(unittest.TestCase):
             "scope_ref": "incident:INC-01:unaffected-branch-02",
             "action_atoms": ["audit:branch-02:independent-evidence"],
             "description": "独立核验不受影响的旁支",
+            "declined_action_assessments": [{
+                "declined_remedy_id": "restore-source-claim-v1",
+                "relation": "DISTINCT_ACTION",
+                "basis": "独立核验旁支证据，不恢复或依赖被拒绝的来源声明",
+            }],
         }
         remedy = {**base, "remedy": refused, "declined_remedies": [],
                   "proposed_remedies": [refused, independent]}
@@ -257,7 +262,7 @@ class ReferenceExercises(unittest.TestCase):
                                   "player_permission": "ASKED"}, "PAUSE_AUDIT")
         self.assertEqual(retried["available_remedies"], [])
 
-        # A decomposed sub-step remains blocked through its shared atomic action reference.
+        # A decomposed sub-step remains blocked through its shared prohibited operation atom.
         split_step = {"remedy_id": "small-step-2", "action_kind": "APPEND_NOTE",
                       "operation_ref": "ADD_SOURCE_LINE_TO_APPENDIX",
                       "target_ref": "claim:source-origin-17", "scope_ref": "incident:INC-01:claim-17",
@@ -267,6 +272,59 @@ class ReferenceExercises(unittest.TestCase):
                                        "proposed_remedies": [split_step],
                                        "player_permission": "AUTHORIZED"}, "PAUSE_AUDIT")
         self.assertEqual(split_result["available_remedies"], [])
+
+        # All internal identifiers are new, but the natural-language action is still the refused operation.
+        alias_laundered = {
+            "remedy_id": "new-id-991",
+            "action_kind": "DOCUMENT_MAINTENANCE",
+            "operation_ref": "REORGANIZE_AND_REINSERT",
+            "target_ref": "record:reconstructed-source-card",
+            "scope_ref": "branch:alternate-document-path",
+            "action_atoms": ["document:insert-source-attribution-v9"],
+            "description": "重新整理现有材料，再将原始来源声明补回记录",
+            "declined_action_assessments": [{
+                "declined_remedy_id": "restore-source-claim-v1",
+                "relation": "SAME_ACTION",
+                "basis": "措辞和内部标识均改变，但实际效果仍是把同一未经证实的来源声明写回记录",
+            }],
+        }
+        alias_result = route_incident({**base, "declined_remedies": rejected["declined_remedies"],
+                                       "proposed_remedies": [alias_laundered],
+                                       "player_permission": "ASKED"}, "PAUSE_AUDIT")
+        self.assertEqual(alias_result["available_remedies"], [])
+
+        # Same broad goal and target, but a genuinely different investigative method is not the refused action.
+        alternate_investigation = {
+            "remedy_id": "camera-review-route",
+            "action_kind": "INSPECT_EXISTING_RECORDING",
+            "operation_ref": "REVIEW_STATION_CAMERA_ARCHIVE",
+            "target_ref": "claim:source-origin-17",
+            "scope_ref": "incident:INC-01:claim-17",
+            "action_atoms": ["retrieve:camera-footage-for-independent-verification"],
+            "description": "查看车站既有监控，独立核实相关人员的行动",
+            "declined_action_assessments": [{
+                "declined_remedy_id": "restore-source-claim-v1",
+                "relation": "DISTINCT_ACTION",
+                "basis": "目标仍是核实来源，但方法是查看既有监控，不会写回或依赖被拒绝的来源声明",
+            }],
+        }
+        alternate_result = route_incident({**base, "declined_remedies": rejected["declined_remedies"],
+                                           "proposed_remedies": [alternate_investigation],
+                                           "player_permission": "ASKED"}, "PAUSE_AUDIT")
+        self.assertEqual([item["remedy_id"] for item in alternate_result["available_remedies"]],
+                         ["camera-review-route"])
+
+        # An ambiguous natural-language proposal with changed identifiers must be clarified, not guessed safe.
+        unclear = {**alternate_investigation, "remedy_id": "unclear-route",
+                   "action_kind": "UNKNOWN_ACTION", "operation_ref": "UNKNOWN_OPERATION",
+                   "target_ref": "unknown-target", "scope_ref": "unknown-scope",
+                   "action_atoms": ["unknown:operation"],
+                   "description": "我换个办法处理一下这份材料"}
+        unclear.pop("declined_action_assessments")
+        unclear_result = route_incident({**base, "declined_remedies": rejected["declined_remedies"],
+                                         "proposed_remedies": [unclear],
+                                         "player_permission": "ASKED"}, "PAUSE_AUDIT")
+        self.assertEqual(unclear_result["available_remedies"], [])
 
         # A genuinely distinct proposal is still withheld until the player asks/authorizes.
         no_permission = route_incident({**base, "declined_remedies": rejected["declined_remedies"],
