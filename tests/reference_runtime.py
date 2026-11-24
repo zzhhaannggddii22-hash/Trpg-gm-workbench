@@ -131,24 +131,50 @@ def _remedy_identity(remedy):
     return {"signature": values, "action_atoms": frozenset(canonical_atoms)}
 
 
+def _declined_action_assessment(candidate, refused):
+    """Read a GM-authored comparison of natural-language intent against one refusal."""
+    assessments = candidate.get("declined_action_assessments")
+    if not isinstance(assessments, list):
+        return None
+    matches = [item for item in assessments
+               if isinstance(item, dict)
+               and item.get("declined_remedy_id") == refused.get("remedy_id")]
+    if len(matches) != 1:
+        return None
+    assessment = matches[0]
+    relation = assessment.get("relation")
+    basis = assessment.get("basis")
+    if relation not in ("SAME_ACTION", "CONTAINS_DECLINED_ACTION", "DISTINCT_ACTION", "UNCLEAR"):
+        return None
+    if not isinstance(basis, str) or not basis.strip():
+        return None
+    return relation
+
+
 def _same_declined_action(candidate, declined_records):
+    """Fail closed unless each prior refusal has a grounded action-level comparison."""
     identity = _remedy_identity(candidate)
     if identity is None:
-        return True  # Unknown semantics are not safe to re-offer as a distinct remedy.
+        return True
     for refused in declined_records:
         prior = _remedy_identity(refused)
         if prior is None:
-            return True  # A malformed historical refusal must fail closed.
+            return True
         if identity["signature"] == prior["signature"]:
             return True
         if identity["action_atoms"] & prior["action_atoms"]:
-            return True  # Includes a re-proposal split into one or more sub-actions.
+            return True  # Atoms represent prohibited operations/effects, not shared goals.
         derived_signature = candidate.get("derived_from_signature")
         if derived_signature is not None and derived_signature == refused.get("semantic_signature"):
             return True
         derived_id = candidate.get("derived_from_remedy_id")
         if derived_id is not None and derived_id == refused.get("remedy_id"):
             return True
+        relation = _declined_action_assessment(candidate, refused)
+        if relation in ("SAME_ACTION", "CONTAINS_DECLINED_ACTION"):
+            return True
+        if relation != "DISTINCT_ACTION":
+            return True  # Missing, ambiguous, or malformed comparison => HOLD.
     return False
 
 
