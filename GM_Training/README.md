@@ -39,8 +39,10 @@
 
 - [综合训练体系](./NARRATIVE_TRAINING_PROGRAM.md)：综合诊断、专项修复、重新整合、跨场景迁移与实战验证。
 - [微型箱庭实验室](./MICRO_SANDBOX_LAB/README.md)：可玩的短小开放场景，用于综合互动训练、稳定性观察和游戏体验验证。
+- [微型箱庭 ↔ 实际跑团双向迁移协议](./MICRO_SANDBOX_LAB/CAPABILITY_TRANSFER_PROTOCOL.md)：规定训练方法如何进入真实跑团，以及真实 Session 的缺陷如何反向成为箱庭训练样本。
 - [训练题库](./NARRATIVE_TRAINING_QUESTION_BANK.md)：专项题与综合题候选；题库不定义能力标准。
 - [开放训练问题清单](./Training_Logs/OPEN_TRAINING_BACKLOG.md)：尚未解决的问题及后续验证要求。
+- [2026-11-25《雨前过桥》箱庭实测记录](./Training_Logs/2026-11-25_MICRO_SANDBOX_001_BRIDGE_BEFORE_RAIN_REVIEW.md)：首个完成的箱庭运行样本、玩家反馈、观察和待验证项。
 - [2026-11-24 场景描绘与动态叙事综合训练记录](./Training_Logs/2026-11-24_SCENE_AND_DYNAMIC_NARRATIVE_INTEGRATED_TRAINING.md)：便利店、搬家夫妻、仓库交接、医院走廊、旧办公楼、人物兴趣与日常场景等完整训练沉淀。
 - [2026-11-24 NPC 对话与交流流畅度训练](./Training_Logs/2026-11-24_NPC_DIALOGUE_AND_CONVERSATIONAL_FLOW.md)
 - [人物塑造与互动研究](../Research/CHARACTER_AND_INTERACTION_TRAINING_2026-11-24.md)
@@ -85,7 +87,7 @@
 - [GM 系统优化方案](./Optimization_Reports/GM_SYSTEM_OPTIMIZATION_PLAN_2026-11-24.md)
 - [GM 系统实施记录](./Optimization_Reports/GM_SYSTEM_IMPLEMENTATION_RECORD_2026-11-24.md)
 - [P0 第三轮复核与 P1 交接](./Acceptance_Reports/GM_RUNTIME_P0_THIRD_ROUND_REVIEW_AND_P1_HANDOFF.md)
-- [P1-0 修复与 P1-0C 交接](./Acceptance_Reports/GM_RUNTIME_P1_0_REMEDIATION_AND_P1_0C_HANDOFF.md)
+- [P1-0 修复与 P1-0C 交接](./Acceptance_Reports/GM_RUNTIME_P1_0_REMEDIATION_AND_P1-0C_HANDOFF.md)
 - [P0 合成验收夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_FIXTURE_v1.md)
 - [P0 回归夹具 v2](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_REGRESSION_v2.md)
 - [P0 回归夹具 v3](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_REGRESSION_v3.md)
