@@ -118,7 +118,7 @@
 
 对重要事件追加记录时，按需增加以下字段；普通闲谈不强制逐条记录：
 - event_id：稳定事件 ID；重试/修订沿用原 ID 并追加版本，不重复结算。
-- base_rev / checkpoint_rev：事件基于哪个已发布检查点。
+- base_revision：事件基于哪个已发布 Runtime checkpoint revision；如需兼容旧记录，旧字段 base_rev / checkpoint_rev 仅作为历史别名读取，不在新记录中混用。
 - occurred_at：游戏内时间；未知则 UNKNOWN，不推算绝对日期。
 - presentation_status：NOT_PRESENTED / PRESENTED / PARTIALLY_PRESENTED。
 - response_status：NOT_AWAITING_PLAYER / AWAITING_PLAYER / RESPONDED。
@@ -126,5 +126,10 @@
 - affected_entities：实际发生变化的对象与字段。
 - source_ref / claim_id：依据与关键命题 ID。
 - commit_status：DRAFT / PREPARED / PUBLISHED / INCOMPLETE。
+- batch_id：所属跨文件保存批次；同一事件在各目标文件中必须保持一致。
+- target_revision：该批次预期生成的 Runtime revision。
+- recipient_scope：玩家侧投影的目标接收者；无定向接收者时标 NOT_APPLICABLE。
+- projection_targets：本事件应出现的文件/视图及预期记录身份。
+- payload_version / payload_fingerprint：事件内容版本或稳定摘要；无法生成时明确标 NOT_AVAILABLE。
 
 玩家已经看到/听到的内容即使尚未写入 Runtime，也必须在恢复时作为待合并事件保留。无法确认是否已呈现时，标记 DISPUTED 并核对，不得重演或擅自补完。
