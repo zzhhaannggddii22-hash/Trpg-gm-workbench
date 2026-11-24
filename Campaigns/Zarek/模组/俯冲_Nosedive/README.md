@@ -1,6 +1,6 @@
 # 《俯冲》（Nosedive）｜模组档案
 
-> 状态：**Prep QA 保持 CLOSED（历史结论）；首次 Preflight 已执行。Session 01 首次尝试因重大事实偏离整场作废（NON-CANON）；相关运行规范、首次接触卡和状态文件已修订，当前等待从机构简报室重新开团。**
+> 状态：**Prep QA CLOSED；首次 Preflight 已执行。2026-11-23 的第一次 Session 01 尝试作废（NON-CANON）；随后已从机构简报室重新开团。有效 Session 01 现已保存并暂停，当前续接点为咖啡馆会面结束、等待次日下午与 Marcus 的约见。权威进度见 08_RUNTIME_STATE.md 与 Sessions/SESSION_01.md。**
 > 系统：Triangle Agency 中文 v22。规则唯一权威为用户指定的中文 v22。
 > 信息等级：本目录除明确标注玩家侧的文件外，均为 GM-only。
 
@@ -20,7 +20,9 @@
 - [11_NARRATIVE_PRESENTATION_MATERIALS.md](./11_NARRATIVE_PRESENTATION_MATERIALS.md)：场景感官锚点、异常呈现、动作节拍与对话演出建议。
 - [12_NPC_FIRST_CONTACT_CARDS.md](./12_NPC_FIRST_CONTACT_CARDS.md)：受害者首次接触事实卡；开场与首次拜访前必须读取。
 - [运行事故复盘](./QA/2026-11-23_RUNTIME_INCIDENT_POSTMORTEM.md)：本次事实偏离的根因、影响范围、修复与回归验证。
-- `Sessions/`：每个 Session 的事实日志。开团后按序建立，不预写玩家行动。
+- [Sessions/SESSION_01.md](./Sessions/SESSION_01.md)：有效 Session 01 完整事实日志与当前保存点。
+- [Sessions/SESSION_01_HANDOFF_PROMPT.md](./Sessions/SESSION_01_HANDOFF_PROMPT.md)：新对话恢复提示词。
+- `Sessions/SESSION_01_ABORTED_2026-11-23.md`：第一次作废尝试，仅供事故审计，NON-CANON。
 
 ## 模组信息
 
@@ -43,7 +45,7 @@
 | 运行索引与状态文件 | 已建立 |
 | Prep QA | CLOSED（2026-11-23）；报告指定阻断项全部关闭，无开放阻断项 |
 | 第一次 Preflight | 已执行（2026-11-23）；开团前玩家确认项已完成 |
-| Session 01 | 首次尝试已作废；修复后等待重新开团 |
+| Session 01 | 已有效开团；当前暂停保存，等待跨对话恢复 |
 
 ## 已解决的备团核验项
 
