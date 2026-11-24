@@ -59,7 +59,10 @@
 
 - [P0 第三轮报告处理记录与 P1 交接](./Acceptance_Reports/GM_RUNTIME_P0_THIRD_ROUND_REVIEW_AND_P1_HANDOFF.md)：记录 CONDITIONAL PASS、产品层证据缺口、残余风险和后续工作顺序。
 - [P1 性能与执行效率验证计划](./GM_RUNTIME_P1_PERFORMANCE_PLAN.md)：先建立目标 Chat 可靠性基线，再开展隔离台架性能测量；严格区分模型时延、工具 I/O 与人工计时。
-- [P1-0 目标 Chat 执行提示词](./GM_RUNTIME_P1_TARGET_CHAT_EXECUTION_PROMPT.md)：在无历史新 Chat 中验证续接、冲突恢复、真实多轮 T0、E13 动作路由与字段级导出。
+- [P1-0 目标 Chat 执行提示词](./GM_RUNTIME_P1_TARGET_CHAT_EXECUTION_PROMPT.md)：原始基线执行说明与历史记录。
+- [P1-0 最终分析与修复交接](./Acceptance_Reports/GM_RUNTIME_P1_0_REMEDIATION_AND_P1_0C_HANDOFF.md)：记录 4 FAIL、1 PARTIAL 的根因、规范修订和回归门槛。
+- [P1-0C 定向回归夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v1.md)：四项失败定向复测与 E13 正向回归。
+- [P1-0C 目标 Chat 执行提示词](./GM_RUNTIME_P1_0C_EXECUTION_PROMPT.md)：供空白目标 Chat 逐用例执行。
 
 ## 运行可靠性 P0 验收
 
