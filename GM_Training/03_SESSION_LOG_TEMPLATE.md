@@ -229,6 +229,12 @@ presentation_segments:
     presented_at: "<timestamp-or-UNKNOWN>"
     evidence_ref: "<message-or-delivery-evidence>"
 action_semantics: PLAYER_INTENT | PC_DECLARED_SPEECH | PC_ACTION_COMMITTED | GM_PROPOSED_ACTION | NPC_FUTURE_INTENT | NPC_ACTION_EXECUTED
+incident_id: "<incident-id-or-NOT_APPLICABLE>"
+dependency_refs: []
+action_id: "<stable-action-id>"
+decision_scope: "<exact-authorized-scope-or-NONE>"
+player_decision: CONTINUE_SAFE_SCOPE | PAUSE_AUDIT | TERMINATE | UNKNOWN
+decision_event_id: "<event-id-or-UNKNOWN>"
 ~~~
 
 - Runtime 应用证明遵循 Runtime §14.14；事件 ID 相同不代表修订相同或全部字段已应用。
