@@ -29,6 +29,7 @@
 - [模组文件夹标准](./09_MODULE_FOLDER_STANDARD.md)
 - [主持独立性与裁决纪律](./06_IMPARTIALITY_AND_ADJUDICATION_DISCIPLINE.md)
 - [运行控制协议](./07_RUNTIME_CONTROL_PROTOCOL.md)
+- [运行状态快照模板](./RUNTIME_STATE_TEMPLATE.md)：当前状态、事件增量与场景续接锚点。
 - [线索与来源账本](./08_CLUE_AND_SOURCE_LEDGER.md)
 - [Session Log 模板](./03_SESSION_LOG_TEMPLATE.md)
 - [能力评估框架](./04_EVALUATION_FRAMEWORK.md)
