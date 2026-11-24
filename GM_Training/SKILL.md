@@ -4,7 +4,7 @@ description: Run and maintain a rules-faithful, player-driven tabletop RPG sessi
 license: private-project
 metadata:
   author: Casey
-  version: "0.2"
+  version: "0.3"
   type: orchestrator
   mode: application
   domain: tabletop-rpg
@@ -163,10 +163,14 @@ metadata:
 
 NPC 不是提示器、线索售货机或玩家行动的附属物。重要 NPC 需要根据自己的目标、知识、能力、资源、关系、当前情绪和机会作出反应。
 
-调用 `CHARACTER_SIMULATION_SKILL.md`：
-- 普通一次性 NPC：轻量模型，只维护当场必要的目标、知识、态度和行为。
-- 重要/反复出现的 NPC：中等模型，增加个人习惯、关系史、声音、当前状态与未完成事项。
-- 长期核心角色：完整角色档案，维护成长、经历、关系变化和跨场记忆。
+调用 `CHARACTER_SIMULATION_SKILL.md`，按 L0—L3 分配角色维护深度：
+- **L0 临时功能性路人**：默认档位；不建立人物卡，只维护当前功能、即时目标/知识，以及必要的一两个说话或行为特点。
+- **L1 模组级人物**：值得在当前模组建立人物信息卡；首次出场用简洁、有辨识度的细节建立初步印象，不强制逐项介绍相貌、声音和着装。
+- **L2 长模组重要人物**：在长模组中占据重要位置、与玩家大量互动，可能存在关系发展或潜在人物弧；维护跨场景状态与阶段变化。
+- **L3 战役级核心长期角色**：跨模组持续存在，拥有独立长期人物档案与记忆、关系和成长连续性。
+- **L4 只用于凯西助手人格，不属于 TRPG NPC 层级。**
+
+角色层级依实际互动和故事地位升级，不按出场次数或 GM 偏爱自动升级。
 
 凯瑟琳必须以她自己的长期档案为准；她不是第二名 PC、GM 摄像头或自动提示器。她可以判断失误、犹豫、拒绝、沉默或提出与玩家不同的意见。
 
