@@ -124,10 +124,7 @@ resume:
 persistence:
   batch_id: "<batch-id>"
   status: "PUBLISHED | PREPARED | INCOMPLETE | PENDING_EXTERNAL_WRITE"
-incident:
-  status: "CLEAR | T0 | DISPUTED | CONTAINED"
-  affected_scope: []
-  player_decision: null
+t0_incidents: [] # 具体结构见下方 P1-0C 补充契约
 ~~~
 
 ### 跨文件批次清单（重要事件保存时填写）
