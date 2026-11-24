@@ -151,31 +151,36 @@ def _declined_action_assessment(candidate, refused):
     return relation
 
 
-def _same_declined_action(candidate, declined_records):
-    """Fail closed unless each prior refusal has a grounded action-level comparison."""
+def _declined_action_relation(candidate, declined_records):
+    """Classify a candidate against refusals without conflating HOLD and refusal."""
     identity = _remedy_identity(candidate)
     if identity is None:
-        return True
+        return "UNCLEAR"
     for refused in declined_records:
         prior = _remedy_identity(refused)
         if prior is None:
-            return True
+            return "UNCLEAR"
         if identity["signature"] == prior["signature"]:
-            return True
+            return "BLOCKED"
         if identity["action_atoms"] & prior["action_atoms"]:
-            return True  # Atoms represent prohibited operations/effects, not shared goals.
+            return "BLOCKED"  # Atoms represent prohibited operations/effects, not shared goals.
         derived_signature = candidate.get("derived_from_signature")
         if derived_signature is not None and derived_signature == refused.get("semantic_signature"):
-            return True
+            return "BLOCKED"
         derived_id = candidate.get("derived_from_remedy_id")
         if derived_id is not None and derived_id == refused.get("remedy_id"):
-            return True
+            return "BLOCKED"
         relation = _declined_action_assessment(candidate, refused)
         if relation in ("SAME_ACTION", "CONTAINS_DECLINED_ACTION"):
-            return True
+            return "BLOCKED"
         if relation != "DISTINCT_ACTION":
-            return True  # Missing, ambiguous, or malformed comparison => HOLD.
-    return False
+            return "UNCLEAR"  # Missing, ambiguous, or malformed comparison => clarify.
+    return "DISTINCT"
+
+
+def _same_declined_action(candidate, declined_records):
+    """Compatibility predicate for refusal deduplication."""
+    return _declined_action_relation(candidate, declined_records) != "DISTINCT"
 
 
 def route_incident(record, choice):
@@ -200,14 +205,22 @@ def route_incident(record, choice):
     permission = record.get("player_permission", "NONE")
     may_discuss = permission in ("ASKED", "AUTHORIZED") and refusal_status != "INCOMPLETE"
     proposed = list(record.get("proposed_remedies", []))
-    available = ([item for item in proposed if not _same_declined_action(item, declined)]
-                 if may_discuss else [])
+    available = []
+    clarification_required = []
+    if may_discuss:
+        for item in proposed:
+            relation = _declined_action_relation(item, declined)
+            if relation == "DISTINCT":
+                available.append(item)
+            elif relation == "UNCLEAR":
+                clarification_required.append(item)
     status = {"CONTINUE_SAFE_SCOPE": "CONTAINED", "PAUSE_AUDIT": "OPEN",
               "TERMINATE": "TERMINATED"}.get(choice, "OPEN")
     return {"phase": status, "history": record["history"], "affected_advances": 0,
             "player_choice": choice, "declined_remedies": declined,
             "remedy_recording_status": refusal_status,
             "available_remedies": available,
+            "clarification_required": clarification_required,
             "allowed_threads": ["safe"] if status == "CONTAINED" else [],
             "notice": "此前的调查依据待核，沿该线继续可能影响后续判断。",
             "choices_offered": ["CONTINUE_SAFE_SCOPE", "PAUSE_AUDIT", "TERMINATE"]}
