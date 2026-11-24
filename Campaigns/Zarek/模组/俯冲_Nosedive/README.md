@@ -1,6 +1,6 @@
 # 《俯冲》（Nosedive）｜模组档案
 
-> 状态：**CLOSED / NARRATIVE RESOLVED / NO REWARDS / NO PENALTIES。** 2026-11-24 用户确认结案；历史运行过程见 Sessions/SESSION_01.md，最终状态见 08_RUNTIME_STATE.md 第10节。旧 Handoff 不再是续团指令。
+> 状态：**CLOSED / NARRATIVE RESOLVED / NO REWARDS / NO PENALTIES。** 2026-11-24 用户确认结案；历史运行过程见 Sessions/SESSION_01.md，最终状态见 [Runtime State 最终结案检查点](./08_RUNTIME_STATE.md) §10。旧 Handoff 不再是续团指令。
 > 系统：Triangle Agency 中文 v22。规则唯一权威为用户指定的中文 v22。
 > 信息等级：本目录除明确标注玩家侧的文件外，均为 GM-only。
 

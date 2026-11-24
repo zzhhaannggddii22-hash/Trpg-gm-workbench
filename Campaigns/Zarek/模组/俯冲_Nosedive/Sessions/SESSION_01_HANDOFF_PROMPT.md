@@ -2,6 +2,14 @@
 
 **重要：本提示词已于 2026-11-24 退役。** 《俯冲》已按用户确认结案；不得依照下文恢复 CONTINUE 或开场。下文仅保留当时历史恢复信息。
 
+```yaml
+handoff_status: RETIRED
+checkpoint_id: zarek/nosedive/SESSION_01/closure-2026-11-24
+runtime_ref: ../08_RUNTIME_STATE.md
+```
+
+权威终止状态见 [Runtime State 最终结案检查点](../08_RUNTIME_STATE.md) §10。下文指令仅供历史核对。
+
 ## 一、权威仓库与必读文件
 
 仓库：`zzhhaannggddii22-hash/triangle-agency-gm-workbench`

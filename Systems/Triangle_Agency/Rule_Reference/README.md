@@ -7,10 +7,12 @@
 中文 v22 原始资料位于上游 GitHub 仓库：
 
 - [主规则书 PDF（497 页）](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/main/最终交付_v22/triangle_agency_zh.pdf)
-- [主规则书 Markdown 全文](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/main/最终交付_v22/triangle_agency_zh.md)
+- [主规则书 Markdown 全文](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1/最终交付_v22/triangle_agency_zh.md)
 - [上游 v22 文件目录](https://github.com/p33333333333333l/triangle-agency-ai-zh/tree/main/最终交付_v22)
 
 PDF 文件大小为 10,251,018 bytes；SHA-256：`0a1af15308c2a42266089e20235a0090f35276fc624b2a899c175945a5c6923d`。该值与历史资料包记录的源 PDF 校验值一致。
+
+Markdown 运行出处固定为上方上游提交，SHA-256：`86f7e8cbf1044c6a113af6350e452d8070af137931b0e025be3066411da372ed`。内容改变须先核对版本和受影响条文。
 
 ## 历史备份（非日常入口）
 

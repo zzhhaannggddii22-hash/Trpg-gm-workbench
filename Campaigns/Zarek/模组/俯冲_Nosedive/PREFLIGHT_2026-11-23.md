@@ -14,7 +14,7 @@
 
 ## 2. 权威资料入口
 
-- 系统：Triangle Agency 中文 v22。日常检阅从 [系统规则工作区](../../../../GM_Training/Systems/Triangle_Agency/Rule_Reference/README.md) 开始。
+- 系统：Triangle Agency 中文 v22。日常检阅从 [系统规则工作区](../../../../Systems/Triangle_Agency/Rule_Reference/README.md) 开始（现行迁移入口）。
 - 原始规则 PDF：[triangle_agency_zh.pdf](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/main/最终交付_v22/triangle_agency_zh.pdf)；完整中文文本：[triangle_agency_zh.md](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/main/最终交付_v22/triangle_agency_zh.md)。
 - 历史 ZIP 仅为留存，不作为每次 Preflight 的常规读取入口。
 - 模组来源：《The Vault》中文 v22 母稿及官方模组资料；模组工作文件位于本目录。

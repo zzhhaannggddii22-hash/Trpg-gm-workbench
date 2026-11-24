@@ -135,16 +135,27 @@ persistence:
   status: "PREPARED | INCOMPLETE | PENDING_EXTERNAL_WRITE | DISPUTED | PUBLISHED"
   base_revision: "<published-revision>"
   target_revision: "<expected-revision>"
+  prepare_manifest_ref: "<independently readable GM batch record>"
+  previous_published_checkpoint_ref: "<verified checkpoint ref>"
   required_targets:
     - target: "SESSION_LOG"
       event_id: "<event-id>"
+      record_ref: "<expected target record locator>"
+      expected_version_ref: "<fingerprint or equivalent immutable content evidence>"
       status: "PENDING | APPLIED | VERIFIED | DISPUTED"
+      independent_readback_ref: null
     - target: "RUNTIME_STATE"
       event_id: "<event-id>"
+      record_ref: "<expected target record locator>"
+      expected_version_ref: "<fingerprint or equivalent immutable content evidence>"
       status: "PENDING | APPLIED | VERIFIED | DISPUTED"
+      independent_readback_ref: null
     - target: "PLAYER_NOTES"
       event_id: "<event-id>"
+      record_ref: "<expected target record locator>"
+      expected_version_ref: "<fingerprint or equivalent immutable content evidence>"
       status: "PENDING | APPLIED | VERIFIED | DISPUTED"
+      independent_readback_ref: null
   reconciliation:
     checked_event_ids: []
     unresolved_targets: []
@@ -152,7 +163,7 @@ persistence:
 ```
 
 - 上述清单是模板示例；按实际需要列出目标，不适用的目标不得强行创建。
-- 每个目标记录必须能反向定位同一 event_id 与 batch_id；Player Notes 还必须匹配 visibility 与 recipient_scope。
+- PREPARE 清单在任何目标写入前独立保存和读回，按运行身份与 batch_id 定位。每个目标必须可在 GM 侧关联同一 event_id 与 batch_id；Player Notes 还须匹配 visibility 与 recipient_scope。公开标识不安全时通过 GM 清单映射稳定投影记录。
 - 不得仅凭写入成功、文件条数、旧故障记录或缓存结果将目标标为 VERIFIED。
 
 ### 保存与恢复规则
@@ -214,7 +225,7 @@ runtime_application:
 ~~~
 
 规则：
-- APPLIED 必须同时满足：Session Log 有上述完整标记；Runtime checkpoint 的 applied_event_ids 或 reconciliation manifest 包含该 event_id；revision 与事件顺序相容。
+- APPLIED 必须同时满足：Session Log 有上述完整标记；Runtime checkpoint 引用的不可变 reconciliation manifest 按 §14.14 证明该事件修订及全部声明字段已按序应用。applied_event_ids 只作索引。
 - 任一侧缺失、引用不可读取、event_id 不匹配或 revision 冲突，均按 UNKNOWN 处理。
 - NOT_APPLIED 事件必须留在 unapplied_event_ids；UNKNOWN 不得自动归入已应用或未应用。
 - 对旧存档不得补造历史应用标记。无法回溯证明时保留 UNKNOWN，并按运行协议 §14.10 处理字段级争议。

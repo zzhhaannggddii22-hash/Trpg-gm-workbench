@@ -2,7 +2,9 @@
 
  > 当前状态：**模组已结案（CLOSED）。** 第9节及此前内容均为历史运行快照；最新状态以第10节最终结案检查点为准。2026-11-23 首次尝试继续为 NON-CANON。
 
-## 0. 场景续接锚点（2026-11-24 补充）
+## 0. 历史场景续接锚点（2026-11-24 补充）
+
+> 本节保留旧运行时的指令，只供追溯。当前恢复许可见 §10。
 
 - Resume Mode：**CLOSED / NO RESUME**。本模组已结案；此前 CONTINUE 仅为历史保存状态。
 - Current Scene ID：**CAFE-MEETING-END**（咖啡馆会面结束）。
@@ -112,7 +114,7 @@
 
 ## 9. 有效 Session 01 运行状态（2026-11-24 保存点）
 
-> 本节覆盖文件顶部旧的“重置待开场”状态。旧重置说明保留作历史审计；当前正式 CANON 是重置后重新开始并运行至本节保存点的这一轮。
+> 本节为当时的有效保存点，保留当时的事件和续接指令，仅供追溯。当前运行状态和恢复许可见 §10。
 
 - 当前状态：**ACTIVE / PAUSED FOR CROSS-SESSION SAVE**。Session 01 已有效开始，现暂停在咖啡馆会面结束后。
 - Resume Mode：**CONTINUE**，不是 NEW START。不得重演机构简报室、三名受害者首次调查、前三晚派对或咖啡馆会面。
@@ -143,6 +145,22 @@
 - 推断：照片中的男子可能是 Marcus；多辆深色车是否相关；异常是否沿物品接触传播。以上都不能写成事实。
 
 ## 10. 最终结案检查点（2026-11-24｜用户明确确认）
+
+```yaml
+active_system:
+  system_id: triangle_agency
+  ruleset_version: "中文 v22"
+  campaign_id: zarek
+  module_id: nosedive
+session_id: SESSION_01
+checkpoint:
+  checkpoint_id: zarek/nosedive/SESSION_01/closure-2026-11-24
+  revision: UNKNOWN
+  branch: CLOSED
+resume:
+  mode: CLOSED
+  can_advance: false
+```
 
 > 本节为最新且唯一有效的最终状态。第9节及此前保存点保留为历史快照，不再作为当前活动状态或续团入口。
 

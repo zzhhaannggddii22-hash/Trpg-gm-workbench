@@ -179,7 +179,7 @@ Player Notes / 玩家导出只允许投影：
 - GM adjudication / hidden truth / undisclosed clue / NPC deception intent
 - 未实际呈现的 claim、其他玩家/角色的 recipient-scoped 内容
 
-如果记录混合权限且无法可靠拆分，整条记录不得进入玩家投影；先拆分并逐字段核验。玩家投影必须记录 projection_schema_version、recipient_scope、源 event_id 与实际导出的字段清单。导出前后检查字段白名单，不能只检查行级 visibility。
+如果记录混合权限且无法可靠拆分，整条记录不得进入玩家投影；先拆分并逐字段核验。仅在独立 GM Audit 记录 projection_schema_version、recipient_scope、源 event_id、实际导出字段清单与过滤理由。玩家成品只含该接收者实际获知的白名单内容及安全必要引用。发布、附件与预览按 Runtime §14.12、§14.17。导出前后检查字段白名单，不能只检查行级 visibility。
 
 
 ### 2026-11-24 补充｜事件回应、呈现与 Runtime 合并标记（P1）
