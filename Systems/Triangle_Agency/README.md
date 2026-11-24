@@ -17,7 +17,7 @@
 ## 目录
 
 - [Rule_Reference/](./Rule_Reference/README.md)：规则检阅协议、基础规则与现场裁定、规则疑点及本桌裁定记录。
-- [Research/](./Research/)：Triangle Agency 专属 AI GM 架构、规则索引、GM 研究、参考资料与单特工桌面配置研究。
+- [Research/](./Research/)：Triangle Agency 专属 AI GM 架构、规则索引、GM 研究、参考资料与单特工桌面配置研究；包括 [外部 Skill 研究历史记录](./Research/skill-research-and-adaptation-2026-11-22.md)。
 
 ## 系统边界
 
