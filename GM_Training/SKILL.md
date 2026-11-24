@@ -29,7 +29,8 @@ metadata:
 - `06_IMPARTIALITY_AND_ADJUDICATION_DISCIPLINE.md`：独立裁定。
 - `07_RUNTIME_CONTROL_PROTOCOL.md`：风险分档、状态与错误恢复。
 - `08_CLUE_AND_SOURCE_LEDGER.md`：调查信息与来源。
-- 系统规则、模组原文、角色卡、当前运行状态和 Session Log：对应桌面的事实与规则权威。《三角机构》专项基础规则速查位于 `Systems/Triangle_Agency/Rule_Reference/01_基础规则与现场裁定.md`；涉及 QA、Ask the Agency、默认失败、Chaos Pool 时优先调用并回查原文。
+- `../SYSTEM_CONTEXT_PROTOCOL.md`：系统选择、绑定、加载顺序与隔离协议。每桌先读取 Campaign Manifest，锁定唯一 `system_id` 与规则版本。
+- 系统规则、模组原文、角色卡、当前运行状态和 Session Log：对应桌面的事实与规则权威。系统专属资料只从仓库根目录 `../Systems/<system_id>/` 调用；不得从其他系统借用规则、术语、数值或判定程序。
 - `NARRATIVE_PRESENTATION_SKILL.md`：叙事技法基线。
 
 本 Skill 只规定如何选择和调用这些资料。发生冲突时，以既有权威层级为准。
@@ -38,11 +39,11 @@ metadata:
 
 ### 新对话 / 新 Session：执行一次完整恢复
 
-先读 GM Training README、核心原则、工作流程、裁决纪律、运行控制协议；再读取本桌系统规则索引与必要原文、当前模组 GM-only 准备、角色卡/场次副本、最新战役交接、上一场 LOG 和复盘行动项。
+先读 GM Training README、核心原则、工作流程、裁决纪律、运行控制协议与 `../SYSTEM_CONTEXT_PROTOCOL.md`；再从当前 Campaign Manifest 确认唯一系统及版本，读取该系统 README/规则索引和本场必要原文；最后读取当前模组 GM-only 准备、角色卡/场次副本、最新战役交接、上一场 LOG 和复盘行动项。
 
 准备、备团审核、Preflight 与运行状态维护，均按 `02_WORKFLOW_AND_PREFLIGHT.md`、`09_MODULE_FOLDER_STANDARD.md`、`12_PREP_DESIGN_AND_SECOND_PASS_REVIEW.md` 和 `13_PREP_TO_RUNTIME_HANDOFF_STANDARD.md` 执行。它们定义通用流程、检查标准与阶段边界；具体某个模组的流程状态只写入该模组自己的记录，不写入本 Skill。调查增量检查不是每个现场节点的强制流程。
 
-只读取当前桌面相关的文件，不扫描整个仓库，不把其他系统、其他模组或无关历史全部装入上下文。
+只读取当前桌面相关的文件，不扫描整个仓库，不把其他系统、其他模组或无关历史全部装入上下文。系统切换必须由用户明确提出；切换时先保存当前系统的 Runtime State，再执行新系统 Preflight。
 
 每次新对话/新 Session 都必须执行本次 Preflight：重新恢复本次所需权威资源并核对关键状态。可以复用已有索引、上一轮运行快照和已验证的资料定位以减少重复工作，但不得把旧 Preflight 的通过状态直接沿用，也不得因此跳过本次资源加载与就绪确认。具体模组选择、审核状态、Preflight 结果与是否开团，必须从对应模组的当前状态文件读取，不在通用 Skill 中维护。
 
