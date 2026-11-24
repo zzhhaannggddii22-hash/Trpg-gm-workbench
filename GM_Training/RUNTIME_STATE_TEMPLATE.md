@@ -163,3 +163,41 @@ persistence:
 - 对同一 event_id 的重试必须幂等：先查是否已应用；不得重复扣资源、发奖励、转移物品或推进事件。
 - 旧记录缺少系统锁、版本或检查点时，标记 LEGACY_UNMIGRATED，并走完整 Preflight；不能用摘要推断。
 - 新对话必须验证系统、Campaign、Module、规则版本、活动分支、场景入口状态、最后已呈现/已回应事件、待回应行动、物品资源、知识权限和事故授权。
+
+
+### 开放争议与持久化冲突（无争议时保留空数组）
+
+~~~yaml
+persistence:
+  disputes:
+    - dispute_id: "<stable-dispute-id>"
+      batch_id: "<affected-batch-id>"
+      affected_event_ids: []
+      affected_targets: []
+      status: "OPEN | CONTAINED | RESOLVED"
+      conflict_type: []
+      observed_records:
+        - target: "<target>"
+          record_locator: "<exact locator>"
+          event_id: "<observed id>"
+          batch_id: "<observed batch>"
+          revision: "<observed revision>"
+          payload_version: "<observed version>"
+          payload_fingerprint: "<observed fingerprint or NOT_AVAILABLE>"
+          visibility: "<observed value>"
+          recipient_scope: "<observed value>"
+          raw_record_ref: "<immutable evidence ref>"
+      prepare_evidence_ref: "<PREPARE ref>"
+      prior_fault_evidence_ref: "<diagnostic-only ref>"
+      detected_at: "<timestamp or UNKNOWN>"
+      resolution:
+        status: "UNRESOLVED | RESOLVED"
+        resolved_by: null
+        basis_ref: null
+        resolution_event_id: null
+~~~
+
+- 争议对象是权威状态的一部分，不是临时审计备注。每次恢复先读取开放争议，再读取其原始证据。
+- 发现冲突后，必须将争议对象写入 Runtime State，并在 Session Log 追加同 dispute_id 的事件；分别读回核验。任何一个目标未成功，整体仍 INCOMPLETE。
+- 不删除冲突记录。解除争议时追加 resolution 事件并保留原始对象及证据链。
+- DISPUTED 状态阻断受影响事件的玩家投影与依赖该事件的推进；不相关且能证明隔离的内容可继续。
