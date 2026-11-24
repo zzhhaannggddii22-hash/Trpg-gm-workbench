@@ -37,6 +37,7 @@
 - [角色模拟 Skill](./CHARACTER_SIMULATION_SKILL.md)
 - [叙事呈现 Skill](./NARRATIVE_PRESENTATION_SKILL.md)
 - [叙事与主持能力训练体系](./NARRATIVE_TRAINING_PROGRAM.md)：训练课程、小说技法迁移、Prep/Runtime 分工与 Skill 沉淀门槛。
+- [叙事训练题库](./NARRATIVE_TRAINING_QUESTION_BANK.md)：Casey 自主维护训练题；每次正式训练前先交用户审题。
 - [专业能力迁移机制](../CAPABILITY_TRANSFER.md)
 
 ## 能力迭代原则
