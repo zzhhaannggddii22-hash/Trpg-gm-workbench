@@ -474,3 +474,16 @@ T0 审计完成后，玩家决定是否恢复前，必须提供最小充分风�
 - 明确授权继续无关场景，只允许在已证明可隔离的安全范围内推进，不解除争议。
 - 明确授权沿争议线继续，也不自动把争议内容变成 CANON；必须说明玩家选择承担的风险，且规则/事实基础仍需独立解决。
 - 审计完成不等于获得继续授权；沉默、暂停审计和模糊回应均不得推进。
+
+
+### 14.8 玩家投影的字段级权限闸门（P0）
+
+Player Notes、玩家摘要和任何面向玩家的导出，必须按字段权限生成，不得把整行 visibility 当作该行所有字段均可公开的证明。
+
+1. 对混合权限记录，优先拆分为关联的公开陈述/观察记录与 GM-only 知识/审计记录；保留共同 source_event_id，禁止把两者合并后整行投影。
+2. 玩家投影采用字段白名单：仅允许实际呈现给目标接收者的 public_utterance、public_observation、player_known_claims，以及玩家有权知道的必要时间/地点/行动结果。
+3. gm_knowledge、private_notes、GM adjudication、hidden truth、undisclosed clue、NPC deception intent，以及其他接收者的 recipient-scoped 内容默认拒绝导出。
+4. 若投影器不支持字段级筛选，或不能确认字段是否已呈现/接收者是否匹配，拒绝整条混合记录导出；不得退化为复制整行。
+5. 每次重要投影记录 projection_schema_version、source_event_id、recipient_scope、实际导出字段清单和读回结果。导出后检查最终内容，而不只检查投影前元数据。
+6. 发现任何 GM-only 字段进入玩家投影，立即按 T0 处理：停止受影响投影，保留泄露证据，追踪已发送范围与派生记录，并按 14.7 提供不剧透风险摘要。不得声称“行级 visibility 正确”即可免责。
+
