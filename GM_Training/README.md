@@ -11,14 +11,12 @@
 - 不把文档完善等同于能力提升；能力结论须由实际场景和复盘证据支持。
 - GM-only 资料与玩家可见信息严格隔离；向玩家输出时只提供角色可知且当前有用的信息。
 
-## 系统发展方向
+## 系统边界与资源规划
 
-- 当前实战主系统仍为《三角机构》；具体系统版本由对应 Campaign Manifest 锁定。
-- 中长期重点系统之一为《匕首之心》（Daggerheart），适合纳入后续规则研究与实战训练规划。
-- 用户偏好规则负担相对轻、叙事驱动、强调人物与场景体验的系统玩法；尤其重视单人游玩中的探索、调查、世界理解和人物互动。
-- 暂不主动投入 D&D 5R 等规则负担较重系统的专项备团、规则索引与长期训练；除非用户之后明确提出。
-- 引入新系统时，先在 `Systems/<system_id>/` 建立独立规则权威来源、系统索引、专属 Skill 与系统 Preflight；再由 Campaign Manifest 绑定。未被当前桌面绑定的系统资料不得进入运行上下文。不得混用不同系统机制。
-- 长期候选系统及研究原则见 [TRPG 规则体系长期研究候选池](../Research/SYSTEM_RESEARCH_ROADMAP.md)。当前记录包括《匕首之心》、Mothership、《刀锋之影》（Blades in the Dark）、《铁誓》（Ironsworn）和《千年吸血鬼》（Thousand Year Old Vampire），以及《死亡之地》（Deadlands）／SWADE。候选池不代表近期排期；不同单人/多人及 GM/无 GM 模式需要实际体验后再判断。
+- 本目录不指定当前使用哪套规则，也不维护系统候选优先级；当前桌面由 Campaign 的 SYSTEM_BINDING 锁定。
+- 各系统的正式状态、权威来源与专属资料入口见 [Systems/README.md](../Systems/README.md)。
+- 尚未采用的系统及长期研究方向见 [TRPG 规则体系长期研究候选池](../Research/SYSTEM_RESEARCH_ROADMAP.md)。
+- 引入新系统时，先建立独立规则权威来源、索引、专属 Skill 与系统 Preflight，再由 Campaign Manifest 绑定。未被当前桌面绑定的系统资料不得进入运行上下文。
 
 ## 系统隔离入口
 
