@@ -290,7 +290,7 @@ class ReferenceExercises(unittest.TestCase):
         self.assertEqual(malformed_refusal["remedy_recording_status"], "INCOMPLETE")
         self.assertEqual(malformed_refusal["available_remedies"], [])
         self.assertEqual(rejected["history"], history)
-        print("\\nT0 reference: refusal survives new ID/rewording/split action; alternatives require player inquiry; history preserved", flush=True)
+        print("\nT0 reference: refusal survives new ID/rewording/split action; alternatives require player inquiry; history preserved", flush=True)
 
     def test_RT11_process_faults(self):
         event = {"event_id": "RWD-1", "event_revision_id": "RWD-1-v1", "batch_id": "B1",
