@@ -54,3 +54,33 @@ E13 四轮可见路由均符合授权边界，尤其第三轮拒绝附带越权�
 
 ## 6. P1-0C 独立审查 C1-C6 与修订交接（2026-11-24）
 独立审查结论为 REJECT。修复范围：C1 清除已呈现事件自动回滚；C2 建立不可变字段级应用 manifest；C3 统一 T0 incident、授权继承、冻结依赖和角色行动语义；C4 建立首次可见前的私有暂存/读回/扫描/发布门禁；C5 完善接收者与片段级呈现去重；C6 隔离目标 Chat 输入与操作者预期/评分。历史 P1-0 的 4 FAIL、1 PARTIAL 永久保留；本轮规范修订不构成目标环境通过。P1-0C 未实测前不得进入 P1-0R/P1-1。
+
+
+## 7. C1-C6 修复落地记录（2026-11-24）
+
+**已合并至 main**：PR [#4](https://github.com/zzhhaannggii22-hash/triangle-agency-gm-workbench/pull/4)  
+**合并提交**：`d7473fcb63769d1b07080be2828e28bcd8c764ee`  
+**修复分支**：`p1-0c-corrective-hardening-2026-11-24`
+
+| 审查项 | 已落地修订 | 主要文件 |
+|---|---|---|
+| C1 已呈现事件自动回滚 | 旧 §12.3 改为按呈现状态分流；已呈现/UNKNOWN 保留现场、玩家行动和原始事件，只能追加勘误/经授权分支处置；模板移除暗示性自动回滚检查项 | 07_RUNTIME_CONTROL_PROTOCOL.md、RUNTIME_STATE_TEMPLATE.md |
+| C2 字段级应用证明 | 不可变 reconciliation manifest 绑定事件修订、payload 版本、批次、revision、顺序和精确字段；索引不再充当证明；领域争议与持久化争议分开 | 07_RUNTIME_CONTROL_PROTOCOL.md、RUNTIME_STATE_TEMPLATE.md、03_SESSION_LOG_TEMPLATE.md |
+| C3 T0 授权与行动边界 | 可恢复 incident、依赖边、允许/冻结线程和授权事件；区分玩家意图、角色发言/行动、GM 建议、NPC 意向/执行；混合行动按子动作路由 | 07_RUNTIME_CONTROL_PROTOCOL.md、GM_RELIABILITY_AND_EXPERIENCE_CONTROL_PROTOCOL.md、RUNTIME_STATE_TEMPLATE.md、03_SESSION_LOG_TEMPLATE.md、SKILL.md |
+| C4 发布前隔离 | 新增私有暂存、独立读回、完整扫描、接收者核验和独立发布顺序；能力不足即 INCOMPLETE / NOT_PUBLISHED | 07_RUNTIME_CONTROL_PROTOCOL.md、SKILL.md |
+| C5 片段级呈现 | 按接收者/内容片段记录部分呈现；明确回顾和必要提醒例外，普通互动不逐句建账 | 07_RUNTIME_CONTROL_PROTOCOL.md、03_SESSION_LOG_TEMPLATE.md |
+| C6 盲测隔离 | 目标执行提示词改为通用纪律；操作者 RUN_MANIFEST 与夹具 v2 独立存放；必测项证据不足即阶段 NOT MET | GM_RUNTIME_P1_0C_EXECUTION_PROMPT.md、GM_RUNTIME_P1_0C_OPERATOR_PROTOCOL.md、Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v2.md、GM_RUNTIME_P1_PERFORMANCE_PLAN.md |
+
+### 静态回读核验
+- 12 个变更文件均从 GitHub `main` 重新读取，核对内容与 Blob SHA。
+- 检查 C1 旧自动回滚段落已替换，Runtime §14.13–§14.18 存在且顺序连续。
+- 检查 T0 §12 只有一个权威职责段，不再重复维护授权路由。
+- 检查 Runtime checkpoint 使用 `reconciliation_manifest_refs[]`，`applied_event_ids[]` 仅作索引；Session Log 包含 PARTIAL 与片段呈现字段。
+- 检查执行提示词不含逐用例名称/预期，独立审查提示词要求读取 operator protocol 与 fixture v2。
+- 检查 README 新入口和 P1 阶段门禁。
+
+### 未完成且不得宣称通过
+- 未执行 P1-0C 目标 Chat 行为回归。
+- 未验证目标 Chat 的真实文件写入、独立读回、访问控制、私有暂存或首次发布行为。
+- 未取得新试次原始工具轨迹、附件上传时序与产品模型档位证据。
+- 因此 P1-0 仍为历史 4 FAIL、1 PARTIAL；P1-0C 尚未通过，P1-0R/P1-1 仍锁定。
