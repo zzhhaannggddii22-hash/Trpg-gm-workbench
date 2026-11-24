@@ -236,3 +236,11 @@ action_semantics: PLAYER_INTENT | PC_DECLARED_SPEECH | PC_ACTION_COMMITTED | GM_
 - RESPONDED 不证明每个回应片段均已送达。gm_response_ref 定位实际可见回复，并与片段记录对应。
 - 玩家意图、角色发言、已提交行动、GM 建议和 NPC 意向不可互相转换。
 - 旧记录缺字段按 UNKNOWN，不补造历史应用、呈现或授权证据。
+
+
+## P1-0C 补充｜字段级应用和接收者片段
+新事件应用证明必须按 Runtime §14.14 的不可变 reconciliation manifest 记录 event_revision_id、payload_version/fingerprint、batch_id、base/target revision、sequence 和精确 applied_field_paths。checkpoint 的 applied_event_ids 仅为索引，不是证明。部分应用标 PARTIAL。
+
+对 PARTIALLY_PRESENTED 事件按 Runtime §14.16 记录 presentation_segments[]，每个片段绑定内容定位、recipient_scope、delivery_channel、delivery_state、presented_at 和 evidence_ref。RESPONDED 不代表所有片段已送达；未知送达状态保持 UNKNOWN。
+
+新事件另记录 action_semantics：PLAYER_INTENT / PC_DECLARED_SPEECH / PC_ACTION_COMMITTED / GM_PROPOSED_ACTION / NPC_FUTURE_INTENT / NPC_ACTION_EXECUTED。不得把玩家意图写成角色发言或执行，也不得把 NPC 未来意向写成实际行动。
