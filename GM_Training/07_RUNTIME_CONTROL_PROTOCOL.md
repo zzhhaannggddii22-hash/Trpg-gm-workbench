@@ -412,3 +412,65 @@ NPC 按自己的知识、动机、性格、能力、关系、资源和机会行�
 
 ### 14.5 效率与体验边界
 普通轮不重读全量 Skill/模组原文，不重复运行完整 Preflight，不输出审计过程。首次命名 NPC 仍须读取对应原文与首次卡；红色规则仍须核对完整适用条文。压缩只删除无用重复，不删除否定词、条件、例外、成本、未知项、玩家未回应选择或角色知识边界。回复速度评估分别记录首个有效反馈、完整回复、工具等待与可见生成吞吐；没有可观测数据时标 UNKNOWN。
+
+
+### 14.6 持久化争议对象与冷恢复（P0 第三轮修订）
+
+争议对象的规范结构：
+
+~~~yaml
+persistence_dispute:
+  dispute_id: "<stable-dispute-id>"
+  batch_id: "<affected-batch-id>"
+  affected_event_ids: []
+  affected_targets: []
+  status: "OPEN | CONTAINED | RESOLVED"
+  conflict_type:
+    - "DUPLICATE_EVENT | PAYLOAD_VERSION_DRIFT | REVISION_DRIFT | RECIPIENT_MISMATCH | VISIBILITY_MISMATCH | EVENT_ID_MISMATCH | BATCH_MISMATCH | OTHER"
+  observed_records:
+    - target: "<SESSION_LOG | RUNTIME_STATE | PLAYER_NOTES>"
+      record_locator: "<stable locator>"
+      event_id: "<observed event id>"
+      batch_id: "<observed batch id>"
+      revision: "<observed revision>"
+      payload_version: "<observed version>"
+      payload_fingerprint: "<observed fingerprint or NOT_AVAILABLE>"
+      visibility: "<observed visibility>"
+      recipient_scope: "<observed recipient>"
+      raw_record_ref: "<immutable evidence locator>"
+  prepare_evidence_ref: "<original PREPARE record>"
+  prior_fault_evidence_ref: "<prior fault record; diagnostic only>"
+  detected_at: "<timestamp or UNKNOWN>"
+  resolution:
+    status: "UNRESOLVED | RESOLVED"
+    resolved_by: null
+    basis_ref: null
+    resolution_event_id: null
+~~~
+
+硬性执行要求：
+1. DISPUTED 不是一次性输出标签。发现重复事件、内容版本漂移、revision 漂移或权限错配时，必须将上述争议对象写入权威 Runtime State 的 persistence.disputes[]，并在 Session Log 追加 INCIDENT/DISPUTE 事件；两者互相引用同一 dispute_id。
+2. 争议记录必须保存实际观察到的每条冲突记录身份与原始证据定位。不得只保存“发现重复”这类结论；原始记录不得删除或静默覆盖。
+3. 写入后必须独立重新读取 Runtime State 与 Session Log，核对 dispute_id、受影响 batch/event/target、冲突类型、观察记录和证据引用。读回失败时维持 INCOMPLETE；读回一致才可确认 DISPUTED 已持久化。
+4. 冷恢复首先读取权威 Runtime State 的开放争议清单，再回查对应原始记录。开放争议不得因旧 Fault 消失、聊天上下文变化或新模型进程而自动清除；依赖争议字段的投影、发布、状态推进一律阻断。
+5. 争议解除必须追加 resolution 事件，写明 resolved_by、basis_ref、resolution_event_id，并经读回核验。不得直接把原争议对象删除或改写成从未发生。
+6. 合法修订必须有明确谱系：revision_of（原 event_id）、revision_id、修订依据/授权、payload_version 与新 fingerprint。若修订改变事件语义、接收者或目标集合，使用新 event_id 与新 batch_id；若仅修订同一事件的文字/字段，沿用 event_id 并递增 revision_id，保留旧版本。无谱系的变化一律 DISPUTED。
+7. PREPARE 清单、旧 Fault 和执行器缓存均为证据，不是修复指令。恢复决策只根据当前权威记录与已核验的 PREPARE 信封作出。
+
+### 14.7 玩家授权前的非剧透风险摘要（E13）
+
+T0 审计完成后，玩家决定是否恢复前，必须提供最小充分风险摘要。摘要不得泄露隐藏真相、未发现线索、NPC 谎言内容、机制或模组秘密，但必须说明：
+- 哪一类玩家可见依据/记录无法核实，或哪一段推进已被隔离；
+- 该依据目前处于隔离/争议状态，不会被当作已确认事实；
+- 沿受影响线索或行动链继续可能造成的具体体验风险（例如误导判断、错误推进、后续状态不可靠）；
+- 哪些与争议无关的场景/行动仍可继续（若确实能安全隔离）；
+- 玩家可以选择继续安全范围内的内容、继续暂停、或终止本次模组。
+
+最低表达示例（按实际情况改写）：
+“此前有一条调查依据无法核实，已暂时隔离。沿那条线继续可能误导判断或影响后续记录；与它无关的场景仍可继续。你可以继续处理无关内容、保持暂停，或结束本次模组。”
+
+授权闸门：
+- “继续吧”“没事”“随便”等未指明范围的表达，不构成对争议分支的明确授权。
+- 明确授权继续无关场景，只允许在已证明可隔离的安全范围内推进，不解除争议。
+- 明确授权沿争议线继续，也不自动把争议内容变成 CANON；必须说明玩家选择承担的风险，且规则/事实基础仍需独立解决。
+- 审计完成不等于获得继续授权；沉默、暂停审计和模糊回应均不得推进。
