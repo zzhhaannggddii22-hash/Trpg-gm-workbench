@@ -4,7 +4,7 @@ description: Structured training curriculum for reliable TRPG GM narration, char
 license: private-project
 metadata:
   author: Casey
-  version: "1.0"
+  version: "1.1"
   type: training
   mode: development
   domain: tabletop-rpg
