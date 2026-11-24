@@ -1,18 +1,21 @@
-# Triangle Agency GM Workbench
+# Multi-System TRPG GM Workbench
 
 独立的 TRPG GM 专业工作台：规则研究、备团、运行、复盘、训练与能力迭代。
 
 ## 目录
 - [GM_Training/](GM_Training/README.md)：通用 GM 原则、Preflight、裁定纪律、运行控制、线索管理、备团审核与专业能力模块。
-- [Triangle Agency 系统资料](GM_Training/Systems/Triangle_Agency/README.md)：系统专属规则检阅协议与裁定记录。
-- [扎雷克战役](Campaigns/Zarek/README.md)：人物档案、战役状态、NPC 索引与模组记录。
-- [研究与历史交接资料](Research/)：AI GM 架构、规则索引、单人适配与历史研究。
+- [多系统架构与上下文隔离协议](SYSTEM_CONTEXT_PROTOCOL.md)：系统选择、加载、锁定与切换规则。
+- [规则系统目录](Systems/README.md)：每套 TRPG 系统的独立规则环境与专属资料。
+- [Triangle Agency 系统资料](Systems/Triangle_Agency/README.md)：《三角机构》专属规则、索引、研究与裁定记录。
+- [战役目录](Campaigns/README.md)：各战役的系统绑定与独立状态。
+- [扎雷克战役](Campaigns/Zarek/README.md)：绑定《三角机构》中文 v22 的人物档案、战役状态、NPC 索引与模组记录。
+- [通用研究与候选池](Research/)：跨系统研究方法与尚未正式引入的候选系统；系统专属研究归入对应 Systems 文件夹。
 - [高级模型备团 QA 协议](GM_Training/ADVANCED_MODEL_PREP_QA_PROTOCOL.md)：备团资料交接、独立挑错、修订与验收。
 - [专业能力迁移机制](CAPABILITY_TRANSFER.md)：从 TRPG 实战中提取可跨场景验证的通用能力。
 
 ## 工作流程
-1. 读取 GM Training 核心原则、当前系统规则索引和对应模组资料。
-2. 建立设定基石、可调用素材、预设方向、调查链与 NPC/环境因果账本。
+1. 确认当前桌面的 system_id 与规则版本；按 SYSTEM_CONTEXT_PROTOCOL 只加载该系统的权威资料。
+2. 读取对应 Campaign / Module 的资料，建立设定基石、可调用素材、调查链与 NPC/环境因果账本。
 3. 按风险与复杂度执行第二轮 Prep QA；复杂、扩写多或调查链较长的模组，默认建议交由高能力模型独立挑错。
 4. 修订并记录 QA 结果，生成 Runtime Quick Reference 与 Prep-to-Runtime Handoff。
 5. 每次新对话/新 Session 独立执行 Preflight；运行后维护状态并复盘。
