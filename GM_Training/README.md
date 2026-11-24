@@ -71,3 +71,24 @@
 3. 不以模块分数平均值掩盖关键短板或硬失败。
 4. 专项训练后必须进行综合再整合。
 5. 不为了目录整齐而进行没有收益的大规模路径搬迁；优先保持现有稳定链接和权威入口。
+
+
+## 8. 运行可靠性与综合验收材料
+
+以下文件属于工程验收和测试执行资料，不代表测试已通过：
+
+- [GM 系统质量验收报告](./Acceptance_Reports/GM_SYSTEM_ACCEPTANCE_REPORT_2026-11-24.md)
+- [GM 系统优化方案](./Optimization_Reports/GM_SYSTEM_OPTIMIZATION_PLAN_2026-11-24.md)
+- [GM 系统实施记录](./Optimization_Reports/GM_SYSTEM_IMPLEMENTATION_RECORD_2026-11-24.md)
+- [P0 第三轮复核与 P1 交接](./Acceptance_Reports/GM_RUNTIME_P0_THIRD_ROUND_REVIEW_AND_P1_HANDOFF.md)
+- [P1-0 修复与 P1-0C 交接](./Acceptance_Reports/GM_RUNTIME_P1_0_REMEDIATION_AND_P1_0C_HANDOFF.md)
+- [P0 合成验收夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_FIXTURE_v1.md)
+- [P0 回归夹具 v2](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_REGRESSION_v2.md)
+- [P0 回归夹具 v3](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_REGRESSION_v3.md)
+- [P1-0C 定向回归夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v1.md)
+- [P1-0C 定向回归夹具 v2](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v2.md)
+- [T0 自然语言盲测执行状态](./Acceptance_Reports/T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_PREPARATION_AND_EXECUTION_STATUS_2026-11-24.md)
+- [T0 盲测目标 Chat 执行提示](./GM_T0_BLIND_EXECUTION_PROMPT_v1.md)
+- [T0 盲测操作者隔离协议](./GM_T0_BLIND_OPERATOR_PROTOCOL_v1.md)
+
+运行可靠性测试、叙事综合能力评估和真实跑团体验分别报告。合成测试通过不能证明实际跑团整体优秀；训练样本优秀也不能证明运行可靠性验收通过。
