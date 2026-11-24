@@ -289,6 +289,11 @@ class ReferenceExercises(unittest.TestCase):
                                             "player_permission": "AUTHORIZED"}, "REJECT_REMEDY")
         self.assertEqual(malformed_refusal["remedy_recording_status"], "INCOMPLETE")
         self.assertEqual(malformed_refusal["available_remedies"], [])
+        # A malformed old refusal blocks proposals, but must not prevent recording a new valid refusal.
+        valid_after_malformed = route_incident({**base, "remedy": refused,
+                                                "declined_remedies": [incomplete]}, "REJECT_REMEDY")
+        self.assertEqual(valid_after_malformed["remedy_recording_status"], "RECORDED")
+        self.assertEqual(len(valid_after_malformed["declined_remedies"]), 2)
         self.assertEqual(rejected["history"], history)
         print("\nT0 reference: refusal survives new ID/rewording/split action; alternatives require player inquiry; history preserved", flush=True)
 
