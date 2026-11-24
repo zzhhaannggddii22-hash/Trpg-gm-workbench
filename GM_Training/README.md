@@ -37,6 +37,8 @@
 - [Session Log 模板](./03_SESSION_LOG_TEMPLATE.md)
 - [能力评估框架](./04_EVALUATION_FRAMEWORK.md)
 - [TRPG GM Skill](./SKILL.md)
+- [GM 可靠性与体验方向控制协议（T0）](./GM_RELIABILITY_AND_EXPERIENCE_CONTROL_PROTOCOL.md)：模组体验契约、NPC 真相/认知/玩家信息隔离、即兴准入、低成本方向检查、T0 熔断与 GM-only 审计。
+- [GM 系统质量验收提示词](./GM_SYSTEM_ACCEPTANCE_PROMPT.md)：交由高级模型对全套 GM 系统进行独立质量验收。
 - [角色模拟 Skill](./CHARACTER_SIMULATION_SKILL.md)
 - [叙事呈现 Skill](./NARRATIVE_PRESENTATION_SKILL.md)
 - [叙事与主持能力训练体系](./NARRATIVE_TRAINING_PROGRAM.md)：训练课程、小说技法迁移、Prep/Runtime 分工与 Skill 沉淀门槛。
