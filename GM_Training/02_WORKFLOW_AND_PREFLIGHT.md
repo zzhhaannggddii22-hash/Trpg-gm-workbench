@@ -37,7 +37,7 @@ Context Assembly 是本次 Preflight 和后续重要行动的资料装配层，�
 6. **Trace。** Preflight 阶段的 Trace 随 Preflight/Handoff 记录；后续重要行动的最小 Trace Envelope 关联 Session Log 事件。绿色普通互动不强制持久化。Runtime State 不复制完整 Manifest/Trace，Player Notes 不包含 GM Trace。
 7. **可观察性边界。** 只记录工作台可观察的资料定位、读取返回、核验、决定和输出；不得声称读取 ChatGPT 平台完整隐藏 Prompt。
 
-详细契约以 [Runtime §14.20](./07_RUNTIME_CONTROL_PROTOCOL.md#1420-context-assemblymanifesttrace-与-diff-p1) 为准。
+详细契约以 [Runtime §14.20](./07_RUNTIME_CONTROL_PROTOCOL.md#1420-context-assembly-and-trace) 为准。
 
 ### 完整路径读取清单
 

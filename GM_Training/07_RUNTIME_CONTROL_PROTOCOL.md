@@ -883,7 +883,7 @@ GM 可以并且应当使用完整的内部数据正确裁定战斗，但玩家�
 - 回顾时一次性筛选玩家已知事件集合；不要求把整场游戏每轮重复检查一遍。
 - 发现未呈现信息已泄漏时，按 §14.1 与 §14.13 处理；不得只在下一轮停止提及而保留其对玩家选择或后续状态的影响。
 
-## 14.20 Context Assembly、Manifest、Trace 与 Diff（P1）
+## 14.20 Context Assembly and Trace
 
 本节在现有 Preflight、Runtime 风险路由、权威资料分层和玩家信息权限规则之上，定义一次行动的上下文装配与可观测性。它不创建第二套 Runtime、事件历史、Claim Ledger 或玩家知识库，也不替代 §13、§14.3、§14.9–16、§14.19。
 
@@ -937,7 +937,7 @@ Context Diff 回答：与上一次有效装配相比，当前行动相关的依�
 
 ### 14.20.4 Context Manifest
 
-Manifest 是一次上下文装配的可追溯清单，不是新的权威数据库，也不是 Runtime Reconciliation Manifest。不得混用两种 Manifest。
+Manifest 是一次上下文装配的可追溯清单，不是新的权威数据库，也不是 Runtime Reconciliation Manifest。不得混用两种 Manifest。对需要跨对话追溯的黄色/红色行动，Manifest 作为不可变 GM-only 记录块嵌入对应 Session Log 事件或诊断事件；Preflight 阶段则嵌入本次 Preflight/Handoff 记录。引用定位到记录块，不另建平行 Manifest 文件库。绿色普通互动可只在当前上下文中临时维护，不持久化。
 
 需要结构化追溯时，使用以下最小契约；按行动适用性填写，不适用字段标 NOT_APPLICABLE：
 

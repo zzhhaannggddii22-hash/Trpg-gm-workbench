@@ -190,7 +190,7 @@ Module 结团时，基于多个 Session 的具体片段区分现象、根因和�
 
 现场以玩家当前行动为中心装配所需资料，而不是把所有 Skill、规则和历史资料逐轮全部加载。新对话/新 Session 的装配由 Preflight 负责；活动对话按 Runtime 风险路由和实际依赖按需回查。
 
-- 黄色/红色、恢复、冲突和重要状态变化，按 [Runtime §14.20](./07_RUNTIME_CONTROL_PROTOCOL.md#1420-context-assemblymanifesttrace-与-diff-p1) 识别 REQUIRED / CONDITIONAL / SUPPORTING 依赖，并区分检索、读取和核验状态。
+- 黄色/红色、恢复、冲突和重要状态变化，按 [Runtime §14.20](./07_RUNTIME_CONTROL_PROTOCOL.md#1420-context-assembly-and-trace) 识别 REQUIRED / CONDITIONAL / SUPPORTING 依赖，并区分检索、读取和核验状态。
 - 同一玩家行动的补充读取和重试沿用 Context ID；复合行动使用父 Context 与子行动，不把同一意图拆成无关上下文。
 - READY / READY_WITH_LIMITS / BLOCKED 只描述当前行动范围；只冻结依赖缺口的子行动，不冻结有独立依据的安全互动。
 - 绿色普通互动不强制持久化 Manifest、Trace 或执行全量 Diff。
