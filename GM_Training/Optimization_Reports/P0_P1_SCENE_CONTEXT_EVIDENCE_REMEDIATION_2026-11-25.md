@@ -58,7 +58,7 @@
 | 分支隔离 | DONE | 从当前 main 的后继提交创建独立分支；未修改 main |
 | 文档修改写入 | DONE | GitHub 已返回各文件提交 SHA |
 | 修改后回读与链接检查 | PASS | 10 个变更文件均已从修复分支重新读取；RT-16 Markdown 检查为 215 个 Markdown 文件、352 个本地链接、0 个缺失路径、0 个锚点候选 |
-| 仓库自动化测试 | PASS | GitHub Actions PR validation run `45619024392`：12 项 unittest 全部通过；`git diff --check` 通过；最终修复提交 `62bf377070bd3091362d2a5da79aeaaca2ae7e33` |
+| 仓库自动化测试 | PASS | GitHub Actions PR validation run `45620121167`：12 项 unittest 全部通过；`git diff --check` 通过；验证提交 `b4fdb45c68625461c4e1bb8c3b5e15305c683573` |
 | 目标 Chat 独立回归 | NOT STARTED | SC-01–SC-18 尚未交给独立目标 Chat 执行 |
 | 真实跑团综合验证 | NOT STARTED | 不以文档更新代替实际运行证据 |
 
