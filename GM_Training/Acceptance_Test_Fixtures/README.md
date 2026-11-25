@@ -9,6 +9,7 @@
 - [P0 回归夹具 v3](./GM_RUNTIME_P0_REGRESSION_v3.md)
 - [P1-0C 定向回归夹具 v1](./GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v1.md)
 - [P1-0C 定向回归夹具 v2](./GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v2.md)
+- [P1-0R 隔离文件系统故障注入脚本](./P1_0R/p1_0r_fault_harness.py)
 
 ## T0 自然语言盲测材料
 
