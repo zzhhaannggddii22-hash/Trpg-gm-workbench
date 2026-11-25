@@ -273,7 +273,7 @@ decision_event_id: "<event-id-or-UNKNOWN>"
 ~~~yaml
 context_trace:
   context_id: "<stable-context-id>"
-  action_id: "<action-id>"
+  action_id: "<action-id-or-NOT_APPLICABLE>"
   attempt: 1
   manifest_ref: "<immutable-manifest-ref-or-NOT_PERSISTED>"
   manifest_revision: 1

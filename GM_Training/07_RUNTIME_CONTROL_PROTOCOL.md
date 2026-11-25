@@ -948,9 +948,11 @@ context_manifest:
   manifest_revision: 1
   supersedes_ref: null
   scope:
+    context_kind: PREFLIGHT | PLAYER_ACTION
     session_id: "<session-id-or-UNKNOWN>"
-    action_id: "<action-id>"
+    action_id: "<action-id-or-NOT_APPLICABLE>"
     parent_context_id: null
+    child_action_ids: []
     attempt: 1
     mode: NEW_START | CONTINUE | ACTIVE_SESSION
     risk_level: GREEN | YELLOW | RED | T0
@@ -967,6 +969,7 @@ context_manifest:
     status: VERIFIED | UNKNOWN | DISPUTED
   dependencies:
     - dependency_id: "<stable-id>"
+      action_id: "<action-id-or-parent-action>"
       type: RULE | FACT | STATE | NPC_KNOWLEDGE |
             PLAYER_KNOWLEDGE | LOCATION | ITEM | RESOURCE |
             PRESENTATION | PERMISSION
@@ -978,7 +981,7 @@ context_manifest:
     - source_ref: "<exact-authoritative-ref>"
       locator: "<path/section/record-id>"
       version_ref: "<commit/blob/revision-or-UNKNOWN>"
-      load_mode: REQUIRED | ACTION_DEPENDENT | SUPPORTING
+      load_mode: REQUIRED | CONDITIONAL | SUPPORTING
       retrieval: FOUND | NOT_FOUND | NOT_ACCESSIBLE |
                  VERSION_MISMATCH | UNKNOWN
       read_scope: "<actual-read-scope>"

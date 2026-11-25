@@ -57,7 +57,6 @@
 - 触发条件包括：系统/版本/Campaign/Module 绑定改变；相关 Runtime checkpoint 或事件改变；依赖来源版本/内容改变；相关 Claim 状态或证据根改变；NPC 知识/披露、玩家呈现/接收者权限改变；开放争议/T0 范围改变；行动依赖集合改变。
 - 新行动本身不自动要求全量 Diff；只比较与该行动实际依赖相交的已有上下文。
 - 不扫描整个仓库，不比较无关历史，不按 Token 或消息轮次设置固定审计频率。
-- 如果用户原本想表达的“同一……”触发条件与以上不同，后续可以调整；当前实现先采用这一保守默认。
 
 ## 3. 结构与职责
 
@@ -76,9 +75,11 @@ context_manifest:
   manifest_revision: 1
   supersedes_ref: null
   scope:
+    context_kind: PREFLIGHT | PLAYER_ACTION
     session_id: "<session-id-or-UNKNOWN>"
-    action_id: "<action-id>"
+    action_id: "<action-id-or-NOT_APPLICABLE>"
     parent_context_id: null
+    child_action_ids: []
     attempt: 1
     mode: NEW_START | CONTINUE | ACTIVE_SESSION
     risk_level: GREEN | YELLOW | RED | T0
@@ -95,6 +96,7 @@ context_manifest:
     status: VERIFIED | UNKNOWN | DISPUTED
   dependencies:
     - dependency_id: "<stable-id>"
+      action_id: "<action-id-or-parent-action>"
       type: RULE | FACT | STATE | NPC_KNOWLEDGE |
             PLAYER_KNOWLEDGE | LOCATION | ITEM | RESOURCE |
             PRESENTATION | PERMISSION
@@ -106,7 +108,7 @@ context_manifest:
     - source_ref: "<authoritative-ref>"
       locator: "<path/section/record-id>"
       version_ref: "<commit/blob/revision-or-UNKNOWN>"
-      load_mode: REQUIRED | ACTION_DEPENDENT | SUPPORTING
+      load_mode: REQUIRED | CONDITIONAL | SUPPORTING
       retrieval: FOUND | NOT_FOUND | NOT_ACCESSIBLE |
                  VERSION_MISMATCH | UNKNOWN
       read_scope: "<actual-scope>"
