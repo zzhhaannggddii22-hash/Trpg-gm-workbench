@@ -112,7 +112,7 @@ Prep QA 的输出是独立审核记录：必须修正的问题、建议修正的
 
 **对象：当前这一次实际开团/Session 的启动条件与运行上下文。** 每次新对话/新 Session 准备继续或开始游戏时，按《02_WORKFLOW_AND_PREFLIGHT.md》《09_MODULE_FOLDER_STANDARD.md》及系统专属要求执行。它回答：“本次对话是否已恢复正确的规则、模组、角色、战役和运行状态？此刻是否具备继续游戏的条件？”
 
-Preflight 的首要任务是加载本次运行所需资源，而不是审核备团设计。至少恢复并核对：
+Preflight 的首要任务是加载本次运行所需资源，而不是审核备团设计。以下列出要恢复和核对的资源与就绪条件；完整路径、健康续接的实际读取范围及同次复用均以 [工作流程 §A](./02_WORKFLOW_AND_PREFLIGHT.md#a-开团前恢复权威上下文) 为准。交接不启动第二套读取流程：
 - 当前规则版本、规则索引与本次行动所需的必要原文；
 - 当前模组原文、GM Prep、Runtime Quick Reference，以及本次可能调用的关键 NPC/线索/机制/结局资料；
 - 正式人物卡、当前场次副本、战役交接、最新 Module Runtime State、最近 Session Log/Player Notes；
