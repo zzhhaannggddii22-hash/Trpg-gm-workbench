@@ -28,6 +28,7 @@
 
 - v0.1：初步场景结构、NPC、线索与遭遇梳理（此前聊天中曾输出，不作为最终版本）。
 - v1.0：初次备团版本；后经独立审查发现现场应用与规则边界问题，原 READY WITH OPEN ITEMS 结论撤销。
-- v1.1-audit-fix：根据 2026-11-25 独立审查修订 Domain/Corrupt、泳池、时间线、NPC/线索、收束条件、资源与结算；第二轮独立审查尚未完成。
+- v1.1-audit-fix：根据第一轮独立审查修订 Domain/Corrupt、泳池、时间线、NPC/线索、收束条件、资源与结算；第二轮独立审查确认首要两项已修复，但发现 C1–C7 新阻塞。
+- v1.2-targeted-fixes：针对第二轮独立审查修订厨房追逐条件、Ripple Gun 结果结算、手机双猫资源冲突与脱困、双人恢复触发、Jodie/社区信息门槛、Aftermath 分支、分部 Pool 核算流程、Expand 与布娃娃索引；等待定向复审。
 - 压力测试为案头推演，未执行真实玩家测试；不得把压力测试写成实战验证。
-- 当前仍为 BLOCKED。完成独立第二轮审查后，才可评估是否进入正式 Preflight；Preflight 仍需核对当前角色卡、装备、QA/Burnout、任务配给、分部累计 Loose Ends 与开局普通 Chaos Pool。模组原文未提供的异常独立数值档案不得自行补造。
+- 当前仍为 BLOCKED / AWAITING TARGETED RE-REVIEW。第三轮定向修订尚未独立复核；正式 Preflight 仍未开始。通过复审后，Preflight 内核对当前角色卡、装备、QA/Burnout、任务配给、实际地方分部累计 Loose Ends 与开局普通 Chaos Pool。模组原文未提供的异常独立数值档案不得自行补造。
