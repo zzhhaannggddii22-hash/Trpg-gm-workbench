@@ -58,7 +58,7 @@
 | 分支隔离 | DONE | 从当前 main 的后继提交创建独立分支；未修改 main |
 | 文档修改写入 | DONE | GitHub 已返回各文件提交 SHA |
 | 修改后回读与链接检查 | PASS | 10 个变更文件均已从修复分支重新读取；RT-16 Markdown 检查为 215 个 Markdown 文件、352 个本地链接、0 个缺失路径、0 个锚点候选 |
-| 仓库自动化测试 | PASS | GitHub Actions PR validation run `45618724577`：12 项 unittest 全部通过；`git diff --check` 通过；测试 head `8a8335f5ca0397a1afbe5d96a47c279dcb81309c` |
+| 仓库自动化测试 | PASS | GitHub Actions PR validation run `45619024392`：12 项 unittest 全部通过；`git diff --check` 通过；最终修复提交 `62bf377070bd3091362d2a5da79aeaaca2ae7e33` |
 | 目标 Chat 独立回归 | NOT STARTED | SC-01–SC-18 尚未交给独立目标 Chat 执行 |
 | 真实跑团综合验证 | NOT STARTED | 不以文档更新代替实际运行证据 |
 
@@ -70,4 +70,4 @@
 - 没有修改 T0 事故处置、跨文件持久化、Context Manifest 或现有 Claim Ledger 的权威归属。
 - 没有新增每轮检查、全量读取、NPC 记忆数据库或强制 Benchmark。
 - 仓库为公开仓库；夹具中的“操作者侧”是执行纪律，不构成 GitHub 访问控制。执行盲测时不得将预期结果提供给目标 Chat。
-- 当前最大剩余风险是：规范已明确但模型现场仍可能过度阻断，或在继续互动时无依据地补造 NPC 过去经历。SC-01–SC-10 专门用于区分这两类相反错误。
+- 当前最大剩余风险是：规范已明确但模型现场仍可能过度阻断，或在继续互动时无依据地补造 NPC 过去经历。SC-01–SC-05 与 SC-06–SC-10 分别覆盖场景连续性/资料缺失处理和 NPC 陈述/提示污染；SC-17–SC-18 另行验证跨会话隔离与合法连续性。
