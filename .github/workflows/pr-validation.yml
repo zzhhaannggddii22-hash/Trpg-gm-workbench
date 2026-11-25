@@ -43,4 +43,10 @@ jobs:
         run: python -m unittest discover -s tests -v
 
       - name: Check patch whitespace
-        run: git diff --check 6c6109202d92d7bbacd638d5aa37d00418262d2b..HEAD
+        shell: bash
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then
+            git diff --check "${{ github.event.pull_request.base.sha }}...HEAD"
+          else
+            git diff --check 6c6109202d92d7bbacd638d5aa37d00418262d2b..HEAD
+          fi
