@@ -177,7 +177,7 @@
 
 ### 1058 Bower Street
 - Rebecca 与 Jodie 的家；Felix（橙色虎斑）回归、Cooper（黑猫）失踪的记忆矛盾。
-- Jodie 私下谈话会给出对 Justin/Fumiko 争吵和 1063 住户的观察。
+- Jodie 的信息按实际对话条件披露：单独交谈可先谈 Felix 往事；聊得投机后才谈邻里流言；询问 Justin/Fumiko 夫妇时才谈亲耳听见的争吵。她对 1063 无人出入的判断来自个人观察；“Evie 继承后搬入”是她声称听来的转述，上游来源 UNKNOWN。
 
 ### 1063 Bower Street 外部与后院
 - 住宅寂静、窗户漆黑；靠近时室内静电爆响、电视闪烁。
