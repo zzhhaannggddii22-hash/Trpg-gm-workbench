@@ -1,6 +1,6 @@
 # Bower Street｜GM-only Prep
 
-> 版本：v1.3-third-audit-fixes｜状态：BLOCKED（第三轮独立审查后修订；凯西自检中）
+> 版本：v1.3-third-audit-fixes｜状态：READY WITH LIMITS（定点复验通过；双猫资源争议效果暂停；未进行真实玩家测试）
 > 规则绑定：`triangle_agency` / 中文 v22 / Campaign Zarek。
 > 原文：The Vault，源 PDF 41–49，印刷页 76–93；中文精翻母稿对应章节。
 > 本文为内部主持资料，不得向玩家展示。
@@ -177,7 +177,7 @@
 
 ### 1058 Bower Street
 - Rebecca 与 Jodie 的家；Felix（橙色虎斑）回归、Cooper（黑猫）失踪的记忆矛盾。
-- Jodie 的信息按实际对话条件披露：单独交谈可先谈 Felix 往事；聊得投机后才谈邻里流言；询问 Justin/Fumiko 夫妇时才谈亲耳听见的争吵。她对 1063 无人出入的判断来自个人观察；“Evie 继承后搬入”是她声称听来的转述，上游来源 UNKNOWN。
+- Jodie 的信息按实际对话条件披露：单独交谈可先谈 Felix 往事；聊得投机后才谈邻里流言；询问 Justin/Fumiko 夫妇时才谈亲耳听见的争吵。她对 1063 无人出入的判断来自个人观察；她会提到 Evie 继承父母房子后搬入，但她如何得知、是否亲眼见过或由他人告知均 UNKNOWN。不得替她补出“听来的转述”或其他消息渠道。
 
 ### 1063 Bower Street 外部与后院
 - 住宅寂静、窗户漆黑；靠近时室内静电爆响、电视闪烁。
