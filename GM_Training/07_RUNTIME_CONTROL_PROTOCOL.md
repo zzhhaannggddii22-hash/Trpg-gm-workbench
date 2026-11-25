@@ -1078,11 +1078,9 @@ Trace 记录可观察工程事实，不记录思维链，不推断模型未公�
 context_trace:
   trace_schema_version: 1
   context_kind: PREFLIGHT | PLAYER_ACTION
-  trace_schema_version: 1
-  context_kind: PREFLIGHT | PLAYER_ACTION
   trace_id: "<stable-trace-id>"
   context_id: "<context-id>"
-  action_id: "<action-id>"
+  action_id: "<action-id-or-NOT_APPLICABLE>"
   attempt: 1
   manifest_ref: "<manifest-ref-or-NOT_PERSISTED>"
   manifest_revision: 1

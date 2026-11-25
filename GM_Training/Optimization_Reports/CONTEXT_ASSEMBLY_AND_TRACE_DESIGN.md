@@ -33,7 +33,7 @@
 不创建平行 Trace 数据库，也不把 Trace 塞进 Runtime State 主体。
 
 - 对应真实游戏事件：将最小 Trace Envelope 作为该 Session Log 事件的 GM-only 元数据。
-- 重要行动被阻断、恢复或出现装配争议，但没有产生领域事件：仅在需要跨对话追溯时，向现有 Session Log 追加 GM-only 的诊断事件；它不得伪装成世界事件或改变领域状态。
+- 重要行动被阻断、恢复或出现装配争议，但没有产生领域事件：仅在需要跨对话追溯时，向现有 Session Log 的独立 GM-only Operational Diagnostics 附录追加运行诊断记录；它不是领域事件，不分配领域 event_id，不推进游戏时间或 CANON。
 - Preflight 尚无可用 Session Log 时：Trace 随本次 Preflight/Handoff 记录；不为一次正常 Preflight 强制创建新审计文件。
 - 绿色普通互动：不要求持久化 Trace。
 - Runtime State 仅在某个装配问题已成为影响当前推进的开放争议/阻断状态时，按既有争议机制保存状态；不保存完整 Trace。

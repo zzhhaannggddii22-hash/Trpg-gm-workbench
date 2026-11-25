@@ -299,4 +299,27 @@ context_trace:
 - 旧事件缺少 Trace 字段时标记 NOT_RECORDED / UNKNOWN，不从聊天摘要或模型印象补造历史。
 - 只有实际呈现证据才能记录 PRESENTED；只有独立读回才能记录持久化 VERIFIED。
 
+## GM-only Operational Diagnostics Appendix（非领域事件）
 
+仅当装配阻断、恢复或争议需要跨对话追溯，且没有可附着的领域事件时使用。此附录与事实型 Session/Event Log 分开；记录的是工作台运行诊断，不是游戏世界中发生的事件。
+
+~~~yaml
+operational_diagnostic:
+  diagnostic_id: "<stable-diagnostic-id>"
+  record_type: CONTEXT_ASSEMBLY_BLOCKED | CONTEXT_RECOVERY |
+               CONTEXT_DIFF_DISPUTE
+  context_id: "<context-id>"
+  manifest_ref: "<immutable-manifest-record-ref>"
+  trace_ref: "<trace-record-ref>"
+  related_event_ids: []
+  affected_dependency_refs: []
+  status: OPEN | CONTAINED | RESOLVED
+  created_at: "<wall-clock-timestamp-or-UNKNOWN>"
+  does_not_create_domain_event: true
+  does_not_advance_game_time: true
+  does_not_create_canon: true
+~~~
+
+- 不分配领域 event_id，不进入 Runtime 的领域事件应用链，不改变游戏时间或 CANON。
+- 只有确需跨对话追溯时才写入；普通绿色互动和一般无风险缺口不建立诊断记录。
+- 诊断记录保持 GM-only，不进入 Player Notes 或玩家导出。

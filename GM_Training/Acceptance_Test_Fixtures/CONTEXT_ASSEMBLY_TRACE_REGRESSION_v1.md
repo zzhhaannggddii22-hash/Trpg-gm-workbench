@@ -54,7 +54,7 @@
 | CA-20 | 普通绿色闲谈，无状态变化 | 不强制新增文件读取、Manifest 或持久 Trace |
 | CA-21 | 黄色行动改变 NPC 位置和知识 | Trace 可引用实际来源、变更字段和相关呈现事件 |
 | CA-22 | 红色规则裁定 | 结果前核验适用原文、例外、角色状态；Trace 引用实际读取范围 |
-| CA-23 | 重要行动被阻断且无领域事件 | 需要跨对话追溯时追加 GM-only 诊断事件；不得伪装成世界事件 |
+| CA-23 | 重要行动被阻断且无领域事件 | 需要跨对话追溯时追加 GM-only Operational Diagnostics 记录；不得分配领域 event_id 或伪装成世界事件 |
 | CA-24 | Trace 声称 VERIFIED，但没有读取/核验证据 | 该验证声明不通过 |
 | CA-25 | 事件已记录 Trace，但 Player Notes 导出包含 GM Trace | 触发权限失败；不得发布玩家产物 |
 | CA-26 | Trace 声称持久化 VERIFIED，但无独立读回 | 不得标 VERIFIED |
