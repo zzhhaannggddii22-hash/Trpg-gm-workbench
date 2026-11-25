@@ -1,18 +1,18 @@
 # Bower Street｜Runtime State
 
-> 当前状态：PREP / PREFLIGHT COMPLETE / READY WITH LIMITS / NOT STARTED
+> 当前状态：ACTIVE / SESSION 01 / READY WITH LIMITS
 > 本文件是唯一有效的当前运行快照。正式 Preflight 后填写；不把备团后台状态伪装成玩家已知信息。
 
 ## Session 状态
 - Module：Bower Street
 - Campaign：Zarek
 - System：triangle_agency / 中文 v22
-- Lifecycle：PREP
-- Session：未开始
-- Last confirmed event ID：无
-- Current scene/location：未进入
-- In-game time：未设定
-- Player last action / GM last response：无
+- Lifecycle：ACTIVE
+- Session：SESSION 01 已开始
+- Last confirmed event ID：BS-001
+- Current scene/location：Ternion City 大都会分部｜任务简报室
+- In-game time：未设定（等待模组开场时间或玩家确认）
+- Player last action / GM last response：玩家明确下达“开始”；GM 已呈现任务简报，等待扎雷克选择调查入口。
 
 ## 玩家角色
 - 角色卡权威来源：Preflight 时读取 Campaign/Zarek 当前正式人物卡
@@ -26,7 +26,7 @@
 - 发生资源变化时：记录变化来源、数值、当前余额，并在游戏中向玩家公开。
 
 ## 地点与 NPC 状态
-- 所有模组地点：NOT ENTERED
+- 所有模组地点：NOT ENTERED（当前仅在机构简报室）
 - Justin / Fumiko / Rebecca / Jodie / Caitlin / Evie：模组初始状态，尚未与 PC 互动
 - NPC 知识：只按各自角色卡与实际事件更新，不因 GM-only 事实自动公开
 
