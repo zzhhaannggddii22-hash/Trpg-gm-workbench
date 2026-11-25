@@ -22,19 +22,19 @@
 | Corrupt 在 Evie 卧室的应用 | VERIFIED / 修订 | 模组措辞是异常“尝试”腐化；首次楼上调查在 Domain 外，标示值 2。不能写成入门即自动成功，更不能在 Pool=0 时免费毁掉布娃娃。 |
 | Manifest：Shape / Vision；手机囚禁型次级异常猫 | VERIFIED / 部分 UNKNOWN | Shape 使用被捕者熟悉形象呼救引去地下室；Vision 使直接触碰物件/不太聪明生物者陷入自身舒适记忆。手机充电开机后显现两只囚禁型次级异常猫，触碰猫会触发囚禁效果；两只猫的费用按一次还是分别计算，原文未明确，保持 UNKNOWN。 |
 | Attract / Expand / Displace | VERIFIED（效果摘要） | 模组印刷页 80–81；具体现场触发仍需依当时场景和 Pool 处理，不按固定脚本逐项自动播放。 |
-| 开场 Chaos Pool | UNKNOWN / PRE-FLIGHT REQUIRED | 模组没有专属初始值。v22 有分部累计 Loose Ends 规则（审查报告定位为印刷页 22、译稿 R5755–5776）；Q01–Q04 没有批准废除该规则。不得仅凭其他模组曾从 0 开始就固定本场为 0。须在 Preflight 结合扎雷克当前分部状态计算并公开。 |
+| 开场 Chaos Pool | UNKNOWN / PRE-FLIGHT REQUIRED | 模组没有专属初始值。v22 有地方分部累计 Loose Ends 规则；正式人物卡的 R&D 是职能，不是分部。须在 Preflight 内核实实际所属地方分部及累计值，计算并公开开局 Pool；须在正式场景开始前完成。 |
 | 911 通话时间 | VERIFIED / 修订 | 通话发生于一周前；机构昨晚截获。二者不可混写。 |
 | 晨会入口 | VERIFIED / 已补回 | 模组印刷页 81：重逢的旧猫、蓝色溢水浴缸、旧友来电、Evie 电动车采访、CR 壁画。均为可选切入点，不是强制剧情。 |
 | 调查地点、物件与钥匙 | INCOMPLETE / 已修订 | 项圈归棚屋；厨房钥匙盒含车库侧门、棚屋与车钥匙；门后声音及客厅追踪胶带/氯味补回。账单属于 Lewis，不能证明 Hamamoto 夫妇婚姻。 |
 | 泳池取钥匙 | VERIFIED / 已修订 | 可见池底反光；特定角度看似盛满蓝水。明确危险分支是特工爬入池内取钥匙。池外遥取的统一后果 UNKNOWN。 |
-| NPC 知识边界 | VERIFIED / 已修订 | Justin、Fumiko、Rebecca、Jodie、Caitlin、Evie 分别按原文知识和现场信息呈现；Jodie 本人受记忆改写只标 GM INFERENCE，不作为原文事实。 |
+| NPC 知识边界 | INCOMPLETE / 已修订 | 六名 NPC 的基本知识边界保留；Jodie 的 Felix 往事、邻里流言、夫妇争吵按不同对话条件披露；“Evie 搬入”上游来源 UNKNOWN。 |
 | 地下室七个人形身份 | UNKNOWN | 原文未逐一确认；不得映射到 Jacob Mills、Caleb Coleman 或其他失踪者。 |
-| Caitlin / Fumiko 恢复与束缚状态 | INCOMPLETE / 已修订 | 认知恢复、解除束缚、位置和带离地下室分别记录；只救一人不自动恢复另一人。未写明的专属即时反应保持 UNKNOWN。 |
-| 厨房逃离引路者 | VERIFIED / 修订 | 原文由狗引路；不可写成 Caitlin 引路。 |
+| Caitlin / Fumiko 恢复与束缚状态 | INCOMPLETE / 已修订 | 认知恢复、解除束缚、位置和带离地下室分别记录；两人均恢复时才有原文明确的异常缓和与电视扭曲。只恢复一人时不提前套用该结果。 |
+| 厨房逃离引路者 | VERIFIED / 修订 | 仅 Caitlin 足够稳定且识破假 Ollie 时狗才引路；否则动物围住她并试图拖离特工。若 Caitlin 不在场，同一分支的套用方式 UNKNOWN。 |
 | 真实 Evie 联系耗尽路径 | VERIFIED / 修订 | 关键时刻由 Caitlin 与真实 Evie 建立联系；仅找到号码、发送未读消息或此前联系不满足条件。 |
-| Ripple Gun / Normal Briefcase | INCOMPLETE / 已修订 | Ripple Gun 需有可指定、可见且无遮挡的 VHS 带体目标，并核对持有人与充能；摧毁显现版本不等于收容整个异常。公文包仍需满足耗尽条件。 |
+| Ripple Gun / Normal Briefcase | INCOMPLETE / 已修订 | 射击窗口需有可指定、可见且无遮挡的 VHS 带体目标，并核对持有人与充能。射击后按实际命中对象判定：任务目标确实被摧毁则按 v22 中和结算；仅确认显现版本被毁则只记录已知结果，不推断残存本体或逃脱。公文包仍需满足耗尽条件。 |
 | 任务结果、奖励与 Loose Ends | INCOMPLETE / 已补充 | 收容：全体特工 +3 Commendations；中和：无额外奖惩；逃脱：全体特工 +3 Demerits，另 +7 分部 Loose Ends。Loose Ends 按 v22 实际遗留风险核算，不按知情 NPC 人头计。 |
-| Aftermath | VERIFIED / 修订 | Justin、Rebecca 的怀旧宿醉按原文呈现；异常逃脱后追逐 Evie 周围的人是可能后续，不写成已经发生或必然发生。 |
+| Aftermath | INCOMPLETE / 已修订 | Justin/Rebecca 的怀旧宿醉与逃脱追逐风险分开；Evie 研究异常的触发条件及 Cooper/Fumiko/Justin 的分支后续按原文主体和条件记录。 |
 | QA / Burnout / Harm 与装备 | INCOMPLETE | 依 v22 与 Q03/Q04 处理；本模组未给异常固定 Harm/HP 阈值、伤害数值或追逐轮数，不补造。正式卡与交接旧快照冲突的活力/主动 QA 以正式人物卡 §6 的当前 1/1 为准，除非有更新的实际消耗事件。 |
 
 ## 三、Campaign 桌裁核对
@@ -134,7 +134,37 @@
 - 地下室七个人形的个体身份：UNKNOWN。
 - Evie 与 Caitlin 双胞胎的长幼关系：UNKNOWN。
 - 用户 Library 中文模组副本与公开译本的逐字一致性：UNKNOWN。
-- 开局普通 Chaos Pool：须按当前 R&D 分部累计 Loose Ends 规则和角色当前分部状态计算；未完成前不得开始 Preflight。
+- 开局普通 Chaos Pool：须在 Preflight 内核实角色实际所属地方分部及其累计 Loose Ends 后计算；R&D 是职能，不代表分部。必须在正式场景开始前完成核算。
 - 正式人物卡 §6 记载 Dynamism 1/1、Initiative 1/1；旧交接历史快照记载 0/1 或 0/0。以正式卡当前值为基线，除非找到更新的实际消耗事件。
 
-**当前结论：BLOCKED。** 本轮完成了针对性修订和文档自检，但尚未取得独立第二轮审查。不得改写为 READY，也不得开始正式 Preflight 或跑团。
+**当前结论：BLOCKED。** 第二轮独立审查发现 C1–C7；第三轮修订后仍须独立复核。真实玩家测试尚未执行。不得改写为 READY，也不得进入正式 Preflight 或跑团。
+
+
+## 八、第二轮独立审查与第三轮修订（2026-11-25）
+
+### 第二轮独立审查结论
+
+- 用户提供的独立报告结论：BLOCKED；审查对象为 PR #20 head `d442c4c`，基线 `4e85fc5`。
+- 上轮卧室 Corrupt 与泳池取钥匙两项首要问题确认已修复；Domain 五项换算 0/12/15/18/24 正确。
+- 新阻塞：C1 厨房狗引路条件被写成无条件且漏掉拖离后果；C2 Ripple Gun 摧毁目标后的结算过度确定；C3 手机双猫与 Manifest/Double 资源规则冲突未解决，单人脱困路径不清；C4 将“两名受害者均恢复”后的异常缓和提前至任一人恢复；C5 社区观察和 Jodie 信息披露条件过宽；C6 Aftermath 的 Evie 研究及相关后续分支确定性/条件失真；C7 把 R&D 职能误作分部，并将 Pool 核算错误设为 Preflight 前置闸门。
+- 审查还要求记录局部 Expand 对 Domain 的实际影响，以及布娃娃只保留一个物件状态。
+- 15 条路径均为案头推演；无真实玩家测试。报告未修改或合并 PR。
+
+### 第三轮修订（本分支待复核）
+
+1. 厨房追逐拆为互斥条件：Caitlin 稳定且识破假 Ollie 才由狗引路；否则动物尝试将她拖离特工；不预判拖离成功。Caitlin 不在场时保留 UNKNOWN。
+2. Ripple Gun 改为记录命中对象和可观察状态；任务目标确实被摧毁时按 v22 中和结算；只确认显现版本被毁时不推断残存本体、再战或逃脱。
+3. 手机双猫明确并列 SOURCE、Manifest 4、Double 7 与直接行动资源规则；未批准免费特例或强制 Double。Pool=0/4/7 不凭直觉补费或免费施加囚禁；争议效果暂停但手机调查继续。加入按能力/环境尝试脱困的单人入口，不附赠成功。
+4. 仅一人恢复时不套用两人均恢复后的异常缓和与电视扭曲；两人均恢复才按 SOURCE 处理。
+5. 社区信息按到场可见、继续观察/异常手段、实际测量分层；Jodie 按单独交谈、建立融洽、询问夫妇等条件披露。Evie 搬入说法的上游来源保持 UNKNOWN。
+6. Aftermath 恢复 Caitlin 告知 Evie 后 Evie 会着手研究的确定性；Cooper、Fumiko、Justin 的分支后续只按实际条件记账。
+7. 分部核算移入 Preflight 内部：先确认实际地方分部，R&D 仅为职能；在正式场景开始前算出并公开 Pool，不把未核实分部设成 Preflight 之前置条件。
+8. 补充 Expand 将 Domain 扩至另一地点的规则影响；CLUE-OLD-DOLL 与 ITEM-DOLL 合并为同一实物的别名/索引，运行时只保留一个状态。
+
+### 第三轮验收状态
+
+- 本次修改是对独立报告的定向修复与文档自检，不是第三方独立审查。
+- 以下仍须独立复核：C1–C7 是否逐项修复；Domain 扩张和物件单一状态是否正确；15 条路径是否需调整。
+- 正式 Preflight 仍未开始；真实玩家测试仍未进行。
+- 可保留 UNKNOWN：七个人形身份、双胞胎长幼、邮件截断后文、池外取匙统一后果、仅一人恢复时的另一人专属反应、双猫特例收费、Library 私有副本与公开译本逐字一致性、当前实际分部累计 Loose Ends（须在 Preflight 核实）。
+- 当前状态：BLOCKED / AWAITING TARGETED RE-REVIEW。
