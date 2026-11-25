@@ -7,6 +7,9 @@
 
 ## 0. 使用约束
 
+- **每轮玩家可见回复必须先执行 08_PLAYER_FACING_GATE.md 的三步检查；信息来源不明或披露状态不明时，默认不披露。**
+- 该闸门只检查玩家知识权限，不把 GM-only 索引、模组真相或备团推断转换为角色知识。
+
 - SOURCE、TABLE CANON、GM ADAPTATION、GM INFERENCE、UNKNOWN 分层。
 - 玩家尚未采取的行动不得记成已发生；玩家没有取得的线索不得写入 Player Notes。
 - NPC 只使用自身实际知道的信息。玩家听到的陈述保留为“某 NPC 曾如此陈述”，不自动升级为客观事实。
