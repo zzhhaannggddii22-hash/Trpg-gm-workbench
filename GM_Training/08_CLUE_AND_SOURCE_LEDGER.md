@@ -110,6 +110,33 @@
 ### 9.2 陈述与认知事件
 NPC 陈述独立记录 speaker、statement_event、recipient、knowledge_basis、disclosure_condition。PLAYER-KNOWN 记录玩家角色实际接收的事件、方式与可知限制；NPC KNOWLEDGE 记录该 NPC 实际亲历、观察、可靠/不可靠转述、推断、误解、隐瞒或谎言。GM 掌握的客观信息不自动成为 NPC 或玩家知识。
 
+#### 证词呈现锚点与精度字段（P0）
+
+当重要信息被记录为 NPC 陈述、目击证词、文件内容或玩家已知线索时，复用现有 claim/event/source 结构，至少能回答：
+
+| 字段 | 要求 |
+|---|---|
+| claim_id / proposition | 本次记录的具体命题；不要把多项细节压成一个模糊句子 |
+| source_kind | NPC_STATEMENT / FILE_RECORD / DIRECT_OBSERVATION / PLAYER_CLAIM / GM_INFERENCE / OTHER |
+| speaker_or_source | 实际说话者或资料来源；PLAYER_CLAIM 不得伪装成其所转述的来源 |
+| presented_event_id | 来源内容实际呈现给当前接收者的事件 ID；无对应事件时为 UNKNOWN |
+| recipient_scope | 实际听见/看见该内容的接收者 |
+| presented_content_ref | 原话、忠实摘要或精确消息片段的定位 |
+| supported_details | 该呈现实际支持的时间、地点、人物、动作、顺序、数量及否定信息 |
+| precision_limit | 原始表达的精度与限制，例如“约九点”“20:50 前”“未看清脸” |
+| knowledge_basis | 来源为何知道这件事；不清楚则 UNKNOWN |
+| status / certainty | SUPPORTED、UNVERIFIED、DISPUTED 等状态及对应确定度 |
+
+执行边界：
+- 玩家说“某 NPC 告诉过我 X”，若没有该 NPC 的实际呈现事件，只能登记为 PLAYER_CLAIM / UNVERIFIED，不能创建 NPC_STATEMENT。
+- 有呈现事件也只能引用其中实际出现的内容。原话为“约九点”，不得登记成 21:08；原话为“20:50 前离开”，不得补成 20:47。
+- 不能从同一事件的一个细节推导未说出的其他细节；“没有看见进入或离开”不等于“确认没有人进入或离开”，除非原话和观察条件确实支持该结论。
+- NPC 陈述的呈现只证明 NPC 说过，不证明命题客观为真；真实性仍由其 knowledge_basis、独立来源和证据根决定。
+- 当前轮 NPC 真正披露的新信息可正常建立新事件并进入玩家知识；不得因核验机制而阻断合法访谈或正常叙事。
+- 若呈现事件缺失，先查对话/事件记录；仍缺失时保留 UNKNOWN / DISPUTED，不从 GM-only Prep、隐藏时间线或其他 NPC 的知识补写。
+
+
+
 ### 9.3 独立证据与跨文件投影
 - 多人重复同一说法、同一证人转述、同源照片/文件或多个文件复制同一摘要，仍只有一个证据根；除非证明来源独立，否则不提升客观可信度。
 - 多个独立来源分别记录，不将独立证据压成一个模糊的已确认。
