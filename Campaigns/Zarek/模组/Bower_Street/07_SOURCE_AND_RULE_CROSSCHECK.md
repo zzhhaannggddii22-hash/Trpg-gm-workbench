@@ -20,7 +20,7 @@
 | Focus / Domain / Appearance / Impulse、历史与扩张 | VERIFIED | 模组印刷页 78–79。初始 Domain 为地下室；逃离阶段才明确扩展至整栋房屋。 |
 | Domain 费用换算 | VERIFIED | Zarek Q01/Q02：域内费用 ≤3 免费；>3 乘三并向上取整。模组值 2/4/5/6/8 换算为域内 0/12/15/18/24。域外不套用域内免费。 |
 | Corrupt 在 Evie 卧室的应用 | VERIFIED / 修订 | 模组措辞是异常“尝试”腐化；首次楼上调查在 Domain 外，标示值 2。不能写成入门即自动成功，更不能在 Pool=0 时免费毁掉布娃娃。 |
-| Manifest：Shape / Vision；手机囚禁型次级异常猫 | VERIFIED / 部分 UNKNOWN | Shape 使用被捕者熟悉形象呼救引去地下室；Vision 使直接触碰物件/不太聪明生物者陷入自身舒适记忆。手机充电开机后显现两只囚禁型次级异常猫，触碰猫会触发囚禁效果；两只猫的费用按一次还是分别计算，原文未明确，保持 UNKNOWN。 |
+| Manifest：Shape / Vision；手机囚禁型次级异常猫 | SOURCE / RULE CONFLICT；费用 UNKNOWN | Shape 使用被捕者熟悉形象呼救引去地下室；Vision 使直接触碰者陷入自身舒适记忆。手机访问时 SOURCE 指定两只囚禁型猫显现。RULE 另有近旁直接行动支付混沌、Manifest 4 创造一个、Double 7 创造两个；模组未说明免费特例或指定 Double。不得猜费或免费施加囚禁；先公开争议并暂停有争议的机械效果，但手机信息调查继续。单人可尝试创造性脱困，不附赠成功。 |
 | Attract / Expand / Displace | VERIFIED（效果摘要） | 模组印刷页 80–81；具体现场触发仍需依当时场景和 Pool 处理，不按固定脚本逐项自动播放。 |
 | 开场 Chaos Pool | UNKNOWN / PRE-FLIGHT REQUIRED | 模组没有专属初始值。v22 有地方分部累计 Loose Ends 规则；正式人物卡的 R&D 是职能，不是分部。须在 Preflight 内核实实际所属地方分部及累计值，计算并公开开局 Pool；须在正式场景开始前完成。 |
 | 911 通话时间 | VERIFIED / 修订 | 通话发生于一周前；机构昨晚截获。二者不可混写。 |
