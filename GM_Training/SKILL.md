@@ -193,5 +193,7 @@ Module 结团时，基于多个 Session 的具体片段区分现象、根因和�
 - 黄色/红色、恢复、冲突和重要状态变化，按 [Runtime §14.20](./07_RUNTIME_CONTROL_PROTOCOL.md#1420-context-assembly-and-trace) 识别 REQUIRED / CONDITIONAL / SUPPORTING 依赖，并区分检索、读取和核验状态。
 - 同一玩家行动的补充读取和重试沿用 Context ID；复合行动使用父 Context 与子行动，不把同一意图拆成无关上下文。
 - READY / READY_WITH_LIMITS / BLOCKED 只描述当前行动范围；只冻结依赖缺口的子行动，不冻结有独立依据的安全互动。
+- 跨会话恢复只接受有效 Runtime、Session/Event Log 与实际呈现锚点支持的内容；其他 Chat、模型记忆和旧摘要只能帮助定位，不能直接变成玩家/NPC 知识或当前调查成果。按 [Runtime §13.1.1](./07_RUNTIME_CONTROL_PROTOCOL.md#1311-跨会话信息恢复与来源准入边界p0) 核验。
+- 当前场景已建立但 NPC Knowledge 不完整时，按 [Runtime §14.20.13](./07_RUNTIME_CONTROL_PROTOCOL.md#142013-场景连续性与认知依赖分离p0p1) 将限制作用于相关事实断言/子行动；不得因单项证言资料缺失而停止普通互动，也不得即兴补造关键经历。
 - 绿色普通互动不强制持久化 Manifest、Trace 或执行全量 Diff。
 - 不记录思维链，不声称能读取平台完整隐藏 Prompt；重要 Trace 只引用可观察的资料读取、核验、事件、状态变化和呈现证据。

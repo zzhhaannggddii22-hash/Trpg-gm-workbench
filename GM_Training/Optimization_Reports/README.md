@@ -4,6 +4,7 @@
 
 - [P1 性能与执行效率验证计划](./GM_RUNTIME_P1_PERFORMANCE_PLAN.md)：目标环境基线、成本拆分与阶段门槛。
 - [Context Assembly & Trace 设计记录](./CONTEXT_ASSEMBLY_AND_TRACE_DESIGN.md)：基于 P1-1 优化后 Preflight 结构的上下文装配、可观测性与实施决策。
+- [P0/P1 场景上下文与调查记录修复实施记录](./P0_P1_SCENE_CONTEXT_EVIDENCE_REMEDIATION_2026-11-25.md)：本轮架构盘点、最小修复范围、已写入文件与待验证项。
 - [GM 系统优化方案](./GM_SYSTEM_OPTIMIZATION_PLAN_2026-11-24.md)
 - [GM 系统实施记录](./GM_SYSTEM_IMPLEMENTATION_RECORD_2026-11-24.md)
 

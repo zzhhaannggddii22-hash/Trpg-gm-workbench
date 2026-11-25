@@ -35,6 +35,7 @@
 - [运行状态模板](./RUNTIME_STATE_TEMPLATE.md)
 - [Context Assembly & Trace 设计记录](./Optimization_Reports/CONTEXT_ASSEMBLY_AND_TRACE_DESIGN.md)
 - [Context Assembly & Trace 回归夹具 v1](./Acceptance_Test_Fixtures/CONTEXT_ASSEMBLY_TRACE_REGRESSION_v1.md)
+- [Scene Continuity & Evidence Record 回归夹具 v1](./Acceptance_Test_Fixtures/SCENE_CONTINUITY_AND_EVIDENCE_RECORD_REGRESSION_v1.md)
 - [可靠性与体验方向控制协议](./GM_RELIABILITY_AND_EXPERIENCE_CONTROL_PROTOCOL.md)
 
 ## 4. 训练、复盘与缺陷追踪

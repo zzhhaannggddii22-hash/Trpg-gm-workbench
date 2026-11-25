@@ -5,6 +5,7 @@
 ## Context Assembly / Trace 回归夹具
 
 - [Context Assembly & Trace 回归夹具 v1](./CONTEXT_ASSEMBLY_TRACE_REGRESSION_v1.md)：行动依赖、资料状态、权限、Trace、Manifest 修订与局部 Diff。
+- [Scene Continuity & Evidence Record 回归夹具 v1](./SCENE_CONTINUITY_AND_EVIDENCE_RECORD_REGRESSION_v1.md)：跨会话信息恢复、活动场景续接、NPC 认知缺口、玩家提示污染、访谈顺序与引文精度。
 
 ## Runtime 回归夹具
 
