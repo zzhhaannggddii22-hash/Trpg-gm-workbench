@@ -243,7 +243,7 @@ presentation_segments:
     delivery_state: PRESENTED | NOT_PRESENTED | UNKNOWN
     presented_at: "<timestamp-or-UNKNOWN>"
     evidence_ref: "<message-or-delivery-evidence>"
-action_semantics: PLAYER_INTENT | PC_DECLARED_SPEECH | PC_ACTION_COMMITTED | GM_PROPOSED_ACTION | NPC_FUTURE_INTENT | NPC_ACTION_EXECUTED
+action_semantics: PLAYER_QUESTION_TO_GM | PLAYER_INTENT | PC_DECLARED_SPEECH | PC_ACTION_COMMITTED | GM_PROPOSED_ACTION | NPC_FUTURE_INTENT | NPC_ACTION_EXECUTED
 incident_id: "<incident-id-or-NOT_APPLICABLE>"
 dependency_refs: []
 action_id: "<stable-action-id>"
@@ -255,7 +255,7 @@ decision_event_id: "<event-id-or-UNKNOWN>"
 - Runtime 应用证明遵循 Runtime §14.14；事件 ID 相同不代表修订相同或全部字段已应用。
 - PARTIALLY_PRESENTED 按接收者和内容片段记录；未知送达片段为 UNKNOWN。
 - RESPONDED 不证明每个回应片段均已送达。gm_response_ref 定位实际可见回复，并与片段记录对应。
-- 玩家意图、角色发言、已提交行动、GM 建议和 NPC 意向不可互相转换。
+- 行动语义按 Runtime §14.11.1、§14.15。不要把桌外提问、玩家意图、GM 建议或 NPC 意向写成实际发言或执行；仅为实际发生且需要记录的领域事件生成相应记录。
 - 旧记录缺字段按 UNKNOWN，不补造历史应用、呈现或授权证据。
 
 
@@ -264,40 +264,14 @@ decision_event_id: "<event-id-or-UNKNOWN>"
 
 对 PARTIALLY_PRESENTED 事件按 Runtime §14.16 记录 presentation_segments[]，每个片段绑定内容定位、recipient_scope、delivery_channel、delivery_state、presented_at 和 evidence_ref。RESPONDED 不代表所有片段已送达；未知送达状态保持 UNKNOWN。
 
-新事件另记录 action_semantics：PLAYER_INTENT / PC_DECLARED_SPEECH / PC_ACTION_COMMITTED / GM_PROPOSED_ACTION / NPC_FUTURE_INTENT / NPC_ACTION_EXECUTED。不得把玩家意图写成角色发言或执行，也不得把 NPC 未来意向写成实际行动。
+新事件按上方契约标注适用的 action_semantics。对有后续影响的请求、接受、执行或结果，使用现有 action_id 和事件引用关联各阶段；仅记录已实际发生的阶段，不为桌外问句或未执行的行动虚构领域事件。
 
 ## Context Assembly / Trace 关联字段（P1）
 
-对黄色/红色行动、恢复、相关争议或重要状态变化，按 Runtime §14.20 在对应事件记录中附加最小 GM-only Trace Envelope。普通绿色互动不要求逐条记录。
+Context Trace Envelope 以 [Runtime §14.20.8](./07_RUNTIME_CONTROL_PROTOCOL.md#14208-context-trace-与持久化) 为唯一字段规范。按该节在重要领域事件上附加 GM-only 元数据；没有领域事件且确需跨对话追溯时，使用下方 Operational Diagnostics 附录，不生成领域事件、不推进游戏时间或 CANON。Preflight 与绿色互动的放置和省略条件也以 Runtime 为准。
 
-~~~yaml
-context_trace:
-  trace_schema_version: 1
-  context_kind: PREFLIGHT | PLAYER_ACTION
-  context_id: "<stable-context-id>"
-  action_id: "<action-id-or-NOT_APPLICABLE>"
-  attempt: 1
-  manifest_ref: "<immutable-manifest-ref-or-NOT_PERSISTED>"
-  manifest_revision: 1
-  assembly_status: READY | READY_WITH_LIMITS | BLOCKED
-  dependency_refs: []
-  source_refs: []
-  validation_refs: []
-  diff_ref: "<diff-ref-or-NOT_RUN>"
-  changed_field_paths: []
-  presentation_refs: []
-  recipient_scope: "<exact-scope-or-NOT_APPLICABLE>"
-  persistence_status: NOT_REQUIRED | NOT_ATTEMPTED |
-                      PREPARED | VERIFIED | INCOMPLETE
-  limitations: []
-~~~
-
-- Trace 是事件的 GM-only 审计元数据，不是玩家可见内容，不得复制到 Player Notes。
-- Trace 引用 Manifest 和来源，不复制权威文件正文，不替代 event_id、runtime_application 或 Reconciliation Manifest。
-- 对重要行动被阻断、恢复或发生装配争议且需要跨对话追溯、但没有领域事件的情况，可在本文件独立的 GM-only Operational Diagnostics 附录追加运行诊断记录；它不是领域事件，不分配领域 event_id，不推进游戏时间或 CANON。
-- Preflight 尚无 Session Log 时，Trace 随 Preflight/Handoff 记录；普通 Preflight 不强制新建独立审计文件。
-- 旧事件缺少 Trace 字段时标记 NOT_RECORDED / UNKNOWN，不从聊天摘要或模型印象补造历史。
-- 只有实际呈现证据才能记录 PRESENTED；只有独立读回才能记录持久化 VERIFIED。
+- Trace 不进入 Player Notes，不替代 Reconciliation Manifest、实际执行、交付或独立读回证据。
+- 旧记录原样保留，缺失字段标 NOT_RECORDED / UNKNOWN，不补造历史。旧 `source_refs` 只作来源定位；没有实际读取证据时不得转换成 `retrieval_refs`。
 
 ## GM-only Operational Diagnostics Appendix（非领域事件）
 
