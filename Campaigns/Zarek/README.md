@@ -2,7 +2,7 @@
 
 > 扎雷克（Zarek）在 Triangle Agency 世界中的正式战役总目录。
 > 系统绑定：[SYSTEM_BINDING.md](./SYSTEM_BINDING.md)｜`system_id: triangle_agency`｜规则唯一权威：用户指定的《Triangle Agency》中文 v22。
-> 当前状态：正式完成《死寂》（Dead Quiet）、《冰淇淋车》（Ice Cream Truck）与《俯冲》（Nosedive）。《俯冲》已按用户确认结案，无奖励、无惩罚；下一场模组尚未指定。
+> 当前状态：正式完成《死寂》（Dead Quiet）、《冰淇淋车》（Ice Cream Truck）与《俯冲》（Nosedive）。《俯冲》已按用户确认结案，无奖励、无惩罚；用户已选择《Bower Street》作为下一场待开模组，尚未进入 Preflight。
 
 ## 目录
 - [人物档案](./人物档案/README.md)：扎雷克正式人物卡、当前场次副本、凯瑟琳长期档案。
@@ -33,7 +33,7 @@ GM 能力测试、未进入正式 CANON 的短团可作为测试模组单独归�
 
 ## 当前资源速览（2026-11-22）
 - 扎雷克：R&D；**Associate（助理）**；Good Standing；Harm 0；Demerits 0；Commendations **7**。
-- QA：Professionalism 3/3、Empathy 3/3、Subtlety 3/3、Attentiveness 1/1、Duplicity 1/1、Dynamism 0/1、Initiative 0/1、Persistence 0/0、Presence 0/0；QA 上限总和 **13**。
+- QA：Professionalism 3/3、Empathy 3/3、Subtlety 3/3、Attentiveness 1/1、Duplicity 1/1、Dynamism 1/1、Initiative 1/1、Persistence 0/0、Presence 0/0；QA 上限总和 **13**。
 - Competency：累计4格；第3格完成 Associate 晋升；第4格为《冰淇淋车》后幕间 Time 成长。
 - Work/Life Balance Time：已花费2/30，剩余28。
 - 信息披露协议会员：已购买；扎雷克与凯瑟琳均已签署；本桌约定会员长期有效。
