@@ -2,14 +2,15 @@
 
 > 扎雷克（Zarek）在 Triangle Agency 世界中的正式战役总目录。
 > 系统绑定：[SYSTEM_BINDING.md](./SYSTEM_BINDING.md)｜`system_id: triangle_agency`｜规则唯一权威：用户指定的《Triangle Agency》中文 v22。
-> 当前状态：正式完成《死寂》（Dead Quiet）、《冰淇淋车》（Ice Cream Truck）与《俯冲》（Nosedive）。《俯冲》已按用户确认结案，无奖励、无惩罚；下一场模组尚未指定。
+> 当前状态：正式完成《死寂》（Dead Quiet）、《冰淇淋车》（Ice Cream Truck）与《俯冲》（Nosedive）。《俯冲》已按用户确认结案，无奖励、无惩罚；用户已选择《Bower Street》作为下一场待开模组，尚未进入 Preflight。
 
 ## 目录
 - [人物档案](./人物档案/README.md)：扎雷克正式人物卡、当前场次副本、凯瑟琳长期档案。
 - [模组：死寂](./模组/死寂/README.md)：首个正式任务结案、奖励、复盘、余波与历史记录。
 - [模组：冰淇淋车（Ice Cream Truck）](./模组/冰淇淋车_Ice_Cream_Truck/README.md)：第二场正式任务结案、成长、密库补给与复盘资料。
 - [模组：俯冲（Nosedive）](./模组/俯冲_Nosedive/README.md)：第三场正式任务已结案；无奖励、无惩罚；历史记录与角色记忆边界已归档。
-- [模组：Bower Street](./模组/Bower_Street/README.md)：下一场待开模组；GM-only 备团资料与玩家侧空白便笺已建立，尚未开团。\n- [模组：F-33《静默楼层》测试短团](./模组/F-33_静默楼层_测试短团/README.md)：独立 GM 能力测试存档，不属于正式战役 CANON。
+- [模组：Bower Street](./模组/Bower_Street/README.md)：用户已选定的下一场待开模组；独立审查后当前状态为 BLOCKED，尚未进入 Preflight 或开团。
+- [模组：F-33《静默楼层》测试短团](./模组/F-33_静默楼层_测试短团/README.md)：独立 GM 能力测试存档，不属于正式战役 CANON。
 - [战役交接与当前状态](./战役记录/战役交接与当前状态.md)：主持方式、人物资源状态与后续连续性。
 
 ## 归档范围
@@ -33,13 +34,13 @@ GM 能力测试、未进入正式 CANON 的短团可作为测试模组单独归�
 
 ## 当前资源速览（2026-11-22）
 - 扎雷克：R&D；**Associate（助理）**；Good Standing；Harm 0；Demerits 0；Commendations **7**。
-- QA：Professionalism 3/3、Empathy 3/3、Subtlety 3/3、Attentiveness 1/1、Duplicity 1/1、Dynamism 0/1、Initiative 0/1、Persistence 0/0、Presence 0/0；QA 上限总和 **13**。
+- QA：Professionalism 3/3、Empathy 3/3、Subtlety 3/3、Attentiveness 1/1、Duplicity 1/1、Dynamism 1/1、Initiative 1/1、Persistence 0/0、Presence 0/0；QA 上限总和 **13**。
 - Competency：累计4格；第3格完成 Associate 晋升；第4格为《冰淇淋车》后幕间 Time 成长。
 - Work/Life Balance Time：已花费2/30，剩余28。
 - 信息披露协议会员：已购买；扎雷克与凯瑟琳均已签署；本桌约定会员长期有效。
 - A3 补给「Scoop 的小小心意」：已购买1份，3嘉奖；每场正式任务可使用一次。
 - Relationship：Sam Mercer 6；Dale Rourke 3；「谁依赖你不同寻常的视角？」暂空。凯瑟琳保留为长期独立 NPC，不再作为机械 Relationship。
-- 《俯冲》（Nosedive）已结案；下一场正式模组尚未指定。
+- 《俯冲》（Nosedive）已结案；该条为 2026-11-24 历史快照，后续已由用户选定《Bower Street》。
 
 ## 2026-11-24｜当前战役状态更新
 - 《俯冲》（Nosedive）已按用户确认的结局正式结案，状态为 CLOSED / NARRATIVE RESOLVED；不再是下一场待开团任务。
@@ -48,3 +49,10 @@ GM 能力测试、未进入正式 CANON 的短团可作为测试模组单独归�
 - 扎雷克与凯瑟琳的历史关系有质性进展；不自动转化为 Connection。
 - 两人的共同记忆截止于最后一次实际跑团。机构接手后的后续不属于二人记忆或玩家已知信息。
 - 下一场正式模组尚未由用户指定；不得自动将《俯冲》作为当前活动任务。
+
+
+## 2026-11-25｜《Bower Street》选择与备团审查状态
+
+- 用户已明确选择《Bower Street》作为下一场正式模组；该选择覆盖此前“下一场尚未指定”的历史快照。
+- 独立审查基于 main `4e85fc5` 给出 BLOCKED。本轮修订位于 `fix/bower-street-audit-iteration-2`，尚未合并；完成第二轮独立审查前不得进入正式 Preflight。
+- 正式人物卡 §6 当前记录 Dynamism 1/1、Initiative 1/1。旧交接快照中的 0/1、0/0 为历史记录；除非有更新的实际消耗事件，以正式卡为准。

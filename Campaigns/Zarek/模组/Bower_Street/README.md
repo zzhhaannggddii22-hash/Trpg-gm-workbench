@@ -1,6 +1,6 @@
 # 《Bower Street》｜模组档案
 
-> 状态：READY WITH OPEN ITEMS（备团资料已建立并完成首轮迭代；最终角色/装备核对留待正式 Preflight）。尚未开团。
+> 状态：BLOCKED（2026-11-25 第三轮独立审查后，凯西已完成定向修订与自检；等待用户决定是否接受当前备团）。尚未进入 Preflight 或开团。
 > 系统：`triangle_agency`｜规则：《三角机构》中文 v22。
 > 来源：Haunted Table Games，《The Vault: Missions for Triangle Agency》，Kay W.；中文精翻母稿 `the_vault_zh.docx`，源 PDF 41–49，印刷页 76–93。
 > 信息权限：本目录除 `05_PLAYER_NOTES.md` 外均为 GM-only；不得把本目录内容粘贴到玩家侧回复。
@@ -27,6 +27,9 @@
 ## 版本与迭代
 
 - v0.1：初步场景结构、NPC、线索与遭遇梳理（此前聊天中曾输出，不作为最终版本）。
-- v1.0：本次按仓库规范重建文件夹，完成来源核对、规则交叉检查、调查与 NPC 因果审查、玩家路径压力测试、修订及第二轮复审。
-- 本次未执行真实玩家测试；不得把压力测试写成实战验证。
-- 最终 READY 仍需正式 Preflight 核对当前角色卡、装备、QA/Burnout、任务配给和最新规则版本。模组原文未提供的异常独立数值档案不得自行补造。
+- v1.0：初次备团版本；后经独立审查发现现场应用与规则边界问题，原 READY WITH OPEN ITEMS 结论撤销。
+- v1.1-audit-fix：根据第一轮独立审查修订 Domain/Corrupt、泳池、时间线、NPC/线索、收束条件、资源与结算；第二轮独立审查确认首要两项已修复，但发现 C1–C7 新阻塞。
+- v1.2-targeted-fixes：针对第二轮独立审查修订厨房追逐条件、Ripple Gun 结果结算、手机双猫资源冲突与脱困、双人恢复触发、Jodie/社区信息门槛、Aftermath 分支、分部 Pool 核算流程、Expand 与布娃娃索引。
+- v1.3-third-audit-fixes：根据第三轮独立报告修正卧室按事件时 Domain 状态裁定、手机信息披露层级与无剧透暂停说明、街道测量和 Jodie 信息来源边界；补齐 Cooper/Fumiko/Justin 的条件性 Aftermath、历史记录标签。凯西已完成跨文件自检；不等同于独立复审或真实玩家测试。
+- 压力测试为案头推演，未执行真实玩家测试；不得把压力测试写成实战验证。
+- 当前仍为 BLOCKED / AWAITING USER REVIEW；本轮修订与自检没有自动放行 Preflight。若用户决定继续，Preflight 内再核对当前角色卡、装备、QA/Burnout、任务配给、实际地方分部累计 Loose Ends 与开局普通 Chaos Pool。模组原文未提供的异常独立数值档案不得自行补造。
