@@ -883,3 +883,287 @@ GM 可以并且应当使用完整的内部数据正确裁定战斗，但玩家�
 - 回顾时一次性筛选玩家已知事件集合；不要求把整场游戏每轮重复检查一遍。
 - 发现未呈现信息已泄漏时，按 §14.1 与 §14.13 处理；不得只在下一轮停止提及而保留其对玩家选择或后续状态的影响。
 
+## 14.20 Context Assembly、Manifest、Trace 与 Diff（P1）
+
+本节在现有 Preflight、Runtime 风险路由、权威资料分层和玩家信息权限规则之上，定义一次行动的上下文装配与可观测性。它不创建第二套 Runtime、事件历史、Claim Ledger 或玩家知识库，也不替代 §13、§14.3、§14.9–16、§14.19。
+
+### 14.20.1 目标与低成本边界
+
+Context Assembly 回答：当前行动依赖什么、哪些资料被定位/读取/核验、哪些范围可以继续。
+
+Context Trace 回答：上述过程有哪些可观察证据、最终允许/阻断什么、发生了哪些重要输出和状态变化。
+
+Context Diff 回答：与上一次有效装配相比，当前行动相关的依据是否发生了实质变化。
+
+执行边界：
+
+- 新对话/新 Session：在同一次 Preflight 中建立启动 Context，按 §A 的完整路径或健康续接快路径装配，不增加第二次 Preflight。
+- 同一活动对话：复用仍有效的绑定、静态来源和 Runtime 快照；不得按消息数或每轮强制全量装配。
+- 绿色普通互动：当前快照足以回答、没有相关依赖失效、无持久状态变化和方向性新信息时，直接回应；目标仍为零新增文件读取、零强制持久化 Trace。
+- 黄色/红色：按现有风险路由识别本次行动的实际依赖，必要时生成/更新 Manifest 与 Trace。
+- T0：遵循当前有效的 §14.1 配置。Context Assembly 不能绕过 T0 熔断、授权或冻结规则，也不自动改变性能阶段遗留的临时配置。
+- 不得为减少 Token、读取次数或文档长度删除必要事实、否定信息、例外、精度限制、来源关系或接收者权限。
+
+### 14.20.2 Context ID 与行动生命周期
+
+一个 Context ID 标识一个可识别的执行单元：一次 Preflight，或一次玩家行动的 GM 处理过程。
+
+- 一次复合/混合行动使用一个父 Context ID；需要独立裁定的子行动使用 child_action_id，并分别维护依赖与允许范围。不得将同一玩家意图拆成互不关联的 Context。
+- 同一行动的补充读取、澄清后仍属同一意图的重试、失败后恢复，沿用 Context ID；通过 attempt 和 manifest_revision 追加新尝试/修订。
+- 玩家明确改变目标、撤回原行动并提出新行动，或原行动结束后提出新的独立行动，才创建新 Context ID。
+- Context ID 不替代 event_id、action_id、batch_id、checkpoint revision 或 incident_id。它是追踪关联键，不是领域事实或事件身份。
+- ID 必须在当前 Session/运行范围稳定唯一；不得仅依赖时间戳，不得因 ID 不同就推断行动实质不同。
+- Preflight Context 与后续玩家行动 Context 分开；Preflight 作为一次启动执行单元，不把整场 Session 的每轮行动都挂在同一个 Context ID 下。
+
+### 14.20.3 行动依赖与必要性
+
+先识别玩家输入语义，继续遵循 §14.11.1 和 §14.15 对 PLAYER_QUESTION_TO_GM、PLAYER_INTENT、PC_DECLARED_SPEECH、PC_ACTION_COMMITTED、GM_PROPOSED_ACTION、NPC_FUTURE_INTENT、NPC_ACTION_EXECUTED 的区分。
+
+从当前行动目标识别必要依赖，按需覆盖：
+- RULE：适用规则、桌规/批准适配、触发条件、例外和结算顺序；
+- FACT：模组原文、Campaign CANON、已确认桌面事实；
+- STATE：Runtime 当前值、事件应用链、时间/位置/资源/物品；
+- NPC_KNOWLEDGE：人物实际观察、经历、听闻、阅读、推断、相信、怀疑或误解；
+- PLAYER_KNOWLEDGE / PRESENTATION：玩家角色实际获知的内容、呈现事件、片段和接收者；
+- LOCATION / ITEM / RESOURCE：行动所需的空间、持有人、数量、资格和资源前提；
+- PERMISSION：GM-only、recipient_scope、披露条件和输出限制。
+
+每项依赖标记：
+- REQUIRED：当前行动必要前提。未解决时阻断依赖该项的子行动。
+- CONDITIONAL：仅当明确条件成立时才成为必要依赖；条件未触发时不强制读取。
+- SUPPORTING：辅助背景或解释材料，不能替代 REQUIRED，也不能解决权威冲突。
+
+依赖识别从行动目标与因果前提出发，不只依赖关键词。关键词、语义检索和向量相似度只能定位候选资料，不能证明事实或权威。
+
+### 14.20.4 Context Manifest
+
+Manifest 是一次上下文装配的可追溯清单，不是新的权威数据库，也不是 Runtime Reconciliation Manifest。不得混用两种 Manifest。
+
+需要结构化追溯时，使用以下最小契约；按行动适用性填写，不适用字段标 NOT_APPLICABLE：
+
+~~~yaml
+context_manifest:
+  context_id: "<stable-context-id>"
+  schema_version: 1
+  manifest_revision: 1
+  supersedes_ref: null
+  scope:
+    session_id: "<session-id-or-UNKNOWN>"
+    action_id: "<action-id>"
+    parent_context_id: null
+    attempt: 1
+    mode: NEW_START | CONTINUE | ACTIVE_SESSION
+    risk_level: GREEN | YELLOW | RED | T0
+  binding:
+    system_id: "<exact-system-id>"
+    ruleset_version: "<exact-version>"
+    campaign_id: "<campaign-id>"
+    module_id: "<module-id>"
+    status: VERIFIED | UNKNOWN | DISPUTED
+  runtime_anchor:
+    checkpoint_revision: "<revision-or-UNKNOWN>"
+    branch: "<branch-or-UNKNOWN>"
+    last_event_id: "<event-id-or-UNKNOWN>"
+    status: VERIFIED | UNKNOWN | DISPUTED
+  dependencies:
+    - dependency_id: "<stable-id>"
+      type: RULE | FACT | STATE | NPC_KNOWLEDGE |
+            PLAYER_KNOWLEDGE | LOCATION | ITEM | RESOURCE |
+            PRESENTATION | PERMISSION
+      target_ref: "<exact-object-or-claim-ref>"
+      necessity: REQUIRED | CONDITIONAL | SUPPORTING
+      status: RESOLVED | MISSING | UNKNOWN | DISPUTED |
+              NOT_APPLICABLE
+  sources:
+    - source_ref: "<exact-authoritative-ref>"
+      locator: "<path/section/record-id>"
+      version_ref: "<commit/blob/revision-or-UNKNOWN>"
+      load_mode: REQUIRED | ACTION_DEPENDENT | SUPPORTING
+      retrieval: FOUND | NOT_FOUND | NOT_ACCESSIBLE |
+                 VERSION_MISMATCH | UNKNOWN
+      read_scope: "<actual-read-scope>"
+      read_status: FULL_REQUIRED_SCOPE | PARTIAL |
+                   LOCATOR_ONLY | NOT_READ
+      validation: VERIFIED | FAILED | UNKNOWN |
+                  DISPUTED | NOT_APPLICABLE
+      dependency_refs: []
+  decision:
+    status: READY | READY_WITH_LIMITS | BLOCKED
+    allowed_scope: []
+    blocked_scope: []
+    unresolved_refs: []
+    basis_refs: []
+  trace_ref: "<trace-ref-or-NULL>"
+~~~
+
+### 14.20.5 检索、读取与核验必须分开
+
+三个维度不得压缩为一个 found/verified 布尔值：
+
+**检索状态**
+- FOUND：找到候选资料；
+- NOT_FOUND：按已声明的检索范围未找到；
+- NOT_ACCESSIBLE：资料不可读取或无权限访问；
+- VERSION_MISMATCH：找到资料但版本不匹配；
+- UNKNOWN：检索范围/结果不足以判断。
+
+**读取状态**
+- FULL_REQUIRED_SCOPE：已读取当前依赖所需的完整范围；
+- PARTIAL：只读取部分必要范围；
+- LOCATOR_ONLY：只取得目录、标题、摘要或定位；
+- NOT_READ：尚未读取正文。
+
+**核验状态**
+- VERIFIED：指定依赖的适用检查通过；
+- FAILED：检查失败；
+- UNKNOWN：证据不足；
+- DISPUTED：发现未解决冲突；
+- NOT_APPLICABLE：该项检查不适用。
+
+NOT_FOUND 不证明事实不存在；NOT_ACCESSIBLE 不等于空内容；LOCATOR_ONLY 不等于已读取；PARTIAL 不得冒充完整核验。NOT_APPLICABLE 不得被默认转换为 VERIFIED。
+
+Source Locator 应尽可能精确到仓库相对路径、章节/记录 ID、版本/commit/blob、Runtime revision 或可验证内容指纹。无法计算指纹时标 NOT_AVAILABLE，不得伪称校验。
+
+### 14.20.6 装配顺序与 READY 判定
+
+沿以下顺序装配；已有流程已经完成的步骤可复用其本次结果，不重复执行：
+
+1. Resolve Binding：按 SYSTEM_CONTEXT_PROTOCOL 核验唯一 system_id、精确规则版本、Campaign Binding 和 Module。
+2. Resolve Runtime：按 Preflight/Runtime 读取有效检查点、活动分支、当前场景、最近事件、未合并事件和开放争议。
+3. Classify Action：确认行动语义、目标、对象、风险和可能改变的状态。
+4. Resolve Dependencies：建立当前行动 REQUIRED、CONDITIONAL、SUPPORTING 依赖。
+5. Retrieve Authority：通过索引定位后，读取必要权威原文/记录范围；摘要只定位，不能替代。
+6. Validate：核验身份、版本、权威、读取范围、状态一致性、来源根、NPC 知识、玩家呈现和接收者权限。
+7. Assemble：明确区分权威事实、当前状态、历史事件、NPC 知识、玩家已知、UNKNOWN/DISPUTED 和输出权限。
+8. Decide：给出允许与阻断范围；只限制依赖缺口的行动。
+9. Respond & Trace：回应后记录重要状态变化、玩家可见呈现和必要 Trace。
+
+状态判定：
+
+- READY：所有当前行动 REQUIRED 依赖均已解决，适用核验通过。
+- READY_WITH_LIMITS：存在缺口，但已明确隔离；允许行动有独立依据，不依赖争议命题，也不会为其生成佐证。
+- BLOCKED：至少一项 REQUIRED 依赖缺失、不可访问、版本不符、无法核验或存在相关争议；阻断所有依赖该项的行动。
+
+BLOCKED 不自动冻结无关互动。复合行动拆成子行动分别判断；允许范围必须有独立依据。READY 不代表整场世界资料全部完整，只代表当前声明范围内的依赖已通过。
+
+### 14.20.7 上下文语义分区
+
+装配后的资料应保留语义边界，至少区分：
+1. GM Core Constraints；
+2. System Binding；
+3. Rules / Module Authority；
+4. Campaign Canon；
+5. Runtime Snapshot；
+6. Session / Event History；
+7. Current Action and Dependencies；
+8. Claim / Source / Evidence；
+9. NPC Profile and NPC Knowledge；
+10. Player-Known Information；
+11. UNKNOWN / DISPUTED / UNVERIFIED；
+12. Recipient Scope / Disclosure / Output Restrictions；
+13. Response Task。
+
+以上是语义分区，不强制固定 Prompt 排序。资料出现在同一上下文中，不会改变其权威等级或权限范围。
+
+### 14.20.8 Context Trace 与持久化
+
+Trace 记录可观察工程事实，不记录思维链，不推断模型未公开的内部处理过程。
+
+最小 Trace Envelope：
+
+~~~yaml
+context_trace:
+  trace_id: "<stable-trace-id>"
+  context_id: "<context-id>"
+  action_id: "<action-id>"
+  attempt: 1
+  manifest_ref: "<manifest-ref-or-NOT_PERSISTED>"
+  manifest_revision: 1
+  binding_ref: "<binding-source-ref>"
+  checkpoint_revision: "<revision-or-UNKNOWN>"
+  retrieval_refs: []
+  validation_refs: []
+  assembly_status: READY | READY_WITH_LIMITS | BLOCKED
+  allowed_scope: []
+  blocked_scope: []
+  diff_ref: "<diff-ref-or-NOT_RUN>"
+  related_event_ids: []
+  changed_field_paths: []
+  presentation_refs: []
+  recipient_scope: "<exact-scope-or-NOT_APPLICABLE>"
+  persistence_status: NOT_REQUIRED | NOT_ATTEMPTED |
+                     PREPARED | VERIFIED | INCOMPLETE
+  limitations: []
+~~~
+
+持久化位置：
+
+- 对应真实游戏事件：将最小 Trace Envelope 作为该 Session Log 事件的 GM-only 元数据；引用 Manifest、来源和核验记录，不复制资料正文。
+- 重要行动被阻断、恢复或出现装配争议且需要跨对话追溯，但没有领域事件：向现有 Session Log 追加 GM-only 诊断事件。诊断事件不得伪装成世界 CANON，不得推进游戏时间或改变领域状态。
+- Preflight 尚无可用 Session Log 时：Trace 随本次 Preflight/Handoff 记录；普通 Preflight 不强制新增独立审计文件。
+- 绿色普通互动不强制持久化 Trace。
+- Runtime State 不保存完整 Manifest/Trace；只有当装配问题已构成开放争议或影响当前推进的持久状态时，按现有 dispute/state 机制保存状态及相关引用。
+- Player Notes 和玩家导出不得包含 GM Trace、隐藏来源、GM-only 依赖或内部路由。
+
+Trace 只证明明确记录的事项：READ 不等于 VERIFIED；PRESENTED 必须有实际交付证据；PERSISTENCE VERIFIED 必须有独立读回证据。没有记录的检查不得事后声称已完成。
+
+**平台可观测性边界：** 当前 ChatGPT 环境无法读取平台最终完整隐藏 Prompt。Trace 只能描述工作台可观察的显式资料定位、读取返回、核验、决定和输出；不得宣称完整模型输入审计或模型内部思维链审计。
+
+### 14.20.9 Manifest 版本与修订
+
+- 每个 Manifest 必须包含 schema_version 和 manifest_revision。
+- 已生成 Manifest 不可原地修改。修订产生新 revision，并通过 supersedes_ref 指向被替代版本。
+- 同一 Context ID 的补充读取、澄清和恢复可产生新 Manifest revision；旧版保留，不覆盖。
+- schema_version 变化表示字段/语义契约变化；manifest_revision 变化表示同一 schema 下该 Context 的装配记录更新。
+- 旧 Manifest 缺字段时保留 UNKNOWN / NOT_RECORDED；不得从新 Runtime、摘要或模型印象回填历史。
+- Manifest 与 Runtime Reconciliation Manifest 必须使用不同明确名称、引用空间和职责，禁止互相代替。
+
+### 14.20.10 Context Diff 与触发条件
+
+Context Diff 比较重要依赖的语义状态，不是普通文本 Diff。至少检查：
+- system/ruleset/campaign/module binding；
+- Runtime checkpoint、活动分支、相关事件和未合并状态；
+- 依赖来源版本、内容指纹与实际读取范围；
+- Claim 状态、证据根和来源谱系；
+- NPC 知识、披露片段、玩家呈现和 recipient_scope；
+- 开放争议、T0 冻结和授权范围；
+- 当前行动依赖集合；
+- 上次存在而本次无解释消失的事实、否定信息、精度限制、例外和权限条件。
+
+结果分类：ADDED / REMOVED / REPLACED / CHANGED / NARROWED / EXPANDED / DISPUTED / UNKNOWN / UNCHANGED。REMOVED 必须记录原因；未被本次装载不等于事实已失效。没有可靠旧基线时标 NO_BASELINE，不推断 UNCHANGED。
+
+触发规则：
+
+1. 新对话/新 Session Preflight：对可用的上次有效装配基线执行相关依赖 Diff；旧基线不可用时标 NO_BASELINE，并按当前 Preflight 读取权威状态。
+2. 同一活动对话：只在可能使当前依赖失效的变化发生时，比较受影响依赖。包括系统/版本/绑定变化、相关 Runtime checkpoint 或事件变化、依赖来源版本/内容变化、Claim/证据根变化、NPC 知识或披露变化、玩家呈现/接收者权限变化、争议/T0 范围变化。
+3. 新行动不自动触发全量 Diff；只比较与该行动实际依赖相交的已有上下文。
+4. 不按消息数或每轮固定触发；不扫描整个仓库或无关历史。
+5. 依赖变化无法解释、重要限制无故消失或冲突出现时，按 READY_WITH_LIMITS / BLOCKED 及现有争议规则处理。
+
+### 14.20.11 记录粒度与性能保护
+
+- GREEN：可在当前上下文中轻量维护依赖；不要求 Manifest 文件、持久 Trace 或全量 Diff。
+- YELLOW：对发生变化的对象和实际依赖建立标准 Manifest/Trace；只记录重要来源与状态变化。
+- RED：在宣布结果前核验所有必要规则、事实、状态、例外和权限；保留可追溯 Manifest/Trace。
+- T0：遵循当前有效 T0 配置；不得用本节替代事故处置。
+- 一轮中互不依赖的读取可批量执行；有依赖的定位、版本确认和原文核验按顺序执行。
+- 资料复用沿用 §A 同次读取规则：静态资料按精确版本/Blob 与读取范围复用；可变 Runtime 状态不得凭旧装配证明当前仍有效。
+- 不以 Manifest 字段填满率、Trace 数量或 Diff 次数作为质量指标。关键门槛是依赖是否完整、来源是否可追溯、权限是否正确、冲突是否被识别。
+
+### 14.20.12 验收门槛
+
+以下为硬门槛，不得被性能、文笔或其他得分抵消：
+
+- system_id / ruleset_version 错误不得 READY；
+- REQUIRED 依赖遗漏不得 READY；
+- LOCATOR_ONLY / PARTIAL 不得冒充完整核验；
+- UNKNOWN / DISPUTED 不得升级为事实；
+- NPC 知识、玩家知识和 recipient_scope 不得越界；
+- Runtime / Log 应用链冲突不得静默裁定；
+- 争议只阻断依赖行动，无关安全互动保持可用；
+- Trace 不得声称审计不可观察的平台完整 Prompt；
+- Diff 不得把未加载误判为事实删除；
+- 绿色普通互动不新增强制文件读取或持久化；
+- 任何效率收益不得以删除必要事实、否定信息、例外、精度或权限限制换取。
+
+本节定义的是运行协议；文档静态检查或合成夹具通过不代表目标 Chat 行为通过。真实模型行为须按独立目标环境测试记录。

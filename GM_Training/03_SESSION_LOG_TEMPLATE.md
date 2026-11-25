@@ -265,3 +265,36 @@ decision_event_id: "<event-id-or-UNKNOWN>"
 对 PARTIALLY_PRESENTED 事件按 Runtime §14.16 记录 presentation_segments[]，每个片段绑定内容定位、recipient_scope、delivery_channel、delivery_state、presented_at 和 evidence_ref。RESPONDED 不代表所有片段已送达；未知送达状态保持 UNKNOWN。
 
 新事件另记录 action_semantics：PLAYER_INTENT / PC_DECLARED_SPEECH / PC_ACTION_COMMITTED / GM_PROPOSED_ACTION / NPC_FUTURE_INTENT / NPC_ACTION_EXECUTED。不得把玩家意图写成角色发言或执行，也不得把 NPC 未来意向写成实际行动。
+
+## Context Assembly / Trace 关联字段（P1）
+
+对黄色/红色行动、恢复、相关争议或重要状态变化，按 Runtime §14.20 在对应事件记录中附加最小 GM-only Trace Envelope。普通绿色互动不要求逐条记录。
+
+~~~yaml
+context_trace:
+  context_id: "<stable-context-id>"
+  action_id: "<action-id>"
+  attempt: 1
+  manifest_ref: "<immutable-manifest-ref-or-NOT_PERSISTED>"
+  manifest_revision: 1
+  assembly_status: READY | READY_WITH_LIMITS | BLOCKED
+  dependency_refs: []
+  source_refs: []
+  validation_refs: []
+  diff_ref: "<diff-ref-or-NOT_RUN>"
+  changed_field_paths: []
+  presentation_refs: []
+  recipient_scope: "<exact-scope-or-NOT_APPLICABLE>"
+  persistence_status: NOT_REQUIRED | NOT_ATTEMPTED |
+                      PREPARED | VERIFIED | INCOMPLETE
+  limitations: []
+~~~
+
+- Trace 是事件的 GM-only 审计元数据，不是玩家可见内容，不得复制到 Player Notes。
+- Trace 引用 Manifest 和来源，不复制权威文件正文，不替代 event_id、runtime_application 或 Reconciliation Manifest。
+- 对重要行动被阻断、恢复或发生装配争议且需要跨对话追溯、但没有领域事件的情况，可追加 GM-only 诊断事件；该记录不得伪装成世界 CANON，不推进游戏时间或领域状态。
+- Preflight 尚无 Session Log 时，Trace 随 Preflight/Handoff 记录；普通 Preflight 不强制新建独立审计文件。
+- 旧事件缺少 Trace 字段时标记 NOT_RECORDED / UNKNOWN，不从聊天摘要或模型印象补造历史。
+- 只有实际呈现证据才能记录 PRESENTED；只有独立读回才能记录持久化 VERIFIED。
+
+

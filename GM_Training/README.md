@@ -16,7 +16,7 @@
 | [人物模拟 Skill](./CHARACTER_SIMULATION_SKILL.md) | 人物目标、知识、动机、关系、个人印记、行为与自主性 |
 | [叙事呈现 Skill](./NARRATIVE_PRESENTATION_SKILL.md) | 空间、环境、信息、对白/动作、场景焦距与节奏 |
 | [主持独立性与裁决纪律](./06_IMPARTIALITY_AND_ADJUDICATION_DISCIPLINE.md) | 公平裁定、反迎合与反刁难 |
-| [运行控制协议](./07_RUNTIME_CONTROL_PROTOCOL.md) | 风险路由、事实/权限、连续性、T0 与错误恢复 |
+| [运行控制协议](./07_RUNTIME_CONTROL_PROTOCOL.md) | 风险路由、事实/权限、连续性、T0、Context Assembly / Trace 与错误恢复 |
 | [线索与来源账本](./08_CLUE_AND_SOURCE_LEDGER.md) | 线索、公平获取路径、来源和知识边界 |
 
 人物模拟与叙事呈现不是两个独立的现场阶段。人物决定行动，环境影响行动，玩家行动改变局势，叙事呈现把结果交给玩家；主 Skill 负责统一调度。
@@ -33,6 +33,8 @@
 - [备团到运行交接](./13_PREP_TO_RUNTIME_HANDOFF_STANDARD.md)
 - [高级模型 Prep QA 协议](./ADVANCED_MODEL_PREP_QA_PROTOCOL.md)
 - [运行状态模板](./RUNTIME_STATE_TEMPLATE.md)
+- [Context Assembly & Trace 设计记录](./Optimization_Reports/CONTEXT_ASSEMBLY_AND_TRACE_DESIGN.md)
+- [Context Assembly & Trace 回归夹具 v1](./Acceptance_Test_Fixtures/CONTEXT_ASSEMBLY_TRACE_REGRESSION_v1.md)
 - [可靠性与体验方向控制协议](./GM_RELIABILITY_AND_EXPERIENCE_CONTROL_PROTOCOL.md)
 
 ## 4. 训练、复盘与缺陷追踪
