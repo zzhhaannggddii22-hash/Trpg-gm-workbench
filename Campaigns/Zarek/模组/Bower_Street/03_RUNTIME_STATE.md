@@ -9,7 +9,7 @@
 - System：triangle_agency / 中文 v22
 - Lifecycle：ACTIVE
 - Session：SESSION 01 已开始
-- Last confirmed event ID：BS-001
+- Last confirmed event ID：BS-002（桌外 GM 失误记录；最近游戏内事件仍为 BS-001）
 - Current scene/location：Ternion City 大都会分部｜任务简报室
 - In-game time：未设定（等待模组开场时间或玩家确认）
 - Player last action / GM last response：玩家明确下达“开始”；GM 已呈现任务简报。其后发生一次 GM-only 地点索引泄露，已按 BS-002 登记并纠正；当前等待扎雷克选择调查入口。
@@ -54,4 +54,4 @@
 - [x] 已启用 08_PLAYER_FACING_GATE.md；每轮玩家可见回复前执行来源、知识权限、表达三步检查。
 - [x] 已登记 BS-002 GM-only 信息泄露；泄露内容排除出角色知识，后续不得以此引导。
 - [x] 已确认扎雷克隶属 Ternion City 大都会分部；分部 Loose Ends 追踪基线为 1（仅含可核实的扎雷克战役贡献）；按 v22 核算开局普通 Chaos Pool 为 0，天气事件为 0。
-- [x] Preflight 完成；仍须等待用户明确说“开始”才进入游戏。
+- [x] Preflight 完成；玩家已明确说“开始”，SESSION 01 ACTIVE。
