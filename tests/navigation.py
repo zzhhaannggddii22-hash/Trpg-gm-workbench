@@ -11,13 +11,16 @@ def slug(text):
     return re.sub(r"[^\w\s-]", "", text).replace(" ", "-")
 
 
-def scan_links(documents):
+def scan_links(documents, known_paths=None):
     parsed = json.loads(subprocess.check_output(
         ["node", str(HERE / "scan_markdown.cjs")],
         input=json.dumps(documents, ensure_ascii=False).encode(),
     ))
+    # Markdown documents are parsed for links/headings, but links may validly
+    # target scripts, fixtures, images, or other tracked non-Markdown assets.
+    known_paths = set(known_paths or documents)
     dirs = {""}
-    for path in documents:
+    for path in known_paths:
         while "/" in path:
             path = posixpath.dirname(path)
             dirs.add(path)
@@ -53,7 +56,7 @@ def scan_links(documents):
             offset = documents[path].find(raw)
             line = 1 + documents[path].count("\n", 0, offset) if offset >= 0 else None
             entry = {"file": path, "line": line, "href": href, "resolved": dest}
-            if dest not in documents and dest not in dirs:
+            if dest not in known_paths and dest not in dirs:
                 result["missing_paths"].append(entry)
             elif parts.fragment and dest in anchors and unquote(parts.fragment) not in anchors[dest]:
                 result["anchor_candidates"].append(entry)

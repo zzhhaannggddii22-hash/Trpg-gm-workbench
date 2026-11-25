@@ -171,8 +171,9 @@ class RepositoryChecks(unittest.TestCase):
         self.assertFalse(approved(module_scope, binding, "Q99", "other"))
 
     def test_RT16_markdown_links(self):
-        paths = git("ls-files", "-z", "*.md").decode().rstrip("\0").split("\0")
-        result = scan_links({p: read(p) for p in paths})
+        all_paths = git("ls-files", "-z").decode().rstrip("\0").split("\0")
+        paths = [p for p in all_paths if p.endswith(".md")]
+        result = scan_links({p: read(p) for p in paths}, known_paths=all_paths)
         print(f"\nRT-16: {len(paths)} Markdown files, {result['local_links']} local links, "
               f"{len(result['missing_paths'])} broken paths, "
               f"{len(result['anchor_candidates'])} candidate anchors", flush=True)
