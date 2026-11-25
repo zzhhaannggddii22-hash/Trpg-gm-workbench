@@ -41,7 +41,7 @@
 | NPC-COOPER | 库珀（Cooper） | Cooper | NPC/动物 | Rebecca/Jodie 家失踪的黑猫；不与地下室人形身份关联 |
 | NPC-FELIX | 菲利克斯（Felix） | Felix | NPC/动物 | Rebecca 记忆中的橙色虎斑猫 |
 | NPC-OLLIE | 奥利（Ollie） | Ollie | NPC/动物 | Rowe 家宠物；项圈名牌仅余 OL |
-| NPC-ANOMALOUS-CATS | 次级异常猫 | Anomalous Cats | 异常/动物 | Caitlin 手机相关 Manifest 交互；两只猫的计费粒度 UNKNOWN |
+| NPC-ANOMALOUS-CATS | 次级异常猫 | Anomalous Cats | 异常/动物 | Caitlin 手机触发的囚禁型次级异常；直接触碰会使接触者陷入舒适记忆；两只猫的计费粒度 UNKNOWN |
 | NPC-DOG-GUIDE | 引路的狗 | Dog | NPC/动物 | 逃离房屋厨房段的引路主体；不要误写成 Caitlin |
 | ITEM-KEY-RING | 厨房钥匙盒 | Key Box / Keys | 物品 | 含车库侧门钥匙、棚屋钥匙与车钥匙 |
 | ITEM-DOLL | 旧布娃娃 | Doll | 物品/线索 | Evie 卧室；Caitlin 现实记忆锚点，状态随 Corrupt 实际结算变化 |
