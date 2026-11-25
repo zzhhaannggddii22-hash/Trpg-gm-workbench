@@ -195,4 +195,3 @@ Module 结团时，基于多个 Session 的具体片段区分现象、根因和�
 - READY / READY_WITH_LIMITS / BLOCKED 只描述当前行动范围；只冻结依赖缺口的子行动，不冻结有独立依据的安全互动。
 - 绿色普通互动不强制持久化 Manifest、Trace 或执行全量 Diff。
 - 不记录思维链，不声称能读取平台完整隐藏 Prompt；重要 Trace 只引用可观察的资料读取、核验、事件、状态变化和呈现证据。
-
