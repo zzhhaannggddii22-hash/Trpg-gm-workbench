@@ -1,6 +1,6 @@
 # Bower Street｜Runtime State
 
-> 当前状态：PREP / NOT STARTED
+> 当前状态：PREP / NOT STARTED / BLOCKED FOR PREFLIGHT（独立审查后待修订与复审）
 > 本文件是唯一有效的当前运行快照。正式 Preflight 后填写；不把备团后台状态伪装成玩家已知信息。
 
 ## Session 状态
@@ -22,7 +22,7 @@
 - 不继承 F-33 测试团的资源、关系、装备消耗或世界后果
 
 ## 公开资源
-- 普通 Chaos Pool：按 Zarek Campaign 约定初始 0（模组未另行指定）；开团时复核并公开。
+- 普通 Chaos Pool：UNKNOWN / PRE-FLIGHT REQUIRED。模组没有专属初始值；不得仅凭其他模组曾从 0 开始就固定为 0。Preflight 必须读取当前分部/职能的 Loose Ends 累计规则（v22 印刷页 22；当前可检索译稿 R5755–5776）及扎雷克当前分部状态，再计算并向玩家公开。Q01–Q04 未批准废除该累计规则。
 - 发生资源变化时：记录变化来源、数值、当前余额，并在游戏中向玩家公开。
 
 ## 地点与 NPC 状态
@@ -45,9 +45,9 @@
 ## Preflight 待办
 - [ ] 读取当前正式人物卡与战役交接。
 - [ ] 核对系统绑定、规则版本与 Campaign 桌裁。
-- [ ] 核对角色 QA/Burnout/Harm/资源。
+- [ ] 核对角色 QA/Burnout/Harm/资源；正式人物卡 §6 当前记录 Dynamism 1/1、Initiative 1/1，交接历史快照的 0/1 与 0/0 记录已过时，除非存在更新的实际消耗事件。
 - [ ] 逐件核对公文包、涟漪枪、充能及当前装备持有人。
 - [ ] 确认单人桌适配边界。
 - [ ] 确认内容边界与玩家可见开场简报。
-- [ ] 核对本模组当前 Chaos Pool 起始值。
+- [ ] 按 v22 分部 Loose Ends 累计规则与当前 R&D 状态计算本场开局普通 Chaos Pool；不得套用其他模组先例替代核算。
 - [ ] 只在用户明确开始后进入游戏。
