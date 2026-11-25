@@ -1,6 +1,6 @@
 # Bower Street｜Runtime State
 
-> 当前状态：PREP / NOT STARTED / BLOCKED FOR PREFLIGHT（修订已提交审查分支；待独立第二轮复审）
+> 当前状态：PREP / NOT STARTED / BLOCKED FOR PREFLIGHT（第三轮独立审查后修订；凯西自检中）
 > 本文件是唯一有效的当前运行快照。正式 Preflight 后填写；不把备团后台状态伪装成玩家已知信息。
 
 ## Session 状态
