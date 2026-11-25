@@ -278,7 +278,7 @@
 | 异常被中和（Neutralized） | 中和成功 | 无额外 Commendations / Demerits |
 | 异常逃脱（Escaped） | 任务失败 | 全体特工 +3 Demerits；另按 v22 规则增加 +7 分部 Loose Ends |
 
-来源：模组 Aftermath 与《三角机构》中文 v22 印刷页 22；正式结算时再次核对当前规则文本。
+来源：模组 Aftermath；Contained / Neutralized / Escaped 的特工奖励与处分按《三角机构》中文 v22 任务结果规则核对。逃脱额外 +7 分部 Loose Ends 的来源为 v22 印刷页 164，不能误标为印刷页 22。
 
 ### 9.2 可选目标与惩奖
 
