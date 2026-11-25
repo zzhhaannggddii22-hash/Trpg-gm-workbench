@@ -1,6 +1,6 @@
 # 《Bower Street》｜模组档案
 
-> 状态：BLOCKED（2026-11-25 第三轮独立审查后，凯西已完成定向修订与自检；等待用户决定是否接受当前备团）。尚未进入 Preflight 或开团。
+> 状态：**READY WITH LIMITS / PREFLIGHT COMPLETE / NOT STARTED**（2026-11-25 第四轮定点复验通过；双猫资源争议效果暂停；未进行真实玩家测试）。
 > 系统：`triangle_agency`｜规则：《三角机构》中文 v22。
 > 来源：Haunted Table Games，《The Vault: Missions for Triangle Agency》，Kay W.；中文精翻母稿 `the_vault_zh.docx`，源 PDF 41–49，印刷页 76–93。
 > 信息权限：本目录除 `05_PLAYER_NOTES.md` 外均为 GM-only；不得把本目录内容粘贴到玩家侧回复。
@@ -32,4 +32,4 @@
 - v1.2-targeted-fixes：针对第二轮独立审查修订厨房追逐条件、Ripple Gun 结果结算、手机双猫资源冲突与脱困、双人恢复触发、Jodie/社区信息门槛、Aftermath 分支、分部 Pool 核算流程、Expand 与布娃娃索引。
 - v1.3-third-audit-fixes：根据第三轮独立报告修正卧室按事件时 Domain 状态裁定、手机信息披露层级与无剧透暂停说明、街道测量和 Jodie 信息来源边界；补齐 Cooper/Fumiko/Justin 的条件性 Aftermath、历史记录标签。凯西已完成跨文件自检；不等同于独立复审或真实玩家测试。
 - 压力测试为案头推演，未执行真实玩家测试；不得把压力测试写成实战验证。
-- 当前仍为 BLOCKED / AWAITING USER REVIEW；本轮修订与自检没有自动放行 Preflight。若用户决定继续，Preflight 内再核对当前角色卡、装备、QA/Burnout、任务配给、实际地方分部累计 Loose Ends 与开局普通 Chaos Pool。模组原文未提供的异常独立数值档案不得自行补造。
+- 当前 Preflight 已完成，状态为 READY WITH LIMITS；扎雷克隶属 Ternion City 大都会分部，Loose Ends 追踪基线为 1（仅含目前可核实的扎雷克战役贡献），开局普通 Chaos Pool 为 0，天气事件为 0。双猫资源适用规则仍 UNKNOWN，争议显现/囚禁效果暂停，但不阻断其他合法调查。只有用户明确说“开始”才进入正式场景。未进行真实玩家测试；本轮定点复验属于主持方自检，不冒充第三方独立审查。模组原文未提供的异常独立数值档案不得自行补造。
