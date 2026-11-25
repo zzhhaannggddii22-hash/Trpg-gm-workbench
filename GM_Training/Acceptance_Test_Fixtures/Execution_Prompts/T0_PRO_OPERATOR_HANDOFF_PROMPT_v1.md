@@ -14,7 +14,7 @@
 - 通用规范：`GM_Training/SKILL.md`、`GM_Training/07_RUNTIME_CONTROL_PROTOCOL.md`
 - 操作者夹具：`GM_Training/Acceptance_Test_Fixtures/T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_OPERATOR.md`
 - 八份场景附件：`GM_Training/Acceptance_Test_Fixtures/T0_BLIND_PACKET_A01.md` 至 `T0_BLIND_PACKET_A08.md`
-- 历史状态报告：`GM_Training/Acceptance_Reports/T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_PREPARATION_AND_EXECUTION_STATUS_2026-11-24.md)
+- 历史状态报告：`GM_Training/Acceptance_Reports/T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_PREPARATION_AND_EXECUTION_STATUS_2026-11-24.md
 
 必须以当前路径为准。旧路径 `GM_Training/GM_T0_BLIND_EXECUTION_PROMPT_v1.md` 与 `GM_Training/GM_T0_BLIND_OPERATOR_PROTOCOL_v1.md` 只是迁移兼容入口，不是权威正文。记录 commit SHA、每份文件的 Git blob SHA、读取时间。若材料缺失或版本无法确认，停止并报告。
 
