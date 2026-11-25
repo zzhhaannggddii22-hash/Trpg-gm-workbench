@@ -36,6 +36,7 @@
 - 原话或忠实摘要的定位：
 - 本次内容实际支持的细节（时间、地点、人物、动作、顺序、数量、否定观察）：
 - 原始精度与限制（例如“约九点”不得改写为“21:08”）：
+- 如分次披露：各次呈现事件分别支持了哪些新增/修订字段；不得将后续细节回填为早先原话：
 - 当前状态：SUPPORTED / UNVERIFIED / DISPUTED / REFUTED / UNKNOWN。
 
 没有实际呈现事件的玩家转述，保留为 PLAYER_CLAIM / 待核实线索；不得写成 NPC 已经作出的证词。GM-only 时间线只能留在隐藏信息区，不得补入玩家已知记录。
@@ -181,6 +182,7 @@
 Player Notes / 玩家导出只允许投影：
 - 写入前沿用 Runtime §14.19 与线索账本 §9.2 的同一证据门槛：核对实际呈现事件、接收者、来源类型、原始内容范围与细节精度。
 - PLAYER_CLAIM 可以作为“玩家提出/转述、尚待核实”的条目保存，但不得改标为 NPC_STATEMENT、FILE_RECORD 或 DIRECT_OBSERVATION；不得补入 GM-only 时间、地点或其他细节。
+- 同一证词分次披露时，Player Notes 可以整合各次实际呈现的字段，但每个重要字段都必须回指支持它的呈现事件并保留原始精度；未披露字段继续未知。旧 Player Notes 只是既有投影，重复粘贴或引用不构成新证据，也不授权补齐未知字段。
 - public_utterance
 - public_observation
 - player_known_claims 中已实际呈现且属于目标 recipient_scope 的条目
