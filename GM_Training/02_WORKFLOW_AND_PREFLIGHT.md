@@ -132,7 +132,7 @@ Context Assembly 是本次 Preflight 和后续重要行动的资料装配层，�
 7. **更新状态**：对有持续影响的变化，记录变化前后及触发原因；没有改变的状态不必重复登记。
 8. **检查后续影响**：判断是否触发 NPC 行动、事件推进、资源变化或新的信息边界，并按实际条件处理。
 
-**Context Assembly / Trace：** 对黄色、红色及恢复/争议行动，按 [Runtime §14.20](./07_RUNTIME_CONTROL_PROTOCOL.md#1420-context-assemblymanifesttrace-与-diff-p1) 识别当前行动依赖并核验必要资料；同一行动的复查沿用 Context ID。绿色普通互动不强制建立文件或持久 Trace。READY 只覆盖当前行动声明范围；READY_WITH_LIMITS / BLOCKED 只限制依赖缺口的子行动。
+**Context Assembly / Trace：** 对黄色、红色及恢复/争议行动，按 [Runtime §14.20](./07_RUNTIME_CONTROL_PROTOCOL.md#1420-context-assembly-and-trace) 识别当前行动依赖并核验必要资料；同一行动的复查沿用 Context ID。绿色普通互动不强制建立文件或持久 Trace。READY 只覆盖当前行动声明范围；READY_WITH_LIMITS / BLOCKED 只限制依赖缺口的子行动。
 
 
 
