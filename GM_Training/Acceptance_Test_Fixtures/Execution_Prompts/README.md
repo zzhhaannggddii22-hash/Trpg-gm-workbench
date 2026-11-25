@@ -16,7 +16,10 @@
 - [P1-0C 独立审查提示](./GM_RUNTIME_P1_0C_INDEPENDENT_REVIEW_PROMPT.md)
 - [P1-0C 操作者隔离协议](./GM_RUNTIME_P1_0C_OPERATOR_PROTOCOL.md)
 - [T0 盲测操作者隔离协议](./GM_T0_BLIND_OPERATOR_PROTOCOL_v1.md)
-- [T0 Pro 操作者交接提示](./T0_PRO_OPERATOR_HANDOFF_PROMPT_v1.md)
+- [T0 Pro 操作者交接提示（Go 被测环境）](./T0_PRO_OPERATOR_HANDOFF_PROMPT_v1.md)
+- [T0 并行执行流程（Go 目标 / Pro 操作者）](./T0_PARALLEL_EXECUTION_WORKFLOW_v1.md)
 - [T0 结果 ZIP 回寄协议](./T0_RESULTS_RETURN_PACKAGE_PROTOCOL_v1.md)
+
+**账户角色：** Go 是被测环境；Pro 是操作者与独立复核环境。不得用 Pro 的目标 Chat 表现代替 Go 盲测结果。
 
 **重要：** 本仓库为公开仓库。GM-only / operator-only 是使用边界，不是 GitHub 访问控制。操作者协议、预期答案和隐藏测试材料不得上传目标 Chat；若需要保密，必须另行使用私有存储。
