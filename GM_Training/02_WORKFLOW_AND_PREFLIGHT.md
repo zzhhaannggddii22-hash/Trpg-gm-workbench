@@ -34,7 +34,7 @@ Context Assembly 是本次 Preflight 和后续重要行动的资料装配层，�
 3. **依赖驱动读取。** 从行动目标识别 REQUIRED、CONDITIONAL、SUPPORTING 依赖。索引/摘要/关键词/向量检索只定位候选；必要事实、规则、状态和权限仍回到各自权威来源。资料检索、实际读取范围和核验结果分别记录。
 4. **就绪判定。** READY 表示当前行动必要依赖已核验；READY_WITH_LIMITS 表示缺口已隔离且允许行动有独立依据；BLOCKED 只阻断依赖缺口的子行动。不得因无关争议冻结全部互动。
 5. **活动对话复用。** 已核验静态来源按精确版本/Blob 和读取范围复用；动态 Runtime 状态按现有触发条件核对。不得按消息数执行全量 Diff。只在系统绑定、相关 checkpoint/事件、来源版本/内容、Claim/证据根、NPC 知识/披露、呈现/接收者权限、争议/T0 范围或当前行动依赖发生相关变化时，对受影响依赖做局部 Diff。
-6. **Trace。** Preflight 阶段的 Trace 随 Preflight/Handoff 记录；后续重要行动的最小 Trace Envelope 关联 Session Log 事件。绿色普通互动不强制持久化。Runtime State 不复制完整 Manifest/Trace，Player Notes 不包含 GM Trace。
+6. **Trace。** 按 [Runtime §14.20.8](./07_RUNTIME_CONTROL_PROTOCOL.md#14208-context-trace-与持久化) 的条件确定记录位置和是否持久化，不复制完整 Manifest/Trace 到 Runtime State，也不将 GM Trace 写入 Player Notes。
 7. **可观察性边界。** 只记录工作台可观察的资料定位、读取返回、核验、决定和输出；不得声称读取 ChatGPT 平台完整隐藏 Prompt。
 
 详细契约以 [Runtime §14.20](./07_RUNTIME_CONTROL_PROTOCOL.md#1420-context-assembly-and-trace) 为准。
@@ -48,7 +48,7 @@ Context Assembly 是本次 Preflight 和后续重要行动的资料装配层，�
 3. 读取当前模组完整原文及其勘误/补充资料；确认版本、来源和可用范围。
 4. 读取上一场 Session Log、未解决事项、NPC/世界状态和上次复盘行动项。
 5. 重新核对关键机制、线索关系、场景依赖、NPC 动机和结局条件。
-6. 区分玩家可见资料与 GM 私有资料，避免剧透；可能剧透的内容默认不输出，只提示有 GM 隐藏信息。
+6. 按 Runtime §14.19 筛选玩家可见资料。需要说明准备或推进限制时，只说明玩家有权获知且与当前决定有关的部分，不透露具体未交付私有资料的存在、内容或筛除原因。
 7. 确认本次目标、预计时长、角色/人数适配、规则约定和必要的安全工具。
 8. 若关键资料缺失或无法核实，明确指出并解决；不得假装已经准备完成。
 
