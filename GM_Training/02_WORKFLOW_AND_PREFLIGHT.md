@@ -24,6 +24,21 @@
 - 复用只减少重复取回，不替代本次裁定前对完整适用条文、条件与例外的核验，也不替代冲突取证、写入后的独立读回、权限过滤或发布前安全检查。有依赖的读取依次执行；无依赖的目标可批量读取。重复引用不产生新的证据根，也不等于新的玩家呈现。
 - 同一活动对话已完成 Preflight 时，继续用当前有效快照。绿色、黄色、红色和 T0 仍由 Runtime 触发；不按消息数触发重读，不为性能设硬限额。
 
+
+### Context Assembly 与 Preflight 的关系（P1）
+
+Context Assembly 是本次 Preflight 和后续重要行动的资料装配层，不是第二套 Preflight，也不改变本节完整路径/健康续接快路径的读取范围原则。
+
+1. **Preflight Context。** 每次新对话或新 Session，在本次 Preflight 内建立一个启动 Context ID；Manifest 引用本次已核验的 system binding、Runtime checkpoint、活动分支、场景锚点和实际读取范围。完整路径与健康续接快路径沿用本节现有规则，不重复读取已经在同次 Preflight 中完整核验的静态资料。
+2. **Action Context。** Preflight 完成后，每个独立玩家行动建立自己的 Context ID。复合行动使用父 Context ID 和 child_action_id；同一行动的补充读取/重试沿用原 Context ID 并增加 attempt/manifest_revision。明确改变目标或提出新行动时建立新 Context。
+3. **依赖驱动读取。** 从行动目标识别 REQUIRED、CONDITIONAL、SUPPORTING 依赖。索引/摘要/关键词/向量检索只定位候选；必要事实、规则、状态和权限仍回到各自权威来源。资料检索、实际读取范围和核验结果分别记录。
+4. **就绪判定。** READY 表示当前行动必要依赖已核验；READY_WITH_LIMITS 表示缺口已隔离且允许行动有独立依据；BLOCKED 只阻断依赖缺口的子行动。不得因无关争议冻结全部互动。
+5. **活动对话复用。** 已核验静态来源按精确版本/Blob 和读取范围复用；动态 Runtime 状态按现有触发条件核对。不得按消息数执行全量 Diff。只在系统绑定、相关 checkpoint/事件、来源版本/内容、Claim/证据根、NPC 知识/披露、呈现/接收者权限、争议/T0 范围或当前行动依赖发生相关变化时，对受影响依赖做局部 Diff。
+6. **Trace。** Preflight 阶段的 Trace 随 Preflight/Handoff 记录；后续重要行动的最小 Trace Envelope 关联 Session Log 事件。绿色普通互动不强制持久化。Runtime State 不复制完整 Manifest/Trace，Player Notes 不包含 GM Trace。
+7. **可观察性边界。** 只记录工作台可观察的资料定位、读取返回、核验、决定和输出；不得声称读取 ChatGPT 平台完整隐藏 Prompt。
+
+详细契约以 [Runtime §14.20](./07_RUNTIME_CONTROL_PROTOCOL.md#1420-context-assembly-and-trace) 为准。
+
 ### 完整路径读取清单
 
 本清单及下方完成标准是完整路径／首次开团基准。健康续接按上文核对相同的适用就绪条件，差别在读取深度；无上场 Session 时明确不适用。
@@ -116,6 +131,10 @@
 6. **叙述结果**：只叙述判定及世界状态支持的结果，保留玩家对角色思想、情绪和后续行动的控制权。
 7. **更新状态**：对有持续影响的变化，记录变化前后及触发原因；没有改变的状态不必重复登记。
 8. **检查后续影响**：判断是否触发 NPC 行动、事件推进、资源变化或新的信息边界，并按实际条件处理。
+
+**Context Assembly / Trace：** 对黄色、红色及恢复/争议行动，按 [Runtime §14.20](./07_RUNTIME_CONTROL_PROTOCOL.md#1420-context-assembly-and-trace) 识别当前行动依赖并核验必要资料；同一行动的复查沿用 Context ID。绿色普通互动不强制建立文件或持久 Trace。READY 只覆盖当前行动声明范围；READY_WITH_LIMITS / BLOCKED 只限制依赖缺口的子行动。
+
+
 
 这是一套内部可靠性流程，不需要每次向玩家逐条播报；玩家需要知道的是与其选择相关的规则、风险、结果和状态变化。
 

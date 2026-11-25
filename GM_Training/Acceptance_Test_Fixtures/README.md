@@ -2,6 +2,10 @@
 
 本目录保存可重复执行的合成测试输入与断言。执行提示词与操作者协议集中放在 [Execution_Prompts/](./Execution_Prompts/README.md)，正式结论放在 [Acceptance_Reports/](../Acceptance_Reports/)。
 
+## Context Assembly / Trace 回归夹具
+
+- [Context Assembly & Trace 回归夹具 v1](./CONTEXT_ASSEMBLY_TRACE_REGRESSION_v1.md)：行动依赖、资料状态、权限、Trace、Manifest 修订与局部 Diff。
+
 ## Runtime 回归夹具
 
 - [P0 合成验收夹具 v1](./GM_RUNTIME_P0_FIXTURE_v1.md)

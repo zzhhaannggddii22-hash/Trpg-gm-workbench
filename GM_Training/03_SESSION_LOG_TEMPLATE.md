@@ -265,3 +265,61 @@ decision_event_id: "<event-id-or-UNKNOWN>"
 对 PARTIALLY_PRESENTED 事件按 Runtime §14.16 记录 presentation_segments[]，每个片段绑定内容定位、recipient_scope、delivery_channel、delivery_state、presented_at 和 evidence_ref。RESPONDED 不代表所有片段已送达；未知送达状态保持 UNKNOWN。
 
 新事件另记录 action_semantics：PLAYER_INTENT / PC_DECLARED_SPEECH / PC_ACTION_COMMITTED / GM_PROPOSED_ACTION / NPC_FUTURE_INTENT / NPC_ACTION_EXECUTED。不得把玩家意图写成角色发言或执行，也不得把 NPC 未来意向写成实际行动。
+
+## Context Assembly / Trace 关联字段（P1）
+
+对黄色/红色行动、恢复、相关争议或重要状态变化，按 Runtime §14.20 在对应事件记录中附加最小 GM-only Trace Envelope。普通绿色互动不要求逐条记录。
+
+~~~yaml
+context_trace:
+  trace_schema_version: 1
+  context_kind: PREFLIGHT | PLAYER_ACTION
+  context_id: "<stable-context-id>"
+  action_id: "<action-id-or-NOT_APPLICABLE>"
+  attempt: 1
+  manifest_ref: "<immutable-manifest-ref-or-NOT_PERSISTED>"
+  manifest_revision: 1
+  assembly_status: READY | READY_WITH_LIMITS | BLOCKED
+  dependency_refs: []
+  source_refs: []
+  validation_refs: []
+  diff_ref: "<diff-ref-or-NOT_RUN>"
+  changed_field_paths: []
+  presentation_refs: []
+  recipient_scope: "<exact-scope-or-NOT_APPLICABLE>"
+  persistence_status: NOT_REQUIRED | NOT_ATTEMPTED |
+                      PREPARED | VERIFIED | INCOMPLETE
+  limitations: []
+~~~
+
+- Trace 是事件的 GM-only 审计元数据，不是玩家可见内容，不得复制到 Player Notes。
+- Trace 引用 Manifest 和来源，不复制权威文件正文，不替代 event_id、runtime_application 或 Reconciliation Manifest。
+- 对重要行动被阻断、恢复或发生装配争议且需要跨对话追溯、但没有领域事件的情况，可在本文件独立的 GM-only Operational Diagnostics 附录追加运行诊断记录；它不是领域事件，不分配领域 event_id，不推进游戏时间或 CANON。
+- Preflight 尚无 Session Log 时，Trace 随 Preflight/Handoff 记录；普通 Preflight 不强制新建独立审计文件。
+- 旧事件缺少 Trace 字段时标记 NOT_RECORDED / UNKNOWN，不从聊天摘要或模型印象补造历史。
+- 只有实际呈现证据才能记录 PRESENTED；只有独立读回才能记录持久化 VERIFIED。
+
+## GM-only Operational Diagnostics Appendix（非领域事件）
+
+仅当装配阻断、恢复或争议需要跨对话追溯，且没有可附着的领域事件时使用。此附录与事实型 Session/Event Log 分开；记录的是工作台运行诊断，不是游戏世界中发生的事件。
+
+~~~yaml
+operational_diagnostic:
+  diagnostic_id: "<stable-diagnostic-id>"
+  record_type: CONTEXT_ASSEMBLY_BLOCKED | CONTEXT_RECOVERY |
+               CONTEXT_DIFF_DISPUTE
+  context_id: "<context-id>"
+  manifest_ref: "<immutable-manifest-record-ref>"
+  trace_ref: "<trace-record-ref>"
+  related_event_ids: []
+  affected_dependency_refs: []
+  status: OPEN | CONTAINED | RESOLVED
+  created_at: "<wall-clock-timestamp-or-UNKNOWN>"
+  does_not_create_domain_event: true
+  does_not_advance_game_time: true
+  does_not_create_canon: true
+~~~
+
+- 不分配领域 event_id，不进入 Runtime 的领域事件应用链，不改变游戏时间或 CANON。
+- 只有确需跨对话追溯时才写入；普通绿色互动和一般无风险缺口不建立诊断记录。
+- 诊断记录保持 GM-only，不进入 Player Notes 或玩家导出。
