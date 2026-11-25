@@ -188,7 +188,7 @@ Trace 只能证明明确记录的事项。READ 不等于 VERIFIED；PRESENTED �
 ## 7. Trace 持久化规则
 
 - 重要 Session Log 事件内嵌最小 Trace Envelope，引用 Manifest 和证据，不复制完整资料。
-- 需要跨对话追溯的阻断/恢复/争议，在现有 Session Log 追加 GM-only 诊断事件；不得把诊断事件伪装成世界 CANON。
+- 需要跨对话追溯的阻断/恢复/争议，在现有 Session Log 的独立 GM-only Operational Diagnostics 附录追加运行诊断记录；它不是领域事件，不分配领域 event_id，不推进游戏时间或 CANON。
 - Preflight 记录可承载启动阶段 Trace；没有现成 Session Log 时不为普通启动额外建库。
 - 绿色互动不强制落盘。
 - Runtime State 不保存完整 Trace；仅在现有状态协议要求时保存争议/阻断状态及相关引用。

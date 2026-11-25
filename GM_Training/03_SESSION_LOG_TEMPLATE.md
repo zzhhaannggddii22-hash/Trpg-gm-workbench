@@ -272,6 +272,8 @@ decision_event_id: "<event-id-or-UNKNOWN>"
 
 ~~~yaml
 context_trace:
+  trace_schema_version: 1
+  context_kind: PREFLIGHT | PLAYER_ACTION
   context_id: "<stable-context-id>"
   action_id: "<action-id-or-NOT_APPLICABLE>"
   attempt: 1
@@ -292,7 +294,7 @@ context_trace:
 
 - Trace 是事件的 GM-only 审计元数据，不是玩家可见内容，不得复制到 Player Notes。
 - Trace 引用 Manifest 和来源，不复制权威文件正文，不替代 event_id、runtime_application 或 Reconciliation Manifest。
-- 对重要行动被阻断、恢复或发生装配争议且需要跨对话追溯、但没有领域事件的情况，可追加 GM-only 诊断事件；该记录不得伪装成世界 CANON，不推进游戏时间或领域状态。
+- 对重要行动被阻断、恢复或发生装配争议且需要跨对话追溯、但没有领域事件的情况，可在本文件独立的 GM-only Operational Diagnostics 附录追加运行诊断记录；它不是领域事件，不分配领域 event_id，不推进游戏时间或 CANON。
 - Preflight 尚无 Session Log 时，Trace 随 Preflight/Handoff 记录；普通 Preflight 不强制新建独立审计文件。
 - 旧事件缺少 Trace 字段时标记 NOT_RECORDED / UNKNOWN，不从聊天摘要或模型印象补造历史。
 - 只有实际呈现证据才能记录 PRESENTED；只有独立读回才能记录持久化 VERIFIED。

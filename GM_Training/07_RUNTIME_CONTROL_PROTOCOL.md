@@ -937,7 +937,7 @@ Context Diff 回答：与上一次有效装配相比，当前行动相关的依�
 
 ### 14.20.4 Context Manifest
 
-Manifest 是一次上下文装配的可追溯清单，不是新的权威数据库，也不是 Runtime Reconciliation Manifest。不得混用两种 Manifest。对需要跨对话追溯的黄色/红色行动，Manifest 作为不可变 GM-only 记录块嵌入对应 Session Log 事件或诊断事件；Preflight 阶段则嵌入本次 Preflight/Handoff 记录。引用定位到记录块，不另建平行 Manifest 文件库。绿色普通互动可只在当前上下文中临时维护，不持久化。
+Manifest 是一次上下文装配的可追溯清单，不是新的权威数据库，也不是 Runtime Reconciliation Manifest。不得混用两种 Manifest。对需要跨对话追溯的黄色/红色行动，Manifest 作为不可变 GM-only 记录块嵌入对应 Session Log 事件或 Operational Diagnostics 记录；Preflight 阶段则嵌入本次 Preflight/Handoff 记录。引用定位到记录块，不另建平行 Manifest 文件库。绿色普通互动可只在当前上下文中临时维护，不持久化。
 
 需要结构化追溯时，使用以下最小契约；按行动适用性填写，不适用字段标 NOT_APPLICABLE：
 
@@ -1076,6 +1076,10 @@ Trace 记录可观察工程事实，不记录思维链，不推断模型未公�
 
 ~~~yaml
 context_trace:
+  trace_schema_version: 1
+  context_kind: PREFLIGHT | PLAYER_ACTION
+  trace_schema_version: 1
+  context_kind: PREFLIGHT | PLAYER_ACTION
   trace_id: "<stable-trace-id>"
   context_id: "<context-id>"
   action_id: "<action-id>"
@@ -1102,7 +1106,7 @@ context_trace:
 持久化位置：
 
 - 对应真实游戏事件：将最小 Trace Envelope 作为该 Session Log 事件的 GM-only 元数据；引用 Manifest、来源和核验记录，不复制资料正文。
-- 重要行动被阻断、恢复或出现装配争议且需要跨对话追溯，但没有领域事件：向现有 Session Log 追加 GM-only 诊断事件。诊断事件不得伪装成世界 CANON，不得推进游戏时间或改变领域状态。
+- 重要行动被阻断、恢复或出现装配争议且需要跨对话追溯，但没有领域事件：在现有 Session Log 的独立 GM-only Operational Diagnostics 附录追加运行诊断记录。该记录不是 Session/Event Log 的领域事件，不分配领域 event_id，不推进游戏时间或 CANON，也不改变领域状态。
 - Preflight 尚无可用 Session Log 时：Trace 随本次 Preflight/Handoff 记录；普通 Preflight 不强制新增独立审计文件。
 - 绿色普通互动不强制持久化 Trace。
 - Runtime State 不保存完整 Manifest/Trace；只有当装配问题已构成开放争议或影响当前推进的持久状态时，按现有 dispute/state 机制保存状态及相关引用。
