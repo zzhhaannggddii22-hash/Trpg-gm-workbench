@@ -26,7 +26,8 @@
 
 ## 玩家信息通道专项回归
 
-- [G-16 Player Information Channel Regression v1](./G16_PLAYER_INFORMATION_CHANNEL_REGRESSION_v1/README.md)：在三个隔离分支中分别测试 NPC 私人记忆、实际口头披露和可观察行为，防止未说出口的信息进入玩家旁白。ORACLE 仅供执行后审查。
+- [G-16 Player Information Channel Regression v1](./G16_PLAYER_INFORMATION_CHANNEL_REGRESSION_v1/README.md)：低压下区分 NPC 私人记忆、实际口头披露和可观察行为。
+- [G-16 High-Pressure Information Channel Regression v1](./G16_HIGH_PRESSURE_CHANNEL_REGRESSION_v1/README.md)：在闭馆交接、多人物与并行事务压力下，检查私人记忆是否仍只通过 NPC 实际对白披露。
 
 ## 单会话可执行伴随夹具
 
