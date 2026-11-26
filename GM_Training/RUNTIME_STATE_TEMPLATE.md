@@ -71,7 +71,7 @@
 在场景切换、重要状态变化、Session 暂停/结束时，至少核对：
 
 - [ ] 游戏时间与事件顺序一致。
-- [ ] 人物位置与移动过程一致。
+- [ ] 人物位置与移动过程一致。示例：已同意同行（E12）；出发后加入车辆，甲驾驶、乙坐副驾驶（E13）；下一场继承该位置与角色，直至有实际换位、下车或分离事件。
 - [ ] 关键物品持有人、数量、消耗与转交一致。
 - [ ] 玩家和 NPC 的知识均有实际来源。
 - [ ] 资源、伤害、关系、承诺与事件阶段一致。
@@ -123,7 +123,11 @@ resume:
   pending_player_action: null
 persistence:
   batch_id: "<batch-id>"
-  status: "PUBLISHED | PREPARED | INCOMPLETE | PENDING_EXTERNAL_WRITE"
+  status: "<按下方跨文件批次清单填写>"
+  repository_commit_read: "<本次读取的不可变 Git 提交或 UNKNOWN>"
+  published_checkpoint_ref: "<已核验批次的检查点引用或 UNKNOWN>"
+  t0_mode: "<FULL | ALERT_ONLY | UNKNOWN>"
+  t0_mode_authority_ref: "<适用授权与效期/范围的引用；缺证据时填 UNKNOWN>"
 t0_incidents: [] # 具体结构见下方 P1-0C 补充契约
 ~~~
 
@@ -219,7 +223,7 @@ persistence:
 
 ~~~yaml
 runtime_application:
-  status: APPLIED | NOT_APPLIED | UNKNOWN
+  status: APPLIED | PARTIAL | NOT_APPLIED | UNKNOWN
   applied_to_revision: <exact runtime revision or null>
   reconciliation_ref: <same immutable reconciliation manifest referenced by Runtime checkpoint>
 ~~~
@@ -227,7 +231,7 @@ runtime_application:
 规则：
 - APPLIED 必须同时满足：Session Log 有上述完整标记；Runtime checkpoint 引用的不可变 reconciliation manifest 按 §14.14 证明该事件修订及全部声明字段已按序应用。applied_event_ids 只作索引。
 - 任一侧缺失、引用不可读取、event_id 不匹配或 revision 冲突，均按 UNKNOWN 处理。
-- NOT_APPLIED 事件必须留在 unapplied_event_ids；UNKNOWN 不得自动归入已应用或未应用。
+- PARTIAL 依据 §14.14 保存逐字段应用证据，未证实字段依其实际状态继续核对。NOT_APPLIED 事件必须留在 unapplied_event_ids；UNKNOWN 不得自动归入已应用或未应用。文件批次的 DISPUTED 用于发布及目标争议，和这里的事件应用状态分别记录。
 - 对旧存档不得补造历史应用标记。无法回溯证明时保留 UNKNOWN，并按运行协议 §14.10 处理字段级争议。
 
 

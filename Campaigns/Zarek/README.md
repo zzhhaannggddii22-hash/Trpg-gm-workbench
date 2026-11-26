@@ -2,7 +2,7 @@
 
 > 扎雷克（Zarek）在 Triangle Agency 世界中的正式战役总目录。
 > 系统绑定：[SYSTEM_BINDING.md](./SYSTEM_BINDING.md)｜`system_id: triangle_agency`｜规则唯一权威：用户指定的《Triangle Agency》中文 v22。
-> 当前状态：正式完成《死寂》（Dead Quiet）、《冰淇淋车》（Ice Cream Truck）与《俯冲》（Nosedive）。《俯冲》已按用户确认结案，无奖励、无惩罚；用户已选择《Bower Street》作为下一场待开模组，尚未进入 Preflight。
+> 当前模组入口见下方目录。战役、模组与编号 Session 分别从各自权威记录核验。
 
 ## 战役世界与呈现原则
 
@@ -17,7 +17,7 @@
 - [模组：死寂](./模组/死寂/README.md)：首个正式任务结案、奖励、复盘、余波与历史记录。
 - [模组：冰淇淋车（Ice Cream Truck）](./模组/冰淇淋车_Ice_Cream_Truck/README.md)：第二场正式任务结案、成长、密库补给与复盘资料。
 - [模组：俯冲（Nosedive）](./模组/俯冲_Nosedive/README.md)：第三场正式任务已结案；无奖励、无惩罚；历史记录与角色记忆边界已归档。
-- [模组：Bower Street](./模组/Bower_Street/README.md)：用户已选定的下一场待开模组；独立审查后当前状态为 BLOCKED，尚未进入 Preflight 或开团。
+- [模组：Bower Street](./模组/Bower_Street/README.md)：模组索引，链接运行快照与编号 Session 日志。
 - [模组：F-33《静默楼层》测试短团](./模组/F-33_静默楼层_测试短团/README.md)：独立 GM 能力测试存档，不属于正式战役 CANON。
 - [战役交接与当前状态](./战役记录/战役交接与当前状态.md)：主持方式、人物资源状态与后续连续性。
 
