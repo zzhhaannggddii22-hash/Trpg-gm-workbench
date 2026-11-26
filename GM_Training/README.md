@@ -6,6 +6,7 @@
 
 - [GM 能力架构](./00_GM_CAPABILITY_ARCHITECTURE.md)：全体系的权威结构、能力联动模型、综合优秀标准和文件职责。
 - [TRPG GM Skill](./SKILL.md)：运行入口和现场编排。新对话恢复、风险路由、人物/叙事联动、状态维护与 Session 收束。
+- [叙事质量基准](./NARRATIVE_QUALITY_BASELINE.md)：跨专项测试通用的叙事质量标准、信息正确性门槛、错误容忍度、评分锚点与低压力校准方案。
 - [综合能力评估框架](./04_EVALUATION_FRAMEWORK.md)：硬门槛、综合体验维度、场景联动评价和整体优秀判定。
 
 ## 2. 专业能力规范
@@ -48,6 +49,7 @@
 - [2026-11-25《雨前过桥》箱庭实测记录](./Training_Logs/2026-11-25_MICRO_SANDBOX_001_BRIDGE_BEFORE_RAIN_REVIEW.md)：首个完成的箱庭运行样本、玩家反馈、观察和待验证项。
 - [Narrative Stress Test 01｜社区中心暴雨撤离](./Training_Logs/NARRATIVE_STRESS_TEST_01_DESIGN.md)：持续压力下综合叙事质量与信息显著性动态升格测试设计。
 - [Narrative Stress Test 01｜首轮运行记录](./Training_Logs/NARRATIVE_STRESS_TEST_01_RUN_RECORD.md)：八个合成行动的单会话自测；仅作内部诊断，不是独立盲测或真实跑团证据。
+- [Narrative Stress Test 01｜玩家信息边界复核补遗](./Training_Logs/NARRATIVE_STRESS_TEST_01_PLAYER_INFORMATION_BOUNDARY_AUDIT.md)：纠正首轮自审遗漏，确认 ACTION 01 存在重大玩家信息通道泄露。
 - [2026-11-24 场景描绘与动态叙事综合训练记录](./Training_Logs/2026-11-24_SCENE_AND_DYNAMIC_NARRATIVE_INTEGRATED_TRAINING.md)：便利店、搬家夫妻、仓库交接、医院走廊、旧办公楼、人物兴趣与日常场景等完整训练沉淀。
 - [2026-11-24 NPC 对话与交流流畅度训练](./Training_Logs/2026-11-24_NPC_DIALOGUE_AND_CONVERSATIONAL_FLOW.md)
 - [人物塑造与互动研究](../Research/CHARACTER_AND_INTERACTION_TRAINING_2026-11-24.md)
