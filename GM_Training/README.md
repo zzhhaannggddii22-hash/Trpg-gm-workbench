@@ -46,6 +46,9 @@
 
 ## 4. 训练、复盘与缺陷追踪
 
+- [Training & Runtime Quality Assurance](./QUALITY_ASSURANCE_AND_NARRATIVE_RUNTIME_QA.md)：统一训练退化保护、叙事能力迁移、Runtime 会话后审计、根因分类与质量门禁；复用现有基准和夹具，不增加逐轮 QA。
+- [Narrative Capability Register](./NARRATIVE_CAPABILITY_REGISTER.md)：登记可追溯的 T3/T4 叙事能力、Skill 版本、训练来源、Runtime 入口与实战证据。
+
 - [综合训练体系](./NARRATIVE_TRAINING_PROGRAM.md)：综合诊断、专项修复、重新整合、跨场景迁移与实战验证。
 - [微型箱庭实验室](./MICRO_SANDBOX_LAB/README.md)：可玩的短小开放场景，用于综合互动训练、稳定性观察和游戏体验验证。
 - [微型箱庭 ↔ 实际跑团双向迁移协议](./MICRO_SANDBOX_LAB/CAPABILITY_TRANSFER_PROTOCOL.md)：规定训练方法如何进入真实跑团，以及真实 Session 的缺陷如何反向成为箱庭训练样本。
