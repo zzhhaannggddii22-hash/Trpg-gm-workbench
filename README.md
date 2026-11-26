@@ -4,6 +4,8 @@
 
 ## 核心架构
 
+- [2026-11-26 仓库结构变更通知](STRUCTURE_CHANGE_NOTICE_2026-11-26.md)：测试资料已集中迁移至 GM_Training/Testing；后续会话请先读取该通知与 Testing 总入口。
+
 - [测试资料中心](GM_Training/Testing/README.md)：夹具、执行提示、验收报告与长期基准的统一入口。
 
 - [项目目录与文件职责](PROJECT_STRUCTURE.md)：仓库结构、权威归属与迁移约定。
