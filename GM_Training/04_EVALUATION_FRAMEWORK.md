@@ -137,7 +137,7 @@
 
 ## 叙事质量基准与错误容忍度
 
-叙事质量的跨测试基准见 [GM Narrative Quality Baseline](./NARRATIVE_QUALITY_BASELINE.md)。专项测试和综合压力测试均不得自行降低该基准。
+叙事质量的跨测试基准见 [TRPG 叙事质量基准](./NARRATIVE_QUALITY_BASELINE.md)。专项测试和综合压力测试均不得自行降低该基准。
 
 基础正确性按影响分级：
 - 轻微错误允许存在；若不影响玩家理解、关键选择、线索、公平风险判断、规则结果或后续因果，不自动判场景失败。
