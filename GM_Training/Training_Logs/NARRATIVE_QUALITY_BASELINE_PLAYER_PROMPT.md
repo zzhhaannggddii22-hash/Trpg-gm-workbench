@@ -1,8 +1,8 @@
-# Narrative Quality Baseline｜Player Start Prompt — Before the Rain Stops
+# 叙事质量基准｜玩家启动提示：《雨停之前》
 
-> Fixture: NQB-01 v0.1
-> Classification: SYSTEM-NEUTRAL / TEST_ONLY_NON_CANON
-> Player-facing only. Do not include or request the GM-only packet in the player conversation.
+> 夹具编号：NQB-01 v0.1
+> 分类：通用规则系统／仅供测试，不属于正式战役
+> 本文件仅供玩家会话使用。不要在玩家会话中附带或索取 GM 专用资料。
 
 你在一场大雨中走到路边一家小客栈的门廊下。雨水顺着屋檐落在碎石路边，门没有关严，里面透出暖黄色的灯光。
 
