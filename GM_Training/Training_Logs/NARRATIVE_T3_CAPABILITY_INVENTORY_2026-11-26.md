@@ -133,8 +133,9 @@
 
 1. 先将 CAP-NAR-01、02 作为 T2 候选保留，不宣称 T3。
 2. 为这两项补齐训练来源 → 方法抽象 → Skill 版本的提交/文件映射；确认历史提交能否支持因果顺序。
-3. 优先处理 G-16 玩家信息通道硬失败。
-4. 选择一个真实适用的正式 Campaign 场景或隔离综合场景，锁定精确 Skill commit，执行现有 NARRATIVE_RUNTIME_TRANSFER_REGRESSION_v1；如果准入证据仍不足，报告 NOT TESTABLE，不硬跑。
+3. 优先处理 G-16 玩家信息通道硬失败。已新增 [G-16 Player Information Channel Regression v1](../Acceptance_Test_Fixtures/G16_PLAYER_INFORMATION_CHANNEL_REGRESSION_v1/README.md)，以三个隔离分支区分私人记忆、口头披露与可观察行为；该夹具目前仅完成设计，尚未执行。
+4. 先执行 G-16 定向夹具并按结果决定是否需要修改 Skill。当前 Skill 已明确写有玩家信息渠道约束，因此本轮没有重复堆叠同义规则；若回归仍失败，再依据原始输出定位是生成执行缺陷还是审查/接口缺陷。
+5. 在 G-16 硬门槛修复并通过低压/高压针对性回归后，选择一个真实适用的正式 Campaign 场景或隔离综合场景，锁定精确 Skill commit，执行现有 NARRATIVE_RUNTIME_TRANSFER_REGRESSION_v1；如果准入证据仍不足，报告 NOT TESTABLE，不硬跑。
 5. 真实 Session 中继续观察两项能力，积累 T4 所需证据。
 
 ## 7. 审计限制
