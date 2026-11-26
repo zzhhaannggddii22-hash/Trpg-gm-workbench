@@ -75,6 +75,7 @@
 - [GM 自测与验收执行协议](./SELF_TESTING_PROTOCOL.md)：默认的 GitHub 版本化夹具、独立测试会话、分阶段输入、BLOCKED 处理和独立审核流程。
 - [TRPG 叙事质量基准 NQB-01 v1.0](./NARRATIVE_QUALITY_BASELINE.md)：低压日常叙事验收标准，适用于主 Skill 与后续候选版本。
 - [主分支 Skill 叙事验收记录 01](./Training_Logs/NARRATIVE_QUALITY_BASELINE_MAIN_SKILL_RUN_01.md) 与 [记录 02](./Training_Logs/NARRATIVE_QUALITY_BASELINE_MAIN_SKILL_RUN_02.md)：固定 main commit 下的两组低压合成模拟结果。
+- [主分支 Skill 真实玩家短测记录 03](./Training_Logs/NARRATIVE_QUALITY_BASELINE_MAIN_SKILL_RUN_03.md)：固定 main commit 下的 4 个真实玩家行动回合；用户主动提前结束，属于有效但覆盖有限的真实交互样本。
 - [GM 系统质量验收提示词](./GM_SYSTEM_ACCEPTANCE_PROMPT.md)
 - [P0/P1 验收报告与测试夹具](./Acceptance_Reports/)
 - [验收测试夹具与执行提示](./Acceptance_Test_Fixtures/README.md)：合成夹具、目标 Chat 执行提示与操作者协议。
