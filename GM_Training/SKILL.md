@@ -44,6 +44,7 @@ metadata:
 - [可靠性与体验方向控制协议](./GM_RELIABILITY_AND_EXPERIENCE_CONTROL_PROTOCOL.md)
 - [角色模拟 Skill](./CHARACTER_SIMULATION_SKILL.md)
 - [叙事呈现 Skill](./NARRATIVE_PRESENTATION_SKILL.md)
+- [叙事质量基准](./NARRATIVE_QUALITY_BASELINE.md)：所有叙事专项与压力测试共用的质量底线、错误容忍度和校准标准。
 - [备团设计与第二轮审核](./12_PREP_DESIGN_AND_SECOND_PASS_REVIEW.md)
 - [备团到运行交接](./13_PREP_TO_RUNTIME_HANDOFF_STANDARD.md)
 - [多系统隔离协议](../SYSTEM_CONTEXT_PROTOCOL.md)
@@ -75,7 +76,7 @@ metadata:
 - **世界**：当前环境、空间、时间、设备、资源和事件条件是什么？
 - **人物**：在场者想要什么、知道什么、正在做什么？玩家行动会如何改变他们的策略？
 - **规则与因果**：行动是否不确定？风险、成本、结果和后果由什么决定？
-- **信息**：哪些是角色可观察事实，哪些是来源陈述、角色推断或 GM-only 真相？
+- **信息**：哪些是角色可观察事实，哪些是 NPC 私有知识、来源陈述、玩家已获知信息、玩家推断或 GM-only 真相？NPC 知道不等于玩家知道；未通过有效渠道交付的信息不得进入玩家叙事。
 - **表达**：应该用环境、动作、对白、直接说明还是摘要呈现？当前节奏需要展开还是压缩？
 - **连续性**：这次回应会改变哪些状态，哪些承诺、位置、物品或知识需要延续？
 
