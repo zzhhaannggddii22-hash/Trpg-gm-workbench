@@ -12,6 +12,7 @@
 - [H1-3 阶段 B 来源审计记录（2026-11-26）](./H1_3_STAGE_B_SOURCE_AUDIT_2026-11-26.md)
 - [单会话可执行伴随夹具历史运行记录（2026-11-26）](./GM_SINGLE_SESSION_HARNESS_EXECUTION_2026-11-26.md)：两套合成夹具的历史运行记录；标记 PARTIAL，包含执行顺序偏差及正式 Campaign/T3/T4 证据边界。
 - [#33 单会话可执行夹具有效回归报告（2026-11-26）](./GM_SINGLE_SESSION_HARNESS_REGRESSION_2026-11-26.md)：在 #33 合并后的 main 上严格逐 ACTION 执行 L3 NPC 与 Narrative Run 两套夹具，完成后读取 ORACLE；两项样本均 PASS，保留单会话自审与 T3/T4 证据边界。
+- [P1-0C 独立目标环境复测｜缺陷分诊与修复记录（2026-11-26）](./P1_0C_INDEPENDENT_RETEST_TRIAGE_2026-11-26.md)：记录 2026-11-26 独立复测的 NOT MET 结论、C1/C2/C3/REG-17 根因方向、规范修订范围与未验证边界。
 
 验收报告记录的是对应测试时点的结果，不自动代表当前 main 的最新状态。后续复测应新增报告，不覆盖历史结论。
 
