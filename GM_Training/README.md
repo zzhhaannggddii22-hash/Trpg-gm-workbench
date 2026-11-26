@@ -46,6 +46,7 @@
 - [训练题库](./NARRATIVE_TRAINING_QUESTION_BANK.md)：专项题与综合题候选；题库不定义能力标准。
 - [开放训练问题清单](./Training_Logs/OPEN_TRAINING_BACKLOG.md)：尚未解决的问题及后续验证要求。
 - [2026-11-25《雨前过桥》箱庭实测记录](./Training_Logs/2026-11-25_MICRO_SANDBOX_001_BRIDGE_BEFORE_RAIN_REVIEW.md)：首个完成的箱庭运行样本、玩家反馈、观察和待验证项。
+- [Narrative Stress Test 01｜社区中心暴雨撤离](./Training_Logs/NARRATIVE_STRESS_TEST_01_DESIGN.md)：持续压力下综合叙事质量与信息显著性动态升格测试设计（尚未运行）。
 - [2026-11-24 场景描绘与动态叙事综合训练记录](./Training_Logs/2026-11-24_SCENE_AND_DYNAMIC_NARRATIVE_INTEGRATED_TRAINING.md)：便利店、搬家夫妻、仓库交接、医院走廊、旧办公楼、人物兴趣与日常场景等完整训练沉淀。
 - [2026-11-24 NPC 对话与交流流畅度训练](./Training_Logs/2026-11-24_NPC_DIALOGUE_AND_CONVERSATIONAL_FLOW.md)
 - [人物塑造与互动研究](../Research/CHARACTER_AND_INTERACTION_TRAINING_2026-11-24.md)
