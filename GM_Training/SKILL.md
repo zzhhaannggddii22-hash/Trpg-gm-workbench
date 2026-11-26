@@ -47,7 +47,7 @@ metadata:
 - [备团设计与第二轮审核](./12_PREP_DESIGN_AND_SECOND_PASS_REVIEW.md)
 - [备团到运行交接](./13_PREP_TO_RUNTIME_HANDOFF_STANDARD.md)
 - [多系统隔离协议](../SYSTEM_CONTEXT_PROTOCOL.md)
-- [GM 自测与验收执行协议](./SELF_TESTING_PROTOCOL.md)：GM 自测默认采用版本化 GitHub 夹具、独立测试会话和独立审核；测试方法与边界见该协议。
+- [GM 自测与验收执行协议](./SELF_TESTING_PROTOCOL.md)：GM 自测默认采用版本化 GitHub 夹具、独立测试会话和独立审核，并将完整结果交付为可下载的 Markdown（`.md`）报告；测试方法与边界见该协议。
 
 规则系统专属资料只从 Systems 中当前绑定的系统目录调用；战役人物、模组和事实只从当前 Campaign 调用。不要把其他系统或其他战役的术语、规则和事实带入当前桌面。
 
