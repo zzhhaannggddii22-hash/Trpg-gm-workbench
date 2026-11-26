@@ -1,89 +1,89 @@
-# Narrative Quality Baseline｜GM Packet — Before the Rain Stops
+# 叙事质量基准｜GM 专用场景资料：《雨停之前》
 
-> Fixture: NQB-01 v0.1
-> Status: DRAFT / NOT RUN
-> Classification: SYSTEM-NEUTRAL / TEST_ONLY_NON_CANON
-> GM-only: Do not expose this packet to the player.
+> 夹具编号：NQB-01 v0.1
+> 状态：草案／尚未运行
+> 分类：通用规则系统／仅供测试，不属于正式战役
+> **GM 专用：不得向玩家展示本文件。**
 
-## 1. Test intent
+## 一、测试目的
 
-This is a low-pressure ordinary-life scene. Test whether the GM can make a simple place feel inhabited, clear, responsive, and worth engaging with without inventing a mystery, deadline, danger, or compulsory plot.
+这是一个低压力的日常场景。测试 GM 能否在不人为制造谜题、期限、危险或强制剧情的情况下，让一个普通地点显得有人生活、清楚可感、会响应玩家，并值得玩家投入。
 
-This fixture calibrates baseline narration, not stress handling. The player may talk, observe, sit, wait, ask for something, do something unexpected, or leave. Do not steer them toward a preferred route.
+本夹具校准的是基础叙事，不是压力处理。玩家可以交谈、观察、坐下、等待、询问服务、采取意料之外的行动，也可以离开。不要把玩家引向预设路线。
 
-## 2. Fixed situation
+## 二、固定场景
 
-A small roadside inn called **雨脚客栈** sits beside an old county road. Heavy rain has started, and the player enters to take shelter. It is late afternoon, but no exact clock time is needed. There is no immediate danger and no countdown.
+一家名叫**雨脚客栈**的小客栈，位于一条旧县道旁。大雨刚下起来，玩家走进客栈避雨。时间大约是下午偏晚，不需要精确到几点。现场没有迫近的危险，也没有倒计时。
 
-The inn is open. The front room is warm and modest, not picturesque or rundown by default. The player is a passerby with no assigned mission. They may simply want shelter.
+客栈正常营业。前厅温暖、朴素，不必刻意写得诗情画意，也不是破败小店。玩家只是路过的行人，没有被分配任务；他们可能只想找地方避雨。
 
-### Space and visible objects
+### 空间与可见物件
 
-- One main room, roughly rectangular.
-- Front door opens directly onto a covered porch and the gravel roadside.
-- Three wooden tables; one near the window is empty, one has been wiped but is still damp, and one is occupied by a traveler.
-- A counter stands opposite the entrance. A kettle and several cups are visible behind it.
-- A coat stand is beside the door. A shallow tray beneath it catches umbrella drips.
-- A narrow doorway behind the counter leads to a kitchen/back room. The player cannot see into it from the entrance.
-- A handwritten card on the counter reads: “热水自取。要茶请说一声。”
-- Rain can be heard on the porch roof and window. The precise rain intensity may be described naturally but must not suddenly become dangerous.
+- 一间大致呈长方形的前厅。
+- 正门直接通向有顶门廊和碎石路边。
+- 三张木桌：靠窗的一张空着；一张刚擦过，桌面仍有些潮；另一张坐着一名旅客。
+- 柜台在入口对面，柜台后能看见热水壶和几个杯子。
+- 门边有衣帽架，下面放着一个浅托盘，用来接雨伞滴下来的水。
+- 柜台后方有一道较窄的门，通往厨房或后间；玩家从入口处看不见里面。
+- 柜台上有一张手写卡片：“热水自取。要茶请说一声。”
+- 雨声能从门廊屋顶和窗户传进来。雨势可以自然描写，但不能突然变成危险事件。
 
-Do not inventory every object in the opening. Present enough spatial anchors for the player to understand the room and choose where to go.
+开场不要逐项清点所有物件。只需交代足够的空间锚点，让玩家知道自己在哪里、人物在哪里，以及可以如何行动。
 
-## 3. NPCs
+## 三、NPC
 
-### 林秋 — proprietor
+### 林秋｜店主
 
-- In her late fifties. Practical, observant, neither unusually warm nor hostile.
-- Current goal: finish wiping the tables and put the kettle back on its stand before the evening meal preparation.
-- Current activity: wiping the damp table near the counter, occasionally checking the kettle.
-- Knowledge: knows the inn, its ordinary services, the weather outside, and the objects in the room. Does not know the player's identity or purpose unless told.
-- Speech: direct, economical, everyday language. She may offer tea or hot water, but should not deliver a speech about the inn.
-- Autonomy: if the player does not engage her, she continues her small tasks. If asked for service, she responds; if interrupted, she can pause and resume without resetting.
-- Private state: she has noticed a small leak near the kitchen doorway and intends to put a bowl under it when she finishes the table. This is not a secret clue. Do not state the private intention as player knowledge. The player may notice her glance toward the doorway or see her fetch a bowl if it becomes observable.
+- 五十多岁。务实、观察力不错，不特别热情，也不冷淡。
+- 当前目标：擦完桌子，把热水壶放回托架，然后准备晚饭。
+- 当前活动：正在擦柜台附近那张仍有些潮的桌子，偶尔看一眼热水壶。
+- 知识：熟悉客栈、日常服务、外面天气和店内物件。除非玩家主动告知，否则不知道玩家的身份或目的。
+- 说话方式：直接、简洁、日常。她可以询问玩家是否需要茶或热水，但不要主动介绍客栈历史。
+- 自主性：玩家不找她时，她继续手头的小事；玩家提出服务需求时，她会回应；被打断后可以暂停再继续，不会重置进度。
+- 私人状态：她注意到厨房门口附近有一点漏水，打算擦完桌子后拿个碗接水。这不是秘密线索。不得把她未说出口的打算直接写成玩家已知信息。玩家可能观察到她朝门口看了一眼，或者后来看到她拿碗过去。
 
-### 许闻 — traveler
+### 许闻｜旅客
 
-- Around thirty. Quiet, not withdrawn. Sitting at the table farthest from the counter, drying the cuffs of his jacket with a paper napkin.
-- Current goal: wait until the rain eases enough to continue walking to the next village. No emergency.
-- Knowledge: knows only what he has personally experienced or been told. He does not know local business details unless the proprietor tells him.
-- Speech: polite, short answers at first; if conversation develops naturally, he can become more talkative. Do not make him cryptic.
-- Autonomy: may check the rain, shift his damp jacket, ask for hot water, or resume reading a small paperback. Do not make him initiate conversation every turn.
-- Private memory: the wooden sign above the counter resembles one from a village where he spent part of his childhood. He has not mentioned this to anyone. During the opening, at a natural pause, his gaze may rest on the sign for a moment before he returns to drying his sleeve. This is the observable cue; do not narrate “he remembers…” or explain what he recognizes. If asked, he may choose to share the memory in ordinary language.
+- 三十岁上下。安静，但不是刻意疏离。坐在离柜台最远的桌旁，用纸巾擦外套袖口。
+- 当前目标：等雨小一些，再继续步行去下一个村子。没有紧急事务。
+- 知识：只知道自己亲身经历或别人告诉他的事。除非店主告知，否则不了解本地生意和客栈情况。
+- 说话方式：起初礼貌、回答简短；如果交流自然展开，可以逐渐多说一些。不要把他写成故弄玄虚的人。
+- 自主性：可能看看雨势、挪动湿外套、询问热水，或继续读一本薄薄的平装书。不要让他每回合都主动找玩家搭话。
+- 私人记忆：柜台上方的木招牌让他想起童年时住过的一个村子。他从未向别人提起这段记忆。开场某个自然停顿时，他的目光可以在招牌上多停一会儿，然后继续擦袖口。这是玩家可能观察到的行为；不要旁白说“他想起了……”或解释他认出了什么。如果玩家询问，他可以选择用日常语言分享这段记忆。
 
-## 4. Truth and information channels
+## 四、真相与信息通道
 
-Keep the following distinctions:
-- GM truth: the proprietor noticed a small leak and plans to place a bowl under it; the traveler privately associates the sign with his childhood.
-- NPC knowledge: each NPC knows only the facts above and what happens during play.
-- Player access: only what the character can perceive, hear, read, touch, or obtain through interaction.
-- Player-facing delivery: do not narrate private memories or intentions as facts. Use observable behavior or actual dialogue.
-- Inference: if the player says the traveler seems to recognize the sign, acknowledge the visible basis and leave the conclusion to the player. Do not confirm the private memory unless the traveler communicates it or the player obtains it through a justified interaction.
+必须区分以下内容：
+- GM 真相：店主注意到厨房门口有一点漏水，打算拿碗去接；旅客私下把招牌与自己的童年联系起来。
+- NPC 知识：每名 NPC 只知道本文件列出的内容，以及游戏过程中自己实际获得的信息。
+- 玩家可接触信息：角色能够观察、听见、阅读、触摸或通过互动获得的内容。
+- 玩家可见叙事：不得把 NPC 私人记忆或未说出口的打算作为事实直接叙述。使用可观察行为或实际对白。
+- 玩家推断：如果玩家说旅客似乎认得招牌，可以承认这一判断有可观察依据，但把结论留给玩家。除非旅客主动说明，或玩家通过合理互动获得信息，否则不要确认他的私人记忆。
 
-The private memory is a deliberate information-channel regression probe, not a clue or plot hook. Do not draw attention to it unless the player's actions naturally do so.
+这段私人记忆是专门用于回归检查的信息通道探针，不是线索或剧情钩子。除非玩家的行动自然触及它，否则不要主动强调。
 
-## 5. Play principles
+## 五、主持原则
 
-- No hidden mystery, required clue, secret villain, imminent hazard, or forced conflict.
-- No artificial urgency. Rain is a condition, not a countdown.
-- No need to introduce additional NPCs.
-- The scene may remain ordinary. A pleasant, uneventful interaction is a valid outcome.
-- Do not force the player to sit, order tea, converse, inspect the sign, or remain until the rain stops.
-- Do not decide the player's mood, thoughts, attention, or conclusions.
-- Ordinary background details may be improvised if they do not contradict fixed facts. If the player investigates or relies on a detail, maintain it consistently from that point onward.
-- NPCs should retain their own small goals and attention, but their activity should not become a competing performance that steals the scene.
-- Avoid status tables and internal state reports in player-facing replies. Give concise state clarification only when it helps the player act.
+- 不存在隐藏谜团、必需线索、秘密反派、迫近危险或强制冲突。
+- 不制造人为紧迫感。雨只是环境条件，不是倒计时。
+- 不需要引入其他 NPC。
+- 场景可以一直很普通。愉快但没有事件的互动也是有效结果。
+- 不强迫玩家坐下、点茶、交谈、检查招牌，或一直待到雨停。
+- 不替玩家决定心情、想法、注意力或结论。
+- 不与固定事实冲突的普通背景细节可以自然补全。玩家开始调查或依赖某项细节后，从那一刻起保持它的一致性。
+- NPC 保留自己的小目标和注意力，但他们的活动不应变成抢走玩家戏份的表演。
+- 玩家可见回复中避免输出状态表或内部状态报告。只有当简短说明状态确实有助于玩家行动时，才进行澄清。
 
-## 6. Evaluation coverage
+## 六、评价覆盖范围
 
-The run should naturally provide opportunities to observe:
-- opening scene clarity and sensory texture;
-- spatial legibility and action affordances;
-- natural dialogue and NPC individuality;
-- NPC continuity and modest autonomy;
-- fair information channels, including private memory versus observable cue versus spoken disclosure;
-- response to an ordinary unexpected player action;
-- consequence and object continuity;
-- pacing, compression, and a natural hand-back to the player.
+本次运行应在自然互动中提供观察以下能力的机会：
+- 开场场景清晰度与感官质感；
+- 空间可读性与行动可供性；
+- 对话自然度与 NPC 个体差异；
+- NPC 连续性和适度自主性；
+- 信息通道公平性，包括私人记忆、可观察行为与口头披露之间的区别；
+- 对普通预案外玩家行动的响应；
+- 行动后果与物件连续性；
+- 节奏、压缩能力，以及自然地把行动权交还给玩家。
 
-A single run does not need to demonstrate every possible technique. Do not manufacture opportunities that the player has not created.
+单次运行不必展示所有技巧。不要为了覆盖评价项目而制造玩家尚未引出的情境。
