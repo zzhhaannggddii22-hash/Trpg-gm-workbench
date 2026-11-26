@@ -24,6 +24,11 @@
 - [L3 NPC 主动性与离场连续性回归夹具 v1](./L3_NPC_AUTONOMY_AND_DORMANT_CONTINUITY_REGRESSION_v1.md)：从实际跑团入口验证指定 L3 NPC 的主动互动、玩家离场期间的低成本事务延续、计划受扰后的调整，以及时间推进后的再次接触；三条分支均使用同一初始状态并保持 TEST_ONLY_NON_CANON。
 - [叙事训练成果向实际跑团迁移回归夹具 v1](./NARRATIVE_RUNTIME_TRANSFER_REGRESSION_v1.md)：验证常驻叙事约束、场景上下文复用、绿色快路径质量、训练成果经 Skill/Prep/Preflight 进入实战，以及不采用逐轮检查清单。
 
+## 玩家信息通道专项回归
+
+- [G-16 Player Information Channel Regression v1](./G16_PLAYER_INFORMATION_CHANNEL_REGRESSION_v1/README.md)：低压下区分 NPC 私人记忆、实际口头披露和可观察行为。
+- [G-16 High-Pressure Information Channel Regression v1](./G16_HIGH_PRESSURE_CHANNEL_REGRESSION_v1/README.md)：在闭馆交接、多人物与并行事务压力下，检查私人记忆是否仍只通过 NPC 实际对白披露。
+
 ## 单会话可执行伴随夹具
 
 - [L3 NPC 单会话合成可执行伴随夹具](./L3_NPC_SINGLE_SESSION_HARNESS_v1/README.md)：使用夹具内部明确登记的合成 L3 人物，自动模拟 A/B/C 分支；只验证通用人物模拟与状态连续性，不替代正式 Campaign 验收。
