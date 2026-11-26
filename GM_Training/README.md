@@ -10,6 +10,7 @@
   - [基准场景 GM Packet](./Training_Logs/NARRATIVE_QUALITY_BASELINE_GM_PACKET.md)（GM-only）
   - [基准场景玩家启动提示](./Training_Logs/NARRATIVE_QUALITY_BASELINE_PLAYER_PROMPT.md)
   - [基准场景独立审核表](./Training_Logs/NARRATIVE_QUALITY_BASELINE_REVIEW_CHECKLIST.md)
+  - [独立会话执行提示](./Training_Logs/NARRATIVE_QUALITY_BASELINE_EXECUTION_PROMPT.md)
 - [综合能力评估框架](./04_EVALUATION_FRAMEWORK.md)：硬门槛、综合体验维度、场景联动评价和整体优秀判定。
 
 ## 2. 专业能力规范
