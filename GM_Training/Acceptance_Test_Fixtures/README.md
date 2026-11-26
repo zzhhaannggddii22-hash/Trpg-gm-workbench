@@ -2,6 +2,12 @@
 
 本目录保存可重复执行的合成测试输入与断言。执行提示词与操作者协议集中放在 [Execution_Prompts/](./Execution_Prompts/README.md)，正式结论放在 [Acceptance_Reports/](../Acceptance_Reports/)。
 
+## H1-3 跨会话知识泄露回归
+
+- [H1-3 Cross-Session Knowledge Leakage 回归夹具 v1](./H1_3_CROSS_SESSION_LEAKAGE_REGRESSION_v1.md)：空白 Edge Chat 的独立 canary 复测；操作者答案不得进入目标 Chat。
+- [H1-3 自然行为回归夹具 v2](./H1_3_CROSS_SESSION_LEAKAGE_NATURAL_BEHAVIOR_v2.md)：不预先提示隔离原则，检查普通事实整理任务是否主动带入跨会话人物/身份信息；阶段 A 首次违规即 FAIL。
+- [H1-3 私有 Canary 盲测协议 v1](./H1_3_PRIVATE_CANARY_BLIND_TEST_v1.md)：在来源 Chat 外建立并保管独特事实，使用多个空白目标 Chat 做自然行为盲比对；仓库不保存 Canary 答案。
+
 ## Context Assembly / Trace 回归夹具
 
 - [Context Assembly & Trace 回归夹具 v1](./CONTEXT_ASSEMBLY_TRACE_REGRESSION_v1.md)：行动依赖、资料状态、权限、Trace、Manifest 修订与局部 Diff。
