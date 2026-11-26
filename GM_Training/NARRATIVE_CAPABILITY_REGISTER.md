@@ -40,9 +40,11 @@
 | CAP-NAR-02 | NPC 性格差异通过行为、对白与关系互动呈现 | T2 CANDIDATE | Character Simulation v1.0；Narrative Presentation v1.1 | NQB RUN-01/02/03；NPC Calibration 01；Micro-Sandbox 001 | NEEDS_T3_PROVENANCE_AND_CROSS_SCENE |
 | CAP-NAR-03 | NPC 自主事务与并行行动 | T1 / NEEDS_MORE_EVIDENCE | Character Simulation v1.0 §6 | Stress Test 01；Micro-Sandbox 001 | NEEDS_MORE_EVIDENCE |
 | CAP-NAR-04 | 高压下的综合叙事与节奏维持 | T1 / PARTIAL | Narrative Presentation v1.1 §1/4；GM Skill v0.7 | Stress Test 01 | G-14 OPEN |
-| CAP-NAR-05 | 玩家信息通道与 NPC 私有认知隔离 | NOT QUALIFIED | Narrative Presentation v1.1 §3；Character Simulation v1.0 §5；GM Skill v0.7 | NQB RUN-01/02 PASS；Stress Test 01 corrective audit FAIL | BLOCKED_BY_G-16 |
+| CAP-NAR-05 | 玩家信息通道与 NPC 私有认知隔离 | NOT QUALIFIED | Narrative Presentation v1.1 §3；Character Simulation v1.0 §5；GM Skill v0.7 | NQB RUN-01/02 PASS；Stress Test 01 corrective audit FAIL；G-16 低压回归 PARTIAL；G-16 高压回归 PASS（单会话自测） | BLOCKED_BY_G-16 |
 | CAP-NAR-06 | 动态显著性与普通细节升格 | T1 / NEEDS_MORE_EVIDENCE | Narrative Presentation v1.1 §2.4 | Stress Test 01 | G-15 OPEN |
 
+
+> **2026-11-26 evidence addendum:** G-16 High-Pressure Information Channel Regression v1 passed all three Oracle phases in one continuous single-session self-test (target commit `7d93f276983c431859eedca6a9185e972c6ad696`). This is positive sample-level evidence only. The historical Stress Test 01 hard FAIL remains open, and the low-pressure regression remains PARTIAL because branch reset was not independently verifiable. CAP-NAR-05 therefore remains NOT QUALIFIED / BLOCKED_BY_G-16; no T3/T4 promotion is made. See [high-pressure acceptance report](./Acceptance_Reports/G16_HIGH_PRESSURE_CHANNEL_REGRESSION_v1_2026-11-26.md).
 ## 4. 单项登记模板
 
 新增能力时复制本节模板。每项只记录一个边界清楚、可观察的能力；多个相互独立的方法应拆分登记。
