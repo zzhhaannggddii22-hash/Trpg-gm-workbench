@@ -1,175 +1,177 @@
-# GM Narrative Quality Baseline｜叙事质量基准
+# TRPG 叙事质量基准
 
-> Version: 0.1-draft
-> Status: STANDARD DRAFT — PENDING CALIBRATION
-> Scope: system-neutral GM narrative quality; applies to baseline scenes, specialist tests, sustained-pressure tests, and integrated sessions.
-> Authority: this document defines the quality baseline. The 04_EVALUATION_FRAMEWORK.md remains the broader GM capability evaluation framework.
+> 版本：0.2-draft
+> 状态：标准草案，等待实际场景校准
+> 适用范围：跨规则系统的 GM 叙事质量；适用于低压基准、专项测试、持续压力测试与综合 Session。
+> 文件职责：本文件定义叙事质量标准；《04_EVALUATION_FRAMEWORK.md》负责更广泛的 GM 综合能力评价。
 
-## 1. Purpose
+## 一、制定目的
 
-This baseline defines what counts as good TRPG GM narration before any individual capability is pressure-tested. A pressure test is meaningful only when its output is judged against a stable quality standard.
+在测试某项专项能力或施加压力之前，必须先确定普通跑团环境下合格叙事的质量标准。否则，压力测试只能说明输出发生了变化，却无法判断变化是否损害了实际游戏体验。
 
-The target is not literary prose and not the average output of a language model. The target is the stable performance expected from a mature, narration-capable TRPG GM in ordinary play.
+目标不是文学创作，也不是以语言模型的平均输出作为参照，而是建立一套成熟、具备叙事能力的 TRPG GM 在普通跑团中应当稳定达到的表现标准。
 
-**Narrative quality means presenting a coherent, perceivable, explorable, responsive world in which players can make meaningful choices and experience the consequences, while the GM preserves factual integrity, information boundaries, and interaction quality.**
+**叙事质量，是 GM 在维护事实可靠性、信息权限与玩家行动权的前提下，把一个连贯、可感知、可探索、会响应的世界呈现给玩家，让玩家能够作出有意义的选择，并体验这些选择带来的后果。**
 
-Information integrity is foundational, not the whole of narrative quality. Passing the foundation does not by itself make a scene good. The GM must still create a vivid, playable, responsive experience.
+信息正确性是叙事质量的地基，但不是叙事质量的全部。地基合格不代表场景已经优秀；GM 仍须提供有生命力、可互动、有反馈的游戏体验。
 
-## 2. Three layers of quality
+## 二、叙事质量的三个层次
 
-### Layer I — Foundational correctness
+### 第一层：基础正确性
 
-This layer protects the integrity of the shared game. It is a gate, not a compensatory score.
+这一层保护桌面共享世界的完整性，是硬门槛，不参与其他维度的分数补偿。
 
-1. **World and information consistency** — established facts about time, place, people, objects, events, relationships, and causes remain coherent. New details may be improvised when safe, but must not silently overwrite established facts.
-2. **NPC knowledge boundaries** — each NPC acts and speaks only from information they have plausibly acquired. Knowledge, memory, belief, suspicion, and inference remain distinct.
-3. **Player-facing information boundary** — the player receives information through a legitimate channel: direct observation, hearing, touch, documents or displays they can access, NPC speech, or a justified inference from available evidence. NPC unspoken memories, thoughts, motives, plans, and private knowledge are not narrated as player-accessible facts.
-4. **GM-only confidentiality** — hidden truths, unrevealed clues, secret identities, private motives, future events, and adjudication-only information remain concealed until a valid discovery or disclosure path occurs.
-5. **Fact / report / belief / inference separation** — objective facts, source statements, NPC beliefs, player hypotheses, and GM truth are not collapsed into one another. Uncertainty is preserved where it matters.
-6. **Player agency** — the GM does not decide the player's meaningful actions, commitments, emotional reactions, attention, beliefs, or conclusions.
-7. **Rules and established constraints** — current system rules, scenario facts, spatial constraints, and previously established outcomes are respected.
+1. **世界与信息一致性**：已经确立的时间、地点、人物、物件、事件、关系和因果保持连贯。安全范围内可以自然补充新细节，但不能悄悄覆盖既有事实。
+2. **NPC 知识边界**：每名 NPC 只能依据自己合理获得的信息行动和表达。亲历、听闻、记忆、相信、怀疑和推断必须有所区分。
+3. **玩家信息边界**：玩家只能获得角色通过直接观察、听闻、触摸、可访问的文件或屏幕、NPC 对话，以及基于已获得证据作出的合理推断所能接触的信息。NPC 未说出口的记忆、想法、动机、计划和私人知识，不得被旁白直接写成玩家已知事实。
+4. **GM 隐藏信息保密**：隐藏真相、未揭示线索、秘密身份、私人动机、未来事件和仅供裁定使用的信息，必须保持隐藏，直到出现合理的发现或披露路径。
+5. **事实、陈述、信念与推断分离**：客观事实、来源陈述、NPC 信念、玩家假设和 GM 掌握的真相不能混为一谈；重要不确定性必须得到保留。
+6. **玩家行动权**：GM 不替玩家决定有实质意义的行动、承诺、情绪反应、注意力、信念或推理结论。
+7. **规则与既定约束**：遵守当前规则系统、场景事实、空间限制和此前已经确立的行动结果。
 
-#### Information-channel model
+#### 信息通道模型
 
-Maintain these layers internally, even when they are not shown to the player:
+GM 内部应区分以下层次，即使这些信息不会全部呈现给玩家：
 
-- **GM truth:** what is actually true in the scenario.
-- **NPC knowledge state:** what a particular NPC knows, remembers, believes, suspects, or misunderstands, and how they acquired it.
-- **Player-character access:** what the character can currently perceive or access.
-- **Player-facing communication:** what has actually been said, shown, heard, read, or otherwise made available at the table.
-- **Player inference:** conclusions the player may draw; the GM may clarify evidence but must not silently replace the player's reasoning with a declared conclusion.
+- **GM 真相**：场景中实际发生或真实存在的情况。
+- **NPC 知识状态**：特定 NPC 知道、记得、相信、怀疑或误解什么，以及这些信息来自哪里。
+- **玩家角色可接触信息**：角色此刻能够观察、听到、读取、触碰或通过行动获取的内容。
+- **玩家实际获知信息**：桌面上已经通过对白、展示、观察或其他有效方式交付给玩家的内容。
+- **玩家推断**：玩家可以从现有证据得出的结论。GM 可以澄清证据，但不能悄悄替玩家宣布推理结果。
 
-A statement such as “小余记得周老师在七点四十二分说过要去储物间” is not automatically player knowledge. If this is relevant, it must be spoken by 小余, shown through a valid source, or conveyed through observable behavior without asserting the hidden memory itself. A narrator's unmarked access to NPC interiority is a player-facing information leak even when the underlying fact is true.
+例如，“小余记得周老师在七点四十二分说过要去储物间”并不会自动成为玩家已知信息。如果这项记忆需要交付给玩家，小余必须实际说出来，或玩家必须通过合理渠道看到相关记录；也可以呈现小余的可观察行为，但不能直接陈述隐藏记忆本身。
 
-Observable cues remain allowed and desirable: hesitation, gaze, posture, interrupted movement, voice changes, deliberate avoidance, and actions with objects. The narration may describe the cue; it should not state the hidden mental cause as certain unless the NPC communicates it.
+即使旁白所说的内容在 GM 真相层面完全正确，只要没有交代有效的信息渠道，直接进入玩家视野的 NPC 内心描写仍然属于信息泄露。
 
-#### Severity and tolerance
+允许并鼓励呈现可观察线索：迟疑、视线、姿势、动作中断、声音变化、刻意回避，以及对物件的操作。旁白可以描述这些表现，但除非 NPC 自己表达，否则不应把隐藏的心理原因写成确定事实。
 
-Errors are recorded by impact, not merely by whether a deviation occurred.
+#### 错误严重度与容忍标准
 
-- **Minor error:** a local imprecision or continuity slip that does not materially affect player understanding, a meaningful choice, a clue, a risk assessment, a rule outcome, or later causality. Minor errors are tolerable. Record them when useful, but they do not automatically fail a scene or session.
-- **Major failure:** a breach that materially distorts what the player knows, what an NPC can know, the established world state, the fairness of a decision, or the consequences of an action. Examples include unspoken NPC information narrated as fact when it changes player decisions; a significant knowledge-boundary breach; a consequential state contradiction; or an unsupported causal change.
-- **Critical failure:** a severe breach that exposes a decisive GM-only secret or core clue, invalidates a major player decision, fabricates decisive evidence, fundamentally rewrites campaign truth, or removes meaningful player agency in a consequential way.
+错误按实际影响分级，而不是只要出现偏差就一律判错。
 
-Tolerance policy:
+- **轻微错误**：局部措辞不准确或连续性小偏差，不实质影响玩家理解、有意义的选择、线索判断、风险评估、规则结果或后续因果。轻微错误可以容忍；必要时记录，但不自动导致场景或 Session 失败。
+- **重大失败**：某项错误实质扭曲玩家知道什么、NPC 能知道什么、世界已经发生什么、决策是否公平，或行动会产生什么后果。例如：将 NPC 未说出口的信息作为事实交付，并可能影响玩家决定；明显越过知识边界；关键状态发生矛盾；无依据地改变因果结果。
+- **致命失败**：严重泄露决定性 GM 隐藏真相或核心线索、使重大玩家决定失效、伪造决定性证据、根本性改写战役事实，或在重大情境中剥夺玩家的实质行动权。
 
-- Minor errors are allowed within reason. Assess their actual impact and whether they form a repeated pattern; do not pursue zero-error bookkeeping at the expense of play.
-- A critical failure is an immediate hard failure for the affected scene/session and must be explicitly reported.
-- Major failures must be counted across complete sessions. **An average of one major failure per full session is already an uncomfortable and unacceptable operating level**, not a normal allowance. The target is clearly below one per session, with zero major failures in a calibrated baseline sample as the preferred result.
-- A single major failure in one sample must be recorded and investigated; it prevents that sample from being described as cleanly passing the foundational layer. It does not, by itself, prove the long-term average is one per session.
-- Count one underlying incident once, rather than counting every repeated sentence that expresses the same leak. Distinct leaks with separate causes or separate consequences count separately.
-- Report raw counts, number of complete sessions, and the per-session rate. Do not hide failures by combining them with many short exercises or by dividing one incident into arbitrary turns.
-- Repeated minor errors that form a stable pattern or cumulatively distort play should be escalated and reassessed as a major failure.
+容忍与统计规则：
 
-### Layer II — Interaction quality
+- 允许一定程度的轻微错误。应判断实际影响和是否形成重复模式，不为追求零错误而牺牲游戏体验。
+- 致命失败立即判定受影响的场景或 Session 硬失败，并明确记录。
+- 重大失败必须按完整 Session 统计。**平均每场完整团达到一次重大失败，已经属于明显令人不舒服、不可接受的运行水平**，不能当作正常容错额度。目标应显著低于每团一次；校准后的低压基准样本优先要求零重大失败。
+- 单个样本出现一次重大失败，意味着该样本不能被称为基础正确性干净通过，必须记录并调查；但不能仅凭一个样本推断长期平均值已经达到每团一次。
+- 同一根因、同一连续事件造成的重复措辞按一个事件计数；不同根因或产生独立后果的事件分别计数。
+- 报告重大失败原始次数、完整 Session 数和每团发生率。不得把一场完整团拆成大量短练习来稀释发生率。
+- 多次轻微错误若形成稳定模式，或累积后实质扭曲游戏，也应升级评估为重大失败。
 
-Once the foundation is protected, assess whether the world is genuinely playable and responsive.
+### 第二层：交互质量
 
-1. **Scene legibility:** players can form a usable mental model of space, people, activity, and relevant environmental conditions.
-2. **Action affordance:** players can understand plausible ways to engage with the scene without being handed a fixed solution list.
-3. **Player agency and exploration:** player choices, experiments, questions, pauses, and unexpected plans are treated as real inputs, not obstacles to a preset plot.
-4. **Causal responsiveness:** actions receive specific, proportionate consequences grounded in the world.
-5. **NPC vitality and autonomy:** NPCs have individual goals, attention, habits, relationships, and ongoing activity; they do not merely wait to deliver plot information.
-6. **Dynamic continuity:** consequential details are maintained accurately; ordinary details can remain lightweight until player attention or causal relevance raises their salience.
-7. **Information organization:** useful information is clear and fairly accessible, while uncertainty and discovery remain meaningful.
+基础正确性得到保障后，评价这个世界是否真正可玩、会响应玩家。
 
-### Layer III — Presentation quality
+1. **场景可读性**：玩家能够形成可用的空间、人物、活动和环境状态认知。
+2. **行动可供性**：玩家能理解场景中有哪些合理的互动方向，但 GM 不必把解法整理成固定选项清单。
+3. **玩家能动性与探索**：玩家的选择、实验、提问、停顿和预案外行动都被当作真实输入，而不是预设剧情的障碍。
+4. **因果响应**：玩家行动获得具体、适度、符合世界逻辑的反馈和后果。
+5. **NPC 生命力与自主性**：NPC 有自己的目标、注意力、习惯、关系和正在进行的事务，不只是等待玩家提问的剧情信息终端。
+6. **动态连续性**：重要细节得到准确维护；普通细节可以轻量处理，直到玩家关注或因果重要性使其显著性升高。
+7. **信息组织**：有用信息清楚且公平可得，同时保留合理的不确定性和发现空间。
 
-Assess whether the experience is engaging and well expressed without sacrificing playability.
+### 第三层：叙事表现质量
 
-1. **Sensory and environmental texture:** selected details create a tangible place and lived-in atmosphere.
-2. **Character expression:** speech, behavior, attention, and physical interaction convey distinct people without turning them into caricatures.
-3. **Dialogue naturalness:** dialogue responds to context and relationship; it need not make every line dramatic or informative.
-4. **Emotional legibility:** emotional changes are conveyed through communicable speech and observable behavior, leaving room for player interpretation.
-5. **Pacing and rhythm:** description, dialogue, action resolution, silence, summary, and hand-back points are balanced to the value of the moment.
-6. **Narrative economy:** meaningful details are developed; routine or repeated procedures are compressed without removing choices, risks, or consequences.
-7. **Atmosphere and discovery:** scenes create interest without forcing every detail to be a clue, foreshadowing, or dramatic event.
+评价体验是否有吸引力、表达是否有效，同时不损害可玩性。
 
-## 3. Scoring interaction and presentation
+1. **感官与环境质感**：经过选择的细节能让地点具体、可信，具有生活气息。
+2. **人物表达**：对白、行为、注意力和与环境的互动能体现人物差异，而不把人物写成标签或 caricature。
+3. **对话自然度**：对话回应当下情境与关系，不要求每句话都戏剧化或提供剧情信息。
+4. **情绪可读性**：通过人物实际说出的话和可观察行为呈现情绪变化，为玩家保留解释空间。
+5. **节奏与韵律**：描写、对白、行动结算、沉默、摘要和交还行动权的时机，与当前内容的重要性相匹配。
+6. **叙事经济性**：有价值的细节得到展开；重复或常规流程可以压缩，但不能删掉选择、风险和实际后果。
+7. **氛围与发现感**：场景能够引起兴趣，但不强迫每个细节都成为线索、伏笔或戏剧事件。
 
-Score Layer II and Layer III dimensions from 0 to 4, with evidence.
+## 三、交互质量与表现质量的评分
 
-| Score | Anchor |
+第二层和第三层各维度按 0–4 分评分，并必须附上实际证据。
+
+| 分数 | 评价锚点 |
 |---|---|
-| 0 — Fails | The function is absent or actively damages play. |
-| 1 — Weak | Inconsistent; the player must repeatedly repair missing context or interaction. |
-| 2 — Adequate | Usable and understandable, but flat, mechanical, or uneven. |
-| 3 — Good | Consistently supports immersion, agency, and meaningful play. |
-| 4 — Excellent | Distinctive, natural, and highly effective; it deepens play without adding friction. |
+| 0 — 失效 | 对应能力缺失，或正在主动损害游戏体验。 |
+| 1 — 较弱 | 表现不稳定，玩家必须反复补问、修复上下文或推动互动才能继续。 |
+| 2 — 合格 | 基本可用、能够理解，但表现平淡、机械或明显不均衡。 |
+| 3 — 良好 | 能够稳定支持沉浸感、玩家能动性和有意义的互动。 |
+| 4 — 优秀 | 自然、有辨识度且效果突出，能深化体验而不增加交互摩擦。 |
 
-Interpretation:
-- **3 is the minimum stable target** for relevant dimensions in ordinary play.
-- **4 is the aspirational high-quality target**, not a requirement for every sentence or every turn.
-- Do not average away a weak core dimension. Report the profile and the weakest relevant dimension.
-- Mark N/A only when the scene genuinely does not exercise a dimension; mark insufficient evidence rather than guessing.
-- The foundational layer is reported separately as PASS / FAIL / UNKNOWN with incident severity and evidence. It is never converted into a compensatory numeric score.
+评分解释：
 
-## 4. What the baseline must not reward
+- **3 分是普通跑团中相关维度应稳定达到的最低目标。**
+- **4 分是追求方向**，不要求每句话、每个回合都达到。
+- 不允许用平均分掩盖核心维度的明显短板。必须报告各维度表现和最弱项。
+- 只有场景确实没有触及某个维度时才标记“不适用”；证据不足时应标记“证据不足”，不能猜分。
+- 第一层基础正确性单独报告为 PASS / FAIL / UNKNOWN，并附严重度和证据，不得转换成可被其他高分抵消的数字分数。
 
-The following are not quality improvements by themselves:
+## 四、基准不应奖励的表现
 
-- More words, more sensory adjectives, more NPC dialogue, or more tracked variables.
-- Constant dramatic tension, countdown reminders, conflict, or emotional intensity.
-- A complete status report that replaces an engaging scene.
-- Avoiding all interiority by reducing NPCs to sterile action logs.
-- Excessive caution that withholds information the player can reasonably perceive.
-- Mystery created by concealing already-accessible facts.
-- Literary polish that obscures space, choices, risks, or consequences.
-- “Show, don't tell” used to make important outcomes ambiguous.
-- A flawless checklist performance that feels like a checklist to the player.
+以下现象本身不构成质量提升：
 
-**Information is the foundation; it must enable interaction, not replace it.** Quality cannot be achieved by sacrificing player agency, world responsiveness, or expressive scene presentation.
+- 更多文字、更多感官形容词、更多 NPC 对白或更多状态变量。
+- 持续的戏剧张力、倒计时提醒、冲突或情绪强度。
+- 用完整状态报告代替有生命力的场景。
+- 为了避免内心描写，把 NPC 降格为机械的动作记录。
+- 过度谨慎，以至于扣留玩家本来能够合理感知的信息。
+- 把玩家已经能够接触的信息藏起来，制造虚假的神秘感。
+- 文学修饰掩盖空间、选择、风险或后果。
+- 把“展示而非讲述”变成重要结果含糊不清。
+- 检查表上的项目全部打勾，但玩家实际感受到的是一张检查表。
 
-## 5. Calibration scene proposal: “Before the Rain Stops”
+**信息是地基，地基应当支撑互动，而不是取代互动。**不能通过牺牲玩家行动权、世界响应能力或叙事表现力来换取表面上的正确率。
 
-Status: proposed baseline fixture; not yet calibrated or approved by a live user-run sample.
+## 五、低压校准场景提案：《雨停之前》
 
-A low-pressure, system-neutral everyday scene: the player takes shelter from rain in a small roadside inn. Present a proprietor and one traveler, each with ordinary ongoing business and distinct ways of speaking. There is no required mystery, countdown, combat, or hidden clue to discover.
+状态：基准场景草案，尚未经过实际玩家多轮运行校准。
 
-The scene should let the player:
-- enter and orient themselves;
-- choose where to sit or what to inspect;
-- initiate, decline, or leave a conversation;
-- ask ordinary questions and receive appropriately bounded answers;
-- interact with a commonplace object or service;
-- take an unanticipated but reasonable action;
-- wait, pause, or leave without the GM forcing a plot hook.
+这是一个低压力、无特定规则系统的日常场景：玩家在大雨中进入一家路边小客栈避雨。场景中有一位店主和一位旅客，各自有普通事务与不同的表达方式。没有必需谜题、倒计时、战斗或隐藏线索等待发现。
 
-The GM-only preparation should define stable facts, NPC knowledge and motives, and a few plausible ongoing activities. It must also identify what is deliberately *not* a clue or a required discovery. Hidden NPC information exists for boundary testing but must not be exposed unless communicated through a valid channel.
+场景应允许玩家自然地：
+- 进入地点并了解基本空间；
+- 选择坐在哪里、观察什么；
+- 主动开始或拒绝对话，也可以随时离开；
+- 询问日常问题，并获得符合信息来源的回答；
+- 使用普通物件或服务；
+- 采取未预先安排、但符合情境的行动；
+- 等待、停顿，或决定继续赶路，而不被 GM 强行塞入剧情钩子。
 
-The scene is a baseline for ordinary narration, not a test of pressure handling. Do not inject artificial conflict to make it “interesting.” The test is whether the GM can make ordinary play feel inhabited, clear, responsive, and worth engaging with.
+GM 专用资料应定义稳定事实、NPC 知识与动机，以及少量正在进行的日常事务；同时明确哪些东西刻意不是线索，也不是必须发现的内容。隐藏 NPC 信息可以用于测试信息边界，但只有经过有效渠道才能交付给玩家。
 
-## 6. Baseline execution protocol
+本场景校准的是普通日常叙事，不是压力处理能力。不要为了让场景“有趣”而注入人为冲突。测试重点是：GM 能否让普通互动也显得有人、有生活、清楚、会响应，并值得玩家投入。
 
-1. Run in a fresh, isolated conversation with the baseline version and a fixed scene packet.
-2. The GM receives only the GM packet; the player-facing prompt must not expose GM-only facts.
-3. Use at least 8 actual player turns where possible. Do not simulate all player turns inside one GM response.
-4. Include a mixture of observation, ordinary conversation, an ordinary interaction, an unanticipated action, a pause/wait, and a decision to continue or leave. Do not force a specific route.
-5. Preserve the exact player inputs and GM outputs for independent review.
-6. Review the three quality layers separately. The reviewer must inspect both the scene experience and the underlying information-channel correctness.
-7. Run at least one repeat with a different reasonable player-action sequence before treating the baseline as stable.
-8. Record model/version, workbench commit, fixture version, execution mode, and whether the run was live multi-turn, synthetic, or independently reviewed.
+## 六、基准执行流程
 
-A single successful run is a sample, not proof of stable capability.
+1. 在一个全新的独立会话中，使用固定版本的基准规范和场景资料。
+2. GM 只能接收 GM 专用资料；玩家会话不得暴露 GM-only 内容。
+3. 尽可能进行至少 8 个真实玩家回合。不得在一条 GM 回复中模拟全部玩家行动。
+4. 行动类型应自然覆盖观察、普通交谈、日常互动、预案外行动、停顿/等待，以及继续或离开的决定；不得强迫玩家走固定路线。
+5. 保存玩家原始输入和 GM 原始输出，供独立审核。
+6. 分开审核三个质量层次。审核者既要检查场景体验，也要检查底层信息通道是否正确。
+7. 至少使用一组明显不同但合理的玩家行动序列重复一次，之后才考虑基准是否稳定。
+8. 记录模型/版本、工作台提交版本、夹具版本、执行方式，以及本次属于真实多轮交互、合成模拟还是独立审核。
 
-## 7. Pressure-test comparison protocol
+一次成功运行只是一个样本，不足以证明稳定能力。
 
-Every later specialist or integrated pressure test should:
-- cite this baseline version;
-- retain the same foundational correctness requirements;
-- identify which Layer II / III dimensions are under added pressure;
-- report the low-pressure baseline and pressure result separately where comparable;
-- describe which dimensions degraded, held, or improved;
-- report major and critical failure counts separately from ordinary presentation scores;
-- state whether any improvement came at the cost of another dimension.
+## 七、与后续压力测试的比较规则
 
-Pressure does not lower the baseline. The test may explain why quality degrades, but it must not redefine degraded output as acceptable.
+后续每个专项测试或综合压力测试都应：
+- 引用本基准版本；
+- 保留完全相同的基础正确性要求；
+- 明确本轮额外施压的是第二层或第三层的哪些维度；
+- 在可比较时分别报告低压基准和压力测试结果；
+- 说明哪些维度退化、保持或提升；
+- 将重大失败、致命失败次数与普通表现评分分开报告；
+- 说明任何能力提升是否以牺牲其他维度为代价。
 
-## 8. Current calibration status
+压力不会降低基准。测试可以解释质量为何退化，但不能把退化后的表现重新定义为合格。
 
-- Standard definition: DRAFTED.
-- User tolerance calibration: minor errors tolerated; average one major failure per complete session is unacceptable.
-- Baseline scene: proposed, pending execution and user review.
-- Baseline scores: NOT ESTABLISHED.
-- Pressure-test results: must not be compared against an invented or assumed numeric baseline until calibration runs are completed.
+## 八、当前校准状态
 
+- 标准定义：已形成草案。
+- 用户容忍度校准：允许轻微错误；完整 Session 平均每团一次重大失败不可接受。
+- 基准场景：已提出，等待实际运行与用户评价。
+- 基准分数：尚未建立。
+- 压力测试比较：在低压基准完成校准前，不得假设或编造数值基线。
