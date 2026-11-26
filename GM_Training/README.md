@@ -6,8 +6,8 @@
 
 - [GM 能力架构](./00_GM_CAPABILITY_ARCHITECTURE.md)：全体系的权威结构、能力联动模型、综合优秀标准和文件职责。
 - [TRPG GM Skill](./SKILL.md)：运行入口和现场编排。新对话恢复、风险路由、人物/叙事联动、状态维护与 Session 收束。
-- [叙事质量基准](./NARRATIVE_QUALITY_BASELINE.md)：跨专项测试通用的叙事质量标准、信息正确性门槛、错误容忍度、评分锚点与低压力校准方案。
-  - [基准场景 GM Packet](./Training_Logs/NARRATIVE_QUALITY_BASELINE_GM_PACKET.md)（GM-only）
+- [TRPG 叙事质量基准](./NARRATIVE_QUALITY_BASELINE.md)：跨专项测试通用的叙事质量标准、信息正确性门槛、错误容忍度、评分锚点与低压力校准方案。
+  - [基准场景 GM 专用资料](./Training_Logs/NARRATIVE_QUALITY_BASELINE_GM_PACKET.md)（仅主持可见）
   - [基准场景玩家启动提示](./Training_Logs/NARRATIVE_QUALITY_BASELINE_PLAYER_PROMPT.md)
   - [基准场景独立审核表](./Training_Logs/NARRATIVE_QUALITY_BASELINE_REVIEW_CHECKLIST.md)
   - [独立会话执行提示](./Training_Logs/NARRATIVE_QUALITY_BASELINE_EXECUTION_PROMPT.md)
