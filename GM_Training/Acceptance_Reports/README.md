@@ -8,5 +8,6 @@
 - [P0 第三轮复核与 P1 交接](./GM_RUNTIME_P0_THIRD_ROUND_REVIEW_AND_P1_HANDOFF.md)
 - [P1-0 修复与 P1-0C 交接](./GM_RUNTIME_P1_0_REMEDIATION_AND_P1_0C_HANDOFF.md)
 - [T0 自然语言盲测执行状态（2026-11-24）](./T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_PREPARATION_AND_EXECUTION_STATUS_2026-11-24.md)
+- [H1-3 自然行为测试失败记录（2026-11-26）](./H1_3_NATURAL_BEHAVIOR_FAILURE_2026-11-26.md)
 
 验收报告记录的是对应测试时点的结果，不自动代表当前 main 的最新状态。后续复测应新增报告，不覆盖历史结论。
