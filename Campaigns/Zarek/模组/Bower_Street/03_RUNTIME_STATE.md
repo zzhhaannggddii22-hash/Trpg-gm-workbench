@@ -1,7 +1,7 @@
 # Bower Street｜Runtime State
 
 > 当前状态：ACTIVE / SESSION 01 CLOSED / MODULE IN PROGRESS
-> 本文件是唯一有效的当前运行快照。只记录实际发生的桌面状态；GM-only 信息与玩家知识严格分离。
+> 本文件是当前运行快照入口。此历史记录未附可验证的发布批次清单，按 LEGACY_UNMIGRATED 恢复。定向核对编号日志、已呈现锚点及有关权威后，按字段决定推进范围。
 
 ## Session 状态
 - Module：Bower Street（行动代号：《旧日回声》）
