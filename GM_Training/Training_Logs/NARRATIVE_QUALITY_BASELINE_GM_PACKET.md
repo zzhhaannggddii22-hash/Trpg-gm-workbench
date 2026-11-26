@@ -49,7 +49,7 @@ Do not inventory every object in the opening. Present enough spatial anchors for
 - Knowledge: knows only what he has personally experienced or been told. He does not know local business details unless the proprietor tells him.
 - Speech: polite, short answers at first; if conversation develops naturally, he can become more talkative. Do not make him cryptic.
 - Autonomy: may check the rain, shift his damp jacket, ask for hot water, or resume reading a small paperback. Do not make him initiate conversation every turn.
-- Private memory: the wooden sign above the counter resembles one from a village where he spent part of his childhood. He has not mentioned this to anyone. If he looks at the sign, the player may observe his gaze lingering; do not narrate “he remembers…” or explain what he recognizes. If asked, he may choose to share the memory in ordinary language.
+- Private memory: the wooden sign above the counter resembles one from a village where he spent part of his childhood. He has not mentioned this to anyone. During the opening, at a natural pause, his gaze may rest on the sign for a moment before he returns to drying his sleeve. This is the observable cue; do not narrate “he remembers…” or explain what he recognizes. If asked, he may choose to share the memory in ordinary language.
 
 ## 4. Truth and information channels
 
