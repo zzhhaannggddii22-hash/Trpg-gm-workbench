@@ -689,17 +689,17 @@ CONTINUE 恢复时，必须同时读取并区分：
 
 ## 14.10 Runtime 快照与事件历史冲突时的字段级裁定（P1 修订）
 
-Runtime State 是当前值快照，Session Log 是状态变化历史。两者权威职责不同，任何一方都不能仅凭文件身份自动抹除另一方的有效记录。本节负责形成一次明确的字段级裁定；Manifest 的证据格式与 revision 链规则见 §14.14。
+Runtime State 是当前值快照，Session Log 是状态变化历史。两者权威职责不同，任何一方都不能仅凭文件身份自动抹除另一方的有效记录。本节负责形成一次明确的字段级裁定。活动桌内、尚未离开同一已完成裁定的当前值，沿用 §3 的事件结果及其后的同桌变化；跨文件恢复、持久化修订或 Runtime/Session Log 冲突，则按 §14.14 的不可变 Manifest 核验字段应用与 revision 链。不得要求普通同桌事件必须先写入 Manifest，也不得用同桌临时结果冒充持久化读回。
 
-当 Runtime 字段与 Session Log 事件冲突时，必须逐字段检查：
+每当需要把某字段作为当前值用于玩家回复、状态栏、回顾、行动路由或状态写入时，尤其在 Runtime 字段与 Session Log 事件冲突时，必须逐字段检查：
 1. 冲突字段及其 object_id / field_path 是否指向同一对象和同一字段；
 2. Session Log 事件是否为有效事件，是否有可靠来源、明确顺序/时间及对应的 event_revision_id；
-3. 该字段是否被 §14.14 的不可变 manifest 明确覆盖：核对事件的 runtime_application.status、applied_to_revision、reconciliation_ref、applied_field_paths[]，并在 manifest 的 ordered_applications[].applied_fields[] 中找到完全匹配的 object_id、field_path、before/after value refs；
-4. 若事件整体状态为 PARTIAL，只对 manifest 明确列出的字段继续判断；不得因事件整体不是 APPLIED 就丢弃已证明字段，也不得把 PARTIAL 扩大成所有字段均已应用。若字段未列入 applied_fields，或只有事件 ID/批次 ID 而无字段级证据，该字段仍为 UNKNOWN；
+3. 先确定适用的证据路径：同一活动桌内使用 §3 已完成事件结果和其后续同桌变化；需要证明跨文件/持久化应用时，才核对 §14.14 的不可变 manifest，并检查事件的 runtime_application.status、applied_to_revision、reconciliation_ref、applied_field_paths[]，以及 manifest 的 ordered_applications[].applied_fields[] 中完全匹配的 object_id、field_path、before/after value refs；
+4. 对持久化应用，若事件整体状态为 PARTIAL，只对 manifest 明确列出的字段继续判断；不得因事件整体不是 APPLIED 就丢弃已证明字段，也不得把 PARTIAL 扩大成所有字段均已应用。若字段未列入 applied_fields，或只有事件 ID/批次 ID 而无字段级证据，该字段仍为 UNKNOWN；
 5. 核对 manifest target_revision 到当前 Runtime checkpoint revision 的连续应用链，并检查其后是否有更新该字段的有效事件。只有字段证据覆盖当前 revision，且不存在未解决的后续变化或冲突，才可采用该字段的当前值。
 
 **每个字段只形成一次裁定结果。** 对本轮涉及的每个关键字段，主持侧至少明确其值/候选值、支持来源、字段级 manifest 覆盖与 revision、后续变更、依赖项及裁定状态：
-- VERIFIED：字段值有有效来源，且字段级应用证据覆盖当前 revision；采用该值。
+- VERIFIED：字段值有有效来源；活动桌内由 §3 已完成事件结果及后续变化支持，持久化/跨文件场景则由字段级应用证据覆盖当前 revision；采用该值。
 - PENDING / UNKNOWN：证据缺失、字段未被 manifest 覆盖，或应用链无法连接到当前 revision；不得以旧值、默认值或推算值补齐。
 - DISPUTED：存在互相冲突且尚未解决的有效来源；保留各方原值和来源，不任选一方。
 
