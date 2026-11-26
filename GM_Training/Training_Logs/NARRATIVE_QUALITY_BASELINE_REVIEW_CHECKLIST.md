@@ -1,70 +1,70 @@
-# Narrative Quality Baseline｜Reviewer Checklist — Before the Rain Stops
+# 叙事质量基准｜独立审核表：《雨停之前》
 
-> Fixture: NQB-01 v0.1
-> Status: DRAFT / NOT RUN
-> Use: independent review after a baseline run.
+> 夹具编号：NQB-01 v0.1
+> 状态：草案／尚未运行
+> 用途：基准场景结束后，由独立审核者填写。
 
-## 1. Foundational correctness gate
+## 一、基础正确性硬门槛
 
-For each material fact communicated to the player, identify its channel: directly observed, heard, read, touched, shown, spoken by an NPC, or reasonably inferred from accessible evidence.
+对每一项交付给玩家的重要信息，标明其来源渠道：直接观察、听见、阅读、触摸、展示、NPC 对话，或基于可接触证据作出的合理推断。
 
-Check separately:
-- [ ] Established world facts remain consistent.
-- [ ] Each NPC acts only on their own knowledge.
-- [ ] Player-facing narration does not expose unspoken NPC thoughts, memories, intentions, or private knowledge.
-- [ ] GM-only truths remain concealed unless a valid discovery/disclosure path occurs.
-- [ ] Facts, reports, beliefs, and inferences remain distinguishable.
-- [ ] The GM does not decide the player's actions, emotions, attention, or conclusions.
-- [ ] No rules or scenario constraints are silently rewritten.
+逐项检查：
+- [ ] 已确立的世界事实保持一致。
+- [ ] 每名 NPC 只依据自己拥有的信息行动。
+- [ ] 玩家可见叙事没有泄露 NPC 未说出口的想法、记忆、意图或私人知识。
+- [ ] GM 隐藏真相在出现有效发现或披露路径前保持隐藏。
+- [ ] 事实、来源陈述、信念和推断保持区分。
+- [ ] GM 没有替玩家决定行动、情绪、注意力或结论。
+- [ ] 没有悄悄改写规则或场景约束。
 
-Record severity:
-- Minor: does not materially affect understanding, choice, clue, risk, outcome, or later causality.
-- Major: materially distorts player knowledge, NPC knowledge, world state, fairness, or action consequences.
-- Critical: exposes decisive GM-only truth, fabricates decisive evidence, invalidates a major decision, or removes meaningful agency in a consequential way.
+记录错误严重度：
+- **轻微错误**：不实质影响玩家理解、选择、线索、风险、结果或后续因果。
+- **重大失败**：实质扭曲玩家知识、NPC 知识、世界状态、公平性或行动后果。
+- **致命失败**：泄露决定性 GM 隐藏真相、伪造决定性证据、使重大玩家决定失效，或在重要情境中剥夺玩家的实质行动权。
 
-A critical failure fails the sample. Any major failure prevents a clean foundational PASS for that sample. Across complete sessions, an average of one major failure per session is unacceptable; report raw counts and the per-session rate. Minor errors are tolerated unless they accumulate into a consequential pattern.
+致命失败直接判定该样本失败。出现任何重大失败，该样本都不能获得基础正确性干净通过。跨完整 Session 统计时，平均每团一次重大失败不可接受；必须报告原始次数和每团发生率。轻微错误可以容忍，除非它们累积成有实质影响的模式。
 
-## 2. Interaction quality (0–4)
+## 二、交互质量（0–4 分）
 
-| Dimension | Score | Evidence |
+| 维度 | 分数 | 证据 |
 |---|---:|---|
-| Scene legibility | | |
-| Action affordances | | |
-| Player agency and exploration | | |
-| Causal responsiveness | | |
-| NPC vitality and autonomy | | |
-| Dynamic continuity | | |
-| Information organization | | |
+| 场景可读性 | | |
+| 行动可供性 | | |
+| 玩家能动性与探索 | | |
+| 因果响应 | | |
+| NPC 生命力与自主性 | | |
+| 动态连续性 | | |
+| 信息组织 | | |
 
-## 3. Presentation quality (0–4)
+## 三、叙事表现质量（0–4 分）
 
-| Dimension | Score | Evidence |
+| 维度 | 分数 | 证据 |
 |---|---:|---|
-| Sensory and environmental texture | | |
-| Character expression | | |
-| Dialogue naturalness | | |
-| Emotional legibility | | |
-| Pacing and rhythm | | |
-| Narrative economy | | |
-| Atmosphere and discovery | | |
+| 感官与环境质感 | | |
+| 人物表达 | | |
+| 对话自然度 | | |
+| 情绪可读性 | | |
+| 节奏与韵律 | | |
+| 叙事经济性 | | |
+| 氛围与发现感 | | |
 
-Scoring anchors: 0 fails; 1 weak; 2 adequate; 3 good/stable target; 4 excellent/aspirational. Use N/A only when the scene did not exercise the dimension. Do not average away a weak core dimension.
+评分锚点：0 失效；1 较弱；2 合格；3 良好／稳定目标；4 优秀／追求方向。只有场景确实没有触及某维度时才标记“不适用”。不得用平均分掩盖核心短板。
 
-## 4. Overall judgment
+## 四、总体判断
 
-- Foundational correctness: PASS / FAIL / UNKNOWN
-- Interaction quality profile:
-- Presentation quality profile:
-- Strongest evidence:
-- Weakest dimension:
-- Did any improvement come at the expense of interaction, agency, or expressive quality?
-- Execution type: live multi-turn / synthetic / blind / real-player session
-- Complete session count:
-- Minor errors:
-- Major failures:
-- Critical failures:
-- Major failures per complete session:
-- Claims supported by this sample:
-- Claims not supported by this sample:
+- 基础正确性：PASS / FAIL / UNKNOWN
+- 交互质量分布：
+- 叙事表现质量分布：
+- 最强证据：
+- 最弱维度：
+- 是否以牺牲交互、玩家行动权或表达质量换取了其他方面的提升？
+- 执行方式：真实多轮交互／合成模拟／盲测／真实玩家 Session
+- 完整 Session 数：
+- 轻微错误次数：
+- 重大失败次数：
+- 致命失败次数：
+- 每个完整 Session 的重大失败发生率：
+- 本样本能够支持的结论：
+- 本样本不能支持的结论：
 
-A single sample does not establish stable capability. Do not mark the baseline calibrated until at least two runs with meaningfully different reasonable player-action sequences have been reviewed.
+单个样本不能证明能力稳定。至少完成两次玩家行动序列明显不同、但都符合场景的运行，并经过审核后，才能考虑将基准标记为已校准。
