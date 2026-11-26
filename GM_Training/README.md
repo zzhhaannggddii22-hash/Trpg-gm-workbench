@@ -104,6 +104,7 @@
 - [GM 系统实施记录](./Optimization_Reports/GM_SYSTEM_IMPLEMENTATION_RECORD_2026-11-24.md)
 - [P0 第三轮复核与 P1 交接](./Acceptance_Reports/GM_RUNTIME_P0_THIRD_ROUND_REVIEW_AND_P1_HANDOFF.md)
 - [P1-0 修复与 P1-0C 交接](./Acceptance_Reports/GM_RUNTIME_P1_0_REMEDIATION_AND_P1_0C_HANDOFF.md)
+- [P1-0C 地基质量迭代恢复与首轮静态审查（2026-11-26）](./Acceptance_Reports/GM_RUNTIME_P1_0C_RESUMPTION_AND_STATIC_AUDIT_2026-11-26.md)
 - [P1-0R 持久化故障注入报告](./Acceptance_Reports/GM_RUNTIME_P1_0R_FAULT_INJECTION_REPORT_2026-11-25.md)
 - [性能优化阶段交接与地基质量暂缓清单](./Acceptance_Reports/GM_RUNTIME_PERFORMANCE_PHASE_HANDOFF_2026-11-25.md)
 - [P0 合成验收夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_FIXTURE_v1.md)
