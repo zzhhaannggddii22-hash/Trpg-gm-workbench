@@ -64,6 +64,7 @@
 
 ## 6. 验收与可靠性测试
 
+- [GM 自测与验收执行协议](./SELF_TESTING_PROTOCOL.md)：默认的 GitHub 版本化夹具、独立测试会话、分阶段输入、BLOCKED 处理和独立审核流程。
 - [GM 系统质量验收提示词](./GM_SYSTEM_ACCEPTANCE_PROMPT.md)
 - [P0/P1 验收报告与测试夹具](./Acceptance_Reports/)
 - [验收测试夹具与执行提示](./Acceptance_Test_Fixtures/README.md)：合成夹具、目标 Chat 执行提示与操作者协议。
