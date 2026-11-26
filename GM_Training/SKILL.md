@@ -4,7 +4,7 @@ description: Run, prepare, adjudicate, narrate, and review a rules-faithful, pla
 license: private-project
 metadata:
   author: Casey
-  version: "0.7"
+  version: "0.8"
   type: orchestrator
   mode: application
   domain: tabletop-rpg
