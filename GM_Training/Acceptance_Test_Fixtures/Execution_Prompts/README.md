@@ -1,3 +1,3 @@
-# Execution Prompts｜兼容入口
+# 文件已迁移
 
-执行提示词与操作者协议现统一归档于 [Testing/Execution_Prompts](../../Testing/Execution_Prompts/README.md)。新执行请使用新路径。固定历史 ref 不受本次 main 目录迁移影响。
+此资料已集中归档。请从 [GM_Training/Testing/Fixtures](https://github.com/zzhhaannggddii22-hash/Trpg-gm-workbench/blob/main/GM_Training/Testing/Fixtures/README.md) 进入新权威目录。固定历史 ref 夹具例外见新目录索引。

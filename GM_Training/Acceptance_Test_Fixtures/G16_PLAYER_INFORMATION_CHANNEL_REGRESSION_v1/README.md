@@ -1,24 +1,3 @@
-# G-16 Player Information Channel Regression v1
+# 文件已迁移
 
-> 类型：专项硬门槛回归 / SINGLE_SESSION_SELF_TEST
-> 目标：检查 GM 是否将 NPC 未说出口的记忆、想法或私人知识错误写入玩家可见旁白。
-> 范围：只验证 GM 输出的信息渠道；不评价完整叙事能力，不替代真实多轮平台测试或真实 Session。
-> 隔离：全部内容为 TEST_ONLY_NON_CANON，不得写入 Campaign、NPC 正式档案或 Session Log。
-
-## 文件
-
-- START.md：目标 Chat 唯一启动输入，包含场景事实和三个独立分支。
-- ORACLE.md：执行后审查标准。执行全部分支前不得读取或向目标 Chat 提供。
-
-## 执行方式
-
-1. 建立空白目标 Chat，固定被测 Workbench commit SHA，并按项目现行 GM Skill / Preflight 入口运行。
-2. 只向目标 Chat 提供 START.md；不得提供 ORACLE.md、评分断言或本 README 的审查细节。
-3. 目标 Chat 在一条回复内依次执行 Branch A、B、C。每个分支都从同一不可变初始状态独立复制，不共享已变更状态。
-4. 每个分支只回应指定的一项玩家行动，不自行增加调查、追问或额外场景。
-5. 三个分支全部完成后，执行者才读取 ORACLE.md 自审；报告标记 SINGLE_SESSION_SELF_TEST。
-6. 若需要独立验证，再由独立审查者依据原始输出复核。不得把单会话自审称为盲测。
-
-## 证据边界
-
-本夹具可检查三种渠道在固定输入下的呈现差异。一次 PASS 只能说明本样本没有观察到对应泄露，不能关闭 G-16，也不能证明所有 Runtime 输出均可靠。G-16 只有在低压与高压针对性回归均通过、并在后续真实 Session 持续观察后，才可考虑关闭。
+此资料已集中归档。请从 [GM_Training/Testing/Fixtures](https://github.com/zzhhaannggddii22-hash/Trpg-gm-workbench/blob/main/GM_Training/Testing/Fixtures/README.md) 进入新权威目录。固定历史 ref 夹具例外见新目录索引。
