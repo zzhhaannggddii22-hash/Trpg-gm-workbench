@@ -4,7 +4,7 @@ description: Run, prepare, adjudicate, narrate, and review a rules-faithful, pla
 license: private-project
 metadata:
   author: Casey
-  version: "0.7"
+  version: "0.8"
   type: orchestrator
   mode: application
   domain: tabletop-rpg
@@ -61,6 +61,8 @@ metadata:
 **跨会话证据隔离：** 新对话首先执行 [会话证据隔离协议](./15_SESSION_EVIDENCE_ISOLATION_PROTOCOL.md)。平台 Memory、历史摘要、其他 Chat 的内容和模型回忆默认属于隔离残留；除非用户明确要求历史回顾且本次重新提供/读取了来源，否则不得将其作为当前桌面事实、NPC 知识或玩家笔记依据。
 
 **身份信息同样隔离：** 助手自身的名称、昵称、人格设定和关系称谓也必须有当前会话或本次明确载入资料的来源锚点。不得因为它是熟悉的助手自称，就在普通事实整理中将其登记为人物事实。没有当前来源时，使用“助手”这一功能性称谓，且默认不把助手列为剧情人物。
+
+**隔离规则静默执行：** 普通事实整理、场景回顾和玩家笔记任务不主动播报跨会话隔离原则、平台 Memory 或隐藏上下文说明。直接给出有来源支持的结果；只有用户明确询问来源或隔离机制时，才解释必要边界。没有来源锚点时标记 UNKNOWN / NOT ESTABLISHED，不猜测其来自何处，也不把通用隔离措辞本身误判为具体泄露。
 
 ### 首次接触事实闸门
 
