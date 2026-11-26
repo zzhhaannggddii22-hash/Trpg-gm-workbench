@@ -4,6 +4,8 @@
 
 ## 核心架构
 
+- [测试资料中心](GM_Training/Testing/README.md)：夹具、执行提示、验收报告与长期基准的统一入口。
+
 - [项目目录与文件职责](PROJECT_STRUCTURE.md)：仓库结构、权威归属与迁移约定。
 - [GM 能力架构](GM_Training/00_GM_CAPABILITY_ARCHITECTURE.md)：定义通用 GM 能力如何在真实场景中有机联动，以及整体优秀的验收原则。
 - [GM Training](GM_Training/README.md)：通用主持原则、运行 Skill、人物模拟、叙事呈现、备团流程、训练与评价。

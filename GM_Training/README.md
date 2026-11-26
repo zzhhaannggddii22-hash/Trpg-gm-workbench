@@ -7,10 +7,10 @@
 - [GM 能力架构](./00_GM_CAPABILITY_ARCHITECTURE.md)：全体系的权威结构、能力联动模型、综合优秀标准和文件职责。
 - [TRPG GM Skill](./SKILL.md)：运行入口和现场编排。新对话恢复、风险路由、人物/叙事联动、状态维护与 Session 收束。
 - [TRPG 叙事质量基准](./NARRATIVE_QUALITY_BASELINE.md)：跨专项测试通用的叙事质量标准、信息正确性门槛、错误容忍度、评分锚点与低压力校准方案。
-  - [基准场景 GM 专用资料](./Training_Logs/NARRATIVE_QUALITY_BASELINE_GM_PACKET.md)（仅主持可见）
-  - [基准场景玩家启动提示](./Training_Logs/NARRATIVE_QUALITY_BASELINE_PLAYER_PROMPT.md)
-  - [基准场景独立审核表](./Training_Logs/NARRATIVE_QUALITY_BASELINE_REVIEW_CHECKLIST.md)
-  - [独立会话执行提示](./Training_Logs/NARRATIVE_QUALITY_BASELINE_EXECUTION_PROMPT.md)
+  - [基准场景 GM 专用资料](./Testing/Baselines/NARRATIVE_QUALITY_BASELINE_GM_PACKET.md)（仅主持可见）
+  - [基准场景玩家启动提示](./Testing/Baselines/NARRATIVE_QUALITY_BASELINE_PLAYER_PROMPT.md)
+  - [基准场景独立审核表](./Testing/Baselines/NARRATIVE_QUALITY_BASELINE_REVIEW_CHECKLIST.md)
+  - [独立会话执行提示](./Testing/Baselines/NARRATIVE_QUALITY_BASELINE_EXECUTION_PROMPT.md)
 - [综合能力评估框架](./04_EVALUATION_FRAMEWORK.md)：硬门槛、综合体验维度、场景联动评价和整体优秀判定。
 
 ## 2. 专业能力规范
@@ -40,8 +40,8 @@
 - [高级模型 Prep QA 协议](./ADVANCED_MODEL_PREP_QA_PROTOCOL.md)
 - [运行状态模板](./RUNTIME_STATE_TEMPLATE.md)
 - [Context Assembly & Trace 设计记录](./Optimization_Reports/CONTEXT_ASSEMBLY_AND_TRACE_DESIGN.md)
-- [Context Assembly & Trace 回归夹具 v1](./Acceptance_Test_Fixtures/CONTEXT_ASSEMBLY_TRACE_REGRESSION_v1.md)
-- [历史设计归档 · Scene Continuity & Evidence Record 回归夹具 v1](./Acceptance_Test_Fixtures/SCENE_CONTINUITY_AND_EVIDENCE_RECORD_REGRESSION_v1.md)
+- [Context Assembly & Trace 回归夹具 v1](./Testing/Fixtures/CONTEXT_ASSEMBLY_TRACE_REGRESSION_v1.md)
+- [历史设计归档 · Scene Continuity & Evidence Record 回归夹具 v1](./Testing/Fixtures/SCENE_CONTINUITY_AND_EVIDENCE_RECORD_REGRESSION_v1.md)
 - [可靠性与体验方向控制协议](./GM_RELIABILITY_AND_EXPERIENCE_CONTROL_PROTOCOL.md)
 
 ## 4. 训练、复盘与缺陷追踪
@@ -55,9 +55,9 @@
 - [训练题库](./NARRATIVE_TRAINING_QUESTION_BANK.md)：专项题与综合题候选；题库不定义能力标准。
 - [开放训练问题清单](./Training_Logs/OPEN_TRAINING_BACKLOG.md)：尚未解决的问题及后续验证要求。
 - [2026-11-25《雨前过桥》箱庭实测记录](./Training_Logs/2026-11-25_MICRO_SANDBOX_001_BRIDGE_BEFORE_RAIN_REVIEW.md)：首个完成的箱庭运行样本、玩家反馈、观察和待验证项。
-- [Narrative Stress Test 01｜社区中心暴雨撤离](./Training_Logs/NARRATIVE_STRESS_TEST_01_DESIGN.md)：持续压力下综合叙事质量与信息显著性动态升格测试设计。
-- [Narrative Stress Test 01｜首轮运行记录](./Training_Logs/NARRATIVE_STRESS_TEST_01_RUN_RECORD.md)：八个合成行动的单会话自测；仅作内部诊断，不是独立盲测或真实跑团证据。
-- [Narrative Stress Test 01｜玩家信息边界复核补遗](./Training_Logs/NARRATIVE_STRESS_TEST_01_PLAYER_INFORMATION_BOUNDARY_AUDIT.md)：纠正首轮自审遗漏，确认 ACTION 01 存在重大玩家信息通道泄露。
+- [Narrative Stress Test 01｜社区中心暴雨撤离](./Testing/Reports/NARRATIVE_STRESS_TEST_01_DESIGN.md)：持续压力下综合叙事质量与信息显著性动态升格测试设计。
+- [Narrative Stress Test 01｜首轮运行记录](./Testing/Reports/NARRATIVE_STRESS_TEST_01_RUN_RECORD.md)：八个合成行动的单会话自测；仅作内部诊断，不是独立盲测或真实跑团证据。
+- [Narrative Stress Test 01｜玩家信息边界复核补遗](./Testing/Reports/NARRATIVE_STRESS_TEST_01_PLAYER_INFORMATION_BOUNDARY_AUDIT.md)：纠正首轮自审遗漏，确认 ACTION 01 存在重大玩家信息通道泄露。
 - [2026-11-24 场景描绘与动态叙事综合训练记录](./Training_Logs/2026-11-24_SCENE_AND_DYNAMIC_NARRATIVE_INTEGRATED_TRAINING.md)：便利店、搬家夫妻、仓库交接、医院走廊、旧办公楼、人物兴趣与日常场景等完整训练沉淀。
 - [2026-11-24 NPC 对话与交流流畅度训练](./Training_Logs/2026-11-24_NPC_DIALOGUE_AND_CONVERSATIONAL_FLOW.md)
 - [人物塑造与互动研究](../Research/CHARACTER_AND_INTERACTION_TRAINING_2026-11-24.md)
@@ -78,11 +78,11 @@
 
 - [GM 自测与验收执行协议](./SELF_TESTING_PROTOCOL.md)：默认采用 GitHub 版本化夹具、单会话自动执行、执行后结构化自审与完整报告；独立盲审仅在需要时升级。
 - [TRPG 叙事质量基准 NQB-01 v1.0](./NARRATIVE_QUALITY_BASELINE.md)：低压日常叙事验收标准，适用于主 Skill 与后续候选版本。
-- [主分支 Skill 叙事验收记录 01](./Training_Logs/NARRATIVE_QUALITY_BASELINE_MAIN_SKILL_RUN_01.md) 与 [记录 02](./Training_Logs/NARRATIVE_QUALITY_BASELINE_MAIN_SKILL_RUN_02.md)：固定 main commit 下的两组低压合成模拟结果。
-- [主分支 Skill 真实玩家短测记录 03](./Training_Logs/NARRATIVE_QUALITY_BASELINE_MAIN_SKILL_RUN_03.md)：固定 main commit 下的 4 个真实玩家行动回合；用户主动提前结束，属于有效但覆盖有限的真实交互样本。
-- [GM 系统质量验收提示词](./GM_SYSTEM_ACCEPTANCE_PROMPT.md)
-- [P0/P1 验收报告与测试夹具](./Acceptance_Reports/)
-- [验收测试夹具与执行提示](./Acceptance_Test_Fixtures/README.md)：合成夹具、单会话可执行伴随测试、专项目标 Chat 执行提示与操作者协议。
+- [主分支 Skill 叙事验收记录 01](./Testing/Reports/NARRATIVE_QUALITY_BASELINE_MAIN_SKILL_RUN_01.md) 与 [记录 02](./Testing/Reports/NARRATIVE_QUALITY_BASELINE_MAIN_SKILL_RUN_02.md)：固定 main commit 下的两组低压合成模拟结果。
+- [主分支 Skill 真实玩家短测记录 03](./Testing/Reports/NARRATIVE_QUALITY_BASELINE_MAIN_SKILL_RUN_03.md)：固定 main commit 下的 4 个真实玩家行动回合；用户主动提前结束，属于有效但覆盖有限的真实交互样本。
+- [GM 系统质量验收提示词](./Testing/Execution_Prompts/Historical/GM_SYSTEM_ACCEPTANCE_PROMPT.md)
+- [P0/P1 验收报告与测试夹具](./Testing/Reports/)
+- [验收测试夹具与执行提示](./Testing/Fixtures/README.md)：合成夹具、单会话可执行伴随测试、专项目标 Chat 执行提示与操作者协议。
 
 合成测试、盲测和真实跑团分别报告。未执行的测试必须标记 NOT STARTED / NOT TESTED；不得以文件已更新推断运行可靠性通过。
 
@@ -97,24 +97,24 @@
 
 ## 8. 运行可靠性与综合验收材料
 
-- [执行提示词与操作者协议](./Acceptance_Test_Fixtures/Execution_Prompts/README.md)：按目标 Chat 执行、独立审查和操作者隔离分类归档。
+- [执行提示词与操作者协议](./Testing/Execution_Prompts/README.md)：按目标 Chat 执行、独立审查和操作者隔离分类归档。
 - [P1 性能与执行效率验证计划](./Optimization_Reports/GM_RUNTIME_P1_PERFORMANCE_PLAN.md)：性能验证阶段门槛与测量方案。
 
 以下文件属于工程验收和测试执行资料，不代表测试已通过：
 
-- [GM 系统质量验收报告](./Acceptance_Reports/GM_SYSTEM_ACCEPTANCE_REPORT_2026-11-24.md)
+- [GM 系统质量验收报告](./Testing/Reports/GM_SYSTEM_ACCEPTANCE_REPORT_2026-11-24.md)
 - [GM 系统优化方案](./Optimization_Reports/GM_SYSTEM_OPTIMIZATION_PLAN_2026-11-24.md)
 - [GM 系统实施记录](./Optimization_Reports/GM_SYSTEM_IMPLEMENTATION_RECORD_2026-11-24.md)
-- [P0 第三轮复核与 P1 交接](./Acceptance_Reports/GM_RUNTIME_P0_THIRD_ROUND_REVIEW_AND_P1_HANDOFF.md)
-- [P1-0 修复与 P1-0C 交接](./Acceptance_Reports/GM_RUNTIME_P1_0_REMEDIATION_AND_P1_0C_HANDOFF.md)
-- [P1-0R 持久化故障注入报告](./Acceptance_Reports/GM_RUNTIME_P1_0R_FAULT_INJECTION_REPORT_2026-11-25.md)
-- [性能优化阶段交接与地基质量暂缓清单](./Acceptance_Reports/GM_RUNTIME_PERFORMANCE_PHASE_HANDOFF_2026-11-25.md)
-- [P0 合成验收夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_FIXTURE_v1.md)
-- [P0 回归夹具 v2](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_REGRESSION_v2.md)
-- [P0 回归夹具 v3](./Acceptance_Test_Fixtures/GM_RUNTIME_P0_REGRESSION_v3.md)
-- [P1-0C 定向回归夹具 v1](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v1.md)
-- [P1-0C 定向回归夹具 v2](./Acceptance_Test_Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v2.md)
-- [T0 自然语言盲测执行状态](./Acceptance_Reports/T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_PREPARATION_AND_EXECUTION_STATUS_2026-11-24.md)
-- [验收执行提示词与操作者协议](./Acceptance_Test_Fixtures/Execution_Prompts/README.md)：P0/P1/T0 执行提示与操作者隔离资料。
+- [P0 第三轮复核与 P1 交接](./Testing/Reports/GM_RUNTIME_P0_THIRD_ROUND_REVIEW_AND_P1_HANDOFF.md)
+- [P1-0 修复与 P1-0C 交接](./Testing/Reports/GM_RUNTIME_P1_0_REMEDIATION_AND_P1_0C_HANDOFF.md)
+- [P1-0R 持久化故障注入报告](./Testing/Reports/GM_RUNTIME_P1_0R_FAULT_INJECTION_REPORT_2026-11-25.md)
+- [性能优化阶段交接与地基质量暂缓清单](./Testing/Reports/GM_RUNTIME_PERFORMANCE_PHASE_HANDOFF_2026-11-25.md)
+- [P0 合成验收夹具 v1](./Testing/Fixtures/GM_RUNTIME_P0_FIXTURE_v1.md)
+- [P0 回归夹具 v2](./Testing/Fixtures/GM_RUNTIME_P0_REGRESSION_v2.md)
+- [P0 回归夹具 v3](./Testing/Fixtures/GM_RUNTIME_P0_REGRESSION_v3.md)
+- [P1-0C 定向回归夹具 v1](./Testing/Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v1.md)
+- [P1-0C 定向回归夹具 v2](./Testing/Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v2.md)
+- [T0 自然语言盲测执行状态](./Testing/Reports/T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_PREPARATION_AND_EXECUTION_STATUS_2026-11-24.md)
+- [验收执行提示词与操作者协议](./Testing/Execution_Prompts/README.md)：P0/P1/T0 执行提示与操作者隔离资料。
 
 运行可靠性测试、叙事综合能力评估和真实跑团体验分别报告。合成测试通过不能证明实际跑团整体优秀；训练样本优秀也不能证明运行可靠性验收通过。

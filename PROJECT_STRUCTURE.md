@@ -33,13 +33,22 @@
 ## GM_Training 内部组织
 
 - 根目录：当前通用权威规范、主 Skill、训练计划与主要入口。
-- `Acceptance_Reports/`：验收结论、缺陷复核和交接报告。
-- `Acceptance_Test_Fixtures/`：可重复测试夹具与执行提示词/操作者协议。
+- `Testing/Reports/`：验收结论、缺陷复核和交接报告。
+- `Testing/`：测试资料中心，按 Fixtures、Execution_Prompts、Reports、Baselines 分类。
 - `Optimization_Reports/`：性能计划、工程优化方案与实施记录。
 - `Training_Logs/`：实际训练样本、反馈与开放问题。
 - `MICRO_SANDBOX_LAB/`：跨系统、NON-CANON 的可玩微型箱庭训练子项目。
 
 执行提示词与操作者协议虽集中归档，但公开仓库不提供访问控制；标记 GM-only 只表示使用权限边界，不代表文件对公众保密。
+
+## Testing 内部组织
+
+- `Fixtures/`：可重复测试夹具、START/ACTION/ORACLE 与合成输入。
+- `Execution_Prompts/`：目标 Chat 执行提示、操作者协议与历史提示。
+- `Reports/`：验收结论、复核、运行记录与缺陷交接。
+- `Baselines/`：叙事质量基准的 GM Packet、玩家启动材料、审核表与执行提示。
+
+`Training_Logs/` 继续保存训练过程、能力盘点和开放问题；`Optimization_Reports/` 继续保存工程优化资料。固定历史 ref 的旧目录在其历史提交中保持原样。
 
 ## Systems 内部组织
 
