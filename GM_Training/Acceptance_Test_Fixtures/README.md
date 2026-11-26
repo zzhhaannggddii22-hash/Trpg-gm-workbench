@@ -15,6 +15,8 @@
 - [P1-0C 定向回归夹具 v1](./GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v1.md)
 - [P1-0C 定向回归夹具 v2](./GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v2.md)
 - [P1-0R 隔离文件系统故障注入脚本](./P1_0R/p1_0r_fault_harness.py)
+- [L3 NPC 主动性与离场连续性回归夹具 v1](./L3_NPC_AUTONOMY_AND_DORMANT_CONTINUITY_REGRESSION_v1.md)：从实际跑团入口验证指定 L3 NPC 的主动互动、玩家离场期间的低成本事务延续、计划受扰后的调整，以及时间推进后的再次接触；三条分支均使用同一初始状态并保持 TEST_ONLY_NON_CANON。
+- [叙事训练成果向实际跑团迁移回归夹具 v1](./NARRATIVE_RUNTIME_TRANSFER_REGRESSION_v1.md)：验证常驻叙事约束、场景上下文复用、绿色快路径质量、训练成果经 Skill/Prep/Preflight 进入实战，以及不采用逐轮检查清单。
 
 ## T0 自然语言盲测材料
 
