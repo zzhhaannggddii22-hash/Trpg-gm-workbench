@@ -1,9 +1,11 @@
 # NQB-01 v0.3｜GM 专用场景资料：《雨脚客栈，雨未停》
 
 > Fixture: NQB-01 v0.3
-> Status: GM-ONLY FIXTURE / FIRST A-MODE RUN RECORDED / OPTIMIZATION FOLLOW-UP NOT YET TESTED
+> Status: TEST-ONLY SCENE SOURCE / NOT A STANDALONE RUNTIME PROMPT / RUNTIME EXECUTION BLOCKED PENDING AN AUTHORIZED PRE-EXISTING TEST CAMPAIGN
 > Canon: TEST_ONLY_NON_CANON
 > GM-only: 不得向玩家展示本文件。
+
+> **入口约束：** 本 Packet 仅是测试场景的 GM-only 来源资料，不是 Campaign、Module、Preflight、Runtime State 或 GM 运行环境。不得直接把它贴给模型后开始扮演。只有在用户授权使用一个已存在、已登记且具有独立隔离存储的 Test Campaign 后，才可按正式 GM Skill、Preflight、系统绑定和 Prep-to-Runtime 流程将其装配为测试场景。不得自行创建或拼装运行环境。当前没有已登记的专用 Test Campaign，故本 Packet 目前不可用于有效 Runtime 执行。
 
 ## 一、场景概况
 
