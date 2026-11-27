@@ -127,7 +127,7 @@ class RollRuntimeAdapter:
              "applied_fields":[{"object_id":"RESOURCE_LEDGER","field_path":f"resources.{x['resource_field']}",
                 "before_value_ref":fingerprint(x["before"]),"after_value_ref":fingerprint(x["after"])} for x in rows],
              "application_status":"APPLIED","source_event_ref":event["event_revision_id"]}],"manifest_fingerprint":None}
-        manifest["manifest_fingerprint"]=fingerprint(manifest)
+        manifest["manifest_fingerprint"]=fingerprint({k:v for k,v in manifest.items() if k!="manifest_fingerprint"})
         mp=self.manifests/f"MANIFEST__{event['batch_id']}.json"
         if mp.exists() and read_json(mp)!=manifest: raise RuntimeError("IMMUTABLE_MANIFEST_CONFLICT")
         if not mp.exists(): atomic_json(mp,manifest)
