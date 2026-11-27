@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/trpg-gm-workbench/triangle-agency-dice-ui/roll-event.schema.json",
+  "title": "Triangle Agency Player-Facing Roll Event",
+  "description": "Player-visible projection of a resolved or in-progress roll event. Display contract only; not a rules engine or resource ledger.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["event_id", "system_id", "ruleset_version", "mechanic", "status", "roller", "roll_source", "dice"],
+  "properties": {
+    "event_id": {"type": "string", "minLength": 1},
+    "system_id": {"const": "triangle_agency"},
+    "ruleset_version": {"const": "中文 v22"},
+    "mechanic": {"type": "string", "enum": ["ASK_THE_AGENCY", "ANOMALY_ABILITY", "CONFLICT_RESOLUTION", "OTHER_RULE_DEFINED"]},
+    "display_title": {"type": "string"},
+    "status": {"type": "string", "enum": ["DECLARED", "ROLLED", "AWAITING_PLAYER_CHOICE", "RESOLVING", "RESOLVED", "PENDING"]},
+    "roller": {"type": "string", "enum": ["GM_ASSISTANT", "PLAYER"]},
+    "roll_source": {"type": "string", "enum": ["HOST_CSPRNG", "TOOL_CSPRNG", "PLAYER_REPORTED", "MODEL_GENERATED", "OTHER_VERIFIED"]},
+    "quality": {"type": ["string", "null"]},
+    "dice": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["slot", "die", "raw_value", "modifications", "removed"],
+        "properties": {
+          "slot": {"type": "integer", "minimum": 1},
+          "die": {"type": "string", "pattern": "^d[0-9]+$"},
+          "raw_value": {"type": "integer", "minimum": 1},
+          "modifications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["sequence", "kind", "reason_label", "before", "after"],
+              "properties": {
+                "sequence": {"type": "integer", "minimum": 1},
+                "kind": {"type": "string", "enum": ["QA_ADJUSTMENT", "BURNOUT_EFFECT", "RULE_ADJUSTMENT", "REROLL", "REMOVAL", "OTHER"]},
+                "reason_label": {"type": "string"},
+                "before": {"type": "integer", "minimum": 1},
+                "after": {"type": ["integer", "null"], "minimum": 1}
+              }
+            }
+          },
+          "final_value": {"type": ["integer", "null"], "minimum": 1},
+          "removed": {"type": "boolean"}
+        }
+      }
+    },
+    "natural_triggers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "status"],
+        "properties": {
+          "label": {"type": "string"},
+          "status": {"type": "string", "enum": ["TRIGGERED", "NOT_TRIGGERED", "PENDING"]}
+        }
+      }
+    },
+    "outcome": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {"type": "string", "enum": ["CONFIRMED", "PENDING"]},
+        "headline": {"type": "string"},
+        "details": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "status"],
+        "properties": {
+          "label": {"type": "string"},
+          "before": {"type": ["integer", "number", "null"]},
+          "delta": {"type": ["integer", "number", "null"]},
+          "after": {"type": ["integer", "number", "null"]},
+          "status": {"type": "string", "enum": ["VERIFIED", "PENDING", "NOT_APPLICABLE"]},
+          "ledger_entry_id": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "pending_items": {"type": "array", "items": {"type": "string"}}
+  }
+}
