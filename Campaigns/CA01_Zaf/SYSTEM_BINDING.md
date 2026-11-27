@@ -11,9 +11,16 @@ ruleset:
   edition: "Second Edition"
   language: "zh-CN"
   authority: "Cairn 2e 官方英文 SRD；社区简体中文 SRD 作为阅读参考"
-status: candidate_setup
-activation: pending
-canon_status: character_creation_in_progress
+status: controlled_live_candidate
+activation: USER_AUTHORIZED_CONTROLLED_LIVE_USE
+canon_status: in_progress
+system_maturity: candidate
+runtime_readiness: RECONCILIATION_REQUIRED
+runtime_authorization:
+  scope: CA01_Zaf_ONLY
+  authorized_from: 2026-11-27
+  system_promotion: NOT_GRANTED
+  cross_session_resume: HOLD_PENDING_RECONCILIATION
 player_characters:
   - Zaf
 assistant_controlled_party_members:
@@ -50,7 +57,9 @@ Twin Lakes 战役开始时，Triangle Agency 中扎雷克与凯瑟琳的状态�
 ## 规则与状态边界
 
 - 本 Campaign 仅绑定 Cairn Second Edition；不得混入 Triangle Agency 规则、资源、术语或运行逻辑。
-- Cairn 在 GM Workbench 中仍为 candidate；此文件只登记正在进行的战役/人物创建，不宣称系统已完成接入或正式激活。
+- Cairn 在 GM Workbench 中仍为 candidate。用户授权的 CA01_Zaf 受控实战仅对本 Campaign 有效，不构成系统级 active 认证，也不自动授权其他 Cairn Campaign。
+- 本 Campaign 已进入实际运行；candidate 是系统成熟度，不得再被解释为“战役尚未开始”或“没有玩家可见事件”。
+- 跨会话续接当前为 RECONCILIATION_REQUIRED。恢复前不得从 GM-only Prep 重建玩家经历、NPC 认知或玩家摘要；具体边界以本目录 03_RUNTIME_STATE.md、04_SESSION_LOG.md 和 05_PLAYER_NOTES.md 为准。
 - 规则入口：[Systems/Cairn](../../Systems/Cairn/README.md)。
 - 核心运行手册：[CORE_RULES_RUNTIME.md](../../Systems/Cairn/Rule_Reference/CORE_RULES_RUNTIME.md)。
 - 角色创建与背景速查：[CHARACTER_CREATION_AND_BACKGROUNDS.md](../../Systems/Cairn/Rule_Reference/CHARACTER_CREATION_AND_BACKGROUNDS.md)。
