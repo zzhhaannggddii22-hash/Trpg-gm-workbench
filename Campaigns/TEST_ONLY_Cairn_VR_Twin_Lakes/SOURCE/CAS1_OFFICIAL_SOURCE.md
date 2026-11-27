@@ -8,6 +8,7 @@ Release page: https://cairnpress.itch.io/trouble-in-twin-lakes
 Retrieved: 2026-11-27
 License stated by source: CC-BY-SA 4.0
 This archive is retained for campaign continuity and offline GM reference.
+Root-relative links and image paths are normalized to the official cairnrpg.com host so they render from GitHub; adventure wording is otherwise retained.
 -->
 # Official Source Archive｜CAS-1: Trouble in Twin Lakes
 
@@ -34,7 +35,7 @@ An Adventure Module for Cairn 2e by Yochai Gal
 \*\*Credits:\*\* Written by Yochai Gal, with editing by Derek B. and editing assistance by Yossi Krausz, layout and locale maps by Adam Hensley. Cover art and region map by Ari-Matti Toivonen.
 Produced by Cairn Press.
 The text of this work is licensed under [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en).
-![Trouble in Twin Lakes Cover](/adventures/first-party/img/cas-1/Trouble\_in\_Twin\_Lakes\_Cover.webp)
+![Trouble in Twin Lakes Cover](https://cairnrpg.com/adventures/first-party/img/cas-1/Trouble\_in\_Twin\_Lakes\_Cover.webp)
 ## Introduction
 CAS-1: Trouble in Twin Lakes is the first in a series of standalone adventures for the Cairn 2e adventure game. The adventure revolves around two central mysteries for the party to solve. It includes various NPCs and antagonists, as well as multiple locations to explore. This adventure is suitable for both new and veteran players, and works particularly well for characters still trying to find their place in a wild and potentially dangerous world. Although the region and its denizens are part of the broader \*\*Vald\*\* setting, they can be easily incorporated into any low-fantasy setting of your choice.
 ## On Rules and Procedures
@@ -120,13 +121,13 @@ An elder Half Witch, making her home deep in the Stone Forest. Relies on illusio
 - Can change her form depending on the audience and their intentions. At times she is a young woman with long, auburn hair, and at others she is squat and almost amphibious in appearance.
 - Returns to Deadmill two days after the adventure begins, in the evening. Although she is an immensely powerful being, she is also very old and will try to avoid combat as much as possible. 
 - She has near perfect knowledge of the forest and its history and can offer the party cures for nearly any ailment. She always keeps her word.
-- Carries four of the following [Spellbooks](/second-edition/wardens-guide/spellbooks/): \_Animate Object, Arcane Eye, Auditory Illusion, Beast Form, Befuddle, Haste, Pacify, Push/Pull, Read Mind, Thicket, True Sight, Visual Illusion.\_ 
+- Carries four of the following [Spellbooks](https://cairnrpg.com/second-edition/wardens-guide/spellbooks/): \_Animate Object, Arcane Eye, Auditory Illusion, Beast Form, Befuddle, Haste, Pacify, Push/Pull, Read Mind, Thicket, True Sight, Visual Illusion.\_ 
 - If she is killed, every bird in the Stone Forest will attack her murderer until they are dead or have fled The Wood.
 # Twin Lakes
 This isolated region lies North of the Cities, just a few days' journey by horse through the \*\*Humpbacks\*\*. \*\*Isthmus Town\*\*, the region’s only major settlement, is situated on a narrow strip of land between two freshwater lakes. To the South of the town is mostly farmland, save for Dunston, a defunct fishing village. 
 To the North lies the \*\*Stone Forest\*\*, a vast wooded area dotted with old mills and lumber paths. \*\*West Lake\*\* remains the primary source of both fish and water to the surrounding towns, despite its lack of walking paths or natural cultivation. A winding lakeside pass is all that remains of the once vibrant \*\*East Lake\*\*, now deprived of both fish and healthy drinking water.
 Despite the region’s reputation for relative safety, it is still dangerous to travel at night, as both bandits and night cats are known to pursue vulnerable parties. The adventure begins during the Harvest season, just after the final crops have been gathered.
-![CAS1 Map v2](/adventures/first-party/img/cas-1/CAS1\_Map\_v2.webp)
+![CAS1 Map v2](https://cairnrpg.com/adventures/first-party/img/cas-1/CAS1\_Map\_v2.webp)
 | d6 | Rumors Heard on the Road  
 \*\*Roll 1d6 whenever the party leaves Isthmus Town. Reroll repeated results.\*\* |
 | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -150,8 +151,8 @@ Despite the region’s reputation for relative safety, it is still dangerous to 
 - \*\*Bandits\*\* (x2):  4 HP, 1 Armor, 12 STR, 12 DEX, 9 WIL, sword (d6). One has a short bow (d6).  
 - When testing Morale, save using the leader’s WIL. If their leader is killed, the bandits will retreat.
 # Isthmus Town
-A former logging town, currently squeaking by largely on profits made from fishing \*\*West Lake\*\*. Fewer than thirty families call the town their home. The town market runs from 8am to 2pm each day, boasting a decent array of goods and provisions, including any items under 10gp. (See [Marketplace](/second-edition/players-guide/marketplace/) in 2e Player’s Guide.) Local culinary specialties include fried cod, roasted frog legs, and hot stewberry pie. Fishing equipment (15gp), bog shoes (10gp a pair), and rainproof clothing (15gp) are popular commodities.
-![Isthmus Town](/adventures/first-party/img/cas-1/Isthmus%20Town.webp)
+A former logging town, currently squeaking by largely on profits made from fishing \*\*West Lake\*\*. Fewer than thirty families call the town their home. The town market runs from 8am to 2pm each day, boasting a decent array of goods and provisions, including any items under 10gp. (See [Marketplace](https://cairnrpg.com/second-edition/players-guide/marketplace/) in 2e Player’s Guide.) Local culinary specialties include fried cod, roasted frog legs, and hot stewberry pie. Fishing equipment (15gp), bog shoes (10gp a pair), and rainproof clothing (15gp) are popular commodities.
+![Isthmus Town](https://cairnrpg.com/adventures/first-party/img/cas-1/Isthmus%20Town.webp)
 ## Factions
 ### Tideborn
 A hierarchical religious sect that worships Rivulus, a petty god of rivers and lakes. Even the unaffiliated are familiar with the group’s initiation ceremony, a ritual drowning that occasionally kills participants. Survivors are dubbed Tideborn and adopt a new, water-related moniker (Carp, Reed, Oxbow, and so on). Only clergy need participate in the ritual; however, in recent years, their following among rural folk has increased, especially in villages near bodies of water.
@@ -208,7 +209,7 @@ A heated wood stove dominates the west wall, and a small bed is tucked beneath a
 A dry, well-trod footpath stretching South from Isthmus Town and through the \*\*Humpbacks\*\* and into the \*\*Cities\*\* beyond. Small farms and independent homesteads are scattered alongside it. A small trail splits off to \*\*Dunston\*\* and \*\*East Lake Pass\*\*.
 # Dunston
 A thin circle of ramshackle homes built far apart from one another. Originally a fishing village, before the water in East Lake turned sour. Only impoverished fishers and unlucky farmers make their home here now. Connects to \*\*East Lake Pass\*\*.
-![Dunston](/adventures/first-party/img/cas-1/Dunston.webp)
+![Dunston](https://cairnrpg.com/adventures/first-party/img/cas-1/Dunston.webp)
 ## Fasha’s Farm
 On the West end of the circle is a frail, decrepit \*\*farmhouse\*\*. It sits adjacent to a broken corral on one side and a \*\*withered field\*\* on the other. 
 - \*\*Corral\*\*: Three \*\*sheep\*\* graze in a half-broken corral nearby, their water troughs nearly empty.
@@ -233,7 +234,7 @@ A common arboreal predator in the Stone Forest is the Night Cat, a nocturnal mar
 6 HP, 9 STR, 14 DEX, 5 WIL, claws (d6+d6)
 - Intelligent, nocturnal marsupials that make their homes in forests and swamps. Hunt in packs.
 - \*\*Critical Damage\*\*: The Night Cat begins to eat the target (d4 STR damage) while they are still alive.
-![Stone Forest](/adventures/first-party/img/cas-1/Stone%20Forest.webp)
+![Stone Forest](https://cairnrpg.com/adventures/first-party/img/cas-1/Stone%20Forest.webp)
 # Deadmill
 At the outskirts of the forest is an old gristmill shrouded by overgrown arboreal pillars. Due to the grove’s near-constant darkness, local teens believe it is haunted. (It’s not.) It is half-sunk into the \*\*ground\*\*, with large \*\*paddles\*\* that protrude out of the north side above a dried-up riverbed. Anyone coming from Old Mill Road will arrive at the building’s south entrance, and every 30 seconds a \*\*man\*\* opens the south door.
 - \*\*Ground\*\*: The structure is slowly sinking into the earth, and some of the ground has the properties of quicksand. 
@@ -264,7 +265,7 @@ A lakeside path, overgrown with shrubs and wet grasses. Winds along \*\*East Lak
 A muddy, stinking bog shrouded in mist, and popular source for horror stories (all untrue). The only creatures that live here are frogs, fish, and birds.  The deposits of mud and stink are home to a multitude of corpses, both of animals and those that got left the trail. Parties traveling by foot \*\*add a Fatigue\*\*.
 # White Tower Fens
 A small wood, East of the Downs. Named for its ruined white tower, shrouded in the mists of the nearby bog. Entry via \*\*East Lake Pass\*\* at the fork towards \*\*Old Mill Road.\*\*
-![White Tower Fens](/adventures/first-party/img/cas-1/White Tower Fens.webp)
+![White Tower Fens](https://cairnrpg.com/adventures/first-party/img/cas-1/White Tower Fens.webp)
 ## 1. Whistlewood
 An almost invisible wire crosses the path, tied between two trees. If broken, it emits a high-pitched sound only animals can hear.
 ## 2. Pit Trap
@@ -289,7 +290,7 @@ The creek terminates in a small bog just a few minutes’ walk south of White To
 - The temple is actually a building-sized ship shaped like a beetle. The entry is its “head.”
 - Two sconces are installed at eye-level on the walls inside the stairwell. Diamond-shaped objects are inserted in each. The objects can be removed, and are valuable (150gp, bulky). They are lights, controlled from \*\*[T7. Light Room](#t7-light-room)\*\*. They are presently turned off.
 # Temple of the Fungal Lizards
-![Temple of the Fungal Lizards](/adventures/first-party/img/cas-1/Temple of the Fungal Lizards.webp)
+![Temple of the Fungal Lizards](https://cairnrpg.com/adventures/first-party/img/cas-1/Temple of the Fungal Lizards.webp)
 ## General Information
 - \*\*No light\*\*. Sconces with diamond-shaped objects protrude from the corners of each room (see \*\*[T7. Light Room](#t7-light-room)\*\*). They are currently off. 
 - The walls and floors are painted blue-black and are made from a foreign alloy. They cannot be chipped or broken by mundane weapons, although fire and explosive powders have some effect.
@@ -370,7 +371,7 @@ Adjacent to the door (right, facing the hall) is a small slot above some blood a
 - \*\*Block\*\*: A small crack is visible on one side. It can be easily broken there after a few minutes of smashing. Inside is a large blue \*\*memory prism\*\* (\_bulky\_, worth 1000gp). 
 - \*\*Cloud\*\*: \*\*Vuk\*\*, now an \*\*ash phantom\*\*. Raised to unlife by the exposure of her decaying flesh to the \*\*memory prism\*\*. She cannot leave the room until she has consumed \*\*three human hearts\*\*.
 ## Vuk
-![Vuk](/adventures/first-party/img/cas-1/Vuk.webp)
+![Vuk](https://cairnrpg.com/adventures/first-party/img/cas-1/Vuk.webp)
 A former Queen, murdered by her own kind as their civilization came to an end a millennia before. Cursed to haunt the very chamber of her death, she now means to rule these lands again. In her full form, she is a 7ft-tall Lich Queen with bird-like facial features, wearing a magnificent yellow crest.
 - Cannot return to her full form until she has consumed \*\*three hearts\*\* and the door at \*\*[T10a](#t10a-interrogation-room-door)\*\* is opened. At the start of the adventure, she has already consumed Aldra’s heart, leaving only two remaining. Until then, she is trapped in \*\*[T10b](#t10b-interrogation-room-interior)\*\*. If the party arrives within 24 hours of her transformation, she will have broken free of her prison and can be found at \*\*[T9](#t9-chamber-of-worship)\*\*.
 - Immune to mundane attacks, she can only be destroyed by submerging her remains in water or destroying the memory prison that binds her to this realm. If she is \*\*reborn\*\*, only the latter will be sufficient.
@@ -381,7 +382,7 @@ Absorbs the final moments of a person’s life on a minute by minute basis. The 
 At first there is only darkness; then a cowl is removed from the viewer’s face, and it is evident that they are in \*\*T10\*\*, their arms strung up by the same two chains hanging from the ceiling. They are being interviewed in a harsh, unintelligible tongue by two humanoids wearing grotesque masks with large, reddish crests. 
 Finally, one of the interrogators points to a lizard-like humanoid creature in the corner, which responds by attacking the stomach of the viewer with its talons. There is a bright light as their stomach is sliced open.
 Suddenly, the door to the room opens and someone else enters the room. There is more gibberish, and then both the interrogators and the lizards rush from the room, slamming the door shut behind them. The viewer looks down at the wound in their stomach, and then everything goes dark.
-![Stoneblock](/adventures/first-party/img/cas-1/Stoneblock.webp)
+![Stoneblock](https://cairnrpg.com/adventures/first-party/img/cas-1/Stoneblock.webp)
 # Concluding the Adventure
 ## If Vuk is Reborn…
 If Vuk is reborn, she will quickly move to dominate the region. Within months, \*\*Isthmus Town\*\* will be deserted, and any who remain will either be dead or have joined her cause. With Fasha as her lieutenant, she will slowly conquer the Twin Lakes region, proclaiming herself the \*\*Queen Reborn\*\*. Slowly, her brood dominates the countryside, until finally the Cities declare the lands permanently unsafe. As the Marchguard gather at the boundary, hope that the Queen stays in her new realm becomes thinner by the day…
