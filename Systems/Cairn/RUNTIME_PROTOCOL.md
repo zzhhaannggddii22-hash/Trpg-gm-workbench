@@ -93,11 +93,11 @@ rule_call:
 1. 读取当前 Watch（Morning / Afternoon / Night）、Point、目的地、队伍分组和各角色本 Watch 已使用的行动。
 2. 核算旅行 Watch 成本：路径距离 + 路径类型 + 地形 + 天气 + 队伍状态；特别广阔地形可额外 +0 至 +2 Watches。每项修正须记录来源，不得重复叠加同一因素。
 3. 每名角色本 Watch 选择一项 Wilderness Action。Travel 通常由整个队伍共同执行，作为一次队伍行动；Explore / Supply 等可由一名或多名角色参与。
-4. Travel 时掷 1d6 判断迷路，并应用路径基础风险及地图、技能、向导等修正；若迷路，判断是否需要额外 Wilderness Action 找回路线。
-5. 处理行动结果，按程序掷 Wilderness Events；夜间旅行必须掷两次。
-6. 记录 Watch 消耗、地点/路线进度、口粮、光源、Fatigue、Deprived 和其他资源变化。
-7. 每日最后一个 Watch 通常安排 Make Camp：每名角色及坐骑消耗 1 Ration，安排守夜；能够休息者清除全部 Fatigue。
-8. 若跳过 Make Camp，每名角色增加 1 Fatigue 并进入 Deprived；睡眠不足旅行时地形难度提高一级。若 Deprived 超过一天，再按 CR-FAT 逐日增加 Fatigue。
+4. Travel 开始时建立唯一 travel_id，记录路线、总 Watches、已完成 Watches、当前 Point/路段、迷路检定与修正；掷 1d6 判断迷路，并应用路径基础风险及地图、技能、向导等修正。若迷路，按官方程序决定是否需要额外 Wilderness Action 找回路线；不得在同一 travel_id 的 Session 恢复时重掷迷路骰。
+5. 处理行动结果，按程序掷 Wilderness Events；夜间旅行必须掷两次。每个 Wilderness Cycle 记录唯一 cycle_id 与 Event Roll ID，恢复时不得重复掷同一 Cycle 的事件。
+6. 每推进一个 Watch，记录 Watch 消耗、地点/路线进度、口粮使用次数、光源、Fatigue、Deprived 和其他资源变化。多 Watch 行程不得在第一 Watch 就提前把队伍移动到最终 Point；只有完成所需旅程进度后才提交抵达。
+7. 每日最后一个 Watch 通常安排 Make Camp：每名角色及坐骑消耗 1 Ration（按每份 3 uses 的口粮账本扣 1 use），安排守夜；能够休息者清除全部 Fatigue。
+8. 若跳过 Make Camp，每名角色增加 1 Fatigue 并进入 Deprived；睡眠不足旅行时地形难度提高一级。若 Deprived 超过一天，再按 CR-FAT 逐日增加 Fatigue；记录 deprived_since 与每次已结算的 fatigue_tick_id，跨 Session 不重算已结算日期。
 
 核心路径、距离、地形、天气与迷路基础值已在 CORE_RULES_RUNTIME.md 本地核准；仅当具体地图路线、沿途地形/天气变化或向导/地图/坐骑等特殊修正未记录时，才定向回查官方表格或 Campaign Quick Reference。不得凭印象填值。单人队伍的守夜安排必须显式裁定，不得默认凭空存在守夜人。
 
@@ -142,19 +142,90 @@ rule_call:
 
 提交前执行：
 - 库存格是否超过 10；Fatigue 是否占格；背包容量是否正确；
-- HP 是否恰好 0 或低于 0，是否调用正确分支；Scars 只因攻击伤害使 PC HP 恰好降至 0；库存满格、Panic 等非攻击效果造成 HP=0 不触发 Scars；
+- HP 是否恰好 0 或低于 0，是否调用正确分支；Scars 只因攻击伤害使 PC HP 恰好降至 0；库存满格、Panic 等非攻击效果造成 HP=0 不触发 Scars；hp_zero_cause 是否正确；Critical Damage 是否先扣溢出 STR，STR 归零是否先于 Save 判死；
 - Panic 状态是否独立记录：Panicked 角色 HP 降至 0、首轮不行动、攻击 Impaired，须在自己回合以行动 + WIL Save 克服；解除 Panic 不自动恢复 HP；
 - 陷阱是否先呈现谨慎观察可发现的信息；陷阱伤害是否按属性伤害处理，并仅在虚构情境适用时扣 Armor；
-- 光源是否记录点燃次数、油罐使用、当前点燃状态与环境熄灭；
+- 光源是否记录点燃次数、油罐使用、当前点燃状态与环境熄灭；Ration 是否按 3 uses 维护并逐次扣减；
 - Critical Damage 是否先扣溢出 STR 再以新 STR Save；
 - Armor 是否仅减伤一次，是否遵守 3 上限；
 - 时间是否推进，是否触发地城/荒野事件；
-- Deprived 是否影响恢复；是否到了增加 Fatigue 的时间；
+- Deprived 是否影响恢复；是否到了增加 Fatigue 的时间；deprived_since 与 fatigue_tick_id 是否避免重复结算；
 - NPC/敌方士气是否因本次事件触发；
-- 同一事件是否重复结算；
+- 同一事件是否重复结算；pending_effects 是否正确创建、等待、触发、消费并跨 Session 保留；
 - 角色知识是否有来源，NPC 是否获得了不应知晓的信息。
 
 若状态差分无法解释，暂停后续依赖该状态的结算，先修复账本；不得通过叙事跳过不一致。
+
+## 5-A. 状态事务与延迟效果生命周期
+
+本节定义 Workbench 状态持久化方式，不增加 Cairn 官方机制。官方规则决定效果；本节确保同一效果只应用一次，并能跨 Session 恢复。
+
+### A.1 原子事务与幂等
+
+每个改变游戏状态的行动/事件必须有唯一 event_id。提交前保留 before、trigger、inputs、resolution、delta、after、commit_status（prepared / committed / blocked）与 source_class（SOURCE / TABLE_ADAPTATION / GM_INFERENCE / UNKNOWN）。
+
+同一 event_id 已是 committed 时，恢复只读取结果，不重复执行 delta。若事务 prepared 但未 committed，先检查外部状态是否已部分落账；无法确认时暂停该事务，禁止盲目重放。
+
+### A.2 HP=0 原因与伤害事务
+
+Runtime State 至少记录 hp_zero_cause: damage_scars | panic | inventory_overload | other_rule | null。伤害结算按 CR-DAMAGE-TX 执行；Panic/Inventory Overload 等直接设置 HP=0 的规则不创建伤害事务，不触发 Scars。解除 Panic 或腾出库存格不自动回填 HP；正常 HP 恢复另建事件。
+
+### A.3 持续条件与待处理效果
+
+将状态分为 ongoing_conditions（当前生效条件）与 pending_effects（已产生但尚未达到结算时点的后续效果）。例如 Panicked、Deprived、Broken Limb、Hamstrung、Deafened、Mortal Wound、稳定/爬行状态属于持续条件；Scars 的“恢复后掷骰/增加最大值”、Doomed 的下一次 Critical Damage Save 属于待处理效果。
+
+每条 pending_effect 至少包含 effect_id、source_event_id、source_rule_id、actor_id、effect、trigger_condition、due_when、status（pending / ready / consumed / expired / cancelled）、created_at、consumed_at、resolution_event_id、source_class 与必要说明。
+
+**生命周期**
+1. 触发时先创建 ongoing condition / pending effect，再提交本次 Scars/事件结果。
+2. 条件尚未满足时保持 pending；不得提前掷后续成长骰或移除伤势。
+3. 条件满足时转为 ready，创建新的 resolution event。
+4. 完成效果后记录骰值、状态差分、consumed_at 与 resolution_event_id，再转为 consumed。
+5. Handoff 原样保存所有 pending/ready 项；恢复时先核对状态，不重掷、不重复应用。
+6. 只有明确规则条件满足或用户批准的桌面处理才能取消/过期；不得因 Session 结束而清空。
+
+### A.4 Scars 延迟效果映射
+
+即时伤势与后续成长分开保存：
+- Lasting Scar / Rattling Blow：部位/即时状态和 1d6 最大 HP 检查在本次 Scars 事务内完成。
+- Walloped：Deprived 持续至休息数小时；满足恢复条件后执行 1d6 最大 HP 增加。
+- Broken Limb：骨折持续至治愈；治愈后执行 2d6 最大 HP 检查。
+- Diseased：疾病持续至痊愈；痊愈后执行 2d6 最大 HP 检查。
+- Reorienting Head Wound：属性骰在触发时完成并记录，不延迟。
+- Hamstrung：行动/移动限制持续至严肃帮助与休息；恢复后执行 3d6 最大 DEX 检查。
+- Deafened：失聪持续至获得非凡援助；WIL Save 与最大 WIL 增加按官方表执行。
+- Re-brained / Sundered：依官方条目即时执行的骰与条件分别记录。
+- Mortal Wound：Deprived、失去行动能力及一小时救治时限必须持续保存；恢复后执行 2d6 最大 HP。
+- Doomed：保存 next_critical_damage_save 触发器；只绑定下一次 Critical Damage Save，普通 Save 不消费；成功/失败后消费。
+
+以上只规范化官方 Scars 表中的延迟条件，不创造额外恢复方式。若恢复条件无法客观确认，保持 pending 并记录 UNKNOWN。
+
+### A.5 Deprivation、Fatigue 与口粮账本
+
+- deprived_since 记录本次持续 Deprived 的游戏内起点；deprivation_causes[] 记录食物、睡眠或其他缺失原因。
+- 跳过 Make Camp 造成的即时 Fatigue 与 Deprived 是一个有来源的事件；之后超过一天的 Deprived 依 CR-FAT 继续逐日增加 Fatigue，不把即时 Fatigue 误算成第一天的周期 tick。
+- 每次周期 Fatigue 增加使用唯一 fatigue_tick_id；同一时间边界不得重复结算。
+- 每份 Ration 记录 uses_remaining: 0..3；Make Camp 每名角色/坐骑消耗一次 use。use 降至 0 才移除该份 Ration。
+- 角色恢复需求后记录 deprivation_ended_at；恢复 Fatigue 仍须满足官方安全休息条件。Deprived 期间不恢复 HP、属性或 Fatigue。
+
+### A.6 多 Watch 旅行
+
+每个行程维护 travel_plan：travel_id、起点/目标、路径分段、各项惩罚来源、total_watch_cost、watches_elapsed、watches_remaining、迷路骰值/修正/结果、当前 Point/路段、额外找路 Action、待处理 Wilderness Event 与 status（planned / travelling / delayed / lost / arrived / abandoned）。
+
+每次 Wilderness Cycle 只提交本 Cycle 已完成的进度和事件；未完成总 Watch 成本前不得提交抵达最终 Point。天气或地形变化影响剩余路段时，记录新依据并重新计算剩余成本，不追溯改写已完成的 Watch。Travel 检定与每个 Cycle 的 Event Roll 使用不同 ID；Session 恢复不能重掷已提交骰。
+
+### A.7 Dungeon Event 后续程序
+
+- Loss：记录具体失去/失效对象与范围；必须先解决影响（例如火把熄灭、持续法术失效），才能继续后续 Cycle。
+- Exhaustion：必须明确选择官方选项之一：休息（并立即再次掷 Dungeon Events）、增加 Fatigue、或消耗一份 Ration。若选择休息，新的 Event Roll 是新的独立事件；若再次掷出 Exhaustion，继续按规则处理，直到当前事件后续选择完成。
+- 每次 Event Roll 与其 follow-up 使用独立 ID；不得因递归事件覆盖父事件，也不得重复扣口粮/疲劳。
+
+### A.8 Wilderness Event 后续程序
+
+- Loss：呈现资源、时间或努力成本，并记录选择与实际差分；不套用 Dungeon Loss 的具体表述。
+- Exhaustion：记录障碍及其代价；按情境需要额外时间/额外 Wilderness Action 或增加 Fatigue。不可自动把 Dungeon Exhaustion 的三选一程序套过来。
+- 每个 Wilderness Cycle 后按程序掷事件；夜间旅行掷两次。每个骰各有唯一 Event Roll ID。
+- Discovery 按官方程序可发现食物、宝藏或其他有用资源；Warden 可改为揭示区域主要特征。结果必须与地图和既有事实相容。
 
 ## 6. 官方原文回查策略
 
@@ -162,13 +233,13 @@ rule_call:
 
 **必须回查的情况**：
 - 本手册标记 PARTIAL / MODULE_DEPENDENT；
-- 触发 Scars 等具体表格结果；
+- 本地速查未覆盖的 Scars 例外、表格版本冲突或具体措辞争议；
 - 涉及法术、遗物、特殊武器、怪物、雇工、Detachments；
-- Wilderness 路线、地形、天气、迷路等数值；
+- 本地速查未覆盖的特殊路线修正、地图数据或向导/坐骑/技能特例；
 - 模组特殊规则、裁定例外或本手册未覆盖的规则；
 - 玩家质疑裁定、规则之间出现冲突；
 - 规则版本更新或 Campaign Binding 改变；
-- 高后果、不可逆、可能致命的边界情况，且速查未给出完整步骤。
+- 高后果、不可逆、可能致命的边界情况，且本地速查未给出完整步骤、适用例外或来源版本无法确认。已完整规范化的 STR 归零死亡、Critical Damage 与 Scars 结果不因“高后果”而每次重复联网检索。
 
 回查时记录：官方页面/章节、核对日期、影响的 Rule ID、是否修订速查。查到一次并完成核验后，应把稳定结论规范化回规则库，避免下次重复搜索。
 
@@ -193,6 +264,10 @@ rule_call:
 - PC 与重要 NPC 状态；
 - 库存、Fatigue、口粮、光源与其他消耗；
 - 已发生但未结算的规则触发；
+- ongoing_conditions、pending_effects（含状态、触发条件、到期条件与已消费记录）；
+- 未完成事务与其 event_id / commit_status；
+- Deprivation 起点、Fatigue tick、口粮 uses_remaining；
+- travel_plan（已用/剩余 Watches、迷路检定与待处理事件）；
 - 正在进行的行动与 NPC 事务；
 - 已作出的 TABLE_ADAPTATION / GM_INFERENCE；
 - 未解决 UNKNOWN / DISPUTED；

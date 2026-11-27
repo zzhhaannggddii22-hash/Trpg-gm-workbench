@@ -31,6 +31,7 @@
 | CR-MORALE | 敌方士气 | 首次出现伤亡、敌方损失半数；孤立敌人 HP 到 0 | VERIFIED_CORE |
 | CR-COMBAT | 战斗轮与行动 | 战斗开始及每轮 | VERIFIED_CORE |
 | CR-ATTACK | 攻击与伤害 | 攻击行动结算 | VERIFIED_CORE |
+| CR-DAMAGE-TX | 伤害事务与状态提交 | 伤害、HP归零、Critical Damage | VERIFIED_CORE |
 | CR-MOD | 攻击优势/劣势 | 攻击位置或条件影响攻击 | VERIFIED_CORE |
 | CR-CRITICAL | Critical Damage | 伤害使目标 HP 低于 0 | VERIFIED_CORE |
 | CR-SCARS | Scars | PC 的 HP 被伤害恰好降至 0 | VERIFIED_CORE |
@@ -121,11 +122,13 @@
 
 ### CR-INV｜库存 — VERIFIED_CORE
 
-- 每名角色最多 10 个库存格；满 10 格时 HP 降至 0，不能超过 10 格。
+- 每名角色最多 10 个库存格；填满全部 10 格时 HP 降至 0，不能超过 10 格。
+- 满格造成的 HP=0 记录 hp_zero_cause: inventory_overload，不是伤害，不触发 Scars / Critical Damage。腾出格子只解除超载原因，不自动回填 HP；后续按正常 HP 恢复规则处理。后半句属于 Workbench 状态解释，官方原文只明确“满 10 格时降至 0 HP”。
 - 一般物品占 1 格；Bulky 占 2 格；Petty 不占格。
 - 背包最多容纳 6 格物品或 Fatigue；物品能否装入及其占格按物品描述与 Warden 对虚构情境的裁定。
 - 角色通常只能舒适携带约 4–5 件物品；背包、马匹、车辆、雇工等可改变实际携带能力。
 - 价值低于 100gp 的一袋钱币属于 Petty，不占库存格；其他财物按具体物品条目与 Warden 的虚构裁定处理。不可自行将所有钱币统一视为 0 格。
+- 口粮按每份 3 次使用记录 uses_remaining；消耗一次减少一次，降至 0 后才移除该份 Ration。不得把一次消耗误记为整份口粮丢失。
 - 角色通常从创建时获得一个可容纳最多 6 格物品或 Fatigue 的 Backpack；它是容器容量，不额外创造超过角色 10 格的总负重上限。
 - 每次获得、使用、转移、丢弃、损坏或增加 Fatigue，都必须更新账本并重新计算占格与 HP 限制。
 
@@ -144,14 +147,14 @@
 
 **触发**：遭遇 NPC，且其对 PC/队伍的态度并不明显。
 
-**执行**：掷 2d6：
+**执行**：Warden 可以选择掷 2d6（官方可选程序）：
 - 2：Hostile
 - 3–5：Wary
 - 6–8：Curious
 - 9–11：Kind
 - 12：Helpful
 
-结果决定初始反应倾向，不抹除 NPC 的目标、知识、关系、恐惧、资源和处境。态度明确或既有事实已决定反应时，不为随机而随机。
+结果决定初始反应倾向，不抹除 NPC 的目标、知识、关系、恐惧、资源和处境。Warden 可依据已确立的虚构事实直接裁定；不得把 Reaction 当作强制骰或覆盖 NPC 已有动机。
 
 ### CR-MORALE｜Morale — VERIFIED_CORE
 
@@ -181,35 +184,67 @@
 ### CR-ATTACK｜攻击与伤害 — VERIFIED_CORE
 
 1. 战斗攻击自动命中；通常不进行命中检定。
-2. 掷武器伤害骰。
-3. 应用 Impaired/Enhanced 等攻击修正。
-4. 减去目标当前 Armor（最低造成伤害按具体规则处理；不得自行制造负伤害）。
-5. 伤害扣除目标 HP。
-6. 检查 HP 是否恰好降至 0 或低于 0，并调用 CR-SCARS 或 CR-CRITICAL。
-7. 更新 HP、属性、伤疤、状态及相关士气触发。
+2. 先声明双方行动，再按 Cairn 的 side-turn 程序结算；同一方行动结果同时发生。
+3. 对每次攻击建立独立伤害事务，调用 CR-DAMAGE-TX。
+4. 多名攻击者攻击同一目标：所有伤害骰掷出，只取单个最高结果；不是将伤害相加。双持同理按 CR-MOD。
+5. 对 Blast 的每个受影响目标分别建立伤害事务；不得把多个目标的伤害合并为一个事务。
+6. 每个事务完成后检查 Scars、Critical Damage、Morale、死亡及其他触发；事件 ID 必须唯一，不能重复结算。
 
-多名攻击者攻击同一目标：所有伤害骰掷出，只取单个最高结果；不是将伤害相加。所有行动须先声明再结算。
+### CR-DAMAGE-TX｜伤害事务与状态提交 — VERIFIED_CORE / WORKBENCH TRANSACTION
+
+本条把官方伤害规则转换为可审计、可恢复、不可重复扣账的单次事务。事务字段和幂等约束属于 Workbench 实现；骰子与伤害后果以 Cairn 2e 为准。
+
+**事务输入**：event_id、target_id、hp_before、str_before、armor_before、damage_roll、攻击修正、适用 Armor、cause、rule_id 与来源定位。
+
+**执行顺序**
+1. 确认伤害来源、目标、目标当下 HP/STR/Armor；同一 event_id 若已提交，读取既有结果，不再次扣账。
+2. 得到最终伤害骰结果（含 Impaired/Enhanced 等修正）。
+3. 仅在适用时扣除 Armor，得到 damage_after_armor；最终伤害不得低于 0。
+4. 计算临时值 hp_raw = hp_before - damage_after_armor。hp_raw 只用于分支与溢出计算，不直接作为长期负数 HP 记录。
+5. damage_after_armor = 0：HP/STR 不变；记录 no-damage 事务，不触发 Scars 或 Critical Damage。
+6. hp_raw > 0：持久化 HP = hp_raw。
+7. PC 因本次攻击伤害 hp_raw = 0：持久化 HP = 0，以本次实际 HP 损失量查 CR-SCARS；不进入 Critical Damage。
+8. hp_raw < 0：计算 overflow = abs(hp_raw)；先将溢出伤害从 STR 扣除，再持久化 HP = 0。负 HP 仅是计算中间值。
+9. STR 扣减后达到或低于 0：持久化 STR = 0 并立即判定 PC 死亡；不再进行 Critical Damage Save。自然 1 不能覆盖 STR 归零死亡。
+10. STR 扣减后仍大于 0：立即以新 STR 进行 Critical Damage Save。成功者仍在战斗中但保持降低后的 STR；失败者按 CR-CRITICAL 进入濒死/爬行与救助时限。
+11. 提交 HP、STR、条件、Scars、死亡/稳定状态和后续触发；一次事务只能提交一次。
+
+**边界**
+- HP 原本为 0 后再次受到正伤害：hp_raw < 0，本次 Armor 后伤害均为溢出；不得再次触发“恰好降至 0”的 Scars。
+- 满库存或 Panic 直接把 HP 设为 0：不是伤害事务，不触发 Scars；必须记录 hp_zero_cause。
+- 其他非攻击伤害若按具体规则直接扣属性，走相应属性损伤规则，不擅自改走 HP/Scars。
+- NPC/怪物的 STR 归零、Critical Damage 失败后果按其官方条目和 Warden 裁定；不得将 PC 结果机械套用到所有生物。
+- Armor、伤害来源或目标状态无法核实时，暂停该事务，不得先扣账再补证据。
+
+**输出**：完整中间值、最终 HP/STR、触发规则、状态差分、提交状态与来源分类。
 
 ### CR-MOD｜攻击修正 — VERIFIED_CORE
 
 - Impaired：处于明显劣势位置/条件（例如隔着掩体攻击、双手受缚）时，伤害骰改为 d4；徒手攻击恒为 d4。
 - Enhanced：处于明显优势位置（例如攻击无助目标或完成大胆战术动作）时，伤害骰改为 d12。
-- Blast：影响标注范围内所有目标，对每个受影响角色分别掷伤害；目标数量不明时按规则指引处理。
+- Blast：影响标注范围内所有目标，对每个受影响角色分别掷伤害；若不确定能影响多少目标，按官方指引掷相关伤害骰确定数量。
 - 双持同时攻击：掷两把武器伤害骰，取最高单骰结果。
 - 同一次攻击不要叠加互相冲突的 Impaired 与 Enhanced；如情境无法明确，先裁定位置优势/劣势及适用规则，不凭空相互抵消。
 
 ### CR-CRITICAL｜Critical Damage — VERIFIED_CORE
 
-**触发**：伤害结算后，目标 HP 低于 0。HP 恰好等于 0 不触发本流程，PC 改走 CR-SCARS。
+**触发**：伤害结算后，目标 HP 低于 0。PC HP 恰好等于 0 时走 CR-SCARS；NPC/怪物的后果依其条目和 Warden 裁定。
 
-**执行**：
-1. 计算溢出伤害：本次伤害超过目标剩余 HP 的部分。
-2. 将溢出伤害从目标 STR 扣除。
-3. 以新的 STR 立即进行 STR Save。
-4. 成功：目标仍在战斗中，但 STR 已降低；以后每次再次承受 Critical Damage，仍须再次进行 Critical Damage Save。
-5. 失败：PC 只能虚弱爬行；若获得援助（例如绷带）则稳定，未获治疗则一小时内死亡。NPC/怪物失败通常由 Warden 按规则裁定为死亡；特定敌人能力可能触发额外效果。
+**PC 执行**
+1. 计算本次伤害溢出值：overflow = damage_after_armor - hp_before，仅当结果大于 0。
+2. 将 overflow 从 STR 扣除。
+3. 若新 STR 达到或低于 0，将 STR 记为 0 并立即判定死亡；不进行 Save。
+4. 若新 STR 大于 0，立即以新 STR 进行 STR Save。
+5. 成功：PC 仍可行动，但 STR 已降低；以后每次再次承受 Critical Damage，仍须再次进行 Critical Damage Save。
+6. 失败：PC 只能虚弱爬行；若获得援助（例如绷带）则稳定，未获治疗则一小时内死亡。
 
-**关键边界**：先扣除溢出伤害，再以新 STR 检定。不能用旧 STR 掷骰；不能把 HP 恰好 0 误判为低于 0。
+**状态表达**
+- Workbench 持久化 HP = 0；负 HP 只作为计算溢出的临时值，不保留为长期 HP。
+- 每次 Critical Damage 保存 event_id、HP_before、Armor 后伤害、overflow、STR_before/after、Save 骰值和结果。
+- 失败后的爬行/稳定/死亡时限作为持续条件记录；救助稳定不自动恢复 HP 或 STR。
+- NPC/怪物失败通常由 Warden 按官方规则与其特殊能力裁定死亡或其他效果；不要套用 PC 的全部后果。
+
+**关键边界**：先扣除溢出伤害，再以新 STR 检定；STR 归零死亡优先于 Save；不能用旧 STR 掷骰；不能把 HP 恰好 0 误判为低于 0。
 
 ### CR-SCARS｜Scars — VERIFIED_CORE
 
@@ -275,7 +310,9 @@
 - 通常进行 WIL Save，以避免失控并陷入 Panicked。
 - Panicked 角色 HP 降至 0；战斗首轮不能行动，所有攻击均为 Impaired。
 - Panicked 角色必须在自己回合花费一个行动并通过 WIL Save，才能克服恐慌。
-- 这里的 HP=0 是恐慌规则直接造成的状态变化，不是伤害造成的 HP 归零，因此不触发 Scars。官方条目没有明确说明恐慌解除时是否恢复先前 HP；运行时不得擅自恢复，需标记为 `GM_INFERENCE / unresolved`，并按正常 HP 恢复规则处理后续恢复。
+- Panic 造成的 HP=0 是状态效果，不是伤害；不触发 Scars，也不进行 Critical Damage。
+- 克服 Panic 只移除 Panicked 条件；官方条文没有规定同时恢复 HP。Workbench 不自动回填先前 HP，HP 保持 0，之后依正常 HP 恢复规则处理。该状态处理标记为 GM_INFERENCE，不得伪装成官方额外条文。
+- 记录 hp_zero_cause: panic、Panic 起止事件与克服检定；防止跨 Session 恢复时重复施加 HP=0 或重复执行克服检定。
 
 ### CR-TRAPS｜陷阱 — VERIFIED_CORE
 
@@ -347,11 +384,15 @@
 1 Encounter（查遭遇表，可能敌对，必要时查 Reaction）
 2 Sign（线索、踪迹、痕迹、遗弃巢穴、气味、受害者等）
 3 Environment（环境变化或危险升级）
-4 Loss（光源熄灭、持续法术失效等损失/后果）
-5 Exhaustion（休息并额外触发事件、增加 Fatigue 或消耗口粮，按规则/情境选择）
+4 Loss（火把熄灭、持续法术失效等；必须先解决 Loss 的具体效果，才能继续）
+5 Exhaustion（必须选择：休息并立即再次掷 Dungeon Events、增加 Fatigue、或消耗一份 Ration）
 6 Quiet（暂时无人打扰，当前安全）
 
-事件结果必须结合地点与既有事实解释。不要把事件表当作剧情强制推进器。触发条件需逐项记录，不能漏掷，也不能因玩家只问问题就机械地重复掷骰。
+**后续程序**
+- Loss 必须指出具体失效资源/效果、受影响对象和已完成的状态差分。未解决前不进入下一 Cycle。
+- Exhaustion 的三个选项是本条规则给出的处理路径。选择休息会触发一个新的独立 Dungeon Event Roll；若再次得到 Exhaustion，建立新的事件并继续处理。
+- 父事件与递归产生的子事件使用不同 event_id；选择、资源扣减、额外掷骰和结果均逐项记录，避免重复扣账。
+- 事件结果结合地点与既有事实解释；不把事件表当作剧情强制推进器，也不因玩家只问问题而机械重复掷骰。
 
 ### EX-WILDERNESS｜荒野探索 — VERIFIED_CORE
 
@@ -390,15 +431,19 @@
 
 ### EX-WILDERNESS-EVENT｜荒野事件 — VERIFIED_CORE
 
-荒野行动循环后按程序掷 1d6：
-1 Encounter
-2 Sign
-3 Environment
-4 Loss
-5 Exhaustion
-6 Discovery
+每次 Wilderness Cycle 后按程序掷 1d6；夜间旅行在 Wilderness Events 表上掷两次：
+1 Encounter（查对应地形/地点遭遇表；适用时可掷 Reaction）
+2 Sign（发现线索、踪迹、附近遭遇/地点/隐藏特征的信息）
+3 Environment（天气或地形变化）
+4 Loss（遭遇资源、时间或努力成本；按具体情境呈现选择与差分）
+5 Exhaustion（遭遇障碍，可能需要额外时间/额外 Wilderness Action，或增加 Fatigue）
+6 Discovery（发现食物、宝藏或其他有用资源；Warden 也可揭示区域主要特征）
 
-结果含义与地点/地形/模组事实结合。Travel、Explore、Supply、Make Camp 的具体效果、Watch 花费、口粮、守夜和路线修正依赖完整 Wilderness 章节；参照官方 Procedures 页面，不从本摘要推导未列出的数值。
+**与 Dungeon Events 的区别**
+- Wilderness Loss 按资源、时间或努力成本处理；不套用 Dungeon Loss 的固定表达，除非具体情境本身要求暂停。
+- Wilderness Exhaustion 是旅途障碍；根据虚构情境落实额外时间、额外 Action 或 Fatigue，不套用 Dungeon Exhaustion 的三选一与递归掷骰程序。
+- 每次事件骰记录独立 Event Roll ID；夜间两次掷骰是两个独立事件，不因 Handoff 重掷。
+- Discovery 必须与地图、季节、地貌和已确立世界事实相容。
 
 ## 7. 状态账本最小字段
 
@@ -423,7 +468,7 @@
 以下情况必须查对应官方 2e 条目或模组数据：
 - Scars 表具体结果及其后续恢复；
 - 特定法术、遗物、武器、护甲、怪物、雇工或 Detachment 的专属效果；
-- 完整的 Wilderness 路线/地形/天气数值与单人守夜安排；
+- 特定地图路线的实际距离、沿途地形/天气变化、向导/地图/坐骑等具体修正，以及单人队伍的守夜选择；核心路径、距离、地形和天气规则已本地化，具体地点数据仍依地图/模组而定；
 - 属性恢复的具体服务、时间、费用与特殊治疗；
 - 模组自定义程序、随机表和遭遇数量；
 - 本文件标记 PARTIAL 或 MODULE_DEPENDENT 的项目。
