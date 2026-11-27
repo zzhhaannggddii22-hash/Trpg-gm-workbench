@@ -46,6 +46,7 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 - [Testing/STATE_TRANSITION_REGRESSION_v1/ORACLE.md](./Testing/STATE_TRANSITION_REGRESSION_v1/ORACLE.md)：仅供评审者核对的预期结果。
 - [Testing/STATE_TRANSITION_REGRESSION_v1/ORACLE.md](./Testing/STATE_TRANSITION_REGRESSION_v1/ORACLE.md)：状态转换扩展测试预期结果，仅供测试执行者核对。
 - [Testing/STATE_TRANSITION_EXECUTION_REPORT_2026-11-27.md](./Testing/STATE_TRANSITION_EXECUTION_REPORT_2026-11-27.md)：CRT-66–87 自执行记录与限制。
+- [../../tests/test_cairn_runtime_protocol.py](../../tests/test_cairn_runtime_protocol.py)：20 项 Cairn 状态协议参考模型自动化测试（不是 GM Runtime 本身）。
 - [Testing/L3_NPC_REENCOUNTER_REGRESSION_REPORT_2026-11-27.md](./Testing/L3_NPC_REENCOUNTER_REGRESSION_REPORT_2026-11-27.md)：扩展离场—重逢连续性回归。
 
 ## 运行边界

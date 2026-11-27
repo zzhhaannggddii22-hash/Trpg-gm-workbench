@@ -59,6 +59,10 @@ Mara Bell's off-screen timeline is extended beyond the earlier one-Watch branch:
 
 This is a deterministic synthetic continuity fixture, not a real-player session and not a test of multiple-NPC personality contrast.
 
+## Executable reference-model checks
+
+The repository CI also runs `tests/test_cairn_runtime_protocol.py`, a 20-test deterministic Python reference model covering damage boundaries, HP=0 causes, pending effects, travel/action idempotency, ration uses, deprivation ticks, event routing, Blast target isolation, NPC off-screen state and modifier conflicts. These tests validate protocol invariants in a separate executable model; they do not execute a language-model GM and are not an independent blind test.
+
 ## Limitations
 
 - Same-model self-execution; no independent target Chat has run this fixture.

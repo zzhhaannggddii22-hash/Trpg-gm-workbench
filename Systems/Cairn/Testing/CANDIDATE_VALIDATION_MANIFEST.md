@@ -40,6 +40,7 @@ validation:
 - Inputs: [STATE_TRANSITION_REGRESSION_v1/CASES.md](./STATE_TRANSITION_REGRESSION_v1/CASES.md) — no expected outcomes.
 - Oracle: [STATE_TRANSITION_REGRESSION_v1/ORACLE.md](./STATE_TRANSITION_REGRESSION_v1/ORACLE.md) — evaluator-only until target output is committed.
 - Scope: CRT-66–87.
+- Executable invariant harness: `tests/test_cairn_runtime_protocol.py` (20 deterministic unittest cases, included in repository CI).
 - Synthetic re-encounter: [L3_NPC_REENCOUNTER_REGRESSION_REPORT_2026-11-27.md](./L3_NPC_REENCOUNTER_REGRESSION_REPORT_2026-11-27.md).
 - Current validation result is recorded in the execution reports; it does not change Cairn's candidate status.
 
