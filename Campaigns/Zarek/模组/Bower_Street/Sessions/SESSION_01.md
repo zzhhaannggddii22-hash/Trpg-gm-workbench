@@ -114,7 +114,7 @@
 
 ## 规则与资源状态
 - 开局普通 Chaos Pool：0；天气事件：0。
-- 本 Session 玩家使用 Ask the Agency 形成派对闪粉追踪效果。此前结算过程出现遗漏，曾临时补报 Chaos Pool +5；该 +5 尚未独立核验，不能作为正式余额。
+- 本 Session 玩家使用 Ask the Agency 形成派对闪粉追踪效果。此前结算过程出现遗漏，曾临时补报 Chaos Pool +5；该 +5 尚未独立核验，不能作为正式余额。资源待核条目：BOWER-RES-001，详见 09_RESOURCE_LEDGER.md。
 - Session 结束时普通 Chaos Pool：UNKNOWN / NEEDS RECONCILIATION。不得沿用 0，也不得把临时 +5 当作已确认余额。对应规则处理问题 GitHub Issue #22。
 - 本记录未确认发生 QA、Burnout、Harm、Demerits、Commendations、装备充能变化；如后续从当时完整掷骰记录核实，应追加版本化修订，不凭记忆补数。
 - Ripple Gun：最后已知满充 1 发；本 Session 未记录使用。

@@ -141,7 +141,8 @@
 
 ### Session 生命周期
 - Session 开始读取最新 Runtime State 与最近日志，不扫描全部历史。
-- Session 结束创建本次编号日志、更新 Runtime State，并同步必要的 Campaign 持续状态。
+- 资源结算时按需独立读取 Resource Ledger；若涉及角色持续性资源，同时核对正式人物卡。
+- Session 结束创建本次编号日志、更新 Runtime State，并核对本场 Resource Ledger；必要的 Campaign 持续状态同步按权威文件执行。
 - Module 结束时才完成整体奖励、系统定义的后续威胁/未决状态、模组结算与完整复盘；系统另有 Session 结算要求时遵循系统规则。
 - 验证只检查本次变更涉及的权威字段与 GM-only/玩家侧边界，不做无差别全库全文复读。
 

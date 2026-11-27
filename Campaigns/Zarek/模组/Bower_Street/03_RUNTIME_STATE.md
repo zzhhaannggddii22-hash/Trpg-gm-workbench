@@ -2,6 +2,7 @@
 
 > 当前状态：ACTIVE / SESSION 01 CLOSED / MODULE IN PROGRESS
 > 本文件是当前运行快照入口。此历史记录未附可验证的发布批次清单，按 LEGACY_UNMIGRATED 恢复。定向核对编号日志、已呈现锚点及有关权威后，按字段决定推进范围。
+> **资源交易历史与对账唯一入口：[09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md)。** 本文件只提供续接快照，不另建交易流水；人物持续性资源仍以 Campaign 正式人物卡为跨模组当前余额权威。
 
 ## Session 状态
 - Module：Bower Street（行动代号：《旧日回声》）
@@ -25,10 +26,10 @@
 - 装备最后已知状态：Ripple Gun 满充 1 发；常规公文包由扎雷克携带；本 Session 未记录使用/转移。
 - 凯瑟琳防护储备最后已知 9/9；本 Session 未记录消耗。
 
-## 公开资源
+## 公开资源快照（交易明细见 09_RESOURCE_LEDGER.md）
 - 普通 Chaos Pool：**UNKNOWN / NEEDS RECONCILIATION**。
 - 开局 Preflight 核算：普通 Pool 0；天气事件 0；Ternion City 大都会分部 Loose Ends 追踪基线 1（仅含可核实的扎雷克战役贡献）。
-- 本 Session 使用 Ask the Agency 产生派对闪粉追踪效果。结算曾遗漏资源变化，之后临时补报 +5，但 +5 未独立核验；不得把 0 或 +5 当作 Session 结束时已确认余额。
+- 本 Session 使用 Ask the Agency 产生派对闪粉追踪效果。结算曾遗漏资源变化，之后临时补报 +5，但 +5 未独立核验；不得把 0 或 +5 当作 Session 结束时已确认余额。该待核事项登记为 BOWER-RES-001。
 - 天气事件：最后确认基线 0；本 Session 未记录天气事件变化。
 - 规则结算问题见 GitHub Issue #22。下一次发生资源变更前，应先完成该次行动的规则与账本核对；不得回填猜测余额。
 
