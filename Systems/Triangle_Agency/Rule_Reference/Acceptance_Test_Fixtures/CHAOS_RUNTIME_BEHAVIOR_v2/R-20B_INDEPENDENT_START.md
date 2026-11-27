@@ -1,9 +1,9 @@
 # R-20B｜Independent Player-Channel Projection Test
 
-> Test type: INDEPENDENT_SINGLE_CASE_CHAT  
-> System: Triangle Agency / Chinese v22  
-> System Binding: synthetic Campaign, `system_id: triangle_agency`, `ruleset_version: 中文 v22`  
-> Case scope: player-facing information projection only  
+> Test type: INDEPENDENT_SINGLE_CASE_CHAT
+> System: Triangle Agency / Chinese v22
+> System Binding: synthetic Campaign, `system_id: triangle_agency`, `ruleset_version: 中文 v22`
+> Case scope: player-facing information projection only
 > This file is the complete test input. It intentionally contains no expected answer or Oracle.
 
 ## Role
