@@ -18,3 +18,9 @@
 
 - [H1-3 私有 Canary 盲测执行记录与最终边界结论（2026-11-26）](./H1_3_PRIVATE_CANARY_RUN_2026-11-26.md)：3 个独立目标样本均由操作者外部比对为 NO HIT；同时记录策略性输出异常与工作台缓解范围。
 - [H1-3 工作台缓解决策（2026-11-26）](./H1_3_WORKBENCH_MITIGATION_DECISION_2026-11-26.md)：明确可控风险面、静默隔离规则、平台层限制与后续维护边界。
+
+
+## 2026-11-27
+
+- [QA System Acceptance v1 初始版本校准报告](./QA_SYSTEM_ACCEPTANCE_v1_INITIAL_CALIBRATION_2026-11-27.md)：验收 QA 测试体系本身；结论 ACCEPTED_WITH_LIMITATIONS，B 模式实际执行与 CI 仍待验证。
+- [NQB-01 同会话自动化抽检报告](./NQB01_SAME_SESSION_AUTOMATED_RUN_2026-11-27.md)：8 轮合成自动化样本；基础正确性 PASS，叙事质量 PARTIAL。
