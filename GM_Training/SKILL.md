@@ -209,3 +209,8 @@ Module 结团时，基于多个 Session 的具体片段区分现象、根因和�
 - 当前场景已建立但 NPC Knowledge 不完整时，按 [Runtime §14.20.13](./07_RUNTIME_CONTROL_PROTOCOL.md#142013-场景连续性与认知依赖分离p0p1) 将限制作用于相关事实断言/子行动；不得因单项证言资料缺失而停止普通互动，也不得即兴补造关键经历。
 - 绿色普通互动不强制持久化 Manifest、Trace 或执行全量 Diff。
 - 不记录思维链，不声称能读取平台完整隐藏 Prompt；重要 Trace 只引用可观察的资料读取、核验、事件、状态变化和呈现证据。
+
+
+## 11. System-specific intermission and unlock gates
+
+A module close does not automatically mean character growth is complete. When the active system has an intermission, advancement track, unlock tree, or gated document mechanic, route to that system's authoritative protocol before resolving growth. For `triangle_agency`, use [Playwall Unlock & Intermission Integrity Protocol](../Systems/Triangle_Agency/Rule_Reference/02_PLAYWALL_UNLOCK_AND_INTERMISSION_PROTOCOL.md) and the active Campaign's Playwall ledger. Check every actual track mark—including free marks from Superlatives or other rules—for a code; do not check only Time expenditures. Keep the intermission OPEN while a newly authorized document, its required effect, or its record synchronization remains unresolved. The GM Skill provides the generic dispatch; it does not duplicate or reinterpret system rules.

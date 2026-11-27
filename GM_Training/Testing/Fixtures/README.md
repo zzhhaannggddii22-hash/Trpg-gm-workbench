@@ -13,6 +13,10 @@
 - [Context Assembly & Trace 回归夹具 v1](./CONTEXT_ASSEMBLY_TRACE_REGRESSION_v1.md)
 - [Scene Continuity & Evidence Record 回归夹具 v1](./SCENE_CONTINUITY_AND_EVIDENCE_RECORD_REGRESSION_v1.md)
 
+## Triangle Agency 系统专属机制
+
+- [Playwall 幕间解锁完整性回归夹具 v1](./PLAYWALL_INTERMISSION_INTEGRITY_REGRESSION_v1.md)
+
 ## Runtime 与信息通道
 
 - [P0 合成验收夹具 v1](./GM_RUNTIME_P0_FIXTURE_v1.md)

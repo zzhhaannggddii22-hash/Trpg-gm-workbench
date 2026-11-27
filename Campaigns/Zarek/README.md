@@ -13,6 +13,7 @@
 - 详细约束：[扎雷克战役世界背景与中文呈现原则](./WORLD_AND_PRESENTATION_CANON.md)。
 
 ## 目录
+- [Playwall 解锁账本](./PLAYWALL_UNLOCK_LEDGER.md)：扎雷克全部 Work/Life Balance 标记、Playwall 授权、历史审计与当前幕间待办；GM-only。
 - [人物档案](./人物档案/README.md)：扎雷克正式人物卡快照、历史场次副本、凯瑟琳长期档案。
 - [模组：死寂](./模组/死寂/README.md)：首个正式任务结案、奖励、复盘、余波与历史记录。
 - [模组：冰淇淋车（Ice Cream Truck）](./模组/冰淇淋车_Ice_Cream_Truck/README.md)：第二场正式任务结案、成长、密库补给与复盘资料。

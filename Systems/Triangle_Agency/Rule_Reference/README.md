@@ -26,6 +26,7 @@ ZIP 不作为规则书权威来源，也不作为每次 Preflight 的必读文�
 ## 当前工作资料
 
 - [规则检阅协议](./00_规则检阅协议.md)：问题分流、证据优先级与原文核验步骤。
+- [Playwall 解锁与幕间完整性协议](./02_PLAYWALL_UNLOCK_AND_INTERMISSION_PROTOCOL.md)：Work/Life Balance 每次标记、Playwall 授权、文档处理与幕间审计的系统专属执行规范。
 - [基础规则与现场裁定口径](./01_基础规则与现场裁定.md)：常用基础机制与已确认桌面口径。
 - [规则疑点与裁定记录](./04_规则疑点与裁定记录.md)：待核问题、证据与用户裁定。
 - [规则导航索引](../Research/triangle-agency-rules-index.md)：主题定位与页码导航。
