@@ -11,10 +11,12 @@
 systems:
   - system_id: triangle_agency
     system_entry: Systems/Triangle_Agency/README.md
+    campaign_prefix: TA
     ruleset_versions: ["中文 v22"]
     status: active
   - system_id: cairn
     system_entry: Systems/Cairn/README.md
+    campaign_prefix: CA
     ruleset_versions: ["Cairn Second Edition"]
     status: candidate
 ```
