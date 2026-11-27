@@ -134,14 +134,14 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
     def test_prepare_is_persisted_and_idempotent(self):
         first = self.store.prepare(self.manifest)
         second = self.store.prepare(self.manifest)
-        self.assertEqual(first["status"], "PREPARED")
+        self.assertEqual(first["status"], "STORE_PREPARED")
         self.assertEqual(first, second)
         self.assertEqual(len(self.store.changed[self.store.heads[self.store.operations_branch]]), 1)
 
     def test_prepare_lost_ack_is_verified_from_immutable_history(self):
         self.store.lose_next_ack = True
         result = self.store.prepare(self.manifest)
-        self.assertEqual(result["status"], "PREPARED")
+        self.assertEqual(result["status"], "STORE_PREPARED")
         path = ".runtime/operations/BATCH-002.json"
         head = self.store.heads[self.store.operations_branch]
         self.assertIsNotNone(self.store._find_path_commit(
@@ -159,7 +159,7 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
     def test_publish_places_all_targets_checkpoint_and_receipt_in_one_commit(self):
         self.store.prepare(self.manifest)
         result = self.store.publish("BATCH-002", BASE, self.targets)
-        self.assertEqual(result["status"], "PUBLISHED")
+        self.assertEqual(result["status"], "STORE_COMMITTED")
         self.assertEqual(result["target_revision"], 2)
         commit = result["commit_oid"]
         changed_paths = self.store.changed[commit]
@@ -168,18 +168,18 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
             {
                 "campaign/runtime_state.json",
                 "campaign/session_log.jsonl",
-                ".runtime/checkpoint.json",
+                ".runtime/store_checkpoint.json",
                 ".runtime/receipts/BATCH-002.json",
             },
         )
         self.assertEqual(self.store.parents[commit], [BASE])
-        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "PUBLISHED")
+        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "STORE_COMMITTED")
 
     def test_publish_lost_ack_is_reconciled_without_replay(self):
         self.store.prepare(self.manifest)
         self.store.lose_next_ack = True
         result = self.store.publish("BATCH-002", BASE, self.targets)
-        self.assertEqual(result["status"], "PUBLISHED")
+        self.assertEqual(result["status"], "STORE_COMMITTED")
         runtime_commits = [
             oid for oid, paths in self.store.changed.items()
             if ".runtime/receipts/BATCH-002.json" in paths
@@ -191,14 +191,14 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         self.store._advance_unrelated(self.store.runtime_branch)
         with self.assertRaises(StaleRevision):
             self.store.publish("BATCH-002", BASE, self.targets)
-        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "PREPARED")
+        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "STORE_PREPARED")
 
     def test_atomic_expected_head_rejects_race_after_initial_read(self):
         self.store.prepare(self.manifest)
         self.store.race_next_publish = True
         with self.assertRaises(StaleRevision):
             self.store.publish("BATCH-002", BASE, self.targets)
-        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "PREPARED")
+        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "STORE_PREPARED")
 
     def test_wrong_target_payload_is_rejected_before_commit(self):
         self.store.prepare(self.manifest)
@@ -223,14 +223,14 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         head = self.store.heads[self.store.operations_branch]
         self.store.snapshots[head][path] = "{not-json"
         result = self.store.reconcile("BATCH-002")
-        self.assertEqual(result["status"], "DISPUTED")
+        self.assertEqual(result["status"], "STORE_DISPUTED")
         self.assertEqual(result["reason"], "PREPARE_MALFORMED")
         with self.assertRaises(DisputedBatch):
             self.store.prepare(self.manifest)
 
         self.store.snapshots[head][path] = json.dumps(["not", "an", "object"])
         result = self.store.reconcile("BATCH-002")
-        self.assertEqual(result["status"], "DISPUTED")
+        self.assertEqual(result["status"], "STORE_DISPUTED")
         self.assertEqual(result["reason"], "PREPARE_MALFORMED")
 
     def test_reconcile_fails_closed_on_malformed_receipt_and_checkpoint(self):
@@ -242,14 +242,14 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         original_receipt = snapshot[receipt_path]
         snapshot[receipt_path] = "{not-json"
         result = self.store.reconcile("BATCH-002")
-        self.assertEqual(result["status"], "DISPUTED")
+        self.assertEqual(result["status"], "STORE_DISPUTED")
         self.assertEqual(result["reason"], "RECEIPT_NOT_JSON")
 
         # Restore the receipt, then corrupt the checkpoint in the same historical commit.
         snapshot[receipt_path] = original_receipt
-        snapshot[".runtime/checkpoint.json"] = "{not-json"
+        snapshot[".runtime/store_checkpoint.json"] = "{not-json"
         result = self.store.reconcile("BATCH-002")
-        self.assertEqual(result["status"], "DISPUTED")
+        self.assertEqual(result["status"], "STORE_DISPUTED")
         self.assertEqual(result["reason"], "CHECKPOINT_NOT_JSON")
 
     def test_reconcile_detects_removed_prepare_manifest(self):
@@ -264,7 +264,7 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         self.store.parents[new] = [old]
         self.store.changed[new] = {path}
         self.store.heads[self.store.operations_branch] = new
-        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "DISPUTED")
+        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "STORE_DISPUTED")
         with self.assertRaises(DisputedBatch):
             self.store.prepare(self.manifest)
 
@@ -305,7 +305,7 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         self.store.parents[new] = [head]
         self.store.changed[new] = {path}
         self.store.heads[self.store.operations_branch] = new
-        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "DISPUTED")
+        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "STORE_DISPUTED")
 
     def test_reconcile_detects_receipt_removed_after_publication(self):
         self.store.prepare(self.manifest)
@@ -319,7 +319,7 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         self.store.parents[new] = [old]
         self.store.changed[new] = {".runtime/receipts/BATCH-002.json"}
         self.store.heads[self.store.runtime_branch] = new
-        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "DISPUTED")
+        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "STORE_DISPUTED")
 
     def test_reconcile_detects_tampered_current_receipt(self):
         self.store.prepare(self.manifest)
@@ -336,7 +336,7 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         self.store.parents[new] = [head]
         self.store.changed[new] = {receipt_path}
         self.store.heads[self.store.runtime_branch] = new
-        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "DISPUTED")
+        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "STORE_DISPUTED")
 
 
 class GraphQLRequestShapeTests(unittest.TestCase):
