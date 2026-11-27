@@ -292,10 +292,19 @@ class GitHubGraphQLRuntimeStore:
         nodes = history.get("nodes", []) if isinstance(history, dict) else []
         matches = []
         for node in nodes:
+            oid = node.get("oid")
+            if not oid:
+                continue
+            if parent_oid is None:
+                # For a deleted path, history includes both its creation and
+                # deletion. Return a commit where the blob actually existed.
+                if self._read_file_at(oid, path) is not None:
+                    return oid
+                continue
             parents = node.get("parents", {}).get("nodes", [])
             parent_oids = [item.get("oid") for item in parents]
-            if parent_oid is None or parent_oid in parent_oids:
-                matches.append(node.get("oid"))
+            if parent_oid in parent_oids:
+                matches.append(oid)
         if len(matches) > 1:
             raise DisputedBatch("multiple commits claim the same parent and immutable path")
         return matches[0] if matches else None
