@@ -5,6 +5,7 @@ import unittest
 from runtime_store.github_graphql_store import (
     BatchConflict,
     CommitOutcomeUnknown,
+    DisputedBatch,
     GitHubGraphQLError,
     GitHubGraphQLRuntimeStore,
     InvalidTargetPath,
@@ -202,7 +203,7 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
     def test_unsafe_target_path_is_rejected(self):
         bad_manifest = dict(self.manifest)
         bad_manifest["target_fingerprints"] = {"../escape.json": fingerprint_text("x")}
-        with self.assertRaises(Exception):
+        with self.assertRaises(InvalidTargetPath):
             self.store.prepare(bad_manifest)
         self.store.prepare(self.manifest)
         with self.assertRaises(InvalidTargetPath):
@@ -221,7 +222,7 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         self.store.changed[new] = {path}
         self.store.heads[self.store.operations_branch] = new
         self.assertEqual(self.store.reconcile("BATCH-002")["status"], "DISPUTED")
-        with self.assertRaises(Exception):
+        with self.assertRaises(DisputedBatch):
             self.store.prepare(self.manifest)
 
     def test_reconcile_detects_tampered_prepare_manifest(self):
