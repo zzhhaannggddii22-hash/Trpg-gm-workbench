@@ -1,7 +1,7 @@
 # Bower Street｜Runtime State
 
 > 当前状态：CLOSED / SESSION 01 CLOSED / SESSION 02 CLOSED / MODULE CLOSED
-> 本文件是当前运行快照入口。此历史记录未附可验证的发布批次清单，按 LEGACY_UNMIGRATED 恢复。定向核对编号日志、已呈现锚点及有关权威后，按字段决定推进范围。
+> 结团性质：LEGACY_CLOSEOUT / LEGACY_UNMIGRATED（未按 v0.3 批次契约发布；不得伪装为具备原子发布或冷恢复证明）。本文件是当前运行快照入口；新会话须定向核对编号日志、资源账本、最终结团记录及实际发布证据。
 > **资源交易历史与 Session 内余额唯一入口：[09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md)。** 本文件只提供场景续接和必要关键物品快照，不另建资源流水或余额；正式人物卡只在 Session 结束对账后更新，作为下一场开局快照。
 
 ## Session 状态（历史运行快照；最终结团状态见文末 §Final Closeout）
@@ -26,9 +26,10 @@
 - 装备最后已知状态：Ripple Gun 满充 1 发；常规公文包由扎雷克携带；本 Session 未记录使用/转移。
 - 凯瑟琳防护储备最后已知 9/9；本 Session 未记录消耗。
 
-## 资源状态引用
-- 本模组所有资源余额、变化流水及待核交易统一见 [09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md)。本文件不重复列出数值。
-- 当前待核事项：普通 Chaos Pool 的 BOWER-RES-001 尚待核实；在核对完成前，不以 0 或临时报告的 +5 作为可用余额。
+## 资源状态引用（结团前历史段落；当前余额以最终结团覆盖层为准）
+- 本模组所有资源余额、变化流水及待核交易统一见 [09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md)。本文件不重复列出资源数值。
+- 结团前的 BOWER-RES-001 待核说明已由最终结团规则覆盖：普通 Chaos Pool 当前结团余额为 0（RESET AT MODULE CLOSE）；SESSION 01 原始交易应用状态仍保留为历史审计缺口。
+- 其他持续资源的 UNKNOWN / NONZERO 状态以 Resource Ledger 最终核验视图为准，不得因普通 Pool 清零而推断其他字段。
 - 本文件只记录场景连续性和必要的关键物品状态。
 
 ## 地点与 NPC 状态（桌面 CANON）
@@ -84,5 +85,5 @@
 - 详细证据边界与已恢复资源交易见 [SESSION_02.md](./Sessions/SESSION_02.md) 与 [09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md)。SESSION_02 原始完整逐轮对话未恢复，不把摘要伪装成逐字日志。
 - 当前幕间成长入口：Mission MVP 免费职能格已选择 Attentiveness +1 QA 上限；该免费标记是 Competency 第5格（无 Playwall 代码）。完整模组结团 Time +1；Time 尚未花费，因此尚未产生新的轨迹标记或 Playwall 解锁。影像女孩能力尚未设计、定价、解锁或购买。逐笔历史与后续门禁见 [Zarek Playwall Unlock Ledger](../../PLAYWALL_UNLOCK_LEDGER.md)。
 - Commendations 结团报告余额 18。能力定价目标约 20，但当前可负担上限为 18，除非未来有新收入。
-- 未结资源：普通 Chaos Pool 余额、Harm、Burnout、其他 QA 使用、Demerits、天气事件、Ternion City 分部 Loose Ends 模组增量、Ripple Gun/其他关键道具使用。全部保持 UNKNOWN / INCOMPLETE；不得填 0。
+- 未结资源/审计缺口：Harm、Burnout、其他 QA 历史使用、Demerits 精确数值、天气事件后续记录、Ripple Gun/其他关键道具的模组内使用明细保持 UNKNOWN / INCOMPLETE；不得填 0。普通 Chaos Pool 当前模组结团余额已按规则 RESET 为 0；SESSION 01 的原始交易应用状态仍是历史审计缺口，不再是当前余额缺口。Loose Ends 本模组增量已确认 +0。
 - 这些历史账目缺口不阻止模组叙事结团或开展不涉及未知资源支出的幕间互动；任何需要调用未知余额的机械行动先暂停该字段核对。

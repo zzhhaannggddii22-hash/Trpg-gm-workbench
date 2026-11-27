@@ -122,3 +122,7 @@
 - [验收执行提示词与操作者协议](./Testing/Execution_Prompts/README.md)：P0/P1/T0 执行提示与操作者隔离资料。
 
 运行可靠性测试、叙事综合能力评估和真实跑团体验分别报告。合成测试通过不能证明实际跑团整体优秀；训练样本优秀也不能证明运行可靠性验收通过。
+
+## 9. Module Closeout
+
+- [Module 结团与资源对账协议](./MODULE_CLOSEOUT_AND_RESOURCE_RECONCILIATION_PROTOCOL.md)：通用结团事务、幂等恢复、最终发布与跨模组交接契约。

@@ -51,3 +51,7 @@
 所有夹具均为合成测试资料。执行时遵守对应 START、固定 ref、执行顺序和隔离协议；不得将操作者答案、评分断言或后续轮次提前提供给目标 Chat。
 
 SC-01 至 SC-18 不进入默认测试清单。设计文件存在不代表已执行；UNKNOWN 不算 PASS。
+
+## Module Closeout
+
+- [Module Closeout 冷恢复回归夹具 v1](./MODULE_CLOSEOUT_COLD_RECOVERY_REGRESSION_v1.md)。

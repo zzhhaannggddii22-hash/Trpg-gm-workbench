@@ -595,6 +595,21 @@ GM 收到玩家行动描述后，先按场景上下文理解其实际意图。�
 - 重试必须幂等：已正确写入的目标不重复应用状态变化；错误目标先隔离，再按已核实事件信封修复。
 - 无法读取某个必需目标时，状态保持 INCOMPLETE / PENDING_EXTERNAL_WRITE；明确列出未核验目标。
 
+### Module Closeout 扩展契约（v0.3）
+
+Module 结团沿用本节 PREPARE → APPLY → RECONCILE → PUBLISH，不创建第二套事务或事件系统。具体流程以 [Module Closeout & Resource Reconciliation Protocol](./MODULE_CLOSEOUT_AND_RESOURCE_RECONCILIATION_PROTOCOL.md) 为准。
+
+- 每次合法结团使用稳定 `closeout_operation_id`，并与 `event_id`、`reward_eligibility_id`、`field_operation_id`、`batch_id`、`revision_id` 区分。同一操作重试必须复用原身份。
+- PREPARE Manifest 必须独立持久化、独立读回，作为既有 GM-only Operational Diagnostics / 批次记录，并按 Campaign / Module / Run Identity / Branch / batch_id 定位。Runtime State 的 persistence.prepare_manifest_ref 指向当前 PREPARE；最终发布后 reconciliation_manifest_refs[] 保留完整 Manifest 权威引用；applied_event_ids[] 仅作定位，不构成应用证明。目标文件未写入、发布指针仍指向旧检查点时，也必须能从既有 Diagnostics 与 Runtime 引用发现未发布 Manifest。不得新建 Operation Index、索引服务或第二套 Manifest 注册表。
+- 首次并发启动使用现有 Git branch HEAD 条件更新/等价原子提交争取唯一 Operation；失败者重新读取 Diagnostics 与 Runtime 引用并复用已创建身份。若宿主不支持条件创建/条件更新，或无法证明只产生一个有效 Operation，标记 IDENTITY_UNVERIFIABLE 并停止自动结算。
+- PREPARE Manifest 成功读回后，活动 Operation 派生逻辑 CLOSEOUT_PENDING。旧已发布检查点不提前改写；读者必须先查询活动 Operation，不能只看旧检查点判断没有待结团事务。
+- 最终发布批次必须同时包含结团结果、必需字段应用证明、源 Module 交接字段和 Module CLOSED 状态。**最终发布指针成功提交是 CLOSED 唯一生效点。** 不得先发布结算、再另行写入 CLOSED。
+- 目的 Module READY 必须绑定目的 Module 身份、其所需字段集合与目标检查点；源 Module CLOSED 不自动证明目的 Module READY。
+- Postmortem 是独立、可选、只读且非阻塞的复盘，不纳入结团批次，不阻止 CLOSED 或目的 Module Preflight。复盘发现错误时只提交证据与纠错建议；实际修正另走授权追加事件和新批次。
+- Value Evidence、Application、Publication、Discovery、Handoff 分开记录。NOT_APPLIED 必须有证据；无法读回标 UNVERIFIABLE，不得当作未执行。
+
+若宿主无法按运行身份发现未发布 Manifest、无法独立读回目标或无法条件发布，降级为人工待保存增量；不得宣称自动恢复、正式发布或 CLOSED 已生效。
+
 ### 14.4-B CLOSED 分支与新运行授权
 
 **在解读场景动作之前分派请求。** 以当前 Session 的 CLOSED 状态和新运行授权决定能否执行角色行动，Module 的 ACTIVE 状态不改变这项决定。CLOSED 且无新运行授权时，对复合请求逐项使用以下结果：

@@ -342,6 +342,8 @@ Handoff 是恢复入口，不是独立权威状态，不得凌驾于 Campaign Bi
 
 ### 12.5 部分写入、并发与提交事务契约
 
+> 本节 Delivery Manifest 管理新模组备团交付批次；Module 结团事务仍使用 Runtime §14.4-A 的 PREPARE Manifest。两种 Manifest 的身份、目标集合和发布语义不同，不得互相替代。
+
 “同一交付批次”必须具备可判定的事务边界：
 
 1. **固定基线**：记录目标分支 HEAD（Base Commit）和本次变更文件清单。所有写入均以该基线为起点。
@@ -370,4 +372,33 @@ Delivery Manifest 至少包含 Delivery ID、Base Commit、Change Set、Artifact
 | Player | 保留角色行动选择并明确开团授权 |
 
 这些是逻辑责任，不要求由六个不同的人承担。同一 AI 可以兼任作者、规则核验、交付与 Runtime GM，但必须标记为 SELF-REVIEW；不得将其自审描述为独立 QA。只有未参与该批次制作、且能独立读取固定版本的审查者，才可记为 INDEPENDENT REVIEW。Player 的选择与授权不能由 GM 或 QA 代行。
+
+### 12.7 Source Module Closeout 与 Destination Module READY（v0.3）
+
+源模组结团和目的模组备团可以并行，但交接必须区分“备团材料已交付”与“目的模组已具备开团条件”。
+
+**源 Module 交接字段：**
+- 源 Campaign / Module / Run Identity；
+- 最终已发布 Checkpoint、Batch ID 与发布修订；
+- 源 Module CLOSED 结果与结束依据；
+- 角色跨模组持续资源/伤害/成长的已核验字段；
+- 关键道具持有人、状态及跨模组限制；
+- Campaign 累计指标及其 Module 增量；
+- 玩家已确认的成长选择、实际消费与尚未执行的计划；
+- UNKNOWN / DISPUTED / UNVERIFIABLE 字段及其影响范围；
+- 可供目的 Module 使用的玩家可知状态投影。
+
+以上字段在最终发布前只是交接候选；最终发布批次必须同时包含源 Module CLOSED 与必要交接字段应用证明。不得在最终发布前把候选交接当成正式跨模组状态。
+
+**目的 Module READY：**
+- READY 绑定具体目的 Module ID、最终源 Checkpoint、该目的 Module 的 Required Fields 与适用规则版本。
+- 目的 Module 独立核对其开场所需字段、装备、资源、人物卡、玩家知识和规则前提。
+- CLOSED 只证明源 Module 已正式关闭；不自动证明目的 Module READY。
+- 某个未知字段只阻塞依赖它的行动/购买/资源支出；无关的备团和安全互动可继续。
+- 源 Module 尚未 CLOSED 时，目的 Module 可以完成固定 Prep，但其依赖源模组最终状态的运行字段保持 BLOCKED / NOT_CHECKED。
+
+**Postmortem 与归档：**
+- Postmortem 可选、只读、非阻塞；不作为源 Module CLOSED 或目的 Module READY 的门槛。
+- Postmortem 发现错误时仅提交证据和建议；修正必须通过独立授权、追加修订事件和新批次。
+- ARCHIVED 只影响旧入口的日常使用，不替代 CLOSED，也不影响历史批次的可追溯性。
 
