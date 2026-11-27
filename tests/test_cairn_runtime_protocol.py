@@ -350,10 +350,14 @@ class CairnRuntimeProtocolTests(unittest.TestCase):
         first = npc.reencounter()
         self.assertEqual(first["location"], "downstream")
         self.assertEqual(first["ration_uses"], 2)
-        self.assertTrue(npc.commit_offscreen_action("search-1", "old_mill", 1, "cargo_found"))
+        self.assertFalse(npc.commit_offscreen_action("search-1", "old_mill", 1, "cargo_found"))
+        self.assertEqual(npc.reencounter()["location"], "downstream")
+        self.assertTrue(npc.commit_offscreen_action("search-2", "old_mill", 0, "cargo_search_pending"))
         second = npc.reencounter()
-        self.assertEqual(second["location"], "downstream")
+        self.assertEqual(second["location"], "old_mill")
         self.assertEqual(second["ration_uses"], 2)
+        self.assertFalse(npc.commit_offscreen_action("search-2", "landing", 0, "skiff_missing"))
+        self.assertEqual(npc.reencounter()["location"], "old_mill")
         self.assertIn("sealed_cargo_contents", second["private_knowledge"])
 
     def test_conflicting_attack_modifiers_require_adjudication(self):
