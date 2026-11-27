@@ -1,6 +1,6 @@
 # Blame It on the Trains｜模组入口
 
-> 正式战役模组。状态：**DELIVERED / PREP RULE VALIDATION COMPLETE / PREFLIGHT NOT STARTED**。文件化交付已归档；核心规则与来源核验未关闭。用户未说“开始”前不得启动。
+> 正式战役模组。状态：**DELIVERED / PREP RULE VALIDATION COMPLETE / PREFLIGHT NOT STARTED**。文件化交付与可访问中文来源下的核心规则核验已完成；官方英文原版逐页校勘为非阻塞来源质量项。用户未说“开始”前不得启动。
 > 系统：Triangle Agency｜规则唯一权威：《三角机构》中文 v22。
 > 来源：Haunted Table Games, *The Vault: Missions for Triangle Agency*；中文精翻母稿 `the_vault_zh.docx`，源 PDF 93–101，印刷页 180–197。
 > 权限：除 `05_PLAYER_NOTES.md` 外均为 GM-only。玩家侧文件不得复制任何隐藏真相、幕后因果、NPC 秘密或机制触发信息。
@@ -25,9 +25,9 @@
 
 - 文件交付：DELIVERED（固定 Commit 下文件存在并已回读）。
 - 备团设计：REVIEWED；这不代表规则验证完成。
-- 来源核验：BLOCKED；中文精翻第 191–208 页已分页回读，英文原版逐页校勘仍未完成。
-- Prep Rule Validation：BLOCKED；见 07 §3。QA/Burnout、Ask the Agency、Smell the Roses、Chaos 和 Loose Ends 的规则映射已关闭；Harm/Domain 仍为 PARTIAL，设备点交与结算状态仍待核。
-- Runtime/单人路径可执行性：PARTIAL；检查点结构已补齐并完成合成状态测试；单人路径案头测试有部分结果，机械成本与完整端到端运行仍未通过。
+- 来源核验：PARTIAL / NON-BLOCKING；中文精翻第 191–208 页已分页回读，官方英文原版逐页校勘仍未完成。
+- Prep Rule Validation：COMPLETE AGAINST AVAILABLE CHINESE SOURCES；见 07 §3、§10。设备持有人、角色余额和实际天气/环境设置留待 Preflight。
+- Runtime/单人路径可执行性：PARTIAL；已完成规则映射 v2、10 项确定性机械测试与 15 项单人路径测试，并执行 6 条主持续接轨迹；完整信息等价性与真实玩家运行仍未验证。
 - 正式 Preflight：NOT STARTED / WAITING FOR USER “开始”。Preflight 负责本次资源、装备、持有人、天气/环境状态与玩家选择的恢复，不补做已关闭的规则研究。
 - 用户开团许可：WAITING FOR USER “开始”。
 - 内部复审：本轮由凯西独立执行缺陷复核、结构测试、合成状态测试和单人路径案头模拟；详细记录见 07 与 11。
