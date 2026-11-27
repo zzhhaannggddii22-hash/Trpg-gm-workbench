@@ -126,7 +126,9 @@ Desk simulation: 10 scenarios executed; 4 PASS, 4 PARTIAL, 2 BLOCKED. This is no
 
 Synthetic tests: 7/7 PASS. These are executed state-model tests in the current work session, not an automated test suite committed to CI.
 
-Detailed defect dispositions and the delivery manifest are recorded in [11_REMEDIATION_AND_TEST_LOG.md](./11_REMEDIATION_AND_TEST_LOG.md).\n\n## 9. Final status
+Detailed defect dispositions and the delivery manifest are recorded in [11_REMEDIATION_AND_TEST_LOG.md](./11_REMEDIATION_AND_TEST_LOG.md).
+
+## 9. Final status
 
 - Artifact：DELIVERED.
 - Prep design：REVIEWED.
