@@ -121,7 +121,7 @@ def main():
         race_batch_id = "LIVE-RACE-" + run_id
         race_targets = {
             f"Runtime_Store_Smoke/{run_id}/race-target.json":
-                json.dumps({"smoke_run": run_id, "revision": 2}, sort_keys=True) + "\\n"
+                json.dumps({"smoke_run": run_id, "revision": 2}, sort_keys=True) + "\n"
         }
         race_manifest = {
             "batch_id": race_batch_id,
@@ -150,7 +150,7 @@ def main():
                     runtime_branch,
                     race_base,
                     "TEST_ONLY concurrent writer wins expected HEAD",
-                    {f"Runtime_Store_Smoke/{run_id}/concurrent.json": '{"writer":"B"}\\n'},
+                    {f"Runtime_Store_Smoke/{run_id}/concurrent.json": '{"writer":"B"}\n'},
                 )
                 race_triggered = True
             return concurrent_writer._transport(query, variables)
@@ -183,7 +183,7 @@ def main():
             operations_branch,
             operations_head,
             "TEST_ONLY mutate supposedly immutable PREPARE",
-            {operation_path: canonical_json(tampered_envelope) + "\\n"},
+            {operation_path: canonical_json(tampered_envelope) + "\n"},
         )
         tamper_result = restarted.reconcile(manifest["batch_id"])
         assert tamper_result["status"] == "DISPUTED"
