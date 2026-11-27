@@ -1,11 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/trpg-gm-workbench/triangle-agency-dice-ui/roll-event.schema.json",
+  "$id": "urn:trpg-gm-workbench:triangle-agency-dice-ui:roll-event:v1",
   "title": "Triangle Agency Player-Facing Roll Event",
   "description": "Player-visible projection of a resolved or in-progress roll event. Display contract only; not a rules engine or resource ledger.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["event_id", "system_id", "ruleset_version", "mechanic", "status", "roller", "roll_source", "dice"],
+  "required": ["event_id", "system_id", "ruleset_version", "mechanic", "status", "roller", "dice"],
   "properties": {
     "event_id": {"type": "string", "minLength": 1},
     "system_id": {"const": "triangle_agency"},
