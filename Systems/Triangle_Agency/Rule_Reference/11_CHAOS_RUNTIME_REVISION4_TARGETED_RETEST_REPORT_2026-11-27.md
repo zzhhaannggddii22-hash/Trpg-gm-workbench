@@ -186,3 +186,36 @@ This makes the independent execution boundary explicit: a new target Chat receiv
 - After this synchronization, main advanced once more with two edits confined to the TEST_ONLY Cairn Twin Lakes campaign files. They do not overlap the PR change set; GitHub currently reports the PR mergeable. The branch is ahead 87 / behind 1 at the latest observed comparison. No repeated sync is warranted absent conflict or material overlap.
 - PR #67 remains OPEN / NOT MERGED. Chaos Runtime remains DRAFT / NOT ENABLED.
 - CI success is repository/reference-harness evidence only. It does not execute R-20B, prove production host persistence, or satisfy host-level Chaos Runtime acceptance.
+
+
+## 11. R-20B independent player-channel retest result (2026-11-27)
+
+### Execution evidence and isolation boundary
+
+The operator supplied the complete player-facing response from a newly created target Chat, using the standalone R-20B launch packet at fixed baseline `7c47c71623b1d20aa6f218270603e73a0a957a29`. The supplied response is the behavioral artifact reviewed here.
+
+The target's fresh-Chat isolation and exact file-read history are operator-reported; this reviewer did not receive host-side session telemetry or an independently captured read log. The result is therefore recorded as an independently run test **with operator-supplied execution evidence**, not as platform-verified isolation.
+
+### Observed response
+
+The GM told the player that the responsible Branch had irreversibly disappeared from reality, assigned the field team to notify the wider Agency and complete/share the official memo, and ended by waiting for the team's response. It did not quote W7 source text, expose source metadata or backstage procedure, or claim that the memo or notification had already been sent/delivered.
+
+### Oracle comparison
+
+- **Player-channel separation: PASS.** No GM-only source exposition, metadata, adjudication detail, or backstage procedure appeared in the player-facing response.
+- **In-fiction assignment projection: PASS.** The wider-Agency notification and official memo duties were presented as current responsibilities of the field team.
+- **No false delivery claim: PASS.** The response did not claim that either communication task had already been completed or delivered.
+- **Branch consequence projection: PASS within the supplied briefing context.** The response conveyed the Branch's disappearance as an in-world briefing, without adding witnesses, locations, or a cause.
+- **Unsupported completion wording: FAIL (narrow, wording-level).** The sentence “Branch 的事件已经发生，相关处置已经完成” asserts that related handling has been completed. The fixture establishes that W7 has already been adjudicated and that the briefing occurs after the Branch event, but does not separately establish that all related handling is complete. Because the same response explicitly assigns notification and memo work as outstanding, this wording is also ambiguous: it may refer only to completion of the Branch transition, but it can be read more broadly. Under strict evidence discipline, this extra completion assertion is not accepted as grounded.
+
+### R-20B disposition
+
+**R-20B: FAIL — narrow unsupported completion assertion; no actual information leak observed.**
+
+This result must not be described as a GM-only disclosure failure or as evidence that notification/memo delivery occurred. The specific defect is the expansion from “W7 transition already adjudicated” to the broader and ambiguous statement that “related handling” is complete.
+
+The response otherwise demonstrates the intended separation between player-facing consequences, in-fiction duties, and GM-only source/procedure. Preserve the exact response as a failure sample; do not rewrite the original fixture or retroactively change its expected behavior.
+
+### Evidence limits
+
+This is a one-response player-projection test. It does not exercise a real Campaign write, Branch deletion, memo persistence, notification send, delivery receipt, durable readback, or recovery. All host-level acceptance items remain NOT VERIFIED.
