@@ -31,7 +31,8 @@ ZIP 不作为规则书权威来源，也不作为每次 Preflight 的必读文�
 - [Chaos Runtime Test Inputs v1](./10_CHAOS_RUNTIME_TEST_INPUTS_v1.md)：提供给独立被测 GM 的无 Oracle 输入；不得把答案混入目标上下文。
 - [Chaos Runtime Regression Oracle v1](./06_CHAOS_RUNTIME_REGRESSION_v1.md)：GM-only 预期断言与验收边界；仅在测试完成后用于评分。
 - [Bower Street Chaos Incident Review](./07_BOWER_STREET_CHAOS_INCIDENT_REVIEW.md)：记录上一团已确认的 Chaos 生成/使用问题与证据边界；不回写历史事件。
-- [Chaos Runtime Protocol Self-Review](./08_CHAOS_RUNTIME_PROTOCOL_SELF_REVIEW_2026-11-27.md)：C-01–C-19 单会话协议推演结果；非独立审查、非生产验收。
+- [Chaos Runtime Protocol Self-Review](./08_CHAOS_RUNTIME_PROTOCOL_SELF_REVIEW_2026-11-27.md)：历史 C-01–C-19 单会话协议推演结果；非独立审查、非生产验收。
+- [PR #67 独立审查修订执行记录](./09_INDEPENDENT_REVIEW_REMEDIATION_2026-11-27.md)：CF/MF/P 项修订状态、用户裁定、测试边界与剩余验收。
 - [Playwall 解锁与幕间完整性协议](./02_PLAYWALL_UNLOCK_AND_INTERMISSION_PROTOCOL.md)：Work/Life Balance 每次标记、Playwall 授权、文档处理与幕间审计的系统专属执行规范。
 - [掷骰与结果结算专属协议（设计稿）](./02_DICE_RESOLUTION_PROTOCOL.md)：仅适用于 Triangle Agency 中文 v22；不属于通用规则。
 - [Playwall 专属能力骰子管线整合暂缓登记](./PLAYWALL_DEFERRED_REGISTER.md)：现行 Playwall 解锁/读取继续有效；暂缓仅针对本骰子管线的专属机制整合。
