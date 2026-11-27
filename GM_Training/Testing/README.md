@@ -16,3 +16,8 @@
 - `P1_0R/p1_0r_fault_harness.py` 保留在原路径，作为独立脚本例外；从 Fixtures 索引链接过去。
 - GM-only、操作者协议和 ORACLE 的标记不构成 GitHub 访问控制。不得把隐藏答案上传目标 Chat。
 - 设计文件存在不代表测试已执行或通过；报告必须记录版本、证据等级和未测试边界。
+
+
+## QA 系统自身验收
+
+- [QA System Acceptance](./QA_System_Acceptance/README.md)：仅在 QA 架构/标准/执行协议发生实质变化，或出现系统性误判等触发条件时运行；不是每次常规回归的必跑步骤。
