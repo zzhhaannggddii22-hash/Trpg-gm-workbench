@@ -7,9 +7,13 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 import urllib.error
 import urllib.request
 from urllib.parse import quote
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from runtime_store.github_graphql_store import (
     GitHubGraphQLRuntimeStore,
