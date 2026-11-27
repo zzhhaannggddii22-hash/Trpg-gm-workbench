@@ -90,16 +90,20 @@ class MemoryGitHubStore(GitHubGraphQLRuntimeStore):
     def _find_path_commit(self, branch, path, parent_oid):
         cursor = self.heads[branch]
         matches = []
+        path_commits = []
         while cursor in self.parents:
-            if parent_oid is None:
-                if path in self.snapshots[cursor]:
-                    return cursor
-            elif path in self.changed.get(cursor, set()) and parent_oid in self.parents[cursor]:
-                matches.append(cursor)
+            if path in self.changed.get(cursor, set()):
+                path_commits.append(cursor)
+                if parent_oid is not None and parent_oid in self.parents[cursor]:
+                    matches.append(cursor)
+            if parent_oid is None and path in self.snapshots[cursor]:
+                return cursor
             parents = self.parents[cursor]
             if not parents:
                 break
             cursor = parents[0]
+        if parent_oid is not None and len(path_commits) > 1:
+            raise DisputedBatch("memory model detected a mutable supposedly immutable path")
         if len(matches) > 1:
             raise AssertionError("memory model created duplicate immutable-path commits")
         return matches[0] if matches else None
@@ -227,6 +231,26 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         self.assertEqual(self.store.reconcile("BATCH-002")["status"], "DISPUTED")
         with self.assertRaises(DisputedBatch):
             self.store.prepare(self.manifest)
+
+    def test_publish_rejects_tampered_prepare_even_with_recomputed_fingerprint(self):
+        self.store.prepare(self.manifest)
+        old = self.store.heads[self.store.operations_branch]
+        path = ".runtime/operations/BATCH-002.json"
+        snapshot = dict(self.store.snapshots[old])
+        envelope = json.loads(snapshot[path])
+        envelope["manifest"]["target_revision"] = 999
+        envelope["manifest_fingerprint"] = fingerprint_text(
+            json.dumps(envelope["manifest"], ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        )
+        snapshot[path] = json.dumps(envelope, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\\n"
+        self.store.sequence += 1
+        new = f"{self.store.sequence:040x}"
+        self.store.snapshots[new] = snapshot
+        self.store.parents[new] = [old]
+        self.store.changed[new] = {path}
+        self.store.heads[self.store.operations_branch] = new
+        with self.assertRaises(DisputedBatch):
+            self.store.publish("BATCH-002", BASE, self.targets)
 
     def test_reconcile_detects_tampered_prepare_manifest(self):
         self.store.prepare(self.manifest)
