@@ -112,3 +112,58 @@
 - **不记录为长期库存**：普通易获取、可替代、无特殊机制意义的日常物品、临时杂物和常规消耗品。它们可在当前叙事中自然使用，不建立库存条目。
 - **分工**：人物卡记录 Session 结束时仍持有的关键道具快照；Resource Ledger 记录其资源数值/充能/次数的增减；Session Log 记录取得、交付、使用或丢失事件；Runtime State 只在当前场景确有必要时记录持有人和位置。
 - 道具的获得、消耗、转移、归还或损毁若不影响资源数值，也应在发生时作为事件写入 Session Log；只有达到上述重要性标准时才更新关键物品状态。
+
+
+## 9. 2026-11-27｜SESSION 02 与模组结团结算（最新核验视图）
+
+> 本节是当前最新结算覆盖层；若与 §3–§6 的 SESSION 01 历史快照描述冲突，以本节逐笔交易状态为准。未恢复的原始记录继续标记 UNKNOWN，不用推算填补。
+
+### 9.1 已确认交易
+
+| Entry ID | Session / Event ID | 资源字段 | 变化前 | 变化量 | 变化后 | 应用状态与证据 |
+|---|---|---|---:|---:|---:|---|
+| BOWER-RES-002 | SESSION_02 / BS2-ROLL-001 | 普通 Chaos Pool | UNKNOWN（SESSION 01 未结余额） | +5 | UNKNOWN | PARTIAL：+5 变化量可恢复；因 BOWER-RES-001 未结，不能计算余额 |
+| BOWER-RES-003 | SESSION_02 / BS2-ROLL-001 | Attentiveness QA | 1/1 | -1 | 0/1 | VERIFIED_APPLIED：6d4 骰面与玩家使用 QA 调整首骰的记录 |
+| BOWER-RES-004 | SESSION_02 / CLOSEOUT-MVP | Competency 职能轨迹 | 历史累计 4 格 | +1 格 | 累计 5 格 | VERIFIED_APPLIED：玩家确认 Mission MVP 免费职能格 |
+| BOWER-RES-005 | SESSION_02 / CLOSEOUT-MVP | Attentiveness QA 上限 | 1 | +1 | 2 | VERIFIED_APPLIED：玩家明确选择 Negatives 对应的 Attentiveness |
+| BOWER-RES-006 | SESSION_02 / CLOSEOUT-REWARD | Commendations | 7 | +3 | 10 | ACCEPTED_BY_DEFAULT：收容异常奖励，结团报告获玩家无异议默认通过 |
+| BOWER-RES-007 | SESSION_02 / CLOSEOUT-REWARD | Commendations | 10 | +3 | 13 | ACCEPTED_BY_DEFAULT：报告 Complete 奖励 |
+| BOWER-RES-008 | SESSION_02 / CLOSEOUT-REWARD | Commendations | 13 | +2 | 15 | ACCEPTED_BY_DEFAULT：R&D 两项授权行为奖励 |
+| BOWER-RES-009 | SESSION_02 / CLOSEOUT-MVP | Commendations | 15 | +3 | 18 | ACCEPTED_BY_DEFAULT：Mission MVP 奖励 |
+| BOWER-RES-010 | SESSION_02 / MODULE-CLOSE | 可使用 Time | UNKNOWN | +1 | UNKNOWN | VERIFIED_DELTA：玩家明确纠正为完整模组结团 +1；绝对余额无可靠基线 |
+| BOWER-RES-011 | SESSION_02 / MODULE-CLOSE | 剩余可用 Time | UNKNOWN | -1 | UNKNOWN | VERIFIED_DELTA：按玩家确认的双字段反向记账规则；绝对余额无可靠基线 |
+
+### 9.2 结团后已知状态
+
+| 字段 | 当前核验结果 | 说明 |
+|---|---|---|
+| Module | CLOSED | 玩家确认核心异常收容完成；次要线索未解不阻碍结团 |
+| Commendations | **18** | 结团前报告余额 7，已接受奖励合计 +11 |
+| Competency | **累计 5 格** | MVP 免费职能格 +1；本次选择 Attentiveness |
+| Attentiveness QA 上限 | **2** | 原上限 1，本次 MVP +1 |
+| Attentiveness 当前可用 QA | **2/2（任务间恢复后）** | 按任务间 QA 完全恢复规则 |
+| 普通 Chaos Pool | **UNKNOWN** | SESSION 01 BOWER-RES-001 未结；SESSION 02 已知 +5 变化量，不代表最终余额 |
+| Harm / Burnout / 其他 QA 使用 | **UNKNOWN / INCOMPLETE** | 完整 SESSION 02 检定记录未恢复 |
+| Demerits | **UNKNOWN / INCOMPLETE** | 无完整逐轮记录，不写成 0 |
+| 天气事件 | **UNKNOWN / INCOMPLETE** | SESSION 01 末次确认 0；SESSION 02 未核 |
+| Ternion City 分部 Loose Ends 模组增量 | **UNKNOWN / NOT SETTLED** | Campaign 基线 1 不等于本模组结团余额 |
+| Ripple Gun | **UNKNOWN / NOT RECONCILED** | SESSION 01 最后已知满充 1 发；SESSION 02 使用情况未恢复 |
+| 其他关键道具 | **UNKNOWN / NOT RECONCILED** | 不把未恢复的道具转移或使用写成事实 |
+
+### 9.3 未结事项
+
+#### PENDING-001｜SESSION 01 Ask the Agency / Chaos Pool
+- 开局基线 0；原始结算遗漏；临时补报 +5 未独立核验。
+- SESSION 02 的 BOWER-RES-002 另有一笔可恢复的 +5 变化量；不能用它反推 SESSION 01 的结余或合并成一个未经核实的余额。
+- 状态：OPEN；只影响历史普通 Chaos Pool 的绝对余额核对，不阻止 Bower Street 叙事结团或进入幕间。
+
+#### PENDING-002｜SESSION 02 缺失的逐轮资源记录
+- 原始完整玩家输入、GM 回复和全部检定序列未恢复；目前只有一项完整检定（BS2-ROLL-001）及结团奖励摘要。
+- Harm、Burnout、其他 QA 使用、Demerits、天气事件、分部 Loose Ends 增量和装备消耗均不能确认为 0。
+- 状态：OPEN / SOURCE RECORD INCOMPLETE。若将来恢复原始对话，采用追加修订，不覆盖本节已确认交易。
+
+### 9.4 幕间使用边界
+- 可用 Commendations 当前报告余额：18；影像女孩能力设计目标约 20 嘉奖上下，但不得在当前余额 18 下购买超过 18 的能力。
+- 已确认的 MVP 免费职能格：Attentiveness QA 上限 +1；已确认的结团 Time 增量：+1。
+- 本次 Time 尚未实际投入具体成长；影像女孩互动尚未演出；能力尚未设计、定价或购买。
+- 不将旧人物卡的 Work/Life Balance 轨迹“总量30／已花费2／剩余28”当作当前可使用 Time 余额。
