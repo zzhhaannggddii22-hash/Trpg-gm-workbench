@@ -198,6 +198,12 @@
 - 对装备/关键道具确认是否存在跨模组单次使用限制。没有此类限制、且规则规定模组结束恢复的，恢复满额；不得把 SESSION 末次消耗快照直接复制成下一模组开局状态。
 - 最后才更新人物卡的 Session/Module 边界快照。账本保留流水，人物卡只保存跨模组持续状态与恢复后的关键道具快照。
 
+### 10.2.1 Campaign 状态所有权与新任务 Pool 创建
+
+- 本账本记录 Bower Street 期间的 Loose Ends 基线快照与本模组增量；它不是后续任务的 Campaign 当前 Loose Ends 权威来源。后续任务必须读取 `Campaigns/Zarek/战役记录/战役交接与当前状态.md` 的最新分部总数。
+- Bower Street 关闭时，本模组 Chaos Pool 作为旧任务实例清零并标记 CLOSED。下一任务创建独立 Pool，先写入 0，再按任务开始时的 Campaign Loose Ends 查表，将 Starting Chaos 作为独立初始化 Entry 写入新任务账本。
+- 旧任务清零事件与新任务 Starting Chaos grant 不合并为一笔交易；二者使用各自的 mission_id 和事件身份。
+
 ### 10.3 本 Campaign 当前已明确的结算规则
 
 - **普通 Chaos Pool**：Bower Street 属于模组内资源，模组结束自动清零。SESSION 01 的 BOWER-RES-001 不再阻塞结团余额；历史交易应用情况仍保留原始证据状态，模组关闭重置后不向下一模组结转。
