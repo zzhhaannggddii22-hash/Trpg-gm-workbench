@@ -310,7 +310,7 @@ class GitHubGraphQLRuntimeStore:
             page_info = history.get("pageInfo", {}) if isinstance(history, dict) else {}
             if page_info.get("hasNextPage"):
                 raise DisputedBatch("path history exceeds the verification window")
-            if len(nodes) != 1:
+            if nodes and len(nodes) != 1:
                 raise DisputedBatch("immutable path was changed more than once")
         if len(matches) > 1:
             raise DisputedBatch("multiple commits claim the same parent and immutable path")
@@ -541,9 +541,12 @@ class GitHubGraphQLRuntimeStore:
                 or envelope.get("manifest_fingerprint") != digest
                 or not envelope.get("prepare_base_head_oid")):
             return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PREPARE_FINGERPRINT_MISMATCH"}
-        prepare_commit = self._find_path_commit(
-            self.operations_branch, self._operation_path(batch_id), envelope["prepare_base_head_oid"]
-        )
+        try:
+            prepare_commit = self._find_path_commit(
+                self.operations_branch, self._operation_path(batch_id), envelope["prepare_base_head_oid"]
+            )
+        except DisputedBatch:
+            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PREPARE_PATH_NOT_IMMUTABLE"}
         historical_prepare = self._read_file_at(prepare_commit, self._operation_path(batch_id)) if prepare_commit else None
         if historical_prepare is None or historical_prepare[0] != op_file[0]:
             return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PREPARE_HISTORY_MISMATCH"}
@@ -551,7 +554,10 @@ class GitHubGraphQLRuntimeStore:
         receipt_path = self._receipt_path(batch_id)
         receipt_file = self._read_file(self.runtime_branch, receipt_path)
         if receipt_file is None:
-            prior_receipt_commit = self._find_receipt_commit(receipt_path, manifest["base_head_oid"])
+            try:
+                prior_receipt_commit = self._find_receipt_commit(receipt_path, manifest["base_head_oid"])
+            except DisputedBatch:
+                return {"status": "DISPUTED", "batch_id": batch_id, "reason": "RECEIPT_PATH_NOT_IMMUTABLE"}
             if prior_receipt_commit is not None:
                 return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PUBLISHED_RECEIPT_MISSING"}
             return {"status": "PREPARED", "batch_id": batch_id, "manifest_fingerprint": digest}
@@ -566,7 +572,10 @@ class GitHubGraphQLRuntimeStore:
                 or receipt.get("target_fingerprints") != manifest["target_fingerprints"]):
             return {"status": "DISPUTED", "batch_id": batch_id, "reason": "RECEIPT_MANIFEST_MISMATCH"}
 
-        commit_oid = self._find_receipt_commit(receipt_path, receipt["base_head_oid"])
+        try:
+            commit_oid = self._find_receipt_commit(receipt_path, receipt["base_head_oid"])
+        except DisputedBatch:
+            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "RECEIPT_PATH_NOT_IMMUTABLE"}
         if commit_oid is None:
             return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PUBLICATION_COMMIT_NOT_IN_HISTORY"}
         receipt_at_commit = self._read_file_at(commit_oid, receipt_path)
