@@ -254,9 +254,9 @@
 **触发**：角色被敌人包围、陷入黑暗，或直面其最深恐惧等情境。
 
 - 通常进行 WIL Save，以避免失控并陷入 Panicked。
-- Panicked 角色当前 HP 视为 0；战斗首轮不能行动，所有攻击均为 Impaired。
+- Panicked 角色 HP 降至 0；战斗首轮不能行动，所有攻击均为 Impaired。
 - Panicked 角色必须在自己回合花费一个行动并通过 WIL Save，才能克服恐慌。
-- 这里的 HP=0 是恐慌状态效果，不是攻击造成的 HP 归零；不自动触发 Scars。必须保留原 HP 账本并另记 Panic 状态，状态解除后恢复其原本 HP 记录。
+- 这里的 HP=0 是恐慌规则直接造成的状态变化，不是攻击造成的 HP 归零，因此不触发 Scars。恐慌解除后不自动恢复 HP；后续按正常 HP 恢复规则处理。
 
 ### CR-TRAPS｜陷阱 — VERIFIED_CORE
 
