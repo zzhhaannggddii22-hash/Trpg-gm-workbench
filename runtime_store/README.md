@@ -45,7 +45,7 @@ The file is independently read back before the method reports PREPARED. If the r
 publish(batch_id, expected_head_oid, target_files) verifies the PREPARE manifest and payload fingerprints, then appends one GitHub GraphQL commit to the Runtime branch. That single commit contains:
 
 - every declared target file;
-- .runtime/checkpoint.json;
+- .runtime/store_checkpoint.json;
 - .runtime/receipts/<batch_id>.json.
 
 expectedHeadOid is checked by GitHub as part of the commit mutation. If another writer advanced the branch after the caller's read, the commit is rejected rather than rebased or silently applied to a different base.
@@ -56,9 +56,9 @@ The adapter performs historical readback: it locates the commit that introduced 
 
 reconcile(batch_id) returns:
 - NOT_FOUND: no PREPARE exists;
-- PREPARED: PREPARE exists but no publication receipt is visible;
-- PUBLISHED: receipt, parent commit, checkpoint and every target byte match;
-- DISPUTED: identity, history, checkpoint or target evidence conflicts.
+- STORE_PREPARED: PREPARE exists but no publication receipt is visible;
+- STORE_COMMITTED: receipt, parent commit, store checkpoint and every target byte match. This is storage evidence, not domain-level PUBLISHED status;
+- STORE_DISPUTED: identity, history, store checkpoint or target evidence conflicts;
 
 A transport error after a mutation is not blindly retried. The adapter first attempts independent readback. If the outcome remains unknown, it raises CommitOutcomeUnknown; the caller must reconcile before any retry.
 
@@ -90,7 +90,7 @@ A transport error after a mutation is not blindly retried. The adapter first att
 
     store.prepare(manifest)
     result = store.publish("BATCH-0002", manifest["base_head_oid"], targets)
-    assert result["status"] == "PUBLISHED"
+    assert result["status"] == "STORE_COMMITTED"
 
 The example omits the caller's system-specific event validation and authorization. The adapter must only receive already-approved target payloads.
 
