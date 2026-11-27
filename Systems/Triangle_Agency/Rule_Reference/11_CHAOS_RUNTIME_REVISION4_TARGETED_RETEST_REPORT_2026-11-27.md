@@ -23,7 +23,7 @@ This report consolidates the execution reports and evidence currently available.
 |---|---|---|---|---|
 | C-09 | Exact input lines 77–81 read at the fixed baseline; no Oracle contamination reported | Q01 eligibility, free cost for the qualifying effect, and two distinct action uses logically handled. Concrete effect materialization was not possible because the fixture did not specify a concrete effect identity/target/change. | No host ledger write, independent readback, or delivery receipt | **BLOCKED** — partial logical PASS; world-effect materialization and host persistence unverified |
 | R-13 | Exact input lines 215–223 read at the fixed baseline; no Oracle contamination reported | Domain expansion cost ×3 (6→18), updated spatial membership, ordinary conversation no-op, free in-Domain effect, and paid out-of-Domain effect logically handled. The fixture-specified 2-cost Distort value was used as supplied, not generalized as the universal standard cost. | No committed event IDs/statuses, independent before/after snapshots, persistence readback, or evidence that earlier events were not retroactively rewritten | **BLOCKED** — model-side spatial/cost logic PASS; host commit and persistence unverified |
-| R-16 | Commit metadata diff exposed portions of R-13/R-20/R-25 target inputs. The R-16 exact input range was not independently read. | No Fixture initialization; no first or duplicate closeout; no next-mission setup | No persistence or readback operation | **INVALID / BLOCKED** — isolation compromised; zero R-16 behavior execution; do not count as a valid behavioral regression |
+| R-16 | Fresh independent Chat; exact input lines 244–248 read at the fixed baseline; no Commit metadata/diff, other cases, or Oracle accessed | First closeout, same-event duplicate request, logical no-double-application, next-Mission Pool isolation, and Branch Loose Ends preservation all handled correctly at model level | No host event commit, ledger entry, durable resource/Campaign write, independent host readback, or actual next-Mission record | **BLOCKED at host acceptance** — model-side lifecycle/idempotency logic PASS; host persistence and recovery NOT VERIFIED |
 | R-20 | Exact input lines 276–282 read; W7 source was read directly in the preceding attempt and retained in the same resumed Chat; no Oracle contamination reported | Synthetic Branch Loose Ends 76→77; 77+ threshold recognized; routed to W7 / Unraveling rather than ordinary Pool initialization | Branch removal, event commit/idempotency, independent readback, memo submission, notification delivery, and related Mission/Agent host state were not executed or verified | **BLOCKED, with a visibility-classification failure** — threshold/routing logic PASS; W7 follow-through and host operations unverified |
 | R-25 | Exact input lines 321–327 read at the fixed baseline; no Oracle contamination reported | Q06 Campaign-scoped condition correctly not triggered by ordinary light rain; table Starting Chaos 5 applied as a separate grant; actual Weather Events count 0 distinguished from table count 1; Branch restriction loaded into fixture | No Campaign Ledger write, checkpoint, independent readback, or delivery receipt. Actual NPC spontaneous reminder behavior was not exercised. | **BLOCKED** — behavioral decision and model-level state transition PASS; host persistence unverified |
 
@@ -84,17 +84,52 @@ These remain **NOT VERIFIED**, not PASS and not FAIL.
 ## 6. Required next actions
 
 1. Preserve this Revision 4 evidence closeout without claiming full acceptance.
-2. Run R-16 once in a genuinely fresh isolated Chat, using only the exact target input lines 244–248 and the two Runtime protocols. Do not inspect Commit metadata or diffs; pin the already-known commit SHA and fetch only the exact permitted files/ranges. Do not read other cases or the Oracle.
+2. R-16's fresh isolated model-side execution is now recorded. Do not repeat it merely to restate logical idempotency; host-level event commit, durable ledger writes, independent readback, and recovery remain open.
 3. Correct the R-20 visibility classification so W7 remains GM-only; do not repeat the already-completed threshold calculation merely to restate it.
 4. Do not simulate host persistence, deletion, recovery, or message delivery. Revisit those checks only when the real host capability exists.
-5. Obtain fresh CI on the resulting PR head and conduct a focused independent review before considering merge or Runtime activation.
+5. Reconcile the PR branch with its current base, obtain fresh CI, and conduct a focused independent review before considering merge or Runtime activation.
 
 ## 7. Repository / PR status at closeout
 
 At the time of this report:
 - PR #67 is OPEN and NOT MERGED.
-- The head branch points to baseline commit `9c00833a913c0092893a962ec8833cae628d113d`.
-- That commit has no commit statuses and no workflow runs in the retrieved GitHub evidence.
+- The head branch now includes this report's follow-up commit; see the current PR head for the latest SHA.
+- CI status must be checked against the latest head after branch/base reconciliation.
 - Runtime remains DRAFT / NOT ENABLED.
 
 This report does not authorize merging the PR or enabling the Runtime.
+
+
+## 8. R-16 fresh isolated retest follow-up (2026-11-27)
+
+### Input and isolation
+A fresh independent single-case Chat reported successful retrieval of:
+- Runtime Protocol and System Rule Runtime Integration Protocol at the fixed baseline;
+- `10_CHAOS_RUNTIME_TEST_INPUTS_v1.md`, lines 244–248, blob `e32106a352919d7da8cd269eeb7f57f38514700b`.
+
+The execution report states that no Commit metadata/diff, PR, full Git Tree, other case inputs, Oracle, Expected Results, or historical test reports were read. No Oracle contamination was reported.
+
+### Model-side lifecycle behavior
+Fixture:
+- Campaign Branch Loose Ends = 1;
+- Mission-C ACTIVE;
+- Mission-C Pool = 7;
+- all entries reconciled;
+- stable closeout source event identity `CLOSEOUT-MISSION-C-01`.
+
+Reported logical transitions:
+1. First closeout: Mission-C ACTIVE→CLOSED; Pool 7→0; discarded Chaos 0→7; Branch Loose Ends remains 1; the closeout event is marked COMPLETE in the model-side execution.
+2. Identical request with the same event identity: treated as `DUPLICATE_EVENT → REUSE_EXISTING_RESULT`; no second discard, Pool reset, Branch mutation, duplicate event creation, or replay of completed fields was reported.
+3. Next-Mission preparation: re-read Branch Loose Ends = 1; create a fresh logical Pool at 0; the 0–10 table row gives Starting Chaos 0 and Weather Events 0; no part of Mission-C's discarded 7 is carried forward. `Mission-D` is only a logical example, not a host-created mission record.
+4. Branch Loose Ends remains 1 throughout.
+
+**R-16 model-side result: PASS** for first closeout logic, same-event duplicate handling, task-pool separation, and Campaign Branch Loose Ends preservation.
+
+### Host-level boundary
+No host write interface was invoked. The report contains no host commit receipt, Resource Ledger Entry ID, durable Mission-C record, independent readback, duplicate-request host evidence, or real next-Mission ID / Pool record.
+
+**R-16 host-level acceptance: BLOCKED / NOT VERIFIED.**
+
+The report's engineering observation is retained: an event ID alone is not sufficient proof of idempotency. A reliable host implementation must bind the source event to the relevant mission identity, original request, event/commit status, and completed-field progress so that retries cannot replay a completed transition or apply an old mission's closeout to a new mission.
+
+This follow-up supersedes the earlier R-16 status in this report that described the case as isolation-compromised and unexecuted. The earlier failed attempt remains part of the test history but is not counted as the valid R-16 run.
