@@ -24,7 +24,7 @@ status: active
 
 以下为本 Campaign 已确认的桌面运行约定；不得自动继承到其他 Triangle Agency Campaign：
 
-- **Chaos Pool：**每次任务开始前，读取当前分部的 Loose Ends 总数，按中文 v22《Loose Ends & Weather Events》印刷页 165 的“分部限制表”确定本次任务的初始 Chaos 与天气事件档位；不得固定初始化为 0，也不得继承上一任务的 Chaos 余额。任务内 Chaos Pool 独立记账，完整任务结团时将未使用余额清零。分部 Loose Ends 总数、天气事件历史与任务 Chaos Pool 是不同状态，分别记录。
+- **Chaos Pool 生命周期：**上一任务结团时，将该任务未使用 Chaos 清零并关闭旧 Pool；新任务建立时创建独立 Pool，先以 0 为余额，再读取当时 Campaign 当前分部 Loose Ends，按中文 v22 印刷页 165 表格发放 Starting Chaos。不得继承上一任务余额，也不得把 Campaign 当前 Loose Ends 写入 Systems 规则文件。天气事件数量与分部 Loose Ends、任务 Chaos Pool 分别记录；只有具体天气结果明确要求改变分部状态时才更新 Loose Ends，特别极端天气按其明确后果处理。
 - **QA 对应 Quality：**普通检定只消耗本次检定所用 Quality 的 QA；不得跨 Quality 挪用。人寿保单保障项目 1（Q03）是明确例外，可消耗任意 Quality 的 QA 来忽略 Harm。
 - **Burnout / QA 时序（Q04）：**先检查并结算本次检定已有 Burnout，再处理 QA；同次检定中消耗 QA 不会反向产生本次检定的即时 Burnout。
 - **Time（Q05）：**只有完整模组结团才获得 +1 可使用 Time；单独 Session 结束不触发。可使用 Time 增加与剩余可用 Time 减少是两个独立、反向联动的字段。
