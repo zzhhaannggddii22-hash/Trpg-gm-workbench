@@ -4,6 +4,7 @@
 
 | ID | 名称 | 类型 | 权威来源 |
 |---|---|---|---|
+| PC-TYA | 唐予安 | Player Character | TEST_CHARACTER_SHEET.md |
 | NPC-LQ | 林秋 | NPC | NQB01_V03_GM_PACKET.md |
 | NPC-ZS | 周师傅 | NPC | NQB01_V03_GM_PACKET.md |
 | NPC-XW | 许闻 | NPC | NQB01_V03_GM_PACKET.md |
@@ -11,3 +12,5 @@
 | OBJ-BOX | 受潮纸箱 | 物件 | NQB01_V03_GM_PACKET.md |
 | OBJ-CART | 手推车 | 物件 | NQB01_V03_GM_PACKET.md |
 | OBJ-NOTE | 路况便笺 | 物件 | NQB01_V03_GM_PACKET.md |
+| OBJ-UMBRELLA | 折叠雨伞 | 玩家随身物件 | TEST_CHARACTER_SHEET.md |
+| OBJ-COAT | 浅色防雨外套 | 玩家随身物件 | TEST_CHARACTER_SHEET.md |
