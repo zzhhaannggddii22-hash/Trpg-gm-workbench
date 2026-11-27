@@ -241,3 +241,14 @@ No test-only event was written to Session Log, Player Notes, Runtime CANON or th
 - Dynamic item custody, exact Harm/Demerits/Time balances and mission weather/environment setup remain Preflight tasks.
 
 No real dice were rolled, no mission weather was generated, no resource ledger entry was created, no Session Log or Player Notes were changed, and no GM-only scenario detail was copied to player-facing files.
+
+
+### 10.4 Main merge and post-merge readback
+
+- PR：[#65](https://github.com/zzhhaannggii22-hash/Trpg-gm-workbench/pull/65)
+- Merge Commit：`1c97231e79c4fba17deb26ab0970c3e09d2f74bd`
+- Main branch readback：module lifecycle = DELIVERED / PREP RULE VALIDATION COMPLETE / PREFLIGHT NOT STARTED; rule-validation matrix = COMPLETE AGAINST AVAILABLE CHINESE SOURCES; Preflight = WAITING FOR USER “开始”.
+- Module README relative links：11/11 PASS after merge.
+- Mechanics / solo / transition evidence remains 11/11, 14 cases and 8/8 respectively.
+- Literal backslash-n formatting regression：0 occurrences in the final readback set.
+- No Preflight, mission weather roll, actual dice, resource transaction, Session event or CANON mutation occurred.
