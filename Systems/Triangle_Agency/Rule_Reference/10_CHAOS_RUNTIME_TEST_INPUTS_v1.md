@@ -1,7 +1,7 @@
-# Triangle Agency｜Chaos Runtime Regression Oracle v1
+# Triangle Agency｜Chaos Runtime Test Inputs v1
 
 > Scope: system-specific behavioral regression for Chinese v22.
-> Classification: GM-only test material.
+> Classification: TEST INPUTS; may be supplied to the target GM.
 > Status: TEST INPUTS / DRAFT. No expected results are included.
 > Runtime under test: `Rule_Reference/03_CHAOS_RUNTIME_PROTOCOL.md`.
 > Shared integration contract: `Systems/SYSTEM_RULE_RUNTIME_INTEGRATION_PROTOCOL.md`.
