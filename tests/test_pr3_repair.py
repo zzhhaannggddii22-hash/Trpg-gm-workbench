@@ -173,6 +173,7 @@ class RepositoryChecks(unittest.TestCase):
         self.assertFalse(approved(module_scope, binding, "Q99", "other"))
 
     def test_RT16_markdown_links(self):
+        self.maxDiff = None
         all_paths = git("ls-files", "-z").decode().rstrip("\0").split("\0")
         paths = [p for p in all_paths if p.endswith(".md")]
         result = scan_links({p: read(p) for p in paths}, known_paths=all_paths)
