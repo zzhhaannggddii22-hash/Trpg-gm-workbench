@@ -39,6 +39,12 @@
 | CR-DETACH | Detachments | 大群同类战斗单位整体作战 | VERIFIED_CORE |
 | CR-RETREAT | Retreat | 从危急战斗/危险中撤退 | VERIFIED_CORE |
 | CR-RANGED | 远程攻击 | 使用远程武器 | VERIFIED_CORE |
+| CR-PANIC | 恐慌 | 黑暗、包围或直面最深恐惧 | VERIFIED_CORE |
+| CR-TRAPS | 陷阱 | 角色接近/触发陷阱 | VERIFIED_CORE |
+| CR-LIGHT | 光源 | 地城/荒野光照与照明资源变化 | VERIFIED_CORE |
+| CR-MAGIC | 法术书施法 | 角色使用 Spellbook | VERIFIED_CORE |
+| CR-SCROLL | 卷轴 | 使用一次性 Scroll | VERIFIED_CORE |
+| CR-RELIC | 遗物 | 使用 Relic | VERIFIED_CORE |
 | CR-HIRELING | Hirelings | 招募/创建雇工 | PARTIAL |
 | CR-DOF | Die of Fate | 事件结果不确定且需随机判断 | VERIFIED_CORE |
 | EX-DUNGEON | 地城探索循环 | 危险地点中的探索行动 | VERIFIED_CORE |
@@ -242,6 +248,49 @@
 - 远程武器可攻击距离足够近、能看清其眼白的敌人。
 - 对特别远的目标，攻击为 Impaired。
 - 除非物品/场景另有规定，不追踪普通弹药消耗。
+
+### CR-PANIC｜恐慌 — VERIFIED_CORE
+
+**触发**：角色被敌人包围、陷入黑暗，或直面其最深恐惧等情境。
+
+- 通常进行 WIL Save，以避免失控并陷入 Panicked。
+- Panicked 角色当前 HP 视为 0；战斗首轮不能行动，所有攻击均为 Impaired。
+- Panicked 角色必须在自己回合花费一个行动并通过 WIL Save，才能克服恐慌。
+- 这里的 HP=0 是恐慌状态效果，不是攻击造成的 HP 归零；不自动触发 Scars。必须保留原 HP 账本并另记 Panic 状态，状态解除后恢复其原本 HP 记录。
+
+### CR-TRAPS｜陷阱 — VERIFIED_CORE
+
+- 谨慎行动的角色应获得足以避免触发陷阱的所有可观察信息；不得把明显线索藏在感知检定之后。
+- 未察觉且按虚构情境会触发陷阱时，按实际情况结算；若情境没有明确决定结果，通常有 2-in-6 机会触发。
+- 陷阱伤害通常扣除属性（一般 STR 或 DEX），而非 HP。Armor 仅在虚构情境中确实适用时减伤；例如盾牌不能防护有毒气体。
+- 具体陷阱仍以模组/场景条目为准。
+
+### CR-LIGHT｜光源 — VERIFIED_CORE
+
+- 火把及其他辐射光源照亮约 40 ft；更远处只能看见物体的模糊轮廓。
+- 火把可点燃 3 次，之后永久损坏；火把持续燃烧，直到角色或环境将其熄灭。
+- 提灯每罐灯油可重新点燃 6 次；提灯及油罐占格按具体物品条目记录。
+- 无光源角色可能陷入 Panic，直到处境改善。
+- 风、水、尘土等环境条件可能熄灭火把；记录剩余点燃次数和当前是否点燃。
+
+### CR-MAGIC｜Spellbook 施法 — VERIFIED_CORE
+
+- Spellbook 包含一个法术，占 1 个库存格；法术书通常通过探索地点/遗迹取得，不可轻易抄录或自行制作。
+- 施法者必须双手持有 Spellbook 并大声朗读其中内容，施法后向库存增加 1 Fatigue。
+- 有时间且处于安全环境时，PC 可以增强法术效果（例如影响多个目标或提高威力），无需额外成本。
+- 若 PC Deprived 或处于危险中（例如战斗），Warden 可以要求 WIL Save 以避免施法不良后果。失败后果应与法术预期效果相称，可能包括增加 Fatigue、毁坏 Spellbook、受伤甚至死亡。
+- 法术具体效果、限制和额外属性以 Spellbook 条目为准；不得只凭法术名称推断。
+
+### CR-SCROLL｜卷轴 — VERIFIED_CORE
+
+- Scroll 属于 Petty，不占库存格。
+- 使用卷轴不增加 Fatigue。
+- 使用一次后卷轴消失。
+
+### CR-RELIC｜遗物 — VERIFIED_CORE
+
+- Relic 是带有法术或特殊力量的物品；不会因使用而增加 Fatigue。
+- 通常有有限使用次数与 Recharge 条件；每次使用按该 Relic 自身条目结算，必须记录剩余次数及充能条件。
 
 ### CR-HIRELING｜Hirelings — PARTIAL
 
