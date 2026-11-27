@@ -278,7 +278,7 @@ class GitHubGraphQLRuntimeStore:
     def _read_file(self, branch: str, path: str) -> tuple[str, str] | None:
         return self._read_file_at("refs/heads/" + branch, path)
 
-    def _find_path_commit(self, branch: str, path: str, parent_oid: str) -> str | None:
+    def _find_path_commit(self, branch: str, path: str, parent_oid: str | None) -> str | None:
         data = self._graphql(_FIND_RECEIPT_COMMIT, {
             "owner": self.owner,
             "name": self.name,
@@ -294,7 +294,7 @@ class GitHubGraphQLRuntimeStore:
         for node in nodes:
             parents = node.get("parents", {}).get("nodes", [])
             parent_oids = [item.get("oid") for item in parents]
-            if parent_oid in parent_oids:
+            if parent_oid is None or parent_oid in parent_oids:
                 matches.append(node.get("oid"))
         if len(matches) > 1:
             raise DisputedBatch("multiple commits claim the same parent and immutable path")
@@ -351,6 +351,8 @@ class GitHubGraphQLRuntimeStore:
 
         for _ in range(3):
             existing = self._read_file(self.operations_branch, path)
+            if existing is None and self._find_path_commit(self.operations_branch, path, None) is not None:
+                raise DisputedBatch("PREPARE path disappeared after a historical creation")
             if existing is not None:
                 current = json.loads(existing[0])
                 if (current.get("batch_id") != batch_id
@@ -503,8 +505,12 @@ class GitHubGraphQLRuntimeStore:
     def reconcile(self, batch_id: str) -> dict[str, Any]:
         """Verify PREPARE, immutable receipt, commit ancestry and all target bytes."""
         _validate_batch_id(batch_id)
-        op_file = self._read_file(self.operations_branch, self._operation_path(batch_id))
+        operation_path = self._operation_path(batch_id)
+        op_file = self._read_file(self.operations_branch, operation_path)
         if op_file is None:
+            prior = self._find_path_commit(self.operations_branch, operation_path, None)
+            if prior is not None:
+                return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PREPARE_MANIFEST_MISSING"}
             return {"status": "NOT_FOUND", "batch_id": batch_id}
         envelope = json.loads(op_file[0])
         manifest = _validate_manifest(envelope.get("manifest", {}))
