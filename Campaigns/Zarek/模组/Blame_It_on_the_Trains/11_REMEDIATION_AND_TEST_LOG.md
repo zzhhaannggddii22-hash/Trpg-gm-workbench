@@ -16,7 +16,8 @@
 | Manifest creation Commit (source branch) | `6c7dd170b0235373bbbbf9978cdb5a19043ed4c9` |
 | Manifest import Commit (main-based branch) | `3cc6891ccd61439f0438f8f426afd6da6442a3cf` |
 | Post-create README link readback | 11/11 PASS |
-| Manifest status | MERGED TO MAIN; final main readback pending |
+| Final main readback | Module README links 11/11 PASS; lifecycle, pinned rules source, Runtime checkpoint, resource ledger, Player-Facing Gate and crosscheck links PASS |
+| Manifest status | MERGED TO MAIN; final readback PASS |
 | Writer / validator / delivery owner | Casey — SELF-REVIEW; not independent QA |
 | External AI review | NOT USED in this remediation batch |
 | Main branch mutation | PR #62 merged; merge Commit `975ca83ced73d7d95d72a1396d819c354dd49830` |
