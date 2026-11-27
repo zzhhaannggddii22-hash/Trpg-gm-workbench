@@ -7,16 +7,16 @@
 
 ## NQB-01 v0.3｜常规游戏强度基线候选
 
-**状态：BLOCKED_NOT_RUN**
+**状态：TEST_CAMPAIGN_REGISTERED / PREFLIGHT_NOT_RUN / SESSION_NOT_STARTED**
 
 - [规格与验收目标](./NQB01_V03_SPEC.md)
 - [GM 专用 Packet](./NQB01_V03_GM_PACKET.md)：仅为 test-only 场景来源，不是独立运行环境
 - [玩家启动提示](./NQB01_V03_PLAYER_PROMPT.md)
 - [操作者侧行动序列](./NQB01_V03_ACTION_SEQUENCE.md)：不得提前提供给目标 GM
 - [独立审核表](./NQB01_V03_REVIEW_CHECKLIST.md)：仅审核者在收到完整原始输出后读取
-- [执行提示](./NQB01_V03_EXECUTION_PROMPT.md)：必须使用正式 GM Skill / Preflight / Runtime 入口；没有预先存在且获准的隔离 Test Campaign 时禁止执行
+- [执行提示](./NQB01_V03_EXECUTION_PROMPT.md)：必须使用正式 GM Skill / Preflight / Runtime 入口；当前指定隔离环境为 [NQB01_Runtime_Test](../../../Campaigns/NQB01_Runtime_Test/README.md)，仍须先完成 Preflight 并获得 Session 启动授权
 
-当前 Campaign 登记表只包含 Zarek / 扎雷克正式 Campaign。不得使用该正式 Campaign 进行 NQB 测试，也不得自行创建替代环境。测试运行准入、隔离存储和零污染门槛见执行提示 §0 与 SPEC §8。
+Campaigns/README.md 已登记独立的 NQB01_Runtime_Test Campaign。不得使用 Zarek 正式 Campaign 进行 NQB 测试。环境已建立，但 Preflight 尚未执行，Session 尚未启动；角色机械数据未建立，任何依赖角色数据的规则裁定均须暂停。测试运行准入、隔离存储和零污染门槛见执行提示 §0 与 SPEC §8。
 
 v0.2 保留为低压力基础功能抽检；v0.3 在通过正式入口运行并完成审核前不构成有效 Runtime 基线，不代表基线已通过。
 
