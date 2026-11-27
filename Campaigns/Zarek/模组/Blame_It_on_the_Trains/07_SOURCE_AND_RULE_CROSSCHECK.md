@@ -34,7 +34,8 @@ This phase validates what the GM must know to run the module. It is not Prefligh
 | Chaos | Initial pool, +1 per die without a 3, public reporting, module effects and close/reset | v22 Markdown printed pp.33, 156; module source; Q01/Q02 | PARTIAL：生成规则与域界规则已核；本模组初始池/结团处理仍须按模组与 Campaign 依据确认 |
 | Harm / Stability / Domain | Harm application, death threshold, anomaly Stability/Threat, Domain costs and benefits | v22 core rules + module source + Q01/Q02/Q03 | OPEN |
 | Ask the Agency | 6d4, Causality Chain, Quality selection, effect scope and failure | v22 printed pp.40–43 | PARTIAL |
-| Module-specific abilities | Every referenced ability's trigger, Quality, success/failure and extra-3 effects | Exact v22 ability entries | OPEN |
+| Module-specific ability text | Smell the Roses trigger, Presence check, success/failure and extra-3 effects | Chinese Vault translation file p.208 | VERIFIED IN CHINESE SOURCE：文本已回读；其规则通用结算仍按 v22 能力规则核验 |
+| Module-specific mechanical resolution | Apply the ability's Quality, dice, QA/Burnout and extra-3 rules in play | v22 ability-resolution sections + Campaign constraints | OPEN |
 | Sub-Reality change table | Full d44 table, repeat-entry procedure and application order | Chinese Vault translation file pp.200–202; source PDF p.97 | VERIFIED IN CHINESE SOURCE：完整 d44 表及重复进入叠加规则已分页回读 |
 | Chaos Effects table | Full station effects table, trigger thresholds and application | Chinese Vault translation file pp.196, 203; source PDF pp.95, 98 | VERIFIED IN CHINESE SOURCE：车站表与 Jahnavi 特殊效果均已分页回读 |
 | Jahnavi rescue special effect | Exact trigger and Chaos 4 effect | Chinese Vault translation file p.203; source PDF p.98 | VERIFIED IN CHINESE SOURCE：触发与效果文本已回读 |
@@ -75,7 +76,7 @@ A row becomes VERIFIED only after the cited authority has been opened and the re
 - Not covered: full player-path simulation, independent blind review, complete rule-by-rule verification.
 
 ### Independent audit findings (input, not authority)
-The 2026-11-27 independent report is treated as a defect lead list. Each item must be independently rechecked against the current branch before closure. Its own severity-count inconsistency is recorded in the remediation log; do not copy its aggregate counts.
+The 2026-11-27 independent report is treated as a defect lead list, not as authority. Each item is independently rechecked against the current branch and source evidence before closure. Its severity-count inconsistency is recorded in the remediation log; do not copy its aggregate counts.
 
 ## 6. Test execution ledger
 
