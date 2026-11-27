@@ -163,3 +163,16 @@ However, the execution report also stated that no formal player interaction or p
 Added R-20B to the independent v2 blind fixture. It starts with Branch Loose Ends already at 77 and the W7 transition already adjudicated, so it tests only player-channel projection. The target receives a player-facing question and must return one player-facing response; the Oracle distinguishes observable consequences and an in-fiction briefing from GM-only source text and backstage procedure.
 
 R-20B is a **new fixture, not an executed test**. It requires a clean independent target Chat with START.md only; the v2 ORACLE.md must remain hidden until the response is complete. No PASS is assigned until that run is actually performed and reviewed.
+
+
+### R-20B standalone launch packet
+
+A single-case launch file was added at:
+
+`Systems/Triangle_Agency/Rule_Reference/Acceptance_Test_Fixtures/CHAOS_RUNTIME_BEHAVIOR_v2/R-20B_INDEPENDENT_START.md`
+
+The packet contains only the player-facing case input and its allowed-read contract. It does not contain the Oracle or expected answer. Its initial committed version is `297cb09f111703f5db09f97984d99222adf1fdac`.
+
+This makes the independent execution boundary explicit: a new target Chat receives the standalone launch file and the exact two runtime protocols at a fixed Commit; the operator must not provide or expose the v2 Oracle. The current conversation has already inspected the Oracle and therefore is not eligible to act as the independent target for R-20B.
+
+**R-20B remains NOT EXECUTED.** No behavior result is inferred from authoring the launch packet.
