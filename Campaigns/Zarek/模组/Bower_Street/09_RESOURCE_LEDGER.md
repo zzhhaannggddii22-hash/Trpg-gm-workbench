@@ -228,3 +228,35 @@
 - 对自动重置的模组资源，不因 SESSION 01 的旧账缺口阻止结团；其历史记录仍可用于事后审查。
 - 持续资源的精确数值仍须记账。尤其 Demerits：发生时即时登记，不能等到结团才回忆；发现遗漏时从 Session Log / 事件证据补记，不允许静默填 0。
 - 以后 Preflight 必须加载资源分类表；Session 中每次变更即时记账；结团按分类执行，而不是对每一项资源一概进行“余额清零式对账”。
+
+
+## 11. 2026-11-27｜幕间成长与 Requisition 购买（玩家确认）
+
+> 本节追加在模组结团后的幕间交易。Bower Street 已 CLOSED；以下仅延续该模组账本，供结团后成长审计，不改变已关闭的模组内 Chaos Pool、Loose Ends 或 SESSION 历史。
+
+### 11.1 已确认交易
+
+| Entry ID | Session / Event ID | 资源字段 | 变化前 | 变化量 | 变化后 | 应用状态与证据 |
+|---|---|---|---:|---:|---:|---|
+| BOWER-RES-016 | INTERMISSION / GROWTH-COMPETENCY | 可使用 Time | +1（Bower Street 结团奖励） | -1（投入成长） | 该次奖励已使用 | VERIFIED_APPLIED：玩家明确选择将结团 +1 Time 投入 Competency；绝对 Time 余额仍 UNKNOWN |
+| BOWER-RES-017 | INTERMISSION / GROWTH-COMPETENCY | Competency 职能轨迹 | 累计 5 格 | +1 格 | 累计 6 格 | VERIFIED_APPLIED：投入 Bower Street 结团 Time；第 6 格按已核实轨迹顺序为 D4 |
+| BOWER-RES-018 | INTERMISSION / GROWTH-COMPETENCY | Duplicity QA 上限 | 1 | +1 | 2 | VERIFIED_APPLIED：玩家明确确认选择 Duplicity；任务间 QA 按规则恢复至新上限 |
+| BOWER-RES-019 | INTERMISSION / GROWTH-COMPETENCY | Commendations | 18 | +3 | 21 | VERIFIED_APPLIED：Competency 成长奖励 |
+| BOWER-RES-020 | INTERMISSION / VAULT-REQUEST-BLANK-INTERVAL | Commendations | 21 | -20 | 1 | VERIFIED_APPLIED：玩家确认购买「空白片段（Blank Interval）」Requisition，价格 20 |
+| BOWER-RES-021 | INTERMISSION / VAULT-REQUEST-BLANK-INTERVAL | Vault Requisition | 未持有 | +1 | 持有：空白片段（Blank Interval） | VERIFIED_APPLIED：A3 Vault Request 权限；玩家确认购买；能力设计边界见人物卡幕间成长记录 |
+
+### 11.2 幕间成长后状态
+
+| 字段 | 当前核验结果 | 说明 |
+|---|---|---|
+| Competency | **累计 6 格** | 第 6 格 D4；Playwall 授权状态另见 Playwall Unlock Ledger |
+| QA 上限总和 | **15** | Duplicity 由 1 提升至 2；Attentiveness 保持 2 |
+| 任务间恢复后的 QA | **专业 3/3、共情 3/3、低调 3/3、缜密 2/2、欺瞒 2/2、活力 1/1、主动 1/1、坚持 0/0、气质 0/0** | 任务间 QA 完全恢复 |
+| Commendations | **1** | 结团余额 18 + 成长奖励 3 - Requisition 价格 20 |
+| Requisition | **空白片段（Blank Interval）已购买** | 20 Commendations；具体效果边界见正式人物卡 |
+| Time | **本次结团 +1 已投入** | 绝对可使用 Time 余额仍 UNKNOWN；不从旧轨迹总量推算 |
+
+### 11.3 尚待核验，不得补造
+- 第 6 格 D4 已标记；按规则该代码的 Playwall 文档授权成立。文档正文读取/核对状态另记于 Playwall Unlock Ledger；本账本不复述隐藏资料。
+- 两次历史 Time 支出导致的 Reality / Anomaly 轨迹末端划除坐标仍未从原始视觉轨迹表恢复。本次成长的对应划除位置也不在现有文字账本中；保持坐标 UNKNOWN，待恢复原始 Work/Life Balance 表后追加核验，不凭空指定。
+- 本 Requisition 的恢复方式分支尚待玩家最终选择；购买本身已确认，不能把未选分支写成既定效果。
