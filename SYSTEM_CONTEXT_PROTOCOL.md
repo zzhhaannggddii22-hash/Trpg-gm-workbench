@@ -10,6 +10,8 @@
 
 ## 一、知识分层与唯一归属
 
+系统规则的运行接入遵循 [System Rule Runtime Integration Protocol](./Systems/SYSTEM_RULE_RUNTIME_INTEGRATION_PROTOCOL.md)：它定义跨系统共用的触发式集成契约，不定义具体游戏机制，也不要求逐行动轮询。
+
 | 层级 | 位置 | 内容 | 禁止事项 |
 |---|---|---|---|
 | 通用 GM 能力 | `GM_Training/` | 公平裁定原则、备团流程、NPC 模拟、叙事呈现、线索设计、连续性、节奏、复盘 | 不写入某系统独有的规则、数值和术语 |
