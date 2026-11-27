@@ -1,11 +1,14 @@
 # NQB-01 v0.3｜常规游戏强度基线规格
 
-> Status: DESIGN SPECIFICATION / NOT YET EXECUTED
+> Status: OPERATOR / REVIEWER ONLY｜不得提供给目标 GM
+> Execution evidence: first A-mode synthetic run completed; PARTIAL, not accepted
 > Parent fixture: NQB-01 v0.2《雨停之前》
 > Intended evidence: A-mode synthetic run first; B-mode only if independent target-context evidence is specifically required; C-mode remains real-player calibration.
 > Canon impact: TEST_ONLY_NON_CANON
 
 ## 1. 版本定位
+
+本文件属于操作者与审核者资料，不是 GM 执行资料。4–6 倍单段平均负荷是审核目标，不得提前告知目标 GM，也不得作为 GM 的字数指令。目标 GM 只读取通用叙事质量标准、GM Packet 和玩家启动提示。
 
 v0.2 保留为**低压力基础功能抽检**：8 轮、单一客栈空间、两名 NPC、轻量日常互动。它的历史结果不作废，但不再代表常规游戏强度。
 
