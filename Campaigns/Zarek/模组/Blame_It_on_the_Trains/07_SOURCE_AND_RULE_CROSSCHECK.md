@@ -1,88 +1,108 @@
 # Source & Rule Crosscheck｜Blame It on the Trains
 
-> GM-only。记录来源核对与测试证据；本文件不是规则书替代品，也不是“已全部核验”的声明。
+> GM-only。此文件是验证登记与证据索引，不替代模组原文、中文 v22 或 Campaign Binding。状态只反映已取得的证据，不把“曾阅读”升级为独立核验。
 
-## 1. 来源定位
+## 1. Source register
 
-| Source ID | 来源 | 定位 | 核验状态 |
+| Source ID | Authority | Exact locator / version | Evidence state |
 |---|---|---|---|
-| SRC-MODULE-VAULT | *The Vault: Missions for Triangle Agency* | Blame It on the Trains；源 PDF 93–101；印刷页 180–197 | 中文精翻已读取 |
-| SRC-VAULT-ZH | `the_vault_zh.docx` | Library file；文件第 191–208 页；源 PDF 93–101 | 完整章节分页回读；表格与遭遇页已核 |
-| SRC-TA-V22 | 《三角机构》中文 v22 | 固定公开版本：`p33333333333333l/triangle-agency-ai-zh` Commit `7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1`；`最终交付_v22/triangle_agency_zh.md`；Campaign Binding 与 Q01–Q05 桌裁清单 | 已读取相关基础条文与桌裁；逐项行级核验仍须 Preflight 完成 |
+| SRC-MODULE-VAULT | *The Vault: Missions for Triangle Agency* | Blame It on the Trains；source PDF pp.93–101；printed pp.180–197 | 官方来源及页码已登记；英文原版逐页复核 NOT DONE |
+| SRC-VAULT-ZH | `the_vault_zh.docx` | Library source; chapter begins at source PDF p.93 / printed p.180; file pagination pp.191–208 | 中文精翻章节分页回读已完成；不等于英文原版独立校勘 |
+| SRC-TA-V22-PDF | 用户指定《三角机构》中文 v22 PDF | Library file `triangle_agency_zh.pdf`；当前可读取版本；规则定位以印刷页码为准 | 已从 PDF 检索到相关页面摘录；完整规则矩阵仍需逐项核对 |
+| SRC-TA-V22-GH | 用户指定公开规则仓库 | `p33333333333333l/triangle-agency-ai-zh`；Commit `7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1` | 固定版本链接已登记；本次尚未取得全部 Markdown 正文回读 |
+| SRC-ZAREK-BINDING | Zarek Campaign System Binding | `Campaigns/Zarek/SYSTEM_BINDING.md` at campaign commit | 已读取 |
+| SRC-ZAREK-RULINGS | Zarek Campaign approved rulings | `Campaigns/Zarek/RULE_ADJUDICATIONS.md` at campaign commit; Q01–Q05 | 已读取；仅限 Zarek Campaign |
 
-## 2. 来源差异与待核
+## 2. Source limitations and conflict policy
 
-- 中文精翻在 Jahnavi 姓名拼写处出现 Reddy / Reddi 差异；当前统一实体索引，保留别名，待英文原版终核。\n- 车站 Chaos Effects 表、d44 子现实变化表和 Jahnavi 营救特殊效果已从中文精翻分页阅读核实，并整理入 01 §15。
-- Sub-Reality 暂译“子现实”；Loose End 暂译“松散端”；术语统一依 v22 与全书终审。
-- 个别专名如 Urgency / Urgents 在中文母稿中有 [待核] 标记；本备团保留英文锚点，不推断其制度含义。
-- 本轮未访问英文原始 PDF 文件进行逐页比对；引用中文精翻时明确此限制。
+- 中文精翻中 Jahnavi 姓名拼写出现 Reddy / Reddi 差异；Name Index 保留别名，正式英文拼写仍待英文原版终核。
+- 中文精翻中的表格、特殊效果和术语需按其页面图像/版面复核；文本抽取不完整时，以可见页面图像为准，不从文本层被遮挡内容补全。
+- Sub-Reality 暂译“子现实”；Loose End 暂译“松散端”；保留英文锚点。
+- 英文原版逐页比对尚未完成。任何中文翻译准确性结论只能标为“中文精翻内部一致性”，不能写成“官方原文准确”。
+- 来源缺失、文本抽取失败或访问受限时，记录具体缺少的证据；不切换版本，不用模型记忆补齐。
 
-## 3. 规则交叉核验矩阵
+## 3. Prep Rule Validation matrix (mandatory before first Preflight)
 
-| 领域 | 核验目标 | 状态 |
+This phase validates what the GM must know to run the module. It is not Preflight and is not the optional independent Prep QA.
+
+| Rule area | Required validation | Current evidence / authority | Status |
+|---|---|---|---|
+| System binding | system_id, exact ruleset version and Campaign scope | SYSTEM_BINDING.md | VERIFIED |
+| Campaign rulings | Confirm Q01–Q05 scope and approval; do not generalize them | RULE_ADJUDICATIONS.md | VERIFIED AS CAMPAIGN BINDING |
+| QA | Nine Qualities, current-QA limits, same-Quality rule and stated exceptions | v22 PDF printed pp.34–35; Q03 exception | PARTIAL |
+| Burnout | Trigger, removal/Chaos effect, sequence relative to QA | v22 PDF printed pp.35, 40–46; Q04 | PARTIAL |
+| Chaos | Initial pool, generation, public reporting, module effects and close/reset | v22 printed pp.33, 156; module source; Q01/Q02 | OPEN |
+| Harm / Stability / Domain | Harm application, death threshold, anomaly Stability/Threat, Domain costs and benefits | v22 core rules + module source + Q01/Q02/Q03 | OPEN |
+| Ask the Agency | 6d4, Causality Chain, Quality selection, effect scope and failure | v22 printed pp.40–43 | PARTIAL |
+| Module-specific abilities | Every referenced ability's trigger, Quality, success/failure and extra-3 effects | Exact v22 ability entries | OPEN |
+| Sub-Reality change table | Full d44 table, repeat-entry procedure and application order | Chinese Vault translation; page-image verification required | OPEN |
+| Chaos Effects table | Full table, trigger timing, roll and effect duration | Chinese Vault translation; page-image verification required | OPEN |
+| Jahnavi rescue special effect | Exact trigger, effect, roll/table and resolution | Chinese Vault translation; source-page image / official source crosscheck required | OPEN |
+| Ripple Gun | Charge, target, line of sight, effect and recharge timing | v22 printed p.21 | PARTIAL |
+| Normal Briefcase | Eligible target state, focus/condition and capture resolution | v22 printed pp.21–22 | PARTIAL |
+| Commendations / Demerits | Mission report, optional goals, authorized behaviors and award/penalty timing | v22 performance/report rules + module source | OPEN |
+| Mission MVP / Probation / Participant | Eligibility, award order and mark/benefit effects | v22 printed pp.148–149 and Work/Life Balance sheet | PARTIAL |
+| Loose Ends | Regional baseline, additions, weather effects and reporting | v22 regional rules + Campaign records | OPEN |
+| Time | Distinguish system rules from Campaign Q05 award timing and reverse-linked field | RULE_ADJUDICATIONS.md Q05 | VERIFIED AS CAMPAIGN RULING ONLY |
+| Equipment handoff | Holder, charge, use, return/restoration basis for each key item | Character card + prior Module Ledger + item rules | OPEN |
+
+A row becomes VERIFIED only after the cited authority has been opened and the relevant rule text checked against the actual module use. A page number or a summary alone is not a pass.
+
+## 4. Lifecycle and gate states
+
+| Dimension | Current state | Meaning |
 |---|---|---|
-| 系统绑定 | Triangle Agency / 中文 v22 | BOUND |
-| QA 与素质检定 | 九项 Quality、同 Quality QA 修改、任务间完全恢复 | PARTIAL VERIFIED：v22 印刷页 34–35；Preflight 再核能力专属例外 |
-| Burnout | QA 归零含初始 0 QA、移除 3 并 +1 Chaos；本桌时序 Q04 | PARTIAL VERIFIED：v22 印刷页 35、40–43；Q04 绑定 |
-| Harm / Domain | 人寿保单防护、异常 Stability/Threat、域界收益 | PARTIAL：人寿保单 Q03；异常 Stability/Threat 按次级异常条款；域界 Q01/Q02 |
-| Chaos | 初始值、效果表、结算 | OPEN |
-| 异常能力 | 模组相关能力检定和效果 | OPEN |
-| Ripple Gun | 单发充能、回机构补充；直接瞄准且无遮挡；只中和目标异常 | SOURCE VERIFIED：v22 印刷页 21；开场装备仍须点交 |
-| Normal Briefcase | 异常须精疲力竭、情绪平静或愿意收容；焦点识别通常为前提 | SOURCE VERIFIED：v22 印刷页 21–22；收容判定细节 Preflight 核对 |
-| Commendation / Demerit | 模组可选目标、职能授权行为、MVP 奖励 | PARTIAL：模块奖励已整理；任务结束总额/资格按 v22 与人物卡核对 |
-| Mission MVP | 最高嘉奖者；免费标记一格职能轨迹 | SOURCE VERIFIED：v22 印刷页 148–149；当前人物卡已记录 MVP 成长 |
-| Loose Ends | 识别、报告与后果 | OPEN |
-| Time | 完整模组结团 +1、可使用 Time 与剩余可用 Time 反向联动 | CAMPAIGN Q05 CONFIRMED（2026-11-27）；非通用 v22 规则 |
+| Artifact delivery | DELIVERED | Files exist in the fixed repository version and are read back |
+| Prep design review | REVIEWED | Structure and content reviewed; not a rule-validation pass |
+| Source validation | BLOCKED | English source crosscheck and selected visual tables incomplete |
+| Prep Rule Validation | BLOCKED | Core mechanical rows remain OPEN/PARTIAL |
+| Single-player feasibility | NOT TESTED | No complete key-path cost/availability proof |
+| Optional independent Prep QA | NOT RUN | Not a mandatory substitute for the above |
+| Preflight | NOT STARTED / BLOCKED | Per-Session state recovery only, after Prep Rule Validation |
+| Runtime | NOT STARTED | No actual play events |
+| Player start authorization | WAITING | Only explicit user “开始” authorizes start |
 
-## 4. 内部审查记录
+## 5. Review and test evidence
 
-### Review 1 — 结构与来源复核
-- 结果：PASS WITH OPEN ITEMS。
-- 覆盖：模组来源、空间结构、首遇入口、主要 NPC、两名初始受害者、异常域界、单人桌适配、玩家信息权限。
-- 缺口：规则行级交叉引用、英文原版逐页比对、独立盲审尚未完成。
+### Review 1 — Static preparation review
+- Result: REVIEWED WITH OPEN ITEMS.
+- Scope: module structure, source mapping, spatial facts, named NPC/subject records, single-player adaptation principles and information boundaries.
+- Not covered: full official English source collation, all v22 rule rows, complete end-to-end single-player path tests.
 
-### 修订
-- 把所有未核规则项目显式标记 OPEN。
-- 移除对角色当前资源状态的猜测，改由正式人物卡和 Resource Ledger 核验。
-- 将玩家侧笔记设为空白，不从 GM Prep 自动派生。
-- 将生命周期设为 READY WITH OPEN ITEMS，阻止未完成规则核验被误报为 READY。
+### Review 2 — targeted internal review
+- Result: REVIEWED WITH OPEN ITEMS.
+- Scope: selected spatial relations, NPC knowledge boundaries, authority references, resource ownership and player-facing separation.
+- Not covered: full player-path simulation, independent blind review, complete rule-by-rule verification.
 
-### Review 2 — 定向复审
-- 结果：PASS WITH OPEN ITEMS。
-- 复核：空间层级关系、进入/离开逻辑、NPC 知识边界、单人行动经济、GM-only/玩家侧分离、资源来源。
-- 未执行：完整玩家路径自动化模拟、独立模型盲审、规则行级全覆盖。
-- 结论：可作为备团底稿；开团前必须完成 Preflight 的 OPEN 规则项，建议先执行独立 Prep QA。
+### Independent audit findings (input, not authority)
+The 2026-11-27 independent report is treated as a defect lead list. Each item must be independently rechecked against the current branch before closure. Its own severity-count inconsistency is recorded in the remediation log; do not copy its aggregate counts.
 
-## 5. 压力测试覆盖状态
+## 6. Test execution ledger
 
-| 测试路径 | 状态 | 备注 |
-|---|---|---|
-| 不同初始入口 | STATIC REVIEW | 已审查入口映射 |
-| 跳过某个 NPC | NOT RUN | 需模拟检查信息可替代性 |
-| 错误空间假设 | NOT RUN | 需模拟验证世界反馈 |
-| 非预设能力 | NOT RUN | 需按具体能力测试 |
-| 先营救后撤离 | STATIC REVIEW | 原文空间条件已整理 |
-| 撤离后返回 | NOT RUN | 需验证触发与状态连续性 |
-| 拒绝营救/优先撤离 | NOT RUN | 需检查收束分支 |
-| 暴力/非暴力路径 | STATIC REVIEW | 仅整理模组结构，规则结算待核 |
-| 关键 NPC 缺席 | NOT RUN | 需检查软锁 |
-| 反复进入同一子现实 | STATIC REVIEW | 已记录重复进入骰流程 |
+| Test ID | Test | Execution type | Status | Result |
+|---|---|---|---|---|
+| SRC-01 | Confirm Chinese Vault source and chapter pagination | Source inspection | DONE | Library source and chapter location confirmed |
+| SRC-02 | Compare English official module source page by page | Source inspection | NOT RUN | English original not yet independently read |
+| RULE-01 | Verify v22 QA / Burnout and Q04 boundary | Rule inspection | PARTIAL | Campaign ruling read; full rule source matrix incomplete |
+| RULE-02 | Verify Chaos initial/generation/close rules | Rule inspection | NOT RUN | OPEN |
+| RULE-03 | Verify Harm / Domain / Stability resolution | Rule inspection | NOT RUN | OPEN |
+| RULE-04 | Verify ability-specific triggers and outcomes | Rule inspection | NOT RUN | OPEN |
+| SOLO-01 | Prove core path action/resource feasibility for one PC | Desk simulation | NOT RUN | OPEN |
+| SOLO-02 | Remove one information source / NPC and test alternatives | Desk simulation | NOT RUN | OPEN |
+| RT-01 | Cold-start from repository only | Recovery simulation | PARTIAL | Required file set now identified; full startup blocked by validation |
+| RT-02 | Resume from checkpoint without replay or duplicate application | Synthetic state test | NOT RUN | Schema remediation landed; execution pending |
+| RES-01 | Duplicate Event ID / Idempotency Key | Synthetic ledger test | NOT RUN | Schema remediation landed; execution pending |
+| PFG-01 | Check mandatory Player-Facing Gate loading and output filtering | Static / synthetic | PARTIAL | Gate content passes static inspection; dynamic test pending |
 
-## 6. 最终状态
+## 7. Final status
 
-- Prep：READY WITH OPEN ITEMS。
-- Independent Prep QA：NOT RUN。
-- Preflight：NOT STARTED。
-- Runtime：NOT STARTED。
-- 任何未执行测试均不得在后续报告中称为通过。
-
-
-## 7. 规则来源与桌裁边界
-
-- 固定规则版本公开入口：`https://github.com/p33333333333333l/triangle-agency-ai-zh/tree/7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1/最终交付_v22`。
-- QA 与 Burnout：主规则 Markdown 对应 01_field_agent_manual/020–021；印刷页 34–35。QA 仅改动本次 Quality 的骰子；QA 任务间完全恢复。Burnout 包括该 Quality 初始没有 QA 的情形；每层移除一个 3 并增加 1 Chaos。
-- Ask the Agency：主规则 Markdown 对应 01_field_agent_manual/024；印刷页 40–43。必须明确效果、可信 Causality Chain、相关 Quality 和 6d4；只改写尚未确立事实；GM 对 Quality 有最终决定权。
-- Chaos：主规则印刷页 33、156；每枚未显示 3 的骰子通常产生 1 Chaos；普通池数量对玩家公开。域界免费门槛/三倍费用按 Zarek Campaign 已绑定 Q01/Q02。
-- Normal Briefcase / Ripple Gun：主规则印刷页 21–22；异常需满足公文包收容状态要求；Ripple Gun 单发充能、回机构补充，直接瞄准无遮挡目标异常可永久中和。
-- Time：当前 +1 触发和反向联动是 Zarek Campaign 的 Q05 桌裁，不得描述为通用 v22 规则。
-- 本次未把系统记忆卡或测试卡当成高于完整规则原文的证据；它们只用于定位和提醒。
+- Artifact：DELIVERED.
+- Prep design：REVIEWED.
+- Source validation：BLOCKED.
+- Prep Rule Validation：BLOCKED.
+- Single-player feasibility：NOT TESTED.
+- Optional independent Prep QA：NOT RUN.
+- Preflight：NOT STARTED / BLOCKED.
+- Runtime：NOT STARTED.
+- User start authorization：WAITING.
+- Any test not executed remains NOT RUN; no result is inferred from file existence or an earlier self-review.
