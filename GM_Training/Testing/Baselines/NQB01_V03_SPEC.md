@@ -2,7 +2,7 @@
 
 > Status: OPERATOR / REVIEWER ONLY｜不得提供给目标 GM
 > Historical sample: first A-mode packet simulation PARTIAL; not valid Runtime-entry evidence
-> Current Runtime admission: BLOCKED_NOT_RUN (no pre-existing isolated Test Campaign registered)
+> Current Runtime admission: TEST_CAMPAIGN_REGISTERED / PREFLIGHT_NOT_RUN / SESSION_NOT_STARTED
 > Parent fixture: NQB-01 v0.2《雨停之前》
 > Intended evidence: A-mode synthetic run first; B-mode only if independent target-context evidence is specifically required; C-mode remains real-player calibration.
 > Canon impact: TEST_ONLY_NON_CANON
@@ -113,9 +113,9 @@ A/B/C 是玩家输入与执行隔离模式，不是三种不同 GM 环境。无�
 
 ### 8.2 不得自行创建测试环境
 
-操作者不得为了完成本测试临时创建或拼装 Campaign、角色卡、SYSTEM_BINDING、system_id、规则版本、Runtime checkpoint、Session Log、NPC 档案、测试数据库或平行运行提示包。只能使用在本次测试前已存在、已登记、经用户授权且具有隔离存储的专用 Test Campaign。
+操作者不得在测试执行过程中临时创建或拼装 Campaign、角色卡、SYSTEM_BINDING、system_id、规则版本、Runtime checkpoint、Session Log、NPC 档案、测试数据库或平行运行提示包。只能使用本次测试启动前已建立、已登记、经用户授权且具有隔离存储的专用 Test Campaign。当前指定环境为 Campaigns/NQB01_Runtime_Test/。
 
-当前 Campaigns/README.md 只登记 Zarek / 扎雷克正式 Campaign，未登记专用 Test Campaign。因此本测试的 Runtime 执行准入状态为 BLOCKED_NOT_RUN。不得借用 Zarek Campaign，也不得将 NQB 测试内容挂接到正式 Campaign 来绕过该限制。状态只能在用户明确授权使用一个已存在且符合隔离条件的 Test Campaign 后更新。
+用户已明确授权建立专用测试环境。当前已在 Campaigns/README.md 登记独立 Campaign：Campaigns/NQB01_Runtime_Test/，其 SYSTEM_BINDING、测试角色边界、模组入口、初始 Runtime 检查点、Session Log 与 Player Notes 均独立存在。该 Campaign 绑定已登记的 triangle_agency / 中文 v22，不引用 Zarek Campaign 的任何角色、桌裁、状态或事件。当前准入状态更新为 TEST_CAMPAIGN_REGISTERED；但 Preflight 尚未执行，测试 Session 尚未获准启动，不能计为有效 Runtime 样本。不得借用 Zarek Campaign。
 
 ### 8.3 零污染要求
 
