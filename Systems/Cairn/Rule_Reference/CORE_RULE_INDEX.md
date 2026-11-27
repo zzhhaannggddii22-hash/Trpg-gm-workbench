@@ -29,6 +29,11 @@
 | Critical Damage | 伤害使 HP 低于 0 时，超出 0 的剩余伤害扣 STR；以新的 STR 立即进行 STR Save。成功者仍可行动但继续承受后续 Critical Damage Save；失败的 PC 只能虚弱爬行，需救助稳定，否则一小时内死亡 | Core Rules / Critical Damage |
 | 属性损伤 | 战斗外伤害通常直接作用于属性；STR 归零死亡、DEX 归零瘫痪、WIL 归零神志错乱（delirious） | Core Rules / Attribute Loss |
 | 疲劳 | Deprived 超过一天会增加 Fatigue；Fatigue 占库存格，通常需要安全休息恢复 | Core Rules / Deprivation & Fatigue |
+| Panic | 恐慌通常以 WIL Save 避免；恐慌角色 HP 为 0、战斗首轮不行动、攻击 Impaired；以行动 + WIL Save 克服 | Procedures / Panic |
+| 陷阱 | 谨慎观察应获得可避免陷阱的线索；未察觉时按虚构或 2-in-6 触发；陷阱伤害通常作用于属性 | Procedures / Traps |
+| 光源 | 火把照亮约 40 ft，可点燃 3 次；提灯每罐灯油可重新点燃 6 次 | Procedures / Light |
+| Spellbook | 双手持书并朗读施法，增加 Fatigue；安全且有时间时可增强效果 | Core Rules / Magic |
+| Scroll / Relic | Scroll Petty、一次性且不加 Fatigue；Relic 不加 Fatigue，按自身 Recharge 条件使用 | Core Rules / Magic |
 
 ## 时间、探索与世界程序
 
