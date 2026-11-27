@@ -12,7 +12,7 @@
 
 - 已逐项检查 C-01 至 C-19 的初始状态、触发条件、预期资源变化、世界状态结果、可见信息和停止条件。
 - 依据：Triangle Agency 中文 v22 固定版本 Markdown、当前系统基础规则笔记、Chaos Runtime Protocol、Campaign Binding / adjudication、Bower Street 现有历史账本与 Session 记录。
-- 没有修改正式 Campaign、人物卡、Resource Ledger、Session Log 或任何历史 CANON。
+- 本轮修改了 Campaign Binding、规则协议、回归夹具、自测报告、Bower Street GM Prep 与 Resource Ledger 的初始化来源说明；没有改写人物卡、Session Log 或历史游戏事件，也没有补造任何历史 Chaos 交易。
 - 没有执行真实骰子、真实 Runtime 写入、工具级计时或独立宿主交互。
 
 ## 2. 逐项结果
