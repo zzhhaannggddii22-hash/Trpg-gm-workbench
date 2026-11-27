@@ -24,6 +24,8 @@ Provision two dedicated branches for each isolated Campaign/Run identity:
 
 The adapter deliberately does not create or delete branches. Branch provisioning and permissions are an administrative setup step.
 
+**Append-only trust boundary:** the Runtime and operations branches must be protected against force-push and deletion. PREPARE and receipt paths are one-write records: verification rejects a path whose Git history shows more than one change event, and checks the creation commit and blob against the expected parent and content. This detects ordinary later edits/deletions; repository rules are still required to prevent an administrator or privileged writer from rewriting the branch history itself.
+
 ### PREPARE
 
 prepare(manifest) writes one immutable file:
@@ -98,6 +100,8 @@ The example omits the caller's system-specific event validation and authorizatio
 - No target deletion in v1.
 - User target paths cannot write into .runtime/.
 - Runtime and operations branches must be distinct and pre-provisioned.
+- Both branches require repository rules that block force-push and deletion; code-level history checks cannot protect against privileged history rewrites.
+- PREPARE and receipt paths must remain single-change immutable records; later edits/deletions are treated as disputes.
 - No branch bootstrap, permission management, token provisioning, or deployment is performed.
 - The adapter does not migrate existing Campaigns or decide which historical state is authoritative.
 - The adapter does not deliver player projections; those are separate recipient-scoped targets and must be validated before inclusion.
