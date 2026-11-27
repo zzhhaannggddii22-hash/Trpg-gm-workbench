@@ -23,10 +23,10 @@ systems:
 
 每个系统目录必须有 README，记录正式名称、system_id、规则版本、权威来源、状态、规则索引、专属 Skill 与适配边界。
 
-系统之间完全隔离。研究某系统不代表它已被当前战役采用；运行某个 Campaign 时，以其 SYSTEM_BINDING 文件为准。不要仅凭仓库默认系统、用户过去玩过的系统或常见 TRPG 习惯推断当前系统。
+系统之间完全隔离。研究或 Candidate 验证某系统不代表它已被正式 Campaign 采用；正式 Campaign 以 SYSTEM_BINDING 为准。Candidate 验证必须使用 TEST_ONLY_NON_CANON Validation Manifest，禁止继承/写入正式战役状态。不要仅凭仓库默认系统、用户过去玩过的系统或常见 TRPG 习惯推断当前系统。
 
 通用 GM 能力统一维护在 `GM_Training/`。系统规则、术语、裁定和专属研究只维护在登记的对应系统目录，不复制到通用 Skill。
 
 ## Cairn 接入状态
 
-Cairn 已建立独立系统入口、初步规则索引、专属 GM Skill 草案、Preflight 草案与初步研究。状态保持 candidate，直至官方规则核验、正反例测试、跨系统隔离测试及 1–2 次短团实测完成。详见 [Cairn 接入研究](./Cairn/Research/INITIAL_RESEARCH.md)。
+Cairn 已建立独立系统入口、规则索引、专属 GM Skill、Preflight、规范化运行手册与测试夹具。状态继续保持 candidate。允许独立合成回归及用户明确授权的 TEST_ONLY_NON_CANON 短团验证；正式 Campaign 裁定仍须等官方来源核验、正反例与跨系统隔离测试、Preflight 和 1–2 次真实短团复盘后再评估。详见 [Cairn 接入研究](./Cairn/Research/INITIAL_RESEARCH.md)。

@@ -29,8 +29,9 @@
 - 先按本 Campaign 的 `system_id` 和精确版本筛选。
 - 桌面常规运行优先使用 [CORE_RULES_RUNTIME.md](./CORE_RULES_RUNTIME.md) 的 Rule ID 与标准步骤；[CORE_RULE_INDEX.md](./CORE_RULE_INDEX.md) 仅用于导航。
 - 运行流程、Rule Call 字段、状态提交、回查条件见 [../RUNTIME_PROTOCOL.md](../RUNTIME_PROTOCOL.md)。
-- 不要求每次行动都在线搜索。已标记 VERIFIED_CORE、版本未变且无特殊覆盖的规则可直接调用规范化条目。
-- PARTIAL、MODULE_DEPENDENT、特殊表格/能力、规则冲突、版本变化、玩家质疑或高后果边界必须回查官方 2e 原文。
+- 不要求每次行动都在线搜索。已标记 VERIFIED_CORE、版本未变且无特殊覆盖的规则可直接调用规范化条目；本地完整收录的 Scars 1–12、Critical Damage 与 Wilderness 核心表格无需每次重查。
+- PARTIAL、MODULE_DEPENDENT、特殊能力/模组数据、本地条目未覆盖的边界、来源冲突、版本变化或玩家提出具体规则质疑时，定向回查官方 2e 原文。
+- “高后果”本身不是重复联网检索的充分条件：若 VERIFIED_CORE 条目已覆盖触发、顺序、例外与状态结果，直接按条目执行并保留事务记录；若关键字段未覆盖，再回查。
 - 关键裁定检查触发条件、行动主体、目标、成本、持续时间、例外、结算顺序及角色当前状态。
 - 如果官方规则未定义某个结果，记录已检查来源和具体缺口；只暂停依赖该规则的行动，不冻结无关互动。
 - 稳定核验结论应回写规范化条目，避免重复检索。

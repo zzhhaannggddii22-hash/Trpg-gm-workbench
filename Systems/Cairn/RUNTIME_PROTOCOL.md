@@ -1,7 +1,7 @@
 # Cairn 2e Runtime Protocol
 
 > 适用范围：仅 `system_id: cairn` / `Cairn Second Edition`。
-> 状态：candidate runtime protocol v0.1。必须与 Campaign 的 `SYSTEM_BINDING.md` 一起使用。
+> 状态：candidate runtime protocol v0.2。正式运行必须与 Campaign 的 `SYSTEM_BINDING.md` 一起使用；受控验证使用 TEST_ONLY_NON_CANON Validation Manifest。
 > 目的：让 GM 在桌面运行中直接调用已规范化规则，避免每次行动都在线搜索或临场重建规则。
 
 ## 1. 运行原则
@@ -85,7 +85,7 @@ rule_call:
 调用 `EX-DUNGEON`，严格按：
 `Describe → Declare → Resolve → Record → Event Check → Next Cycle`
 
-每个 Cycle 都要判断是否触发 `EX-DUNGEON-EVENT`。维护当前地点/区域、Cycle 计数、光源、行动耗时、噪音和事件触发原因。不要在事件已触发时静默跳过，也不要把一次触发重复计算。
+每个 Cycle 都要判断是否触发 `EX-DUNGEON-EVENT`。维护当前地点/区域、Cycle 计数、光源、行动耗时、噪音和事件触发原因。Loss 必须先解决再继续；Exhaustion 选择 Rest 时建立新的独立 Event Roll。不要在事件已触发时静默跳过，也不要把一次触发重复计算。
 
 ### 4.3 荒野循环
 
@@ -99,7 +99,7 @@ rule_call:
 7. 每日最后一个 Watch 通常安排 Make Camp：每名角色及坐骑消耗 1 Ration，安排守夜；能够休息者清除全部 Fatigue。
 8. 若跳过 Make Camp，每名角色增加 1 Fatigue 并进入 Deprived；睡眠不足旅行时地形难度提高一级。若 Deprived 超过一天，再按 CR-FAT 逐日增加 Fatigue。
 
-路径、地形、天气与迷路修正若未在当前 Campaign Quick Reference 中核准，必须查官方表格；不得凭印象填值。单人队伍的守夜安排必须显式裁定，不得默认凭空存在守夜人。
+核心路径、距离、地形、天气与迷路基础值已在 CORE_RULES_RUNTIME.md 本地核准；仅当具体地图路线、沿途地形/天气变化或向导/地图/坐骑等特殊修正未记录时，才定向回查官方表格或 Campaign Quick Reference。不得凭印象填值。单人队伍的守夜安排必须显式裁定，不得默认凭空存在守夜人。
 
 ### 4.4 战斗循环
 

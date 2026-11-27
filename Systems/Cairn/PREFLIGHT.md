@@ -4,6 +4,8 @@
 
 ## A. 系统绑定
 
+受控验证的 Manifest 模板见 [CANDIDATE_VALIDATION_MANIFEST.md](./Testing/CANDIDATE_VALIDATION_MANIFEST.md)。
+
 - [ ] Campaign 的 `SYSTEM_BINDING.md` 明确 `system_id: cairn`。
 - [ ] 规则版本明确为 Cairn Second Edition，中文 SRD 仅作非官方阅读辅助。
 - [ ] 系统登记表、入口路径、系统 ID 与版本完全一致。

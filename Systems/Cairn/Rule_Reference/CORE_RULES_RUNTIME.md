@@ -1,7 +1,7 @@
 # Cairn 2e 核心规则运行手册
 
 > 规则绑定：`system_id: cairn`；`ruleset_version: Cairn Second Edition`
-> 状态：runtime normalization v0.1；供候选系统测试调用，不代表已完成全部章节核验。
+> 状态：runtime normalization v0.2；供候选系统受控验证调用，不代表已完成全部章节核验或可用于正式 Campaign。
 > 权威来源：[官方 Core Rules](https://cairnrpg.com/second-edition/players-guide/core-rules/)、[Character Creation](https://cairnrpg.com/second-edition/players-guide/character-creation/)、[Procedures](https://cairnrpg.com/second-edition/players-guide/procedures/)。本手册为自写结构化摘要，不替代原文。
 
 ## 0. 使用规则
@@ -353,7 +353,7 @@
 
 事件结果必须结合地点与既有事实解释。不要把事件表当作剧情强制推进器。触发条件需逐项记录，不能漏掷，也不能因玩家只问问题就机械地重复掷骰。
 
-### EX-WILDERNESS｜荒野探索 — PARTIAL
+### EX-WILDERNESS｜荒野探索 — VERIFIED_CORE
 
 **Watch 基础**：一天分为 Morning、Afternoon、Night 三个各 8 小时的 Watches。每名角色每 Watch 选择一个 Wilderness Action；队伍分开行动时，各组视为独立实体。
 

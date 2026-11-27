@@ -1,6 +1,6 @@
 # Cairn 2e 核心规则运行回归矩阵
 
-> 状态：v0.1 测试设计；尚未执行。
+> 状态：v0.2；CRT-01–65 基础矩阵已于 2026-11-27 手动执行；CRT-66–87 状态转换扩展用例见本矩阵与独立执行报告。自执行结果不是独立盲测或自动化 CI。
 > 规则基准：Cairn Second Edition 官方规则。
 > 目的：验证规则规范化条目是否能被 GM 正确调用，尤其是顺序、边界和状态差分，而不只是背诵规则摘要。
 
@@ -82,6 +82,28 @@
 | CRT-63 | Trail 旅行掷 1d6，路径迷路概率 2-in-6，结果为 2 | EX-WILDERNESS | 触发迷路；若模组/路径要求，消耗额外 Wilderness Action 找回路线；不直接宣告抵达目标 |
 | CRT-64 | PC 花费一个 Dungeon Turn 搜索一个箱子；房间很大且结构复杂 | EX-DUNGEON | 一个 Turn 可彻底搜索一个物件/地点；复杂房间可需要多个 Turn；时间成本持续推进 |
 | CRT-65 | PC 在地城中制造明显巨大声响，附近有居民 | EX-DUNGEON-EVENT | 识别为事件触发条件；若虚构情境支持，也可直接引发遭遇，不机械要求每次都掷骰 |
+| CRT-66 | Armor 后伤害为 0 | CR-DAMAGE-TX | HP/STR 不变；不触发 Scars/Critical Damage；记录 no-damage 事务 |
+| CRT-67 | PC HP 1、STR 2，Armor 后伤害 3 | CR-DAMAGE-TX / CR-CRITICAL | overflow 2；STR 降至 0；立即死亡；不掷 Critical Damage Save，即使骰值预设为 1 |
+| CRT-68 | PC HP 1、STR 4，Armor 后伤害 3 | CR-DAMAGE-TX / CR-CRITICAL | overflow 2；STR 4→2；用新 STR 2 做 Save；HP 持久化为 0，负值只作中间值 |
+| CRT-69 | PC HP 0 后承受 Armor 后伤害 2 | CR-DAMAGE-TX | overflow 2；不再次触发 Scars；STR 先扣 2 再 Save |
+| CRT-70 | Panicked PC 通过 WIL Save 克服 Panic | CR-PANIC / CR-HP | 只移除 Panicked；HP 仍为 0，不回填；不触发 Scars |
+| CRT-71 | PC 满 10 格 HP 降至 0，随后丢弃物品腾格 | CR-INV / CR-HP | 超载原因结束；HP 不自动恢复；按正常恢复规则恢复 |
+| CRT-72 | Broken Limb 治愈后触发 2d6 最大 HP 检查 | CR-SCARS / pending_effects | 治愈前不掷；治愈事件触发一次；骰值、最大 HP 差分与消费 ID 留档 |
+| CRT-73 | Walloped 跨 Session 暂停，之后满足数小时休息条件 | CR-SCARS / pending_effects | Handoff 保留 Deprived 与待结算成长；恢复不重掷；只结算一次 |
+| CRT-74 | Doomed 角色先做普通 Save，再做下一次 Critical Damage Save | CR-SCARS / CR-CRITICAL | 普通 Save 不消费触发器；下一次 Critical Damage Save 才消费；成功后按表执行 |
+| CRT-75 | 4-Watch 行程完成第 1、2 个 Watch | EX-WILDERNESS / travel_plan | 只提交 2/4 进度；仍在途中；不得提前抵达终点 |
+| CRT-76 | 同一 travel_id 跨 Session 恢复 | EX-WILDERNESS / idempotency | 已提交的迷路骰与 Watch 进度复用；不得重掷或重复扣 Watch |
+| CRT-77 | Deprived 持续 25h、49h，分别检查周期 Fatigue | CR-FAT | 超过一天后按日增加；每个 tick 有唯一 ID；已结算 tick 不重复 |
+| CRT-78 | 一份 Ration 有 3 uses，Make Camp 消耗一次 | EX-WILDERNESS / CR-INV | uses 3→2；物品仍存在；不得将整份口粮移除 |
+| CRT-79 | Dungeon Event 掷出 Loss | EX-DUNGEON-EVENT | 必须先结算火把/法术等 Loss 影响，才进入下一 Cycle |
+| CRT-80 | Dungeon Event 掷出 Exhaustion，选择 Rest | EX-DUNGEON-EVENT | 执行 Rest 后立即产生新的独立 Event Roll；父事件和子事件分别留档 |
+| CRT-81 | Wilderness Event 掷出 Loss | EX-WILDERNESS-EVENT | 按资源/时间/努力成本处理；不套用 Dungeon Loss 的强制后续逻辑 |
+| CRT-82 | Wilderness Event 掷出 Exhaustion | EX-WILDERNESS-EVENT | 按障碍情境处理额外时间/额外 Action 或 Fatigue；不套用 Dungeon Exhaustion 三选一 |
+| CRT-83 | NPC Reaction 不明显，但 Warden 已有充分虚构判断 | CR-REACTION | Warden 可直接裁定；Reaction 骰为可选工具，不强制 |
+| CRT-84 | Blast 影响多个目标 | CR-MOD / CR-DAMAGE-TX | 每个受影响目标独立掷伤害、Armor 与状态事务；不能合并账本 |
+| CRT-85 | 已 committed 的伤害/事件事务在 Handoff 后再次恢复 | CR-DAMAGE-TX / idempotency | 读取既有结果；HP/STR/物品/事件不得重复扣减 |
+| CRT-86 | Mara 离场后完成事务，再与 PC 重逢 | L3 continuity / state ledger | NPC 位置、时间、资源、计划与知识边界连续；不回滚、不全知、不重复执行离场事务 |
+| CRT-87 | 同一攻击情境同时存在弱势与优势因素，另有 Blast 目标 | CR-MOD / CR-DAMAGE-TX | 先按虚构与规则判断最终修正，不把 Impaired/Enhanced 叠加；Blast 各目标仍独立结算 |
 
 ## 3. 关键状态断言
 

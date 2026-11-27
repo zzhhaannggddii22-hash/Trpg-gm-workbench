@@ -35,6 +35,7 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 - [Rule_Reference/WARDEN_GUIDE_INDEX.md](./Rule_Reference/WARDEN_GUIDE_INDEX.md)：监守手册中的 NPC、知识/感知、豁免、地城/荒野探索与成长原则。
 - [GM_SKILL.md](./GM_SKILL.md)：Cairn 专属主持执行草案。
 - [PREFLIGHT.md](./PREFLIGHT.md)：Cairn 专属开团前核验。
+- [Testing/CANDIDATE_VALIDATION_MANIFEST.md](./Testing/CANDIDATE_VALIDATION_MANIFEST.md)：Candidate 受控验证的隔离清单与运行模板。
 - [Research/INITIAL_RESEARCH.md](./Research/INITIAL_RESEARCH.md)：设计研究、单人测试风险与短团候选。
 - [Testing/L3_NPC_PC_RESOURCE_AND_AUTONOMY_TEST_PLAN.md](./Testing/L3_NPC_PC_RESOURCE_AND_AUTONOMY_TEST_PLAN.md)：将 1–2 次短团同时用于 L3 NPC 的 PC 级资源与自主性验证。
 - [Testing/L3_NPC_SYNTHETIC_SELFPLAY_REPORT_2026-11-27.md](./Testing/L3_NPC_SYNTHETIC_SELFPLAY_REPORT_2026-11-27.md)：8 回合、3 分支的 L3 NPC 合成自运行报告。
