@@ -45,6 +45,7 @@
 
 并明确 NQB §6 的真实玩家回合要求只由 C 满足，A/B 都是合成证据。
 
+
 ### 3.2 测试资料迁移后的版本与路径
 
 原 NQB 执行提示指向历史训练分支且没有要求固定精确 commit；同时其场景资料路径与当前 Testing 目录迁移后的权威路径不一致。
@@ -54,15 +55,6 @@
 - 执行前必须填入精确 Workbench commit SHA；
 - GM Packet、Player Prompt、Review Checklist 使用 `Testing/Baselines/` 当前路径。
 
-### 3.5 精确版本锁定与历史夹具
-
-模式路由盘点发现，L3 NPC 与 Narrative Runtime 单会话伴随夹具虽然适用 A 模式，但当前固定在旧 Workbench commit `83981a5f2a42d40170603804fc6995da21daaf61`。它们可验证该历史版本，不能作为当前 main 的回归结果。NQB 执行提示已改为 main + 执行前填入精确 commit SHA；G-16 START 的 commit 占位符也必须在执行前填好。不得只记录分支名，也不得静默替换历史 ref。
-
-### 3.4 目标执行与审核标准隔离
-
-初始审计发现 NQB 执行提示把 Review Checklist 列为所有执行模式的必读资料，与 B 模式“目标 Chat 不接触评分标准、审核者在收到结果后再读”的要求冲突。该问题可能污染目标 GM 的行为，削弱独立审核证据。进一步检查还发现，若目标 GM 在模式 B/C 中自行输出评分/自评，会把目标自评混入独立审核记录。
-
-已修订：目标执行阶段只读取基准、GM Packet 和 Player Prompt；Review Checklist 由模式 A 在执行结束后自审，或由模式 B/C 的独立审核者在收到完整原始结果后读取。B/C 目标只交付原始行动/回应、必要状态账本、版本和读取证据，不自行评分或自评。Self Testing Protocol §11.2 同步明确目标 Chat 不得接触 Review Checklist / ORACLE，也不得自评。
 
 ### 3.3 夹具模式路由
 
@@ -82,6 +74,17 @@
 | `tests/` + GitHub Actions | 独立的代码/仓库层 CI，不属于 A/B 模型行为测试 |
 
 G-16 低压夹具已明确：同一回复中的 A/B/C 分支输出符合 Oracle，不足以证明跨分支重置隔离。历史总体 PARTIAL 保留。
+
+### 3.4 目标执行与审核标准隔离
+
+初始审计发现 NQB 执行提示把 Review Checklist 列为所有执行模式的必读资料，与 B 模式“目标 Chat 不接触评分标准、审核者在收到结果后再读”的要求冲突。该问题可能污染目标 GM 的行为，削弱独立审核证据。进一步检查还发现，若目标 GM 在模式 B/C 中自行输出评分/自评，会把目标自评混入独立审核记录。
+
+已修订：目标执行阶段只读取基准、GM Packet 和 Player Prompt；Review Checklist 由模式 A 在执行结束后自审，或由模式 B/C 的独立审核者在收到完整原始结果后读取。B/C 目标只交付原始行动/回应、必要状态账本、版本和读取证据，不自行评分或自评。Self Testing Protocol §11.2 同步明确目标 Chat 不得接触 Review Checklist / ORACLE，也不得自评。
+
+
+### 3.5 精确版本锁定与历史夹具
+
+模式路由盘点发现，L3 NPC 与 Narrative Runtime 单会话伴随夹具虽然适用 A 模式，但当前固定在旧 Workbench commit `83981a5f2a42d40170603804fc6995da21daaf61`。它们可验证该历史版本，不能作为当前 main 的回归结果。NQB 执行提示已改为 main + 执行前填入精确 commit SHA；G-16 START 的 commit 占位符也必须在执行前填好。不得只记录分支名，也不得静默替换历史 ref。
 
 ## 4. 同会话自动化实测
 
