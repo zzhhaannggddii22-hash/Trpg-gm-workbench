@@ -27,12 +27,15 @@ ZIP 不作为规则书权威来源，也不作为每次 Preflight 的必读文�
 
 - [常规规则调用路由](./05_常规规则调用路由.md)：将规则机制分派到 Preflight、备团、现场裁定、资源处理、结团与幕间流程；规定结构化资料优先、Markdown 完整条文按需回查、PDF 视觉核验后备。
 - [规则检阅协议](./00_规则检阅协议.md)：问题分流、证据优先级与原文核验步骤。
+- [Chaos Runtime Protocol](./03_CHAOS_RUNTIME_PROTOCOL.md)：Chaos Pool 的事件接入、有效机会、效果选择、世界状态落实与任务边界处理（DRAFT / 待行为验证）。
 - [Playwall 解锁与幕间完整性协议](./02_PLAYWALL_UNLOCK_AND_INTERMISSION_PROTOCOL.md)：Work/Life Balance 每次标记、Playwall 授权、文档处理与幕间审计的系统专属执行规范。
 - [掷骰与结果结算专属协议（设计稿）](./02_DICE_RESOLUTION_PROTOCOL.md)：仅适用于 Triangle Agency 中文 v22；不属于通用规则。
 - [Playwall 专属能力骰子管线整合暂缓登记](./PLAYWALL_DEFERRED_REGISTER.md)：现行 Playwall 解锁/读取继续有效；暂缓仅针对本骰子管线的专属机制整合。
 - [基础规则与现场裁定口径](./01_基础规则与现场裁定.md)：常用基础机制与已确认桌面口径。
 - [规则疑点与裁定记录](./04_规则疑点与裁定记录.md)：待核问题、证据与用户裁定。
 - [规则导航索引](../Research/triangle-agency-rules-index.md)：主题定位与页码导航。
+
+本系统的运行协议采用 [System Rule Runtime Integration Protocol](../../SYSTEM_RULE_RUNTIME_INTEGRATION_PROTOCOL.md) 的跨系统集成契约；具体机制仍只由 Triangle Agency 中文 v22 规则定义。
 
 ## 检阅顺序
 
