@@ -20,6 +20,17 @@ status: active
 - 规则原文：[中文 v22 PDF](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1/最终交付_v22/triangle_agency_zh.md)
 - 多系统隔离协议：[SYSTEM_CONTEXT_PROTOCOL.md](../../SYSTEM_CONTEXT_PROTOCOL.md)
 
+## Zarek Campaign operational defaults（非通用系统规则）
+
+以下为本 Campaign 已确认的桌面运行约定；不得自动继承到其他 Triangle Agency Campaign：
+
+- **普通 Chaos Pool 初始值：0**，除非当前模组原文明确规定其他初始值。模组内池与区域 Loose Ends / Weather Effects 分开记录。
+- **QA 对应 Quality：**普通检定只消耗本次检定所用 Quality 的 QA；不得跨 Quality 挪用。人寿保单保障项目 1（Q03）是明确例外，可消耗任意 Quality 的 QA 来忽略 Harm。
+- **Burnout / QA 时序（Q04）：**先检查并结算本次检定已有 Burnout，再处理 QA；同次检定中消耗 QA 不会反向产生本次检定的即时 Burnout。
+- **Time（Q05）：**只有完整模组结团才获得 +1 可使用 Time；单独 Session 结束不触发。可使用 Time 增加与剩余可用 Time 减少是两个独立、反向联动的字段。
+
+以上是 Campaign Binding，不是中文 v22 通用规则的改写。具体适用范围见 RULE_ADJUDICATIONS.md。
+
 ## 运行约束
 
 1. 本战役只使用 `triangle_agency` 的中文 v22 规则环境。
