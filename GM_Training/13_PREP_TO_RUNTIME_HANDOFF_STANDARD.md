@@ -330,21 +330,8 @@ Handoff 是恢复入口，不是独立权威状态，不得凌驾于 Campaign Bi
 
 ### 12.4 交付关闭条件
 
-
-### 12.6 逻辑责任角色与自审标记
-
-每个交付批次至少明确以下逻辑职责：
-
-| 责任角色 | 职责 |
-|---|---|
-| Prep Author | 生成与修改备团内容 |
-| Rule Validator | 对照权威规则与模组原文核验 |
-| Delivery Owner | 管理变更集、回读与最终状态验收 |
-| Independent Auditor | 对高风险交付进行独立审查 |
-| Runtime GM | Preflight、动态状态恢复与现场运行 |
-| Player | 保留角色行动选择并明确开团授权 |
-
-这些是逻辑责任，不要求由六个不同的人承担。同一 AI 可以兼任作者、规则核验、交付与 Runtime GM，但必须标记为 SELF-REVIEW；不得将其自审描述为独立 QA。只有未参与该批次制作、且能独立读取固定版本的审查者，才可记为 INDEPENDENT REVIEW。Player 的选择与授权不能由 GM 或 QA 代行。
+交接只有在以下条件全部满足后才可标记 COMPLETE：
+- 模组文件已写入目标分支并回读；
 
 ### 12.5 部分写入、并发与提交事务契约
 
@@ -361,11 +348,19 @@ Handoff 是恢复入口，不是独立权威状态，不得凌驾于 Campaign Bi
 Delivery Manifest 至少包含 Delivery ID、Base Commit、Change Set、Artifact Commit、Readback Results、Gate Results、Open Items、Acceptance Owner。最终 Commit SHA 可由后续验收记录引用，避免 Commit 自引用。
 
 
-交接只有在以下条件全部满足后才可标记 COMPLETE：
-- 模组文件已写入目标分支并回读；
-- Campaign README 与模组索引已同步；
-- 战役交接已追加新选择及结团状态（不重写历史）；
-- 新模组 Runtime/Player Notes/Resource Ledger 初始边界明确；
-- 所有链接和路径有效；
-- 状态与测试证据一致；
-- 用户可见报告通过玩家视角信息隔离检查。
+
+### 12.6 逻辑责任角色与自审标记
+
+每个交付批次至少明确以下逻辑职责：
+
+| 责任角色 | 职责 |
+|---|---|
+| Prep Author | 生成与修改备团内容 |
+| Rule Validator | 对照权威规则与模组原文核验 |
+| Delivery Owner | 管理变更集、回读与最终状态验收 |
+| Independent Auditor | 对高风险交付进行独立审查 |
+| Runtime GM | Preflight、动态状态恢复与现场运行 |
+| Player | 保留角色行动选择并明确开团授权 |
+
+这些是逻辑责任，不要求由六个不同的人承担。同一 AI 可以兼任作者、规则核验、交付与 Runtime GM，但必须标记为 SELF-REVIEW；不得将其自审描述为独立 QA。只有未参与该批次制作、且能独立读取固定版本的审查者，才可记为 INDEPENDENT REVIEW。Player 的选择与授权不能由 GM 或 QA 代行。
+
