@@ -81,38 +81,27 @@ The production-host integration gate is currently **OPEN / NOT IMPLEMENTED**.
 
 This inventory is a repository-level finding. It does not claim that the ChatGPT platform has no internal persistence; that platform implementation is outside this repository and is not exposed as a Workbench-controlled transaction API.
 
-## Minimum production integration boundary
+## Recommended lightweight path
 
-Do not add another synthetic adapter and call it production. Before a host-level test, select and implement one actual storage backend behind a small adapter contract:
+For this project, start with the existing GitHub repository and the lightweight procedure in [GitHub Runtime Save](../../../GM_Training/GITHUB_RUNTIME_SAVE_QUICK_PATH.md). It is designed for a single GM and ordinary campaign continuity:
 
-1. **Read/discovery:** load the current checkpoint and immutable manifests; discover active PREPARED/INCOMPLETE batches by Campaign / Module / Run identity.
-2. **Conditional prepare:** create one immutable PREPARE manifest for a stable batch/event identity, rejecting identity reuse with a different payload and rejecting a stale base revision.
-3. **Idempotent target application:** apply each declared field/target once using a stable operation ID and an expected-before revision/value; return a durable target reference.
-4. **Independent readback/reconciliation:** reread every required target and manifest from the backend, verify exact content/revision/recipient scope, and distinguish APPLIED, PARTIAL, NOT_APPLIED, and DISPUTED.
-5. **Conditional publication:** advance the published checkpoint only if the base revision/head still matches. If the backend cannot provide conditional update or equivalent serialization, stop at INCOMPLETE rather than claiming publication.
-6. **Cold recovery:** after a fresh process/session starts, rediscover the batch from backend state, reconcile existing writes, and never replay a domain effect merely because an acknowledgement was lost.
+- Keep the existing `03_RUNTIME_STATE.md` and `04_SESSION_LOG.md` responsibilities.
+- When both change, place them in **one Git commit** using Git blobs + one tree + one commit.
+- Advance the branch only if its HEAD is still the one just read (`expected_sha`).
+- Read the saved Runtime State once after the commit.
+- Use a stable event ID and check the log before retrying an important action.
 
-Responsibility boundary:
+No database, background service, distributed lock, PREPARE registry, or elaborate recovery framework is required for the current workload. A branch-head mismatch simply means stop, reread, and retry deliberately.
 
-- The **system-specific rules/runtime** resolves the action and produces a validated event/delta. Cairn persistence code must not decide Triangle Agency mechanics, and vice versa.
-- The **generic persistence adapter** applies already-resolved event data, revisions, idempotency, manifests, reconciliation, and publication. It does not roll dice or adjudicate rules.
-- The **player projection layer** emits only the authorized recipient-scoped payload after the underlying result is verified.
-- The **host/backend** supplies durable reads/writes, conditional creation/update or equivalent concurrency control, and independently readable evidence.
+The GitHub connector exposes the required Git object operations, so this can be carried out by the assistant without adding a separate production server. This is an operational save path, not a deployed application runtime.
 
-For a GitHub-backed implementation, prefer one immutable Git tree/commit containing the manifest, all required target files, and publication pointer, followed by a branch-ref update guarded by the expected old SHA. Do not emulate a transaction by sequentially calling per-file update operations. For a database backend, use transactional writes plus unique idempotency constraints and revision compare-and-swap.
+## Small acceptance check
 
-## Host-level acceptance gate
+Before using it as the default, perform one TEST_ONLY save where Runtime State and Session Log change together. Confirm both are present in the same commit and that the Runtime State can be read from that commit. That is sufficient for the current single-GM workflow.
 
-A production claim requires all of the following on an isolated TEST_ONLY Campaign/store:
+Retain the existing synthetic persistence tests as contract examples, but do not expand them into a larger host-testing program unless real failures justify it.
 
-- real host adapter and real backend are identified in the test report;
-- cold-process/session restart after PREPARE, after each target write, after publication, and after lost acknowledgement;
-- duplicate delivery, conflicting event identity, stale revision, and concurrent writer tests;
-- independent backend readback of manifests, targets, and published checkpoint;
-- player projection allowlist/recipient-scope tests against the actual delivery boundary;
-- evidence that no formal Campaign/CANON or active-system binding was touched.
-
-Until these gates pass, retain **PERSISTENCE CONTRACT MODEL PASS** only. Cairn remains `candidate`; Triangle Agency remains the only `active` system.
+Until the smoke check is performed, report the current Cairn filesystem harness accurately as **PERSISTENCE CONTRACT MODEL PASS**. Cairn remains `candidate`; Triangle Agency remains the only `active` system.
 
 ## Governance
 
