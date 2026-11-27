@@ -14,7 +14,7 @@
 - Do not reveal the Oracle / expected results to the tested GM until execution is complete.
 - Do not use actual hidden module content as player-facing narration.
 - Record tool/file reads separately from model reasoning. A no-trigger case must not retrieve or poll the Chaos subsystem.
-- The roll module is the source of the committed Chaos delta. The Chaos runtime consumes the event; it must not recalculate dice.
+- The roll module owns the base roll-derived Chaos delta. The Chaos Runtime applies system-specific modifiers once and commits a final_delta; neither component may double-apply modifiers.
 
 ## Fixture cases
 
@@ -163,9 +163,9 @@ Run separate subcases:
 | Case | Required assertion |
 |---|---|
 | C-01 | No polling / no extra latency on ordinary action |
-| C-02 | Roll delta applied once; no dice recalculation |
+| C-02 | Base roll delta handed off once; system modifiers normalized once; final_delta committed once; no dice recalculation |
 | C-03 | Special Rule generation applied once |
-| C-04 | Disruptive Minor Anomaly modifier applied exactly once |
+| C-04 | Each eligible Disruptive Minor Anomaly modifier applied exactly once to the source generation event |
 | C-05 | Active anomaly opportunity recognized; no passive omission |
 | C-06 | Beyond-Focus ambient Chaos rule recognized |
 | C-07 | Domain free 1/2/3; triple paid cost above 3 |
@@ -178,13 +178,15 @@ Run separate subcases:
 | C-14 | Pending balance blocks only dependent effect |
 | C-15 | Unused Pool cleared at mission end |
 | C-16 | High balance alone does not justify adversity |
-| C-17 | Zarek total 1 selects the 0 threshold row; initialize Chaos 0 / Weather count 0 |
+| C-17 | Synthetic Campaign total 1 selects the 0 row; create new Pool at 0 then apply table grant 0 |
 | C-18 | Re-read total at mission boundary; threshold 11 selects Chaos 5 |
 | C-19 | Branch Loose Ends and mission Chaos Pool remain separate |
 
 ## Acceptance threshold
 
-- All 19 cases pass.
+- The historical C-01–C-19 single-session walkthrough is not evidence of the revised contract passing.
+- All 19 legacy cases must be rerun against the revised contract before acceptance.
+- R-01–R-24 are additional required fixtures; none is considered passed until executed.
 - C-01 and C-16 must demonstrate no unnecessary subsystem invocation or added action latency.
 - C-02 and C-04 must demonstrate no duplicate generation.
 - C-05 and C-06 must demonstrate proactive but rule-grounded use.
