@@ -7,11 +7,10 @@
 ## Runner discipline
 
 1. Use a clean target chat/runtime. Do not load prior campaign canon or other-system state.
-2. Read this file and the referenced runtime documents only:
+2. Read this file, CASES.md, and the referenced runtime documents only:
    - Systems/Cairn/Rule_Reference/CORE_RULES_RUNTIME.md
    - Systems/Cairn/RUNTIME_PROTOCOL.md
-   - Systems/Cairn/Testing/CORE_RULE_RUNTIME_REGRESSION_MATRIX.md
-3. Do not read ORACLE.md until all cases have been executed and the runner has written its own expected outcomes.
+3. Do not read the maintainer regression matrix or ORACLE.md until all cases have been executed and the runner has written its own expected outcomes.
 4. Treat every fixture character, location, event, item and timeline as TEST_ONLY_NON_CANON.
 5. For each case, report initial state, action, Rule IDs, raw rolls, intermediate values, state delta, after state, pending effects, event IDs, and PASS/FAIL/BLOCKED.
 6. Do not silently repair a mismatch. Preserve the failed trace.
@@ -19,7 +18,7 @@
 
 ## Cases to execute
 
-Execute CRT-66 through CRT-87 from the matrix. Use the exact values and conditions stated there. If the matrix does not supply a necessary value, state the missing input rather than inventing one.
+Execute CRT-66 through CRT-87 from CASES.md. Use only the supplied inputs. If a necessary value is missing, state the missing input rather than inventing one.
 
 ## Output
 

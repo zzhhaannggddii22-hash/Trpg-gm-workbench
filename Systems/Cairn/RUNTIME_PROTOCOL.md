@@ -93,7 +93,7 @@ rule_call:
 1. 读取当前 Watch（Morning / Afternoon / Night）、Point、目的地、队伍分组和各角色本 Watch 已使用的行动。
 2. 核算旅行 Watch 成本：路径距离 + 路径类型 + 地形 + 天气 + 队伍状态；特别广阔地形可额外 +0 至 +2 Watches。每项修正须记录来源，不得重复叠加同一因素。
 3. 每名角色本 Watch 选择一项 Wilderness Action。Travel 通常由整个队伍共同执行，作为一次队伍行动；Explore / Supply 等可由一名或多名角色参与。
-4. Travel 开始时建立唯一 travel_id，记录路线、总 Watches、已完成 Watches、当前 Point/路段、迷路检定与修正；掷 1d6 判断迷路，并应用路径基础风险及地图、技能、向导等修正。若迷路，按官方程序决定是否需要额外 Wilderness Action 找回路线；不得在同一 travel_id 的 Session 恢复时重掷迷路骰。
+4. Travel 开始时建立/读取 travel_plan 的 travel_id；每次正式声明的 Travel 行动另建 travel_action_id 与 lost_check_id，记录本次路线段、适用路径风险、修正、骰值和结果。若迷路，按官方程序决定是否需要额外 Wilderness Action 找回路线。Handoff 恢复同一 travel_action_id 时复用已提交结果；后续 Watch 若重新声明新的 Travel 行动，则建立新的 travel_action_id 和对应检定，不把旧骰重复用于新行动。
 5. 处理行动结果，按程序掷 Wilderness Events；夜间旅行必须掷两次。每个 Wilderness Cycle 记录唯一 cycle_id 与 Event Roll ID，恢复时不得重复掷同一 Cycle 的事件。
 6. 每推进一个 Watch，记录 Watch 消耗、地点/路线进度、口粮使用次数、光源、Fatigue、Deprived 和其他资源变化。多 Watch 行程不得在第一 Watch 就提前把队伍移动到最终 Point；只有完成所需旅程进度后才提交抵达。
 7. 每日最后一个 Watch 通常安排 Make Camp：每名角色及坐骑消耗 1 Ration（按每份 3 uses 的口粮账本扣 1 use），安排守夜；能够休息者清除全部 Fatigue。
@@ -210,7 +210,7 @@ Runtime State 至少记录 hp_zero_cause: damage_scars | panic | inventory_overl
 
 ### A.6 多 Watch 旅行
 
-每个行程维护 travel_plan：travel_id、起点/目标、路径分段、各项惩罚来源、total_watch_cost、watches_elapsed、watches_remaining、迷路骰值/修正/结果、当前 Point/路段、额外找路 Action、待处理 Wilderness Event 与 status（planned / travelling / delayed / lost / arrived / abandoned）。
+每个行程维护 travel_plan：travel_id、起点/目标、路径分段、各项惩罚来源、total_watch_cost、watches_elapsed、watches_remaining、travel_actions[]（每项含 travel_action_id、lost_check_id、骰值/修正/结果/提交状态）、当前 Point/路段、额外找路 Action、待处理 Wilderness Event 与 status（planned / travelling / delayed / lost / arrived / abandoned）。
 
 每次 Wilderness Cycle 只提交本 Cycle 已完成的进度和事件；未完成总 Watch 成本前不得提交抵达最终 Point。天气或地形变化影响剩余路段时，记录新依据并重新计算剩余成本，不追溯改写已完成的 Watch。Travel 检定与每个 Cycle 的 Event Roll 使用不同 ID；Session 恢复不能重掷已提交骰。
 
