@@ -439,3 +439,21 @@ These are same-assistant self-review and synthetic checks. They are not independ
 - Session Log remains empty.
 - Character cards and resource ledgers remain pending.
 - No game time advances until the user explicitly says “开始”.
+
+## 19. Local Cairn rules reference and offline-first lookup
+
+The following repository references are the first lookup path for this campaign:
+
+- `Systems/Cairn/Rule_Reference/CORE_RULES_RUNTIME.md` — runtime rules index and normalized procedures (v0.2). Most relevant sections are marked VERIFIED_CORE, but the document itself explicitly marks attribute recovery and hirelings PARTIAL. A PARTIAL topic must be checked against the official source before a consequential ruling.
+- `Systems/Cairn/Rule_Reference/CORE_RULE_INDEX.md` — navigation summary, not a substitute for full rule text.
+- `Systems/Cairn/PREFLIGHT.md` — Candidate system-specific checklist, not an activation or formal-binding grant.
+
+Official source routes retained for targeted verification only:
+- Core Rules: https://cairnrpg.com/second-edition/players-guide/core-rules/
+- Procedures: https://cairnrpg.com/second-edition/players-guide/procedures/
+- Warden Combat: https://cairnrpg.com/second-edition/wardens-guide/combat/
+- Dungeon Exploration: https://cairnrpg.com/second-edition/wardens-guide/dungeon-exploration/
+- Wilderness Exploration: https://cairnrpg.com/second-edition/wardens-guide/wilderness-exploration/
+- Spellbooks: https://cairnrpg.com/second-edition/wardens-guide/spellbooks/
+
+**Offline-first policy:** During ordinary play, consult the archived module source and these local rule references first. Revisit the web only when a relevant local topic is PARTIAL/UNKNOWN, the official source is known to have changed, or an actual discrepancy appears. Do not claim the local runtime manual is a complete transcription of every official rule chapter.
