@@ -275,3 +275,10 @@
 - 以上坐标由官方 Work/Life Balance 轨迹路径与已记录成长事件顺序确定，状态为 RULE-DETERMINISTIC RECONSTRUCTION；不是声称已从扎雷克原始填表图片直接读取。
 - “可使用 Time”的绝对余额仍为 UNKNOWN；本节 3/30 只记录 Work/Life Balance 轨迹格数，不用于推算可使用 Time 余额。
 - D4 已读取；读取范围与收益记录见 Playwall Unlock Ledger §8。
+
+
+### 12.1 官方轨迹版面证据
+
+出版方官方可打印人物表第 3 页已目视核验：三条轨迹均为两排各 15 格，路径上排左→右、下排右→左。故本次 Reality / Anomaly 下排左起第 3 格（轨迹第 28 格）的物理位置有官方空白模板视觉依据；前两次对应下排左起第 1、2 格。扎雷克本人填写版未找到，个人标记状态仍以本账本与 Playwall Unlock Ledger 的事件记录重建。
+
+来源：https://cdn.shopify.com/s/files/1/0581/0464/3719/files/Triangle_Agency_-_Character_Organization_Sheets_-_For_Print.pdf#page=3
