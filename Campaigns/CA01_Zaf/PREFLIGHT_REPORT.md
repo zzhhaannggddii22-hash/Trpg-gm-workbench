@@ -63,11 +63,11 @@ Resources and notable items:
 - Catherine currently has no Fatigue. Her armor is 0.
 - All Petty items and money pouches remain outside slot accounting, as recorded on the cards.
 
-### Character creation issue requiring player decision
+### Character creation audit: Bonds decision resolved
 
-Zaf's two Bonds were recorded as results 7 and 3 with d10 notation. Cairn 2e uses a d20 Bonds table. Both numbers happen to map to valid entries on the d20 table, but the recorded die type is wrong. The original history must remain intact. No silent correction or reroll was made.
+Zaf's two Bonds were originally recorded as results 7 and 3 with d10 notation. Cairn 2e uses a d20 Bonds table. Both numbers map to valid entries on the d20 table, but the original die-type notation is incorrect.
 
-This is the only outstanding player-facing character-creation decision: retain the current Bond entries as a documented creation irregularity, or reroll both Bonds using the correct d20 procedure. Until the player decides, the current entries and items remain provisionally recorded and unchanged.
+The player explicitly chose to **retain the existing results 7 and 3 without rerolling**. The two Bond entries and their associated items are therefore confirmed and remain unchanged. The original d10 notation is preserved as a historical audit note; it is not silently rewritten as a d20 roll and is not represented as correct official procedure. This decision is closed and must not be raised again as an unresolved player choice.
 
 ## 5. Module archive
 
