@@ -1,8 +1,8 @@
 # Training & Runtime Quality Assurance｜训练与运行时质量保证
 
-> 版本：0.1
+> 版本：0.2
 > 建立基线：main@ac551b5e04d7a7c9dc5e3314e30be1658e019f5e（2026-11-26）
-> 状态：IMPLEMENTED AS GOVERNANCE / BEHAVIORAL VALIDATION PENDING
+> 状态：IMPLEMENTED AS GOVERNANCE / QA SYSTEM ACCEPTANCE v1: ACCEPTED_WITH_LIMITATIONS / B-MODE END-TO-END VALIDATION PENDING
 > 适用范围：跨系统通用 GM 训练、叙事能力沉淀、能力迁移与实际运行质量审计
 > 核心约束：QA 尽可能离线化；Runtime 不增加逐轮全量评分、全量扫描或重复检查。
 
