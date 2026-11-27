@@ -86,20 +86,22 @@ class MemoryGitHubStore(GitHubGraphQLRuntimeStore):
             raise CommitOutcomeUnknown("simulated acknowledgement loss after durable commit")
         return new
 
-    def _find_receipt_commit(self, path, base_head_oid):
-        branch_head = self.heads[self.runtime_branch]
-        cursor = branch_head
+    def _find_path_commit(self, branch, path, parent_oid):
+        cursor = self.heads[branch]
         matches = []
         while cursor in self.parents:
-            if path in self.changed.get(cursor, set()) and base_head_oid in self.parents[cursor]:
+            if path in self.changed.get(cursor, set()) and parent_oid in self.parents[cursor]:
                 matches.append(cursor)
             parents = self.parents[cursor]
             if not parents:
                 break
             cursor = parents[0]
         if len(matches) > 1:
-            raise AssertionError("memory model created duplicate receipt commits")
+            raise AssertionError("memory model created duplicate immutable-path commits")
         return matches[0] if matches else None
+
+    def _find_receipt_commit(self, path, base_head_oid):
+        return self._find_path_commit(self.runtime_branch, path, base_head_oid)
 
 
 class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
@@ -194,6 +196,25 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         self.store.prepare(self.manifest)
         with self.assertRaises(InvalidTargetPath):
             self.store.publish("BATCH-002", BASE, {"../escape.json": "x"})
+
+    def test_reconcile_detects_tampered_prepare_manifest(self):
+        self.store.prepare(self.manifest)
+        head = self.store.heads[self.store.operations_branch]
+        path = ".runtime/operations/BATCH-002.json"
+        changed = dict(self.store.snapshots[head])
+        envelope = json.loads(changed[path])
+        envelope["manifest"]["target_revision"] = 999
+        envelope["manifest_fingerprint"] = fingerprint_text(
+            json.dumps(envelope["manifest"], ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        )
+        changed[path] = json.dumps(envelope, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
+        self.store.sequence += 1
+        new = f"{self.store.sequence:040x}"
+        self.store.snapshots[new] = changed
+        self.store.parents[new] = [head]
+        self.store.changed[new] = {path}
+        self.store.heads[self.store.operations_branch] = new
+        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "DISPUTED")
 
     def test_reconcile_detects_tampered_current_receipt(self):
         self.store.prepare(self.manifest)
