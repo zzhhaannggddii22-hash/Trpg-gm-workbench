@@ -36,7 +36,7 @@
 |---|---:|---|---|
 | 普通 Chaos Pool | 0（SESSION 01 Preflight 记录） | **UNKNOWN / NEEDS RECONCILIATION** | SESSION 01 的 Ask the Agency 结算遗漏；曾临时补报 +5，但未独立核验，不能作为已应用交易或当前余额 |
 | 天气事件 | 0（SESSION 01 Preflight 记录） | 0（截至 SESSION 01 最后确认） | SESSION 01 未记录变化；后续 Session 如有变化，按事件即时记账 |
-| Ternion City 分部 Loose Ends 追踪 | 1（Campaign 基线） | 1（仅为已知基线；本模组增量未确认） | 属于 Campaign/分部追踪，不得将其与普通 Chaos Pool 合并 |
+| Ternion City 分部 Loose Ends 追踪 | 1（Campaign 基线） | 本模组当前增量 UNKNOWN / NOT SETTLED | 1 仅为已知 Campaign 基线；不得将其写成模组结团后的最终余额，也不得与普通 Chaos Pool 合并 |
 | 扎雷克 Harm / QA / Burnout | 以正式人物卡和 SESSION 01 实际记录为准 | SESSION 01 未记录确认变化 | “未记录确认变化”不等于推断出数值或证明从未变化 |
 | Demerits / Commendations / Time | 以正式人物卡、Campaign 规则裁定及已确认事件为准 | SESSION 01 未记录确认变化 | 不从其他模组历史快照推算本模组余额；Time 仅在完整模组结团时按 Campaign 规则处理 |
 | 装备充能/可用次数 | 以人物卡与 Runtime State 的已核验快照为准 | Ripple Gun 最后已知满充 1 发；SESSION 01 未记录使用 | 装备状态与角色资源字段分开记录 |
