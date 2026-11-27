@@ -140,17 +140,17 @@ Run separate subcases:
 **Expected:** Do not spend Chaos merely because the pool is high. No arbitrary attack, punishment, complication, or forced roll. Preserve the pool until a supported opportunity occurs.
 
 
-### C-17 — Zarek mission initialization reads current Branch Loose Ends
+### C-17 — Synthetic mission initialization reads Campaign-owned Branch state
 
-**Initial state:** Zarek Campaign, current Branch Loose Ends = 1. No Campaign override replaces the v22 mission-start table.
+**Initial state:** Synthetic Campaign fixture, current Branch Loose Ends = 1. No Campaign override replaces the v22 mission-start table.
 
-**Expected:** Read the printed-page-165 table before mission start. Total 1 falls in the 0 threshold band (0–10): initialize this mission's Chaos Pool to 0, Weather Event count to 0, and apply only the Agency employment-contract restrictions. Record the Branch total and selected threshold row. Do not treat 0 as a permanent Zarek default; recalculate at every mission start.
+**Expected:** Read the printed-page-165 table before mission start. Total 1 falls in the 0 threshold band (0–10): create a new mission Pool at 0, then apply a Starting Chaos grant of 0; Weather Event count is 0; apply only the Agency employment-contract restrictions. Record the source total and selected threshold row in the fixture's Campaign/Module records. The fixture value is not a system rule or a real Campaign fact.
 
 ### C-18 — Threshold transition
 
 **Initial state:** A mission is being prepared with Branch Loose Ends = 10, then a verified persistent event raises it to 11 before the mission is opened.
 
-**Expected:** Re-read the current total at the actual mission-start boundary. Select the 11 threshold row: starting Chaos 5, Weather Event count 1, and its cumulative restriction. Do not reuse the earlier 0-row result or interpolate.
+**Expected:** At actual mission start, create a fresh Pool at 0, then apply a separate +5 Starting Chaos grant. Weather Event count is 1. Do not reuse the earlier 0-row result or interpolate. A normal weather result does not trigger a threshold-table rerun; only a specific result that explicitly changes Branch Loose Ends (such as a defined extreme-weather consequence) updates Campaign state.
 
 ### C-19 — Branch state is not the mission Chaos Pool
 
@@ -192,3 +192,43 @@ Run separate subcases:
 - C-12 must prove state materialization, not merely narration or bookkeeping.
 - C-13 must pass player/GM information separation.
 - Static documentation checks are not behavioral acceptance. A single-session self-test is not independent review or production runtime integration.
+
+
+## Independent-review remediation fixtures (R-01–R-24)
+
+> These are new behavioral cases proposed from the independent review. They are not yet executed and must not be counted as PASS. Use synthetic Campaigns and isolated target chats; keep Oracle material hidden from the tested GM.
+
+| Case | Initial condition / action | Required assertion |
+|---|---|---|
+| R-01 | Two eligible Disruptive Minor Anomalies are present when Chaos is generated | Each eligible anomaly contributes exactly one modifier to the same source generation event. |
+| R-02 | A generation event has base_delta = 0 | No modifier creates Chaos unless the exact rule trigger authorizes it. |
+| R-03 | A Special Rule generates Chaos while a Disruptive Minor Anomaly is eligible | Both enter the same normalization path; modifiers are applied once. |
+| R-04 | A generation event already carrying final_delta is replayed | No modifier is applied again; final_delta and modifier snapshot remain unchanged. |
+| R-05 | The same player action is paraphrased after context recovery and assigned a candidate new ID | Match the originating action/trigger and resume the existing event; do not create a duplicate transaction. |
+| R-06 | A valid Domain effect costing 3 is attempted with Pool = 0 | The approved ≤3 Domain ruling permits the free effect. |
+| R-07 | A valid free Domain effect is attempted while absolute Pool = UNKNOWN | The unrelated unknown balance does not block the free effect. |
+| R-08 | A positive-cost effect is attempted with insufficient verified Pool | No resource deduction and no unauthorized world effect. |
+| R-09 | Starting balance is UNKNOWN; a verified +5 generation occurs | Record the known increment; absolute balance remains UNKNOWN. |
+| R-10 | Resource deduction commits; world-state write fails | Recovery completes the world effect without a second deduction. |
+| R-11 | World effect commits; player presentation is interrupted | Recovery presents the existing effect without reapplying it. |
+| R-12 | Presentation occurred; checkpoint write fails | Recovery records presentation as delivered and does not replay the event. |
+| R-13 | Domain expands over multiple committed events | Domain eligibility follows the latest committed spatial state; no retroactive rewrite of earlier events. |
+| R-14 | A Minor Anomaly is created and its creator leaves / Session ends | The Minor Anomaly persists or expires only under its actual rule/effect duration; no arbitrary deletion. |
+| R-15 | Pre-closeout balance is UNKNOWN and mission ends | Preserve pre-closeout UNKNOWN and discarded_amount UNKNOWN; closed mission Pool becomes 0; no invented historical balance. |
+| R-16 | Module Closeout is invoked twice for the same mission | Closeout is idempotent; no duplicate reset or duplicate persistent-state changes. |
+| R-17 | A non-extreme Weather Event result has no explicit Loose Ends consequence | Record the weather result; do not alter Branch Loose Ends or rerun the threshold table. |
+| R-18 | An explicitly extreme Weather Event result directly changes Branch Loose Ends | Apply only the specified Branch-state change once; preserve event history; do not silently recalculate unrelated setup outputs. |
+| R-19 | Branch Loose Ends reaches 66 | Create the book-directed retirement-pending state for the current field team; do not convert N/A to zero or abort the active mission immediately. |
+| R-20 | Branch Loose Ends reaches 77 | Enter the book-directed Branch removal / Unraveling state; do not treat it as an ordinary Chaos initialization. |
+| R-21 | An Anomaly escapes | Branch Loose Ends increases by +7; Chaos Pool does not directly increase by +7. |
+| R-22 | A mission closes and the next mission opens | Old Pool remains CLOSED at 0; new mission Pool is created at 0, then receives its table Starting Chaos grant. |
+| R-23 | A system with no GM-operated resource completes Preflight and play | No resource adapter, placeholder balance, resource polling, or Chaos rules are instantiated. |
+| R-24 | A different system has a distinct resource or threat clock | It uses only its own triggers, costs, lifecycle, and persistence rules; no Triangle Agency Chaos semantics leak across. |
+
+### R-case acceptance notes
+
+- R-10–R-12 require a host that can inject write failures at each commit boundary; prose simulation is not sufficient.
+- R-17/R-18 distinguish ordinary weather from an explicit extreme-weather state change. Do not infer a Loose Ends change from atmospheric severity alone.
+- R-19/R-20 require the exact v22 lifecycle wording and must be verified against the fixed ruleset source before production acceptance.
+- R-23/R-24 require independent non-Triangle system fixtures, not a Triangle Agency mock with fields disabled.
+- None of R-01–R-24 is considered executed by adding it to this document.
