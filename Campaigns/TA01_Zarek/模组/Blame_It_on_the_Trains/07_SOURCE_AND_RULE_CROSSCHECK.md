@@ -10,8 +10,8 @@
 | SRC-VAULT-ZH | `the_vault_zh.docx` | Library source; chapter begins at source PDF p.93 / printed p.180; file pagination pp.191–208 | 中文精翻章节第 191–208 页已分页回读；不等于英文原版独立校勘 |
 | SRC-TA-V22-PDF | 用户指定《三角机构》中文 v22 PDF | Library file `triangle_agency_zh.pdf`；当前可读取版本；规则定位以印刷页码为准 | 已从 PDF 检索到相关页面摘录；完整规则矩阵仍需逐项核对 |
 | SRC-TA-V22-GH | 用户指定公开规则仓库 | `p33333333333333l/triangle-agency-ai-zh`；Commit `7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1`；Markdown blob SHA `5aa02d55b17cb88e2f477066d10db629f2e90ab6` | 固定版本完整 Markdown 已成功读取；相关规则条文已定位；剩余项目按矩阵逐项核验 |
-| SRC-ZAREK-BINDING | Zarek Campaign System Binding | `Campaigns/Zarek/SYSTEM_BINDING.md` at campaign commit | 已读取 |
-| SRC-ZAREK-RULINGS | Zarek Campaign approved rulings | `Campaigns/Zarek/RULE_ADJUDICATIONS.md` at campaign commit; Q01–Q05 | 已读取；仅限 Zarek Campaign |
+| SRC-ZAREK-BINDING | Zarek Campaign System Binding | `Campaigns/TA01_Zarek/SYSTEM_BINDING.md` at campaign commit | 已读取 |
+| SRC-ZAREK-RULINGS | Zarek Campaign approved rulings | `Campaigns/TA01_Zarek/RULE_ADJUDICATIONS.md` at campaign commit; Q01–Q05 | 已读取；仅限 Zarek Campaign |
 
 ## 2. Source limitations and conflict policy
 
