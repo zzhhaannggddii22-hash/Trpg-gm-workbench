@@ -12,7 +12,7 @@
 - Demerits：UNKNOWN
 - Harm：UNKNOWN / RULE RECONCILIATION REQUIRED
 - Available Time：UNKNOWN（仅 Bower Street 完整结团 +1 奖励已确认）
-- Ordinary Chaos Pool：Campaign 默认初始值为 0，除非本模组原文明示其他值；独立于区域 Loose Ends / Weather Effects，不继承旧模组余额
+- Ordinary Chaos Pool：本模组独立建池，Campaign 默认初始值 0；本模组完整结团时关闭并重置为 0，除非本模组原文明示其他规则。独立于区域 Loose Ends / Weather Effects，不继承旧模组余额
 - Ripple Gun：暂定 1/1；须按装备规则与人物卡点交
 - Loose Ends：Campaign 基线暂记 1，Bower Street 模组增量 +0；Preflight 核对 Campaign 权威记录
 - Other equipment / holders / charges：PENDING ITEM-BY-ITEM HANDOFF
