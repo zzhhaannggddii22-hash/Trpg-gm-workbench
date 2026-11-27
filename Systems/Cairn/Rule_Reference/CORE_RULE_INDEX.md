@@ -1,6 +1,6 @@
-# Cairn 2e 核心规则索引（初核版）
+# Cairn 2e 核心规则索引（导航版）
 
-> 状态：初步核对；正式裁定前仍须回查绑定版本原文。
+> 状态：导航索引。常规运行调用 [CORE_RULES_RUNTIME.md](./CORE_RULES_RUNTIME.md)；特殊条目按 Runtime Protocol 回查官方原文。
 > 版本：Cairn Second Edition。
 > 官方总入口：https://cairnrpg.com/second-edition/
 
@@ -25,7 +25,7 @@
 | 战斗轮 | 每轮约 10 秒；每方轮流行动，但每方行动结果同时结算；首轮每名可行动 PC 需进行 DEX Save 才能行动（规则列出的特殊条件可豁免） | Core Rules / Combat |
 | 护甲 | 伤害扣 HP 前减去 Armor；角色/NPC/怪物 Armor 上限为 3 | Core Rules |
 | Impaired / Enhanced | 劣势攻击伤害改掷 d4；优势攻击改掷 d12 | Core Rules / Attack Modifiers |
-| HP 恰好降至 0 | 触发 Scars 表；按本次伤害造成的 HP 损失量查表处理，不进入低于 0 的 Critical Damage 流程 | Core Rules / Scars |
+| PC 因攻击伤害使 HP 恰好降至 0 | 触发 Scars 表；按本次攻击造成的 HP 损失量查表处理，不进入低于 0 的 Critical Damage 流程 | Core Rules / Scars |
 | Critical Damage | 伤害使 HP 低于 0 时，超出 0 的剩余伤害扣 STR；以新的 STR 立即进行 STR Save。成功者仍可行动但继续承受后续 Critical Damage Save；失败的 PC 只能虚弱爬行，需救助稳定，否则一小时内死亡 | Core Rules / Critical Damage |
 | 属性损伤 | 战斗外伤害通常直接作用于属性；STR 归零死亡、DEX 归零瘫痪、WIL 归零神志错乱（delirious） | Core Rules / Attribute Loss |
 | 疲劳 | Deprived 超过一天会增加 Fatigue；Fatigue 占库存格，通常需要安全休息恢复 | Core Rules / Deprivation & Fatigue |
@@ -61,4 +61,4 @@
 - Warden 的 NPC 生成、知识与感知、怪物创建和遭遇设计工具。
 - 中文 SRD 与官方英文原文的术语/版本差异。
 
-本索引是导航和初核摘要，不可单独作为完整规则依据。
+本索引只负责导航，不是桌面运行手册。常规规则调用 [CORE_RULES_RUNTIME.md](./CORE_RULES_RUNTIME.md)；流程与回查策略见 [../RUNTIME_PROTOCOL.md](../RUNTIME_PROTOCOL.md)。
