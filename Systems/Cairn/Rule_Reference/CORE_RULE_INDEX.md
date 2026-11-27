@@ -10,6 +10,7 @@
 |---|---|---|
 | 属性 | STR、DEX、WIL 三项属性 | Player's Guide / Core Rules |
 | 角色创建 | 选择/随机 Background，生成装备与背景细节；3d6 顺序生成三属性，可交换其中两项；1d6 生成初始 HP | Player's Guide / Character Creation |
+| 背景细则 | 角色创建流程、20 种背景索引、Fieldwarden 装备/背景表/Bonds 额外掷骰与库存展示约定 | [CHARACTER_CREATION_AND_BACKGROUNDS.md](./CHARACTER_CREATION_AND_BACKGROUNDS.md) |
 | 职业 | 无传统职业限制；背景、装备、经历形成角色专长 | Overview & Principles / Classless |
 | HP | Hit Protection，代表战斗中避免伤害的能力，不等同于身体健康；恢复方式与属性损伤不同 | Core Rules |
 | 库存 | 角色最多 10 格；通常物品占 1 格，Bulky 占 2 格，Petty 不占格；背包可容纳 6 格 | Character Creation / Inventory |
@@ -66,4 +67,4 @@
 - Warden 的 NPC 生成、知识与感知、怪物创建和遭遇设计工具。
 - 中文 SRD 与官方英文原文的术语/版本差异。
 
-本索引只负责导航，不是桌面运行手册。常规规则调用 [CORE_RULES_RUNTIME.md](./CORE_RULES_RUNTIME.md)；流程与回查策略见 [../RUNTIME_PROTOCOL.md](../RUNTIME_PROTOCOL.md)。
+本索引只负责导航，不是桌面运行手册。常规规则调用 CORE_RULES_RUNTIME.md；角色创建与背景速查见 CHARACTER_CREATION_AND_BACKGROUNDS.md；流程与回查策略见 RUNTIME_PROTOCOL.md。
