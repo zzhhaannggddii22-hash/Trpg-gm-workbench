@@ -1,6 +1,6 @@
 # Cairn 2e State Transition Regression v1 — Cases (Inputs Only)
 
-**Mode:** CANDIDATE_VALIDATION / TEST_ONLY_NON_CANON  
+**Mode:** CANDIDATE_VALIDATION / TEST_ONLY_NON_CANON
 **Visibility:** Target runtime may read this file. It contains no expected outcomes.
 
 | Case | Initial state / action / fixed input |
