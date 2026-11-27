@@ -162,9 +162,11 @@ class RepositoryChecks(unittest.TestCase):
         self.assertEqual(registry_route(registry, binding,
                          lambda _: {**actual_entries[entry], "system_id": "other"}), "HOLD")
         scope = metadata(read(binding["adjudications_entry"]))
-        self.assertEqual({r["rule_id"] for r in scope["approved_rules"]}, {"Q01", "Q02", "Q03", "Q04"})
+        self.assertEqual({r["rule_id"] for r in scope["approved_rules"]}, {"Q01", "Q02", "Q03", "Q04", "Q05"})
         self.assertTrue(approved(scope, binding, "Q04", "nosedive"))
+        self.assertTrue(approved(scope, binding, "Q05", "nosedive"))
         self.assertFalse(approved(scope, {**binding, "campaign_id": "other"}, "Q04", "nosedive"))
+        self.assertFalse(approved(scope, {**binding, "campaign_id": "other"}, "Q05", "nosedive"))
         self.assertFalse(approved(scope, {**binding, "ruleset": {"edition": "v99"}}, "Q04", "nosedive"))
         module_scope = {**scope, "approved_rules": [{"rule_id": "Q99", "scope": "MODULE",
                          "module_ids": ["nosedive"], "approval_ref": "synthetic evidence"}]}
