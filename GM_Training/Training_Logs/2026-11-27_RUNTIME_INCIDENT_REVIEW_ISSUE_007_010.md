@@ -83,16 +83,11 @@ Module 结团流程现要求依次核对：
 
 ### 6.2 Time 与成长选择
 
-Zarek Campaign Q05 已记录玩家确认的桌面约定：
-- 只有完整模组结团才增加 1 点可使用 Time；单独结束 Session 不触发。
-- 可使用 Time 增加 n 点时，剩余可用 Time 同步减少 n 点；两个字段分别记账、方向相反。
-- 人物卡中“总量 30 / 已花费 2 / 剩余 28”不是当前可使用 Time 的余额，不能据此反推。
-- 本次结团增量已确认：可使用 Time +1，剩余可用 Time −1；绝对余额仍待权威流水核对。
-- Mission MVP 免费职能轨迹格已由玩家指定给与 Negatives（负相）挂钩的 Attentiveness（缜密）QA。
-- Time 成长计划用于后续与本次收容的 VHS 影像女孩进行幕间互动，并由玩家设计约 20 嘉奖左右、实际有用的能力。互动、能力定稿、解锁和购买均尚未发生。
+具体 Time 约定、Mission MVP 成长目标及影像女孩的后续幕间设计属于 Zarek Campaign 状态，唯一权威记录位于：
+- Campaigns/Zarek/RULE_ADJUDICATIONS.md 的 Q05；
+- Campaigns/Zarek/战役记录/战役交接与当前状态.md 的 2026-11-27 成长决定记录。
 
-以上选择已记录在 Campaign Handoff；由于当前 main 中 Bower Street 权威 Runtime 与 Session Log 仍停留在 SESSION 01，正式人物卡数值应用和完整资源余额同步暂缓。不能用不完整资料覆盖人物卡。
-
+本 Training Log 不复制 Campaign 数值，避免形成第二份可变状态。正式人物卡数值应用仍须等待 SESSION 02 权威事件记录与 Runtime 对齐后完成；不得以本复盘替代人物卡或推算未知余额。
 ## 7. 早晨对话中其他流程问题
 
 ### 7.1 当前会话与仓库快照的证据优先级
