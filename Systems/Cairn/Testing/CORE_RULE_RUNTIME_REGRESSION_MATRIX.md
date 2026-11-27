@@ -38,15 +38,24 @@
 | CRT-19 | 荒野一个 Watch 中同一角色尝试两个 Wilderness Actions | EX-WILDERNESS | 每角色每 Watch 一个 Action；第二个需推进 Watch 或有规则依据 |
 | CRT-20 | 荒野夜间旅行 | EX-WILDERNESS | Wilderness Event 掷两次，且结合夜间风险 |
 | CRT-21 | 敌方首次伤亡与损失半数成员 | CR-MORALE | 两个触发点各自正确处理；PC 不做 Morale |
-| CRT-22 | 孤立敌人 HP 降至 0 | CR-MORALE / CR-CRITICAL | 触发对应 WIL Save 与 Critical Damage 适用规则 |
+| CRT-22 | 孤立敌人 HP 恰好降至 0 | CR-MORALE | 孤立敌人触发 WIL Morale Save；此时并未因伤害使 HP 低于 0，不调用 Critical Damage |
 | CRT-23 | 危急战斗中撤退但没有安全目的地 | CR-RETREAT | 不允许只靠成功 DEX Save 宣称逃脱 |
 | CRT-24 | PC 战斗外遭受毒素伤害 | CR-ATTR-LOSS | 作用于适当属性，不误扣 HP |
 | CRT-25 | 属性降至 0 | CR-ATTR-LOSS | STR 死亡、DEX 瘫痪、WIL delirious |
 | CRT-26 | 角色满 10 格又获得普通物品 | CR-INV | 不能超过 10 格，必须先处理负重 |
 | CRT-27 | 地城 Turn Rest，但有迫近危险或无光源 | CR-HP | 不允许恢复全部 HP |
 | CRT-28 | NPC Reaction 已由明确事实决定 | CR-REACTION | 不强制随机掷骰；只有态度不明才使用表 |
-| CRT-29 | 玩家提出一个不确定但无风险的世界细节问题 | CR-DOF / CR-INFO | 只在确实需要随机性时用可选 Die of Fate，不替代既定事实 |
+| CRT-29 | Warden 已确认世界事实未知，且需决定一个非角色检定的偶然事件 | CR-DOF | 可选 1d6；4+ 通常有利于 PC，3- 通常不利。若问题涉及已确立事实或 PC 可直接观察的信息，不掷骰 |
 | CRT-30 | L3 NPC 交出一份口粮/灯油/工具 | CR-INV + L3 Ledger | 交付方减少、接收方增加，容量与可用数量正确；不得只在对话中口头交付 |
+| CRT-31 | PC 因装满 10 格而 HP 降至 0 | CR-INV | HP 降至 0；这是库存规则，不是攻击造成的归零，不触发 Scars |
+| CRT-32 | 两名角色共同完成一项有风险的行动，相关属性分别为 STR 13 与 STR 8 | CR-SAVE | 通常由相关属性较低且风险更高的角色进行一次 Save；不要求两人机械地各掷一次 |
+| CRT-33 | 一支队伍从道路、短距离、简单地形前往目标 | EX-WILDERNESS | 路径距离 +1 Watch；Road/简单地形无额外 Watch；不凭空加迷路风险 |
+| CRT-34 | 一支队伍从 Trail、Medium 距离、Tough 地形前往目标 | EX-WILDERNESS | +1 Trail +2 Medium +1 Tough = 4 Watches；Trail 迷路风险 2-in-6，其他因素再独立修正 |
+| CRT-35 | 角色跳过最后一个 Watch 的 Make Camp | EX-WILDERNESS / CR-FAT | 每名角色增加 1 Fatigue 并进入 Deprived；睡眠不足旅行时地形难度提高一级 |
+| CRT-36 | 角色执行 Make Camp | EX-WILDERNESS / CR-INV | 每名 PC 和坐骑消耗 1 Ration；安排守夜；能够休息者移除全部 Fatigue |
+| CRT-37 | 队伍夜间旅行 | EX-WILDERNESS-EVENT | Wilderness Events 掷两次；不可只掷一次，也不能把夜间旅行当作普通 Watch |
+| CRT-38 | 单人 PC 在荒野扎营且没有同伴守夜 | EX-WILDERNESS | 不虚构完整轮值；向玩家呈现无人守夜/分段睡眠等真实选择及后果 |
+| CRT-39 | PC 使用一袋价值 50gp 的钱币 | CR-INV | 属于 Petty，不占库存格；不得误计为普通 1 格物品 |
 
 ## 3. 关键状态断言
 
