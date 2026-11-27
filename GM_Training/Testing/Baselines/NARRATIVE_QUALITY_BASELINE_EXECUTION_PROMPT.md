@@ -14,9 +14,9 @@ GitHub 仓库：`zzhhaannggddii22-hash/Trpg-gm-workbench`
 
 请读取以下文件：
 1. `GM_Training/NARRATIVE_QUALITY_BASELINE.md`
-2. `GM_Training/Training_Logs/NARRATIVE_QUALITY_BASELINE_GM_PACKET.md`
-3. `GM_Training/Training_Logs/NARRATIVE_QUALITY_BASELINE_PLAYER_PROMPT.md`
-4. `GM_Training/Training_Logs/NARRATIVE_QUALITY_BASELINE_REVIEW_CHECKLIST.md`
+2. `GM_Training/Testing/Baselines/NARRATIVE_QUALITY_BASELINE_GM_PACKET.md`
+3. `GM_Training/Testing/Baselines/NARRATIVE_QUALITY_BASELINE_PLAYER_PROMPT.md`
+4. `GM_Training/Testing/Baselines/NARRATIVE_QUALITY_BASELINE_REVIEW_CHECKLIST.md`
 
 GM 专用资料只供主持侧使用。不得向玩家展示、复述或暗示其中未通过有效渠道开放的信息。玩家启动提示是玩家角色可获得的初始场景信息。
 
