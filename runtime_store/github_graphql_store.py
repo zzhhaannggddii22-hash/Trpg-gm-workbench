@@ -19,7 +19,7 @@ from typing import Any, Callable, Mapping
 
 GRAPHQL_URL = "https://api.github.com/graphql"
 _RESERVED_PREFIX = ".runtime/"
-_CHECKPOINT_PATH = ".runtime/checkpoint.json"
+_CHECKPOINT_PATH = ".runtime/store_checkpoint.json"
 _BATCH_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,119}$")
 _OID_RE = re.compile(r"^[0-9a-f]{40}$")
 
@@ -393,7 +393,7 @@ class GitHubGraphQLRuntimeStore:
                 historical = self._read_file_at(commit_oid, path) if commit_oid else None
                 if historical is None or historical[0] != existing[0]:
                     raise DisputedBatch("PREPARE manifest is not backed by its immutable creation commit")
-                return {"status": "PREPARED", "batch_id": batch_id,
+                return {"status": "STORE_PREPARED", "batch_id": batch_id,
                         "manifest_ref": self.operations_branch + ":" + path,
                         "manifest_fingerprint": digest}
 
@@ -421,7 +421,7 @@ class GitHubGraphQLRuntimeStore:
                         historical = self._read_file_at(commit_oid, path) if commit_oid else None
                         if historical is None or historical[0] != readback[0]:
                             raise CommitOutcomeUnknown("PREPARE acknowledgement was lost and historical readback failed") from exc
-                        return {"status": "PREPARED", "batch_id": batch_id,
+                        return {"status": "STORE_PREPARED", "batch_id": batch_id,
                                 "manifest_ref": self.operations_branch + ":" + path,
                                 "manifest_fingerprint": digest}
                     raise BatchConflict("PREPARE path was created with conflicting content") from exc
@@ -438,7 +438,7 @@ class GitHubGraphQLRuntimeStore:
             historical = self._read_file_at(commit_oid, path) if commit_oid else None
             if historical is None or historical[0] != readback[0]:
                 raise CommitOutcomeUnknown("PREPARE creation commit could not be independently verified")
-            return {"status": "PREPARED", "batch_id": batch_id,
+            return {"status": "STORE_PREPARED", "batch_id": batch_id,
                     "manifest_ref": self.operations_branch + ":" + path,
                     "manifest_fingerprint": digest}
         raise StaleRevision("operations branch kept advancing; PREPARE was not committed")
@@ -465,7 +465,7 @@ class GitHubGraphQLRuntimeStore:
             prepare_state = self.reconcile(batch_id)
         except (json.JSONDecodeError, InvalidBatch, KeyError, TypeError) as exc:
             raise DisputedBatch("PREPARE manifest could not be independently verified") from exc
-        if prepare_state["status"] not in ("PREPARED", "PUBLISHED"):
+        if prepare_state["status"] not in ("STORE_PREPARED", "STORE_COMMITTED"):
             raise DisputedBatch("PREPARE state is not eligible for publication")
         envelope = json.loads(op_file[0])
         manifest = _validate_manifest(envelope.get("manifest", {}))
@@ -483,7 +483,7 @@ class GitHubGraphQLRuntimeStore:
         existing_receipt = self._read_file(self.runtime_branch, receipt_path)
         if existing_receipt is not None:
             outcome = self.reconcile(batch_id)
-            if outcome["status"] == "PUBLISHED":
+            if outcome["status"] == "STORE_COMMITTED":
                 return outcome
             raise DisputedBatch("receipt already exists but does not reconcile")
 
@@ -503,12 +503,12 @@ class GitHubGraphQLRuntimeStore:
         }
         checkpoint = {
             "schema_version": 1,
-            "revision": manifest["target_revision"],
-            "previous_revision": manifest["base_revision"],
-            "previous_commit_oid": expected_head_oid,
-            "last_batch_id": batch_id,
-            "last_manifest_ref": receipt["manifest_ref"],
-            "last_receipt_ref": self.runtime_branch + ":" + receipt_path,
+            "published_domain_revision": manifest["target_revision"],
+            "previous_domain_revision": manifest["base_revision"],
+            "previous_runtime_commit_oid": expected_head_oid,
+            "batch_id": batch_id,
+            "prepare_manifest_ref": receipt["manifest_ref"],
+            "receipt_ref": self.runtime_branch + ":" + receipt_path,
         }
         files = dict(target_files)
         files[_CHECKPOINT_PATH] = canonical_json(checkpoint) + "\n"
@@ -523,7 +523,7 @@ class GitHubGraphQLRuntimeStore:
             # Never replay blindly. A successful commit is discoverable by its
             # immutable receipt, even if later batches have advanced the branch.
             outcome = self.reconcile(batch_id)
-            if outcome["status"] == "PUBLISHED":
+            if outcome["status"] == "STORE_COMMITTED":
                 return outcome
             latest = self._read_ref(self.runtime_branch)
             if latest != expected_head_oid and isinstance(exc, GitHubGraphQLError):
@@ -533,7 +533,7 @@ class GitHubGraphQLRuntimeStore:
             raise
 
         outcome = self.reconcile(batch_id)
-        if outcome["status"] != "PUBLISHED" or outcome.get("commit_oid") != commit_oid:
+        if outcome["status"] != "STORE_COMMITTED" or outcome.get("commit_oid") != commit_oid:
             raise CommitOutcomeUnknown("publish commit returned but historical readback did not verify it")
         return outcome
 
@@ -546,31 +546,31 @@ class GitHubGraphQLRuntimeStore:
             try:
                 prior = self._find_path_commit(self.operations_branch, operation_path, None)
             except DisputedBatch:
-                return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PREPARE_HISTORY_INCOMPLETE"}
+                return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "PREPARE_HISTORY_INCOMPLETE"}
             if prior is not None:
-                return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PREPARE_MANIFEST_MISSING"}
-            return {"status": "NOT_FOUND", "batch_id": batch_id}
+                return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "PREPARE_MANIFEST_MISSING"}
+            return {"status": "STORE_NOT_FOUND", "batch_id": batch_id}
         try:
             envelope = json.loads(op_file[0])
             if not isinstance(envelope, dict):
                 raise InvalidBatch("PREPARE envelope must be an object")
             manifest = _validate_manifest(envelope.get("manifest", {}))
         except (json.JSONDecodeError, InvalidBatch, TypeError, AttributeError):
-            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PREPARE_MALFORMED"}
+            return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "PREPARE_MALFORMED"}
         digest = fingerprint_text(canonical_json(manifest))
         if (envelope.get("batch_id") != batch_id
                 or envelope.get("manifest_fingerprint") != digest
                 or not envelope.get("prepare_base_head_oid")):
-            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PREPARE_FINGERPRINT_MISMATCH"}
+            return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "PREPARE_FINGERPRINT_MISMATCH"}
         try:
             prepare_commit = self._find_path_commit(
                 self.operations_branch, self._operation_path(batch_id), envelope["prepare_base_head_oid"]
             )
         except DisputedBatch:
-            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PREPARE_PATH_NOT_IMMUTABLE"}
+            return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "PREPARE_PATH_NOT_IMMUTABLE"}
         historical_prepare = self._read_file_at(prepare_commit, self._operation_path(batch_id)) if prepare_commit else None
         if historical_prepare is None or historical_prepare[0] != op_file[0]:
-            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PREPARE_HISTORY_MISMATCH"}
+            return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "PREPARE_HISTORY_MISMATCH"}
 
         receipt_path = self._receipt_path(batch_id)
         receipt_file = self._read_file(self.runtime_branch, receipt_path)
@@ -578,57 +578,57 @@ class GitHubGraphQLRuntimeStore:
             try:
                 prior_receipt_commit = self._find_receipt_commit(receipt_path, manifest["base_head_oid"])
             except DisputedBatch:
-                return {"status": "DISPUTED", "batch_id": batch_id, "reason": "RECEIPT_PATH_NOT_IMMUTABLE"}
+                return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "RECEIPT_PATH_NOT_IMMUTABLE"}
             if prior_receipt_commit is not None:
-                return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PUBLISHED_RECEIPT_MISSING"}
-            return {"status": "PREPARED", "batch_id": batch_id, "manifest_fingerprint": digest}
+                return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "PUBLISHED_RECEIPT_MISSING"}
+            return {"status": "STORE_PREPARED", "batch_id": batch_id, "manifest_fingerprint": digest}
         try:
             receipt = json.loads(receipt_file[0])
             if not isinstance(receipt, dict):
                 raise ValueError("receipt must be an object")
         except (json.JSONDecodeError, ValueError, TypeError):
-            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "RECEIPT_NOT_JSON"}
+            return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "RECEIPT_NOT_JSON"}
         if (receipt.get("batch_id") != batch_id
                 or receipt.get("manifest_fingerprint") != digest
                 or receipt.get("base_head_oid") != manifest["base_head_oid"]
                 or receipt.get("target_revision") != manifest["target_revision"]
                 or receipt.get("target_fingerprints") != manifest["target_fingerprints"]):
-            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "RECEIPT_MANIFEST_MISMATCH"}
+            return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "RECEIPT_MANIFEST_MISMATCH"}
 
         try:
             commit_oid = self._find_receipt_commit(receipt_path, receipt["base_head_oid"])
         except DisputedBatch:
-            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "RECEIPT_PATH_NOT_IMMUTABLE"}
+            return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "RECEIPT_PATH_NOT_IMMUTABLE"}
         if commit_oid is None:
-            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PUBLICATION_COMMIT_NOT_IN_HISTORY"}
+            return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "PUBLICATION_COMMIT_NOT_IN_HISTORY"}
         receipt_at_commit = self._read_file_at(commit_oid, receipt_path)
         if receipt_at_commit is None or json.loads(receipt_at_commit[0]) != receipt:
-            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "HISTORICAL_RECEIPT_MISMATCH"}
+            return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "HISTORICAL_RECEIPT_MISMATCH"}
 
         checkpoint_file = self._read_file_at(commit_oid, _CHECKPOINT_PATH)
         if checkpoint_file is None:
-            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "CHECKPOINT_MISSING"}
+            return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "CHECKPOINT_MISSING"}
         try:
             checkpoint = json.loads(checkpoint_file[0])
             if not isinstance(checkpoint, dict):
                 raise ValueError("checkpoint must be an object")
         except (json.JSONDecodeError, ValueError, TypeError):
-            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "CHECKPOINT_NOT_JSON"}
-        if (checkpoint.get("last_batch_id") != batch_id
-                or checkpoint.get("revision") != manifest["target_revision"]
-                or checkpoint.get("previous_revision") != manifest["base_revision"]
-                or checkpoint.get("previous_commit_oid") != manifest["base_head_oid"]
-                or checkpoint.get("last_manifest_ref") != receipt["manifest_ref"]
-                or checkpoint.get("last_receipt_ref") != self.runtime_branch + ":" + receipt_path):
-            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "CHECKPOINT_MISMATCH"}
+            return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "CHECKPOINT_NOT_JSON"}
+        if (checkpoint.get("batch_id") != batch_id
+                or checkpoint.get("published_domain_revision") != manifest["target_revision"]
+                or checkpoint.get("previous_domain_revision") != manifest["base_revision"]
+                or checkpoint.get("previous_runtime_commit_oid") != manifest["base_head_oid"]
+                or checkpoint.get("prepare_manifest_ref") != receipt["manifest_ref"]
+                or checkpoint.get("receipt_ref") != self.runtime_branch + ":" + receipt_path):
+            return {"status": "STORE_DISPUTED", "batch_id": batch_id, "reason": "CHECKPOINT_MISMATCH"}
 
         for path, expected in manifest["target_fingerprints"].items():
             item = self._read_file_at(commit_oid, path)
             if item is None or fingerprint_text(item[0]) != expected:
-                return {"status": "DISPUTED", "batch_id": batch_id,
+                return {"status": "STORE_DISPUTED", "batch_id": batch_id,
                         "reason": "TARGET_READBACK_MISMATCH", "target": path}
         return {
-            "status": "PUBLISHED",
+            "status": "STORE_COMMITTED",
             "batch_id": batch_id,
             "manifest_fingerprint": digest,
             "commit_oid": commit_oid,
