@@ -23,6 +23,9 @@ status: active
 ## 目录
 
 - [Rule_Reference/](./Rule_Reference/README.md)：规则检阅协议、基础规则与现场裁定、规则疑点及本桌裁定记录。
+- [Rule_Reference/02_DICE_RESOLUTION_PROTOCOL.md](./Rule_Reference/02_DICE_RESOLUTION_PROTOCOL.md)：Triangle Agency 中文 v22 专属掷骰执行说明（DESIGN / 未启用）。
+- [Dice_UI/](./Dice_UI/README.md)：玩家骰子视图规范与只读 Schema（DESIGN / 未部署）。
+- [Playwall 专属能力骰子管线整合暂缓登记](./Rule_Reference/PLAYWALL_DEFERRED_REGISTER.md)：不覆盖现有 Playwall 解锁与文档处理流程。
 - [Research/](./Research/README.md)：Triangle Agency 专属 AI GM 架构、规则索引、GM 研究、参考资料与单特工桌面配置研究；历史审查材料归入 Research/Archive。
 - [Templates/](./Templates/README.md)：三角机构专属历史模板，不作为跨系统通用模板。
 
