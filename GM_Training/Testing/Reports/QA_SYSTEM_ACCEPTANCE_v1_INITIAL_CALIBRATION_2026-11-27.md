@@ -8,6 +8,8 @@
 
 ## 1. 验收对象
 
+版本登记：本次验收内容随后正式登记为 QA 治理规范 v0.2 与 Self Testing Protocol v1.3。版本号/状态头更新发生在挑战执行之后，不改变本轮已验收的模式路由、硬门槛或证据规则。
+
 - `GM_Training/QUALITY_ASSURANCE_AND_NARRATIVE_RUNTIME_QA.md`
 - `GM_Training/SELF_TESTING_PROTOCOL.md`
 - `GM_Training/Testing/QA_System_Acceptance/`
