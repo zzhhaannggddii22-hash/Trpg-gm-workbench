@@ -50,6 +50,8 @@
 
 ## 维护约定
 
+- [单主干开发与仓库维护规范](DEVELOPMENT_WORKFLOW.md)：仓库只维护 `main`；所有工作直接提交主干，禁止创建任何远程分支，不使用 PR 作为常规流程。
+
 - [Issue 独立编号与登记规范](ISSUE_TRACKING.md)：项目 Issue 使用独立的 ISSUE-NNN 编号，GitHub 原生编号仅作定位符。
 
 - 不静默覆盖已确立的战役事实；更正时记录原因与影响。
