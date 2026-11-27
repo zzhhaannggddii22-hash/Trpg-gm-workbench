@@ -153,7 +153,8 @@ This is a GM-only execution record. The tests use fixed, hypothetical player cho
 |---|---|---|---|
 | M-01 | Natural dice `[3,3,3,2,4,1]`; 2 Burnout; QA available | Natural exactly-three trigger resolves Triscendence before adjustments; no Burnout/QA adjustment on that roll | PASS |
 | M-02 | Dice `[3,3,2,4,1,2]`; 1 Burnout; then 1 matching-Quality QA changes a non-3 to 3 | Burnout removes one 3 and adds 1 Chaos; QA then changes one non-3 to 3; 3 remaining non-3 dice + 1 Burnout = 4 Chaos | PASS |
-| M-03 | Dice `[3,2,4,2,4,1]`; 2 Burnout; no QA | One 3 removed; 5 non-3 dice + 2 Burnout = 7 Chaos | PASS |\n| M-03A | Dice `[2,2,4,2,4,1]`; 1 Burnout; no 3 available to remove | All 6 non-3 dice + 1 Burnout = 7 Chaos | PASS |
+| M-03 | Dice `[3,2,4,2,4,1]`; 2 Burnout; no QA | One 3 removed; 5 non-3 dice + 2 Burnout = 7 Chaos | PASS |
+| M-03A | Dice `[2,2,4,2,4,1]`; 1 Burnout; no 3 available to remove | All 6 non-3 dice + 1 Burnout = 7 Chaos | PASS |
 | M-04 | Final adjusted dice contain exactly 3 threes after Burnout/QA | Stability exception sets total Chaos to 0 | PASS |
 | M-05 | Ordinary Presence check; spend Attentiveness QA | Reject cross-Quality spend; only Presence QA may modify this check | PASS |
 | M-06 | 3 Harm; full QA available | Life Insurance can spend any 3 QA across Qualities; this is not ordinary check QA | PASS |
@@ -189,7 +190,35 @@ This is a GM-only execution record. The tests use fixed, hypothetical player cho
 - The remaining single-player limitation is information parity across bypassed sources; item custody and exact resource snapshots are Preflight checks, not missing-PC blockers.
 - No actual player-facing scene, mission weather roll, dice roll, resource entry or CANON event was created.
 
-### 10.5 Turn-by-turn GM self-simulation (no CANON mutation)\n\n| Trace | Player input sequence | Expected GM behavior | Result |\n|---|---|---|---|\n| TRACE-A | Select one entrance → question first-contact NPC → inspect mural → test a route → re-enter same Sub-Reality | Keep NPC knowledge source-bound; reveal only observed mural details; increment that Sub-Reality entry count and append d44 result(s) without rerolling previous entries | PASS |\n| TRACE-B | Bypass Queenie, Randall and Dave → investigate via public space and direct observation → ask an unrelated passenger | Do not transfer skipped NPC knowledge; passenger answers only from own experience; investigation continues but may lack location-specific details; no automatic clue replacement | PARTIAL — deliberate information loss, no guaranteed clue parity |\n| TRACE-C | Meet Jahnavi → do not disclose Agency identity → attempt rescue → re-enter station | Preserve identity gate and her actual knowledge; apply the rescue-specific Chaos effect; after successful removal, station re-entry triggers the module encounter; do not skip the encounter or force the rescue to succeed | PASS |\n| TRACE-D | Encounter anomaly → player chooses to accept contact → invoke Life Insurance Policy 1 | State the 3-Harm consequence; wait for player choice; spend up to 3 QA from any Qualities under Q03; if all covered, do not apply residual Harm; if 1 remains without defense, apply the approved fatal result | PASS WITH RESOURCE GATE |\n| TRACE-E | Encounter anomaly → player chooses Ripple Gun | Check current possession, charge and unobstructed direct aim before resolving; on valid use consume 1/1 and apply the source-defined permanent neutralization; no free refill mid-module | PASS WITH ITEM GATE |\n| TRACE-F | Encounter anomaly → player chooses normal briefcase | Check actual holder and target eligibility (exhausted/calm/willing and focus identification as required); if holder unresolved, stop this method and offer no assumed item | BLOCKED UNTIL PREFLIGHT INVENTORY CHECK |\n\nThe traces are adjudication simulations, not generated narrative scenes. No hidden scenario text is copied into player-facing materials.\n\n### 10.6 Runtime transition traces (synthetic)\n\n| Trace ID | State transition tested | Result |\n|---|---|---|\n| T-01 | Bypass one NPC, obtain another NPC's distinct information without knowledge leakage | PASS |\n| T-02 | Bypass all three anchor NPCs; continue via public-space observation without auto-granting their information | PASS (investigation remains incomplete) |\n| T-03 | Approach Jahnavi without Agency disclosure; preserve identity/knowledge gate | PASS |\n| T-04 | Successful rescue followed by station re-entry triggers encounter | PASS |\n| T-05 | Station re-entry without a prior successful rescue does not falsely satisfy that trigger | PASS |\n| T-06 | Ripple Gun action blocked while holder is UNVERIFIED | PASS |\n| T-07 | Normal Briefcase action blocked while holder is UNVERIFIED | PASS |\n| T-08 | Re-enter same Sub-Reality and append cumulative d44 results without overwriting prior rolls | PASS |\n\nRuntime transition traces: 8/8 PASS. These are synthetic state tests, not actual session events.\n\n## 11. Final status
+### 10.5 Turn-by-turn GM self-simulation (no CANON mutation)
+
+| Trace | Player input sequence | Expected GM behavior | Result |
+|---|---|---|---|
+| TRACE-A | Select one entrance → question first-contact NPC → inspect mural → test a route → re-enter same Sub-Reality | Keep NPC knowledge source-bound; reveal only observed mural details; increment that Sub-Reality entry count and append d44 result(s) without rerolling previous entries | PASS |
+| TRACE-B | Bypass Queenie, Randall and Dave → investigate via public space and direct observation → ask an unrelated passenger | Do not transfer skipped NPC knowledge; passenger answers only from own experience; investigation continues but may lack location-specific details; no automatic clue replacement | PARTIAL — deliberate information loss, no guaranteed clue parity |
+| TRACE-C | Meet Jahnavi → do not disclose Agency identity → attempt rescue → re-enter station | Preserve identity gate and her actual knowledge; apply the rescue-specific Chaos effect; after successful removal, station re-entry triggers the module encounter; do not skip the encounter or force the rescue to succeed | PASS |
+| TRACE-D | Encounter anomaly → player chooses to accept contact → invoke Life Insurance Policy 1 | State the 3-Harm consequence; wait for player choice; spend up to 3 QA from any Qualities under Q03; if all covered, do not apply residual Harm; if 1 remains without defense, apply the approved fatal result | PASS WITH RESOURCE GATE |
+| TRACE-E | Encounter anomaly → player chooses Ripple Gun | Check current possession, charge and unobstructed direct aim before resolving; on valid use consume 1/1 and apply the source-defined permanent neutralization; no free refill mid-module | PASS WITH ITEM GATE |
+| TRACE-F | Encounter anomaly → player chooses normal briefcase | Check actual holder and target eligibility (exhausted/calm/willing and focus identification as required); if holder unresolved, stop this method and offer no assumed item | BLOCKED UNTIL PREFLIGHT INVENTORY CHECK |
+
+The traces are adjudication simulations, not generated narrative scenes. No hidden scenario text is copied into player-facing materials.
+
+### 10.6 Runtime transition traces (synthetic)
+
+| Trace ID | State transition tested | Result |
+|---|---|---|
+| T-01 | Bypass one NPC, obtain another NPC's distinct information without knowledge leakage | PASS |
+| T-02 | Bypass all three anchor NPCs; continue via public-space observation without auto-granting their information | PASS (investigation remains incomplete) |
+| T-03 | Approach Jahnavi without Agency disclosure; preserve identity/knowledge gate | PASS |
+| T-04 | Successful rescue followed by station re-entry triggers encounter | PASS |
+| T-05 | Station re-entry without a prior successful rescue does not falsely satisfy that trigger | PASS |
+| T-06 | Ripple Gun action blocked while holder is UNVERIFIED | PASS |
+| T-07 | Normal Briefcase action blocked while holder is UNVERIFIED | PASS |
+| T-08 | Re-enter same Sub-Reality and append cumulative d44 results without overwriting prior rolls | PASS |
+
+Runtime transition traces: 8/8 PASS. These are synthetic state tests, not actual session events.
+
+## 11. Final status
 
 - Artifact：DELIVERED.
 - Prep design：REVIEWED.
