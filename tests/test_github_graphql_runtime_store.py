@@ -237,22 +237,14 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         commit = published["commit_oid"]
         snapshot = self.store.snapshots[commit]
         receipt_path = ".runtime/receipts/BATCH-002.json"
+        original_receipt = snapshot[receipt_path]
         snapshot[receipt_path] = "{not-json"
         result = self.store.reconcile("BATCH-002")
         self.assertEqual(result["status"], "DISPUTED")
         self.assertEqual(result["reason"], "RECEIPT_NOT_JSON")
 
         # Restore the receipt, then corrupt the checkpoint in the same historical commit.
-        snapshot[receipt_path] = json.dumps({
-            "schema_version": 1,
-            "batch_id": "BATCH-002",
-            "manifest_ref": self.store.operations_branch + ":.runtime/operations/BATCH-002.json",
-            "manifest_fingerprint": fingerprint_text(json.dumps(self.manifest, sort_keys=True, separators=(",", ":"))),
-            "base_head_oid": BASE,
-            "base_revision": 1,
-            "target_revision": 2,
-            "target_fingerprints": self.manifest["target_fingerprints"],
-        }, sort_keys=True) + "\n"
+        snapshot[receipt_path] = original_receipt
         snapshot[".runtime/checkpoint.json"] = "{not-json"
         result = self.store.reconcile("BATCH-002")
         self.assertEqual(result["status"], "DISPUTED")
