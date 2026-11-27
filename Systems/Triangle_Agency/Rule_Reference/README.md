@@ -45,3 +45,10 @@ ZIP 不作为规则书权威来源，也不作为每次 Preflight 的必读文�
 - 不把摘要当作原文，不把待核推论升级为正式规则。
 - 新发现的规则差异记录问题、证据页码、影响范围、临时处理和用户最终裁定。
 - 页码明确标记为中文版 PDF 物理页码；不得与源 PDF 页码或正文印刷页码混用。
+
+
+## 掷骰检定调用
+
+- [02_DICE_RESOLUTION_PROTOCOL.md](./02_DICE_RESOLUTION_PROTOCOL.md)：三角机构掷骰检定执行管线（设计稿，待审核）。
+- [Dice UI 组件](../Dice_UI/README.md)：玩家可见骰面展示、事件数据契约和中间态（设计稿，待审核）。
+- 跨系统通用流程见 [GM_Training/ROLL_RESOLUTION_PROTOCOL.md](../../../GM_Training/ROLL_RESOLUTION_PROTOCOL.md)。
