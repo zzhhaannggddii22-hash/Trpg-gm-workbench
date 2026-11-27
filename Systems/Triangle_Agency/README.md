@@ -2,9 +2,9 @@
 
 > system_id: `triangle_agency`  
 > 当前正式规则版本：用户指定的《三角机构》中文 v22  
-> 状态：active（当前扎雷克战役使用）
+> 状态：active（由多个独立 Campaign 绑定；系统入口本身不指定默认 Campaign）
 
-本目录是《三角机构》全部**系统级**规则知识的唯一入口。战役人物、CANON、NPC 与模组过程记录仍保存在 `Campaigns/Zarek/`，并通过其 SYSTEM_BINDING 绑定本系统。
+本目录是《三角机构》全部**系统级**规则知识的唯一入口。各 Campaign 的人物、CANON、NPC 与模组过程记录分别保存在 `Campaigns/<campaign>/`，并通过各自 SYSTEM_BINDING 绑定本系统。读取本系统不代表自动选择 Zarek；每次运行必须以用户本次指定的 Campaign 为准。
 
 ```yaml
 system_id: triangle_agency
@@ -34,8 +34,15 @@ status: active
 - 规则疑点保留为疑点；不能用其他系统的相似机制补齐。
 - 任何跨系统可迁移的 GM 方法应提炼后进入 `GM_Training/`，但系统规则本身留在本目录。
 
-## 运行入口
+## 绑定本系统的 Campaign
 
-当前 Campaign：[扎雷克战役](../../Campaigns/Zarek/README.md)  
-系统绑定：[SYSTEM_BINDING.md](../../Campaigns/Zarek/SYSTEM_BINDING.md)  
+- [Zarek / 扎雷克](../../Campaigns/Zarek/README.md) — 正式战役。
+- [NQB-01 v0.3 Runtime Test](../../Campaigns/NQB01_Runtime_Test/README.md) — TEST_ONLY / NON_CANON 隔离测试 Campaign。
+
+以上 Campaign 各自拥有独立 SYSTEM_BINDING、人物/状态与模组数据。系统入口不设置默认 Campaign；不得从历史使用习惯或本 README 的列表顺序推断当前桌面。
+
+## 系统专属 Skill 状态
+
+当前没有单独维护可执行的 Triangle Agency 专属 GM Skill。运行时由通用 [GM_Training/SKILL.md](../../GM_Training/SKILL.md) 负责整体编排；系统机制以本 README 登记的中文 v22 主规则书为唯一规则权威，按需使用 Rule_Reference 与规则索引定位。Research 中的 AI GM 架构、单特工适配和外部 Skill 研究均为研究材料，不是可覆盖主 Skill 或 Campaign Binding 的运行指令。若未来建立专属 Skill，须先按 SYSTEM_CONTEXT_PROTOCOL 独立验收并在本节登记。
+
 多系统隔离协议：[SYSTEM_CONTEXT_PROTOCOL.md](../../SYSTEM_CONTEXT_PROTOCOL.md)
