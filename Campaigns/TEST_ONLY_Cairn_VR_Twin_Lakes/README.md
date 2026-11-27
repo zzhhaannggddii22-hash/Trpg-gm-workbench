@@ -28,15 +28,17 @@
 - [候选验证清单](./CANDIDATE_VALIDATION_MANIFEST.md)：系统版本、范围、隔离约束。
 - [VR 框架与人物关系设定](./VR_FRAME_CANON.md)：本次战役独有的设定。
 - [角色卡创建交接](./CHARACTER_CREATION_HANDOFF.md)：角色创建参考；角色卡不作为模组备团的前置条件。
+- [官方模组原文归档](./SOURCE/CAS1_OFFICIAL_SOURCE.md)：已保存当前 Cairn 官方仓库 Markdown 原文、来源与 CC-BY-SA 4.0 署名信息；正常主持优先读取本地归档。
+- [GM-only Prep](./GM_ONLY_PREP.md)：地点、NPC、事件时序、线索、遭遇、危险、特殊物品与规则路由；禁止进入玩家侧资料。
 - [Runtime State](./03_RUNTIME_STATE.md)：当前运行快照。
 - [Session Log](./04_SESSION_LOG.md)：真实发生的行动与结算记录。
 
 ## Prep QA｜非剧透状态
 
-- 已逐节核对官方 CAS-1 在线文本，覆盖地点、NPC、事件表、关键物件和结局条件；GM-only 细节留在主持侧，不写入玩家可见文件。
-- 已对照 Cairn 2e 官方 Core Rules、Procedures、Warden Combat 与 Dungeon Exploration 指导。
-- 已完成桌面逻辑回归：独立时间线、模组专用旅行程序、夜间风险、地下探索事件、伤害分支和角色知识隔离。
-- 发现一项官方模组 NPC 数据缺项；作者曾在官方社区确认该缺项，主持侧将任何补值明确标为 GM_INFERENCE，不冒充官方数值。
+- 已将当前可访问的 Cairn 官方上游 CAS-1 Markdown 原文完整归档至 SOURCE/CAS1_OFFICIAL_SOURCE.md，并保留作者、来源、检索日期及 CC-BY-SA 4.0 署名信息。
+- 已建立 GM_ONLY_PREP.md，覆盖地点、NPC、线索、事件时钟、旅行、危险、物品、规则路由、首次接触与未决项；玩家侧不得读取。
+- Cairn Press 2026-03-31 官方发布说明称已补入 Fasha HP 并修正事件时序；但当前官方上游 Markdown 的 Fasha 数据行仍缺 HP，且本轮未直接核验 PDF。Fasha HP 暂记 UNKNOWN，任何补值必须标记 GM_INFERENCE。
+- 模组旅行程序、Dungeon Events 与两个独立事件时钟已在 GM-only Prep 中明确分流；此前合成测试仍仅属于同一助手自审。
 - 本轮是 GM 自审与合成场景检查，不是独立盲测，也不是实际玩家 Session；不能据此宣称现场主持能力已经通过验证。
 - 角色卡相关的具体生存率与装备可行性尚未测试；本次模组备团不依赖任何未提供的人物属性或装备。
 
@@ -56,6 +58,10 @@
 - [x] 确认双冒险者难度基准。
 - [x] 确认 VR 角色扮演框架。
 - [x] 完成 CAS-1 模组结构、时间线、地点、NPC、线索与风险备团；不依赖用户人物卡。
-- [x] 完成官方规则交叉核对与 GM 自审/桌面逻辑回归。
+- [x] 完成官方规则交叉核对与 GM 自审/桌面逻辑回归（非独立盲测）。
+- [x] 归档当前官方 CAS-1 Markdown 原文及来源许可信息。
+- [x] 建立 GM-only 运行 Prep，支持后续本地恢复。
+- [ ] 核实 Fasha HP 的最新 PDF 数值并解决上游 Markdown / 发布说明差异。
+- [ ] 同步并核验两张最终人物卡与初始资源账本。
 - [ ] 实际跑团中的现场表现验证。
 - [ ] 用户明确说“开始”后进入游戏。
