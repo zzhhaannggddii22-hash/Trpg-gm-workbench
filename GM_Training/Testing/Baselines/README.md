@@ -12,6 +12,7 @@
 - [规格与验收目标](./NQB01_V03_SPEC.md)
 - [GM 专用 Packet](./NQB01_V03_GM_PACKET.md)：仅为 test-only 场景来源，不是独立运行环境
 - [玩家启动提示](./NQB01_V03_PLAYER_PROMPT.md)
+- [干净目标 Chat Preflight 提示](./NQB01_V03_CLEAN_TARGET_PREFLIGHT_PROMPT.md)：可提供给目标 GM；只执行 Preflight 并等待，不包含操作者行动序列
 - [操作者侧行动序列](./NQB01_V03_ACTION_SEQUENCE.md)：不得提前提供给目标 GM
 - [独立审核表](./NQB01_V03_REVIEW_CHECKLIST.md)：仅审核者在收到完整原始输出后读取
 - [执行提示](./NQB01_V03_EXECUTION_PROMPT.md)：必须使用正式 GM Skill / Preflight / Runtime 入口；当前指定隔离环境为 [NQB01_Runtime_Test](../../../Campaigns/NQB01_Runtime_Test/README.md)。本次固定采用 B-mode 干净目标 Chat，目标 GM 不得读取操作者/审核者材料；仍须先完成 Preflight 并获得 Session 启动授权
