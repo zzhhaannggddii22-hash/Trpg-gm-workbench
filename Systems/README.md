@@ -1,11 +1,11 @@
 # 规则系统目录
 
-本目录保存每套 TRPG 规则系统的独立知识环境。每个 system_id 有唯一规范入口。按下列登记表提供的精确路径加载。目录名与 ID 独立。
+本目录保存每套 TRPG 规则系统的独立知识环境。每个 system_id 有唯一规范入口。按下列登记表提供的精确路径加载。目录名与 ID 独立；`campaign_prefix` 是战役目录命名所用的稳定系统简称。
 
 ## 当前系统
 
-- [Triangle Agency / 三角机构](./Triangle_Agency/README.md) — `system_id: triangle_agency`；当前正式实战规则版本为用户指定的中文 v22。
-- [Cairn /《石冢》](./Cairn/README.md) — `system_id: cairn`；Cairn Second Edition；第二套系统接入准备中，当前为 candidate，尚未开放正式运行。
+- [Triangle Agency / 三角机构](./Triangle_Agency/README.md) — `system_id: triangle_agency`；当前正式实战规则版本为用户指定的中文 v22；战役目录简称 `TA`。
+- [Cairn /《石冢》](./Cairn/README.md) — `system_id: cairn`；Cairn Second Edition；第二套系统接入准备中，当前为 candidate，尚未开放正式运行；战役目录简称 `CA`。
 
 ```yaml
 systems:
@@ -23,7 +23,7 @@ systems:
 
 ## 接入约定
 
-每个系统目录必须有 README，记录正式名称、system_id、规则版本、权威来源、状态、规则索引、专属 Skill 与适配边界。
+每个系统目录必须有 README，记录正式名称、system_id、campaign_prefix（唯一稳定的目录简称）、规则版本、权威来源、状态、规则索引、专属 Skill 与适配边界。
 
 系统之间完全隔离。研究或 Candidate 验证某系统不代表它已被正式 Campaign 采用；正式 Campaign 以 SYSTEM_BINDING 为准。Candidate 验证必须使用 TEST_ONLY_NON_CANON Validation Manifest，禁止继承/写入正式战役状态。不要仅凭仓库默认系统、用户过去玩过的系统或常见 TRPG 习惯推断当前系统。
 
