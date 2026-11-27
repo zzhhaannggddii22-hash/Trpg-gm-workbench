@@ -39,10 +39,10 @@ This phase validates what the GM must know to run the module. It is not Prefligh
 | Sub-Reality change table | Full d44 table, repeat-entry procedure and application order | Chinese Vault translation file pp.200–202; source PDF p.97 | VERIFIED IN CHINESE SOURCE：完整 d44 表及重复进入叠加规则已分页回读 |
 | Chaos Effects table | Full station effects table, trigger thresholds and application | Chinese Vault translation file pp.196, 203; source PDF pp.95, 98 | VERIFIED IN CHINESE SOURCE：车站表与 Jahnavi 特殊效果均已分页回读 |
 | Jahnavi rescue special effect | Exact trigger and Chaos 4 effect | Chinese Vault translation file p.203; source PDF p.98 | VERIFIED IN CHINESE SOURCE：触发与效果文本已回读 |
-| Ripple Gun | Charge, target, line of sight, effect and recharge timing | v22 printed p.21 | PARTIAL |
-| Normal Briefcase | Eligible target state, focus/condition and capture resolution | v22 printed pp.21–22 | PARTIAL |
-| Commendations / Demerits | Mission report, optional goals, authorized behaviors and award/penalty timing | v22 performance/report rules + module source | OPEN |
-| Mission MVP / Probation / Participant | Eligibility, award order and mark/benefit effects | v22 printed pp.148–149 and Work/Life Balance sheet | PARTIAL |
+| Ripple Gun | One charge, unobstructed direct aim, permanent neutralization, return to Agency for recharge | v22 Markdown printed p.21 | VERIFIED |
+| Normal Briefcase | Target must be exhausted, calm or willing; focus identification is usually needed | v22 Markdown printed pp.21–22 | VERIFIED |
+| Commendations / Demerits | Mission report, optional goals, authorized behaviors and award/penalty timing | v22 performance/report rules + module source | PARTIAL：规则框架已定位；模组结算和历史余额仍须逐项核 |
+| Mission MVP / Probation / Participant | Eligibility, tie-breaks, award order and track benefit | v22 Markdown printed pp.134–135 and Work/Life Balance sheet | VERIFIED; single-player application is straightforward but still checked at closeout |
 | Loose Ends | Regional baseline, additions, weather effects and reporting | v22 regional rules + Campaign records | OPEN |
 | Time | Distinguish system rules from Campaign Q05 award timing and reverse-linked field | RULE_ADJUDICATIONS.md Q05 | VERIFIED AS CAMPAIGN RULING ONLY |
 | Equipment handoff | Holder, charge, use, return/restoration basis for each key item | Character card + prior Module Ledger + item rules | OPEN |
