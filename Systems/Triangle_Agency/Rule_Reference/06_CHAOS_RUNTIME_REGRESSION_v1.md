@@ -139,6 +139,13 @@ Run separate subcases:
 
 **Expected:** Do not spend Chaos merely because the pool is high. No arbitrary attack, punishment, complication, or forced roll. Preserve the pool until a supported opportunity occurs.
 
+
+### C-17 — System starting-Chaos rule vs Campaign override
+
+**Initial state:** The v22 source provides a Branch Loose Ends starting-Chaos table. The active Campaign Binding also contains a stated starting-pool default, and a prep record raises a provenance conflict about that default.
+
+**Expected:** Keep the system-level table and Campaign-level override separate. Apply a valid, scope-matched approved Campaign ruling if its provenance is established. If the Binding/adjudication/prep records conflict or the approval cannot be verified, mark starting Chaos PENDING / DISPUTED and resolve the provenance; do not silently choose 0, infer a value, or export the Campaign default to another system/Campaign.
+
 ## Oracle summary
 
 | Case | Required assertion |
@@ -158,11 +165,11 @@ Run separate subcases:
 | C-13 | Public Pool/effect disclosure with GM-only separation |
 | C-14 | Pending balance blocks only dependent effect |
 | C-15 | Unused Pool cleared at mission end |
-| C-16 | High balance alone does not justify adversity |
+| C-16 | High balance alone does not justify adversity |\n| C-17 | System starting value and Campaign override remain separate; provenance conflicts fail closed |
 
 ## Acceptance threshold
 
-- All 16 cases pass.
+- All 17 cases pass.
 - C-01 and C-16 must demonstrate no unnecessary subsystem invocation or added action latency.
 - C-02 and C-04 must demonstrate no duplicate generation.
 - C-05 and C-06 must demonstrate proactive but rule-grounded use.
