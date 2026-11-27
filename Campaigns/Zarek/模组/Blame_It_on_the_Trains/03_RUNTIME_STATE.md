@@ -26,7 +26,7 @@
 | Artifact delivery | DELIVERED | 固定仓库 Commit 与交付清单 |
 | Source validation | BLOCKED | 07_SOURCE_AND_RULE_CROSSCHECK.md |
 | Prep rule validation | BLOCKED | 07_SOURCE_AND_RULE_CROSSCHECK.md |
-| Single-player feasibility | PARTIAL / OPEN | 07_SOURCE_AND_RULE_CROSSCHECK.md |
+| Single-player feasibility | PARTIAL / RULE-MAPPED v2 | 07_SOURCE_AND_RULE_CROSSCHECK.md §10 |
 | Runtime schema | BASELINE / NOT ACTIVE | 本文件与通用 Runtime State Template |
 | Prep QA | NOT RUN | 07_SOURCE_AND_RULE_CROSSCHECK.md |
 | Preflight | NOT STARTED / BLOCKED | 每次实际开团时单独记录 |
