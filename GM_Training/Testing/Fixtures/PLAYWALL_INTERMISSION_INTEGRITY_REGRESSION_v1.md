@@ -35,7 +35,7 @@ Expected resolution:
 - Action 3 marks Competency position 1. It is blank; no Playwall document is unlocked.
 - Action 4 marks position 2. It is blank; no Playwall document is unlocked. The Time-spend cross-outs on the other two tracks must also be recorded.
 - Action 5 marks position 3. It contains A3; A3 becomes authorized even though this is a free Mission MVP mark and no Time is spent.
-- The GM must retrieve/read only A3 and apply its actual conditions. The GM must not infer or grant D4.
+- The GM authorizes the player to retrieve and privately read only A3. The GM may consult only the minimum needed to adjudicate its immediate effects; the player decides what to share. The GM must not infer or grant D4.
 - Position 6/D4 remains unmarked and unauthorized. The player's question does not create authorization.
 - The next module cannot inherit an undocumented A3 effect or a guessed D4 unlock.
 
@@ -45,7 +45,7 @@ Expected resolution:
 - The GM checks codes after both Time and free MVP/Probation marks.
 - A3 is unlocked on the third mark; D4 remains locked.
 - No Playwall document is read before its code is marked.
-- Player-facing disclosure is limited to information/effects appropriate to the authorized document and current game.
+- The player is authorized to privately read A3; the GM does not automatically disclose its full contents. Player-shared information is recorded separately from private reading.
 - Unknown track positions, document reads, or effect applications remain UNKNOWN rather than being guessed.
 
 ## FAIL CONDITIONS
