@@ -11,7 +11,7 @@ def slug(text):
     return re.sub(r"[^\w\s-]", "", text).replace(" ", "-")
 
 
-def scan_links(documents, known_paths=None):
+def scan_links(documents, known_paths=None, root_relative_bases=None):
     parsed = json.loads(subprocess.check_output(
         ["node", str(HERE / "scan_markdown.cjs")],
         input=json.dumps(documents, ensure_ascii=False).encode(),
@@ -47,6 +47,12 @@ def scan_links(documents, known_paths=None):
                 continue
             if parts.scheme or parts.netloc:
                 external.add(href)
+                continue
+            # Some archived upstream Markdown files retain site-root-relative
+            # links. Resolve those against the source site's origin, not this repo.
+            upstream_base = (root_relative_bases or {}).get(path)
+            if href.startswith("/") and upstream_base:
+                external.add(upstream_base.rstrip("/") + href)
                 continue
             result["local_links"] += 1
             target = unquote(parts.path)

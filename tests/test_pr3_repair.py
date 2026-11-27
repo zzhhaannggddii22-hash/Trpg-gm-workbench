@@ -179,10 +179,17 @@ class RepositoryChecks(unittest.TestCase):
         self.maxDiff = None
         all_paths = git("ls-files", "-z").decode().rstrip("\0").split("\0")
         paths = [p for p in all_paths if p.endswith(".md")]
-        result = scan_links({p: read(p) for p in paths}, known_paths=all_paths)
+        documents = {p: read(p) for p in paths}
+        upstream_root_bases = {
+            "Campaigns/TEST_ONLY_Cairn_VR_Twin_Lakes/SOURCE/CAS1_OFFICIAL_SOURCE.md":
+                "https://cairnrpg.com"
+        }
+        result = scan_links(documents, known_paths=all_paths,
+                            root_relative_bases=upstream_root_bases)
         print(f"\nRT-16: {len(paths)} Markdown files, {result['local_links']} local links, "
               f"{len(result['missing_paths'])} broken paths, "
               f"{len(result['anchor_candidates'])} candidate anchors", flush=True)
+        self.assertGreaterEqual(result["distinct_external_url_count"], 9)
         self.assertEqual(result["missing_paths"], [])
         self.assertEqual(result["anchor_candidates"], [])
 
