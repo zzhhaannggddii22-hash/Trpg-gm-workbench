@@ -80,6 +80,8 @@
 | CRT-61 | 天气为 Inclement，队伍正在荒野旅行 | EX-WILDERNESS | 选择增加 Fatigue 或旅程 +1 Watch；地形难度同时提高一级；不能漏掉地形升级 |
 | CRT-62 | 两名角色共同 Supply，基础收获骰为 d4 | EX-WILDERNESS | 参与者增加可提高收获骰阶（示例 d4→d6），最高 d12；每份 Ration 记录 3 次使用 |
 | CRT-63 | Trail 旅行掷 1d6，路径迷路概率 2-in-6，结果为 2 | EX-WILDERNESS | 触发迷路；若模组/路径要求，消耗额外 Wilderness Action 找回路线；不直接宣告抵达目标 |
+| CRT-64 | PC 花费一个 Dungeon Turn 搜索一个箱子；房间很大且结构复杂 | EX-DUNGEON | 一个 Turn 可彻底搜索一个物件/地点；复杂房间可需要多个 Turn；时间成本持续推进 |
+| CRT-65 | PC 在地城中制造明显巨大声响，附近有居民 | EX-DUNGEON-EVENT | 识别为事件触发条件；若虚构情境支持，也可直接引发遭遇，不机械要求每次都掷骰 |
 
 ## 3. 关键状态断言
 
