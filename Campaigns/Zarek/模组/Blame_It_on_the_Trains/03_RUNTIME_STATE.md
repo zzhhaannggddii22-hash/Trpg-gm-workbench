@@ -106,11 +106,54 @@ When play begins, update only on an actual event. Knowledge must retain its sour
 
 ## 7. Spatial state ledger (GM-only; empty until play)
 
-| Entity/Layer ID | State | Entry count | Change roll/event | Current occupants | Last event ID |
+| Entity/Layer ID | State | Entry count | d44 roll history / applied effects | Current occupants | Last event ID |
 |---|---|---:|---|---|---|
 | NONE | NOT ENTERED | 0 | NONE | NONE | NONE |
 
-## 8. Narrative resume anchors
+## 8. Player-known information
+
+| Information ID | Fact actually learned | Source | Event ID / time | Confidence / limitation |
+|---|---|---|---|---|
+| NONE | No player-known facts in this module yet | — | — | NOT STARTED |
+
+Only information actually perceived, received or reasonably inferred by the PC belongs here. GM-only facts, unpresented clues and NPC-only knowledge never enter this section.
+
+## 9. World events and threads
+
+| Event / Thread ID | Status | Trigger / deadline | Current progress | Responsible actor / next relevant node |
+|---|---|---|---|---|
+| NONE | NONE | — | — | — |
+
+Allowed statuses: ACTIVE / RESOLVED / NOT TRIGGERED / CANCELLED / NON-CANON. A resolved event does not restart without a new causal trigger.
+
+## 10. Continuity checkpoint checklist
+
+At scene transitions, important state changes and Session pause/close, verify:
+- [ ] Game time and event order are consistent.
+- [ ] Character and NPC positions match actual movement events.
+- [ ] Item holders, quantities, charges and transfers match the event history.
+- [ ] Player and NPC knowledge each have an actual source.
+- [ ] Resource state references the latest VERIFIED ledger checkpoint.
+- [ ] Scene entry and narrative presentation status are explicit.
+- [ ] Pending player actions are not mistaken for completed actions.
+- [ ] Corrections preserve the original presented event and append a remedy; no silent history deletion.
+
+## 11. Delta since last checkpoint
+
+Only record actual changes not yet reflected in the current snapshot. After reconciliation, merge them into the relevant current-state fields and clear this section.
+
+| Event ID | Triggering action | Before → after | Basis / source | Presented to player? |
+|---|---|---|---|---|
+| NONE | — | — | — | NO |
+
+## 12. Sources and unknowns
+
+- Rules/module facts pending verification：see 07_SOURCE_AND_RULE_CROSSCHECK.md.
+- Unconfirmed inferences：NONE.
+- Explicit UNKNOWN：Demerits exact value; Harm; absolute available-Time balance; any unresolved equipment handoff.
+- Authoritative files：Campaign System Binding, RULE_ADJUDICATIONS, formal character card, Session Log, Resource Ledger and source crosscheck.
+
+## 13. Narrative resume anchors
 
 - Opening scene presented：NO
 - Presented narrative node IDs：NONE
@@ -121,7 +164,7 @@ When play begins, update only on an actual event. Knowledge must retain its sour
 
 A CONTINUE restore must resume after the last verified presented node. It must never replay an already-presented opening as a new event.
 
-## 9. Persistence and idempotency
+## 14. Persistence and idempotency
 
 - Session Log is the event history; this file is the current non-resource runtime snapshot; Resource Ledger is the only resource transaction ledger.
 - Every state-changing event must have a stable Event ID and an explicit application status.
@@ -131,7 +174,7 @@ A CONTINUE restore must resume after the last verified presented node. It must n
 - Do not store duplicate resource balances here. Store only the last verified ledger checkpoint reference.
 - If any record conflicts, preserve both evidence sources, open a dispute, and block only dependent actions.
 
-## 10. Update discipline
+## 15. Update discipline
 
 1. Do not write planned, hypothetical or test-only events as CANON.
 2. Append actual events to Session Log; update this file only for current-state changes.
