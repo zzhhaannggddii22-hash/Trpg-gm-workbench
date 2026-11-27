@@ -225,6 +225,8 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         result = self.store.reconcile("BATCH-002")
         self.assertEqual(result["status"], "DISPUTED")
         self.assertEqual(result["reason"], "PREPARE_MALFORMED")
+        with self.assertRaises(DisputedBatch):
+            self.store.prepare(self.manifest)
 
         self.store.snapshots[head][path] = json.dumps(["not", "an", "object"])
         result = self.store.reconcile("BATCH-002")
