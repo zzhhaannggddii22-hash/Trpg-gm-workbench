@@ -1,7 +1,7 @@
 # Cairn 2e 核心规则索引（初核版）
 
-> 状态：初步核对；正式裁定前仍须回查绑定版本原文。  
-> 版本：Cairn Second Edition。  
+> 状态：初步核对；正式裁定前仍须回查绑定版本原文。
+> 版本：Cairn Second Edition。
 > 官方总入口：https://cairnrpg.com/second-edition/
 
 ## 玩家角色
@@ -21,11 +21,13 @@
 |---|---|---|
 | Save | 掷 d20；结果小于或等于对应属性成功，大于属性失败；1 恒成功，20 恒失败 | Core Rules / Saves |
 | 检定原则 | 豁免用于避免风险行动的负面结果；对抗时由风险更高的一方进行豁免 | Core Rules |
-| 攻击 | 战斗攻击自动命中；掷武器伤害骰，减去目标护甲，再扣除 HP | Core Rules / Combat |
+| 攻击 | 战斗攻击自动命中；掷武器伤害骰，减去目标护甲，再扣除 HP；多名攻击者攻击同一目标时，掷所有伤害骰并只取最高结果 | Core Rules / Combat |
+| 战斗轮 | 每轮约 10 秒；每方轮流行动，但每方行动结果同时结算；首轮每名可行动 PC 需进行 DEX Save 才能行动（规则列出的特殊条件可豁免） | Core Rules / Combat |
 | 护甲 | 伤害扣 HP 前减去 Armor；角色/NPC/怪物 Armor 上限为 3 | Core Rules |
 | Impaired / Enhanced | 劣势攻击伤害改掷 d4；优势攻击改掷 d12 | Core Rules / Attack Modifiers |
-| Critical Damage | 伤害使 HP 低于 0 时，溢出伤害扣 STR，并以新 STR 进行 STR Save；失败触发严重后果 | Core Rules |
-| 属性损伤 | 战斗外伤害通常直接作用于属性；STR 归零死亡、DEX 归零瘫痪、WIL 归零精神错乱 | Core Rules / Attribute Loss |
+| HP 恰好降至 0 | 触发 Scars 表；按本次伤害造成的 HP 损失量查表处理，不进入低于 0 的 Critical Damage 流程 | Core Rules / Scars |
+| Critical Damage | 伤害使 HP 低于 0 时，超出 0 的剩余伤害扣 STR；以新的 STR 立即进行 STR Save。成功者仍可行动但继续承受后续 Critical Damage Save；失败的 PC 只能虚弱爬行，需救助稳定，否则一小时内死亡 | Core Rules / Critical Damage |
+| 属性损伤 | 战斗外伤害通常直接作用于属性；STR 归零死亡、DEX 归零瘫痪、WIL 归零神志错乱（delirious） | Core Rules / Attribute Loss |
 | 疲劳 | Deprived 超过一天会增加 Fatigue；Fatigue 占库存格，通常需要安全休息恢复 | Core Rules / Deprivation & Fatigue |
 
 ## 时间、探索与世界程序
