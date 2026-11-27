@@ -76,6 +76,10 @@
 | CRT-57 | Scars HP Lost 10，WIL Save 成功，1d6=4 | CR-SCARS | Sundered；指定肢体失去功能；最大 WIL 增加 4 |
 | CRT-58 | Scars HP Lost 11，角色未在一小时内获救 | CR-SCARS | Mortal Wound；角色 Deprived、失去行动能力并死亡；若获救恢复，2d6 设为新的最大 HP |
 | CRT-59 | Scars HP Lost 12，下一次 Critical Damage Save 成功，3d6=14，最大 HP 12 | CR-SCARS | Doomed；下一次 Critical Damage Save 失败会死亡；成功则最大 HP 提高到 14 |
+| CRT-60 | 连续两天季节天气表均掷出 Extreme | EX-WILDERNESS | 第二次 Extreme 后天气升级为 Catastrophic；不是普通 Extreme 累加 |
+| CRT-61 | 天气为 Inclement，队伍正在荒野旅行 | EX-WILDERNESS | 选择增加 Fatigue 或旅程 +1 Watch；地形难度同时提高一级；不能漏掉地形升级 |
+| CRT-62 | 两名角色共同 Supply，基础收获骰为 d4 | EX-WILDERNESS | 参与者增加可提高收获骰阶（示例 d4→d6），最高 d12；每份 Ration 记录 3 次使用 |
+| CRT-63 | Trail 旅行掷 1d6，路径迷路概率 2-in-6，结果为 2 | EX-WILDERNESS | 触发迷路；若模组/路径要求，消耗额外 Wilderness Action 找回路线；不直接宣告抵达目标 |
 
 ## 3. 关键状态断言
 
