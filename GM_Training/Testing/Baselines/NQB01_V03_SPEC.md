@@ -121,7 +121,7 @@ A/B/C 是玩家输入与执行隔离模式，不是三种不同 GM 环境。无�
 
 操作者不得在测试执行过程中临时创建或拼装 Campaign、角色卡、SYSTEM_BINDING、system_id、规则版本、Runtime checkpoint、Session Log、NPC 档案、测试数据库或平行运行提示包。只能使用本次测试启动前已建立、已登记、经用户授权且具有隔离存储的专用 Test Campaign。当前指定环境为 Campaigns/NQB01_Runtime_Test/。
 
-用户已明确授权建立专用测试环境。当前已在 Campaigns/README.md 登记独立 Campaign：Campaigns/NQB01_Runtime_Test/，其 SYSTEM_BINDING、测试角色边界、模组入口、初始 Runtime 检查点、Session Log 与 Player Notes 均独立存在。该 Campaign 绑定已登记的 triangle_agency / 中文 v22，不引用 Zarek Campaign 的任何角色、桌裁、状态或事件。当前准入状态更新为 TEST_CAMPAIGN_REGISTERED；但 Preflight 尚未执行，测试 Session 尚未获准启动，不能计为有效 Runtime 样本。不得借用 Zarek Campaign。
+用户已明确授权建立专用测试环境。当前已在 Campaigns/README.md 登记独立 Campaign：Campaigns/NQB01_Runtime_Test/，其 SYSTEM_BINDING、测试角色边界、模组入口、初始 Runtime 检查点、Session Log 与 Player Notes 均独立存在。该 Campaign 绑定已登记的 triangle_agency / 中文 v22，不引用 Zarek Campaign 的任何角色、桌裁、状态或事件。当前准入状态更新为 PREP_QA_PASS / TEST_CAMPAIGN_REGISTERED / CLEAN_CHAT_PREFLIGHT_PENDING；测试角色基础 ARC 与 QA 已建立，Prep QA 已在第一次 Preflight 前完成。干净目标 Chat 的 Preflight 尚未执行，测试 Session 尚未获准启动，不能计为有效 Runtime 样本。不得借用 Zarek Campaign。
 
 ### 8.3 零污染要求
 
