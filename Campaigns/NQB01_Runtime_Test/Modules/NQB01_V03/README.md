@@ -8,7 +8,6 @@
 
 ## 文件索引
 - [01_GM_PREP.md](./01_GM_PREP.md)：模组 GM Prep 与 Runtime Quick Reference。
-- [07_PREP_QA_2026-11-27.md](./07_PREP_QA_2026-11-27.md)：第一次 Preflight 前完成的备团质量审核记录。
 - [02_NAME_INDEX.md](./02_NAME_INDEX.md)：NPC 与场景对象规范名称。
 - [03_RUNTIME_STATE.md](./03_RUNTIME_STATE.md)：本模组唯一 Runtime 检查点。
 - [04_SESSION_LOG.md](./04_SESSION_LOG.md)：本测试实际事件记录。
