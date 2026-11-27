@@ -22,6 +22,7 @@
 | [叙事呈现 Skill](./NARRATIVE_PRESENTATION_SKILL.md) | 空间、环境、信息、对白/动作、场景焦距与节奏 |
 | [主持独立性与裁决纪律](./06_IMPARTIALITY_AND_ADJUDICATION_DISCIPLINE.md) | 公平裁定、反迎合与反刁难 |
 | [运行控制协议](./07_RUNTIME_CONTROL_PROTOCOL.md) | 风险路由、事实/权限、连续性、T0、Context Assembly / Trace 与错误恢复 |
+| [通用掷骰调用与执行路由协议（设计稿）](./14_ROLL_RESOLUTION_ROUTING_PROTOCOL.md) | 只负责跨系统绑定、机制分派与 Runtime 交接；不定义任何系统骰制，尚未启用 |
 | [会话证据隔离协议](./15_SESSION_EVIDENCE_ISOLATION_PROTOCOL.md) | 新会话的当前证据域、跨会话残留隔离、输出来源过滤与历史回顾例外 |
 | [线索与来源账本](./08_CLUE_AND_SOURCE_LEDGER.md) | 线索、公平获取路径、来源和知识边界 |
 

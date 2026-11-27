@@ -16,6 +16,7 @@
 ## Triangle Agency 系统专属机制
 
 - [Playwall 幕间解锁完整性回归夹具 v1](./PLAYWALL_INTERMISSION_INTEGRITY_REGRESSION_v1.md)
+- [通用/专属掷骰路由分拆回归夹具 v1](./ROLL_RESOLUTION_GENERIC_SYSTEM_SPLIT_v1/START.md)：11 个顺序 ACTION，覆盖 Triangle Agency 基础检定、冲突、Playwall 授权门槛与跨系统隔离。
 
 ## Runtime 与信息通道
 

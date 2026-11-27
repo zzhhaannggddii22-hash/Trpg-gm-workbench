@@ -4,6 +4,9 @@
 
 ## 当前报告
 
+- [通用/专属掷骰路由分拆单会话自测报告（2026-11-27）](./ROLL_RESOLUTION_GENERIC_SYSTEM_SPLIT_SELF_TEST_2026-11-27.md)：设计层行为证据；明确 Runtime/UI 未集成边界。
+- [Roll Runtime Application Adapter 可执行契约自测报告（2026-11-27）](./ROLL_RUNTIME_APPLICATION_ADAPTER_SELF_TEST_2026-11-27.md)：本地合成文件系统 11 项测试，包含重复投递、7 个故障点、冷恢复、资源流水链与玩家投影隔离；非生产 Runtime 验收。
+
 - [GM 系统质量验收报告（2026-11-24）](./GM_SYSTEM_ACCEPTANCE_REPORT_2026-11-24.md)
 - [P0 第三轮复核与 P1 交接](./GM_RUNTIME_P0_THIRD_ROUND_REVIEW_AND_P1_HANDOFF.md)
 - [P1-0 修复与 P1-0C 交接](./GM_RUNTIME_P1_0_REMEDIATION_AND_P1_0C_HANDOFF.md)
