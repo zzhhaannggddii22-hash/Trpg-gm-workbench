@@ -96,6 +96,14 @@ The v22 source (General Manager Toolkit, printed page 165 / PDF physical page 16
 
 The source table prints thresholds at 0, 11, 22, 33, 44, 55, 66, and 77. The interval notation above operationalizes those thresholds without interpolation: a total of 1 uses the 0 row; 10 also uses the 0 row; 11 enters the 11 row. The special 66 and 77 outcomes take precedence over ordinary Chaos initialization.
 
+### Special threshold lifecycle handoff
+
+- The `66–76` row is not a numeric Chaos initialization. At the mission-start threshold check, create a `RETIREMENT_PENDING_AT_MISSION_CLOSE` transition for the active field team. Continue the current mission; do not terminate it immediately. At closeout, hand the retirement and Loose Ends reduction to the existing Campaign / Closeout process using the book's procedure.
+- The `77+` row is not a numeric Chaos initialization. It enters the book-directed Unraveling / Branch-removal procedure. Do not create a normal mission Pool or convert `N/A` to zero.
+- After any verified Branch Loose Ends mutation during a mission, re-evaluate whether a special threshold has been crossed and record a transition request with its source event. The system adapter emits the required state transition; the Campaign lifecycle owns the resulting Campaign state. Do not silently execute a second reset or mutate historical events.
+- If a threshold is crossed and then the total changes again before closeout, preserve both source events and the pending transition. Where the rule text does not explicitly define cancellation or reversal timing, mark that specific transition PENDING for source-based adjudication rather than automatically cancelling or inventing a reversal.
+- Special threshold transitions must be idempotent by source event and mission ID. Recovery resumes incomplete lifecycle fields and must not retire the team twice or repeat Branch removal.
+
 ### Campaign data boundary
 
 This system protocol contains no current Branch Loose Ends value. The current total is dynamic Campaign state and must be read from the active Campaign's authoritative state record at each mission boundary. A prior mission snapshot is evidence of the value at that time, not a permanent rule default. Never copy a Campaign's current total into this system-wide rules file.
