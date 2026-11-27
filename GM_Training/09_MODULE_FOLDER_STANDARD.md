@@ -11,8 +11,9 @@
 - README.md：入口、文件索引、状态、保密边界。
 - 01_GM_PREP.md：GM-only 原文摘要、场景、线索、NPC动机、威胁/现象机制、触发、分支与结局。
 - 02_NAME_INDEX.md：唯一名称映射表。
-- 03_RUNTIME_STATE.md：当前唯一有效运行快照，按 [RUNTIME_STATE_TEMPLATE.md](./RUNTIME_STATE_TEMPLATE.md) 维护；Session Log 保留历史事件，不与快照重复维护两份当前状态。
-- 04_SESSION_LOG.md：只记实际发生的桌面事实。
+- 03_RUNTIME_STATE.md：当前唯一有效场景运行快照，按 [RUNTIME_STATE_TEMPLATE.md](./RUNTIME_STATE_TEMPLATE.md) 维护；不复制资源余额或资源流水。
+- 09_RESOURCE_LEDGER.md（模组有可追踪资源或用户要求独立管理时）：本模组跨 Session 的资源交易唯一流水与余额依据。
+- 04_SESSION_LOG.md：只记实际发生的桌面事实；资源事件引用 Resource Ledger Entry ID，不重复维护资源数值流水。
 - 05_PLAYER_NOTES.md：玩家侧可知信息，不含隐藏真相。
 - 06_POSTMORTEM.md：复盘、证据、下一轮训练行动。
 - 07_SOURCE_AND_RULE_CROSSCHECK.md（适用时）：原文来源、版本、页码、规则核验与差异。
@@ -40,7 +41,7 @@
 
 ## 4. 名称索引规范
 
-每个 NPC、地点、组织、关键物品建立稳定规范 ID。推荐：
+每个 NPC、地点、组织及需要持续追踪的关键物品建立稳定规范 ID。推荐：
 - NPC-姓名/角色；
 - LOC-地点；
 - ORG-组织；
@@ -57,6 +58,8 @@
 - 若 GM 确实需要新增姓名，先标注 GM Adaptation，再登记唯一 ID 和中英文名；不能让新名字看起来像官方原名。
 - 地点的街道地址、建筑、房间、区域、势力辖区或系统定义的特殊场域分开建 ID，避免把同一地点的不同称呼误当成不同地点。
 - 名称发生变化时更新索引并保留旧名为别名；不得创建第二条身份记录。
+
+**道具记录范围**：只为关键任务道具、具有明确机制意义的嘉奖/奖励道具、重要资源道具建立长期物品记录。普通易获取、可替代、无特殊机制意义的日常物品、临时杂物和常规消耗品不进入人物卡或长期库存；无需为其分配 ITEM ID。重要道具记录持有人、状态、规则效果和来源；若其具有弹药、充能、次数或其他可量化资源，数值变化只写入 Resource Ledger。
 
 每场开团前进行双向检索检查：用中文名和英文名分别搜索，均应命中同一规范 ID。名称索引未完成时，不向玩家输出未确认专名。
 
@@ -107,7 +110,7 @@
 - 每个关键变化同步 Runtime State；不得只改叙述不改账本。
 - NPC 获得信息必须有实际来源；不能因为 GM 知道就自动知道。
 - 长期 NPC 的经历、记忆、物品、系统资源/伤害状态与关系变化必须进入其长期档案或战役交接。
-- Session 结束后完成本场资源与状态变化、编号 Session Log、Runtime State、Player Notes，以及必要的战役持续状态同步；系统明确要求按 Session 结算的项目照常结算。
+- Session 结束后核对 Resource Ledger 与 Session Log，再更新正式人物卡快照、Runtime State、Player Notes，以及必要的战役持续状态；不在多个文件重复记录同一资源余额。系统明确要求按 Session 结算的项目照常结算。
 - Module 结团后完成模组级结算记录、系统定义的后续威胁/未决状态、整体奖励与后果、最终 CANON 归档和完整 GM 复盘；单 Session 模组在本场结束时合并执行。
 - 将本场复盘行动项转化为下一次 Preflight 检查。
 - 完成后回读关键文件，确认链接、状态与索引没有冲突。
@@ -140,9 +143,9 @@
 - NPC 从模组级升级为战役级时保留原 ID 和首次出现来源，模组索引留下引用。
 
 ### Session 生命周期
-- Session 开始读取最新 Runtime State 与最近日志，不扫描全部历史。
-- 资源结算时按需独立读取 Resource Ledger；若涉及角色持续性资源，同时核对正式人物卡。
-- Session 结束创建本次编号日志、更新 Runtime State，并核对本场 Resource Ledger；必要的 Campaign 持续状态同步按权威文件执行。
+- Session 开始读取正式人物卡的最近 Session 结束快照、最新 Runtime State、最近日志与当前模组 Resource Ledger。正式卡只用于建立/核对开场快照；续场资源计算以本账本上一场的已核实结余为准。发现冲突时标记 DISPUTED，不得任选一个余额。
+- Session 进行中，所有资源交易只写入 Resource Ledger；Session Log 记录事件并引用 Entry ID，Runtime State 不复制资源余额。
+- Session 结束对账后，将角色资源余额和符合记录范围的关键道具状态一次性同步到正式人物卡；记录 Session ID 与最后 Entry ID。模组公共资源继续留在模组账本，不写入人物卡。
 - Module 结束时才完成整体奖励、系统定义的后续威胁/未决状态、模组结算与完整复盘；系统另有 Session 结算要求时遵循系统规则。
 - 验证只检查本次变更涉及的权威字段与 GM-only/玩家侧边界，不做无差别全库全文复读。
 
@@ -157,7 +160,7 @@ Runtime State 至少标记：
 - 入口描述是否已经向玩家呈现，以及最后一个已确认叙事节点；
 - 当前游戏时间、地点、在场者和重要位置关系；
 - 玩家最近行动、GM 最近回应和当前待处理意图；
-- 角色资源、关键物品持有人、玩家已知信息、NPC 实际知识；
+- 场景所需的关键物品持有人/位置、玩家已知信息、NPC 实际知识；资源余额不在 Runtime State 重复记录。
 - 活跃事件、触发条件、承诺、待办与最后确认事件 ID。
 
 CONTINUE 不得从模组开场重新生成叙述。先读取最新 Runtime State 和最近 Session Log，确认最后已发生的事件与玩家最后收到的内容，再从尚未处理的节点继续。
