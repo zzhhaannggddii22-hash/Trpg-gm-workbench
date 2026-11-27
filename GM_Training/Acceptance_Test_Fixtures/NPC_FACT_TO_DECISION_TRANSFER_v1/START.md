@@ -3,7 +3,7 @@
 ## Locked source
 
 - Repository: `zzhhaannggddii22-hash/Trpg-gm-workbench`
-- Fixture ref: `test/npc-facts-decision-transfer-2026-11-27`
+- Fixture ref: `test-npc-fact-to-decision-transfer-2026-11-27`
 - Workbench commit under test: `2ba323418d0ae6bc4504bddebd107d2c6b8e6e00`
 - Baseline commit: same as tested commit; this is not an A/B comparison.
 - Execution mode: `SINGLE_SESSION_SELF_TEST`
