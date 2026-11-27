@@ -86,6 +86,7 @@
 - [GM 系统质量验收提示词](./Testing/Execution_Prompts/Historical/GM_SYSTEM_ACCEPTANCE_PROMPT.md)
 - [P0/P1 验收报告与测试夹具](./Testing/Reports/)
 - [验收测试夹具与执行提示](./Testing/Fixtures/README.md)：合成夹具、单会话可执行伴随测试、专项目标 Chat 执行提示与操作者协议。
+- [L3 NPC Task, Voice & Narrative Density Regression v1](./Acceptance_Test_Fixtures/L3_NPC_TASK_AND_VOICE_REGRESSION_v1/README.md) 与 [执行报告](./Acceptance_Test_Fixtures/L3_NPC_TASK_AND_VOICE_REGRESSION_v1/RUN_REPORT.md)：覆盖 NPC 性格辨识度、段落信息承载与任务截止时间闭环；单会话合成回归，结论 PASS_WITH_LIMITS，不关闭长期问题。
 
 合成测试、盲测和真实跑团分别报告。未执行的测试必须标记 NOT STARTED / NOT TESTED；不得以文件已更新推断运行可靠性通过。
 
