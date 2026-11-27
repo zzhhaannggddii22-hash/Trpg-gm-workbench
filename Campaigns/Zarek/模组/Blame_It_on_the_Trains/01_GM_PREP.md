@@ -199,7 +199,7 @@ NPC 协助只在其实际在场、愿意、具备知识/能力且行动有来源
 
 ### 9.2 本模组待核矩阵
 
-详见 `07_SOURCE_AND_RULE_CROSSCHECK.md §3`。当前至少包含 Chaos、Harm/Domain、模组能力、d44 子现实变化表、Chaos Effects 表、Jahnavi 营救特殊效果、奖励/处分、Loose Ends 和关键装备点交。任何核心行仍为 OPEN/PARTIAL 时，Prep Rule Validation 保持 BLOCKED。
+详见 `07_SOURCE_AND_RULE_CROSSCHECK.md §3`。当前至少包含 Chaos、Harm/Domain、模组能力、d44 子现实变化表、Chaos Effects 表、Jahnavi 营救特殊效果、奖励/处分、Loose Ends 和关键装备点交。任何必需核心规则行仍为 OPEN/DISPUTED 时，Prep Rule Validation 保持 BLOCKED。英文原版校勘等来源质量缺口单独记录；若未发现影响必要裁定的具体歧义，不自动阻塞规则验收。角色当前资源、装备持有人和本任务天气/环境设置属于 Preflight 状态恢复，不属于规则研究。
 
 ### 9.3 与 Preflight 的阶段边界
 
@@ -220,9 +220,9 @@ NPC 协助只在其实际在场、愿意、具备知识/能力且行动有来源
 
 ## 11. 备团开放项
 
-- OI-01：正式人物卡及 Bower Street 结团后的当前资源余额需在 Preflight 重新核对；绝对 Time 余额待权威流水确认。
-- OI-02：v22 相关规则条文的逐项行级引用尚待补全；当前 07 记录为检查表，不能冒充全部规则已通过核验。
-- OI-03：独立 Prep QA 未执行；本模组复杂度高，建议开团前执行。
+- OI-01：正式人物卡及 Bower Street 结团后的当前资源余额需在 Preflight 重新核对；绝对 Time、精确 Demerits、Harm 历史值待权威流水确认。
+- OI-02：[CLOSED FOR CORE PATH] 本轮已将实际核心路径涉及的 QA/Burnout、Ask the Agency、Harm/Insurance、Threat/Stability、Domain、Chaos、Smell the Roses、Loose Ends 和关键装备规则映射至固定 v22 与中文模组来源。英文原版逐页校勘仍作为非阻塞来源质量项。
+- OI-03：独立 Prep QA 未执行。凯西已执行自审与规则映射模拟，但不将 SELF-REVIEW 冒充独立 QA；是否另做独立 QA 不阻塞 Preflight。
 - OI-04：用户未确认开团前角色是否携带凯瑟琳同行；以 Preflight 的最新玩家决定为准，不预设同行。
 - OI-05：玩家侧开场简报尚未生成；在 Preflight 根据最新战役状态生成，避免提前泄露或使用过期角色信息。
 
