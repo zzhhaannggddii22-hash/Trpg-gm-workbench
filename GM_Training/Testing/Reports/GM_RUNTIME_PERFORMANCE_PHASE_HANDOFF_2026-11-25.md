@@ -71,9 +71,9 @@
 
 ## 6. 权威入口
 
-- [Runtime Control](../07_RUNTIME_CONTROL_PROTOCOL.md)：临时 T0 告警配置。
-- [P1 性能计划](../Optimization_Reports/GM_RUNTIME_P1_PERFORMANCE_PLAN.md)：当前性能阶段门槛与测量规范。
+- [Runtime Control](../../07_RUNTIME_CONTROL_PROTOCOL.md)：临时 T0 告警配置。
+- [P1 性能计划](../../Optimization_Reports/GM_RUNTIME_P1_PERFORMANCE_PLAN.md)：当前性能阶段门槛与测量规范。
 - [P1-0R 故障注入报告](./GM_RUNTIME_P1_0R_FAULT_INJECTION_REPORT_2026-11-25.md)。
-- [P1-0R 可重复执行脚本](../Acceptance_Test_Fixtures/P1_0R/p1_0r_fault_harness.py)。
+- [P1-0R 可重复执行脚本](../../Acceptance_Test_Fixtures/P1_0R/p1_0r_fault_harness.py)。
 
 本交接记录只固定阶段边界和工作顺序，不宣布 GM Runtime 全面可靠。
