@@ -16,7 +16,7 @@ Confirmed from the available records:
 
 1. SESSION 01 recorded an Ask the Agency event, but its Chaos accounting was omitted in the original resolution. A later temporary +5 report was not independently verified. It remains BOWER-RES-001 / PENDING in the historical ledger.
 2. SESSION 02 contains one recoverable complete roll event, BS2-ROLL-001, with a verified +5 Chaos generation delta. It was recorded as BOWER-RES-002, but the absolute balance remained UNKNOWN because SESSION 01's prior balance was unresolved.
-3. The available ledger records no verified Chaos spending entries for Bower Street. It records the module's ordinary Chaos Pool as reset to 0 at module close, with historical generation records retained.
+3. The available ledger records no verified Chaos spending entries for Bower Street. It records the module's Chaos Pool as reset to 0 at module close, with historical generation records retained. This closeout reset is distinct from the next mission's starting value, which is determined at mission setup from the current Branch Loose Ends table.
 4. The Bower Street GM Prep already contained a module-specific Chaos Effects palette, effect costs, Domain treatment, anomaly Focus/Domain facts, and a same-event public resource accounting requirement. Therefore, the observed weakness was not simply “the module had no Chaos notes.”
 5. The user explicitly reports that the GM did not use Chaos to create meaningful situation changes and also missed generation and spending during play. The user separately confirms that roll-generation handling has since been addressed through the roll-resolution module.
 
