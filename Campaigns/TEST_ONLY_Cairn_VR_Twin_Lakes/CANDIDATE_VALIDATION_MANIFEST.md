@@ -10,7 +10,7 @@ validation:
   preflight_base_commit: 245fca27b3c2570ea3be0781648bef204e70c36f
   source_archive_commit: 1689b2eff7901df2043a74c357bb52de67210aee
   gm_prep_commit: cc49fa84edd8d11bcb9e7fdbd221d8589f860207
-  latest_prep_revision_commit: a004b053a58d5966035ff8f8e9f99d5795faad8e
+  latest_prep_revision_commit: 16cb335b597732d6d3fc96963c9d40752c01664d
   module_source_path: Campaigns/TEST_ONLY_Cairn_VR_Twin_Lakes/SOURCE/CAS1_OFFICIAL_SOURCE.md
   gm_prep_path: Campaigns/TEST_ONLY_Cairn_VR_Twin_Lakes/GM_ONLY_PREP.md
   module_source_retrieved_at: 2026-11-27
