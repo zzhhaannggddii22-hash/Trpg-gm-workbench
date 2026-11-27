@@ -10,9 +10,10 @@
 
 GitHub 仓库：`zzhhaannggddii22-hash/Trpg-gm-workbench`
 
-分支：`training/narrative-salience-pressure-v1`
+基线 ref：`main`  
+被测 Workbench commit：`EXECUTOR MUST INSERT EXACT COMMIT SHA BEFORE RUN`
 
-请读取以下文件：
+所有文件读取必须显式使用上方固定的 Workbench commit SHA，不得只声明分支后依赖默认分支。请读取以下文件：
 1. `GM_Training/NARRATIVE_QUALITY_BASELINE.md`
 2. `GM_Training/Testing/Baselines/NARRATIVE_QUALITY_BASELINE_GM_PACKET.md`
 3. `GM_Training/Testing/Baselines/NARRATIVE_QUALITY_BASELINE_PLAYER_PROMPT.md`
