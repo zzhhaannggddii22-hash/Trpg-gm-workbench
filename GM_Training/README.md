@@ -79,6 +79,7 @@
 ## 6. 验收与可靠性测试
 
 - [GM 自测与验收执行协议](./SELF_TESTING_PROTOCOL.md)：默认采用 GitHub 版本化夹具、单会话自动执行、执行后结构化自审与完整报告；独立盲审仅在需要时升级。
+- [Roll Runtime Application Adapter v1](./Testing/Fixtures/ROLL_RUNTIME_APPLICATION_ADAPTER_v1/README.md)：用于验证掷骰结果的资源流水、事件应用证明、恢复与玩家投影边界；仅为本地参考实现，不是生产存储连接器。
 - [TRPG 叙事质量基准 NQB-01 v1.0](./NARRATIVE_QUALITY_BASELINE.md)：低压日常叙事验收标准，适用于主 Skill 与后续候选版本。
 - [主分支 Skill 叙事验收记录 01](./Testing/Reports/NARRATIVE_QUALITY_BASELINE_MAIN_SKILL_RUN_01.md) 与 [记录 02](./Testing/Reports/NARRATIVE_QUALITY_BASELINE_MAIN_SKILL_RUN_02.md)：固定 main commit 下的两组低压合成模拟结果。
 - [主分支 Skill 真实玩家短测记录 03](./Testing/Reports/NARRATIVE_QUALITY_BASELINE_MAIN_SKILL_RUN_03.md)：固定 main commit 下的 4 个真实玩家行动回合；用户主动提前结束，属于有效但覆盖有限的真实交互样本。
