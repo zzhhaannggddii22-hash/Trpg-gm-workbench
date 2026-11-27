@@ -3,7 +3,7 @@
 > system_id: cairn
 > 规则版本：Cairn Second Edition（2e）
 > 中文参考：社区简体中文 SRD（非官方翻译）
-> 状态：candidate（第二套系统接入准备中；尚未开放正式运行）
+> 状态：candidate（系统级成熟度尚未完成激活验收）；CA01_Zaf 有用户授权的 Campaign 范围受控实战，不代表系统已 active。
 
 本目录是 Cairn 系统级规则知识的唯一入口。它与 Systems/Triangle_Agency/ 完全隔离。Cairn 被用户指定为 GM Workbench 的第二套系统；本次接入按独立系统完成，不能把 Triangle Agency 的规则、资源、术语或运行惯例带入。
 
@@ -56,8 +56,9 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 
 ## 运行边界
 
-- 当前状态为 candidate。官方章节来源核验已完成，但真实跑团中的 Runtime、状态持久化、规则调用、NPC 连续性和宿主环境验证尚未完成；在这些事项通过实际跑团验证并完成复盘前，不得标记为 active。
-- Campaign 必须单独建立 SYSTEM_BINDING.md，绑定 system_id: cairn 和精确规则版本。当前没有已批准的 Cairn Campaign。
+- 当前系统级成熟度为 candidate。官方章节来源核验已完成，但真实跑团中的 Runtime、状态持久化、规则调用、NPC 连续性和宿主环境验证尚未完成；在这些事项通过验证并复盘前，不得把系统标记为 active。
+- Campaign 必须单独建立 SYSTEM_BINDING.md，绑定 system_id: cairn 和精确规则版本。当前已登记 CA01_Zaf / Twin Lakes，按其 SYSTEM_BINDING 中的用户授权进行 Campaign 范围受控实战；此授权不构成系统激活，也不扩展到其他 Campaign。
+- candidate 表示系统级成熟度与验收状态，不等于每个使用该系统的 Campaign 都是 NOT_STARTED。Campaign 的实际状态以其 Binding、Runtime State、Session Log 和真实运行证据为准。
 - Cairn 的属性、豁免、HP、STR/DEX/WIL 损伤、护甲、疲劳、库存格、背景、法术书、成长和探索程序均属于 Cairn 专属规则。
 - 不把 Cairn 的豁免或伤害流程移入 Triangle Agency；也不把 Triangle Agency 的 Chaos、QA、Burnout、Harm 或 Playwall 概念映射进 Cairn。
 - 单人玩家测试属于待验证的桌面规模，不代表规则默认支持单人队伍。优先使用规则内的 hirelings 等支持方式；任何超出规则的调整必须明确标记为桌面适配并经用户批准。
