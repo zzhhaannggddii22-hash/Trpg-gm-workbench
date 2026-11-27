@@ -1,6 +1,6 @@
 # 《Bower Street》｜模组档案
 
-> 当前运行与推进许可见 [Runtime State](./03_RUNTIME_STATE.md) 和 [Session Log Index](./04_SESSION_LOG.md)。请按运行协议核验检查点。
+> 当前运行与推进许可见 [Runtime State](./03_RUNTIME_STATE.md)、[Session Log Index](./04_SESSION_LOG.md) 和 [Resource Ledger](./09_RESOURCE_LEDGER.md)。请按运行协议核验检查点。
 > 系统：`triangle_agency`｜规则：《三角机构》中文 v22。
 > 来源：Haunted Table Games，《The Vault: Missions for Triangle Agency》，Kay W.；中文精翻母稿 `the_vault_zh.docx`，源 PDF 41–49，印刷页 76–93。
 > 信息权限：本目录除 `05_PLAYER_NOTES.md` 外均为 GM-only；不得把本目录内容粘贴到玩家侧回复。
@@ -17,14 +17,15 @@
 | [06_POSTMORTEM.md](./06_POSTMORTEM.md) | 结团后复盘；当前未执行 | GM-only |
 | [07_SOURCE_AND_RULE_CROSSCHECK.md](./07_SOURCE_AND_RULE_CROSSCHECK.md) | 原文定位、规则核验、差异、审查和压力测试记录 | GM-only |
 | [08_PLAYER_FACING_GATE.md](./08_PLAYER_FACING_GATE.md) | 每轮玩家可见回复的信息来源、NPC 知识、空间事实与泄露处理闸门 | GM-only |
+| [09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md) | 本模组资源交易流水、余额快照与待核对账；Session Log 引用其 Entry ID | GM-only |
 
 ## 调用顺序
 
 - 备团复核：README → 07 Source Crosscheck → 01 GM Prep → 02 Name Index。
-- 正式开团 Preflight：读取本 Campaign 最新角色卡、战役交接、SYSTEM_BINDING、Zarek 桌裁启用清单，再读取本目录 03 Runtime State、最近 Session Log、01 GM Prep 的相关片段、02 Name Index，以及 08 Player-Facing Gate（必须作为活动 Session 常驻约束装配）；核对当时实际装备和资源。
-- 运行中：按场景/行动需要调用 01；状态变化写入 04 并同步 03；只把角色真实获知内容写入 05。
-- 续接、下一 Session 与待核资源沿 03 和 04 定向读取；入口索引只负责定位。
-- 结团后：结算与 CANON 核验后更新 README、03、05、06，并同步 Campaign 层资料。
+- 正式开团 Preflight：读取本 Campaign 最新角色卡、战役交接、SYSTEM_BINDING、Zarek 桌裁启用清单，再读取本目录 03 Runtime State、最近 Session Log、09 Resource Ledger、01 GM Prep 的相关片段、02 Name Index，以及 08 Player-Facing Gate（必须作为活动 Session 常驻约束装配）；核对当时实际装备和资源。
+- 运行中：按场景/行动需要调用 01；实际事件写入 04；资源变化在同一轮写入 09 并同步 03；Session Log 引用资源 Entry ID，不另建第二份资源流水；只把角色真实获知内容写入 05。
+- 续接、下一 Session 与待核资源沿 03、09 和最近 Session Log 定向读取；入口索引只负责定位。
+- 结团后：先完成 09 的资源对账，再按权威人物卡同步角色资源，最后更新 README、03、05、06，并同步 Campaign 层资料。
 
 ## 版本与迭代
 
