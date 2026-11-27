@@ -299,6 +299,9 @@ class GitHubGraphQLRuntimeStore:
         target = ref.get("target") if isinstance(ref, dict) else None
         history = target.get("history") if isinstance(target, dict) else None
         nodes = history.get("nodes", []) if isinstance(history, dict) else []
+        page_info = history.get("pageInfo", {}) if isinstance(history, dict) else {}
+        if page_info.get("hasNextPage"):
+            raise DisputedBatch("path history exceeds the verification window")
         matches = []
         for node in nodes:
             oid = node.get("oid")
@@ -315,9 +318,6 @@ class GitHubGraphQLRuntimeStore:
             if parent_oid in parent_oids:
                 matches.append(oid)
         if parent_oid is not None:
-            page_info = history.get("pageInfo", {}) if isinstance(history, dict) else {}
-            if page_info.get("hasNextPage"):
-                raise DisputedBatch("path history exceeds the verification window")
             if nodes and len(nodes) != 1:
                 raise DisputedBatch("immutable path was changed more than once")
         if len(matches) > 1:
@@ -538,12 +538,20 @@ class GitHubGraphQLRuntimeStore:
         operation_path = self._operation_path(batch_id)
         op_file = self._read_file(self.operations_branch, operation_path)
         if op_file is None:
-            prior = self._find_path_commit(self.operations_branch, operation_path, None)
+            try:
+                prior = self._find_path_commit(self.operations_branch, operation_path, None)
+            except DisputedBatch:
+                return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PREPARE_HISTORY_INCOMPLETE"}
             if prior is not None:
                 return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PREPARE_MANIFEST_MISSING"}
             return {"status": "NOT_FOUND", "batch_id": batch_id}
-        envelope = json.loads(op_file[0])
-        manifest = _validate_manifest(envelope.get("manifest", {}))
+        try:
+            envelope = json.loads(op_file[0])
+            if not isinstance(envelope, dict):
+                raise InvalidBatch("PREPARE envelope must be an object")
+            manifest = _validate_manifest(envelope.get("manifest", {}))
+        except (json.JSONDecodeError, InvalidBatch, TypeError, AttributeError):
+            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PREPARE_MALFORMED"}
         digest = fingerprint_text(canonical_json(manifest))
         if (envelope.get("batch_id") != batch_id
                 or envelope.get("manifest_fingerprint") != digest
@@ -571,7 +579,9 @@ class GitHubGraphQLRuntimeStore:
             return {"status": "PREPARED", "batch_id": batch_id, "manifest_fingerprint": digest}
         try:
             receipt = json.loads(receipt_file[0])
-        except json.JSONDecodeError:
+            if not isinstance(receipt, dict):
+                raise ValueError("receipt must be an object")
+        except (json.JSONDecodeError, ValueError, TypeError):
             return {"status": "DISPUTED", "batch_id": batch_id, "reason": "RECEIPT_NOT_JSON"}
         if (receipt.get("batch_id") != batch_id
                 or receipt.get("manifest_fingerprint") != digest
@@ -593,7 +603,12 @@ class GitHubGraphQLRuntimeStore:
         checkpoint_file = self._read_file_at(commit_oid, _CHECKPOINT_PATH)
         if checkpoint_file is None:
             return {"status": "DISPUTED", "batch_id": batch_id, "reason": "CHECKPOINT_MISSING"}
-        checkpoint = json.loads(checkpoint_file[0])
+        try:
+            checkpoint = json.loads(checkpoint_file[0])
+            if not isinstance(checkpoint, dict):
+                raise ValueError("checkpoint must be an object")
+        except (json.JSONDecodeError, ValueError, TypeError):
+            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "CHECKPOINT_NOT_JSON"}
         if (checkpoint.get("last_batch_id") != batch_id
                 or checkpoint.get("revision") != manifest["target_revision"]
                 or checkpoint.get("previous_revision") != manifest["base_revision"]
