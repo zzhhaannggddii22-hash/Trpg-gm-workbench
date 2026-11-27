@@ -20,7 +20,7 @@
 - Next-session plan（玩家与凯瑟琳已讨论）：先调查社区活动中心登记记录，再回访已接触居民，观察居民记忆与日常照料是否快速恶化。此为计划，不是已执行行动。
 
 ## 玩家角色
-- 扎雷克：Associate / R&D / Newborn / Absence（权威数值以正式人物卡为准）。
+- 扎雷克：Associate / R&D / Newborn / Absence（身份与静态角色设定见正式人物卡；资源余额只查 09_RESOURCE_LEDGER.md）。
 - 本 Session 未记录 Harm、QA、Burnout、Demerits、Commendations、Time 或装备充能的确认变化。
 - 扎雷克不会开车；本场结束时坐任务车辆副驾驶。
 - 装备最后已知状态：Ripple Gun 满充 1 发；常规公文包由扎雷克携带；本 Session 未记录使用/转移。
