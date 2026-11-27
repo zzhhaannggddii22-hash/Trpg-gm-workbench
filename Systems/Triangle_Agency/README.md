@@ -39,3 +39,12 @@ status: active
 当前 Campaign：[扎雷克战役](../../Campaigns/Zarek/README.md)  
 系统绑定：[SYSTEM_BINDING.md](../../Campaigns/Zarek/SYSTEM_BINDING.md)  
 多系统隔离协议：[SYSTEM_CONTEXT_PROTOCOL.md](../../SYSTEM_CONTEXT_PROTOCOL.md)
+
+
+## 掷骰与结果展示（设计稿，未启用）
+
+- [Rule_Reference/02_DICE_RESOLUTION_PROTOCOL.md](./Rule_Reference/02_DICE_RESOLUTION_PROTOCOL.md)：三角机构专属基础检定协议。
+- [Rule_Reference/03_ROLL_RULE_ACCESS_MAP.md](./Rule_Reference/03_ROLL_RULE_ACCESS_MAP.md)：基础机制调用索引。
+- [Rule_Reference/PLAYWALL_DEFERRED_REGISTER.md](./Rule_Reference/PLAYWALL_DEFERRED_REGISTER.md)：Playwall 专属能力明确暂缓登记。
+- [Dice_UI/](./Dice_UI/README.md)：只读玩家投影组件契约与 Schema v2。
+- 跨系统调用纪律见 [GM_Training/ROLL_RESOLUTION_PROTOCOL.md](../../GM_Training/ROLL_RESOLUTION_PROTOCOL.md)。以上资料均未获正式运行批准。
