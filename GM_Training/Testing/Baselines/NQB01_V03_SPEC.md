@@ -2,10 +2,16 @@
 
 > Status: OPERATOR / REVIEWER ONLY｜不得提供给目标 GM
 > Historical sample: first A-mode packet simulation PARTIAL; not valid Runtime-entry evidence
-> Current Runtime admission: TEST_CAMPAIGN_REGISTERED / PREFLIGHT_NOT_RUN / SESSION_NOT_STARTED
+> Current Runtime admission: PREP_QA_PASS / TEST_CAMPAIGN_REGISTERED / CLEAN_CHAT_PREFLIGHT_PENDING / SESSION_NOT_STARTED
 > Parent fixture: NQB-01 v0.2《雨停之前》
-> Intended evidence: A-mode synthetic run first; B-mode only if independent target-context evidence is specifically required; C-mode remains real-player calibration.
+> Intended evidence for this execution: B-mode clean target Chat, because the operator context has already read the action sequence and reviewer materials; A-mode same-session self-test is not suitable for this specific run. C-mode remains real-player calibration.
 > Canon impact: TEST_ONLY_NON_CANON
+
+## 当前执行模式锁定（2026-11-27）
+
+本次 NQB-01 v0.3 运行采用 **B-mode clean target Chat**。操作者会话已经读取完整行动序列和审核材料，不能再被用作干净目标 GM 上下文。目标 Chat 必须独立完成主 GM Skill、完整 Preflight、系统绑定、规则装配、Context Assembly 与 Prep-to-Runtime；操作者逐轮注入单条玩家行动。目标 GM 不接触 SPEC、ACTION_SEQUENCE、REVIEW_CHECKLIST、EXECUTION_PROMPT 或本 Prep QA 报告。完整原始输出回传后，才由操作者读取审核材料。
+
+这项模式选择是针对本次信息隔离条件的具体路由，不改变 QA 协议中 A-mode 作为日常常规回归默认方式的原则。
 
 ## 1. 版本定位
 
