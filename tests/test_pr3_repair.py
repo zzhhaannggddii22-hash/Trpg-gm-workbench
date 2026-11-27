@@ -189,7 +189,8 @@ class RepositoryChecks(unittest.TestCase):
         print(f"\nRT-16: {len(paths)} Markdown files, {result['local_links']} local links, "
               f"{len(result['missing_paths'])} broken paths, "
               f"{len(result['anchor_candidates'])} candidate anchors", flush=True)
-        self.assertGreaterEqual(result["distinct_external_url_count"], 9)\n        self.assertEqual(result["missing_paths"], [])
+        self.assertGreaterEqual(result["distinct_external_url_count"], 9)
+        self.assertEqual(result["missing_paths"], [])
         self.assertEqual(result["anchor_candidates"], [])
 
     def test_RT17_independent_arithmetic(self):
