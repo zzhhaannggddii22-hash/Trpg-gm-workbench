@@ -18,7 +18,6 @@ system_maturity: candidate
 runtime_readiness: RECONCILIATION_REQUIRED
 runtime_authorization:
   scope: CA01_Zaf_ONLY
-  authorized_from: 2026-11-27
   system_promotion: NOT_GRANTED
   cross_session_resume: HOLD_PENDING_RECONCILIATION
 player_characters:
