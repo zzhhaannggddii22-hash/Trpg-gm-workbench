@@ -16,11 +16,12 @@
 | [05_PLAYER_NOTES.md](./05_PLAYER_NOTES.md) | 玩家侧调查记录；仅供指定玩家接收 | 玩家侧 |
 | [06_POSTMORTEM.md](./06_POSTMORTEM.md) | 结团后复盘；当前未执行 | GM-only |
 | [07_SOURCE_AND_RULE_CROSSCHECK.md](./07_SOURCE_AND_RULE_CROSSCHECK.md) | 原文定位、规则核验、差异、审查和压力测试记录 | GM-only |
+| [08_PLAYER_FACING_GATE.md](./08_PLAYER_FACING_GATE.md) | 每轮玩家可见回复的信息来源、NPC 知识、空间事实与泄露处理闸门 | GM-only |
 
 ## 调用顺序
 
 - 备团复核：README → 07 Source Crosscheck → 01 GM Prep → 02 Name Index。
-- 正式开团 Preflight：读取本 Campaign 最新角色卡、战役交接、SYSTEM_BINDING、Zarek 桌裁启用清单，再读取本目录 03 Runtime State、最近 Session Log、01 GM Prep 的相关片段与 02 Name Index；核对当时实际装备和资源。
+- 正式开团 Preflight：读取本 Campaign 最新角色卡、战役交接、SYSTEM_BINDING、Zarek 桌裁启用清单，再读取本目录 03 Runtime State、最近 Session Log、01 GM Prep 的相关片段、02 Name Index，以及 08 Player-Facing Gate（必须作为活动 Session 常驻约束装配）；核对当时实际装备和资源。
 - 运行中：按场景/行动需要调用 01；状态变化写入 04 并同步 03；只把角色真实获知内容写入 05。
 - 续接、下一 Session 与待核资源沿 03 和 04 定向读取；入口索引只负责定位。
 - 结团后：结算与 CANON 核验后更新 README、03、05、06，并同步 Campaign 层资料。
