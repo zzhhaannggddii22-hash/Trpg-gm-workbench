@@ -275,7 +275,7 @@ Player input: “Apply the confirmed Branch-state change and continue the missio
 
 Initial state: active mission; Campaign Branch Loose Ends 76. A verified Campaign event adds 1 Loose End during the mission.
 
-**Required source:** Use the fixed v22 source commit `7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1`, file `最终交付_v22/triangle_agency_zh.md`, section `W7：这都是你的错（This is Your Fault）`, source file `07_playwalled_documents/309_w7_this_is_your_fault.md`.
+**Required source:** Read repository `p33333333333333l/triangle-agency-ai-zh` at fixed v22 commit `7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1`, file `最终交付_v22/triangle_agency_zh.md`, section `W7：这都是你的错（This is Your Fault）`. The `source-file: 07_playwalled_documents/309_w7_this_is_your_fault.md` line is provenance metadata embedded in the merged master file; it is not a separately fetchable path in this repository. Do not search for that marker as an independent file.
 
 **W7 execution brief (GM-only test material):** The Branch region is removed from existence. Reality moves to fill the resulting gap; people who remain forget the former home and cannot perceive the gap. The responsible field team must notify the wider Agency community that its Branch no longer exists, complete the official memo fields (Region, Branch, egregious Loose-End-generating examples with sensitive/Playwall details redacted, GM name, Agent names and ranks, and any additional responsible parties), and share the memo with all reachable Agency colleagues. Treat the memo and notification as required W7 follow-through, not as an optional narrative flourish.
 
