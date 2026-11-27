@@ -10,10 +10,10 @@
 
 | 文件 | 用途 | 权威层级 |
 |---|---|---|
-| SOURCE/CAS1_OFFICIAL_SOURCE.md | CAS-1 官方 Markdown 全文归档：剧情、NPC 原始描述、地点、遭遇、怪物、陷阱、独特物品、时序与结局 | 模组原文 SOURCE |
-| GM_ONLY_PREP.md | 中文主持准备、时间线、空间拓扑、NPC 知识边界、状态时钟、遭遇处理、规则路由和裁定记录 | GM-only 工作文件；须区分 SOURCE / GM_INFERENCE / GM_PREP_CHOICE |
-| MANIFEST.md | 版本、来源、许可、迁移历史及未解决差异 | 来源元数据 |
-| Systems/Cairn/Rule_Reference/OFFICIAL_CATALOG_INDEX.md | Cairn 2e 通用怪物、Spellbooks、Relics、NPC Tables、20 个 Backgrounds 离线目录 | 系统级官方快照 |
+| [SOURCE/CAS1_OFFICIAL_SOURCE.md](./SOURCE/CAS1_OFFICIAL_SOURCE.md) | CAS-1 官方 Markdown 全文归档：剧情、NPC 原始描述、地点、遭遇、怪物、陷阱、独特物品、时序与结局 | 模组原文 SOURCE |
+| [GM_ONLY_PREP.md](./GM_ONLY_PREP.md) | 中文主持准备、时间线、空间拓扑、NPC 知识边界、状态时钟、遭遇处理、规则路由和裁定记录 | GM-only 工作文件；须区分 SOURCE / GM_INFERENCE / GM_PREP_CHOICE |
+| [MANIFEST.md](./MANIFEST.md) | 版本、来源、许可、迁移历史及未解决差异 | 来源元数据 |
+| [OFFICIAL_CATALOG_INDEX.md](../../../../Systems/Cairn/Rule_Reference/OFFICIAL_CATALOG_INDEX.md) | Cairn 2e 通用怪物、Spellbooks、Relics、NPC Tables、20 个 Backgrounds 离线目录 | 系统级官方快照 |
 
 ## 2. GM-only Prep 快速定位
 
