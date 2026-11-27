@@ -24,4 +24,4 @@
 
 - [QA System Acceptance v1 初始版本校准报告](./QA_SYSTEM_ACCEPTANCE_v1_INITIAL_CALIBRATION_2026-11-27.md)：验收 QA 测试体系本身；结论 ACCEPTED_WITH_LIMITATIONS，B 模式实际执行与 CI 仍待验证。
 - [NQB-01 同会话自动化抽检报告](./NQB01_SAME_SESSION_AUTOMATED_RUN_2026-11-27.md)：8 轮合成自动化样本；基础正确性 PASS，叙事质量 PARTIAL；现定位为低压力功能抽检。
-- [NQB-01 v0.3 首轮同会话运行记录](./NQB01_V03_SAME_SESSION_RUN_2026-11-27.md)：14 轮合成样本；持续叙事负荷初步达到，但单段平均回复仅为 v0.2 的 3.05 倍，未达到 4–6 倍目标；结论 PARTIAL，尚未验收。
+- [NQB-01 v0.3 首轮同会话运行记录](./NQB01_V03_SAME_SESSION_RUN_2026-11-27.md)：14 轮合成样本；总字符数 5.33 倍，但单段平均仅 3.05 倍，且初版执行提示存在审核目标污染；结论 PARTIAL，不作为无偏自然运行结果，尚未验收。
