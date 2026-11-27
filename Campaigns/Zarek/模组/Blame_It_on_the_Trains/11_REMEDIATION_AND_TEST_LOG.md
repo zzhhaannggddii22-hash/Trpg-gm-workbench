@@ -11,8 +11,10 @@
 | Target branch | `fix/blame-trains-independent-remediation-2026-11-27` |
 | Audit target Commit | `99f41bd4dafd202c9d81430e4ca098356d8e3cc7` |
 | Base Commit | `76be1f28babb95e27fcd3afd6d3ac63c2e4219cf` |
-| Artifact Commit (code/readback snapshot before this manifest file) | `613460a72c560e26306b6a724b12d061ee5729ef` |
-| Manifest status | DRAFT → readback pending |
+| Artifact Commit (code/readback snapshot before this manifest file) | `1c7af767caad61481c7172a466d7ae9e2e3008f5` |
+| Manifest creation Commit | `6c7dd170b0235373bbbbf9978cdb5a19043ed4c9` |
+| Post-create README link readback | 11/11 PASS |
+| Manifest status | DELIVERED ON REMEDIATION BRANCH; final manifest update pending |
 | Writer / validator / delivery owner | Casey — SELF-REVIEW; not independent QA |
 | External AI review | NOT USED in this remediation batch |
 | Main branch mutation | NONE; all writes are on the remediation branch |
@@ -57,7 +59,7 @@ Statuses:
 | PREP-001 | P1 | FIXED | Replaced ambiguous READY WITH OPEN ITEMS with separate delivery, validation, runtime and authorization dimensions; active module entry is DELIVERED / PREP RULE VALIDATION BLOCKED / NOT STARTED |
 | PREP-002 | P1 | FIXED | Old source gaps are explicitly SUPERSEDED; Chinese source pagination is consistently recorded as pages 191–208 |
 | RULE-001 | P1 | OPEN | Core rule matrix still contains OPEN/PARTIAL module mappings; no Preflight |
-| RULE-002 | P1 | OPEN | Campaign default Chaos Pool 0 is bound, but module-specific override/close behavior still needs final source mapping |
+| RULE-002 | P1 | FIXED | Full Chinese module source contains no alternate initial pool; Campaign Binding now sets each Module pool to 0 and closes/resets it at full Module close |
 | RULE-003 | P1 | FIXED | Rule hierarchy now distinguishes core rules, explicit module exceptions, errata and Campaign rulings; unresolved conflicts stop dependent rulings |
 | RULE-004 | P2 | FIXED | SYSTEM_BINDING now pins v22 to immutable Commit `7f6d...`, not `main` |
 | RULE-005 | P2 | FIXED | Chinese source reading range and official English collation are explicitly distinguished |
@@ -110,7 +112,7 @@ The original audit report's summary counts conflict with its own defect table. T
 | Single-agent and clue-dependency matrices exist | PASS |
 | Player-Facing Gate is mandatory in Quick Reference | PASS |
 
-**Structural checks: 18/18 PASS** across the two execution batches (some assertions overlap by design).
+**Structural checks: 14/14 module/campaign checks PASS + 7/7 standards/reference checks PASS.**
 
 ### Standards / reference checks
 
@@ -162,7 +164,7 @@ Ten abstract player-action paths were executed against the source/Prep and curre
 |---|---:|---|
 | Static structural checks | 18 | PASS |
 | Standards/reference checks | 7 | PASS |
-| Module README relative links (before this file) | 11 | PASS |
+| Module README relative links (including this file) | 11 | PASS |
 | Synthetic state tests | 7 | PASS |
 | Desk simulations | 10 | 4 PASS / 4 PARTIAL / 2 BLOCKED |
 | Full round-by-round executed GM/player simulation | 0 | NOT RUN |
