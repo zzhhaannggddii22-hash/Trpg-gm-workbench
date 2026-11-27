@@ -34,7 +34,8 @@
 - 当前权威规则来源及优先级；
 - 系统专属 Skill、规则索引、疑点与裁定记录；
 - 适配内容与官方规则的区分方式；
-- 状态：candidate / active / archived。
+- 状态：candidate / active / archived；
+- `runtime_dispatch`：系统专属运行入口声明，至少标明常规规则路由、成长/幕间路由（或 `NOT_APPLICABLE`）及具有独立运行时的机制入口和状态。状态遵循共享运行契约：`NOT_APPLICABLE` / `DISABLED` / `ENABLED` / `UNKNOWN` / `PENDING`；可另列 `readiness` 说明 DRAFT、验证中或验收结果。通用 GM 层只读取当前绑定系统声明的入口，不硬编码任何系统路径。
 
 每个 Campaign 根目录必须有 `SYSTEM_BINDING.md`（或后续统一 Manifest），明确：
 - `system_id`；
@@ -53,7 +54,7 @@
 
 不得按 ID 拼路径、猜大小写、继承旧活动系统或回退默认系统。
 
-Campaign 只能绑定一个主系统。跨系统联动属于明确的特殊项目，必须单独建立桥接协议，不属于默认行为。\n\n系统规则的运行接入遵循 [System Rule Runtime Integration Protocol](./Systems/SYSTEM_RULE_RUNTIME_INTEGRATION_PROTOCOL.md)：它定义跨系统共用的触发式集成契约，不定义具体游戏机制，也不要求逐行动轮询。
+Campaign 只能绑定一个主系统。跨系统联动属于明确的特殊项目，必须单独建立桥接协议，不属于默认行为。\n\n系统规则的运行接入遵循 [System Rule Runtime Integration Protocol](./Systems/SYSTEM_RULE_RUNTIME_INTEGRATION_PROTOCOL.md)：它定义跨系统共用的触发式集成契约，不定义具体游戏机制，也不要求逐行动轮询。`runtime_dispatch` 是系统入口对本系统机制的声明；`ENABLED` 也只表示按声明的触发条件运行，不代表逐轮轮询。缺失或未声明的可选机制不得从其他系统补入。
 
 ## 三、加载顺序（新对话 / 新 Session）
 
