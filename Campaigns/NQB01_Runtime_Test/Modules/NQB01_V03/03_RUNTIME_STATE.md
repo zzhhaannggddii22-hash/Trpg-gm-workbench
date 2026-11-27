@@ -38,7 +38,7 @@ resume:
 persistence:
   batch_id: null
   status: "NOT_STARTED"
-  repository_commit_read: "2981ece2af05aac7ee24c4bbd00055f3d3eed152"
+  repository_commit_read: "b80bd4cbad428b18006e859de7b3ea4b28394d2c"
   published_checkpoint_ref: "Campaigns/NQB01_Runtime_Test/Modules/NQB01_V03/03_RUNTIME_STATE.md@revision-0"
   t0_mode: "UNKNOWN"
   t0_mode_authority_ref: "UNKNOWN"
@@ -62,5 +62,5 @@ persistence:
 ## 来源与未知项
 - 场景来源：`GM_Training/Testing/Baselines/NQB01_V03_GM_PACKET.md`
 - 规则权威：`Systems/Triangle_Agency/README.md` 与中文 v22 原文。
-- 角色机械档案：NOT ESTABLISHED；触发相关规则时阻断依赖该档案的裁定。
+- 角色机械档案：已建立于 Campaign 根目录 `TEST_CHARACTER_SHEET.md`；目标 Preflight 尚未独立核验，依赖角色数据的裁定须在 Preflight 确认后才可进行。
 - 测试 Session 尚未获准启动。
