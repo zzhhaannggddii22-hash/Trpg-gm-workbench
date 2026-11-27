@@ -9,6 +9,7 @@
 - [测试资料中心](GM_Training/Testing/README.md)：夹具、执行提示、验收报告与长期基准的统一入口。
 
 - [项目目录与文件职责](PROJECT_STRUCTURE.md)：仓库结构、权威归属与迁移约定。
+- [战役目录命名规范](CAMPAIGN_NAMING.md)：跨系统统一的战役文件夹编号、系统简称与角色命名规则。
 - [GM 能力架构](GM_Training/00_GM_CAPABILITY_ARCHITECTURE.md)：定义通用 GM 能力如何在真实场景中有机联动，以及整体优秀的验收原则。
 - [GM Training](GM_Training/README.md)：通用主持原则、运行 Skill、人物模拟、叙事呈现、备团流程、训练与评价。
 - [多系统架构与上下文隔离协议](SYSTEM_CONTEXT_PROTOCOL.md)：系统选择、加载、锁定与切换规则。

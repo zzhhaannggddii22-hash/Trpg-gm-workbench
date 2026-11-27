@@ -32,6 +32,7 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 - [Rule_Reference/CORE_RULE_INDEX.md](./Rule_Reference/CORE_RULE_INDEX.md)：核心机制导航与规则摘要。
 - [Rule_Reference/CORE_RULES_RUNTIME.md](./Rule_Reference/CORE_RULES_RUNTIME.md)：按触发条件、输入、步骤、状态变化规范化的核心规则运行手册。
 - [Rule_Reference/CHARACTER_CREATION_AND_BACKGROUNDS.md](./Rule_Reference/CHARACTER_CREATION_AND_BACKGROUNDS.md)：角色创建流程、全部背景索引、Fieldwarden 规则与统一库存 UI 约定。
+- 角色创建随机结果锁定：首次掷骰后立即记录到人物卡，后续读取既有结果；不得无故重复随机，详见 [GM_SKILL.md §10](./GM_SKILL.md)。
 - [RUNTIME_PROTOCOL.md](./RUNTIME_PROTOCOL.md)：桌面阶段循环、规则调用卡、状态提交与官方原文回查策略。
 - [Rule_Reference/WARDEN_GUIDE_INDEX.md](./Rule_Reference/WARDEN_GUIDE_INDEX.md)：监守手册中的 NPC、知识/感知、豁免、地城/荒野探索与成长原则。
 - [GM_SKILL.md](./GM_SKILL.md)：Cairn 专属主持执行草案。

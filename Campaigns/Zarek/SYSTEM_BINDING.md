@@ -1,10 +1,10 @@
 # Campaign System Binding｜Zarek
 
 ```yaml
-campaign_id: zarek
+campaign_id: ta01_zarek
 system_id: triangle_agency
 system_entry: Systems/Triangle_Agency/README.md
-adjudications_entry: Campaigns/Zarek/RULE_ADJUDICATIONS.md
+adjudications_entry: Campaigns/TA01_Zarek/RULE_ADJUDICATIONS.md
 ruleset:
   name: "Triangle Agency / 三角机构"
   edition: "中文 v22"

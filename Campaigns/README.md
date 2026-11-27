@@ -4,9 +4,11 @@
 
 ## 当前战役
 
-- [Zarek / 扎雷克](./Zarek/README.md) — 绑定 `triangle_agency`，规则版本为《三角机构》中文 v22。
+- [Zarek / 扎雷克](./TA01_Zarek/README.md) — `TA01_Zarek`；绑定 `triangle_agency`，规则版本为《三角机构》中文 v22。
 
 ## 约定
+
+- 战役目录命名统一遵循根目录 [CAMPAIGN_NAMING.md](../CAMPAIGN_NAMING.md)。不得按系统随意采用角色名、模组名或世界名作为战役目录名。
 
 - 战役可以跨模组延续，但默认不能跨规则系统。
 - 新建 Campaign 时先建立 SYSTEM_BINDING，再建立人物卡与模组资料。
