@@ -1,0 +1,415 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:trpg-gm-workbench:triangle-agency-dice-ui:player-view:v2",
+  "title": "Triangle Agency Player Reply Projection",
+  "description": "Recipient-authorized player_reply_payload projection. Internal event, ledger and audit identifiers are forbidden. Display contract only. Conflict Resolution is intentionally excluded from this single-pool view schema and uses text fallback.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "view_id",
+    "revision",
+    "recipient_scope",
+    "system_id",
+    "ruleset_version",
+    "mechanic",
+    "status",
+    "roller",
+    "dice"
+  ],
+  "properties": {
+    "system_id": {
+      "const": "triangle_agency"
+    },
+    "ruleset_version": {
+      "const": "中文 v22"
+    },
+    "mechanic": {
+      "type": "string",
+      "enum": [
+        "ASK_THE_AGENCY",
+        "ANOMALY_ABILITY",
+        "OTHER_RULE_DEFINED"
+      ]
+    },
+    "display_title": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "DECLARED",
+        "ROLLED",
+        "AWAITING_PLAYER_CHOICE",
+        "RESOLVING",
+        "RESOLVED",
+        "PENDING"
+      ]
+    },
+    "roller": {
+      "type": "string",
+      "enum": [
+        "GM_ASSISTANT",
+        "PLAYER"
+      ]
+    },
+    "roll_source": {
+      "type": "string",
+      "enum": [
+        "HOST_CSPRNG",
+        "TOOL_CSPRNG",
+        "PLAYER_REPORTED",
+        "MODEL_GENERATED",
+        "OTHER_VERIFIED"
+      ]
+    },
+    "quality": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "dice": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "slot",
+          "die",
+          "raw_value",
+          "modifications",
+          "removed"
+        ],
+        "properties": {
+          "slot": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "die": {
+            "type": "string",
+            "pattern": "^d[0-9]+$"
+          },
+          "raw_value": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4
+          },
+          "modifications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "sequence",
+                "kind",
+                "reason_label",
+                "before",
+                "after"
+              ],
+              "properties": {
+                "sequence": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "QA_ADJUSTMENT",
+                    "BURNOUT_EFFECT",
+                    "RULE_ADJUSTMENT",
+                    "REROLL",
+                    "REMOVAL",
+                    "OTHER"
+                  ]
+                },
+                "reason_label": {
+                  "type": "string"
+                },
+                "before": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 4
+                },
+                "after": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1,
+                  "maximum": 4
+                }
+              }
+            }
+          },
+          "final_value": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "maximum": 4
+          },
+          "removed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "natural_triggers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "status"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "TRIGGERED",
+              "NOT_TRIGGERED",
+              "PENDING"
+            ]
+          }
+        }
+      }
+    },
+    "outcome": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "CONFIRMED",
+            "PENDING"
+          ]
+        },
+        "headline": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "status"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "before": {
+            "type": [
+              "integer",
+              "number",
+              "null"
+            ]
+          },
+          "delta": {
+            "type": [
+              "integer",
+              "number",
+              "null"
+            ]
+          },
+          "after": {
+            "type": [
+              "integer",
+              "number",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "VERIFIED",
+              "PENDING",
+              "NOT_APPLICABLE"
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "PENDING"
+                }
+              },
+              "required": [
+                "status"
+              ]
+            },
+            "then": {
+              "properties": {
+                "after": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "pending_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 0
+    },
+    "view_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Opaque recipient-scoped view identifier; must not encode internal identifiers."
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "recipient_scope": {
+      "const": "PLAYER"
+    },
+    "player_choices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "choice_id",
+          "label"
+        ],
+        "properties": {
+          "choice_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "AWAITING_PLAYER_CHOICE"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "player_choices"
+        ],
+        "properties": {
+          "player_choices": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "RESOLVED"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "outcome"
+        ],
+        "properties": {
+          "outcome": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "const": "CONFIRMED"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "PENDING"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "pending_items"
+        ],
+        "properties": {
+          "pending_items": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "DECLARED"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "outcome": {
+            "type": "null"
+          },
+          "dice": {
+            "maxItems": 0
+          }
+        }
+      }
+    }
+  ]
+}
