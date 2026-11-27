@@ -1,6 +1,6 @@
 # Cairn 2e Preflight（候选版）
 
-> 仅适用于 `system_id: cairn`。当前系统状态 candidate；本文件用于研究与未来测试准备，不代表已达到 active。
+> 仅适用于 `system_id: cairn`。当前系统级成熟度为 candidate；本文件用于核验实际 Campaign 的运行条件，不代表已达到 active。candidate 状态不自动等于 Campaign 尚未开始；是否进行受控实战以 Campaign 的明确授权和 SYSTEM_BINDING 为准，不能借此宣称系统已通过 active 验收。
 
 ## A. 系统绑定
 
@@ -56,4 +56,4 @@
 - [ ] 规则缺口标为 UNKNOWN，不借用其他系统机制填补。
 - [ ] 正例、反例、边界案例和跨系统污染测试已完成。
 - [ ] 若是短团测试，明确 NON-CANON / TEST ONLY，禁止把测试角色状态继承到其他战役。
-- [ ] Preflight 完成后才可进入正式游戏；candidate 状态下仍不得宣称系统已正式激活。
+- [ ] Preflight 完成并获得 Campaign 明确授权后，方可在该 Campaign 声明范围内开始/继续运行；candidate 状态下仍不得宣称系统已正式激活。
