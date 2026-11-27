@@ -8,16 +8,18 @@
 |---|---|
 | Delivery ID | `BLAME-TRAIN-REMEDIATION-2026-11-27-R1` |
 | Target repository | `zzhhaannggddii22-hash/Trpg-gm-workbench` |
-| Target branch | `fix/blame-trains-independent-remediation-2026-11-27` |
+| Target branch | `fix/blame-trains-remediation-main-2026-11-27` |
 | Audit target Commit | `99f41bd4dafd202c9d81430e4ca098356d8e3cc7` |
-| Base Commit | `76be1f28babb95e27fcd3afd6d3ac63c2e4219cf` |
-| Artifact Commit (complete remediation batch before final manifest update) | `0fbd95e00e704a5321256395b420c9d1012e2a1f` |
-| Manifest creation Commit | `6c7dd170b0235373bbbbf9978cdb5a19043ed4c9` |
+| Base Commit | `ec54bc100dceaf1da370edd811da22dc48f07a42` |
+| Artifact Commit (complete remediation batch before final manifest update) | `8222391598750ff8fca4ad67091e36ceb47c42b6` |
+| Manifest creation Commit (source branch) | `6c7dd170b0235373bbbbf9978cdb5a19043ed4c9` |
+| Manifest import Commit (main-based branch) | `3cc6891ccd61439f0438f8f426afd6da6442a3cf` |
 | Post-create README link readback | 11/11 PASS |
 | Manifest status | DELIVERED ON REMEDIATION BRANCH; post-create README readback 11/11 PASS |
 | Writer / validator / delivery owner | Casey — SELF-REVIEW; not independent QA |
 | External AI review | NOT USED in this remediation batch |
 | Main branch mutation | NONE; all writes are on the remediation branch |
+| Main baseline preservation | main Commit `ec54bc1` (Playwall-only update) is included as branch base; no Playwall files changed |
 
 ### Change set
 
