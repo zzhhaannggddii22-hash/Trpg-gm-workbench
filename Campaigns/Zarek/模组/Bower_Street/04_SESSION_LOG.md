@@ -4,9 +4,11 @@
 - Module Lifecycle：ACTIVE / IN PROGRESS；尚未结团。
 - 下一场使用 Sessions/SESSION_02.md，不覆盖 SESSION_01。
 - 当前唯一有效运行快照：[03_RUNTIME_STATE.md](./03_RUNTIME_STATE.md)。
+- 本模组资源交易流水与待核事项：[09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md)。
 - 玩家侧已知信息：[05_PLAYER_NOTES.md](./05_PLAYER_NOTES.md)。
 
-每份 Session Log 只记录实际发生的行动、GM 呈现、线索来源、判定与资源变化、场景/位置/NPC 状态、桌外失误及回滚、结束快照和未完成事项。
+每份 Session Log 记录实际发生的行动、GM 呈现、线索来源、判定、资源变化发生的事件与玩家可见说明、场景/位置/NPC 状态、桌外失误及回滚、结束快照和未完成事项。
+资源交易的字段流水、前后值、应用状态与对账以 09_RESOURCE_LEDGER.md 为唯一权威；Session Log 引用对应 Entry ID，不维护第二套资源流水。
 不得将备团预设内容、未执行计划或 GM-only 资料写成角色已知事实。
 
 SESSION 01 结束时：
