@@ -4,7 +4,7 @@
 
 This is a generic persistence backend. It does not adjudicate rules, roll dice, choose actions, simulate NPCs, or construct player-facing narrative. Triangle Agency and Cairn must supply already-resolved event/state payloads through their own system bindings.
 
-## Why GraphQL, not a REST ref update
+See [INTEGRATION_CONTRACT.md](./INTEGRATION_CONTRACT.md) for the architecture boundary, domain-manifest mapping, storage-vs-domain statuses, coordinator responsibilities and adoption gates.\n\n## Why GraphQL, not a REST ref update
 
 The REST Git Database flow can create blobs, trees and commits, then move a branch ref. The ordinary REST "Update a reference" endpoint exposes a target SHA and a force flag, but no expected-old-SHA parameter. A client-side read-then-write check is not an atomic compare-and-swap.
 
@@ -50,7 +50,7 @@ publish(batch_id, expected_head_oid, target_files) verifies the PREPARE manifest
 
 expectedHeadOid is checked by GitHub as part of the commit mutation. If another writer advanced the branch after the caller's read, the commit is rejected rather than rebased or silently applied to a different base.
 
-The adapter performs historical readback: it locates the commit that introduced the immutable receipt, confirms its parent is the prepared base commit, and reads each target/checkpoint/receipt from that exact commit. A later batch may advance the branch without invalidating proof of the earlier publication.
+The adapter performs historical readback: it locates the commit that introduced the immutable receipt, confirms its parent is the prepared base commit, and reads each target/store-checkpoint/receipt from that exact commit. A later batch may advance the branch without invalidating proof of the earlier publication. The returned `STORE_COMMITTED` status is storage evidence only; it is not the GM Runtime's domain-level `PUBLISHED` status.
 
 ### Recovery
 
