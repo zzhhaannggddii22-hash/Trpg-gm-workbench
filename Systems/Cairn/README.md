@@ -34,7 +34,8 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 - [Rule_Reference/CHARACTER_CREATION_AND_BACKGROUNDS.md](./Rule_Reference/CHARACTER_CREATION_AND_BACKGROUNDS.md)：角色创建流程、全部背景索引、Fieldwarden 规则与统一库存 UI 约定。
 - 角色创建随机结果锁定：首次掷骰后立即记录到人物卡，后续读取既有结果；不得无故重复随机，详见 [GM_SKILL.md §10](./GM_SKILL.md)。
 - [RUNTIME_PROTOCOL.md](./RUNTIME_PROTOCOL.md)：桌面阶段循环、规则调用卡、状态提交与官方原文回查策略。
-- [Rule_Reference/WARDEN_GUIDE_INDEX.md](./Rule_Reference/WARDEN_GUIDE_INDEX.md)：监守手册中的 NPC、知识/感知、豁免、地城/荒野探索与成长原则。
+- [Rule_Reference/WARDEN_GUIDE_INDEX.md](./Rule_Reference/WARDEN_GUIDE_INDEX.md)：Warden's Guide 23 个章节的用途分类、主持原则与按需查表边界。
+- [Rule_Reference/CHAPTER_VERIFICATION_2026-11-27.md](./Rule_Reference/CHAPTER_VERIFICATION_2026-11-27.md)：官方 Player's Guide 6 章、Warden's Guide 23 章的章节核验记录，以及本轮规则修订与剩余条目级回查范围。
 - [GM_SKILL.md](./GM_SKILL.md)：Cairn 专属主持执行草案。
 - [PREFLIGHT.md](./PREFLIGHT.md)：Cairn 专属开团前核验。
 - [Testing/CANDIDATE_VALIDATION_MANIFEST.md](./Testing/CANDIDATE_VALIDATION_MANIFEST.md)：Candidate 受控验证的隔离清单与运行模板。
@@ -53,7 +54,7 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 
 ## 运行边界
 
-- 当前状态为 candidate。研究、规则学习和隔离测试可以进行；在完成本目录的规则核验、Preflight、正反例与跨系统隔离测试前，不得将其标记为 active，也不得伪装成已完成正式接入。
+- 当前状态为 candidate。官方章节来源核验已完成，但真实跑团中的 Runtime、状态持久化、规则调用、NPC 连续性和宿主环境验证尚未完成；在这些事项通过实际跑团验证并完成复盘前，不得标记为 active。
 - Campaign 必须单独建立 SYSTEM_BINDING.md，绑定 system_id: cairn 和精确规则版本。当前没有已批准的 Cairn Campaign。
 - Cairn 的属性、豁免、HP、STR/DEX/WIL 损伤、护甲、疲劳、库存格、背景、法术书、成长和探索程序均属于 Cairn 专属规则。
 - 不把 Cairn 的豁免或伤害流程移入 Triangle Agency；也不把 Triangle Agency 的 Chaos、QA、Burnout、Harm 或 Playwall 概念映射进 Cairn。
@@ -66,9 +67,9 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 
 ## 激活门槛
 
-1. 官方 2e 玩家手册与监守手册关键规则逐项核验，中文 SRD 逐项交叉核对。
-2. 完成规则索引、系统专属 GM Skill、Preflight 和规则疑点记录。
-3. 完成至少一轮规则正例、反例与边界案例测试。
-4. 完成 Triangle Agency / Cairn 跨系统污染测试。
-5. 建立独立 Cairn Campaign 与模组资料，完成真实 Preflight。
-6. 通过短团实测并复盘后，才评估是否从 candidate 升级为 active。
+1. 官方 Player's Guide / Warden's Guide 章节核验与规则来源分类（已完成；见 CHAPTER_VERIFICATION_2026-11-27.md）。
+2. 规则索引、系统专属 GM Skill、Preflight 与规则疑点记录保持一致，并在发现新规则缺口时更新。
+3. 在实际跑团中验证规则调用、正反例/边界行为、资源与时间推进；不另建模拟测试替代真实运行。
+4. 在实际跑团与状态恢复流程中验证 Triangle Agency / Cairn 连续性隔离。
+5. 独立 Cairn Campaign、人物卡、模组归档与 Preflight 保持完整。
+6. 在真实宿主环境完成实际跑团、Runtime State / Session Log / Handoff 验证并复盘后，才评估是否从 candidate 升级为 active。
