@@ -30,6 +30,7 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 
 - [Rule_Reference/README.md](./Rule_Reference/README.md)：规则来源优先级、检索与裁定边界。
 - [Rule_Reference/CORE_RULE_INDEX.md](./Rule_Reference/CORE_RULE_INDEX.md)：核心机制导航与已核对规则摘要。
+- [Rule_Reference/WARDEN_GUIDE_INDEX.md](./Rule_Reference/WARDEN_GUIDE_INDEX.md)：监守手册中的 NPC、知识/感知、豁免、地城/荒野探索与成长原则。
 - [GM_SKILL.md](./GM_SKILL.md)：Cairn 专属主持执行草案。
 - [PREFLIGHT.md](./PREFLIGHT.md)：Cairn 专属开团前核验。
 - [Research/INITIAL_RESEARCH.md](./Research/INITIAL_RESEARCH.md)：设计研究、单人测试风险与短团候选。
