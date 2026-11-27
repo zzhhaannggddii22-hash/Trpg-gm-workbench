@@ -9,6 +9,7 @@ import json
 import os
 import urllib.error
 import urllib.request
+from urllib.parse import quote
 
 from runtime_store.github_graphql_store import (
     GitHubGraphQLRuntimeStore,
@@ -128,7 +129,7 @@ def main():
     finally:
         for name in reversed(created):
             try:
-                rest("DELETE", api + "/git/refs/heads/" + name, token)
+                rest("DELETE", api + "/git/refs/heads/" + quote(name, safe=""), token)
             except Exception as exc:  # cleanup must be visible, never silently claimed
                 print(f"WARNING: cleanup failed for {name}: {exc}")
 
