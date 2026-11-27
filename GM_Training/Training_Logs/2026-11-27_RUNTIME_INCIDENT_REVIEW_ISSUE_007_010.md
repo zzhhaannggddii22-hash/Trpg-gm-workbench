@@ -118,23 +118,25 @@ PR #44 已在会话证据隔离协议 §4.1 增加历史来源读取范围与诚
 
 ## 8. 测试与证据状态
 
-- 本轮没有创建新的测试夹具。
-- 已存在的 ISSUE-007–010 定向回归夹具曾完成单会话自测，并有 RUN_REPORT.md；其结果是 007 PASS、008 PASS WITH LIMITS、009 PASS、010 PASS。
-- 该报告锁定的被测基线为旧提交 2b5395fa...，不是本次更新后的 main；它是合成单会话自测，不是独立盲测、真实多轮平台验证或真实 Session 证据。
-- 该 QA 分支位于历史 Acceptance_Test_Fixtures 路径，尚未作为当前 main 的最新行为验收材料合并；本次不为迁移目录而重复创建夹具。
+- PR #48 的改动范围没有创建新的测试夹具；本次资源记账约束沿用既有 Runtime 与模组资源规则。
+- ISSUE-007–010 定向回归夹具 v1 已通过 PR #47 合并进入 main，路径为 GM_Training/Acceptance_Test_Fixtures/ISSUE_007_010_TARGETED_REGRESSION_v1/。
+- 该夹具报告锁定的被测基线为 main@2b5395fa83d39b96e510604332aee599ae9c860d；报告结果为 007 PASS、008 PASS WITH LIMITS、009 PASS、010 PASS。
+- 该基线早于 PR #44 与 PR #48。夹具虽然已进入 main，但报告没有在当前 main（PR #48 合并后的版本）上重新执行；因此它仍是旧基线的合成单会话自测，不是当前版本的独立盲测、真实多轮平台验证或真实 Session 证据。
 - 任何上述 Issue 均不得仅凭单次合成自测关闭。
 
 ## 9. 本轮工程变更与未做事项
 
 已落地：
 - PR #44 已合并：Module 结团闭环、资源流水与联动字段、公开选本边界、历史会话读取诚实报告、自动化自测夹具创建门槛、Zarek Q05 与成长选择记录、现有链接修复。
-- 本记录所在分支进一步明确：资源变化必须同轮完成结算与余额更新。
+- PR #47 已合并：ISSUE-007–010 定向回归夹具 v1 与单会话自测报告。
+- PR #48 已合并：Runtime §4.1 同轮完成资源流水、余额更新和玩家可见说明；新增本运行缺陷复核日志索引。
+- 后续修订新增 Bower Street 独立 Resource Ledger，并明确 Session Log、Resource Ledger、Runtime State 与 Campaign 人物卡的权威分工。
 - 沿用现有 Runtime §12.7、§12.5、§14.19、§14.20.13 和 Bower Street 玩家信息闸门，不重复建立平行规范。
 
 未做：
 - 未修改 ISSUE-001～006；按用户要求暂缓。
 - 未关闭 ISSUE-007～010；真实运行证据尚不足。
-- 未创建新夹具。
+- 本次没有创建第二套或重复的 ISSUE-007–010 测试夹具。
 - 未把 SESSION 02 事实、影像女孩后续互动或能力购买补写进当前 Bower Street Runtime / Session Log。
 - 未在缺少权威资源流水时推算 Chaos Pool 或当前可使用 Time 的绝对余额。
 - 未把训练、自测或文档更新宣称为整体 GM 能力已经稳定提升。
