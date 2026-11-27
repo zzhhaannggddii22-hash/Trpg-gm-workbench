@@ -32,13 +32,15 @@ prepare(manifest) writes one immutable file:
 
     .runtime/operations/<batch_id>.json
 
-The manifest binds:
+The storage envelope binds:
 - stable batch ID;
-- base and target domain revision;
+- base and target domain revision labels;
 - exact base Git commit OID;
 - SHA-256 fingerprint for every target file.
 
-The file is independently read back before the method reports PREPARED. If the response is lost, a retry first reads the existing path and accepts it only when the complete envelope matches. Reusing a batch ID with different content is rejected.
+The future Runtime coordinator must include the complete §14.14 domain reconciliation manifest as an opaque, fingerprinted member of this PREPARE payload. The minimal storage envelope alone is not a domain application manifest.
+
+The file is independently read back before the method reports STORE_PREPARED. If the response is lost, a retry first reads the existing path and accepts it only when the complete envelope matches. Reusing a batch ID with different content is rejected.
 
 ### PUBLISH
 
@@ -55,7 +57,7 @@ The adapter performs historical readback: it locates the commit that introduced 
 ### Recovery
 
 reconcile(batch_id) returns:
-- NOT_FOUND: no PREPARE exists;
+- STORE_NOT_FOUND: no PREPARE exists;
 - STORE_PREPARED: PREPARE exists but no publication receipt is visible;
 - STORE_COMMITTED: receipt, parent commit, store checkpoint and every target byte match. This is storage evidence, not domain-level PUBLISHED status;
 - STORE_DISPUTED: identity, history, store checkpoint or target evidence conflicts;
