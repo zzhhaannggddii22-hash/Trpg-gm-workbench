@@ -18,7 +18,7 @@
 | Dice UI Schema 测试向量 | 11/11 PASS | 使用 Draft 2020-12 本地镜像验证正例/反例；实际 Schema 文件另做 JSON 解析与结构检查 |
 | 跨文件静态契约检查 | 25/25 PASS | SYSTEM_CONTEXT、Binding、Runtime、Resource Ledger、Q04、Playwall、UI 投影与索引 |
 
-以上是设计/参考模型测试，不代表已部署的 Runtime 或 UI 通过生产验收。
+31 项确定性参考模型断言使用本会话内的临时测试 harness 执行；该 harness 不是生产引擎，也未作为可执行代码提交到仓库。可复现的版本化场景证据是下方 11-action fixture。Schema 测试向量使用从实际 Schema 结构构造的 Draft 2020-12 本地镜像；实际 Schema 文件另行通过 JSON 解析与字段/边界静态检查。以上是设计/参考模型测试，不代表已部署的 Runtime 或 UI 通过生产验收。
 
 ## 2. 关键场景结论
 
