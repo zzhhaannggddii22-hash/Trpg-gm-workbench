@@ -4,7 +4,9 @@
 
 This is a generic persistence backend. It does not adjudicate rules, roll dice, choose actions, simulate NPCs, or construct player-facing narrative. Triangle Agency and Cairn must supply already-resolved event/state payloads through their own system bindings.
 
-See [INTEGRATION_CONTRACT.md](./INTEGRATION_CONTRACT.md) for the architecture boundary, domain-manifest mapping, storage-vs-domain statuses, coordinator responsibilities and adoption gates.\n\n## Why GraphQL, not a REST ref update
+See [INTEGRATION_CONTRACT.md](./INTEGRATION_CONTRACT.md) for the architecture boundary, domain-manifest mapping, storage-vs-domain statuses, coordinator responsibilities and adoption gates.
+
+## Why GraphQL, not a REST ref update
 
 The REST Git Database flow can create blobs, trees and commits, then move a branch ref. The ordinary REST "Update a reference" endpoint exposes a target SHA and a force flag, but no expected-old-SHA parameter. A client-side read-then-write check is not an atomic compare-and-swap.
 
