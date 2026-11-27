@@ -96,7 +96,7 @@
 
 ### CR-HP｜HP 恢复 — VERIFIED_CORE
 
-- 短暂休息并饮水可恢复失去的 HP；此举可能使队伍暴露于危险。
+- PC 在安全、舒适的环境中会恢复 HP；短暂休息并饮水也可恢复失去的 HP，但此举可能使队伍暴露于危险。
 - 地城中可以花费一个 Turn 休息恢复全部 HP，但需要光源和安全地点；存在或迫近的危险时无法安全休息。
 - 地城休息不恢复 Fatigue；地城内不能安全进行 Make Camp。
 - HP 是 Hit Protection，不等同身体健康，也不能替代 STR/DEX/WIL。
@@ -360,13 +360,13 @@
 - 路径：Road 无额外 Watch/迷路风险；Trail +1 Watch、2-in-6 迷路；Wilderness +2 Watches、3-in-6 迷路。
 - 距离：Short +1 Watch；Medium +2 Watches；Long +3 Watches。
 - 地形：Easy +0；Tough +1 Watch；Perilous +2 Watches。
-- 天气：每天按季节掷天气表；连续两次出现 Extreme 则变为 Catastrophic。Unpleasant：增加 Fatigue 或旅程 +1 Watch；Inclement：增加 Fatigue 或 +1 Watch，且地形难度提高一级；Extreme：增加 Fatigue 并 +1 Watch，且地形难度提高一级；Catastrophic 通常无法旅行。
+- 天气：每天按季节掷天气表；连续两次出现 Extreme 则变为 Catastrophic。Nice/Fair 有利于旅行；Unpleasant：增加 Fatigue 或旅程 +1 Watch；Inclement：增加 Fatigue 或 +1 Watch，且地形难度提高一级；Extreme：增加 Fatigue 并 +1 Watch，且地形难度提高一级；Catastrophic 通常无法旅行。
 
 **行动与事件**：每个 Watch 中，队伍成员分别选择一项 Wilderness Action；Travel 通常由全队共同执行，视为一次队伍行动。Warden 叙述结果后掷 Wilderness Events，再处理玩家响应和状态变化。常用行动包括 Travel、Explore、Supply、Make Camp。
 
 - Travel：揭示沿途可见地点/地貌；队伍掷 1d6 判断迷路，风险由路径难度、地图、技能和向导调整。迷路后可能要额外花费一个 Wilderness Action 找回路线，否则抵达路线上的下一 Point。
 - Explore：一名或多名角色搜索大片区域、侦察或谨慎行动，发现地点或地貌；即使区域已探索，离开仍需 Travel。
-- Supply：一名或多名角色狩猎、捕鱼、采集，基础获得 1d4 Rations（每份 3 次使用）；额外参与者可提高骰阶，最高 d12；经验/装备也可能提高收获。
+- Supply：一名或多名角色狩猎、捕鱼、采集，基础获得 1d4 Rations（每份 3 次使用）；每增加参与者，收获骰可逐级提高（如 d4→d6），最高 d12；相关经验或装备也可能提高收获。也可能通过民居/村庄花费金币与一个完整 Watch 补给。
 - Make Camp：每名角色及其坐骑各消耗一份 Ration；安排守夜轮值。小队人数少时，可能需要冒无人守夜风险或跨多日轮换睡眠。成功休息者移除全部 Fatigue。
 
 **夜晚与睡眠**：夜间旅行应在 Wilderness Events 表上掷两次。每天最后一个 Watch 通常用于 Make Camp。若跳过 Make Camp，每名角色增加一份 Fatigue 并陷入 Deprived；睡眠不足时旅行，地形难度提高一级。超出轻微干扰的睡眠中断可能取消睡眠收益。
