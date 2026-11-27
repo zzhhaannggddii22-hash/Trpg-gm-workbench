@@ -85,9 +85,9 @@ The 2026-11-27 independent report is treated as a defect lead list, not as autho
 | SRC-01 | Confirm Chinese Vault source and chapter pagination | Source inspection | DONE | Library source and chapter location confirmed |
 | SRC-02 | Compare English official module source page by page | Source inspection | NOT RUN | English original not yet independently read |
 | RULE-01 | Verify v22 QA / Burnout and Q04 boundary | Rule inspection | PARTIAL | Campaign ruling read; full rule source matrix incomplete |
-| RULE-02 | Verify Chaos initial/generation/close rules | Rule inspection | NOT RUN | OPEN |
-| RULE-03 | Verify Harm / Domain / Stability resolution | Rule inspection | NOT RUN | OPEN |
-| RULE-04 | Verify ability-specific triggers and outcomes | Rule inspection | NOT RUN | OPEN |
+| RULE-02 | Verify Chaos initial/generation/close rules | Rule inspection | PARTIAL | Generation and Domain rules verified; initial default 0 bound; module override/close treatment still open |
+| RULE-03 | Verify Harm / Domain / Stability resolution | Rule inspection | PARTIAL | Core Harm, insurance and Threat/Stability rules read; module-specific action mapping and current Harm state remain open |
+| RULE-04 | Verify ability-specific triggers and outcomes | Rule inspection | PARTIAL | Module ability text read; general ability-resolution rules and each in-play interaction still need full mapping |
 | SOLO-01 | Prove core path action/resource feasibility for one PC | Desk simulation | PARTIAL | Key path principles checked; action/resource costs and rescue sequencing remain OPEN |
 | SOLO-02 | Remove one information source / NPC and test alternatives | Desk simulation | PARTIAL | Alternative source categories exist; source-dependency graph is not yet proven end-to-end |
 | RT-01 | Cold-start from repository only | Recovery simulation | PARTIAL | Mandatory load order and authority map restored; full startup remains blocked by Prep Rule Validation |
