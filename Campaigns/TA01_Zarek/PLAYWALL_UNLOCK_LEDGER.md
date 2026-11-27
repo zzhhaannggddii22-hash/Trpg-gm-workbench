@@ -60,7 +60,7 @@ The exact code sequence is **A3 → D4 → G3 → J3 → N3 → Q3 → T3 → W8
 | 1 | Mission MVP | Competency | 1 | NONE | No Playwall document |
 | 2 | Time spend | Competency | 2 | NONE | No Playwall document |
 
-Evidence: `Campaigns/Zarek/模组/死寂/04_REWARDS_AND_SUPERLATIVES.md` records the MVP free Competency mark and one Time Competency mark. The recorded mark count and order are consistent with positions 1 and 2. Both boxes are blank on the v22 track.
+Evidence: `Campaigns/TA01_Zarek/模组/死寂/04_REWARDS_AND_SUPERLATIVES.md` records the MVP free Competency mark and one Time Competency mark. The recorded mark count and order are consistent with positions 1 and 2. Both boxes are blank on the v22 track.
 
 **Audit result:** no Playwall unlock was missed in the recorded Dead Quiet growth.
 
@@ -71,7 +71,7 @@ Evidence: `Campaigns/Zarek/模组/死寂/04_REWARDS_AND_SUPERLATIVES.md` records
 | 3 | Mission MVP | Competency | 3 | A3 | A3 unlocked |
 | 4 | Time spend | Competency | 4 | NONE | No additional Playwall document |
 
-Evidence: `Campaigns/Zarek/模组/冰淇淋车_Ice_Cream_Truck/03_RUNTIME_STATE.md` and the formal character card record the third Competency mark as the Associate promotion / A3 unlock, followed by the fourth Time Competency mark. The same Runtime record documents the A3 Vault Request and the designed/ purchased requisition.
+Evidence: `Campaigns/TA01_Zarek/模组/冰淇淋车_Ice_Cream_Truck/03_RUNTIME_STATE.md` and the formal character card record the third Competency mark as the Associate promotion / A3 unlock, followed by the fourth Time Competency mark. The same Runtime record documents the A3 Vault Request and the designed/ purchased requisition.
 
 **Audit result:** A3 was correctly unlocked at the third Competency mark, which was the Ice Cream Truck Mission MVP free mark—not the subsequent Time mark. The A3 promotion and Vault Request effects were substantively applied. The historical files do not contain a separate timestamped “A3 privately read” receipt or a verbatim player disclosure record. Under the single-player execution mode now adopted, neither is a required progression record. The A3 unlock and downstream A3 use are supported; no missed unlock or omitted A3 benefit is identified.
 
