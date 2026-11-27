@@ -8,6 +8,7 @@
 
 - Playwall 的成长标记、代码解锁、授权和精确文档读取，继续以当前 GM Runtime 与 Campaign 的 Playwall 协议为准。
 - Zarek 单人团当前采用的规则是：某代码解锁后，GM 读取该代码对应的完整文档并处理其适用效果；不需要额外的玩家私读确认或分享回执。
+- 该单人默认的验收依据为 [Playwall Intermission Integrity Regression v1](../../../GM_Training/Testing/Fixtures/PLAYWALL_INTERMISSION_INTEGRITY_REGRESSION_v1.md)；Campaign 的解锁状态与记录以 `Campaigns/Zarek/PLAYWALL_UNLOCK_LEDGER.md` 为准。
 - 若代码尚未解锁或授权状态未知，沿用 Campaign Playwall Ledger 的 `BLOCKED_OR_UNKNOWN`；不得读取文档。只有代码已解锁、精确文档已读取且某项骰子专属效果尚未整合时，才对该骰子子结算使用 `UNSUPPORTED_PENDING_RULE_REVIEW`。
 - 必须核验确切代码与文档版本；不得读取相邻或未解锁文档；玩家可见投影仍须保护真正的 GM-only 秘密和未到披露时点的内容。
 - 本登记**不阻断现有 Playwall 文档读取和非骰子效果处理**，也不把已解锁能力宣告为全局不可用。
