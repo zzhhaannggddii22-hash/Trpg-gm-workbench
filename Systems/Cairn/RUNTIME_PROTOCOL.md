@@ -90,15 +90,16 @@ rule_call:
 ### 4.3 荒野循环
 
 调用 `EX-WILDERNESS`：
-- 当前 Watch（Morning / Afternoon / Night）；
-- 当前 Point 与目的地；
-- 路线、路径距离、地形、天气、夜间、队伍状态；
-- 每名角色本 Watch 可执行的 Wilderness Action；
-- Travel / Explore / Supply / Make Camp 的资源和时间变化；
-- Wilderness Event；
-- Watch 结束后的口粮、睡眠、守夜、Deprived 与 Fatigue 检查。
+1. 读取当前 Watch（Morning / Afternoon / Night）、Point、目的地、队伍分组和各角色本 Watch 已使用的行动。
+2. 核算旅行 Watch 成本：路径距离 + 路径类型 + 地形 + 天气 + 队伍状态；特别广阔地形可额外 +0 至 +2 Watches。每项修正须记录来源，不得重复叠加同一因素。
+3. 每名角色本 Watch 选择一项 Wilderness Action。Travel 通常由整个队伍共同执行，作为一次队伍行动；Explore / Supply 等可由一名或多名角色参与。
+4. Travel 时掷 1d6 判断迷路，并应用路径基础风险及地图、技能、向导等修正；若迷路，判断是否需要额外 Wilderness Action 找回路线。
+5. 处理行动结果，按程序掷 Wilderness Events；夜间旅行必须掷两次。
+6. 记录 Watch 消耗、地点/路线进度、口粮、光源、Fatigue、Deprived 和其他资源变化。
+7. 每日最后一个 Watch 通常安排 Make Camp：每名角色及坐骑消耗 1 Ration，安排守夜；能够休息者清除全部 Fatigue。
+8. 若跳过 Make Camp，每名角色增加 1 Fatigue 并进入 Deprived；睡眠不足旅行时地形难度提高一级。若 Deprived 超过一天，再按 CR-FAT 逐日增加 Fatigue。
 
-Wilderness 的距离/地形/天气数值若未在当前 Campaign Quick Reference 中核准，必须查官方表格；不得凭印象填值。
+路径、地形、天气与迷路修正若未在当前 Campaign Quick Reference 中核准，必须查官方表格；不得凭印象填值。单人队伍的守夜安排必须显式裁定，不得默认凭空存在守夜人。
 
 ### 4.4 战斗循环
 
@@ -141,7 +142,10 @@ Wilderness 的距离/地形/天气数值若未在当前 Campaign Quick Reference
 
 提交前执行：
 - 库存格是否超过 10；Fatigue 是否占格；背包容量是否正确；
-- HP 是否恰好 0 或低于 0，是否调用正确分支；
+- HP 是否恰好 0 或低于 0，是否调用正确分支；Scars 只因攻击伤害使 PC HP 恰好降至 0；库存满格、Panic 等非攻击效果造成 HP=0 不触发 Scars；
+- Panic 状态是否独立记录：Panicked 角色 HP 降至 0、首轮不行动、攻击 Impaired，须在自己回合以行动 + WIL Save 克服；解除 Panic 不自动恢复 HP；
+- 陷阱是否先呈现谨慎观察可发现的信息；陷阱伤害是否按属性伤害处理，并仅在虚构情境适用时扣 Armor；
+- 光源是否记录点燃次数、油罐使用、当前点燃状态与环境熄灭；
 - Critical Damage 是否先扣溢出 STR 再以新 STR Save；
 - Armor 是否仅减伤一次，是否遵守 3 上限；
 - 时间是否推进，是否触发地城/荒野事件；
