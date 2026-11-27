@@ -92,13 +92,13 @@ def main():
 
         first_prepare = store.prepare(manifest)
         second_prepare = store.prepare(manifest)
-        assert first_prepare["status"] == "PREPARED"
+        assert first_prepare["status"] == "STORE_PREPARED"
         assert second_prepare == first_prepare
 
         first_publish = store.publish(manifest["batch_id"], initial_head, targets)
         second_publish = store.publish(manifest["batch_id"], initial_head, targets)
-        assert first_publish["status"] == "PUBLISHED"
-        assert second_publish["status"] == "PUBLISHED"
+        assert first_publish["status"] == "STORE_COMMITTED"
+        assert second_publish["status"] == "STORE_COMMITTED"
         assert first_publish["commit_oid"] == second_publish["commit_oid"]
 
         # Simulate a cold process restart: no in-memory state is reused.
@@ -109,7 +109,7 @@ def main():
             token=token,
         )
         recovered = restarted.reconcile(manifest["batch_id"])
-        assert recovered["status"] == "PUBLISHED"
+        assert recovered["status"] == "STORE_COMMITTED"
         assert recovered["commit_oid"] == first_publish["commit_oid"]
         for path, expected in targets.items():
             actual = restarted._read_file_at(recovered["commit_oid"], path)
@@ -167,7 +167,7 @@ def main():
         except StaleRevision:
             pass
         assert race_triggered
-        assert racing_client.reconcile(race_batch_id)["status"] == "PREPARED"
+        assert racing_client.reconcile(race_batch_id)["status"] == "STORE_PREPARED"
 
         # Change a PREPARE record and recompute its own fingerprint. The
         # independent immutable-history check must still detect the rewrite.
@@ -186,7 +186,7 @@ def main():
             {operation_path: canonical_json(tampered_envelope) + "\n"},
         )
         tamper_result = restarted.reconcile(manifest["batch_id"])
-        assert tamper_result["status"] == "DISPUTED"
+        assert tamper_result["status"] == "STORE_DISPUTED"
         assert tamper_result["reason"] == "PREPARE_PATH_NOT_IMMUTABLE"
 
         print(json.dumps({
