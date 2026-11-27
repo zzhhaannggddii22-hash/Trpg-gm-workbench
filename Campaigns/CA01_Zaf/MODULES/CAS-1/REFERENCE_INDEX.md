@@ -52,6 +52,8 @@ GM-only Prep §7–10 及官方归档对应地点章节：
 - White Tower Fens：Whistlewood、Pit Trap、Log Trap、White Tower、Bone Sump。
 - Temple of the Fungal Lizards：T1–T10b、Vuk、Memory Prism。
 
+**模块专属生物/遭遇实体速查**：Night Cat（Stone Forest）、Watersnatch（T2）、Suraru 与 Suraru Imperator（Temple）、Vuk（主线实体）。其完整数值、攻击、能力、触发与遭遇上下文均以 SOURCE 归档对应条目及 GM-only Prep 为准；不可用通用 Bestiary 中的相似条目替换模块版本。
+
 遭遇、陷阱和房间数据以具体地点条目为准；不要仅凭地图邻接推断房间内容，也不要提前触发尚未满足的事件时钟。
 
 ### 旅行、传闻与随机遭遇
