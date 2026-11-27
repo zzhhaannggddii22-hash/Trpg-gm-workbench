@@ -56,9 +56,9 @@
 
 ### 3.4 目标执行与审核标准隔离
 
-初始审计发现 NQB 执行提示把 Review Checklist 列为所有执行模式的必读资料，与 B 模式“目标 Chat 不接触评分标准、审核者在收到结果后再读”的要求冲突。该问题可能污染目标 GM 的行为，削弱独立审核证据。
+初始审计发现 NQB 执行提示把 Review Checklist 列为所有执行模式的必读资料，与 B 模式“目标 Chat 不接触评分标准、审核者在收到结果后再读”的要求冲突。该问题可能污染目标 GM 的行为，削弱独立审核证据。进一步检查还发现，若目标 GM 在模式 B/C 中自行输出评分/自评，会把目标自评混入独立审核记录。
 
-已修订：目标执行阶段只读取基准、GM Packet 和 Player Prompt；Review Checklist 由模式 A 在执行结束后自审，或由模式 B/C 的独立审核者在收到完整原始结果后读取。Self Testing Protocol §11.2 同步明确目标 Chat 不得接触 Review Checklist / ORACLE。
+已修订：目标执行阶段只读取基准、GM Packet 和 Player Prompt；Review Checklist 由模式 A 在执行结束后自审，或由模式 B/C 的独立审核者在收到完整原始结果后读取。B/C 目标只交付原始行动/回应、必要状态账本、版本和读取证据，不自行评分或自评。Self Testing Protocol §11.2 同步明确目标 Chat 不得接触 Review Checklist / ORACLE，也不得自评。
 
 ### 3.3 夹具模式路由
 
