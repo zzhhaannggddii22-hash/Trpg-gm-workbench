@@ -1,7 +1,7 @@
 # Cairn 2e Runtime Protocol
 
 > 适用范围：仅 `system_id: cairn` / `Cairn Second Edition`。
-> 状态：candidate runtime protocol v0.2。正式运行必须与 Campaign 的 `SYSTEM_BINDING.md` 一起使用；受控验证使用 TEST_ONLY_NON_CANON Validation Manifest。
+> 状态：candidate runtime protocol v0.3。已补入官方 Procedures 的 Downtime 程序；正式运行必须与 Campaign 的 `SYSTEM_BINDING.md` 一起使用。真实运行时与持久化仍须在实际跑团中验证。
 > 目的：让 GM 在桌面运行中直接调用已规范化规则，避免每次行动都在线搜索或临场重建规则。
 
 ## 1. 运行原则
@@ -124,6 +124,24 @@ rule_call:
 - 属性恢复：独立于 HP 恢复，通常需要一周休息与适当治疗支持。
 
 不可把这些合并成通用“长休/短休”。
+
+### 4.6 Downtime 循环
+
+Downtime 是官方 Procedures 的独立程序，不等同于普通休息、营地或现实时间经过。按以下规则处理：
+
+1. **可用条件**：Downtime 活动通常在游戏场次之间进行。角色同一时间只能进行一项 Downtime Action；处于不安全环境或恢复期时不能执行；若行动本身会危及角色安全，也不能执行。
+2. **明确目标**：先由玩家说明想研究的问题、训练目标或关系意图。研究问题必须来自已经发生的游戏经历。
+3. **多步骤任务**：需要多个步骤的活动由 Warden 设定 1–5 个 Milestones。每个 Milestone 是一项完整的非交互任务；可根据游戏进展增加或移除 Milestones，也可提供不同策略及其不同 Milestones。
+4. **成本**：完成一个 Milestone 通常需要消耗一次 Downtime Action 并支付对应 Cost。成本可为 GP、物资/资源、声望或独特损失。角色无法支付时需另寻路径；若技能、人脉或意志可能减免成本，Warden 先说明风险，再由角色进行 WIL Save；成功则成本减少或免除。
+5. **Research**：玩家须提出明确问题并找到游戏世界中可互动的知识来源（人物、地点、派系、灵体或其他实体）。没有来源时，可花费一次 Downtime Action 尝试寻找，但不保证成功。找到来源后再设定 Milestones 与 Costs。
+6. **Training**：玩家明确要提升的能力/专长，并指出可能的 Master。动机应来自游戏经历；Warden 设定 Milestones 与 Costs。训练可跨多次 Downtime Action，具体效果须与训练内容、导师和成本相符，不自动发放通用属性加值。
+7. **Strengthening Ties**：明确目标 NPC/派系及关系意图（建立信任、修复关系、加入派系、结盟等）；Warden 设定 Milestones 与 Costs。每完成一个 Milestone，描述关系如何改变。
+8. **自定义行动**：官方允许 Warden 根据游戏需要设计其他 Downtime Actions，但必须先说明目标、里程碑、成本与结果，不把桌面自定义效果冒充为通用官方条文。
+9. **记录**：每个 Downtime Action 与 Milestone 使用唯一 ID，记录目标、来源经历、目标实体、成本、WIL Save（如有）、完成进度、状态差分与 SOURCE / GM_INFERENCE 分类。Handoff 不得重做已完成的 Milestone 或重复支付成本。
+
+**边界**：官方没有规定所有 Downtime Action 的统一周期、固定次数/周或固定成长数值；不得自行添加“每周一次”等硬性频率。角色能否开展行动与完成 Milestone，按场景安全、可用时间、来源、导师、资源和既定成本判断。
+
+来源：Player's Guide / Procedures / Downtime、Milestones、Costs、Downtime Actions。
 
 ## 5. 运行时状态提交协议
 
