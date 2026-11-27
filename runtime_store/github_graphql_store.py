@@ -187,6 +187,7 @@ query FindRuntimeReceiptCommit($owner: String!, $name: String!, $qualifiedName: 
               oid
               parents(first: 2) { nodes { oid } }
             }
+            pageInfo { hasNextPage }
           }
         }
       }
@@ -305,6 +306,12 @@ class GitHubGraphQLRuntimeStore:
             parent_oids = [item.get("oid") for item in parents]
             if parent_oid in parent_oids:
                 matches.append(oid)
+        if parent_oid is not None:
+            page_info = history.get("pageInfo", {}) if isinstance(history, dict) else {}
+            if page_info.get("hasNextPage"):
+                raise DisputedBatch("path history exceeds the verification window")
+            if len(nodes) != 1:
+                raise DisputedBatch("immutable path was changed more than once")
         if len(matches) > 1:
             raise DisputedBatch("multiple commits claim the same parent and immutable path")
         return matches[0] if matches else None
@@ -441,6 +448,12 @@ class GitHubGraphQLRuntimeStore:
         op_file = self._read_file(self.operations_branch, self._operation_path(batch_id))
         if op_file is None:
             raise InvalidBatch("no independently persisted PREPARE manifest exists")
+        try:
+            prepare_state = self.reconcile(batch_id)
+        except (json.JSONDecodeError, InvalidBatch, KeyError, TypeError) as exc:
+            raise DisputedBatch("PREPARE manifest could not be independently verified") from exc
+        if prepare_state["status"] not in ("PREPARED", "PUBLISHED"):
+            raise DisputedBatch("PREPARE state is not eligible for publication")
         envelope = json.loads(op_file[0])
         manifest = _validate_manifest(envelope.get("manifest", {}))
         manifest_fingerprint = fingerprint_text(canonical_json(manifest))
@@ -566,8 +579,10 @@ class GitHubGraphQLRuntimeStore:
         checkpoint = json.loads(checkpoint_file[0])
         if (checkpoint.get("last_batch_id") != batch_id
                 or checkpoint.get("revision") != manifest["target_revision"]
+                or checkpoint.get("previous_revision") != manifest["base_revision"]
                 or checkpoint.get("previous_commit_oid") != manifest["base_head_oid"]
-                or checkpoint.get("last_manifest_ref") != receipt["manifest_ref"]):
+                or checkpoint.get("last_manifest_ref") != receipt["manifest_ref"]
+                or checkpoint.get("last_receipt_ref") != self.runtime_branch + ":" + receipt_path):
             return {"status": "DISPUTED", "batch_id": batch_id, "reason": "CHECKPOINT_MISMATCH"}
 
         for path, expected in manifest["target_fingerprints"].items():
