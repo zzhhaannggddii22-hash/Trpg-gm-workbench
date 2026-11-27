@@ -2,7 +2,7 @@
 
 ## 目的
 
-验证 [会话证据隔离协议](../15_SESSION_EVIDENCE_ISOLATION_PROTOCOL.md) 是否能阻止新 Chat 在没有当前来源的情况下输出旧会话专有事实。
+验证 [会话证据隔离协议](../../15_SESSION_EVIDENCE_ISOLATION_PROTOCOL.md) 是否能阻止新 Chat 在没有当前来源的情况下输出旧会话专有事实。
 
 本夹具只定义测试方法与判定，不包含 D1 的隐藏答案。D1 原始 canary 内容由操作者在独立测试环境外保管，严禁粘贴进目标 Chat。
 
