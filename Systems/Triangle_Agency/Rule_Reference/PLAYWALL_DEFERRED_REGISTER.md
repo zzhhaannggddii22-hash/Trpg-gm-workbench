@@ -1,0 +1,47 @@
+# Playwall 专属能力骰子管线整合暂缓登记册
+
+> 状态：OPEN / DEFERRED
+> 适用：Triangle Agency 中文 v22
+> 本登记只管理本骰子结算管线尚未整合的 Playwall 专属掷骰机制，不替代 Campaign 的 Playwall 解锁、文档读取和效果处理协议。
+
+## 与现行 Playwall 流程的关系
+
+- Playwall 的成长标记、代码解锁、授权和精确文档读取，继续以当前 GM Runtime 与 Campaign 的 Playwall 协议为准。
+- Zarek 单人团当前采用的规则是：某代码解锁后，GM 读取该代码对应的完整文档并处理其适用效果；不需要额外的玩家私读确认或分享回执。
+- 该单人默认的验收依据为 [Playwall Intermission Integrity Regression v1](../../../GM_Training/Testing/Fixtures/PLAYWALL_INTERMISSION_INTEGRITY_REGRESSION_v1.md)；Campaign 的解锁状态与记录以 `Campaigns/Zarek/PLAYWALL_UNLOCK_LEDGER.md` 为准。
+- 若代码尚未解锁或授权状态未知，沿用 Campaign Playwall Ledger 的 `BLOCKED_OR_UNKNOWN`；不得读取文档。只有代码已解锁、精确文档已读取且某项骰子专属效果尚未整合时，才对该骰子子结算使用 `UNSUPPORTED_PENDING_RULE_REVIEW`。
+- 必须核验确切代码与文档版本；不得读取相邻或未解锁文档；玩家可见投影仍须保护真正的 GM-only 秘密和未到披露时点的内容。
+- 本登记**不阻断现有 Playwall 文档读取和非骰子效果处理**，也不把已解锁能力宣告为全局不可用。
+
+## 本轮暂缓范围
+
+暂缓的是 Playwall 专属能力效果与本 Dice Resolution Pipeline 的自动化/结构化整合：
+
+1. Playwall 文档中改变掷骰资格、骰型或骰数的特殊规则；
+2. 特殊骰、额外骰、额外 3、骰面替代或骰池变化；
+3. 特殊成本、先付/后付费用、免掷和替代成功条件；
+4. 对普通成功/失败、额外 3、Triscendence、Stability、Burnout、QA、Chaos 或结算时序的专属覆盖；
+5. 多能力叠加、冲突优先级、持续时间、重复触发限制及专属失败后果。
+
+## 运行时处理
+
+当已解锁 Playwall 文档的能力被调用时：
+1. 先按现行 Playwall 协议确认授权代码、精确文档来源/版本，并读取该完整文档；
+2. 依据文档处理不依赖本骰子管线的已核验效果；
+3. 若后续骰子结算依赖本登记所列的专属机制，而该机制尚未整合到本管线，则只暂停该依赖子结算，标记：
+
+`UNSUPPORTED_PENDING_RULE_REVIEW`
+
+4. 不猜效果/资格/成本/时序，不把普通异常能力基础路径作为回退，不生成未经核验的骰面或资源变化；
+5. 记录缺失的具体规则依赖，独立且有依据的互动可继续。
+
+## 重新接入条件
+
+- 从现行 Playwall 流程确认确切解锁代码并读取完整文档；
+- 核验文档版本、能力条文、角色 ARC/资格、Trigger/Cost、Quality、骰型、结果、例外和结算时序；
+- 将每个专属机制映射到系统规则索引，不复制到通用 GM Training；
+- 为每项机制建立正例、边界例、反例、资源结算和玩家投影回归；
+- 通过通用路由与本系统规则检阅协议；
+- 记录效果应用证据，并确认不破坏 GM-only 信息隔离。
+
+任何通用协议、索引、UI 或普通能力测试都不得自动清除此登记。
