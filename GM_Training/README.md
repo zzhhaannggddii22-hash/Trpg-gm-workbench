@@ -40,6 +40,7 @@
 - [备团到运行交接](./13_PREP_TO_RUNTIME_HANDOFF_STANDARD.md)
 - [高级模型 Prep QA 协议](./ADVANCED_MODEL_PREP_QA_PROTOCOL.md)
 - [运行状态模板](./RUNTIME_STATE_TEMPLATE.md)
+- [GitHub Runtime Save 轻量保存路径](./GITHUB_RUNTIME_SAVE_QUICK_PATH.md)：单主持人战役的状态与日志保存约定。
 - [Context Assembly & Trace 设计记录](./Optimization_Reports/CONTEXT_ASSEMBLY_AND_TRACE_DESIGN.md)
 - [Context Assembly & Trace 回归夹具 v1](./Testing/Fixtures/CONTEXT_ASSEMBLY_TRACE_REGRESSION_v1.md)
 - [历史设计归档 · Scene Continuity & Evidence Record 回归夹具 v1](./Testing/Fixtures/SCENE_CONTINUITY_AND_EVIDENCE_RECORD_REGRESSION_v1.md)
