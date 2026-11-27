@@ -68,6 +68,52 @@ It does **not** establish:
 
 In particular, this fixture is not evidence that the actual ChatGPT conversation host provides durable transactions. A real host-level test requires an identified production adapter and a user-authorized isolated test Campaign. Until then, report this as **PERSISTENCE CONTRACT MODEL PASS**, not **HOST PERSISTENCE PASS**.
 
+## Current repository inventory (reviewed at `8237af6b6c52b1302365334fa73da49dec607e65`)
+
+The production-host integration gate is currently **OPEN / NOT IMPLEMENTED**.
+
+- The executable Python files in this repository are test suites or isolated test harnesses. The repository has no production GM Runtime service/entry point, Campaign storage adapter, database client/schema, or deployed host binding.
+- `tests/reference_runtime.py` explicitly describes itself as a test-only implementation and never loads a real save. Its `Batch` and `CloseoutBatch` classes operate on synthetic files.
+- `GM_Training/Testing/Fixtures/ROLL_RUNTIME_APPLICATION_ADAPTER_v1/` explicitly labels its adapter as a reference/test harness. It uses temporary local files and does not connect to Campaign data or a live Runtime.
+- `package.json` contains test dependencies only. The PR workflow runs repository tests and the reference adapter harness; it does not build or deploy a GM Runtime service.
+- Campaign Runtime State documents and templates define the data contract, but a document describing a save format is not itself a reader/writer.
+- The connected GitHub actions available to an assistant are external tools, not an application adapter implemented by this repository. Per-file contents writes are not a multi-file transaction. Git object/tree/commit and conditional branch-ref operations could be used to build a Git-backed publisher, but no such coordinator currently exists here.
+
+This inventory is a repository-level finding. It does not claim that the ChatGPT platform has no internal persistence; that platform implementation is outside this repository and is not exposed as a Workbench-controlled transaction API.
+
+## Minimum production integration boundary
+
+Do not add another synthetic adapter and call it production. Before a host-level test, select and implement one actual storage backend behind a small adapter contract:
+
+1. **Read/discovery:** load the current checkpoint and immutable manifests; discover active PREPARED/INCOMPLETE batches by Campaign / Module / Run identity.
+2. **Conditional prepare:** create one immutable PREPARE manifest for a stable batch/event identity, rejecting identity reuse with a different payload and rejecting a stale base revision.
+3. **Idempotent target application:** apply each declared field/target once using a stable operation ID and an expected-before revision/value; return a durable target reference.
+4. **Independent readback/reconciliation:** reread every required target and manifest from the backend, verify exact content/revision/recipient scope, and distinguish APPLIED, PARTIAL, NOT_APPLIED, and DISPUTED.
+5. **Conditional publication:** advance the published checkpoint only if the base revision/head still matches. If the backend cannot provide conditional update or equivalent serialization, stop at INCOMPLETE rather than claiming publication.
+6. **Cold recovery:** after a fresh process/session starts, rediscover the batch from backend state, reconcile existing writes, and never replay a domain effect merely because an acknowledgement was lost.
+
+Responsibility boundary:
+
+- The **system-specific rules/runtime** resolves the action and produces a validated event/delta. Cairn persistence code must not decide Triangle Agency mechanics, and vice versa.
+- The **generic persistence adapter** applies already-resolved event data, revisions, idempotency, manifests, reconciliation, and publication. It does not roll dice or adjudicate rules.
+- The **player projection layer** emits only the authorized recipient-scoped payload after the underlying result is verified.
+- The **host/backend** supplies durable reads/writes, conditional creation/update or equivalent concurrency control, and independently readable evidence.
+
+For a GitHub-backed implementation, prefer one immutable Git tree/commit containing the manifest, all required target files, and publication pointer, followed by a branch-ref update guarded by the expected old SHA. Do not emulate a transaction by sequentially calling per-file update operations. For a database backend, use transactional writes plus unique idempotency constraints and revision compare-and-swap.
+
+## Host-level acceptance gate
+
+A production claim requires all of the following on an isolated TEST_ONLY Campaign/store:
+
+- real host adapter and real backend are identified in the test report;
+- cold-process/session restart after PREPARE, after each target write, after publication, and after lost acknowledgement;
+- duplicate delivery, conflicting event identity, stale revision, and concurrent writer tests;
+- independent backend readback of manifests, targets, and published checkpoint;
+- player projection allowlist/recipient-scope tests against the actual delivery boundary;
+- evidence that no formal Campaign/CANON or active-system binding was touched.
+
+Until these gates pass, retain **PERSISTENCE CONTRACT MODEL PASS** only. Cairn remains `candidate`; Triangle Agency remains the only `active` system.
+
 ## Governance
 
 All fixtures use TEST_ONLY data. No Campaign CANON, formal Runtime state, System Registry status, or active-system binding is changed. Cairn remains `candidate`; Triangle Agency remains the only `active` system.
