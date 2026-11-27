@@ -1,0 +1,84 @@
+# Cairn 2e 初步研究与接入计划
+
+研究日期：2026-11-27  
+目标：将 Cairn 作为 GM Workbench 第二套独立规则系统接入，并通过 1–2 个短团验证。  
+当前阶段：candidate / research and integration preparation。
+
+## 1. 来源核验
+
+- 官方 2e 规则入口：https://cairnrpg.com/second-edition/
+- 官方冒险目录：https://cairnrpg.com/adventures/
+- 官方 Warden's Guide：https://cairnpress.itch.io/cairn-wardens-guide
+- 简体中文社区 SRD：https://fi.cairnrpg.com/localization/second-edition/chinese/
+- 官方 2e 文本许可：CC BY-SA 4.0。
+- 中文 SRD 页面声明覆盖 Player's Guide、Warden's Guide 全部 31 个核心章节及 CAS-1 至 CAS-4。中文版本作为阅读辅助，官方英文原文作为冲突核验来源。
+
+## 2. 设计概览
+
+Cairn 的轻量来自压缩角色能力与检定结构，而不是取消主持程序：
+
+- 角色只使用 STR、DEX、WIL 三项属性；风险行动通过 d20 属性 Save 解决。
+- 背景而非职业决定角色初始装备、能力和身份线索。
+- 攻击自动命中，伤害骰减护甲后扣 HP；HP 归零后的溢出伤害会进入 STR 与 Critical Damage 流程。
+- 物品格、Fatigue、光源、口粮和旅行时间是探索资源压力的核心。
+- 地城探索使用 Turn / Action / Consequence 循环，并通过 Dungeon Events 表使时间与噪音产生后果。
+- 荒野探索通过 Watch、Travel、Make Camp、天气、迷路与事件程序抽象处理旅程。
+- Warden 原则强调中立、信息透明、虚构优先、NPC 自利且求生、随机表生成局势而非剧情。
+
+## 3. 对 GM Workbench 的研究价值
+
+### 高价值
+
+1. **信息呈现与玩家能动性**：可见信息直接提供，不用检定挡住合理观察；行动风险在玩家决定前明确。
+2. **NPC 自主性**：Reaction、目标、利益、求生意愿和记忆共同驱动互动，不把 NPC 当线索自动售货机。
+3. **环境与时间压力**：地城循环让停留、噪音、快速移动和探索区域产生明确成本。
+4. **低成本状态管理**：HP、属性、护甲、Fatigue、物品格、光源和口粮形成较小但有意义的状态集合。
+5. **程序化世界而非剧情生成**：随机表提供遭遇、迹象、环境变化、损耗、疲劳或安静，不强迫剧情走向。
+
+### 与现有工作台的关系
+
+- 可迁移至 GM_Training 的候选方法：信息透明、风险预告、NPC 自利、环境状态持续性、随机表与因果一致性。
+- 不应直接迁移至通用 GM 规范的系统规则：属性豁免、自动命中、伤害、HP/属性分层、Fatigue、库存格、地城事件表、Watch 等。
+- Cairn 专属机制留在 Systems/Cairn；只有经跨系统实战验证的主持方法才考虑进入 GM_Training。
+
+## 4. 单人短团风险
+
+Cairn 的默认冒险通常以 party 为单位，战斗危险且角色可能死亡。单玩家与 GM 的短团需要先明确角色规模和同伴控制权。
+
+建议初测：
+- 玩家只创建并控制一个 PC。
+- 若模组/风险需要队伍支援，使用规则内 hirelings；由 GM 扮演其行动、动机与反应，不把他们当无条件战斗工具。
+- 不擅自降低伤害、改变 Critical Damage 或死亡规则。
+- 若模组明确依赖多人协作，先换模组，不在首次测试中悄悄改写结构。
+
+## 5. 短团模组候选
+
+优先只考虑明确标注 Cairn 2e、可获得合法文本且能支持短时体验的作品：
+
+1. **CAS-2: Rise of the Blood Olms** — 官方入门冒险，探索新发现的洞穴并寻找失踪远征队；官方说明其危险但可通过批判思考与谨慎探索生存。适合验证地城循环、危险提示、资源消耗和战斗规则。单人适配风险较高，必须先读完整模组并评估队伍规模。
+   - 官方入口：https://cairnpress.itch.io/rise-of-the-blood-olms
+2. **CAS-1: Trouble in Twin Lakes** — 官方独立冒险，包含两个核心谜团、多个 NPC 和地点；适合验证调查、线索分布、NPC 自主性和非线性探索。
+   - 官方规则/模组文本：https://cairn.puzzledungeon.com/adventures/first-party/cas-1/
+3. **CAS-3: The Feast of Tegny Wood** — 官方独立 2e 冒险，采用 forestcrawl 结构，主题涉及疾病、职责与腐朽；适合验证荒野探索、环境变化和事件程序。
+   - 官方入口：https://cairnrpg.com/adventures/first-party/cas-3/
+4. **A Feast for Flies** — 社区原创、官方索引标记为 Cairn one-shot 且免费；作为短团备选，需进一步核对 2e 兼容性和单人队伍适配。
+   - 官方冒险索引：https://cairnrpg.com/adventures/
+
+## 6. 建议测试顺序
+
+- **短团 A：地城规则验证**。优先评估 CAS-2。重点观察：玩家能否从描述中理解风险；地城 Turn / Action 是否清楚；事件触发与资源成本是否稳定；伤害、护甲、HP、Critical Damage 是否准确；危险是否公平。
+- **短团 B：调查与开放探索验证**。优先评估 CAS-1 或 CAS-3。CAS-1 测试 NPC 与线索；CAS-3 测试森林 Pointcrawl/Forestcrawl、环境因果与旅行程序。
+- 每次测试都标记 TEST ONLY / NON-CANON，独立 Campaign 状态，结束后做规则准确性、信息公平、NPC 区分度、探索自由、节奏与连续性复盘。
+
+## 7. 接入完成标准
+
+1. 规则原文核验完成，中文 SRD 关键差异已记录。
+2. Rule Index、GM Skill、Preflight 与 Campaign Binding 模板可独立使用。
+3. 规则正例/反例/边界测试通过。
+4. Triangle Agency ↔ Cairn 隔离测试通过。
+5. 1–2 次短团完成并复盘。
+6. 根据实测修订系统 Skill 与运行流程，再由用户决定是否将状态升级为 active。
+
+## 8. 当前限制
+
+本文件是初步研究，不是完整规则摘要，也不是模组备团文件。模组的隐藏信息、完整内容、遭遇细节和 GM-only 资料应在选定后单独备团，不在通用研究文档中暴露给玩家。
