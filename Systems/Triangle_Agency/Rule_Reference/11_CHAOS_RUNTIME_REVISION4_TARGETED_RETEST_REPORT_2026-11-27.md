@@ -176,3 +176,13 @@ The packet contains only the player-facing case input and its allowed-read contr
 This makes the independent execution boundary explicit: a new target Chat receives the standalone launch file and the exact two runtime protocols at a fixed Commit; the operator must not provide or expose the v2 Oracle. The current conversation has already inspected the Oracle and therefore is not eligible to act as the independent target for R-20B.
 
 **R-20B remains NOT EXECUTED.** No behavior result is inferred from authoring the launch packet.
+
+
+## 10. Latest base synchronization and validation (2026-11-27)
+
+- Main commit `6bdc654971e2a434876237b50202a55358f2191b` was merged into the PR branch using a two-parent commit `2cb5ded059576cdaa6ffa6bf863e57b98915b9bd`; no force-push or history rewrite was used.
+- The main-branch changes since the previous synchronization were inspected. They touched only the TEST_ONLY Cairn Twin Lakes campaign, Campaigns index, and narrative spot-check report/index; none overlapped the PR's changed paths. Those changes were preserved by using the latest main tree as the merge base and overlaying the PR change set.
+- Latest synchronization commit CI run #400: **SUCCESS**. Repository regression suite, Roll Runtime adapter conformance harness, and whitespace check all passed.
+- After this synchronization, main advanced once more with two edits confined to the TEST_ONLY Cairn Twin Lakes campaign files. They do not overlap the PR change set; GitHub currently reports the PR mergeable. The branch is ahead 87 / behind 1 at the latest observed comparison. No repeated sync is warranted absent conflict or material overlap.
+- PR #67 remains OPEN / NOT MERGED. Chaos Runtime remains DRAFT / NOT ENABLED.
+- CI success is repository/reference-harness evidence only. It does not execute R-20B, prove production host persistence, or satisfy host-level Chaos Runtime acceptance.
