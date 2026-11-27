@@ -38,13 +38,14 @@
 | R-16 | The closeout is applied once. The duplicate request reuses the original closeout event and does not discard/reset twice or create another closeout transaction. |
 | R-17 | Update Campaign Loose Ends from 22 to 21 because the weather result explicitly says so. Do not retroactively change the active mission's committed setup or Starting Chaos. Next mission uses the current total 21 and the corresponding table row. |
 | R-18 | Replaying the same weather event does not reroll, escalate, or reapply the Loose Ends change. A genuinely new extreme-weather event may be resolved as a new event. |
- 
+
 ## R-19 to R-24｜Thresholds and cross-system isolation
 
 | Case | Required result |
 |---|---|
 | R-19 | Record the 65→66 Campaign transition. Do not interrupt the active mission solely for this threshold; record forced field-team retirement due at the end of the current mission, with a stable source-linked lifecycle event. Do not cancel it on a later decrease without an explicit source ruling. |
-| R-20 | Record the 76→77 transition and enter the v22 Unraveling procedure. Do not treat 77 as numeric Chaos, ordinary initialization or an optional GM complication. If exact source procedure is unavailable, keep the affected lifecycle action PENDING. |
+| R-20 | Record the 76→77 transition and enter the v22 Unraveling procedure; do not create an ordinary Pool. Keep the raw W7 source text, source locator, GM adjudication and backstage procedure GM-only. Separately distinguish (a) world consequences that may be narrated only to the extent the Agents can perceive or are told, from (b) source exposition that must not be dumped to players. The responsible field team's duty to notify the wider Agency and complete/share the official memo is an in-fiction objective; communicate it as a diegetic directive at the appropriate time, not as GM prep text. Do not claim the memo was sent or delivered without presentation/delivery evidence. |
+| R-20B | With Branch state already at 77 and W7 already triggered, produce only a player-facing response to the responsible field team's in-fiction question about what happened and what they must do next. Do not rerun threshold arithmetic or initialize a Pool. Convey only facts the Agents can perceive or have received in-world. The Branch-removal consequences may be narrated as fiction where perceptible; the notification/memo duty may be stated as an in-world assignment because the team is being briefed. Never quote or dump the W7 source, source metadata, GM adjudication or backstage procedure. No actual memo submission or notification delivery is implied by narration alone. |
 | R-21 | Increase Campaign Loose Ends by 7 under the escape rule. Do not directly add 7 Chaos. The two state domains remain separate. |
 | R-22 | Mission-D closes and its Pool becomes 0. Mission-E is created at 0, then its current Branch row is applied as a distinct grant. At Loose Ends 11, Starting Chaos is 5. No Mission-D balance carries forward. |
 | R-23 | The bound system remains NOT_APPLICABLE for GM-operated resource handling. No resource adapter, placeholder Pool, Chaos lookup, or resource ledger is created; all unrelated actions proceed normally. |

@@ -53,7 +53,7 @@
 
 不得按 ID 拼路径、猜大小写、继承旧活动系统或回退默认系统。
 
-Campaign 只能绑定一个主系统。跨系统联动属于明确的特殊项目，必须单独建立桥接协议，不属于默认行为。
+Campaign 只能绑定一个主系统。跨系统联动属于明确的特殊项目，必须单独建立桥接协议，不属于默认行为。\n\n系统规则的运行接入遵循 [System Rule Runtime Integration Protocol](./Systems/SYSTEM_RULE_RUNTIME_INTEGRATION_PROTOCOL.md)：它定义跨系统共用的触发式集成契约，不定义具体游戏机制，也不要求逐行动轮询。
 
 ## 三、加载顺序（新对话 / 新 Session）
 

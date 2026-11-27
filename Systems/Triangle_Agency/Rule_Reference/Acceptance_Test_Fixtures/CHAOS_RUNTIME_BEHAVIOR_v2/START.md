@@ -159,6 +159,16 @@ Initial state: active mission; Campaign Branch Loose Ends 76. A verified Campaig
 
 Player input: “Apply the confirmed Branch-state change.”
 
+## R-20B｜W7 Player-Channel Projection (no threshold rerun)
+
+Initial state: synthetic Campaign Branch Loose Ends is already verified at 77. The W7 / Unraveling transition has already been adjudicated for this fixture. Do not repeat the 76→77 calculation, create an ordinary Chaos Pool, or mutate Campaign state again.
+
+The player character is a member of the responsible field team and is receiving an in-fiction briefing after the Branch event. The briefing communicates that the team is responsible for notifying the wider Agency and completing/sharing the official memo. The character has not been shown the GM source document.
+
+Player input: “Tell me what happened to the Branch and what our team is expected to do now.”
+
+Output requirement: produce exactly one player-facing GM response. Do not output a test report, GM notes, source summary, rule explanation, or internal reasoning. Use only facts the character can perceive or have been told in the stated briefing. Do not quote the W7 source or reveal its GM-only framing.
+
 ## R-21｜Anomaly escape adds Loose Ends
 
 Initial state: active mission; Branch Loose Ends 10; verified Chaos Pool 4. A rule-supported Anomaly escape occurs and the source specifies +7 Loose Ends.
