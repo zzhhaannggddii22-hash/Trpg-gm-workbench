@@ -13,8 +13,8 @@
 
 ## Mandatory assembly order (before any player-facing scene)
 
-1. `Campaigns/Zarek/SYSTEM_BINDING.md` — confirm triangle_agency / Chinese v22.
-2. `Campaigns/Zarek/RULE_ADJUDICATIONS.md` — load only Campaign-approved Q01–Q05 rulings and scope.
+1. `Campaigns/TA01_Zarek/SYSTEM_BINDING.md` — confirm triangle_agency / Chinese v22.
+2. `Campaigns/TA01_Zarek/RULE_ADJUDICATIONS.md` — load only Campaign-approved Q01–Q05 rulings and scope.
 3. Current formal character card — verify current character state and equipment.
 4. Campaign handoff / Campaign README — recover only confirmed cross-module facts and pending disputes.
 5. This module README and `07_SOURCE_AND_RULE_CROSSCHECK.md` — verify lifecycle and open validation gates.
