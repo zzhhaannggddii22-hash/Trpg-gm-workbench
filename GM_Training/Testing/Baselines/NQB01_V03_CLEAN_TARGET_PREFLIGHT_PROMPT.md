@@ -7,7 +7,7 @@
 ## 固定来源
 
 - Repository: `zzhhaannggddii22-hash/Trpg-gm-workbench`
-- Read-only source commit: `4a402cb34bf97ad43f87af7eb4af83dcd3db4368`
+- Read-only source commit: `f422974f0e9a675f4cedfaaecc5bd9f63deb7398`
 - Branch for locating that commit: `qa/nqb01-v03-isolated-test-campaign-2026-11-27`
 - Campaign ID: `nqb01_v03_test`
 - Campaign path: `Campaigns/NQB01_Runtime_Test/`
