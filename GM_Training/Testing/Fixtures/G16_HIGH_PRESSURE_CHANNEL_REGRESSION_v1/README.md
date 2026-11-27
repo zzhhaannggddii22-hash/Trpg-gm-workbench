@@ -13,11 +13,12 @@
 
 ## Execution
 
-1. 在空白 Chat 中固定被测 Workbench commit。
-2. 按 START.md 读取必要 Skill 与 Runtime 资料。
-3. 只提供 START.md，不提供 ORACLE。
-4. 按三个阶段顺序执行；这是同一连续场景，不重置状态。
-5. 完成后停止，由操作者读取 ORACLE 审查。
+1. 按专项模式 B 建立真正空白的目标 Chat，并固定被测 Workbench commit。
+2. 目标 Chat 按 START.md 读取必要 Skill 与 Runtime 资料。
+3. 目标 Chat 只接收 START.md 和必要权威资料，不提供 ORACLE。
+4. 目标 Chat 按三个阶段顺序自动执行；这是同一连续场景，不重置状态。
+5. 保存目标 Chat 的完整原始输出、实际读取来源和版本信息。
+6. 将结果粘贴到独立审核会话；审核者再读取 ORACLE 并给出结论。目标 Chat 不自评，不把目标输出直接称为独立审核 PASS。
 
 ## Evidence boundary
 
