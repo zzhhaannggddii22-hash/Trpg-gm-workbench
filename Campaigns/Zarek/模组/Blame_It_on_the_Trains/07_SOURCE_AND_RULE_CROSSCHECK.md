@@ -31,7 +31,7 @@ This phase validates what the GM must know to run the module. It is not Prefligh
 | Campaign rulings | Confirm Q01–Q05 scope and approval; do not generalize them | RULE_ADJUDICATIONS.md | VERIFIED AS CAMPAIGN BINDING |
 | QA | Nine Qualities, QA spend/adjustment, quality-specific pool and stated exceptions | v22 Markdown printed pp.34–35; Campaign's quality-to-check constraint; Q03 insurance exception | PARTIAL：通用 QA 调整条文已核；本桌对应 Quality 的使用约束需与既有 Campaign 规则记录一致；Q03 伤害保障明确允许任意 Quality QA |
 | Burnout | Trigger, remove one 3 per Burnout, +1 Chaos per Burnout, stable-three exception and Q04 sequence | v22 Markdown printed pp.35–37; Campaign ruling Q04 | VERIFIED：通用 Burnout 与稳定性文本已核；执行顺序按 Zarek Q04（先 Burnout 后 QA） |
-| Chaos | Initial pool, +1 per die without a 3, public reporting, module effects and close/reset | v22 Markdown printed pp.33, 156; Campaign Binding; module source; Q01/Q02 | PARTIAL：生成规则、公开记录和域界规则已核；Campaign 默认初始值 0 已绑定，仍需确认本模组是否有覆盖特例及结团关闭处理 |
+| Chaos | Initial pool, +1 per die without a 3, public reporting, module effects and close/reset | v22 Markdown printed pp.33, 156; Campaign Binding; full Chinese module source pp.191–208; Q01/Q02 | VERIFIED AS CAMPAIGN DEFAULT：本模组原文未规定不同初始值；按 Zarek Binding 独立建池 0，完整模组结团关闭并重置 0。区域 Loose Ends / Weather Effects 独立 |
 | Harm / Stability / Domain | Harm application, death threshold, anomaly Stability/Threat, Domain costs and benefits | v22 core rules + module source + Q01/Q02/Q03 | OPEN |
 | Ask the Agency | 6d4, Causality Chain, Quality selection, effect scope and failure | v22 printed pp.40–43 | PARTIAL |
 | Module-specific ability text | Smell the Roses trigger, Presence check, success/failure and extra-3 effects | Chinese Vault translation file p.208 | VERIFIED IN CHINESE SOURCE：文本已回读；其规则通用结算仍按 v22 能力规则核验 |
@@ -85,7 +85,7 @@ The 2026-11-27 independent report is treated as a defect lead list, not as autho
 | SRC-01 | Confirm Chinese Vault source and chapter pagination | Source inspection | DONE | Library source and chapter location confirmed |
 | SRC-02 | Compare English official module source page by page | Source inspection | NOT RUN | English original not yet independently read |
 | RULE-01 | Verify v22 QA / Burnout and Q04 boundary | Rule inspection | PARTIAL | Campaign ruling read; full rule source matrix incomplete |
-| RULE-02 | Verify Chaos initial/generation/close rules | Rule inspection | PARTIAL | Generation and Domain rules verified; initial default 0 bound; module override/close treatment still open |
+| RULE-02 | Verify Chaos initial/generation/close rules | Rule inspection | PASS AS CAMPAIGN BINDING | v22 generation/domain rules checked; module source read fully; no override found; Campaign default 0 and close reset bound |
 | RULE-03 | Verify Harm / Domain / Stability resolution | Rule inspection | PARTIAL | Core Harm, insurance and Threat/Stability rules read; module-specific action mapping and current Harm state remain open |
 | RULE-04 | Verify ability-specific triggers and outcomes | Rule inspection | PARTIAL | Module ability text read; general ability-resolution rules and each in-play interaction still need full mapping |
 | SOLO-01 | Prove core path action/resource feasibility for one PC | Desk simulation | PARTIAL | Key path principles checked; action/resource costs and rescue sequencing remain OPEN |
