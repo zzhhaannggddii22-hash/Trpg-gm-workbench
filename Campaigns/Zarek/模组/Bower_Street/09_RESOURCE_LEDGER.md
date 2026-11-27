@@ -140,10 +140,10 @@
 | Module | CLOSED | 玩家确认核心异常收容完成；次要线索未解不阻碍结团 |
 | Commendations | **18** | 结团前报告余额 7，已接受奖励合计 +11 |
 | Competency | **累计 5 格** | MVP 免费职能格 +1；本次选择 Attentiveness |
-| Attentiveness QA 上限 | **2** | 原上限 1，本次 MVP +1 |
-| Attentiveness 当前可用 QA | **2/2（任务间恢复后）** | 按任务间 QA 完全恢复规则 |
+| QA 上限总和 | **14** | 原总上限 13；本次 MVP 选择 Attentiveness +1 |
+| 任务间恢复后的 QA | **专业 3/3、共情 3/3、低调 3/3、缜密 2/2、欺瞒 1/1、活力 1/1、主动 1/1、坚持 0/0、气质 0/0** | 按正式人物卡历史上限 + 本次 Attentiveness 成长；任务间 QA 完全恢复 |
 | 普通 Chaos Pool | **UNKNOWN** | SESSION 01 BOWER-RES-001 未结；SESSION 02 已知 +5 变化量，不代表最终余额 |
-| Harm / Burnout / 其他 QA 使用 | **UNKNOWN / INCOMPLETE** | 完整 SESSION 02 检定记录未恢复 |
+| Harm / Burnout | **UNKNOWN / INCOMPLETE** | 完整 SESSION 02 检定记录未恢复；QA 当前值已按任务间完全恢复规则结算，历史使用次数仍未知 |
 | Demerits | **UNKNOWN / INCOMPLETE** | 无完整逐轮记录，不写成 0 |
 | 天气事件 | **UNKNOWN / INCOMPLETE** | SESSION 01 末次确认 0；SESSION 02 未核 |
 | Ternion City 分部 Loose Ends 模组增量 | **UNKNOWN / NOT SETTLED** | Campaign 基线 1 不等于本模组结团余额 |
