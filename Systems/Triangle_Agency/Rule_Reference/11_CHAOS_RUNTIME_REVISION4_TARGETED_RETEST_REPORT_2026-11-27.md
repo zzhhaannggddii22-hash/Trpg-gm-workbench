@@ -1,10 +1,10 @@
 # CHAOS RUNTIME｜Revision 4 Targeted Retest Evidence Closeout
 
-Date: 2026-11-27  
-System: Triangle Agency Chinese v22  
-Repository: `zzhhaannggddii22-hash/Trpg-gm-workbench`  
-Branch: `feat/triangle-agency-rule-runtime-integration-v1`  
-Baseline commit: `9c00833a913c0092893a962ec8833cae628d113d`  
+Date: 2026-11-27
+System: Triangle Agency Chinese v22
+Repository: `zzhhaannggddii22-hash/Trpg-gm-workbench`
+Branch: `feat/triangle-agency-rule-runtime-integration-v1`
+Baseline commit: `9c00833a913c0092893a962ec8833cae628d113d`
 Test input blob: `e32106a352919d7da8cd269eeb7f57f38514700b`
 
 ## 1. Executive result
