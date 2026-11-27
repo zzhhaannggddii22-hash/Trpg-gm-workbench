@@ -1,7 +1,7 @@
 # Twin Lakes｜Cairn 2e 战役记录
 
 > 目录：`CA01_Zaf`
-> 状态：角色创建中 / Cairn 系统接入仍为 candidate；本目录不代表系统已正式激活。
+> 状态：Preflight 已完成（存在待确认/待验证事项）；战役尚未开始，Cairn 系统仍为 candidate，未正式激活。
 > 系统绑定：[SYSTEM_BINDING.md](./SYSTEM_BINDING.md)
 
 ## 人物档案
