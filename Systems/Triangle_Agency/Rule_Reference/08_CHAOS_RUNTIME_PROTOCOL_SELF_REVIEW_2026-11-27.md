@@ -1,7 +1,7 @@
 # Triangle Agency Chaos Runtime｜单会话协议自测报告
 
 > 类型：SINGLE_SESSION_SELF_TEST / PROTOCOL WALKTHROUGH
-> 结果：17/17 PASS（协议逻辑覆盖）；NOT INDEPENDENT REVIEW / NOT PRODUCTION ACCEPTANCE
+> 结果：19/19 PASS（协议逻辑覆盖）；NOT INDEPENDENT REVIEW / NOT PRODUCTION ACCEPTANCE
 > 被测协议：`03_CHAOS_RUNTIME_PROTOCOL.md`
 > 测试夹具：`06_CHAOS_RUNTIME_REGRESSION_v1.md`
 > 共享契约：`Systems/SYSTEM_RULE_RUNTIME_INTEGRATION_PROTOCOL.md`
@@ -10,7 +10,7 @@
 
 ## 1. 执行范围
 
-- 已逐项检查 C-01 至 C-17 的初始状态、触发条件、预期资源变化、世界状态结果、可见信息和停止条件。
+- 已逐项检查 C-01 至 C-19 的初始状态、触发条件、预期资源变化、世界状态结果、可见信息和停止条件。
 - 依据：Triangle Agency 中文 v22 固定版本 Markdown、当前系统基础规则笔记、Chaos Runtime Protocol、Campaign Binding / adjudication、Bower Street 现有历史账本与 Session 记录。
 - 没有修改正式 Campaign、人物卡、Resource Ledger、Session Log 或任何历史 CANON。
 - 没有执行真实骰子、真实 Runtime 写入、工具级计时或独立宿主交互。
@@ -27,7 +27,7 @@
 | C-06 Beyond Focus | PASS | 超出 Focus 时识别汲取环境 Chaos 的规则依赖；具体效果/成本仍由系统规则与当前状态决定。 |
 | C-07 Domain cost handling | PASS | 1/2/3 成本免费；4 成本按 12 处理；8 成本按 24 处理，Pool 20 不足时拒绝。 |
 | C-08 Outside Domain | PASS | 域外 4 成本按 4 处理，不应用三倍成本或免费阈值。 |
-| C-09 Cost-three ambiguity | PASS | 3 成本可免费显现；不声称其无限重复使用的原文边界已明确。 |
+| C-09 Domain free repeatability | PASS | 域界内费用 ≤3 的效果免费且可重复使用；费用 >3 按三倍成本。 |
 | C-10 No target Anomaly | PASS | 仍追踪 Pool；只允许有已建立来源/行动者/因果依据的效果，不补造幕后操纵者。 |
 | C-11 Human-caused analogue | PASS | 人类行为可产生类似效果而不扣 Chaos；仅按已建立动机与行为解决。 |
 | C-12 Effect materialization | PASS | 资源从 5 减至 4，同时门锁/通行状态确实更新；不是只改余额或只写氛围。 |
@@ -35,22 +35,25 @@
 | C-14 Unknown balance | PASS | 当前余额待核时暂停依赖 Pool 的效果；无关互动继续。 |
 | C-15 Mission close reset | PASS | 记录 13 未使用 Chaos 被丢弃，关闭任务池为 0；不影响 Loose Ends 等持续状态。 |
 | C-16 No arbitrary adversity | PASS | Pool 高达 30 但没有有效机会时不花费，不制造惩罚性事件或强制掷骰。 |
-| C-17 Starting value / Campaign override | PASS | 区分 v22 Branch Loose Ends 表与 Campaign override；来源冲突时 PENDING/DISPUTED，不静默选择 0 或跨 Campaign 迁移。 |
+| C-17 Zarek current Branch total = 1 | PASS | 每次任务开始读取当前分部 Loose Ends；1 落在 0 档，初始 Chaos 0、Weather Event count 0，仅适用雇佣条款限制。 |
+| C-18 Threshold transition 10 → 11 | PASS | 在任务真正开始时重读总数；11 进入 11 档，初始 Chaos 5、Weather Event count 1。 |
+| C-19 Branch / mission resource separation | PASS | 分部 Loose Ends 与任务 Chaos Pool 独立；任务清零不重置分部总数。 |
 
 ## 3. 发现并保留的待审查项
 
-### 3.1 Zarek Campaign 起始 Chaos 来源冲突
+### 3.1 Zarek Campaign mission-start initialization
 
-- 当前 `Campaigns/Zarek/SYSTEM_BINDING.md` 写明每个模组普通 Chaos Pool 初始 0，除非模组原文明示其他值。
-- v22 GM Toolkit 印刷页 165 存在由 Branch Loose Ends 对应起始环境 Chaos 的表格。
-- Bower Street GM Prep 已记录过这一适用范围/批准来源疑问；当前 `RULE_ADJUDICATIONS.md` 的 Q01–Q05 没有单独列出该起始值规则。
-- 本轮不修改 Campaign Binding，也不把 Zarek 的 0 默认迁移为系统通用规则。待高级 AI 审查 Campaign override 的来源、作用域和是否需要正式登记。
+- Zarek 不再使用固定的每模组 Chaos Pool 初始值 0。
+- 每次任务开始前，读取当前分部 Loose Ends 总数，按中文 v22 GM Toolkit 印刷页 165 的分部限制表确定 Starting Chaos、Weather Event count 与累积分部限制。
+- 用户确认当前分部总数为 1；因此当前适用 0 档：Starting Chaos 0、Weather Event count 0、仅有机构雇佣条款限制。
+- 该 0 是当前总数对应的表格结果，不是永久 Campaign 默认值。下一次任务必须重新读取总数。
+- 分部 Loose Ends、天气事件历史、任务 Chaos Pool 分别记账。异常逃脱增加 7 Loose Ends，不等于直接增加 7 Chaos。
 
-### 3.2 Domain 成本 3 的无限使用边界
+### 3.2 Domain 免费效果的重复使用口径
 
-- 印刷页 156：Domain 内费用 3 或更低的效果可以免费显现。
-- 印刷页 161：低于 3 的效果可在 Domain 内无限使用。
-- 本协议保留“免费”与“无限重复使用”之间的文本边界，不自行扩大为已明确规则。
+- 印刷页 156 明确费用 3 或更低的 Chaos Effects 在 Domain 内免费显现。
+- 本协议采用执行口径：费用 ≤3 的效果在 Domain 内免费且可重复使用；费用 >3 的效果按三倍费用支付。
+- 这是一项为运行选择的明确口径，不再把恰好 3 的重复使用边界作为阻塞项。
 
 ### 3.3 历史团可恢复程度
 
@@ -72,7 +75,7 @@
 1. 是否完整区分系统规则、Campaign override、模组特例和 GM 操作建议。
 2. Chaos 机会信号是否足够覆盖，但不会让每轮普通行动产生额外轮询。
 3. Anomaly 超出 Focus、近旁行动、Domain 内免费效果及自定义 Special Rule 的解释是否准确。
-4. Domain 3 成本的免费与无限使用是否应保持待核。
-5. 起始 Chaos 的 Loose Ends 表、Zarek Campaign 0 默认及 Bower Street 旧备团记录是否存在未解决的权威冲突。
-6. 17 个测试案例是否能有效区分“正确不触发”“应主动评估”“允许效果但不能擅自消费”和“消费后必须改变世界状态”。
+4. Domain 内费用 ≤3 的免费与重复使用执行口径是否与原文及桌面目标一致。
+5. 每次任务按当前 Branch Loose Ends 读取表格的初始化流程，是否正确处理阈值、天气事件数量与分部限制。
+6. 19 个测试案例是否能有效区分“正确不触发”“应主动评估”“允许效果但不能擅自消费”和“消费后必须改变世界状态”。
 7. 是否应补充多轮/多 Session 的真实 Runtime 事件链测试，以及如何避免引入第二套资源账本。
