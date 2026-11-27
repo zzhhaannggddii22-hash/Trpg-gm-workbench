@@ -1,7 +1,7 @@
 # NQB-01 v0.3｜操作者执行与信息隔离提示
 
 > Fixture: NQB-01 v0.3
-> Status: OPERATOR PROTOCOL / EXECUTION BLOCKED UNTIL A PRE-EXISTING ISOLATED TEST CAMPAIGN IS AVAILABLE
+> Status: OPERATOR PROTOCOL / TEST CAMPAIGN REGISTERED / PREFLIGHT AND SESSION START PENDING
 > Canon: TEST_ONLY_NON_CANON
 > 本文件定义操作者如何组织测试。它不是完整的 GM 提示包，不得把其中的审核目标、行动序列或审核表转交目标 GM。
 
@@ -17,7 +17,7 @@
 5. NQB 场景资料只作为该测试 Campaign 下的 test-only Module/场景输入，在正常 Prep-to-Runtime 交接后加载；不得将 GM Packet 当作独立 GM 提示词或自行搭建一个平行的“迷你 GM 环境”。
 6. 测试运行必须使用预先存在的隔离状态目标。若标准 Runtime 会将事件写入正式 Campaign，或无法证明测试数据只写入隔离位置，立即 BLOCK，不得试跑。
 
-**当前仓库准入检查：** Campaigns/README.md 当前登记的正式 Campaign 只有 Zarek / 扎雷克；本测试没有已登记的专用 Test Campaign。因此，在用户明确提供/授权使用一个已经存在的隔离测试 Campaign 之前，NQB-01 v0.3 的真实 Runtime 执行状态必须保持 BLOCKED_NOT_RUN。不得改用 Zarek Campaign，不得自行创建替代环境，也不得把先前 A-mode 独立提示包模拟当成 Runtime 测试。
+**当前仓库准入检查：** 用户已授权建立独立环境，Campaigns/README.md 现已登记 `Campaigns/NQB01_Runtime_Test/`。该 Campaign 具有独立 SYSTEM_BINDING、TEST_PLAYER_PROFILE、测试 Module、Runtime State revision 0、Session Log 与 Player Notes，并绑定已登记的 `triangle_agency / 中文 v22`。它不复用 Zarek 的任何战役状态。当前状态为 `TEST_CAMPAIGN_REGISTERED / PREFLIGHT_NOT_RUN / SESSION_NOT_STARTED`。目标 GM 仍须在测试开始前通过正常入口执行 Preflight，核验实际系统资料、角色边界、Context Assembly 和隔离写入目标；不得把环境注册本身当作 Runtime 测试证据。
 
 如果上述任一条件不满足，只能继续完善测试设计和静态文件检查；不得声称完成了正式入口测试。
 
