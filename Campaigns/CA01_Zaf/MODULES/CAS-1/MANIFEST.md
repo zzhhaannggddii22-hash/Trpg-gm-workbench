@@ -15,6 +15,7 @@
 - GM prep source blob SHA: `0cd209de7105b8e0029114bfa44ffaefb5fe9856`
 - Campaign status: candidate / not activated / not started
 - Player-facing module text: source archive only; GM-only prep must remain private.
+- Local lookup: REFERENCE_INDEX.md (GM-only; links the official source archive and the complete GM prep by topic).
 
 ## Version and discrepancy notes
 
