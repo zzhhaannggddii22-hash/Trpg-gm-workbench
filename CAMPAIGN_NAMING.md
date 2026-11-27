@@ -44,4 +44,4 @@
 ## 当前目录登记
 
 - `TA01_Zarek` — Triangle Agency / `triangle_agency` 第 1 战役。
-- Cairn 当前仍为 candidate；其首个 Campaign 目录在正式建立时使用 `CA01_<角色名>`，不提前占用序号。
+- `CA01_Zaf` — Cairn / `cairn` 第 1 战役（Twin Lakes；角色创建中；Cairn 系统接入仍为 candidate，不代表正式激活）。
