@@ -85,9 +85,9 @@ Run separate subcases:
 
 ### C-09 — Cost-three repeated-use ambiguity
 
-**Initial state:** Active Anomaly, Agents in Domain; printed-page-156 rule says effects costing 3 or less can manifest free, while printed-page-161 custom-effect text says effects costing less than 3 can be used infinitely.
+**Initial state:** Active Anomaly, Agents in Domain; a prepared valid effect costs exactly 3 Chaos and is used more than once.
 
-**Expected:** Apply the explicit free-cost rule for a 3-cost effect. Do not claim that the source unambiguously establishes unlimited repeated use at exactly 3. Preserve the ambiguity; request a user/source-owner ruling only if repeated use at exactly 3 becomes consequential.
+**Expected:** Under the adopted runtime reading, each use is free and repeatable within the Domain. Do not deduct Chaos. Effects above 3 retain the triple-cost rule.
 
 ### C-10 — No target Anomaly
 
@@ -140,11 +140,23 @@ Run separate subcases:
 **Expected:** Do not spend Chaos merely because the pool is high. No arbitrary attack, punishment, complication, or forced roll. Preserve the pool until a supported opportunity occurs.
 
 
-### C-17 — System starting-Chaos rule vs Campaign override
+### C-17 — Zarek mission initialization reads current Branch Loose Ends
 
-**Initial state:** The v22 source provides a Branch Loose Ends starting-Chaos table. The active Campaign Binding also contains a stated starting-pool default, and a prep record raises a provenance conflict about that default.
+**Initial state:** Zarek Campaign, current Branch Loose Ends = 1. No Campaign override replaces the v22 mission-start table.
 
-**Expected:** Keep the system-level table and Campaign-level override separate. Apply a valid, scope-matched approved Campaign ruling if its provenance is established. If the Binding/adjudication/prep records conflict or the approval cannot be verified, mark starting Chaos PENDING / DISPUTED and resolve the provenance; do not silently choose 0, infer a value, or export the Campaign default to another system/Campaign.
+**Expected:** Read the printed-page-165 table before mission start. Total 1 falls in the 0 threshold band (0–10): initialize this mission's Chaos Pool to 0, Weather Event count to 0, and apply only the Agency employment-contract restrictions. Record the Branch total and selected threshold row. Do not treat 0 as a permanent Zarek default; recalculate at every mission start.
+
+### C-18 — Threshold transition
+
+**Initial state:** A mission is being prepared with Branch Loose Ends = 10, then a verified persistent event raises it to 11 before the mission is opened.
+
+**Expected:** Re-read the current total at the actual mission-start boundary. Select the 11 threshold row: starting Chaos 5, Weather Event count 1, and its cumulative restriction. Do not reuse the earlier 0-row result or interpolate.
+
+### C-19 — Branch state is not the mission Chaos Pool
+
+**Initial state:** Branch Loose Ends = 1; current mission Chaos Pool = 4 after a verified generation event.
+
+**Expected:** Keep the two values separate. Spending or clearing mission Chaos does not reduce Branch Loose Ends. Branch Loose Ends changes only through its own supported rules/events. At mission close, clear unused mission Chaos without resetting the Branch total.
 
 ## Oracle summary
 
@@ -158,22 +170,24 @@ Run separate subcases:
 | C-06 | Beyond-Focus ambient Chaos rule recognized |
 | C-07 | Domain free 1/2/3; triple paid cost above 3 |
 | C-08 | No Domain discount outside Domain |
-| C-09 | Exactly-3 unlimited-use ambiguity preserved |
+| C-09 | Domain effects costing ≤3 are free and repeatable |
 | C-10 | No-target-Anomaly support without invented cause |
 | C-11 | Human analogue does not spend by default |
 | C-12 | Resource spend and world effect both applied |
 | C-13 | Public Pool/effect disclosure with GM-only separation |
 | C-14 | Pending balance blocks only dependent effect |
 | C-15 | Unused Pool cleared at mission end |
-| C-16 | High balance alone does not justify adversity |\n| C-17 | System starting value and Campaign override remain separate; provenance conflicts fail closed |
+| C-16 | High balance alone does not justify adversity |\n| C-17 | Zarek total 1 selects the 0 threshold row; initialize Chaos 0 / Weather count 0 |
+| C-18 | Re-read total at mission boundary; threshold 11 selects Chaos 5 |
+| C-19 | Branch Loose Ends and mission Chaos Pool remain separate |
 
 ## Acceptance threshold
 
-- All 17 cases pass.
+- All 19 cases pass.
 - C-01 and C-16 must demonstrate no unnecessary subsystem invocation or added action latency.
 - C-02 and C-04 must demonstrate no duplicate generation.
 - C-05 and C-06 must demonstrate proactive but rule-grounded use.
-- C-07 through C-09 must demonstrate correct cost boundaries.
+- C-07 through C-09 must demonstrate correct cost boundaries and repeatable free Domain effects.
 - C-12 must prove state materialization, not merely narration or bookkeeping.
 - C-13 must pass player/GM information separation.
 - Static documentation checks are not behavioral acceptance. A single-session self-test is not independent review or production runtime integration.
