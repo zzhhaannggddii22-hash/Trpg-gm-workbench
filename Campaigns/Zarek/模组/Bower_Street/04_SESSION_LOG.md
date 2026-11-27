@@ -1,8 +1,9 @@
 # Bower Street｜Session Log Index
 
 - SESSION 01：CLOSED。记录文件：[Sessions/SESSION_01.md](./Sessions/SESSION_01.md)。
-- Module Lifecycle：ACTIVE / IN PROGRESS；尚未结团。
-- 下一场使用 Sessions/SESSION_02.md，不覆盖 SESSION_01。
+- SESSION 02：CLOSED。恢复摘要与结团记录：[Sessions/SESSION_02.md](./Sessions/SESSION_02.md)。原始逐轮记录未完整恢复，详见该文件证据边界。
+- Module Lifecycle：CLOSED / CORE ANOMALY CONTAINED。
+- 不再安排本模组下一场 Session；后续转入幕间成长。
 - 当前唯一有效运行快照：[03_RUNTIME_STATE.md](./03_RUNTIME_STATE.md)。
 - 本模组资源交易流水与待核事项：[09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md)。
 - 玩家侧已知信息：[05_PLAYER_NOTES.md](./05_PLAYER_NOTES.md)。
@@ -19,3 +20,10 @@ SESSION 01 结束时：
 - 规则结算问题见 Issue #22；NPC/空间连续性问题见 Issues #23–#25。
 
 每次 Session 结束后更新 Runtime State 与 Player Notes。只有 Module 结团后才进行任务结果、奖励/处分、Loose Ends 最终结算及完整 Module Postmortem。
+
+
+## SESSION 02 与模组结团
+- 玩家确认核心异常已收容，SESSION 02 与 Bower Street 模组均已结束；次要线索未解不阻碍结团。
+- 已恢复的唯一完整检定与资源变化见 SESSION_02.md 和 09_RESOURCE_LEDGER.md；不得将其描述为完整逐轮记录。
+- Commendations 结团报告余额 18；Mission MVP 免费职能格选择 Attentiveness；完整模组结团 Time +1。
+- 普通 Chaos Pool、其他检定资源、Harm/Burnout/Demerits、天气、分部 Loose Ends 增量及装备变化仍有待核对；保留 UNKNOWN，不阻止幕间叙事启动。
