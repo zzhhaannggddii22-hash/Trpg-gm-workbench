@@ -89,6 +89,7 @@
 - [L3 NPC Task, Voice & Narrative Density Regression v1](./Acceptance_Test_Fixtures/L3_NPC_TASK_AND_VOICE_REGRESSION_v1/README.md) 与 [执行报告](./Acceptance_Test_Fixtures/L3_NPC_TASK_AND_VOICE_REGRESSION_v1/RUN_REPORT.md)：覆盖 NPC 性格辨识度、段落信息承载与任务截止时间闭环；单会话合成回归，结论 PASS_WITH_LIMITS，不关闭长期问题。
 - [US Community Event Autonomy Regression v1](./Acceptance_Test_Fixtures/US_COMMUNITY_EVENT_AUTONOMY_REGRESSION_v1/README.md) 与 [执行报告](./Acceptance_Test_Fixtures/US_COMMUNITY_EVENT_AUTONOMY_REGRESSION_v1/RUN_REPORT.md)：美国社区活动场景，移除显式步骤耗时，检验 NPC 性格、任务依赖、安全约束、时间估算与备用方案切换；单会话合成回归，结论 PASS_WITH_LIMITS。
 - [L3 Multi-NPC Resource Conflict Regression v1](./Acceptance_Test_Fixtures/L3_MULTI_NPC_RESOURCE_CONFLICT_REGRESSION_v1/README.md) 与 [执行报告](./Acceptance_Test_Fixtures/L3_MULTI_NPC_RESOURCE_CONFLICT_REGRESSION_v1/RUN_REPORT.md)：四名 NPC 的知识边界、共享资源竞争、计划协商与离场自主性；执行中发现 14 分钟行动被错误推进为 10 分钟，硬门槛 FAIL，保留为失败样本。
+- [L3 Multi-NPC Resource Conflict Regression v2](./Acceptance_Test_Fixtures/L3_MULTI_NPC_RESOURCE_CONFLICT_REGRESSION_v2/README.md) 与 [执行报告](./Acceptance_Test_Fixtures/L3_MULTI_NPC_RESOURCE_CONFLICT_REGRESSION_v2/RUN_REPORT.md)：修正 v1 时间线与路线定义，并延长观察至 17:45；实际完成餐食交付与大厅布置，明确放弃牛奶取货；单会话修正回归 PASS_WITH_LIMITS。
 
 合成测试、盲测和真实跑团分别报告。未执行的测试必须标记 NOT STARTED / NOT TESTED；不得以文件已更新推断运行可靠性通过。
 
