@@ -36,10 +36,10 @@
 
 | State | Authoritative source | Runtime reference |
 |---|---|---|
-| Character attributes, QA caps/current QA, persistent resources, harm, demerits, equipment | `Campaigns/Zarek/人物档案/扎雷克_正式人物卡.md` | Record source version and checkpoint only |
+| Character attributes, QA caps/current QA, persistent resources, harm, demerits, equipment | `Campaigns/TA01_Zarek/人物档案/扎雷克_正式人物卡.md` | Record source version and checkpoint only |
 | Module resource transactions and module-scoped balances | `09_RESOURCE_LEDGER.md` | Record last verified Entry ID / ledger checkpoint only |
-| Campaign rulings | `Campaigns/Zarek/RULE_ADJUDICATIONS.md` | Q01–Q05 binding; do not copy rulings |
-| System and ruleset | `Campaigns/Zarek/SYSTEM_BINDING.md` | triangle_agency / 中文 v22 |
+| Campaign rulings | `Campaigns/TA01_Zarek/RULE_ADJUDICATIONS.md` | Q01–Q05 binding; do not copy rulings |
+| System and ruleset | `Campaigns/TA01_Zarek/SYSTEM_BINDING.md` | triangle_agency / 中文 v22 |
 | Player-known information | `05_PLAYER_NOTES.md` plus source event | Projection only; no GM-only truth |
 | Fixed module facts | `01_GM_PREP.md` and source references in 07 | Reference IDs only |
 
