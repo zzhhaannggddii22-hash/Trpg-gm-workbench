@@ -7,7 +7,7 @@
 
 ## 执行结果
 
-`roll_runtime_adapter.py` 实际执行 11 项测试，11 PASS / 0 FAIL：
+`roll_runtime_adapter.py` 实际执行 12 项测试，12 PASS / 0 FAIL：
 
 1. 成功提交后重复投递：返回 IDEMPOTENT_REPLAY；资源流水不重复。
 2. AFTER_PREPARE 故障：冷恢复 DISPUTED，不重放领域事件。
@@ -20,13 +20,14 @@
 9. 玩家投影含内部 event_id：拒绝生成，不产生玩家文件。
 10. 连续两笔资源交易：第二笔前值从 Resource Ledger 链计算（2 → 4 → 3），Runtime State 不保存余额。
 11. 过期 base_revision：拒绝应用。
+12. 相同事件身份但修改资源增量的重复投递：拒绝为同一事件换 payload，且不重复写入流水。
 
 ## 与现有规范的对齐
 
 - 沿用 Runtime §14.14 的 immutable manifest、base/target revision、逐字段应用证明与 checkpoint manifest 引用。
 - Session Log 只引用 Resource Ledger Entry ID；Runtime State 不复制资源余额。
 - 资源前后值从 Resource Ledger 的连续流水推导，不把测试快照变成第二份交易账本。
-- 玩家投影仅接受 allowlist 字段；内部标识与 GM-only 字段不会进入玩家载荷。
+- 玩家投影仅接受 allowlist 字段；内部标识与 GM-only 字段不会进入玩家载荷。投影白名单在任何资源/领域写入前执行；重复事件还会核验原始 payload fingerprint，防止同一 event_id 被换内容重放。
 - 部分写入一律 fail-closed；不自动重放可能已经生效的领域效果。
 
 ## 发现与边界
