@@ -115,3 +115,16 @@ Open items:
 3. Runtime snapshot and session log will be initialized only when the campaign is explicitly activated/started under the approved protocol.
 
 **Final status:** preparation work is complete to the extent currently supported by the repository. The campaign is `PREFLIGHT_COMPLETED_WITH_OPEN_ITEMS`, `NOT_STARTED`, and `NOT_ACTIVATED`. Do not begin play until the player explicitly says “开始” and the open activation conditions are addressed.
+
+
+---
+
+## 10. Post-Preflight party update｜2026-11-27
+
+本节记录原 Preflight 审核完成后的正式队伍变更；不回写或伪装成原审核当时已经存在的状态。
+
+- 茱比洛（Jubilo）已正式加入 Twin Lakes（CA01_Zaf），身份为 Cairn 2e 战役内 L3 NPC 队员，由助手控制。她不是测试角色。其人物卡与完整初始状态见 `人物档案/茱比洛_Jubilo.md`。
+- 茱比洛采用本战役为该 L3 NPC 配置的 PC 等价资源与机制，并拥有独立目标、判断、资源管理、关系和行动权。该配置不宣称为 Cairn NPC 的通用规则。
+- **下次开局的实际队伍仅为 Zaf 与茱比洛。凯瑟琳休止，不随队、不参与该次冒险；她的人物卡、已建立状态和跨战役隔离记录全部保留。**
+- 原第 4 节关于 Zaf 与凯瑟琳两名角色的资源审计，保留为原 Preflight 时点的历史记录。茱比洛的初始状态以其人物卡为准。
+- 本更新不代表战役已经开始，也不改变 Cairn 的系统激活状态；开局和系统激活仍须遵循原有门槛及用户明确指令。
