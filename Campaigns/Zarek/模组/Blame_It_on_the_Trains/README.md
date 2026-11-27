@@ -26,7 +26,7 @@
 - 文件交付：DELIVERED（固定 Commit 下文件存在并已回读）。
 - 备团设计：REVIEWED；这不代表规则验证完成。
 - 来源核验：BLOCKED；中文精翻第 191–208 页已分页回读，英文原版逐页校勘仍未完成。
-- Prep Rule Validation：BLOCKED；见 07 §3，核心规则项仍为 OPEN/PARTIAL。
+- Prep Rule Validation：BLOCKED；见 07 §3。QA/Burnout、Ask the Agency、Smell the Roses、Chaos 和 Loose Ends 的规则映射已关闭；Harm/Domain 仍为 PARTIAL，设备点交与结算状态仍待核。
 - Runtime/单人路径可执行性：PARTIAL；检查点结构已补齐并完成合成状态测试；单人路径案头测试有部分结果，机械成本与完整端到端运行仍未通过。
 - 正式 Preflight：NOT STARTED / BLOCKED。Preflight 不承担补做备团规则核验。
 - 用户开团许可：WAITING FOR USER “开始”。
