@@ -119,9 +119,10 @@ QA 一般限制：
 ### I. 资源交易与状态应用
 复用现有资源权威，不另建骰子账本：
 - 每个实际改变的资源字段独立形成交易条目；
-- 模组资源由当前 Resource Ledger 记录；角色持续性资源仍以 Campaign 正式人物卡为跨模组权威；
-- Session Log 记录事件与玩家看到的资源说明，引用 Resource Ledger Entry ID；
-- Runtime State 只更新续接快照并引用账本版本/条目；
+- 当前模组 Resource Ledger 是 Session 进行期间所有角色资源与模组公共资源的唯一交易流水和余额依据；具有机制意义的装备充能/次数等资源字段也按账本规则记录；
+- Session Log 记录事件与玩家看到的资源说明，引用 Resource Ledger Entry ID，不复制资源流水；
+- Runtime State 只保留场景连续性和必要关键物品快照，不保存资源余额，也不承担账本引用/计算；
+- Campaign 正式人物卡是 Session 边界状态快照：Session 开始时用于建立/核对账本开局基线；Session 结束对账后一次性更新，不在 Session 中逐笔更新；
 - 同一轮完成规则结算、账本交易、余额更新和玩家可见说明；
 - 前值 UNKNOWN / PENDING 时只记录可确认增量，不推算后值；冻结依赖该余额的效果，不冻结无关互动；
 - 重试先检查原 roll_event_id、Entry ID 和应用状态，防止重复掷骰或重复入账。
