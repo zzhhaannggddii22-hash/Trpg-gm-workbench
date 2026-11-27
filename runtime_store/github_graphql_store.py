@@ -386,6 +386,10 @@ class GitHubGraphQLRuntimeStore:
                 if readback is not None:
                     current = json.loads(readback[0])
                     if current == envelope:
+                        commit_oid = self._find_path_commit(self.operations_branch, path, head)
+                        historical = self._read_file_at(commit_oid, path) if commit_oid else None
+                        if historical is None or historical[0] != readback[0]:
+                            raise CommitOutcomeUnknown("PREPARE acknowledgement was lost and historical readback failed") from exc
                         return {"status": "PREPARED", "batch_id": batch_id,
                                 "manifest_ref": self.operations_branch + ":" + path,
                                 "manifest_fingerprint": digest}
