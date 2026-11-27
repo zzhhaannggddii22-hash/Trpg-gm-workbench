@@ -38,7 +38,7 @@ resume:
 persistence:
   batch_id: null
   status: "NOT_STARTED"
-  repository_commit_read: "b80bd4cbad428b18006e859de7b3ea4b28394d2c"
+  repository_commit_read: "UNKNOWN_AT_INITIAL_CHECKPOINT_CREATION"
   published_checkpoint_ref: "Campaigns/NQB01_Runtime_Test/Modules/NQB01_V03/03_RUNTIME_STATE.md@revision-0"
   t0_mode: "UNKNOWN"
   t0_mode_authority_ref: "UNKNOWN"
