@@ -1,7 +1,7 @@
 # Cairn 2e 核心规则运行手册
 
 > 规则绑定：`system_id: cairn`；`ruleset_version: Cairn Second Edition`
-> 状态：runtime normalization v0.3；已完成官方 Player's Guide / Warden's Guide 章节来源核验。该状态表示规则章节已逐项审阅并完成本地覆盖分类，不代表全部怪物、法术、遗物、背景表或模组条目均已逐项录入，也不代表系统已通过真实跑团验收或可正式激活。
+> 状态：runtime normalization v0.4；官方 Player's Guide / Warden's Guide 章节核验完成，Bestiary、Spellbooks、Reliquary、NPC Tables、怪物/背景创建指南及 20 个官方 Backgrounds 已建立本地完整来源快照。模组专属资料保存在各 Campaign 目录。该状态不代表已完成全部数据结构化，也不代表系统已通过真实跑团验收或可正式激活。
 > 权威来源：[官方 Core Rules](https://cairnrpg.com/second-edition/players-guide/core-rules/)、[Character Creation](https://cairnrpg.com/second-edition/players-guide/character-creation/)、[Procedures](https://cairnrpg.com/second-edition/players-guide/procedures/)。本手册为自写结构化摘要，不替代原文。
 
 ## 0. 使用规则
@@ -485,5 +485,7 @@
 - 属性恢复的具体服务、时间、费用与特殊治疗；
 - 模组自定义程序、随机表和遭遇数量；
 - 本文件标记 PARTIAL 或 MODULE_DEPENDENT 的项目。
+- 具体怪物、法术书、遗物、NPC 生成表与背景专属数据，优先查阅 [OFFICIAL_CATALOG_INDEX.md](./OFFICIAL_CATALOG_INDEX.md) 指向的本地官方快照；不要把具体条目只留作在线回查。
+- Campaign 专属 NPC、遭遇、陷阱、地点、事件时钟与特殊程序，优先查该 Campaign 的模块 SOURCE 归档和 GM-only Reference Index；不得混入系统级通用目录。
 
 不得把“每次都查原文”作为常态，也不得把“已经有速查”当成可以忽略原文更新的理由。规范化条目是运行入口；官方 2e 是权威底层。
