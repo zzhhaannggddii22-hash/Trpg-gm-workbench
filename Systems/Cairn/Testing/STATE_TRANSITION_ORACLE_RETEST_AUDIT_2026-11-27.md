@@ -1,12 +1,12 @@
 # Cairn 2e｜State Transition Regression v1 第二轮独立 Oracle 审计
 
-日期：2026-11-27  
-被审计执行报告：用户提交的第二轮独立盲测报告  
-固定测试版本：`43ecb7211bbc19bad92f109ab92eee3d5e146e5d`  
-Repository：`zzhhaannggddii22-hash/Trpg-gm-workbench`  
-Branch：`feat/cairn-second-system-integration`  
-Fixture：`STATE_TRANSITION_REGRESSION_v1`  
-范围：CRT-66–CRT-87  
+日期：2026-11-27
+被审计执行报告：用户提交的第二轮独立盲测报告
+固定测试版本：`43ecb7211bbc19bad92f109ab92eee3d5e146e5d`
+Repository：`zzhhaannggddii22-hash/Trpg-gm-workbench`
+Branch：`feat/cairn-second-system-integration`
+Fixture：`STATE_TRANSITION_REGRESSION_v1`
+范围：CRT-66–CRT-87
 模式：`TEST_ONLY_NON_CANON`
 
 ## 1. 审计依据与证据边界
