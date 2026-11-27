@@ -252,7 +252,7 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
             "base_revision": 1,
             "target_revision": 2,
             "target_fingerprints": self.manifest["target_fingerprints"],
-        }, sort_keys=True) + "\\n"
+        }, sort_keys=True) + "\n"
         snapshot[".runtime/checkpoint.json"] = "{not-json"
         result = self.store.reconcile("BATCH-002")
         self.assertEqual(result["status"], "DISPUTED")
