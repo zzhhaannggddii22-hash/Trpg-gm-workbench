@@ -92,8 +92,8 @@ The v22 source (General Manager Toolkit, printed page 165 / PDF physical page 16
 | 33–43 | 15 | 3 | Agents must count to 3 (aloud or equivalently) before every roll |
 | 44–54 | 20 | 4 | Agents are ineligible for Mission MVP awards until Branch Loose Ends fall below 44 |
 | 55–65 | 25 | 5 | Read the book's stated warning about contract termination at 66 and the overtime option to remove 6 Loose Ends alone |
-| 66–76 | N/A | N/A | At the end of the current mission, the active field team is forcibly retired; apply the book's retirement and Loose Ends reduction rules |
-| 77+ | N/A | N/A | The Unraveling is imminent; the Branch region is removed from existence as directed by the book |
+| 66–76 | N/A | N/A | At the end of the current mission, the active field team is forcibly retired; reduce Branch Loose Ends by 11, plus 11 for each Agent using a function-provided retirement option |
+| 77+ | N/A | N/A | The Unraveling is imminent; the Branch region is removed from existence as directed by the book (source directs to W7) |
 
 The source table prints thresholds at 0, 11, 22, 33, 44, 55, 66, and 77. The interval notation above operationalizes those thresholds without interpolation: a total of 1 uses the 0 row; 10 also uses the 0 row; 11 enters the 11 row. The special 66 and 77 outcomes take precedence over ordinary Chaos initialization.
 
