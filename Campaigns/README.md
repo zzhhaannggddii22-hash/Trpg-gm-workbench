@@ -6,6 +6,9 @@
 
 - [Zarek / 扎雷克](./Zarek/README.md) — 绑定 `triangle_agency`，规则版本为《三角机构》中文 v22。
 
+## 隔离测试 Campaign
+- [NQB-01 v0.3 Runtime Test Campaign](./NQB01_Runtime_Test/README.md) — **TEST_ONLY / NON_CANON**；独立绑定《三角机构》中文 v22，仅供 GM Runtime 叙事基线测试。不得与任何正式 Campaign 共享角色、状态或事件。
+
 ## 约定
 
 - 战役可以跨模组延续，但默认不能跨规则系统。
