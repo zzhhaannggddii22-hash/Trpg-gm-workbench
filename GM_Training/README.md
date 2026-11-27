@@ -55,7 +55,8 @@
 - [微型箱庭 ↔ 实际跑团双向迁移协议](./MICRO_SANDBOX_LAB/CAPABILITY_TRANSFER_PROTOCOL.md)：规定训练方法如何进入真实跑团，以及真实 Session 的缺陷如何反向成为箱庭训练样本。
 - [训练题库](./NARRATIVE_TRAINING_QUESTION_BANK.md)：专项题与综合题候选；题库不定义能力标准。
 - [开放训练问题清单](./Training_Logs/OPEN_TRAINING_BACKLOG.md)：尚未解决的问题及后续验证要求。
-- [2026-11-27 运行缺陷与结团流程复核](./Training_Logs/2026-11-27_RUNTIME_INCIDENT_REVIEW_ISSUE_007_010.md)：汇总 ISSUE-007～010 的根因判断、自测证据边界、结团/Time 修正及未完成事项。\n- [2026-11-27 备团交付失效复核与流程修订](./Training_Logs/2026-11-27_PREP_DELIVERY_FAILURE_REVIEW_AND_REMEDIATION.md)：记录备团未落库、入口未同步的根因与交付门禁修订。
+- [2026-11-27 运行缺陷与结团流程复核](./Training_Logs/2026-11-27_RUNTIME_INCIDENT_REVIEW_ISSUE_007_010.md)：汇总 ISSUE-007～010 的根因判断、自测证据边界、结团/Time 修正及未完成事项。
+- [2026-11-27 备团交付失效复核与流程修订](./Training_Logs/2026-11-27_PREP_DELIVERY_FAILURE_REVIEW_AND_REMEDIATION.md)：记录备团未落库、入口未同步的根因与交付门禁修订。
 - [NPC 观点修正与证据范围回归 v1 执行报告](./Acceptance_Test_Fixtures/NPC_BELIEF_REVISION_EVIDENCE_v1/RUN_REPORT.md)
 - [NPC 观点修正与证据范围回归 v1 夹具](./Acceptance_Test_Fixtures/NPC_BELIEF_REVISION_EVIDENCE_v1/START.md)
 - [2026-11-27 连续场景推进、NPC 即兴事实与连续性研究记录](./Training_Logs/2026-11-27_NARRATIVE_CONTINUOUS_BEATS_AND_NPC_CANON_CONTINUITY.md)
