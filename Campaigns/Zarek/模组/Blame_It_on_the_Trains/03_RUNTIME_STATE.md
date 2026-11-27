@@ -102,7 +102,7 @@ No NPC has interacted with the player in this module. Do not instantiate dynamic
 |---|---|---|---|---|
 | NONE | — | — | — | — |
 
-When play begins, update only on an actual event. Knowledge must retain its source and recipient; GM knowledge is never copied automatically to an NPC or Player Notes.
+When play begins, update only on an actual event. Knowledge must retain its source and recipient; GM knowledge is never copied automatically to an NPC or Player Notes. For each Sub-Reality, track entry count and every d44 result; on re-entry roll once for each prior entry and apply all results cumulatively. Store the roll Event ID and effect IDs so a resume cannot reroll or duplicate effects.
 
 ## 7. Spatial state ledger (GM-only; empty until play)
 
