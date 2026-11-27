@@ -8,7 +8,7 @@ validation:
   system_id: cairn
   ruleset_version: Cairn Second Edition
   preflight_base_commit: 245fca27b3c2570ea3be0781648bef204e70c36f
-  source_archive_commit: 4f09f029e1e034e1014ffa30a270fdaf390dff97
+  source_archive_commit: 1689b2eff7901df2043a74c357bb52de67210aee
   gm_prep_commit: cc49fa84edd8d11bcb9e7fdbd221d8589f860207
   latest_prep_revision_commit: a004b053a58d5966035ff8f8e9f99d5795faad8e
   module_source_path: Campaigns/TEST_ONLY_Cairn_VR_Twin_Lakes/SOURCE/CAS1_OFFICIAL_SOURCE.md
@@ -60,6 +60,6 @@ Cairn 仍为 candidate。此 Manifest 仅授权 TEST_ONLY_NON_CANON 验证，不
 - 已将当前可访问的官方上游 Markdown 完整归档至 `SOURCE/CAS1_OFFICIAL_SOURCE.md`。
 - 已建立主持侧专用 `GM_ONLY_PREP.md`，供后续直接读取，不必每次重新搜索网页。
 - 官方 Cairn Press 2026-03-31 发布说明称已补入 Fasha HP；当前上游 Markdown 对应数据行仍无 HP。另一个 PDF 文本副本显示 Fasha 为 10 HP，因此当前采用 GM_INFERENCE: 10 HP；官方 PDF 本轮未直接读取，不能将该数值标为官方数据。
-- 当前归档包含完整 Markdown 原文，不代表已归档 PDF 二进制、版式或地图图片原文件。
+- 当前归档包含完整 Markdown 原文；相对图片与链接已规范化为官方站点绝对路径以便 GitHub 显示。PDF 二进制本身未归档。
 - 用户 PC 与 Katherine PC 的最终人物卡将在之后提供；本次不生成、不预填。
 - Runtime State revision 0、Session Log 空记录保持不变。当前尚未获得开始授权，不建立 NEW START 检查点、不初始化场景、不推进时间。
