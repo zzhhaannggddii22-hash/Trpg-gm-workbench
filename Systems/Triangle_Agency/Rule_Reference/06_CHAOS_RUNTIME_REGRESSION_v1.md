@@ -202,7 +202,7 @@ Run separate subcases:
 - Static documentation checks are not behavioral acceptance. A single-session self-test is not independent review or production runtime integration.
 
 
-## Independent-review remediation fixtures (R-01–R-24)
+## Independent-review remediation fixtures (R-01–R-25)
 
 > These are new behavioral cases proposed from the independent review. They are not yet executed and must not be counted as PASS. Use synthetic Campaigns and isolated target chats; keep Oracle material hidden from the tested GM.
 
@@ -240,4 +240,4 @@ Run separate subcases:
 - R-17/R-18 verify that an extreme-weather result can change Loose Ends and the remaining Weather Event count, while replay does not duplicate either. R-25 verifies Zarek Q06: ordinary weather does not trigger the Weather Events procedure.
 - R-19/R-20 require the exact v22 lifecycle wording and must be verified against the fixed ruleset source before production acceptance.
 - R-23/R-24 require independent non-Triangle system fixtures, not a Triangle Agency mock with fields disabled.
-- None of R-01–R-24 is considered executed by adding it to this document.
+- None of R-01–R-25 is considered executed by adding it to this document.
