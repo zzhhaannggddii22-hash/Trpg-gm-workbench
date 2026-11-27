@@ -63,7 +63,7 @@ GM 能力测试、未进入正式 CANON 的短团可作为测试模组单独归�
 
 - 用户已明确选择《Bower Street》作为下一场正式模组；该选择覆盖此前“下一场尚未指定”的历史快照。
 - 独立审查基于 main `4e85fc5` 给出 BLOCKED。本轮修订位于 `fix/bower-street-audit-iteration-2`，尚未合并；完成第二轮独立审查前不得进入正式 Preflight。
-- 正式人物卡 §6 当前记录 Dynamism 1/1、Initiative 1/1。旧交接快照中的 0/1、0/0 为历史记录；除非有更新的实际消耗事件，以正式卡为准。
+- 正式人物卡 §6 保存截至 2026-11-22 的 QA 快照；《Bower Street》Session 01 期间及之后的资源变化以模组 Resource Ledger 为准，Session 结束对账后再更新人物卡。
 
 ## 2026-11-25｜扎雷克机构分部归属
 
