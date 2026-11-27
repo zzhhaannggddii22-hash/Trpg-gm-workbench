@@ -215,7 +215,7 @@ NPC 可以在运行中获得未预先登记的个人经历、兴趣、偏好、�
 
 - 当前定位：候选方法 / 训练观察，暂不登记为 T3，不修改正式 Skill。
 - 只有在多场景重复有效、没有信息边界/行动权/状态连续性退化后，才考虑纳入 NARRATIVE_PRESENTATION_SKILL 或 CHARACTER_SIMULATION_SKILL。
-- 信息层/叙事层分离可立即作为测试产物组织纪律使用；是否要修改正式测试协议，仍需核对现有 SELF_TESTING_PROTOCOL 与 QA 规范，优先复用现有机制。
+- 信息层/叙事层分离已落实到本分支的 SELF_TESTING_PROTOCOL.md v1.3，作为测试组织纪律立即生效；叙事推进与 NPC 即兴事实维护仍是候选能力方法，暂不修改正式运行 Skill。
 
 ## 8. 参考资料
 
