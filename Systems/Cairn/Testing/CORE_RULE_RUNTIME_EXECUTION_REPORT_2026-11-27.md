@@ -10,7 +10,7 @@
 
 ## 1. 结果摘要
 
-<badge>Manual Runtime Regression: PASS</badge>
+**Manual Runtime Regression: PASS**
 
 | 指标 | 结果 |
 |---|---:|
