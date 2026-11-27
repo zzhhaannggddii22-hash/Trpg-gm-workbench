@@ -52,11 +52,12 @@ For each marked box, record and resolve:
 3. **Code printed in that exact box**: exact code or NONE.
 4. **Authorization result**: UNLOCKED / NO_CODE / BLOCKED_OR_UNKNOWN.
 5. If unlocked, retrieve **only that exact document** from the authorized v22 source.
-6. Read the document privately as GM and extract its complete operative payload: immediate benefits, choices, costs, prerequisites, restrictions, timing, required scenes, follow-up document codes, and any GM/player information boundary.
-7. Apply only effects whose prerequisites are met. Do not silently grant future, conditional, or purchasable benefits.
-8. Record whether the document was read, what effects were applied or deferred, and what the player was told or shown.
+6. Authorize the player to find and privately read **only that exact document**, as the rulebook directs. Playwall documents are personal material; the player controls what they share. The GM must not automatically narrate or disclose the document's full contents.
+7. The GM may consult only the minimum necessary material to adjudicate an immediate mechanical effect or prepare a required scene. Preserve GM-only information boundaries and do not expose neighboring/locked documents.
+8. Apply only effects whose prerequisites are met. Do not silently grant future, conditional, or purchasable benefits.
+9. Record whether the player was authorized and privately read the document, what effects were applied or deferred, and what the player chose to share. If the player has not confirmed reading, record NOT_CONFIRMED rather than assuming.
 
-A document's unlock does not mean every paragraph must be dumped into player-facing narration. The document is personal material; share the information/effects relevant to the current game, preserving the document's intended private and reveal structure. Keep GM-only operational notes separate from Player Notes.
+An unlock grants access; it does not imply that the player has shared the document's contents with the GM or other players. Keep the player's private reading, player-shared information, GM adjudication notes, and Player Notes as separate information states.
 
 If a newly authorized document cannot be retrieved or its source/version cannot be verified, record BLOCKED_OR_UNKNOWN and pause only effects dependent on it. Do not infer the content from a later document, a wiki, model memory, or an adjacent code.
 
@@ -95,9 +96,9 @@ Each mark event must preserve:
 - cross-outs applied to the other tracks, including exact positions;
 - track benefit and its application status;
 - exact Playwall code or NONE;
-- authorization, source document/version, retrieval/read status;
+- authorization, source document/version, retrieval status, and player private-read status (CONFIRMED / NOT_CONFIRMED / UNKNOWN);
 - document effects: APPLIED / PARTIAL / DEFERRED / NOT_APPLICABLE / UNKNOWN;
-- player-facing disclosure status and evidence reference;
+- player-shared information status (SHARED / NOT_SHARED / UNKNOWN), distinct from private reading, plus evidence reference;
 - character-sheet / Runtime / Player Notes synchronization references.
 
 Never backfill a missing historical read, application, presentation, or player choice. Use UNKNOWN / NOT_RECORDED where evidence is absent. Corrections are append-only; do not erase the original history.
