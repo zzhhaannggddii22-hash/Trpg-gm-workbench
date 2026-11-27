@@ -35,19 +35,17 @@
 | C-14 Unknown balance | PASS | 当前余额待核时暂停依赖 Pool 的效果；无关互动继续。 |
 | C-15 Mission close reset | PASS | 记录 13 未使用 Chaos 被丢弃，关闭任务池为 0；不影响 Loose Ends 等持续状态。 |
 | C-16 No arbitrary adversity | PASS | Pool 高达 30 但没有有效机会时不花费，不制造惩罚性事件或强制掷骰。 |
-| C-17 Zarek current Branch total = 1 | PASS | 每次任务开始读取当前分部 Loose Ends；1 落在 0 档，初始 Chaos 0、Weather Event count 0，仅适用雇佣条款限制。 |
+| C-17 synthetic Campaign Branch total = 1 | PASS (historical self-walkthrough only) | 合成输入 1 落在 0 档；不代表 Zarek Campaign 当前数据，也不把该值存入 Systems。
 | C-18 Threshold transition 10 → 11 | PASS | 在任务真正开始时重读总数；11 进入 11 档，初始 Chaos 5、Weather Event count 1。 |
 | C-19 Branch / mission resource separation | PASS | 分部 Loose Ends 与任务 Chaos Pool 独立；任务清零不重置分部总数。 |
 
 ## 3. 发现并保留的待审查项
 
-### 3.1 Zarek Campaign mission-start initialization
+### 3.1 Campaign data ownership
 
-- Zarek 不再使用固定的每模组 Chaos Pool 初始值 0。
-- 每次任务开始前，读取当前分部 Loose Ends 总数，按中文 v22 GM Toolkit 印刷页 165 的分部限制表确定 Starting Chaos、Weather Event count 与累积分部限制。
-- 用户确认当前分部总数为 1；因此当前适用 0 档：Starting Chaos 0、Weather Event count 0、仅有机构雇佣条款限制。
-- 该 0 是当前总数对应的表格结果，不是永久 Campaign 默认值。下一次任务必须重新读取总数。
-- 分部 Loose Ends、天气事件历史、任务 Chaos Pool 分别记账。异常逃脱增加 7 Loose Ends，不等于直接增加 7 Chaos。
+- The current Branch Loose Ends total is Campaign-owned dynamic state, not system-rule data.
+- The former Zarek-specific value has been removed from this system-layer self-review and runtime protocol. Campaign state remains in the Campaign handoff; Module ledgers retain historical snapshots and module deltas.
+- The old C-17 walkthrough used a confirmed Campaign input as an example. It is retained only as historical evidence of the prior walkthrough and is not a system-layer default or current runtime input.
 
 ### 3.2 Domain 免费效果的重复使用口径
 
@@ -79,3 +77,13 @@
 5. 每次任务按当前 Branch Loose Ends 读取表格的初始化流程，是否正确处理阈值、天气事件数量与分部限制。
 6. 19 个测试案例是否能有效区分“正确不触发”“应主动评估”“允许效果但不能擅自消费”和“消费后必须改变世界状态”。
 7. 是否应补充多轮/多 Session 的真实 Runtime 事件链测试，以及如何避免引入第二套资源账本。
+
+
+## 6. Independent-review remediation status (2026-11-27)
+
+- The earlier 19/19 result remains a same-session protocol walkthrough only. It does not validate the revised contract and is not promoted to independent or production acceptance.
+- C-17 has been changed to a synthetic Campaign fixture; the real Branch Loose Ends value is maintained only in Campaign-owned state.
+- Weather handling now distinguishes ordinary weather records from a specific weather result that explicitly changes Branch Loose Ends. A threshold-table rerun is not triggered by ordinary weather.
+- Mission Pool lifecycle now distinguishes old mission closeout reset, new mission Pool creation at 0, and the separate table-based Starting Chaos grant.
+- New R-01–R-24 fixtures are defined in the regression file. They are pending execution; no result is claimed.
+- The updated protocol and fixtures still require independent blind behavior tests, multi-turn recovery, and host-level failure injection. The production activation gate remains closed.
