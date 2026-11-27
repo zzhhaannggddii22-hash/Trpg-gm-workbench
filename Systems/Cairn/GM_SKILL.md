@@ -49,10 +49,13 @@
 
 ## 7. 规则与状态记录
 
-- 每次规则裁定按系统规则索引定位后回查当前绑定版本原文。
+- 每次规则裁定先按 [RUNTIME_PROTOCOL.md](./RUNTIME_PROTOCOL.md) 执行，并使用 [Rule_Reference/CORE_RULES_RUNTIME.md](./Rule_Reference/CORE_RULES_RUNTIME.md) 的 Rule ID 与标准步骤。
+- 不把在线搜索作为每次行动的默认机制：已核验且无特殊覆盖的 VERIFIED_CORE 条目直接调用；PARTIAL、MODULE_DEPENDENT、特殊表格/能力、冲突、版本变化或高后果边界才回查官方 2e 原文。
+- 规则调用必须保留触发原因、输入、骰值/中间步骤、结果、状态差分与来源分类。
 - 角色状态至少分列属性、HP、Armor、物品/库存格、Fatigue、条件、伤疤/成长与雇工状态。
 - 每次时间推进后，检查相关光源、食物、疲劳、天气、事件和敌对势力变化。
 - 任何桌面适配必须经玩家明确批准，并记录作用范围；不得写成官方规则。
+- 每次行动结算后执行状态提交检查；HP=0 / HP<0 分支、库存上限、Fatigue、时间事件与 Morale 触发不得漏算或重复计算。
 
 ## 8. 单人桌面注意事项
 
