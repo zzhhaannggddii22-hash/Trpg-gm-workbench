@@ -25,7 +25,8 @@ ZIP 不作为规则书权威来源，也不作为每次 Preflight 的必读文�
 
 ## 当前工作资料
 
-- [常规规则调用路由](./05_常规规则调用路由.md)：将规则机制分派到 Preflight、备团、现场裁定、资源处理、结团与幕间流程；规定结构化资料优先、Markdown 完整条文按需回查、PDF 视觉核验后备。\n- [规则检阅协议](./00_规则检阅协议.md)：问题分流、证据优先级与原文核验步骤。
+- [常规规则调用路由](./05_常规规则调用路由.md)：将规则机制分派到 Preflight、备团、现场裁定、资源处理、结团与幕间流程；规定结构化资料优先、Markdown 完整条文按需回查、PDF 视觉核验后备。
+- [规则检阅协议](./00_规则检阅协议.md)：问题分流、证据优先级与原文核验步骤。
 - [Playwall 解锁与幕间完整性协议](./02_PLAYWALL_UNLOCK_AND_INTERMISSION_PROTOCOL.md)：Work/Life Balance 每次标记、Playwall 授权、文档处理与幕间审计的系统专属执行规范。
 - [掷骰与结果结算专属协议（设计稿）](./02_DICE_RESOLUTION_PROTOCOL.md)：仅适用于 Triangle Agency 中文 v22；不属于通用规则。
 - [Playwall 专属能力骰子管线整合暂缓登记](./PLAYWALL_DEFERRED_REGISTER.md)：现行 Playwall 解锁/读取继续有效；暂缓仅针对本骰子管线的专属机制整合。
