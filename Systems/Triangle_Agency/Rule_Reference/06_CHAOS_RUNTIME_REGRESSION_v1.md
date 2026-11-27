@@ -192,7 +192,7 @@ Run separate subcases:
 
 - The historical C-01–C-19 single-session walkthrough is not evidence of the revised contract passing.
 - All 19 legacy cases must be rerun against the revised contract before acceptance.
-- R-01–R-24 are additional required fixtures; none is considered passed until executed.
+- R-01–R-25 are additional required fixtures; none is considered passed until executed.
 - C-01 and C-16 must demonstrate no unnecessary subsystem invocation or added action latency.
 - C-02 and C-04 must demonstrate no duplicate generation.
 - C-05 and C-06 must demonstrate proactive but rule-grounded use.
@@ -224,19 +224,20 @@ Run separate subcases:
 | R-14 | A Minor Anomaly is created and its creator leaves / Session ends | The Minor Anomaly persists or expires only under its actual rule/effect duration; no arbitrary deletion. |
 | R-15 | Pre-closeout balance is UNKNOWN and mission ends | Preserve pre-closeout UNKNOWN and discarded_amount UNKNOWN; closed mission Pool becomes 0; no invented historical balance. |
 | R-16 | Module Closeout is invoked twice for the same mission | Closeout is idempotent; no duplicate reset or duplicate persistent-state changes. |
-| R-17 | A non-extreme Weather Event result has no explicit Loose Ends consequence | Record the weather result; do not alter Branch Loose Ends or rerun the threshold table. |
-| R-18 | An explicitly extreme Weather Event result directly changes Branch Loose Ends | Apply only the specified Branch-state change once; preserve event history; do not silently recalculate unrelated setup outputs. |
-| R-19 | Branch Loose Ends reaches 66 | Create the book-directed retirement-pending state for the current field team; do not convert N/A to zero or abort the active mission immediately. |
-| R-20 | Branch Loose Ends reaches 77 | Enter the book-directed Branch removal / Unraveling state; do not treat it as an ordinary Chaos initialization. |
+| R-17 | A particularly extreme Weather Event is triggered at Branch Loose Ends 22; its first result explicitly reduces Loose Ends to 21 | Apply the explicit Campaign change 22→21 once. Recalculate only the remaining Weather Event count as v22 requires (do not blindly roll the original two); do not rerun mission initialization or change the committed Starting Chaos. |
+| R-18 | The same extreme Weather Event source event is replayed after recovery | Do not reroll, reapply the Loose Ends reduction, or repeat the remaining-roll adjustment. A genuinely new qualifying extreme-weather event is distinct. |
+| R-19 | Branch Loose Ends reaches 66 during the active mission | Record retirement due at the end of the current mission; do not abort immediately. At retirement, reduce Branch Loose Ends by 11, plus 11 for each Agent using a function-provided retirement option. Resolve option eligibility from character/Playwall authority. |
+| R-20 | Branch Loose Ends reaches 77 | Enter the v22 Unraveling procedure and remove the Branch region from existence as directed (source directs to W7); do not treat it as ordinary Chaos initialization. |
 | R-21 | An Anomaly escapes | Branch Loose Ends increases by +7; Chaos Pool does not directly increase by +7. |
 | R-22 | A mission closes and the next mission opens | Old Pool remains CLOSED at 0; new mission Pool is created at 0, then receives its table Starting Chaos grant. |
 | R-23 | A system with no GM-operated resource completes Preflight and play | No resource adapter, placeholder balance, resource polling, or Chaos rules are instantiated. |
 | R-24 | A different system has a distinct resource or threat clock | It uses only its own triggers, costs, lifecycle, and persistence rules; no Triangle Agency Chaos semantics leak across. |
+| R-25 | Zarek Q06; ordinary light rain with no extreme or mission-relevant condition, despite table Weather Event count 1 | Do not roll a Weather Event. Record Q06 as NOT_TRIGGERED; still apply the table's Starting Chaos and cumulative Branch restrictions. This is Zarek Campaign-only and does not override the v22 default for other Campaigns. |
 
 ### R-case acceptance notes
 
 - R-10–R-12 require a host that can inject write failures at each commit boundary; prose simulation is not sufficient.
-- R-17/R-18 distinguish ordinary weather from an explicit extreme-weather state change. Do not infer a Loose Ends change from atmospheric severity alone.
+- R-17/R-18 verify that an extreme-weather result can change Loose Ends and the remaining Weather Event count, while replay does not duplicate either. R-25 verifies Zarek Q06: ordinary weather does not trigger the Weather Events procedure.
 - R-19/R-20 require the exact v22 lifecycle wording and must be verified against the fixed ruleset source before production acceptance.
 - R-23/R-24 require independent non-Triangle system fixtures, not a Triangle Agency mock with fields disabled.
 - None of R-01–R-24 is considered executed by adding it to this document.
