@@ -19,17 +19,18 @@
 | [08_RUNTIME_QUICK_REFERENCE.md](./08_RUNTIME_QUICK_REFERENCE.md) | 现场快速调用索引 | GM-only |
 | [09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md) | 本模组资源交易唯一流水；开团前空账本 | GM-only |
 | [10_PLAYER_FACING_GATE.md](./10_PLAYER_FACING_GATE.md) | 玩家视角信息披露闸门 | GM-only |
+| [11_REMEDIATION_AND_TEST_LOG.md](./11_REMEDIATION_AND_TEST_LOG.md) | 本轮缺陷修复、测试执行与交付清单 | GM-only |
 
 ## 当前门禁
 
 - 文件交付：DELIVERED（固定 Commit 下文件存在并已回读）。
 - 备团设计：REVIEWED；这不代表规则验证完成。
-- 来源核验：BLOCKED；英文原版逐页比对尚未完成，部分表格仍需视觉核验。
+- 来源核验：BLOCKED；中文精翻第 191–208 页已分页回读，英文原版逐页校勘仍未完成。
 - Prep Rule Validation：BLOCKED；见 07 §3，核心规则项仍为 OPEN/PARTIAL。
-- Runtime/单人路径可执行性：NOT TESTED；当前 Runtime 仅为空白基线。
+- Runtime/单人路径可执行性：PARTIAL；检查点结构已补齐并完成合成状态测试；单人路径案头测试有部分结果，机械成本与完整端到端运行仍未通过。
 - 正式 Preflight：NOT STARTED / BLOCKED。Preflight 不承担补做备团规则核验。
 - 用户开团许可：WAITING FOR USER “开始”。
-- 内部复审：已完成一次针对性修订与复核；记录见 07。
+- 内部复审：本轮由凯西独立执行缺陷复核、结构测试、合成状态测试和单人路径案头模拟；详细记录见 07 与 11。
 - 独立 Prep QA：NOT RUN（可选；本轮由凯西内部逐项核验与自测，不宣称独立审查）。
 - Preflight：NOT STARTED；仅在 Prep Rule Validation 关闭后才可执行。
 - Session：NOT STARTED。
@@ -46,4 +47,5 @@
 ## 备团迭代记录
 
 - v0.1（对话内准备）：曾声称完成结构性备团，但未形成可验证仓库交付；不作为 READY 证据。
-- v1.0（本次交付）：从原始中文精翻恢复来源，重新建立文件化备团；完成状态、交接与门禁补齐。交付后以 main 的最终 Commit 为准。
+- v1.0（首次交付）：从中文精翻恢复来源并建立文件化备团；曾误报 READY，现已由本轮状态门禁纠正。
+- v1.1（本轮独立修复）：修复规则核验阶段、Runtime 检查点、资源账本幂等、系统/通用规则分层、状态冲突和索引；测试及未关闭项见 11。当前以本轮分支固定 Commit 为准，尚未合并 main。
