@@ -103,7 +103,8 @@ A 模式仍是绝大多数常规测试的默认方式。以上项目只是目标
 
 - B 模式的完整端到端执行尚未在本轮实际运行：尚无用户新建目标 Chat、自动化执行、回传完整原始输出和独立审核的证据。
 - C 模式真实玩家校准未执行。
-- 仓库 Python/Node 回归套件尚待 PR GitHub Actions 实际运行；本报告不宣称代码 CI 通过。
+- 仓库 Python/Node 回归套件已由 PR GitHub Actions 实际运行：12 项单元测试 PASS；Markdown 导航扫描 387 个文件、522 条本地链接，0 broken paths、0 candidate anchors；`git diff --check` PASS。
+- 首次 CI 曾因 NQB 执行提示尾随空格和 Oracle 文件末尾多余空行失败；修复后重新触发，最终通过。这说明代码/仓库层测试能捕获并反馈真实格式缺陷。
 - NQB-01 只运行一条行动序列；稳定性仍未验证。
 - 公开仓库中的 ORACLE 不是秘密 Canary。若需要真正盲测，必须把隐藏 Oracle/Canary 保存在受控私有位置。
 
