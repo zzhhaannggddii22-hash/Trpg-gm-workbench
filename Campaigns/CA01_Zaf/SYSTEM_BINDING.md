@@ -20,6 +20,14 @@ runtime_authorization:
   scope: CA01_Zaf_ONLY
   system_promotion: NOT_GRANTED
   cross_session_resume: HOLD_PENDING_RECONCILIATION
+runtime_records:
+  current_state: Campaigns/CA01_Zaf/03_RUNTIME_STATE.md
+  gm_session_log: Campaigns/CA01_Zaf/04_SESSION_LOG.md
+  player_notes: Campaigns/CA01_Zaf/05_PLAYER_NOTES.md
+player_information_projection:
+  player_handoff_source: Campaigns/CA01_Zaf/05_PLAYER_NOTES.md
+  mode: RECIPIENT_SCOPED_FILTERED_PROJECTION
+  gm_only_sources_are_not_player_knowledge: true
 player_characters:
   - Zaf
 assistant_controlled_party_members:
