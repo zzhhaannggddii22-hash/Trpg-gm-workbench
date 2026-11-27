@@ -14,7 +14,8 @@ This file contains expected results and must remain hidden from the tested GM un
 
 - Target GM receives `10_CHAOS_RUNTIME_TEST_INPUTS_v1.md` only. Keep this Oracle file hidden until the run is complete.
 
-- Use a fresh isolated test context for each case.
+- Use a fresh, independent Chat context for every C-01–C-19 case and every R-01–R-25 case. Each Sequence A–E also gets its own fresh Chat context; continuity is preserved only inside that sequence.
+- A same-Chat batch with logical state resets is `SHARED_CONTEXT_BATCH / LOGICAL_FIXTURE_RESET_ONLY`, not independent-context execution and not independent acceptance.
 - Bind explicitly to `triangle_agency` / Chinese v22.
 - The fixture supplies synthetic state; it does not change any real Campaign.
 - Do not reveal the Oracle / expected results to the tested GM until execution is complete.
@@ -58,17 +59,19 @@ This file contains expected results and must remain hidden from the tested GM un
 
 ### C-05 — Anomaly opportunity near Agents
 
-**Initial state:** Active Anomaly, verified Pool = 12, Agents are in the direct vicinity. The Anomaly has an established goal and Focus-consistent reason to interfere with an Agent's current plan.
+**Initial state:** Active Anomaly, verified Pool = 12, Agents are in the direct vicinity and outside the Anomaly's Domain. Its established Focus includes manipulating ordinary doors/access controls; its goal is to keep the Agent inside the office suite. Door-A is the only usable exit and is `OPEN`.
 
-**Player action:** The Agent attempts to leave through a route the Anomaly is actively trying to protect.
+**Player action:** The Agent attempts to leave through Door-A.
 
-**Expected:** GM recognizes that the Anomaly's supernatural action in the Agents' direct vicinity requires Chaos expenditure. Evaluate a fitting effect and its valid target/cost. Do not wait for the player to ask the GM to use Chaos. Do not spend automatically if no effect/target/action is supported.
+**Deterministic effect fixture:** The supported action is `1-cost Distort` against Door-A, changing `OPEN → LOCKED`.
+
+**Expected:** Recognize and resolve the proactive opportunity without waiting for the player to request Chaos. Apply the 1-cost spend exactly once (Pool 12 → 11), materialize Door-A as `LOCKED`, and record the resource and world changes under one stable event. No unsupported extra consequence.
 
 ### C-06 — Beyond Focus
 
-**Initial state:** Active Anomaly, verified Pool = 10. The Anomaly attempts an action beyond its established Focus.
+**Initial state:** Active Anomaly, verified Pool = 10, Agents outside its Domain. Its Focus is limited to altering printed words on paper. It attempts to manifest a Minor Anomaly in Reception, beyond that Focus. The selected effect is `4-cost Manifest`; the fixture supplies the already-resolved chart entity `MA-06` (Static Moth; Reception; flutters toward printed signs; no expiry specified).
 
-**Expected:** Recognize the source rule that the Anomaly must draw on ambient Chaos beyond Focus. Resolve the exact effect and cost using the current Anomaly behavior, effect text, Domain status, and available Pool. Do not invent a new cost or treat this as a free action.
+**Expected:** Recognize that the beyond-Focus action draws on ambient Chaos. Apply the standard 4-cost Manifest outside the Domain (Pool 10 → 6) and materialize the supplied `MA-06` entity record. Do not reroll the chart, invent traits, or treat the action as free.
 
 ### C-07 — Domain cost handling
 
@@ -85,9 +88,9 @@ Run separate subcases:
 
 ### C-08 — Domain boundary
 
-**Initial state:** Active Anomaly, Agents outside its Domain, verified Pool = 20.
+**Initial state:** Active Anomaly, Agents outside its Domain, verified Pool = 20. The selected effect is `4-cost Manifest`; the fixture supplies the already-resolved chart entity `MA-08` (Paper Hound; Loading Bay; tracks movement by following printed labels; no expiry specified).
 
-**Expected:** No Domain free-cost benefit. A 4-cost Manifest consumes 4, not 12. Domain expansion only applies after a valid Expand effect has actually resolved and the new location is added to Domain state.
+**Expected:** No Domain free-cost benefit and no triple-cost multiplier. Apply exactly 4 Chaos (Pool 20 → 16) and materialize the supplied `MA-08` record. Domain expansion applies only after a valid Expand effect resolves and the new location is committed to Domain state.
 
 ### C-09 — Domain free effects are repeatable under Zarek Q01
 
@@ -117,9 +120,9 @@ Run separate subcases:
 
 ### C-13 — Public Pool and information boundaries
 
-**Initial state:** Active mission, Pool = 9. An effect is used.
+**Initial state:** Active mission, verified Pool = 9; active Anomaly; Agents outside its Domain. The GM selects `1-cost Distort`, changing Door-C from `OPEN` to `LOCKED`. The Anomaly's motive (preventing access to the server room) is GM-only and undiscovered.
 
-**Expected:** Public Pool and the effect's complete description are disclosed as required. Hidden Anomaly motive, undiscovered Special Rules, private NPC knowledge, and GM-only facts remain protected unless the effect itself makes them observable.
+**Expected:** Apply exactly 1 Chaos (Pool 9 → 8), materialize Door-C as `LOCKED`, and disclose the public Pool plus the complete Distort effect description to the players. Do not disclose the undiscovered Anomaly motive or unrelated GM-only facts.
 
 ### C-14 — Unknown balance
 
@@ -154,9 +157,9 @@ Run separate subcases:
 
 ### C-18 — Threshold transition
 
-**Initial state:** A mission is being prepared with Branch Loose Ends = 10, then a verified persistent event raises it to 11 before the mission is opened.
+**Initial state:** A non-Zarek synthetic Campaign is preparing with Branch Loose Ends = 10, then a verified event raises it to 11 before the mission opens. No Campaign weather override is active. The table selects Starting Chaos 5 and one Weather Event. The supplied d20 result is 5, producing first-occurrence weather result 5a; no Agent makes a sincere apology.
 
-**Expected:** At actual mission start, create a fresh Pool at 0, then apply a separate +5 Starting Chaos grant. Weather Event count is 1. Do not reuse the earlier 0-row result or interpolate. A normal weather result does not trigger a threshold-table rerun; only a specific result that explicitly changes Branch Loose Ends (such as a defined extreme-weather consequence) updates Campaign state.
+**Expected:** Create a fresh Pool at 0, then apply a separate +5 Starting Chaos grant (final Pool 5). Record weather result 5a. Do not rerun the table or change Loose Ends; no optional 5-Chaos removal occurs without a sincere apology.
 
 ### C-19 — Branch state is not the mission Chaos Pool
 
@@ -224,14 +227,14 @@ Run separate subcases:
 | R-14 | A Minor Anomaly is created and its creator leaves / Session ends | The Minor Anomaly persists or expires only under its actual rule/effect duration; no arbitrary deletion. |
 | R-15 | Pre-closeout balance is UNKNOWN and mission ends | Preserve pre-closeout UNKNOWN and discarded_amount UNKNOWN; closed mission Pool becomes 0; no invented historical balance. |
 | R-16 | Module Closeout is invoked twice for the same mission | Closeout is idempotent; no duplicate reset or duplicate persistent-state changes. |
-| R-17 | A particularly extreme Weather Event is triggered at Branch Loose Ends 22; its first result explicitly reduces Loose Ends to 21 | Apply the explicit Campaign change 22→21 once. Recalculate only the remaining Weather Event count as v22 requires (do not blindly roll the original two); do not rerun mission initialization or change the committed Starting Chaos. |
+| R-17 | Branch Loose Ends 22; severe mission-relevant storm satisfies the Campaign trigger; first verified d20 result is 3, which immediately removes 1 Loose End under v22 | Apply 22→21 exactly once. Re-read the table: the 11–21 row requires 1 total Weather Event; the first roll is already complete, so no further roll is required. Preserve committed Starting Chaos +10; do not rerun mission initialization. |
 | R-18 | The same extreme Weather Event source event is replayed after recovery | Do not reroll, reapply the Loose Ends reduction, or repeat the remaining-roll adjustment. A genuinely new qualifying extreme-weather event is distinct. |
-| R-19 | Branch Loose Ends reaches 66 during the active mission | Record retirement due at the end of the current mission; do not abort immediately. At retirement, reduce Branch Loose Ends by 11, plus 11 for each Agent using a function-provided retirement option. Resolve option eligibility from character/Playwall authority. |
-| R-20 | Branch Loose Ends reaches 77 | Enter the v22 Unraveling procedure and remove the Branch region from existence as directed (source directs to W7); do not treat it as ordinary Chaos initialization. |
+| R-19 | Branch Loose Ends reaches 66; Agent A has and selects fixture-authorized function option OPTION-A; Agent B has no retirement option | Continue current mission; retire at closeout. Agent A selects OPTION-A; Agent B is sent to the Vault. Reduce 66 by 11 base plus 11 for Agent A = 44. Do not add another 11 for Agent B. |
+| R-20 | Branch Loose Ends reaches 77 | Enter W7 / Unraveling; no ordinary Pool initialization. Remove the Branch region from existence; reality fills the gap and remaining people forget/cannot perceive it. The responsible team notifies the wider Agency, completes the official memo with required fields and redactions, and shares it with all reachable Agency colleagues. Keep W7 GM-only. |
 | R-21 | An Anomaly escapes | Branch Loose Ends increases by +7; Chaos Pool does not directly increase by +7. |
-| R-22 | A mission closes and the next mission opens | Old Pool remains CLOSED at 0; new mission Pool is created at 0, then receives its table Starting Chaos grant. |
+| R-22 | Mission closes with Pool 9; Branch Loose Ends 11; non-Zarek Campaign; supplied d20 result 5 → first-occurrence 5a; no sincere apology | Old Pool closes at 0 and records 9 discarded. New Pool 0 then +5 = 5. Record weather 5a; no optional Chaos removal; Loose Ends stays 11. |
 | R-23 | A system with no GM-operated resource completes Preflight and play | No resource adapter, placeholder balance, resource polling, or Chaos rules are instantiated. |
-| R-24 | A different system has a distinct resource or threat clock | It uses only its own triggers, costs, lifecycle, and persistence rules; no Triangle Agency Chaos semantics leak across. |
+| R-24 | Other system has Threat Clock 0–6; only trigger is intruder enters secured control room (+1); fixture checkpoint after trigger is 1 | Ordinary action leaves 0; named trigger advances to 1 once; logical resume retains 1; next ordinary action leaves 1. No Chaos adapter or semantics. Not evidence of host persistence. |
 | R-25 | Zarek Q06; ordinary light rain with no extreme or mission-relevant condition, despite table Weather Event count 1 | Do not roll a Weather Event. Record Q06 as NOT_TRIGGERED; still apply the table's Starting Chaos and cumulative Branch restrictions. This is Zarek Campaign-only and does not override the v22 default for other Campaigns. |
 
 ### R-case acceptance notes
