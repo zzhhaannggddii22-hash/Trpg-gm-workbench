@@ -19,7 +19,8 @@
 | CF-02 generation handoff | 明确 roll adapter 提交 base_delta；Chaos Runtime 唯一应用系统修正并提交 final_delta；保留修正快照、提交状态和语义来源身份 | 独立生成/重放行为测试待完成 |
 | CF-03 66/77 lifecycle | 补齐 66 当前任务结束强制退休、分部 Loose Ends -11，以及每名使用职能退休选项的特工额外 -11；77 进入 W7 指向的 Unraveling / Branch removal；特殊档位不转成 0 | 阈值回落是否取消退休仍保留 PENDING；R-19/R-20 待执行 |
 | CF-04 transaction recovery | 要求复用 Runtime Control / Module Closeout 字段级提交机制；资源、世界状态、可见性、呈现、持久化分别记录，恢复只补未完成字段 | 当前宿主故障注入与跨 Session 持久化仍未验证 |
-| CF-05 activation gate | Chaos Protocol 保持 DRAFT / PENDING BEHAVIORAL VALIDATION；输入与 GM-only Oracle 分离；增加 R-01–R-24 | 独立盲测、真实多轮、宿主集成尚未执行；不得宣称生产启用 |
+| CF-06 complete diff scope | PR base SHA `e54ca87f45e807a90b100a97ae912f96b1128606` and full PR diff retrieved; all 21 changed files enumerated | diff scope verified; no production behavior implied |
+| CF-05 activation gate | Chaos Protocol 保持 DRAFT / PENDING BEHAVIORAL VALIDATION；输入与 GM-only Oracle 分离；增加 R-01–R-25 | 独立盲测、真实多轮、宿主集成尚未执行；不得宣称生产启用 |
 
 ## P1 修订状态
 
