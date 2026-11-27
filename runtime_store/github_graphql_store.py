@@ -79,8 +79,16 @@ def fingerprint_text(value: str) -> str:
 
 
 def _validate_branch(branch: str) -> None:
-    if not isinstance(branch, str) or not branch or branch.startswith("/") or ":" in branch:
+    if not isinstance(branch, str) or not branch or branch in ("@", "HEAD"):
         raise ConfigurationError("branch must be a non-empty unqualified Git branch name")
+    forbidden = set(" ~^:?*[\\\\")
+    if (branch.startswith("/") or branch.endswith("/") or branch.endswith(".")
+            or ".." in branch or "@{" in branch
+            or any(ord(char) < 32 or ord(char) == 127 or char in forbidden for char in branch)):
+        raise ConfigurationError("branch name contains a forbidden Git ref sequence or character")
+    components = branch.split("/")
+    if any(not part or part.startswith(".") or part.endswith(".lock") for part in components):
+        raise ConfigurationError("branch name contains an invalid Git ref component")
 
 
 def _validate_batch_id(batch_id: str) -> None:
