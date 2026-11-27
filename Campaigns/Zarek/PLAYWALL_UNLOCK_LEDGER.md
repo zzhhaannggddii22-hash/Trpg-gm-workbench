@@ -130,9 +130,9 @@ playwall:
   code: NONE
   authorization: NO_CODE | UNLOCKED | BLOCKED_OR_UNKNOWN
   source_ref: null
-  read_status: NOT_APPLICABLE | READ | NOT_SEPARATELY_RECORDED | BLOCKED
+  player_private_read_status: NOT_APPLICABLE | CONFIRMED | NOT_CONFIRMED | UNKNOWN
   effect_status: NOT_APPLICABLE | APPLIED | PARTIAL | DEFERRED | UNKNOWN
-  player_disclosure_status: NOT_APPLICABLE | PRESENTED | PARTIAL | NOT_PRESENTED | UNKNOWN
+  player_shared_information_status: NOT_APPLICABLE | SHARED | NOT_SHARED | UNKNOWN
 evidence_refs: []
 notes: ""
 ```
