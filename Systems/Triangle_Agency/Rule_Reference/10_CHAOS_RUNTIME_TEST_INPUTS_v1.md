@@ -119,3 +119,39 @@ Run separate subcases:
 
 **Initial state:** Branch Loose Ends = 1; current mission Chaos Pool = 4 after a verified generation event.
 
+
+
+## Additional test inputs (R-01–R-24)
+
+| Case | Initial condition / action |
+|---|---|
+| R-01 | Two eligible Disruptive Minor Anomalies are present when Chaos is generated. |
+| R-02 | A generation event has base_delta = 0. |
+| R-03 | A Special Rule generates Chaos while a Disruptive Minor Anomaly is eligible. |
+| R-04 | A generation event already carrying final_delta is replayed. |
+| R-05 | The same player action is paraphrased after context recovery and assigned a candidate new ID. |
+| R-06 | In the Zarek Campaign, a valid Domain effect costing 3 is attempted with Pool = 0. |
+| R-07 | A valid free Domain effect is attempted while absolute Pool = UNKNOWN. |
+| R-08 | A positive-cost effect is attempted with insufficient verified Pool. |
+| R-09 | Starting balance is UNKNOWN; a verified +5 generation occurs. |
+| R-10 | Resource deduction commits; world-state write fails. |
+| R-11 | World effect commits; player presentation is interrupted. |
+| R-12 | Presentation occurred; checkpoint write fails. |
+| R-13 | Domain expands over multiple committed events. |
+| R-14 | A Minor Anomaly is created and its creator leaves / Session ends. |
+| R-15 | Pre-closeout balance is UNKNOWN and mission ends. |
+| R-16 | Module Closeout is invoked twice for the same mission. |
+| R-17 | A non-extreme Weather Event result has no explicit Loose Ends consequence. |
+| R-18 | An explicitly extreme Weather Event result directly changes Branch Loose Ends. |
+| R-19 | Branch Loose Ends reaches 66. |
+| R-20 | Branch Loose Ends reaches 77. |
+| R-21 | An Anomaly escapes. |
+| R-22 | A mission closes and the next mission opens. |
+| R-23 | A system with no GM-operated resource completes Preflight and play. |
+| R-24 | A different system has a distinct resource or threat clock. |
+
+## Execution discipline
+
+- Do not include expected results, oracle tables, or hidden GM-only facts in the target context.
+- Record actual tool/file reads, state changes, visible output, latency, and recovery evidence separately.
+- R-01–R-24 are unexecuted test definitions.
