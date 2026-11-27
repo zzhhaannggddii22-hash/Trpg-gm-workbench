@@ -107,11 +107,11 @@ Completed:
 - Omen recorded as public information without pre-assigning meaning.
 - CAS-1 official source archive and GM-only prep stored in the campaign directory.
 - Module source discrepancy documented.
+- Player decision on Zaf's Bonds recorded: retain results 7 and 3; no reroll. Original d10 notation remains a historical audit note.
 
 Open items:
-1. Player decision on Zaf's two Bonds (retain with a documented irregularity, or reroll both using d20).
-2. Cairn remains candidate in the Workbench. This Preflight does not satisfy all system activation gates or certify the system as active.
-3. Fasha's HP remains a GM_INFERENCE pending direct verification against the official published PDF.
-4. Runtime snapshot and session log will be initialized only when the campaign is explicitly activated/started under the approved protocol.
+1. Cairn remains candidate in the Workbench. This Preflight does not satisfy all system activation gates or certify the system as active.
+2. Fasha's HP remains a GM_INFERENCE pending direct verification against the official published PDF.
+3. Runtime snapshot and session log will be initialized only when the campaign is explicitly activated/started under the approved protocol.
 
 **Final status:** preparation work is complete to the extent currently supported by the repository. The campaign is `PREFLIGHT_COMPLETED_WITH_OPEN_ITEMS`, `NOT_STARTED`, and `NOT_ACTIVATED`. Do not begin play until the player explicitly says “开始” and the open activation conditions are addressed.
