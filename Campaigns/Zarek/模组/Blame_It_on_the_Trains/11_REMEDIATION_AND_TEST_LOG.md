@@ -8,17 +8,18 @@
 |---|---|
 | Delivery ID | `BLAME-TRAIN-REMEDIATION-2026-11-27-R1` |
 | Target repository | `zzhhaannggddii22-hash/Trpg-gm-workbench` |
-| Target branch | `fix/blame-trains-remediation-main-2026-11-27` |
+| Source branch | `fix/blame-trains-remediation-main-2026-11-27` |
+| Merged target branch | `main` via PR #62 |
 | Audit target Commit | `99f41bd4dafd202c9d81430e4ca098356d8e3cc7` |
 | Base Commit | `ec54bc100dceaf1da370edd811da22dc48f07a42` |
-| Artifact Commit (complete remediation batch before final manifest update) | `8222391598750ff8fca4ad67091e36ceb47c42b6` |
+| Artifact Commit (merge commit) | `975ca83ced73d7d95d72a1396d819c354dd49830` |
 | Manifest creation Commit (source branch) | `6c7dd170b0235373bbbbf9978cdb5a19043ed4c9` |
 | Manifest import Commit (main-based branch) | `3cc6891ccd61439f0438f8f426afd6da6442a3cf` |
 | Post-create README link readback | 11/11 PASS |
-| Manifest status | DELIVERED ON REMEDIATION BRANCH; post-create README readback 11/11 PASS |
+| Manifest status | MERGED TO MAIN; final main readback pending |
 | Writer / validator / delivery owner | Casey — SELF-REVIEW; not independent QA |
 | External AI review | NOT USED in this remediation batch |
-| Main branch mutation | NONE; all writes are on the remediation branch |
+| Main branch mutation | PR #62 merged; merge Commit `975ca83ced73d7d95d72a1396d819c354dd49830` |
 | Main baseline preservation | main Commit `ec54bc1` (Playwall-only update) is included as branch base; no Playwall files changed |
 
 ### Change set
@@ -197,4 +198,4 @@ The static and synthetic tests verify document contracts and state handling only
 - Runtime：NOT STARTED.
 - Player authorization：WAITING FOR USER “开始”.
 
-No test-only event was written to Session Log, Player Notes, Runtime CANON or the character sheet. No GM-only information was included in player-facing files. No main-branch write, PR or external AI review occurred in this batch.
+No test-only event was written to Session Log, Player Notes, Runtime CANON or the character sheet. No GM-only information was included in player-facing files. PR #62 was merged to main after the main-based branch was verified; no external AI review occurred in this batch.
