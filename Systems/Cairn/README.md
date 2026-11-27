@@ -1,11 +1,11 @@
 # Cairn /《石冢》
 
-> system_id: `cairn`
+> system_id: cairn
 > 规则版本：Cairn Second Edition（2e）
 > 中文参考：社区简体中文 SRD（非官方翻译）
 > 状态：candidate（第二套系统接入准备中；尚未开放正式运行）
 
-本目录是 Cairn 系统级规则知识的唯一入口。它与 `Systems/Triangle_Agency/` 完全隔离。Cairn 被用户指定为 GM Workbench 的第二套系统；本次接入按独立系统完成，不能把 Triangle Agency 的规则、资源、术语或运行惯例带入。
+本目录是 Cairn 系统级规则知识的唯一入口。它与 Systems/Triangle_Agency/ 完全隔离。Cairn 被用户指定为 GM Workbench 的第二套系统；本次接入按独立系统完成，不能把 Triangle Agency 的规则、资源、术语或运行惯例带入。
 
 ## 权威来源与版本
 
@@ -31,6 +31,7 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 - [Rule_Reference/README.md](./Rule_Reference/README.md)：规则来源优先级、检索与裁定边界。
 - [Rule_Reference/CORE_RULE_INDEX.md](./Rule_Reference/CORE_RULE_INDEX.md)：核心机制导航与规则摘要。
 - [Rule_Reference/CORE_RULES_RUNTIME.md](./Rule_Reference/CORE_RULES_RUNTIME.md)：按触发条件、输入、步骤、状态变化规范化的核心规则运行手册。
+- [Rule_Reference/CHARACTER_CREATION_AND_BACKGROUNDS.md](./Rule_Reference/CHARACTER_CREATION_AND_BACKGROUNDS.md)：角色创建流程、全部背景索引、Fieldwarden 规则与统一库存 UI 约定。
 - [RUNTIME_PROTOCOL.md](./RUNTIME_PROTOCOL.md)：桌面阶段循环、规则调用卡、状态提交与官方原文回查策略。
 - [Rule_Reference/WARDEN_GUIDE_INDEX.md](./Rule_Reference/WARDEN_GUIDE_INDEX.md)：监守手册中的 NPC、知识/感知、豁免、地城/荒野探索与成长原则。
 - [GM_SKILL.md](./GM_SKILL.md)：Cairn 专属主持执行草案。
@@ -52,7 +53,7 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 ## 运行边界
 
 - 当前状态为 candidate。研究、规则学习和隔离测试可以进行；在完成本目录的规则核验、Preflight、正反例与跨系统隔离测试前，不得将其标记为 active，也不得伪装成已完成正式接入。
-- Campaign 必须单独建立 `SYSTEM_BINDING.md`，绑定 `system_id: cairn` 和精确规则版本。当前没有已批准的 Cairn Campaign。
+- Campaign 必须单独建立 SYSTEM_BINDING.md，绑定 system_id: cairn 和精确规则版本。当前没有已批准的 Cairn Campaign。
 - Cairn 的属性、豁免、HP、STR/DEX/WIL 损伤、护甲、疲劳、库存格、背景、法术书、成长和探索程序均属于 Cairn 专属规则。
 - 不把 Cairn 的豁免或伤害流程移入 Triangle Agency；也不把 Triangle Agency 的 Chaos、QA、Burnout、Harm 或 Playwall 概念映射进 Cairn。
 - 单人玩家测试属于待验证的桌面规模，不代表规则默认支持单人队伍。优先使用规则内的 hirelings 等支持方式；任何超出规则的调整必须明确标记为桌面适配并经用户批准。
@@ -60,7 +61,7 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 
 ## 运行时规则调用
 
-常规游戏不以在线搜索作为规则运行方式。Warden 先读取 Campaign Binding 与 Runtime Snapshot，再按 [RUNTIME_PROTOCOL.md](./RUNTIME_PROTOCOL.md) 调用 [CORE_RULES_RUNTIME.md](./Rule_Reference/CORE_RULES_RUNTIME.md) 中的规则 ID。官方 Cairn 2e 原文用于建档核验、特殊条目/表格、未收录规则、冲突与高后果边界回查。已规范化的常规核心规则在版本未变且无特殊覆盖时直接调用，不重复搜索网页。任何 PARTIAL / MODULE_DEPENDENT 条目仍须按协议回查。
+常规游戏不以在线搜索作为规则运行方式。Warden 先读取 Campaign Binding 与 Runtime Snapshot，再按 RUNTIME_PROTOCOL.md 调用 CORE_RULES_RUNTIME.md 中的规则 ID。角色创建、背景与库存速查见 Rule_Reference/CHARACTER_CREATION_AND_BACKGROUNDS.md。官方 Cairn 2e 原文用于建档核验、特殊条目/表格、未收录规则、冲突与高后果边界回查。已规范化的常规核心规则在版本未变且无特殊覆盖时直接调用，不重复搜索网页。任何 PARTIAL / MODULE_DEPENDENT 条目仍须按协议回查。
 
 ## 激活门槛
 
