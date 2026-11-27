@@ -99,3 +99,40 @@ v0.3 是新的**常规游戏强度基线候选**，不是 v0.2 的简单扩写�
 | 历史证据 | 保留为低压样本 | 执行前状态：NOT TESTED |
 
 v0.3 未经运行和审核前，不得把 NQB-01 整体状态改写为“常规基线已通过”。
+
+## 8. 正式 TRPG 入口与污染隔离门槛（新增硬门槛）
+
+NQB-01 v0.3 不再允许把独立提示包模拟、直接读取 GM Packet 后的自由演绎或 system-neutral 场景扮演计为 GM Runtime 测试。
+
+### 8.1 正常入口
+
+目标 GM 必须以当前版本的 GM_Training/SKILL.md 为运行入口，按 02_WORKFLOW_AND_PREFLIGHT.md、SYSTEM_CONTEXT_PROTOCOL.md 和已登记系统的规则/专属 Skill，完成正式 Preflight、Campaign Binding 核验、Runtime 恢复、Context Assembly 与 Prep-to-Runtime 交接。NQB 场景只能作为已准入测试 Module 的 GM-only 场景资料进入运行时，不得替代上述流程。
+
+A/B/C 是玩家输入与执行隔离模式，不是三种不同 GM 环境。无论哪种模式，GM Runtime 都必须走同一套正式入口。
+
+### 8.2 不得自行创建测试环境
+
+操作者不得为了完成本测试临时创建或拼装 Campaign、角色卡、SYSTEM_BINDING、system_id、规则版本、Runtime checkpoint、Session Log、NPC 档案、测试数据库或平行运行提示包。只能使用在本次测试前已存在、已登记、经用户授权且具有隔离存储的专用 Test Campaign。
+
+当前 Campaigns/README.md 只登记 Zarek / 扎雷克正式 Campaign，未登记专用 Test Campaign。因此本测试的 Runtime 执行准入状态为 BLOCKED_NOT_RUN。不得借用 Zarek Campaign，也不得将 NQB 测试内容挂接到正式 Campaign 来绕过该限制。状态只能在用户明确授权使用一个已存在且符合隔离条件的 Test Campaign 后更新。
+
+### 8.3 零污染要求
+
+测试内容及运行中产生的所有数据均为 TEST_ONLY_NON_CANON。测试不得读取或依赖任何正式 Campaign 的角色、NPC、关系、资源、装备、人物记忆、模组、Session/Event Log、Runtime State 或玩家笔记；不得将任何测试输出、事件或状态写入正式 Campaign。
+
+测试运行的状态持久化目标必须在启动前验证为专用隔离存储。若运行接口不能证明写入目标隔离，必须 BLOCK，不得以“事后不合并”替代写入隔离。测试结束后不得执行正式 Campaign 的状态结算或 CANON 发布。
+
+任何正式数据被意外读取、修改或作为写入目标，均记为 POLLUTION_INCIDENT；停止执行并保留审计证据，不得自行回滚或清理。
+
+### 8.4 有效证据要求
+
+有效 Runtime 样本必须同时记录：
+- 精确 Workbench commit 与夹具版本；
+- Test Campaign ID、SYSTEM_BINDING 修订、system_id / ruleset_version；
+- 测试 Module ref 与 Runtime checkpoint；
+- 主 Skill、相关专项 Skill、系统规则和运行协议的实际读取证据；
+- Preflight、Context Assembly、运行身份和隔离写入目标证据；
+- 完整玩家输入、GM 原始输出及事件/状态差异；
+- 运行后零污染核验。
+
+缺少任何关键入口或隔离证据时，结论为 BLOCKED / NOT TESTABLE，不得降格为“部分通过”。
