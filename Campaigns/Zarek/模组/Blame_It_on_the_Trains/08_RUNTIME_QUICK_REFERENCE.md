@@ -8,7 +8,7 @@
 - Source / Rule Validation：BLOCKED
 - Single-player feasibility：PARTIAL / RULE-MAPPED v2; see 07 §10
 - Runtime：NOT STARTED
-- Preflight：NOT STARTED / BLOCKED
+- Preflight：NOT STARTED / WAITING FOR USER “开始”
 - User start authorization：WAITING FOR “开始”
 
 ## Mandatory assembly order (before any player-facing scene)
