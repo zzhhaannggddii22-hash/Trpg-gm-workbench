@@ -76,10 +76,11 @@ The v22 source (General Manager Toolkit, printed page 165 / PDF physical page 16
 3. Read the row's Starting Chaos, Weather Event count, and cumulative Branch restrictions.
 4. Keep the Branch Loose Ends total and Weather Event history as separate persistent state.
 5. Create the new mission Pool at 0, then apply the row's Starting Chaos as the mission-start grant. Record these as distinct transitions: NEW_MISSION_POOL_CREATED (0), followed by BRANCH_STARTING_CHAOS_GRANTED (+N). Never reuse the closed mission's Pool.
-6. Apply the row's Weather Event count using the book's Weather Events procedure and existing Weather Event history. The count is a setup instruction, not a command to rerun the threshold table after every weather result.
-7. A Weather Event changes Branch Loose Ends only when its specific result explicitly requires a Branch-state change. Ordinary weather description or escalation does not itself imply a Loose Ends adjustment. An extreme weather result that explicitly changes Loose Ends must update Campaign state and be recorded as its own event; do not silently alter unrelated mission initialization outputs.
-8. Record the source total, selected row, all outputs, and mission-start events in the existing Campaign / Module Resource Ledger.
-9. If the Branch total or applicable row cannot be verified, mark only the dependent setup outputs PENDING; do not substitute 0.
+6. Record the row's Weather Event count as a separate mission-setup output. The v22 source procedure normally calls for rolling a d20 for each Weather Event indicated by the current row during mission preparation; repeated results advance from initial (Xa) to enhanced (Xb) to extreme (Xc), and results divisible by 3 cause the Agency to remove Loose Ends immediately, which may change how many remaining dice must be rolled.
+7. **Campaign-scoped override:** an active Campaign Binding may explicitly narrow when the Weather Events procedure is invoked. Such a trigger is a Campaign ruling, not a claim that the printed v22 procedure itself is optional. If no explicit override is present, follow the v22 mission-preparation procedure as written.
+8. When the active Campaign's trigger condition is met, follow the exact v22 Weather Events procedure and use the current table output/history. Do not invent extra events or reroll already-resolved events. If a resolved Weather Event explicitly changes Branch Loose Ends, update Campaign state as its own event and recalculate only the remaining Weather Event count at the timing specified by v22; do not blindly continue the original count. This affects only the remaining Weather Event procedure: it does not rerun mission initialization or change the already-committed Starting Chaos grant. If the result does not explicitly change Loose Ends, do not alter it.
+9. Record the source total, selected row, Weather Event count, whether the active Campaign's trigger condition occurred, and any actual event/result in the existing Campaign / Module Resource Ledger or Campaign state record. A table count alone is not evidence that weather events occurred.
+10. If the Branch total or applicable row cannot be verified, mark only the dependent setup outputs PENDING; do not substitute 0.
 
 ### Printed-page-165 table
 
@@ -98,8 +99,8 @@ The source table prints thresholds at 0, 11, 22, 33, 44, 55, 66, and 77. The int
 
 ### Special threshold lifecycle handoff
 
-- The `66–76` row is not a numeric Chaos initialization. At the mission-start threshold check, create a `RETIREMENT_PENDING_AT_MISSION_CLOSE` transition for the active field team. Continue the current mission; do not terminate it immediately. At closeout, hand the retirement and Loose Ends reduction to the existing Campaign / Closeout process using the book's procedure.
-- The `77+` row is not a numeric Chaos initialization. It enters the book-directed Unraveling / Branch-removal procedure. Do not create a normal mission Pool or convert `N/A` to zero.
+- The `66–76` row is not a numeric Chaos initialization. At mission setup, or when a verified in-mission Loose Ends change first crosses 66, create a stable `RETIREMENT_PENDING_AT_MISSION_CLOSE` transition for the active field team. Continue the current mission; do not terminate it immediately. At closeout, apply the v22 consequences through the existing Campaign / Closeout process: reduce Branch Loose Ends by 11, plus a further 11 for each Agent who uses a function-provided retirement option. Resolve each Agent's available option from the character/Playwall authority; do not assume an option exists.
+- The `77+` row is not a numeric Chaos initialization. It enters the book-directed Unraveling / Branch-removal procedure (the source directs to W7); the Branch region is removed from existence as directed by the book. Do not create a normal mission Pool or convert `N/A` to zero.
 - After any verified Branch Loose Ends mutation during a mission, re-evaluate whether a special threshold has been crossed and record a transition request with its source event. The system adapter emits the required state transition; the Campaign lifecycle owns the resulting Campaign state. Do not silently execute a second reset or mutate historical events.
 - If a threshold is crossed and then the total changes again before closeout, preserve both source events and the pending transition. Where the rule text does not explicitly define cancellation or reversal timing, mark that specific transition PENDING for source-based adjudication rather than automatically cancelling or inventing a reversal.
 - Special threshold transitions must be idempotent by source event and mission ID. Recovery resumes incomplete lifecycle fields and must not retire the team twice or repeat Branch removal.
@@ -226,6 +227,19 @@ For each generation or spend event, record the minimum required fields:
 
 A single logical event may contain linked fields, but completion is tracked per field. Reuse the existing Runtime Control / Module Closeout field-level commit and recovery contract; do not create a Chaos-specific transaction engine. Track eligibility, resource transition, each world-state effect, visibility, presentation, and persistence independently. A retry resumes the first incomplete field: if the resource transition committed but a world write failed, complete the world write without charging again; if the effect committed but presentation failed, present it without reapplying; if presentation occurred but checkpointing failed, record it as delivered without replay. Mark COMPLETE only when every required field is committed or explicitly NOT_APPLICABLE.
 
+### Mapping to existing Runtime Control evidence
+
+| Chaos event component | Existing Runtime evidence | Recovery rule |
+|---|---|---|
+| Eligibility / adjudication | source event, rule basis, actor/target qualification, decision status | Reuse the original decision; do not re-adjudicate as a new event on retry |
+| Resource transition | Resource Ledger Entry ID, before/delta/after, application status | If already applied, never debit/credit again |
+| World-state effect(s) | canonical entity + field paths, before/after values, per-field application status | Resume only unapplied fields; preserve already-applied effects |
+| Visibility | public / GM-only projection and recipient scope | Do not expose hidden fields during recovery |
+| Presentation | actual response/delivery evidence and recipient | If already delivered, do not replay; if not delivered, present the committed result once |
+| Persistence | Runtime checkpoint revision and Runtime Control §14.14 reconciliation manifest reference | Verify each field against the ordered application chain; event ID alone is not proof |
+
+For a partial commit, use the existing `reconciliation_manifest` and Session Log `runtime_application` fields from Runtime Control §14.14. Track `APPLIED`, `PARTIAL`, or `NOT_APPLIED` at the field level. The event is complete only when every required field is applied or explicitly `NOT_APPLICABLE`; unresolved fields resume from the first incomplete dependency. Do not create a parallel Chaos transaction table, second event registry, or separate recovery engine.
+
 A stable event_id is necessary but insufficient for semantic deduplication. Preserve the originating action / roll / world-event identity, mission ID, trigger, and adjudication status. A repeated description of the same action after context recovery must resolve to the original source event; a genuinely new legal opportunity may create a new event even if similar.
 
 If the current balance depends on unresolved events, mark the current value pending rather than inventing a balance. A known increment from an unknown starting balance may be recorded without asserting an absolute balance. The public Chaos Pool must remain queryable as a current value during the active mission.
@@ -257,6 +271,8 @@ This is a trigger-specific prompt, not a per-message checklist. Invoke it only w
 - Present the effect and its observable consequences without leaking GM-only information.
 
 ## 13. Validation status and required tests
+
+This protocol remains DRAFT / NOT ENABLED until the independent behavior fixtures have been executed in a clean target environment and reviewed. The target GM must receive only the test-input artifact; expected results remain in this GM-only Oracle. R-10–R-12 require host-level write-failure injection and independent readback; without that capability they remain NOT EXECUTED / NOT OBSERVABLE.
 
 This protocol is DRAFT until behavioral validation passes. At minimum test:
 
