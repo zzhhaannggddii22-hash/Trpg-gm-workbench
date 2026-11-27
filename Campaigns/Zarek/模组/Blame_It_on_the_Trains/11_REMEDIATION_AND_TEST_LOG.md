@@ -98,7 +98,8 @@ The original audit report's summary counts conflict with its own defect table. T
 |---|---|
 | All 11 original module artifacts exist | PASS |
 | Module README and campaign index lifecycle state match | PASS |
-| Campaign README and module index contain no literal `\\n` separators | PASS |
+| Campaign README and module index contain no literal `\
+` separators | PASS |
 | Prep Rule Validation is a mandatory pre-Preflight gate | PASS |
 | Player Notes remains empty and contains no scenario facts | PASS |
 | Quick Reference mandates System Binding, rulings and disclosure gate | PASS |
