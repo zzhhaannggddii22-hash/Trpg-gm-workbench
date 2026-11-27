@@ -17,6 +17,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from runtime_store.github_graphql_store import (
     GitHubGraphQLRuntimeStore,
+    StaleRevision,
+    canonical_json,
     fingerprint_text,
 )
 
@@ -113,6 +115,80 @@ def main():
             actual = restarted._read_file_at(recovered["commit_oid"], path)
             assert actual is not None and actual[0] == expected
 
+        # Exercise the server-side expectedHeadOid compare-and-swap with two
+        # independent clients racing after the tested client's initial HEAD read.
+        race_base = restarted._read_ref(runtime_branch)
+        race_batch_id = "LIVE-RACE-" + run_id
+        race_targets = {
+            f"Runtime_Store_Smoke/{run_id}/race-target.json":
+                json.dumps({"smoke_run": run_id, "revision": 2}, sort_keys=True) + "\\n"
+        }
+        race_manifest = {
+            "batch_id": race_batch_id,
+            "base_revision": 1,
+            "target_revision": 2,
+            "base_head_oid": race_base,
+            "target_fingerprints": {
+                path: fingerprint_text(value) for path, value in race_targets.items()
+            },
+        }
+        restarted.prepare(race_manifest)
+        concurrent_writer = GitHubGraphQLRuntimeStore(
+            repository=repository,
+            runtime_branch=runtime_branch,
+            operations_branch=operations_branch,
+            token=token,
+        )
+        race_triggered = False
+
+        def racing_transport(query, variables):
+            nonlocal race_triggered
+            mutation_input = variables.get("input", {})
+            headline = mutation_input.get("message", {}).get("headline", "")
+            if not race_triggered and headline == "PUBLISH Runtime batch " + race_batch_id:
+                concurrent_writer._commit_files(
+                    runtime_branch,
+                    race_base,
+                    "TEST_ONLY concurrent writer wins expected HEAD",
+                    {f"Runtime_Store_Smoke/{run_id}/concurrent.json": '{"writer":"B"}\\n'},
+                )
+                race_triggered = True
+            return concurrent_writer._transport(query, variables)
+
+        racing_client = GitHubGraphQLRuntimeStore(
+            repository=repository,
+            runtime_branch=runtime_branch,
+            operations_branch=operations_branch,
+            transport=racing_transport,
+        )
+        try:
+            racing_client.publish(race_batch_id, race_base, race_targets)
+            raise AssertionError("stale concurrent publisher unexpectedly committed")
+        except StaleRevision:
+            pass
+        assert race_triggered
+        assert racing_client.reconcile(race_batch_id)["status"] == "PREPARED"
+
+        # Change a PREPARE record and recompute its own fingerprint. The
+        # independent immutable-history check must still detect the rewrite.
+        operation_path = store._operation_path(manifest["batch_id"])
+        operations_head = store._read_ref(operations_branch)
+        operation_content = store._read_file(operations_branch, operation_path)[0]
+        tampered_envelope = json.loads(operation_content)
+        tampered_envelope["manifest"]["target_revision"] = 999
+        tampered_envelope["manifest_fingerprint"] = fingerprint_text(
+            canonical_json(tampered_envelope["manifest"])
+        )
+        store._commit_files(
+            operations_branch,
+            operations_head,
+            "TEST_ONLY mutate supposedly immutable PREPARE",
+            {operation_path: canonical_json(tampered_envelope) + "\\n"},
+        )
+        tamper_result = restarted.reconcile(manifest["batch_id"])
+        assert tamper_result["status"] == "DISPUTED"
+        assert tamper_result["reason"] == "PREPARE_PATH_NOT_IMMUTABLE"
+
         print(json.dumps({
             "result": "PASS",
             "repository": repository,
@@ -127,6 +203,8 @@ def main():
                 "idempotent PUBLISH retry",
                 "cold-restart reconciliation",
                 "historical target byte readback",
+                "real concurrent writer rejected by expectedHeadOid compare-and-swap",
+                "recomputed PREPARE fingerprint still rejected by immutable history check",
             ],
         }, indent=2))
 
