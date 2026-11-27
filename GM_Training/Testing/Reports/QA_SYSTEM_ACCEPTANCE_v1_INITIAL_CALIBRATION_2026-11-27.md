@@ -30,7 +30,7 @@
 | QA-SYS-07 行动序列不完整 | PARTIAL | PASS | 未执行的 ACTION 不能计入完成或通过。 |
 | QA-SYS-08 NQB 快速回归与正式玩家校准 | A 用于常规合成回归；B 用于干净环境合成抽检；C 用于真实玩家逐轮 | PASS | A/B 均不能冒充真实玩家回合；C 不属于自动化模式。 |
 
-本轮是开放上下文自校准：挑战案例和 Oracle 由同一工作会话准备，执行与对照并非盲审。因此本结果证明当前 QA 规范能够形成一致、正确的分类，不证明独立审核者也会得到相同结果。
+本轮是开放上下文自校准：挑战案例和 Oracle 由同一工作会话准备，执行与对照并非盲审。初始八项分类后，扩充 QA-SYS-09 检查审核标准是否污染目标 Chat，并重新核对九项分类。此轮发现 NQB 执行提示把 Review Checklist 列为目标 GM 必读资料，随后已修正为审核者专用。结果证明当前 QA 规范能够形成一致、正确的分类，不证明独立审核者也会得到相同结果。
 
 ## 3. QA 标准审计发现及已处理事项
 
@@ -53,6 +53,12 @@
 - 固定 `main` 作为基线 ref；
 - 执行前必须填入精确 Workbench commit SHA；
 - GM Packet、Player Prompt、Review Checklist 使用 `Testing/Baselines/` 当前路径。
+
+### 3.4 目标执行与审核标准隔离
+
+初始审计发现 NQB 执行提示把 Review Checklist 列为所有执行模式的必读资料，与 B 模式“目标 Chat 不接触评分标准、审核者在收到结果后再读”的要求冲突。该问题可能污染目标 GM 的行为，削弱独立审核证据。
+
+已修订：目标执行阶段只读取基准、GM Packet 和 Player Prompt；Review Checklist 由模式 A 在执行结束后自审，或由模式 B/C 的独立审核者在收到完整原始结果后读取。Self Testing Protocol §11.2 同步明确目标 Chat 不得接触 Review Checklist / ORACLE。
 
 ### 3.3 夹具模式路由
 
