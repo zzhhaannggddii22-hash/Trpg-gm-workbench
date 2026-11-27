@@ -8,7 +8,8 @@
 
 ## Test discipline
 
-- Use a fresh isolated test context for each case.
+- Use a fresh, independent Chat context for every C-01–C-19 case and every R-01–R-25 case. Each Sequence A–E also gets its own fresh Chat context; continuity is preserved only inside that sequence.
+- Do not describe a same-Chat batch with logical state resets as independent-context execution. If a single Chat is used for convenience, label the run `SHARED_CONTEXT_BATCH / LOGICAL_FIXTURE_RESET_ONLY`; it may test rule handling but cannot satisfy independent-context acceptance.
 - Bind explicitly to `triangle_agency` / Chinese v22.
 - The fixture supplies synthetic state; it does not change any real Campaign.
 - Do not reveal the Oracle / expected results to the tested GM until execution is complete.
@@ -44,13 +45,17 @@
 
 ### C-05 — Anomaly opportunity near Agents
 
-**Initial state:** Active Anomaly, verified Pool = 12, Agents are in the direct vicinity. The Anomaly has an established goal and Focus-consistent reason to interfere with an Agent's current plan.
+**Initial state:** Active Anomaly, verified Pool = 12, Agents are in the direct vicinity and outside the Anomaly's Domain. The Anomaly's established Focus includes manipulating ordinary doors and access controls; its established goal is to keep the Agent inside the office suite. Door-A is the Agent's only currently usable exit and its access state is `OPEN`.
 
-**Player action:** The Agent attempts to leave through a route the Anomaly is actively trying to protect.
+**Player action:** The Agent attempts to leave through Door-A.
+
+**Deterministic effect fixture:** The Anomaly takes the supported action `1-cost Distort` against Door-A, changing `Door-A.access: OPEN → LOCKED`. This is a valid Focus-consistent target and effect; no additional consequence is authorized.
 
 ### C-06 — Beyond Focus
 
-**Initial state:** Active Anomaly, verified Pool = 10. The Anomaly attempts an action beyond its established Focus.
+**Initial state:** Active Anomaly, verified Pool = 10, Agents outside its Domain. The Anomaly's established Focus is limited to altering printed words on paper. It attempts to manifest a Minor Anomaly in the Reception area, which is beyond that Focus.
+
+**Deterministic effect fixture:** The selected standard effect is `4-cost Manifest`. The Minor Anomaly chart result has already been resolved and is supplied as this synthetic entity record: `entity_id=MA-06; name=Static Moth; location=Reception; behavior=flutters toward printed signs; expiry=none specified`. Do not reroll or invent additional traits.
 
 ### C-07 — Domain cost handling
 
@@ -65,7 +70,9 @@ Run separate subcases:
 
 ### C-08 — Domain boundary
 
-**Initial state:** Active Anomaly, Agents outside its Domain, verified Pool = 20.
+**Initial state:** Active Anomaly, Agents outside its Domain, verified Pool = 20. The GM selects the standard `4-cost Manifest` effect.
+
+**Deterministic effect fixture:** The Minor Anomaly chart result has already been resolved and is supplied as this synthetic entity record: `entity_id=MA-08; name=Paper Hound; location=Loading Bay; behavior=tracks movement by following printed labels; expiry=none specified`. Do not reroll or invent additional traits.
 
 ### C-09 — Domain free effects are repeatable at costs ≤3
 
@@ -87,7 +94,9 @@ Run separate subcases:
 
 ### C-13 — Public Pool and information boundaries
 
-**Initial state:** Active mission, Pool = 9. An effect is used.
+**Initial state:** Active mission, verified Pool = 9; active Anomaly; Agents outside its Domain. The GM selects `1-cost Distort` to change `Door-C.access: OPEN → LOCKED`. The Anomaly's private motive is to prevent the Agents reaching the server room; this motive has not been discovered by the Agents and is marked GM-only.
+
+**Player-facing requirement:** Present the complete effect description and public Pool change. Do not disclose the undiscovered motive or other GM-only facts.
 
 ### C-14 — Unknown balance
 
@@ -113,7 +122,9 @@ Run separate subcases:
 
 ### C-18 — Threshold transition
 
-**Initial state:** A mission is being prepared with Branch Loose Ends = 10, then a verified persistent event raises it to 11 before the mission is opened.
+**Initial state:** A non-Zarek synthetic Campaign is preparing a mission with Branch Loose Ends = 10, then a verified persistent event raises it to 11 before the mission is opened. No Campaign weather override is active.
+
+**Resolved weather input:** The mission-start table yields one Weather Event. The verified d20 result is `5`, producing the first-occurrence result `5a`. No Agent makes a sincere apology during this fixture, so the optional 5-Chaos removal is not invoked.
 
 ### C-19 — Branch state is not the mission Chaos Pool
 
@@ -236,7 +247,9 @@ Player input: “Close the mission and prepare the next one.”
 
 ## R-17｜Extreme Weather result changes Branch Loose Ends
 
-Initial state: a synthetic Campaign has Branch Loose Ends 22; an active mission has a mission-start snapshot already committed. A particularly extreme weather condition is established and the applicable Weather Events procedure is invoked. The resolved result explicitly reduces Branch Loose Ends by 1.
+Initial state: a synthetic Campaign has Branch Loose Ends 22; an active mission has its mission-start snapshot and Starting Chaos grant of +10 already committed. The weather is a severe, mission-relevant storm, so the Campaign's extreme-weather trigger is satisfied. The v22 table initially calls for two Weather Event rolls.
+
+**Resolved weather input:** The first verified d20 result is `3`. Under the v22 Weather Events table, result 3 means Agency employees locate and remove 1 Loose End immediately. This is the only roll supplied; recalculate the remaining required roll count after applying the state change.
 
 Sequence:
 1. Resolve the weather result.
@@ -254,11 +267,17 @@ Player input: “Restore the weather situation and continue.”
 
 Initial state: active mission; Campaign Branch Loose Ends 65. A verified Campaign event adds 1 Loose End during the mission.
 
+**Synthetic retirement roster:** Agent A has one currently available retirement option explicitly supplied by their function: `OPTION-A` (the fixture authorizes Agent A to select it). Agent B has no available retirement options. No other Agents are in the active field team.
+
 Player input: “Apply the confirmed Branch-state change and continue the mission.”
 
 ## R-20｜Loose Ends 76 to 77
 
 Initial state: active mission; Campaign Branch Loose Ends 76. A verified Campaign event adds 1 Loose End during the mission.
+
+**Required source:** Use the fixed v22 source commit `7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1`, file `最终交付_v22/triangle_agency_zh.md`, section `W7：这都是你的错（This is Your Fault）`, source file `07_playwalled_documents/309_w7_this_is_your_fault.md`.
+
+**W7 execution brief (GM-only test material):** The Branch region is removed from existence. Reality moves to fill the resulting gap; people who remain forget the former home and cannot perceive the gap. The responsible field team must notify the wider Agency community that its Branch no longer exists, complete the official memo fields (Region, Branch, egregious Loose-End-generating examples with sensitive/Playwall details redacted, GM name, Agent names and ranks, and any additional responsible parties), and share the memo with all reachable Agency colleagues. Treat the memo and notification as required W7 follow-through, not as an optional narrative flourish.
 
 Player input: “Apply the confirmed Branch-state change.”
 
@@ -270,13 +289,15 @@ Player input: “Resolve the escape and update the relevant state.”
 
 ## R-22｜Closeout followed by next mission setup
 
-Initial state: Mission-D has verified Pool 9. Campaign Branch Loose Ends is verified at 11. Mission-D closes; Mission-E is then created.
+Initial state: Mission-D has verified Pool 9. Campaign Branch Loose Ends is verified at 11. Mission-D closes; Mission-E is then created. This is a non-Zarek synthetic Campaign with no Q06-style weather override.
+
+**Resolved weather input:** The table yields one Weather Event; its verified d20 result is `5`, producing first-occurrence result `5a`. No Agent makes a sincere apology during this fixture, so no optional Chaos removal occurs.
 
 Sequence:
 1. Close Mission-D.
 2. Create Mission-E's Pool.
 3. Perform the actual mission-start table lookup.
-4. Complete setup without importing Mission-D's Pool.
+4. Apply the supplied weather result and complete setup without importing Mission-D's Pool.
 
 ## R-23｜System with no GM-operated resource
 
@@ -286,13 +307,13 @@ Sequence: resolve all four actions normally.
 
 ## R-24｜System with a different resource mechanic
 
-Initial state: bind a synthetic rules system with a GM-operated Threat Clock (0–6), no Chaos Pool, and a rule that advances the clock only when a named trigger occurs. The system has no Triangle Agency mechanics.
+Initial state: bind a synthetic rules system with a GM-operated Threat Clock (0–6), no Chaos Pool, and a rule that advances the clock by exactly `+1` only when an intruder crosses into the secured control room. The system has no Triangle Agency mechanics.
 
 Sequence:
-1. Resolve an ordinary action with no clock trigger.
-2. Resolve one action that satisfies the named Threat Clock trigger.
-3. Recover the Session and continue.
-4. Resolve another ordinary action.
+1. Resolve an ordinary action with no clock trigger; clock remains 0.
+2. Resolve an action in which an intruder crosses into the secured control room; clock advances 0 → 1 exactly once.
+3. Resume from the supplied authoritative test checkpoint with clock = 1. This is a logical fixture restore, not a claim of real host persistence.
+4. Resolve another ordinary action; clock remains 1 and does not advance again.
 
 
 
@@ -308,10 +329,11 @@ Player input: “Complete mission preparation and begin the mission.”
 Use independent synthetic contexts for each sequence. The tester must not consult ORACLE.md.
 
 ### Sequence A｜Ordinary → trigger → ordinary
+Initial state: verified Pool 12; active Anomaly outside its Domain; Agents are in its direct vicinity. The Anomaly's Focus includes manipulating ordinary doors, its goal is to keep the Agent inside the office suite, and Door-A is the only usable exit (`OPEN`).
 1. Resolve an ordinary office conversation with no Chaos trigger.
-2. Introduce a valid, rule-supported Anomaly action in the Agents' direct vicinity.
-3. Resolve the resulting system opportunity.
-4. Resolve a second ordinary office action.
+2. The Agent attempts to leave through Door-A.
+3. Resolve the Anomaly's supported `1-cost Distort`: Door-A changes `OPEN → LOCKED`; Pool changes `12 → 11`.
+4. Resolve a second ordinary office action. Do not repeat the effect or spend.
 
 ### Sequence B｜Roll → generate → spend → duplicate
 1. Start with verified Pool 5 and resolve a roll adapter event with committed base delta +2.
@@ -320,9 +342,10 @@ Use independent synthetic contexts for each sequence. The tester must not consul
 4. Replay the effect request with the same original action identity.
 
 ### Sequence C｜World effect → unrelated action → re-interaction
-1. Resolve a legal effect that changes Door-D from OPEN to LOCKED.
+Initial state: verified Pool 5; active Anomaly; Agents outside its Domain; Door-D is `OPEN`.
+1. Resolve a legal `1-cost Distort` that changes Door-D from `OPEN` to `LOCKED`; Pool changes `5 → 4`.
 2. Resolve two unrelated conversations and a location observation.
-3. Attempt to open Door-D again.
+3. Attempt to open Door-D again. The action must read the latest committed fixture state; do not silently restore the door or repeat the spend.
 
 ### Sequence D｜Partial commit → interruption → recovery
 1. Start with Pool 8 and resolve a legal 2-cost effect changing Gate-E from OPEN to SEALED.
@@ -331,7 +354,8 @@ Use independent synthetic contexts for each sequence. The tester must not consul
 4. Resume the same original event.
 
 ### Sequence E｜Closeout → Branch update → next mission
-1. Close a mission with verified Pool 6.
+Initial state: Mission-F Pool 6; Campaign Branch Loose Ends 10; non-Zarek synthetic Campaign with no Q06-style weather override.
+1. Close Mission-F, recording 6 discarded Chaos and closing its Pool at 0.
 2. Apply a separate verified Campaign event that changes Loose Ends from 10 to 11.
-3. Create the next mission Pool.
-4. Perform the next mission setup using the current Campaign total.
+3. Create Mission-G's new Pool at 0, then apply the table grant +5.
+4. The table yields one Weather Event; apply the supplied verified d20 result `5` (first-occurrence `5a`). No Agent makes a sincere apology, so no optional Chaos removal occurs. Final new Pool remains 5; Branch Loose Ends remains 11.
