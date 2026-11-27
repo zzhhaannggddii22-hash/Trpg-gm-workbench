@@ -1,8 +1,8 @@
 # Cairn /《石冢》
 
-> system_id: `cairn`  
-> 规则版本：Cairn Second Edition（2e）  
-> 中文参考：社区简体中文 SRD（非官方翻译）  
+> system_id: `cairn`
+> 规则版本：Cairn Second Edition（2e）
+> 中文参考：社区简体中文 SRD（非官方翻译）
 > 状态：candidate（第二套系统接入准备中；尚未开放正式运行）
 
 本目录是 Cairn 系统级规则知识的唯一入口。它与 `Systems/Triangle_Agency/` 完全隔离。Cairn 被用户指定为 GM Workbench 的第二套系统；本次接入按独立系统完成，不能把 Triangle Agency 的规则、资源、术语或运行惯例带入。
@@ -33,6 +33,7 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 - [GM_SKILL.md](./GM_SKILL.md)：Cairn 专属主持执行草案。
 - [PREFLIGHT.md](./PREFLIGHT.md)：Cairn 专属开团前核验。
 - [Research/INITIAL_RESEARCH.md](./Research/INITIAL_RESEARCH.md)：设计研究、单人测试风险与短团候选。
+- [Testing/L3_NPC_PC_RESOURCE_AND_AUTONOMY_TEST_PLAN.md](./Testing/L3_NPC_PC_RESOURCE_AND_AUTONOMY_TEST_PLAN.md)：将 1–2 次短团同时用于 L3 NPC 的 PC 级资源与自主性验证。
 
 ## 运行边界
 
@@ -41,6 +42,7 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 - Cairn 的属性、豁免、HP、STR/DEX/WIL 损伤、护甲、疲劳、库存格、背景、法术书、成长和探索程序均属于 Cairn 专属规则。
 - 不把 Cairn 的豁免或伤害流程移入 Triangle Agency；也不把 Triangle Agency 的 Chaos、QA、Burnout、Harm 或 Playwall 概念映射进 Cairn。
 - 单人玩家测试属于待验证的桌面规模，不代表规则默认支持单人队伍。优先使用规则内的 hirelings 等支持方式；任何超出规则的调整必须明确标记为桌面适配并经用户批准。
+- Cairn 短团还承担 Workbench L3 NPC 测试：明确登记的 L3 NPC 使用 PC 级资源账本和独立目标/计划模型。此为 Workbench 的人物模拟要求，不是 Cairn 官方要求所有 NPC 按 PC 创建；规则裁定仍按 Cairn 2e。
 
 ## 激活门槛
 
