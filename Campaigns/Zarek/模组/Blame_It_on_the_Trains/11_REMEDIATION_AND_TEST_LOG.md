@@ -11,10 +11,10 @@
 | Target branch | `fix/blame-trains-independent-remediation-2026-11-27` |
 | Audit target Commit | `99f41bd4dafd202c9d81430e4ca098356d8e3cc7` |
 | Base Commit | `76be1f28babb95e27fcd3afd6d3ac63c2e4219cf` |
-| Artifact Commit (code/readback snapshot before this manifest file) | `1c7af767caad61481c7172a466d7ae9e2e3008f5` |
+| Artifact Commit (complete remediation batch before final manifest update) | `0fbd95e00e704a5321256395b420c9d1012e2a1f` |
 | Manifest creation Commit | `6c7dd170b0235373bbbbf9978cdb5a19043ed4c9` |
 | Post-create README link readback | 11/11 PASS |
-| Manifest status | DELIVERED ON REMEDIATION BRANCH; final manifest update pending |
+| Manifest status | DELIVERED ON REMEDIATION BRANCH; post-create README readback 11/11 PASS |
 | Writer / validator / delivery owner | Casey — SELF-REVIEW; not independent QA |
 | External AI review | NOT USED in this remediation batch |
 | Main branch mutation | NONE; all writes are on the remediation branch |
