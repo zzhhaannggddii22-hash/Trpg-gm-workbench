@@ -7,7 +7,7 @@
 - [冰淇淋车（Ice Cream Truck）](./冰淇淋车_Ice_Cream_Truck/README.md) — CLOSED
 - [俯冲（Nosedive）](./俯冲_Nosedive/README.md) — CLOSED
 - [Bower Street](./Bower_Street/README.md) — CLOSED（2026-11-27；历史归档）
-- [Blame It on the Trains](./Blame_It_on_the_Trains/README.md) — DELIVERED / PREP RULE VALIDATION PARTIAL / BLOCKED / NOT STARTED
+- [Blame It on the Trains](./Blame_It_on_the_Trains/README.md) — DELIVERED / PREP RULE VALIDATION COMPLETE / PREFLIGHT NOT STARTED
 
 ## 非 CANON 测试
 - [F-33《静默楼层》测试短团](./F-33_静默楼层_测试短团/README.md) — NON-CANON / TEST ARCHIVE
