@@ -15,6 +15,7 @@
 - [操作者侧行动序列](./NQB01_V03_ACTION_SEQUENCE.md)：不得提前提供给目标 GM
 - [独立审核表](./NQB01_V03_REVIEW_CHECKLIST.md)：仅审核者在收到完整原始输出后读取
 - [执行提示](./NQB01_V03_EXECUTION_PROMPT.md)：必须使用正式 GM Skill / Preflight / Runtime 入口；当前指定隔离环境为 [NQB01_Runtime_Test](../../../Campaigns/NQB01_Runtime_Test/README.md)。本次固定采用 B-mode 干净目标 Chat，目标 GM 不得读取操作者/审核者材料；仍须先完成 Preflight 并获得 Session 启动授权
+- [Prep QA 报告](../Reports/NQB01_V03_PREP_QA_2026-11-27.md)：操作者/审核者专用，不得提供给目标 GM
 
 Campaigns/README.md 已登记独立的 NQB01_Runtime_Test Campaign。不得使用 Zarek 正式 Campaign 进行 NQB 测试。隔离环境与测试角色已建立；Prep QA 已完成。干净目标 Chat 的 Preflight 尚未执行，Session 尚未启动。测试运行准入、隔离存储和零污染门槛见执行提示 §0 与 SPEC §8。
 
