@@ -42,6 +42,9 @@ jobs:
           PYTHONDONTWRITEBYTECODE: "1"
         run: python -m unittest discover -s tests -v
 
+      - name: Run roll runtime adapter conformance harness
+        run: python GM_Training/Testing/Fixtures/ROLL_RUNTIME_APPLICATION_ADAPTER_v1/roll_runtime_adapter.py
+
       - name: Check patch whitespace
         shell: bash
         run: |

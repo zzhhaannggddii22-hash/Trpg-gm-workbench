@@ -16,8 +16,11 @@
 ## Triangle Agency 系统专属机制
 
 - [Playwall 幕间解锁完整性回归夹具 v1](./PLAYWALL_INTERMISSION_INTEGRITY_REGRESSION_v1.md)
+- [通用/专属掷骰路由分拆回归夹具 v1](./ROLL_RESOLUTION_GENERIC_SYSTEM_SPLIT_v1/START.md)：11 个顺序 ACTION，覆盖 Triangle Agency 基础检定、冲突、Playwall 授权门槛与跨系统隔离。
 
 ## Runtime 与信息通道
+
+- [Roll Runtime Application Adapter v1](./ROLL_RUNTIME_APPLICATION_ADAPTER_v1/README.md)：可执行参考适配器与本地故障注入脚本；仅合成文件系统，不是生产 Runtime 连接器。
 
 - [P0 合成验收夹具 v1](./GM_RUNTIME_P0_FIXTURE_v1.md)
 - [P0 回归夹具 v2](./GM_RUNTIME_P0_REGRESSION_v2.md)
