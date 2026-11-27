@@ -17,7 +17,7 @@
 - [模组：死寂](./模组/死寂/README.md)：首个正式任务结案、奖励、复盘、余波与历史记录。
 - [模组：冰淇淋车（Ice Cream Truck）](./模组/冰淇淋车_Ice_Cream_Truck/README.md)：第二场正式任务结案、成长、密库补给与复盘资料。
 - [模组：俯冲（Nosedive）](./模组/俯冲_Nosedive/README.md)：第三场正式任务已结案；无奖励、无惩罚；历史记录与角色记忆边界已归档。
-- [模组：Bower Street](./模组/Bower_Street/README.md)：模组索引，链接运行快照与编号 Session 日志。
+- [模组：Bower Street](./模组/Bower_Street/README.md)：已结团的上一场正式任务，历史记录保留。\n- [模组：Blame It on the Trains](./模组/Blame_It_on_the_Trains/README.md)：用户已选定的下一场正式任务；备团已归档，待 Preflight 与用户开团指令。
 - [模组：F-33《静默楼层》测试短团](./模组/F-33_静默楼层_测试短团/README.md)：独立 GM 能力测试存档，不属于正式战役 CANON。
 - [战役交接与当前状态](./战役记录/战役交接与当前状态.md)：主持方式、人物资源状态与后续连续性。
 
@@ -70,3 +70,13 @@ GM 能力测试、未进入正式 CANON 的短团可作为测试模组单独归�
 - 经玩家确认，扎雷克正式隶属 **Ternion City 大都会分部（Major Metropolitan Area Branch）**；依据是其既有城市背景 Ternion City。
 - 分部归属与任务发生地分开记录。远离 Ternion City 的任务需在 Preflight 中核实联络、总部／分部支援、现场人员、补给、交通与撤离条件；不预设支援即时可用，也不为制造孤立感而无依据地切断支援。
 - 具体支援能力、响应时间、当地机构资源及相关区域 Loose Ends 均须依据规则、模组和已建立的战役事实确认；未确认前保持未知，不得臆造。
+
+
+## 2026-11-27｜《Bower Street》结团与下一模组选定
+
+- 《Bower Street》已于 2026-11-27 结团；保留其历史 Session、Runtime、结算与复盘记录，不再作为当前活动模组。
+- 结团后的 Time 增量 +1 已由用户确认；可使用 Time 的绝对余额仍待权威人物卡/资源流水核对，不从旧快照推算。
+- Mission MVP 免费职能轨迹选择为 Attentiveness（缜密）；对应角色数值须以人物卡正式同步结果为准。
+- 与 VHS 影像女孩的幕间成长互动仅为后续计划；尚未演出、定稿或购买。
+- 用户已选择《Blame It on the Trains》作为下一场正式模组。该模组已有独立备团目录；当前状态见模组 README 与模组索引。
+- 上述选择不代表已完成 Preflight，也不代表用户已授权开团。
