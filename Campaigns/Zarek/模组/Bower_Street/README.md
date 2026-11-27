@@ -23,9 +23,9 @@
 
 - 备团复核：README → 07 Source Crosscheck → 01 GM Prep → 02 Name Index。
 - 正式开团 Preflight：读取本 Campaign 最新角色卡、战役交接、SYSTEM_BINDING、Zarek 桌裁启用清单，再读取本目录 03 Runtime State、最近 Session Log、09 Resource Ledger、01 GM Prep 的相关片段、02 Name Index，以及 08 Player-Facing Gate（必须作为活动 Session 常驻约束装配）；核对当时实际装备和资源。
-- 运行中：按场景/行动需要调用 01；实际事件写入 04；资源变化在同一轮写入 09 并同步 03；Session Log 引用资源 Entry ID，不另建第二份资源流水；只把角色真实获知内容写入 05。
+- 运行中：按场景/行动需要调用 01；实际事件写入 04；资源变化在同一轮只写入 09；Session Log 引用资源 Entry ID；Runtime State 不复制资源余额；只把角色真实获知内容写入 05。
 - 续接、下一 Session 与待核资源沿 03、09 和最近 Session Log 定向读取；入口索引只负责定位。
-- 结团后：先完成 09 的资源对账，再按权威人物卡同步角色资源，最后更新 README、03、05、06，并同步 Campaign 层资料。
+- 每次 Session 结束：先完成 09 的资源对账，再将角色资源与关键道具快照更新至正式人物卡；更新 Runtime State 的场景快照，不复制资源余额。完整模组结团后再更新 README、05、06，并同步 Campaign 层资料。
 
 ## 版本与迭代
 

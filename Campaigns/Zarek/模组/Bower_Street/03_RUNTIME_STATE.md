@@ -2,7 +2,7 @@
 
 > 当前状态：ACTIVE / SESSION 01 CLOSED / MODULE IN PROGRESS
 > 本文件是当前运行快照入口。此历史记录未附可验证的发布批次清单，按 LEGACY_UNMIGRATED 恢复。定向核对编号日志、已呈现锚点及有关权威后，按字段决定推进范围。
-> **资源交易历史与对账唯一入口：[09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md)。** 本文件只提供续接快照，不另建交易流水；人物持续性资源仍以 Campaign 正式人物卡为跨模组当前余额权威。
+> **资源交易历史与 Session 内余额唯一入口：[09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md)。** 本文件只提供场景续接和必要关键物品快照，不另建资源流水或余额；正式人物卡只在 Session 结束对账后更新，作为下一场开局快照。
 
 ## Session 状态
 - Module：Bower Street（行动代号：《旧日回声》）
@@ -20,18 +20,16 @@
 - Next-session plan（玩家与凯瑟琳已讨论）：先调查社区活动中心登记记录，再回访已接触居民，观察居民记忆与日常照料是否快速恶化。此为计划，不是已执行行动。
 
 ## 玩家角色
-- 扎雷克：Associate / R&D / Newborn / Absence（权威数值以正式人物卡为准）。
+- 扎雷克：Associate / R&D / Newborn / Absence（身份与静态角色设定见正式人物卡；资源余额只查 09_RESOURCE_LEDGER.md）。
 - 本 Session 未记录 Harm、QA、Burnout、Demerits、Commendations、Time 或装备充能的确认变化。
 - 扎雷克不会开车；本场结束时坐任务车辆副驾驶。
 - 装备最后已知状态：Ripple Gun 满充 1 发；常规公文包由扎雷克携带；本 Session 未记录使用/转移。
 - 凯瑟琳防护储备最后已知 9/9；本 Session 未记录消耗。
 
-## 公开资源快照（交易明细见 09_RESOURCE_LEDGER.md）
-- 普通 Chaos Pool：**UNKNOWN / NEEDS RECONCILIATION**。
-- 开局 Preflight 核算：普通 Pool 0；天气事件 0；Ternion City 大都会分部 Loose Ends 追踪基线 1（仅含可核实的扎雷克战役贡献）。
-- 本 Session 使用 Ask the Agency 产生派对闪粉追踪效果。结算曾遗漏资源变化，之后临时补报 +5，但 +5 未独立核验；不得把 0 或 +5 当作 Session 结束时已确认余额。该待核事项登记为 BOWER-RES-001。
-- 天气事件：最后确认基线 0；本 Session 未记录天气事件变化。
-- 规则结算问题见 GitHub Issue #22。下一次发生资源变更前，应先完成该次行动的规则与账本核对；不得回填猜测余额。
+## 资源状态引用
+- 本模组所有资源余额、变化流水及待核交易统一见 [09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md)。本文件不重复列出数值。
+- 当前待核事项：普通 Chaos Pool 的 BOWER-RES-001 尚待核实；在核对完成前，不以 0 或临时报告的 +5 作为可用余额。
+- 本文件只记录场景连续性和必要的关键物品状态。
 
 ## 地点与 NPC 状态（桌面 CANON）
 - 1058 Rebecca/Jodie 家：本 Session 已进入并调查；Rebecca 与 Jodie 留在家中，未记录离开或状态改变。
