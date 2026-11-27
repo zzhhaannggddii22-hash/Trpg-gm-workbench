@@ -19,6 +19,7 @@
 | CF-02 generation handoff | 明确 roll adapter 提交 base_delta；Chaos Runtime 唯一应用系统修正并提交 final_delta；保留修正快照、提交状态和语义来源身份 | 独立生成/重放行为测试待完成 |
 | CF-03 66/77 lifecycle | 增加 Campaign 生命周期交接、66 任务结束退休待办、77 Unraveling/Branch removal 处理；特殊档位不转成 0 | 进入阈值后又回落的时序仍标 PENDING，需精确规则原文裁定；R-19/R-20 待执行 |
 | CF-04 transaction recovery | 要求复用 Runtime Control / Module Closeout 字段级提交机制；资源、世界状态、可见性、呈现、持久化分别记录，恢复只补未完成字段 | 当前宿主故障注入与跨 Session 持久化仍未验证 |
+| CF-06 complete diff scope | PR base SHA `e54ca87f45e807a90b100a97ae912f96b1128606` and full current PR diff were retrieved; 21 changed files enumerated | latest branch diff review complete at the time of this record |
 | CF-05 activation gate | Chaos Protocol 保持 DRAFT / PENDING BEHAVIORAL VALIDATION；输入与 GM-only Oracle 分离；增加 R-01–R-24 | 独立盲测、真实多轮、宿主集成尚未执行；不得宣称生产启用 |
 
 ## P1 修订状态
@@ -57,6 +58,7 @@
 
 ## 当前限制
 
+- PR base SHA `e54ca87f45e807a90b100a97ae912f96b1128606` is now confirmed; the full PR diff is retrievable (21 changed files). This closes the earlier missing Base/Diff evidence gap.
 - 66/77 的跨生命周期边界与阈值回落时序仍需固定 v22 完整条文最终确认。
 - 真实宿主是否自动发现触发、跨 Session 保存效果、部分提交恢复和实际响应延迟仍 NOT VERIFIED。
 - 本记录只追踪协议修订，不回写历史 Session，不补造 Bower Street Chaos 消费或效果，不改变正式战役 CANON。
