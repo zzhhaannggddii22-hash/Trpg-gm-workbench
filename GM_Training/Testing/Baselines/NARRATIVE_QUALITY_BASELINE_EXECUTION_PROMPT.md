@@ -37,7 +37,7 @@ NQB-01 的完整基准执行属于 L2。L1 只能回答一个局部问题，不�
 2. 可以使用单会话自测；若使用合成玩家，必须明确标记为合成模拟。
 3. 只审查基础正确性硬门槛及本次相关的少量质量维度；其他维度标记为未测试，不强制评分。
 4. 保存每个相关 ACTION 的完整 A 线玩家可见原文及对应 B 线 GM 观察；可以省略无关状态账本，不得用摘要替代 A 线原文。
-5. 验收结论仅限本次定向观察：PASS / FAIL / PARTIAL / BLOCKED / NOT_ACCEPTED / INSUFFICIENT_EVIDENCE；执行完成状态与验收结论分开记录。不得声称完成 NQB-01 完整基准或证明稳定性。
+5. 验收结论仅限本次定向观察：PASS / PASS_WITH_LIMITS / FAIL / PARTIAL / BLOCKED / NOT_ACCEPTED / INSUFFICIENT_EVIDENCE；执行完成状态与验收结论分开记录。不得声称完成 NQB-01 完整基准或证明稳定性。
 
 ### L2：完整低压基准
 
