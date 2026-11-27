@@ -17,6 +17,11 @@
 - 队伍 Omen：d20 = 2。冬季提前到来，霜纹像一张地图；该预兆已向玩家公开。
 - 本目录只记录已确认的创建结果与战役事实。不得把 Triangle Agency 的异常能力、机构履历、QA、Chaos、Burnout 或人物关系迁入 Cairn。
 
+## 跨战役连续性隔离
+- Twin Lakes（Cairn 2e）与 Triangle Agency 是彼此独立的游戏世界和战役连续性。**Twin Lakes 中发生的任何事件、关系变化、经历、物品、伤害、成长或记忆，都不会回写、影响或成为 Triangle Agency 的 CANON。**
+- 凯瑟琳与扎雷克在 Triangle Agency 中的既有发展，以本次 Twin Lakes 战役开始时各自最新的正式人物信息快照为基准；该快照是跨战役引用的只读起点，不因 Twin Lakes 的游玩而改变。
+- 两条连续性此后独立发展。除非用户明确另行授权建立跨界联系，否则不得移植经历、记忆、关系、资源、数值或世界后果。
+
 ## 运行边界
 - Cairn 2e 当前在 Workbench 中仍为 candidate。正式 Preflight 与激活门槛完成前，不得标记为 active。
 - 本目录的 SYSTEM_BINDING 和人物卡是当前创建状态的权威记录；后续掷骰必须沿用已锁定结果，不得重新随机。
