@@ -7,12 +7,21 @@ validation:
   validation_id: CAIRN-VR-TWIN-LAKES-01
   system_id: cairn
   ruleset_version: Cairn Second Edition
-  source_commit: fe93d0f4b67e708a0b9d3161c623ba429e14eb9b
+  preflight_base_commit: 245fca27b3c2570ea3be0781648bef204e70c36f
+  archive_commit: cc49fa84edd8d11bcb9e7fdbd221d8589f860207
+  module_source_path: Campaigns/TEST_ONLY_Cairn_VR_Twin_Lakes/SOURCE/CAS1_OFFICIAL_SOURCE.md
+  gm_prep_path: Campaigns/TEST_ONLY_Cairn_VR_Twin_Lakes/GM_ONLY_PREP.md
+  module_source_retrieved_at: 2026-11-27
+  official_release_note_verified_at: 2026-03-31
+  module_source_license: CC-BY-SA-4.0
+  fasha_hp_status: UNKNOWN_SOURCE_DISCREPANCY
   fixture_entry: Campaigns/TEST_ONLY_Cairn_VR_Twin_Lakes/README.md
   runner_chat: "GM preparation in this conversation; character creation in a separate conversation"
   started_at: null
   completed_at: null
   result: pending
+  runtime_status: NOT_STARTED
+  start_authorization: NOT_GRANTED
   scope:
     - "CAS-1: Trouble in Twin Lakes"
     - "Two-player-character party: user-controlled PC plus assistant-controlled Katherine PC"
@@ -43,3 +52,12 @@ validation:
 ## 系统状态
 
 Cairn 仍为 candidate。此 Manifest 仅授权 TEST_ONLY_NON_CANON 验证，不改变系统登记状态，不创建正式 Campaign Binding。
+
+## 本次 Preflight 归档与状态说明｜2026-11-27
+
+- 已将当前可访问的官方上游 Markdown 完整归档至 `SOURCE/CAS1_OFFICIAL_SOURCE.md`。
+- 已建立主持侧专用 `GM_ONLY_PREP.md`，供后续直接读取，不必每次重新搜索网页。
+- 官方 Cairn Press 2026-03-31 发布说明称已补入 Fasha HP；当前上游 Markdown 对应数据行仍无 HP。最新 PDF 本轮未直接读取，因此 Fasha HP 保持 UNKNOWN，不得伪装为官方数据。
+- 当前归档包含完整 Markdown 原文，不代表已归档 PDF 二进制、版式或地图图片原文件。
+- 用户 PC 与 Katherine PC 的最终人物卡将在之后提供；本次不生成、不预填。
+- Runtime State revision 0、Session Log 空记录保持不变。当前尚未获得开始授权，不建立 NEW START 检查点、不初始化场景、不推进时间。
