@@ -4,6 +4,7 @@ import unittest
 
 from runtime_store.github_graphql_store import (
     BatchConflict,
+    ConfigurationError,
     CommitOutcomeUnknown,
     DisputedBatch,
     GitHubGraphQLError,
@@ -216,6 +217,47 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         with self.assertRaises(InvalidTargetPath):
             self.store.publish("BATCH-002", BASE, {"../escape.json": "x"})
 
+    def test_reconcile_fails_closed_on_malformed_prepare_records(self):
+        self.store.prepare(self.manifest)
+        path = ".runtime/operations/BATCH-002.json"
+        head = self.store.heads[self.store.operations_branch]
+        self.store.snapshots[head][path] = "{not-json"
+        result = self.store.reconcile("BATCH-002")
+        self.assertEqual(result["status"], "DISPUTED")
+        self.assertEqual(result["reason"], "PREPARE_MALFORMED")
+
+        self.store.snapshots[head][path] = json.dumps(["not", "an", "object"])
+        result = self.store.reconcile("BATCH-002")
+        self.assertEqual(result["status"], "DISPUTED")
+        self.assertEqual(result["reason"], "PREPARE_MALFORMED")
+
+    def test_reconcile_fails_closed_on_malformed_receipt_and_checkpoint(self):
+        self.store.prepare(self.manifest)
+        published = self.store.publish("BATCH-002", BASE, self.targets)
+        commit = published["commit_oid"]
+        snapshot = self.store.snapshots[commit]
+        receipt_path = ".runtime/receipts/BATCH-002.json"
+        snapshot[receipt_path] = "{not-json"
+        result = self.store.reconcile("BATCH-002")
+        self.assertEqual(result["status"], "DISPUTED")
+        self.assertEqual(result["reason"], "RECEIPT_NOT_JSON")
+
+        # Restore the receipt, then corrupt the checkpoint in the same historical commit.
+        snapshot[receipt_path] = json.dumps({
+            "schema_version": 1,
+            "batch_id": "BATCH-002",
+            "manifest_ref": self.store.operations_branch + ":.runtime/operations/BATCH-002.json",
+            "manifest_fingerprint": fingerprint_text(json.dumps(self.manifest, sort_keys=True, separators=(",", ":"))),
+            "base_head_oid": BASE,
+            "base_revision": 1,
+            "target_revision": 2,
+            "target_fingerprints": self.manifest["target_fingerprints"],
+        }, sort_keys=True) + "\\n"
+        snapshot[".runtime/checkpoint.json"] = "{not-json"
+        result = self.store.reconcile("BATCH-002")
+        self.assertEqual(result["status"], "DISPUTED")
+        self.assertEqual(result["reason"], "CHECKPOINT_NOT_JSON")
+
     def test_reconcile_detects_removed_prepare_manifest(self):
         self.store.prepare(self.manifest)
         old = self.store.heads[self.store.operations_branch]
@@ -304,6 +346,21 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
 
 
 class GraphQLRequestShapeTests(unittest.TestCase):
+    def test_branch_validation_rejects_forbidden_git_ref_names(self):
+        for invalid in ("", "@", "HEAD", "runtime//smoke", "runtime/.hidden",
+                        "runtime/branch.lock", "runtime/has?mark", "runtime\\\\bad",
+                        "runtime/trailing."):
+            with self.subTest(branch=invalid):
+                with self.assertRaises(ConfigurationError):
+                    GitHubGraphQLRuntimeStore(
+                        "example/workbench", invalid, "runtime-ops/test",
+                        transport=lambda query, variables: {},
+                    )
+        GitHubGraphQLRuntimeStore(
+            "example/workbench", "runtime-smoke/run-123", "runtime-ops/run-123",
+            transport=lambda query, variables: {},
+        )
+
     def test_commit_mutation_uses_expected_head_and_base64_full_file_contents(self):
         seen = {}
 
