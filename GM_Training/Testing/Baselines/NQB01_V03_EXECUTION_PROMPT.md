@@ -13,7 +13,7 @@
 1. 已存在一个由项目正式登记的、专供测试的 Campaign / Test Campaign，且它有自己的 SYSTEM_BINDING.md、唯一 system_id、精确规则版本、合法初始 Runtime 检查点和隔离存储位置。
 2. 该测试 Campaign 与所有正式 Campaign 完全分离；不得使用 Zarek 或其他正式角色、NPC、关系、装备、记忆、模组、Session Log、Runtime State 或玩家笔记作为测试起点。
 3. 测试 Campaign 和测试 Module 必须在本次测试前已经存在并经用户授权使用。操作者不得为了让测试继续而自行创建 Campaign、角色卡、SYSTEM_BINDING、Runtime State、Session Log、NPC 档案或其他运行环境。
-4. 测试执行使用正常入口：GM_Training/SKILL.md → GM_Training/02_WORKFLOW_AND_PREFLIGHT.md → SYSTEM_CONTEXT_PROTOCOL.md → 测试 Campaign 的 SYSTEM_BINDING / Runtime 检查点 → 对应系统入口、规则与 Skill → 测试 Module 的 GM Prep / Runtime Context。按标准流程完成 Context Assembly、Preflight 和运行身份核验。
+4. 测试执行使用正常入口：GM_Training/SKILL.md → GM_Training/02_WORKFLOW_AND_PREFLIGHT.md → SYSTEM_CONTEXT_PROTOCOL.md → 测试 Campaign 的 SYSTEM_BINDING / Runtime 检查点 → 对应系统入口与规则；若系统 README 明确声明没有独立可执行系统 Skill，则使用主 GM Skill 编排，不得把 Research 草案冒充系统 Skill → 测试 Module 的 GM Prep / Runtime Context。按标准流程完成 Context Assembly、Preflight 和运行身份核验。
 5. NQB 场景资料只作为该测试 Campaign 下的 test-only Module/场景输入，在正常 Prep-to-Runtime 交接后加载；不得将 GM Packet 当作独立 GM 提示词或自行搭建一个平行的“迷你 GM 环境”。
 6. 测试运行必须使用预先存在的隔离状态目标。若标准 Runtime 会将事件写入正式 Campaign，或无法证明测试数据只写入隔离位置，立即 BLOCK，不得试跑。
 
