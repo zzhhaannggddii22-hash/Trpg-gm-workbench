@@ -5,6 +5,7 @@
 ## 当前战役
 
 - [Zarek / 扎雷克](./TA01_Zarek/README.md) — `TA01_Zarek`；绑定 `triangle_agency`，规则版本为《三角机构》中文 v22。
+- [Twin Lakes / Zaf](./CA01_Zaf/README.md) — `CA01_Zaf`；绑定 `cairn` / Cairn 2e，角色创建中，系统接入仍为 candidate。
 
 ## 约定
 
