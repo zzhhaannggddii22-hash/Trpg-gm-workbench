@@ -15,14 +15,15 @@ This protocol is the shared integration contract between those layers:
 - **Campaign layer:** stores the current campaign's state, approved table adaptations, and event history. It does not redefine system-wide rules.
 - **Module / Session layer:** supplies local facts and scenario conditions. It does not silently override system mechanics.
 
-A system adapter may implement only the mechanics that exist in that system. No mechanic, resource, term, or workflow is assumed to exist across all systems.
+A system adapter may implement only the mechanics that exist in that system. No mechanic, resource, term, or workflow is assumed to exist across all systems. A resource-handling interface is optional: it is a reusable execution pattern, not a platform-wide resource mechanic. A system with no declared GM-operated resource does not instantiate that interface, create placeholder balances, or perform resource checks.
 
 ## 2. Event-driven integration, not per-action polling
 
 System mechanics are integrated by **trigger**, not by adding a checklist to every player message.
 
 - A passive rule that shapes ordinary adjudication is internalized as a default behavior. It does not require a fresh file read or an announced procedure on every action.
-- A resource or subsystem is activated only when a declared rule trigger, state transition, explicit player action, world event, or scheduled system phase makes it relevant.
+- A resource or subsystem is activated only when the active system adapter declares that it exists and a declared rule trigger, state transition, explicit player action, world event, or scheduled system phase makes it relevant.
+- If the bound system declares no GM-operated resource adapter, there is no resource subsystem to inspect. Do not scan for one, ask whether a resource exists, or add generic resource state.
 - Once a static rule source has been verified for the active ruleset, reuse it in the current context. Re-read only when version, scope, evidence, exception, or unresolved dependency requires it.
 - Do not scan all system rules after every action. Do not poll every subsystem when no trigger has occurred.
 - A triggered subsystem may evaluate its own pending consequences without requiring unrelated subsystems to run.
