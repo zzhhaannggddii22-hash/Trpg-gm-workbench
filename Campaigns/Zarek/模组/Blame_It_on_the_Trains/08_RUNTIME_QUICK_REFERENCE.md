@@ -1,38 +1,58 @@
 # Runtime Quick Reference｜Blame It on the Trains
 
-> GM-only。现场导航，不替代 01_GM_PREP / 07_Source Crosscheck / 中文 v22 原文。
+> GM-only. Field navigation only; does not replace source text, rules, Campaign Binding, or the Player-Facing Gate.
 
-## 启动状态
-- READY WITH OPEN ITEMS / NOT STARTED
-- 未执行 Preflight；用户未说“开始”不得开团。
-- 角色资源、装备、Time 余额、同行 NPC 必须 Preflight 核对。
+## Readiness
 
-## 权威入口
-- 固定模组事实：01_GM_PREP.md
-- 名称/别名：02_NAME_INDEX.md
-- 当前场景与空间状态：03_RUNTIME_STATE.md
-- 实际事件历史：04_SESSION_LOG.md / Sessions/
-- 玩家已知信息：05_PLAYER_NOTES.md
-- 资源交易：09_RESOURCE_LEDGER.md
-- 来源与规则缺口：07_SOURCE_AND_RULE_CROSSCHECK.md
+- Artifact：DELIVERED
+- Source / Rule Validation：BLOCKED
+- Single-player feasibility：NOT TESTED
+- Runtime：NOT STARTED
+- Preflight：NOT STARTED / BLOCKED
+- User start authorization：WAITING FOR “开始”
 
-## 现场不可忘记
-- 入口方式会改变首遇；按玩家实际选择，不强制指定入口。
-- 进入车站后的空间移动按已建立层级/循环规则处理；每次跨层更新 Runtime State。
-- 新进入子现实与重复进入的变化骰依原文执行；视觉表格未核验前不得猜。
-- NPC 只知道其来源允许知道的内容；不可让 NPC 因 GM 已知而全知。
-- 玩家自由选择调查、撤离、营救、谈判、暴力/非暴力行动；不强制预设遭遇。
-- 高影响行动回查规则 v22 与来源；资源只写 Ledger。
-- GM-only 与 Player Notes 永远分离。
+## Mandatory assembly order (before any player-facing scene)
 
-## 开场流程
-1. 核对 README / 07 / 最新人物卡 / 战役交接 / Resource Ledger。
-2. 解决 DISPUTED 状态；核对凯瑟琳是否同行。
-3. 完成 d44/特殊混沌效果等规则和图表缺口。
-4. 冷启动核对玩家第一条路线的首次接触素材。
-5. 生成无剧透简报，等待用户明确“开始”。
+1. `Campaigns/Zarek/SYSTEM_BINDING.md` — confirm triangle_agency / Chinese v22.
+2. `Campaigns/Zarek/RULE_ADJUDICATIONS.md` — load only Campaign-approved Q01–Q05 rulings and scope.
+3. Current formal character card — verify current character state and equipment.
+4. Campaign handoff / Campaign README — recover only confirmed cross-module facts and pending disputes.
+5. This module README and `07_SOURCE_AND_RULE_CROSSCHECK.md` — verify lifecycle and open validation gates.
+6. `10_PLAYER_FACING_GATE.md` — mandatory resident output constraint for the entire active Session.
+7. `01_GM_PREP.md` and `02_NAME_INDEX.md` — load only the materials needed for the current action.
+8. `03_RUNTIME_STATE.md`, latest Session Log and `05_PLAYER_NOTES.md` — restore actual dynamic state and player knowledge.
+9. `09_RESOURCE_LEDGER.md` — reconcile only resources required for the current action; never copy its balances into Runtime State.
+10. Resolve blockers and run Preflight for this specific Session. Wait for the user's explicit “开始”.
 
-## 状态更新触发
-- 跨地点/楼层、NPC位置变化、关键物品转移、NPC获知信息、重要承诺、触发条件变化：更新 Runtime State + Session Log。
-- 资源变化：只写 Resource Ledger；Log 引用 Entry ID。
-- 玩家获知新事实：更新 Player Notes，注明来源和可信度。
+## Authority map
+
+| Need | Authority |
+|---|---|
+| Fixed module facts / GM preparation | `01_GM_PREP.md` |
+| Entity IDs and aliases | `02_NAME_INDEX.md` |
+| Current scene / spatial state / NPC dynamic state | `03_RUNTIME_STATE.md` |
+| Event history | `04_SESSION_LOG.md` / `Sessions/` |
+| Player-known facts | `05_PLAYER_NOTES.md` |
+| Resource transactions | `09_RESOURCE_LEDGER.md` |
+| Source/rule validation | `07_SOURCE_AND_RULE_CROSSCHECK.md` |
+| Disclosure permissions | `10_PLAYER_FACING_GATE.md` |
+| System rules | Campaign System Binding + Chinese v22 original |
+| Campaign rulings | Campaign RULE_ADJUDICATIONS.md |
+
+## Live execution reminders
+
+- Follow the player's actual route; never force a prepared route.
+- Do not infer NPC knowledge from GM knowledge.
+- Keep fixed source facts, Campaign rulings, GM adaptation, inference and UNKNOWN separate.
+- Do not use unverified dice tables, Chaos effects, ability rules, Harm/Domain thresholds or resource values.
+- Ordinary resource balances must be publicly reported where the system requires; hidden facts remain GM-only.
+- Player Notes only records facts actually learned by the character.
+- Runtime State references the latest verified ledger checkpoint; it does not maintain a second resource balance.
+- Every state-changing event gets a stable Event ID; cross-file persistence is idempotent and readback-verified.
+
+## Runtime update triggers
+
+- Scene/location/layer movement, NPC position/knowledge changes, key item transfer, commitments, trigger changes: update Runtime State + Session Log.
+- Resource changes: Resource Ledger only; Session Log references Entry ID.
+- Player learns a fact: update Player Notes with source, event and confidence.
+- A correction never silently erases what was already presented; preserve the event and record the remedy.
