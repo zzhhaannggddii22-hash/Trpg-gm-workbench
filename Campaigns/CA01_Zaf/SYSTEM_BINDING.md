@@ -19,6 +19,11 @@ player_characters:
   - Catherine
 ```
 
+## 跨战役连续性隔离
+- Twin Lakes（Cairn 2e）与 Triangle Agency 是独立连续性。Twin Lakes 中发生的事件、关系变化、经历、物品、伤害、成长与记忆，不得回写或影响 Triangle Agency 的 CANON。
+- Triangle Agency 中凯瑟琳与扎雷克的既有发展，以 Twin Lakes 战役开始时各自最新的正式人物信息快照为基准；该快照只作为只读起点，不随 Cairn 战役变化。
+- 两条战役此后独立发展。除非用户明确授权，不建立跨战役记忆、关系、资源或事件传递。
+
 ## 规则与状态边界
 - 本 Campaign 仅绑定 Cairn Second Edition；不得混入 Triangle Agency 规则、资源、术语或运行逻辑。
 - Cairn 在 GM Workbench 中仍为 candidate；此文件只登记正在进行的战役/人物创建，不宣称系统已完成接入或正式激活。
