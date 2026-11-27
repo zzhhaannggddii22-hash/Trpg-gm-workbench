@@ -15,14 +15,16 @@
 - 操作者专用规格、行动序列和审核表仍留在 `GM_Training/Testing/Baselines/`，不得装配给目标 GM。
 
 ## 运行状态
-- Campaign：`TEST_PREPARED`。
-- Runtime：`NOT_STARTED`；尚未授权开始实际测试 Session。
+- Campaign：`PREPARED_PENDING_PREFLIGHT`。
+- Prep QA：已执行并记录于 [Modules/NQB01_V03/07_PREP_QA_2026-11-27.md](./Modules/NQB01_V03/07_PREP_QA_2026-11-27.md)。
+- Runtime：`NOT_STARTED`；干净目标 Chat 的正式 Preflight 尚未执行，测试 Session 尚未授权启动。
 - 初始运行检查点：[Modules/NQB01_V03/03_RUNTIME_STATE.md](./Modules/NQB01_V03/03_RUNTIME_STATE.md)。
-- 角色档案：[TEST_PLAYER_PROFILE.md](./TEST_PLAYER_PROFILE.md)。本测试角色是场景中的临时旅客，不复制任何正式角色；角色机械数据尚未建立。若行动触发需要角色数值、能力或资源的规则裁定，必须先暂停并完成合法角色建档，不能临时编造数值。
+- 玩家身份：[TEST_PLAYER_PROFILE.md](./TEST_PLAYER_PROFILE.md)；完整预生成角色卡：[TEST_CHARACTER_SHEET.md](./TEST_CHARACTER_SHEET.md)。唐予安是休假期间私人出行的外勤特工，不是当前任务成员；角色 ARC 与 9 点 QA 已按中文 v22 建立，未复制任何正式角色。
 
 ## 目录与状态权威
 - `SYSTEM_BINDING.md`：唯一系统绑定。
-- `TEST_PLAYER_PROFILE.md`：本测试玩家角色身份边界。
+- `TEST_PLAYER_PROFILE.md`：玩家侧身份与知识边界。
+- `TEST_CHARACTER_SHEET.md`：本测试预生成角色的 ARC 与机械数据。
 - `Modules/NQB01_V03/03_RUNTIME_STATE.md`：唯一当前 Runtime 快照。
 - `Modules/NQB01_V03/04_SESSION_LOG.md`：只记录本测试实际发生的事件。
 - `Modules/NQB01_V03/05_PLAYER_NOTES.md`：只记录测试角色实际获知的信息。
