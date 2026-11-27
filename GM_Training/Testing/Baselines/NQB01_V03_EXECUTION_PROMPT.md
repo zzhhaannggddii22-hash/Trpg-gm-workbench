@@ -32,8 +32,10 @@
 ## 一、版本锁定
 
 仓库：zzhhaannggddii22-hash/Trpg-gm-workbench
-Workbench commit：执行前必须填写精确 SHA，不得只写分支名。
-同时记录测试 Campaign ID、SYSTEM_BINDING 修订、Runtime checkpoint、测试 Module ref 与隔离存储目标。任一来源无法固定则 BLOCK。
+Workbench read commit：`f422974f0e9a675f4cedfaaecc5bd9f63deb7398`（见 [干净目标 Chat Preflight 提示](./NQB01_V03_CLEAN_TARGET_PREFLIGHT_PROMPT.md)）。
+Branch：`qa/nqb01-v03-isolated-test-campaign-2026-11-27`。
+Campaign：`nqb01_v03_test`；SYSTEM_BINDING：`Campaigns/NQB01_Runtime_Test/SYSTEM_BINDING.md`；Module：`nqb01_v03`；Runtime checkpoint：revision `0`。
+目标 Chat 必须读取上述精确 commit，不得只按 branch 最新内容运行。Preflight 后记录实际读取的 Blob SHA、checkpoint revision 与隔离写入目标；任一来源无法固定则 BLOCK。
 
 ## 二、资料访问隔离
 
