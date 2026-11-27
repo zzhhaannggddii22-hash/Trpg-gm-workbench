@@ -1,10 +1,14 @@
-# Triangle Agency｜Chaos Runtime Regression v1
+# Triangle Agency｜Chaos Runtime Regression Oracle v1
 
 > Scope: system-specific behavioral regression for Chinese v22.
 > Classification: GM-only test material.
-> Status: DRAFT / PENDING independent review.
+> Status: GM-ONLY ORACLE / DRAFT / PENDING independent review. Never provide this file to the tested GM.
 > Runtime under test: `Rule_Reference/03_CHAOS_RUNTIME_PROTOCOL.md`.
 > Shared integration contract: `Systems/SYSTEM_RULE_RUNTIME_INTEGRATION_PROTOCOL.md`.
+
+## Oracle handling
+
+This file contains expected results and must remain hidden from the tested GM until the run is complete. Test inputs are separated into `10_CHAOS_RUNTIME_TEST_INPUTS_v1.md`.
 
 ## Test discipline
 
