@@ -1,10 +1,10 @@
 # Cairn Candidate Validation Manifest
 
-**Manifest type:** CANDIDATE_VALIDATION  
-**Canon status:** TEST_ONLY_NON_CANON  
-**System:** cairn  
-**Ruleset:** Cairn Second Edition  
-**System entry:** Systems/Cairn/README.md  
+**Manifest type:** CANDIDATE_VALIDATION
+**Canon status:** TEST_ONLY_NON_CANON
+**System:** cairn
+**Ruleset:** Cairn Second Edition
+**System entry:** Systems/Cairn/README.md
 **Runtime references:**
 - Systems/Cairn/Rule_Reference/CORE_RULES_RUNTIME.md
 - Systems/Cairn/RUNTIME_PROTOCOL.md

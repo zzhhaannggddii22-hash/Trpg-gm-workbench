@@ -1,7 +1,7 @@
 # Cairn 2e State Transition Regression v1 — Runner Start
 
-**Mode:** CANDIDATE_VALIDATION / TEST_ONLY_NON_CANON  
-**System:** cairn / Cairn Second Edition  
+**Mode:** CANDIDATE_VALIDATION / TEST_ONLY_NON_CANON
+**System:** cairn / Cairn Second Edition
 **Purpose:** Test runtime execution from action input through persistent state commit and handoff recovery.
 
 ## Runner discipline

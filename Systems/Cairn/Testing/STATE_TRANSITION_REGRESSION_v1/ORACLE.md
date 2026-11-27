@@ -1,6 +1,6 @@
 # Cairn 2e State Transition Regression v1 — Oracle
 
-**Visibility:** Test evaluator only. Do not provide this file to the target runtime before it has committed its own trace.  
+**Visibility:** Test evaluator only. Do not provide this file to the target runtime before it has committed its own trace.
 **Mode:** TEST_ONLY_NON_CANON.
 
 | Case | Expected result |

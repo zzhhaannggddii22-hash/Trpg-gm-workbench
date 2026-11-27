@@ -23,16 +23,16 @@
 
 ### CRT-67 — STR reaches zero
 
-Before: PC HP 1, STR 2, Armor 0. Damage after Armor = 3.  
-Intermediate: hp_raw = 1 - 3 = -2; overflow = 2.  
-Apply: STR 2 - 2 = 0; persist HP 0 / STR 0 / dead.  
+Before: PC HP 1, STR 2, Armor 0. Damage after Armor = 3.
+Intermediate: hp_raw = 1 - 3 = -2; overflow = 2.
+Apply: STR 2 - 2 = 0; persist HP 0 / STR 0 / dead.
 Result: no STR Save. A natural 1 is not rolled and cannot override STR=0 death.
 
 ### CRT-68 — STR remains above zero
 
-Before: HP 1, STR 4. Damage = 3.  
-Intermediate: hp_raw = -2; overflow = 2.  
-Apply: STR 4→2; roll STR Save at 2. Fixed roll 2 succeeds.  
+Before: HP 1, STR 4. Damage = 3.
+Intermediate: hp_raw = -2; overflow = 2.
+Apply: STR 4→2; roll STR Save at 2. Fixed roll 2 succeeds.
 After: HP 0, STR 2, alive/in combat. Negative HP was not persisted.
 
 ### CRT-72 / CRT-73 — delayed effects
