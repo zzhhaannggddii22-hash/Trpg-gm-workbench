@@ -84,7 +84,7 @@ For every resource transaction:
 
 The following are pointers to Campaign-specific rules, not generic ledger rules:
 
-- QA, Burnout, Chaos, Harm, Domain, Commendations, Demerits and Loose Ends: see `Campaigns/Zarek/SYSTEM_BINDING.md`, `RULE_ADJUDICATIONS.md`, the Chinese v22 rulebook and module-specific source.
+- QA, Burnout, Chaos, Harm, Domain, Commendations, Demerits and Loose Ends: see `Campaigns/TA01_Zarek/SYSTEM_BINDING.md`, `RULE_ADJUDICATIONS.md`, the Chinese v22 rulebook and module-specific source.
 - Time award timing and reverse-linked fields: Campaign ruling Q05. A complete Module close awards +1 available Time; a Session close alone does not. The award and the separately tracked remaining-Time field must be recorded as separate linked changes. If either absolute before-value is UNKNOWN, record only the confirmed delta and leave the resulting absolute balance UNKNOWN.
 - Ripple Gun and Normal Briefcase: item-specific v22 rules plus explicit holder/charge handoff. Do not infer blanket equipment restoration from a generic category.
 
