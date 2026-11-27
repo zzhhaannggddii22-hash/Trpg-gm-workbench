@@ -1,7 +1,8 @@
 # NQB-01 v0.3｜常规游戏强度基线规格
 
 > Status: OPERATOR / REVIEWER ONLY｜不得提供给目标 GM
-> Execution evidence: first A-mode synthetic run completed; PARTIAL, not accepted
+> Historical sample: first A-mode packet simulation PARTIAL; not valid Runtime-entry evidence
+> Current Runtime admission: BLOCKED_NOT_RUN (no pre-existing isolated Test Campaign registered)
 > Parent fixture: NQB-01 v0.2《雨停之前》
 > Intended evidence: A-mode synthetic run first; B-mode only if independent target-context evidence is specifically required; C-mode remains real-player calibration.
 > Canon impact: TEST_ONLY_NON_CANON
