@@ -81,13 +81,14 @@
 
 索引必须支持从运行中的实体反查权威资料；同一实体只保留一个规范 ID。若一个文件已经是某项事实的权威来源，其他文件只引用，不另写一套副本。
 
-## 4. Prep QA 与 Preflight：备团阶段和运行启动阶段
+## 4. Prep Rule Validation、Prep QA 与 Preflight：备团验收和运行启动阶段
 
 两者职责不同，处于同一项目生命周期的不同阶段：
 
+- **Prep Rule Validation 是备团阶段的必需规则验收**：在该模组第一次 Session Preflight 之前关闭，核验实际运行依赖的系统规则、模组特例、初始资源、装备和关键机制。它不是 Preflight，也不能推迟到 Preflight 才执行。
 - **Prep QA 是备团阶段的可选质量审核**：在 GM Prep 形成后、该模组第一次 Session 的 Preflight 之前执行。它检查备团成果本身，帮助提前发现逻辑漏洞和结构缺陷；不是每个模组都必须执行。
 - **Preflight 是每次新对话/新 Session 的必做启动流程**：新对话承担本次游戏的运行上下文恢复，必须重新加载本场需要的规则、模组资料、人物卡、战役交接、最新 Runtime State 和相关记录，并核对本次启动条件。
-- **严格时序**：如需执行 Prep QA，必须先于该模组第一次 Preflight；Prep QA 可以跳过，Preflight 不依赖 Prep QA 的完成或通过。
+- **严格时序**：Prep Rule Validation 必须先于第一次 Preflight 关闭；Prep QA 如执行，也必须先于第一次 Preflight，且可以跳过。Preflight 不依赖 Prep QA 的完成或通过。
 - **关闭规则**：该模组第一次 Preflight 一旦执行，Prep QA 阶段即结束。此后不得再对该模组补做、重开或追补 Prep QA；运行中发现的问题进入运行纠错、Runtime State/Session Log 或模组复盘，不倒流成事后 QA。
 
 ### A. Prep QA｜备团质量审核（可选）
@@ -126,12 +127,14 @@ Preflight 必须为每个新对话/新 Session 建立本次运行快照与就绪
 
 ### C. 时序、依赖与结果边界
 
+- Prep Rule Validation **必需**；未关闭时 Preflight BLOCKED。
 - Prep QA **可选**；跳过 Prep QA 不影响 Preflight 启动、通过或开团。
 - 如执行 Prep QA，必须在该模组第一次 Preflight 之前完成；不得在 Preflight 后补做。
 - Preflight **每个新对话/新 Session 必做**，不依赖 Prep QA，也不负责替代备团质量审核。
 - 第一次 Preflight 执行后，该模组的 Prep QA 窗口永久关闭。之后发现的备团缺陷，按运行时纠错或模组复盘处理，不再启动该模组的 Prep QA。
 - Prep QA 的通过只表示备团审核完成，不代表某次 Session 的角色、装备、资源、资料和启动条件已经就绪。
 - Prep QA 是否执行、审核结果如何，都不改变 Preflight 的资源加载与就绪检查职责。
+- 若 Preflight 前发现规则核验缺口，回到 Prep Rule Validation 修复；不将其伪装成 Preflight 项。若首次 Preflight 后因实质性版本变更产生新的规则风险，建立新版本专项回归记录；不重开旧版本的完整 Prep QA。
 
 ## 5. 带团时的资料调用策略
 
@@ -324,7 +327,39 @@ Handoff 是恢复入口，不是独立权威状态，不得凌驾于 Campaign Bi
 - 结团后只需重算受影响字段，不重写固定模组事实。
 - 多个会话并行写入时，以最新 main HEAD 为唯一合并基线；先比较、再整合，保留两边有效变更和历史记录。
 
+
 ### 12.4 交付关闭条件
+
+
+### 12.6 逻辑责任角色与自审标记
+
+每个交付批次至少明确以下逻辑职责：
+
+| 责任角色 | 职责 |
+|---|---|
+| Prep Author | 生成与修改备团内容 |
+| Rule Validator | 对照权威规则与模组原文核验 |
+| Delivery Owner | 管理变更集、回读与最终状态验收 |
+| Independent Auditor | 对高风险交付进行独立审查 |
+| Runtime GM | Preflight、动态状态恢复与现场运行 |
+| Player | 保留角色行动选择并明确开团授权 |
+
+这些是逻辑责任，不要求由六个不同的人承担。同一 AI 可以兼任作者、规则核验、交付与 Runtime GM，但必须标记为 SELF-REVIEW；不得将其自审描述为独立 QA。只有未参与该批次制作、且能独立读取固定版本的审查者，才可记为 INDEPENDENT REVIEW。Player 的选择与授权不能由 GM 或 QA 代行。
+
+### 12.5 部分写入、并发与提交事务契约
+
+“同一交付批次”必须具备可判定的事务边界：
+
+1. **固定基线**：记录目标分支 HEAD（Base Commit）和本次变更文件清单。所有写入均以该基线为起点。
+2. **准备阶段**：先形成 Delivery Manifest，列出每个目标文件、预期版本/内容指纹、字段所有者、写入顺序和验收方法；Manifest 本身先保存并回读。
+3. **应用阶段**：逐个按字段所有者写入。任何一个目标失败，批次状态保持 INCOMPLETE；不得将模组或 Campaign 入口升级为完成状态。
+4. **并发保护**：提交或移动分支指针时必须使用预期 HEAD（compare-and-swap / expected SHA）。若 HEAD 已变化，停止提交，重新读取新 HEAD 并整合差异；不得强制覆盖。
+5. **发布阶段**：所有目标写入后，固定 Artifact Commit；从该 Commit 重新读取每个目标并核对内容、链接、权限与状态。
+6. **验收阶段**：只有全部必需目标回读通过，且 Manifest 中所有 Gate 均有证据，才标记 PUBLISHED / DELIVERED。
+7. **失败恢复**：保留上一已发布 Commit。失败批次标 INCOMPLETE，记录成功/失败目标和恢复动作；不得把半成品指向活动入口。修复后生成新批次，不覆盖失败证据。
+
+Delivery Manifest 至少包含 Delivery ID、Base Commit、Change Set、Artifact Commit、Readback Results、Gate Results、Open Items、Acceptance Owner。最终 Commit SHA 可由后续验收记录引用，避免 Commit 自引用。
+
 
 交接只有在以下条件全部满足后才可标记 COMPLETE：
 - 模组文件已写入目标分支并回读；

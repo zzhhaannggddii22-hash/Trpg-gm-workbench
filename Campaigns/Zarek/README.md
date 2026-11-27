@@ -18,7 +18,8 @@
 - [模组：死寂](./模组/死寂/README.md)：首个正式任务结案、奖励、复盘、余波与历史记录。
 - [模组：冰淇淋车（Ice Cream Truck）](./模组/冰淇淋车_Ice_Cream_Truck/README.md)：第二场正式任务结案、成长、密库补给与复盘资料。
 - [模组：俯冲（Nosedive）](./模组/俯冲_Nosedive/README.md)：第三场正式任务已结案；无奖励、无惩罚；历史记录与角色记忆边界已归档。
-- [模组：Bower Street](./模组/Bower_Street/README.md)：已结团的上一场正式任务，历史记录保留。\n- [模组：Blame It on the Trains](./模组/Blame_It_on_the_Trains/README.md)：用户已选定的下一场正式任务；备团已归档，待 Preflight 与用户开团指令。
+- [模组：Bower Street](./模组/Bower_Street/README.md)：已结团的上一场正式任务，历史记录保留。
+- [模组：Blame It on the Trains](./模组/Blame_It_on_the_Trains/README.md)：用户已选定的下一场正式任务；文件已归档，但 Prep Rule Validation 仍 BLOCKED，尚未进入 Preflight。
 - [模组：F-33《静默楼层》测试短团](./模组/F-33_静默楼层_测试短团/README.md)：独立 GM 能力测试存档，不属于正式战役 CANON。
 - [战役交接与当前状态](./战役记录/战役交接与当前状态.md)：主持方式、人物资源状态与后续连续性。
 

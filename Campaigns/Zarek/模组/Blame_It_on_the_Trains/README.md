@@ -1,6 +1,6 @@
 # Blame It on the Trains｜模组入口
 
-> 正式战役模组。状态：**READY WITH OPEN ITEMS / NOT STARTED**。已完成备团归档与内部复审；独立外部 Prep QA 尚未执行。用户未说“开始”前不得启动。
+> 正式战役模组。状态：**DELIVERED / PREP RULE VALIDATION BLOCKED / NOT STARTED**。文件化交付已归档；核心规则与来源核验未关闭。用户未说“开始”前不得启动。
 > 系统：Triangle Agency｜规则唯一权威：《三角机构》中文 v22。
 > 来源：Haunted Table Games, *The Vault: Missions for Triangle Agency*；中文精翻母稿 `the_vault_zh.docx`，源 PDF 93–101，印刷页 180–197。
 > 权限：除 `05_PLAYER_NOTES.md` 外均为 GM-only。玩家侧文件不得复制任何隐藏真相、幕后因果、NPC 秘密或机制触发信息。
@@ -19,17 +19,24 @@
 | [08_RUNTIME_QUICK_REFERENCE.md](./08_RUNTIME_QUICK_REFERENCE.md) | 现场快速调用索引 | GM-only |
 | [09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md) | 本模组资源交易唯一流水；开团前空账本 | GM-only |
 | [10_PLAYER_FACING_GATE.md](./10_PLAYER_FACING_GATE.md) | 玩家视角信息披露闸门 | GM-only |
+| [11_REMEDIATION_AND_TEST_LOG.md](./11_REMEDIATION_AND_TEST_LOG.md) | 本轮缺陷修复、测试执行与交付清单 | GM-only |
 
 ## 当前门禁
 
-- 备团：READY WITH OPEN ITEMS。关键原文和结构已整理；角色最新绝对资源余额已部分从 2026-11-27 正式人物卡核实；Demerits/Harm/Time 仍有 UNKNOWN。中文 v22 规则逐项核验是 Preflight 前置门槛，未关闭前不得开团。
-- 内部复审：已完成一次针对性修订与复核；记录见 07。
-- 独立 Prep QA：NOT RUN。该项不是 READY 的默认前提，但本模组单人桌复杂度较高，建议在 Preflight 前执行。
-- Preflight：NOT STARTED；规则矩阵未关闭前为 BLOCKED。
+- 文件交付：DELIVERED（固定 Commit 下文件存在并已回读）。
+- 备团设计：REVIEWED；这不代表规则验证完成。
+- 来源核验：BLOCKED；中文精翻第 191–208 页已分页回读，英文原版逐页校勘仍未完成。
+- Prep Rule Validation：BLOCKED；见 07 §3，核心规则项仍为 OPEN/PARTIAL。
+- Runtime/单人路径可执行性：PARTIAL；检查点结构已补齐并完成合成状态测试；单人路径案头测试有部分结果，机械成本与完整端到端运行仍未通过。
+- 正式 Preflight：NOT STARTED / BLOCKED。Preflight 不承担补做备团规则核验。
+- 用户开团许可：WAITING FOR USER “开始”。
+- 内部复审：本轮由凯西独立执行缺陷复核、结构测试、合成状态测试和单人路径案头模拟；详细记录见 07 与 11。
+- 独立 Prep QA：NOT RUN（可选；本轮由凯西内部逐项核验与自测，不宣称独立审查）。
+- Preflight：NOT STARTED；仅在 Prep Rule Validation 关闭后才可执行。
 - Session：NOT STARTED。
 - 玩家启动许可：仅用户明确说“开始”后生效。
 
-## 运行恢复顺序
+## 运行恢复顺序（仅在门禁解除后）
 
 1. 读取 Campaign 当前正式人物卡、最新战役交接、当前模组 Resource Ledger。
 2. 读取本目录 README、07、01、02、03；按需读取规则 v22 对应条文。
@@ -40,4 +47,5 @@
 ## 备团迭代记录
 
 - v0.1（对话内准备）：曾声称完成结构性备团，但未形成可验证仓库交付；不作为 READY 证据。
-- v1.0（本次交付）：从原始中文精翻恢复来源，重新建立文件化备团；完成状态、交接与门禁补齐。交付后以 main 的最终 Commit 为准。
+- v1.0（首次交付）：从中文精翻恢复来源并建立文件化备团；曾误报 READY，现已由本轮状态门禁纠正。
+- v1.1（本轮独立修复）：修复规则核验阶段、Runtime 检查点、资源账本幂等、系统/通用规则分层、状态冲突和索引；测试及未关闭项见 11。当前以本轮分支固定 Commit 为准，尚未合并 main。

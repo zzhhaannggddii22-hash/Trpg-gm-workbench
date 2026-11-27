@@ -15,7 +15,7 @@
 SESSION 01 结束时：
 - 夜间任务车辆回程途中；凯瑟琳驾驶，扎雷克副驾驶；未呈现抵达分部。
 - 下一场计划先调查社区活动中心登记记录，再回访已接触居民，观察记忆和日常照料是否恶化。
-- 普通 Chaos Pool：UNKNOWN / NEEDS RECONCILIATION；开局 0，Ask the Agency 后临时补报 +5 未核实。
+- 普通 Chaos Pool（模组关闭前历史余额）：UNKNOWN / NEEDS RECONCILIATION；开局 0，Ask the Agency 后临时补报 +5 未核实。模组关闭后的当前余额已按结团重置规则归零；两者是不同时间点/作用域。
 - 主要桌外事故：BS-002 开场 GM-only 泄露；BS-008 车辆状态错误（Issue #26）；BS-009 凯瑟琳提及未获知的 1063（Issue #27）。
 - 规则结算问题见 Issue #22；NPC/空间连续性问题见 Issues #23–#25。
 
@@ -26,4 +26,4 @@ SESSION 01 结束时：
 - 玩家确认核心异常已收容，SESSION 02 与 Bower Street 模组均已结束；次要线索未解不阻碍结团。
 - 已恢复的唯一完整检定与资源变化见 SESSION_02.md 和 09_RESOURCE_LEDGER.md；不得将其描述为完整逐轮记录。
 - Commendations 结团报告余额 18；Mission MVP 免费职能格选择 Attentiveness；完整模组结团 Time +1。
-- 普通 Chaos Pool、其他检定资源、Harm/Burnout/Demerits、天气、分部 Loose Ends 增量及装备变化仍有待核对；保留 UNKNOWN，不阻止幕间叙事启动。
+- 关闭前普通 Chaos Pool、Harm/Burnout、其他 QA 使用历史、Demerits 精确值、天气、分部 Loose Ends 增量及部分装备历史仍有待核对；保留 UNKNOWN。模组关闭后普通 Chaos Pool 当前值已重置为 0。此历史审计缺口不阻止不依赖未知余额的幕间叙事。
