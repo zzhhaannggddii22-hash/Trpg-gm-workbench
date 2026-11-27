@@ -16,7 +16,13 @@ activation: pending
 canon_status: character_creation_in_progress
 player_characters:
   - Zaf
+assistant_controlled_party_members:
+  - Jubilo
+resting_characters:
   - Catherine
+next_session_party:
+  - Zaf
+  - Jubilo
 ```
 
 ## 跨战役连续性隔离（硬性规则）
@@ -55,7 +61,8 @@ Twin Lakes 战役开始时，Triangle Agency 中扎雷克与凯瑟琳的状态�
 - Zaf 是玩家在 Twin Lakes VR 游戏世界中的角色，由玩家本人控制。
 - Zaf 的实际性格、台词、语气与行动由玩家现场扮演；骰出的角色特征仅作为特征表结果记录，不替玩家决定人格或说话风格。
 - 外貌以扎雷克形象为准；Cairn 的外貌特征骰只记录为风格特性，不覆盖既有外观。
-- 凯瑟琳是独立 PC，由助手控制，具有独立人物卡、资源与行动逻辑；她不得读取 GM-only 信息，也不得为了配合 Zaf 而自动服从。
+- 凯瑟琳是独立 PC，由助手控制，具有独立人物卡、资源与行动逻辑；她不得读取 GM-only 信息，也不得为了配合 Zaf 而自动服从。下次开局她休止，不随队、不参与该次冒险；人物卡与状态继续保留。
 - 凯瑟琳的既有视觉身份与人格风格可以作为角色扮演参考；Triangle Agency 的背景履历、异常能力、QA、Chaos、Burnout、机构关系与资源不适用于 Cairn。
 - 凯瑟琳本人是在玩 VR 游戏，以她自己的风格游玩，不必扮演游戏角色随机生成的性格。
 - 队伍 Omen：Zaf 为当前最年轻角色，触发 Omen；结果 d20 = 2，已向玩家公开，见 README 与 Zaf 人物卡。
+- 茱比洛（Jubilo）是本战役正式 L3 NPC 队员，由助手控制，采用本战役配置的 PC 等价资源与机制；她有独立目标、判断、资源管理与行动权，不是测试角色。
