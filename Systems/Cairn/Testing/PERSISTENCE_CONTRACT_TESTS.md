@@ -1,7 +1,7 @@
 # Cairn Runtime Persistence Contract Tests
 
-**Status:** TEST_ONLY / NOT A PRODUCTION ADAPTER  
-**Scope:** deterministic persistence-contract checks for the Cairn candidate runtime  
+**Status:** TEST_ONLY / NOT A PRODUCTION ADAPTER
+**Scope:** deterministic persistence-contract checks for the Cairn candidate runtime
 **Test file:** `tests/test_cairn_runtime_persistence.py`
 
 ## Why this small test exists
