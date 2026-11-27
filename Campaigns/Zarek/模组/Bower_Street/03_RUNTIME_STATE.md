@@ -82,7 +82,7 @@
 - SESSION 02 与 Bower Street 模组均已 CLOSED。玩家确认核心异常已收容；次要线索未解不阻碍结团。
 - 可恢复结团叙事：第二次 VHS 播放含新增家庭录像与 `DON'T LET HER OUT.`；影像女孩记得此前交流、仍认为自己在地下室，并表达愿意离开过去；她进入手提箱并带上影像兔。电视恢复雪花、读数回落，研究人员接管看护。影像兔性质未知；现实 Caitlin 与影像兔仍区分。
 - 详细证据边界与已恢复资源交易见 [SESSION_02.md](./Sessions/SESSION_02.md) 与 [09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md)。SESSION_02 原始完整逐轮对话未恢复，不把摘要伪装成逐字日志。
-- 当前幕间成长入口：Mission MVP 免费职能格已选择 Attentiveness +1 QA 上限；完整模组结团 Time +1。Time 尚未花费；影像女孩能力尚未设计、定价、解锁或购买。
+- 当前幕间成长入口：Mission MVP 免费职能格已选择 Attentiveness +1 QA 上限；该免费标记是 Competency 第5格（无 Playwall 代码）。完整模组结团 Time +1；Time 尚未花费，因此尚未产生新的轨迹标记或 Playwall 解锁。影像女孩能力尚未设计、定价、解锁或购买。逐笔历史与后续门禁见 [Zarek Playwall Unlock Ledger](../../PLAYWALL_UNLOCK_LEDGER.md)。
 - Commendations 结团报告余额 18。能力定价目标约 20，但当前可负担上限为 18，除非未来有新收入。
 - 未结资源：普通 Chaos Pool 余额、Harm、Burnout、其他 QA 使用、Demerits、天气事件、Ternion City 分部 Loose Ends 模组增量、Ripple Gun/其他关键道具使用。全部保持 UNKNOWN / INCOMPLETE；不得填 0。
 - 这些历史账目缺口不阻止模组叙事结团或开展不涉及未知资源支出的幕间互动；任何需要调用未知余额的机械行动先暂停该字段核对。
