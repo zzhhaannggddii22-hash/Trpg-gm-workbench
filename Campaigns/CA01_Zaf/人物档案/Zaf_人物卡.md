@@ -2,7 +2,7 @@
 
 > Campaign：Twin Lakes（`CA01_Zaf`）
 > 系统：Cairn Second Edition
-> 状态：已完成基础建卡；Bonds 掷骰程序有待玩家确认修正。Campaign 仍为 candidate_setup。
+> 状态：已完成基础建卡；Bonds 结果 7、3 经玩家确认保留，不重掷；原始 d10 骰种误记作为历史审计备注保留。Campaign 仍为 candidate_setup。
 > 本文件是本角色随机创建结果的权威记录。已锁定结果不得无故重掷。
 
 ## 1. 基本信息
