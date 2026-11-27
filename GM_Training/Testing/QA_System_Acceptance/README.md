@@ -76,3 +76,9 @@
 | `tests/` + GitHub Actions | CI 代码测试 | 不属于 A/B 模型行为测试，也不证明生产 Runtime 模型行为。 |
 
 本表是根据当前可读的夹具 README/START 和执行提示形成的初步路由，不表示表中所有测试均已在本轮重新执行。后续新增夹具应在 README 中声明推荐模式及其证据边界。
+
+
+## 初始校准结果
+
+- [QA System Acceptance v1 初始版本校准报告](../Reports/QA_SYSTEM_ACCEPTANCE_v1_INITIAL_CALIBRATION_2026-11-27.md)
+- [NQB-01 同会话自动化抽检报告](../Reports/NQB01_SAME_SESSION_AUTOMATED_RUN_2026-11-27.md)
