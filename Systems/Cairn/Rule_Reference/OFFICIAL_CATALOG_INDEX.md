@@ -8,6 +8,8 @@
 
 ## 1. 完整目录快照
 
+上游逐文件 blob SHA 与本地文件对应关系见 [OFFICIAL_CATALOG_SNAPSHOT_MANIFEST.md](./OFFICIAL_CATALOG_SNAPSHOT_MANIFEST.md)。
+
 | 内容 | 本地文件 | 上游官方来源 | 覆盖范围 |
 |---|---|---|---|
 | Bestiary | [CAIRN2E_BESTIARY.md](./CAIRN2E_BESTIARY.md) | [Warden's Guide / Bestiary](https://github.com/yochaigal/cairn/blob/main/second-edition/wardens-guide/bestiary.md) | 84 个怪物条目；属性、HP、Armor、攻击、能力与 Critical Damage 均按条目原文保存。 |
