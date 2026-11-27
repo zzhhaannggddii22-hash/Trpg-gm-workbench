@@ -172,13 +172,13 @@ Whenever a Chaos Effect is used, read its complete description to the players, a
 
 The v22 Domain Benefits paragraph on printed page 156 states that Chaos Effects costing `3` or less can manifest for free inside the Anomaly's Domain, while any Chaos that is spent has its actual cost multiplied by three.
 
-**Runtime ruling for this workbench:** treat effects costing `3` or less as free and repeatable within the Domain. This follows the direct Domain Benefits rule and adopts the user's instruction to use that operational reading rather than leave the exact-3 repeat boundary blocking play. Effects costing more than `3` consume three times their listed cost. Do not multiply free effects by three.
+**Runtime handling:** the source explicitly makes effects costing `3` or less free inside the Domain. Whether that free benefit is repeatable is a Campaign-scoped adjudication, not a universal system default. For Zarek, Campaign Binding Q01 approves repeatable use of effects costing `3` or less; apply that ruling only when the active Campaign Binding selects it. Other Triangle Agency Campaigns must use their own approved ruling or preserve the source ambiguity. Effects costing more than `3` consume three times their listed cost. Do not multiply free effects by three.
 
 Outside the Domain, use the listed effect cost.
 ### Custom effects and Special Rules
 
 - **Special Rule:** a specific, consistent rule tied closely to an Anomaly's Focus/function may occur without spending Chaos. It must have an exact trigger and stable behavior. Examples include a rule that adds Chaos when someone screams. This is not a free-form GM complication.
-- **New Chaos Effect:** a flexible action related to the Anomaly's powers but not a strict standing rule. Define its effect and cost; greater disruption to Reality's narrative should cost more. The source gives examples at 2 / 4 / 6 / 8 Chaos. Effects costing 3 or less are treated as free and repeatable within the Domain under the adopted runtime reading.
+- **New Chaos Effect:** a flexible action related to the Anomaly's powers but not a strict standing rule. Define its effect and cost; greater disruption to Reality's narrative should cost more. The source gives examples at 2 / 4 / 6 / 8 Chaos. Effects costing 3 or less are free within the Domain; repeatability follows the active Campaign's approved ruling (Zarek Q01 permits repeat use).
 - Do not confuse a Special Rule's independent trigger with a Chaos Effect purchase. A Special Rule may add Chaos, cause an effect, or do both only if its own text says so.
 
 ## 8. Materialize the world effect
