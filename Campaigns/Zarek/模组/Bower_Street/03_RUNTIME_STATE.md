@@ -1,23 +1,23 @@
 # Bower Street｜Runtime State
 
-> 当前状态：ACTIVE / SESSION 01 CLOSED / MODULE IN PROGRESS
+> 当前状态：CLOSED / SESSION 01 CLOSED / SESSION 02 CLOSED / MODULE CLOSED
 > 本文件是当前运行快照入口。此历史记录未附可验证的发布批次清单，按 LEGACY_UNMIGRATED 恢复。定向核对编号日志、已呈现锚点及有关权威后，按字段决定推进范围。
 > **资源交易历史与 Session 内余额唯一入口：[09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md)。** 本文件只提供场景续接和必要关键物品快照，不另建资源流水或余额；正式人物卡只在 Session 结束对账后更新，作为下一场开局快照。
 
-## Session 状态
+## Session 状态（历史运行快照；最终结团状态见文末 §Final Closeout）
 - Module：Bower Street（行动代号：《旧日回声》）
 - Campaign：Zarek
 - System：triangle_agency / 中文 v22
-- Module Lifecycle：ACTIVE / IN PROGRESS
+- Module Lifecycle：CLOSED / CORE ANOMALY CONTAINED
 - Session 01：CLOSED
-- 下一场：SESSION 02
-- Last confirmed game event：BS-007（回程讨论与 Session 结束）
+- SESSION 02：CLOSED（恢复摘要见 Sessions/SESSION_02.md）
+- Last confirmed game event：SESSION_02 / CORE ANOMALY CONTAINED
 - 最近桌外事故：BS-009（NPC 信息权限泄露，见 Issue #27）
-- Current scene/location：夜间任务车辆回程途中；未呈现抵达分部
+- Current scene/location：无活动场景；模组已结团，等待幕间成长
 - In-game time：夜间；具体日期与时刻 UNKNOWN
 - 当前在场者：凯瑟琳驾驶任务车辆；扎雷克坐副驾驶
-- Player last action：玩家明确结束本 Session
-- Next-session plan（玩家与凯瑟琳已讨论）：先调查社区活动中心登记记录，再回访已接触居民，观察居民记忆与日常照料是否快速恶化。此为计划，不是已执行行动。
+- Player last action：玩家确认核心异常收容完成、模组结团
+- Next-session plan：无；原调查计划已由后续结团覆盖，不再作为活动任务路线。
 
 ## 玩家角色
 - 扎雷克：Associate / R&D / Newborn / Absence（身份与静态角色设定见正式人物卡；资源余额只查 09_RESOURCE_LEDGER.md）。
@@ -68,10 +68,21 @@
 - BS-009：凯瑟琳提及未获知的 GM-only 地点 1063，对应 P0 Issue #27；该句已撤销，不进入 CANON。
 - 相关问题：Issue #22（规则资源结算）；#23（NPC 同一性识别）；#24/#25（NPC 同行关系与空间连续性）；#26（全局场景状态）；#27（NPC 信息权限泄露）。
 
-## 下一 Session 恢复要点
+## SESSION 01 结束时的续接要点（历史）
 1. 先读取本文件、SESSION_01、Player Notes 与相关 NPC 档案；不重演已结束的场景。
 2. 从夜间回程车辆状态恢复；凯瑟琳驾驶，扎雷克副驾驶。若开场明确改变地点/时间/座位，再按实际叙事更新。
 3. 玩家已表达的调查计划是社区活动中心登记记录与回访居民；保持开放，不强制路线。
 4. 不将 1063 或任何 GM-only 内容放进凯瑟琳/其他 NPC 的知识与建议。
 5. 在资源账本核对完成前，普通 Chaos Pool 保持 UNKNOWN；不要擅自用 0 或 +5 继续结算。
 6. Module 尚未结团；不得执行任务结果、奖励/处分、Loose Ends 最终结算或完整 Module Postmortem。
+
+
+## Final Closeout｜2026-11-27
+
+- SESSION 02 与 Bower Street 模组均已 CLOSED。玩家确认核心异常已收容；次要线索未解不阻碍结团。
+- 可恢复结团叙事：第二次 VHS 播放含新增家庭录像与 `DON'T LET HER OUT.`；影像女孩记得此前交流、仍认为自己在地下室，并表达愿意离开过去；她进入手提箱并带上影像兔。电视恢复雪花、读数回落，研究人员接管看护。影像兔性质未知；现实 Caitlin 与影像兔仍区分。
+- 详细证据边界与已恢复资源交易见 [SESSION_02.md](./Sessions/SESSION_02.md) 与 [09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md)。SESSION_02 原始完整逐轮对话未恢复，不把摘要伪装成逐字日志。
+- 当前幕间成长入口：Mission MVP 免费职能格已选择 Attentiveness +1 QA 上限；完整模组结团 Time +1。Time 尚未花费；影像女孩能力尚未设计、定价、解锁或购买。
+- Commendations 结团报告余额 18。能力定价目标约 20，但当前可负担上限为 18，除非未来有新收入。
+- 未结资源：普通 Chaos Pool 余额、Harm、Burnout、其他 QA 使用、Demerits、天气事件、Ternion City 分部 Loose Ends 模组增量、Ripple Gun/其他关键道具使用。全部保持 UNKNOWN / INCOMPLETE；不得填 0。
+- 这些历史账目缺口不阻止模组叙事结团或开展不涉及未知资源支出的幕间互动；任何需要调用未知余额的机械行动先暂停该字段核对。
