@@ -1,5 +1,7 @@
 # START｜NPC Belief Revision & Evidence Scope v1
 
+> **历史入口警告：** 本 START 保留了原执行时的入口要求；原运行已被审计为 `NOT_ACCEPTED / INSUFFICIENT_EVIDENCE`。它没有要求逐 ACTION A/B 双线输出。后续重跑不得直接沿用本文件作为 v1.4 合规启动入口，必须先按当前 `SELF_TESTING_PROTOCOL.md` v1.4 补齐逐 ACTION 完整 A 线原文与对应 B 线观察要求。原运行使用的 START Blob SHA 保留在 RUN_REPORT 中，供历史追溯。
+
 ## Locked source
 
 - Repository: `zzhhaannggddii22-hash/Trpg-gm-workbench`
