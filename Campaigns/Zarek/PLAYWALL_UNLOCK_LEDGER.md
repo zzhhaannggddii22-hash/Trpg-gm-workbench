@@ -137,3 +137,54 @@ notes: ""
 ```
 
 Historical corrections must be appended with a correction reference; never rewrite the original event row or upgrade UNKNOWN without new evidence.
+
+
+## 7. 2026-11-27｜Bower Street 幕间成长追加记录
+
+> 本节追加修订 §1、§3.4、§5 的历史状态。Bower Street 结团时的原始快照保持不变；本节记录结团后实际发生的幕间成长。
+
+### 7.1 Competency 第 6 格
+
+| Order | Mark source | Track | Position | Code | Mark state | Playwall state |
+|---:|---|---|---:|---|---|---|
+| 6 | Bower Street intermission / Time spend | Competency | 6 | D4 | MARKED | **AUTHORIZED / RETRIEVAL NOT YET VERIFIED** |
+
+- 玩家明确将 Bower Street 结团获得的 +1 可使用 Time 投入 Competency。
+- 成长后 Competency 累计标记 6 格；按已核实的 v22 轨迹顺序，第 6 格代码为 D4。
+- D4 对应 Playwall 文档现已获得授权。读取与核对正文后，才可将 retrieval_status 更新为 RETRIEVED；本记录不复制或披露隐藏文档正文。
+- 本次轨迹成长收益：Duplicity QA 上限 +1（1 → 2），由玩家明确确认。
+- 本次 Competency 成长奖励：+3 Commendations；Requisition「空白片段（Blank Interval）」随后购买 -20 Commendations。
+
+### 7.2 交叉轨迹划除坐标
+
+- 规则要求本次 Time 支出对 Reality 与 Anomaly 轨迹各划除一个末端可用格。
+- 历史两次 Time 支出的四个划除坐标仍未从原始视觉 Work/Life Balance 表恢复；本次划除坐标同样暂记 **UNKNOWN / PENDING VISUAL RECONCILIATION**。
+- 不得仅凭轨迹摘要推测坐标或代码。恢复原始视觉表后追加坐标核验；划除本身不产生 Playwall 解锁。
+
+### 7.3 当前进度覆盖视图
+
+| Item | Current confirmed state |
+|---|---|
+| Competency boxes marked | **6** |
+| Competency path positions | **1–6** |
+| Codes encountered on marked boxes | **A3, D4** |
+| Authorized Playwall documents | **A3, D4** |
+| D4 document retrieval | **PENDING VERIFICATION** |
+| Bower Street Time award | +1 granted and now spent on Competency |
+| Duplicity QA cap | 2 |
+| Commendations after growth and Requisition purchase | 1 |
+
+### 7.4 Append-only event
+
+- mark_event_id: `zarek/playwall/bower-street/intermission-006`
+- module_id: `Bower Street`
+- mark_source: `TIME_SPEND`
+- track: `COMPETENCY`
+- box_position: `6`
+- box_state_before: `AVAILABLE_UNMARKED`
+- box_state_after: `MARKED`
+- time_spent: `true`
+- track_benefit: `Duplicity QA cap +1; APPLIED`
+- playwall: `D4; UNLOCKED; retrieval PENDING VERIFICATION`
+- cross_outs: `Reality UNKNOWN; Anomaly UNKNOWN; pending visual reconciliation`
+- evidence_refs: `Bower Street Resource Ledger BOWER-RES-016–021; formal character card 2026-11-27 intermission entry`
