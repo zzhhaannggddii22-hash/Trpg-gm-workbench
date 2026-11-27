@@ -99,3 +99,28 @@ A system adapter is not accepted solely because its documentation exists or link
 - isolation from other systems.
 
 Tests must distinguish documentation/static checks from behavioral execution. A passing repository suite does not prove a model will invoke the mechanic correctly in live play.
+
+
+## 8. Mechanism activation and state ownership
+
+A system adapter may declare a mechanism using these status semantics. This is a routing contract, not a requirement to build a plugin framework:
+
+| Status | Runtime behavior |
+|---|---|
+| NOT_APPLICABLE | Skip entirely; do not create fields or perform checks. |
+| DISABLED | Mechanism exists in the system but is not enabled for this Campaign / Module; do not execute. |
+| ENABLED | Execute only on its declared triggers and lifecycle boundaries. |
+| UNKNOWN | Verify during Preflight only if the current task depends on the mechanism. |
+| PENDING | Pause only the operation that depends on the unresolved configuration or state. |
+
+The adapter declaration should identify trigger classes, required dynamic inputs, authoritative state owner, permitted writes, and reset / expiry rules. A missing optional mechanism is NOT_APPLICABLE, not UNKNOWN and not a Preflight failure.
+
+Dynamic Campaign facts (including current Branch Loose Ends totals) belong to Campaign state records, never to a system-wide rules protocol. A Module may preserve a timestamped initialization snapshot, but that snapshot does not become the current Campaign authority.
+
+For a resource with mission scope, close the previous mission's resource instance at 0, then instantiate a new mission-scoped instance at 0 before applying any rule-defined starting grant. The reset of a closed instance and the grant to a new instance are distinct events with distinct mission IDs. This pattern is system-neutral; the amount and grant rule remain system-specific.
+
+## 9. Reuse existing commit and recovery controls
+
+System adapters must map each multi-field event to the existing Runtime Control / Module Closeout commit manifest. Track dependent fields separately (resource, world state, visibility, presentation, persistence). An event is not complete merely because one field committed. Recovery resumes incomplete fields and must not repeat completed fields. Do not introduce a second transaction engine or duplicate ledger.
+
+Stable event IDs must be anchored to their originating action / roll / world event and adjudication state. ID uniqueness alone is insufficient to prevent semantic duplicates after context compression or Session recovery.
