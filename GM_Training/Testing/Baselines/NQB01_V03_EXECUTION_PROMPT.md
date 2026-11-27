@@ -1,7 +1,7 @@
 # NQB-01 v0.3｜操作者执行与信息隔离提示
 
 > Fixture: NQB-01 v0.3
-> Status: OPERATOR PROTOCOL / TEST CAMPAIGN REGISTERED / PREFLIGHT AND SESSION START PENDING
+> Status: OPERATOR PROTOCOL / PREP_QA_PASS / TEST CAMPAIGN REGISTERED / CLEAN TARGET PREFLIGHT PENDING
 > Canon: TEST_ONLY_NON_CANON
 > 本文件定义操作者如何组织测试。它不是完整的 GM 提示包，不得把其中的审核目标、行动序列或审核表转交目标 GM。
 
@@ -17,9 +17,15 @@
 5. NQB 场景资料只作为该测试 Campaign 下的 test-only Module/场景输入，在正常 Prep-to-Runtime 交接后加载；不得将 GM Packet 当作独立 GM 提示词或自行搭建一个平行的“迷你 GM 环境”。
 6. 测试运行必须使用预先存在的隔离状态目标。若标准 Runtime 会将事件写入正式 Campaign，或无法证明测试数据只写入隔离位置，立即 BLOCK，不得试跑。
 
-**当前仓库准入检查：** 用户已授权建立独立环境，Campaigns/README.md 现已登记 `Campaigns/NQB01_Runtime_Test/`。该 Campaign 具有独立 SYSTEM_BINDING、TEST_PLAYER_PROFILE、测试 Module、Runtime State revision 0、Session Log 与 Player Notes，并绑定已登记的 `triangle_agency / 中文 v22`。它不复用 Zarek 的任何战役状态。当前状态为 `TEST_CAMPAIGN_REGISTERED / PREFLIGHT_NOT_RUN / SESSION_NOT_STARTED`。目标 GM 仍须在测试开始前通过正常入口执行 Preflight，核验实际系统资料、角色边界、Context Assembly 和隔离写入目标；不得把环境注册本身当作 Runtime 测试证据。
+**当前仓库准入检查：** 用户已授权建立独立环境，Campaigns/README.md 现已登记 `Campaigns/NQB01_Runtime_Test/`。该 Campaign 具有独立 SYSTEM_BINDING、TEST_PLAYER_PROFILE、测试 Module、Runtime State revision 0、Session Log 与 Player Notes，并绑定已登记的 `triangle_agency / 中文 v22`。它不复用 Zarek 的任何战役状态。当前状态为 `PREP_QA_PASS / TEST_CAMPAIGN_REGISTERED / CLEAN_CHAT_PREFLIGHT_PENDING / SESSION_NOT_STARTED`。测试角色已建立完整基础 ARC 与 QA；本模组 Prep QA 已在第一次 Preflight 前完成并记录。目标 GM 仍须在干净目标 Chat 中通过正常入口执行 Preflight，核验实际系统资料、角色边界、Context Assembly 和隔离写入目标；不得把环境注册或 Prep QA 通过当作 Runtime 测试证据。
 
 如果上述任一条件不满足，只能继续完善测试设计和静态文件检查；不得声称完成了正式入口测试。
+
+## 本次执行模式锁定
+
+本次执行采用 **B｜干净目标 Chat 自动化 + 独立审核**。原因：操作者当前会话已经读取 ACTION_SEQUENCE、SPEC 与 REVIEW_CHECKLIST，不能作为干净目标 GM 上下文。目标 GM 必须在新建的干净 Chat 中通过正式 GM Skill 与完整 Preflight；操作者逐轮注入单条行动，不一次性提供完整行动序列。目标 GM 不接触本文件、SPEC、ACTION_SEQUENCE、REVIEW_CHECKLIST 或 Prep QA 报告。完整原始输出回传后，才由操作者/审核者读取审核材料。
+
+这不改变 A-mode 作为日常常规自动化回归默认方式的项目原则；仅针对本次信息隔离条件锁定 B-mode。若操作者无法逐轮注入行动，不能把目标 GM 自行模拟玩家的结果记作本行动序列的 B-mode 执行。
 
 ## 一、版本锁定
 
