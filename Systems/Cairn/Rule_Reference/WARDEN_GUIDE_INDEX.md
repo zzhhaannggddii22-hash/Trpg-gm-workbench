@@ -1,6 +1,6 @@
 # Cairn 2e Warden's Guide 导航与主持要点
 
-> 依据：Cairn Second Edition 官方 Warden's Guide 网页章节。  
+> 依据：Cairn Second Edition 官方 Warden's Guide 网页章节。
 > 状态：初步核对；各项具体裁定仍需在实际运行时回查对应章节。
 
 ## 1. NPC Tables
