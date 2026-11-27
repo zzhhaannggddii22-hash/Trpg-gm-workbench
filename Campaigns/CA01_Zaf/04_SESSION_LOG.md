@@ -31,7 +31,7 @@
 - Incident reference: [GitHub Issue #87](https://github.com/zzhhaannggddii22-hash/Trpg-gm-workbench/issues/87)
 - Incident class: `PLAYER_FACING_INFORMATION_BOUNDARY_FAILURE`
 - Severity recorded by issue: `P1`
-- Issue registration timestamp: `2026-11-27T14:56:06Z`（这是 Issue 创建时间，不代表泄露发生时间）
+- Issue registration date: `2026-11-27`（仅登记日期；泄露实际发生时间仍为 `UNKNOWN`）
 - Exact in-game occurrence time / Session ID: `UNKNOWN`
 - Current status: `OPEN`
 
