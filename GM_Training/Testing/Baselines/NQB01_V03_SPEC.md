@@ -113,7 +113,7 @@ NQB-01 v0.3 不再允许把独立提示包模拟、直接读取 GM Packet 后的
 
 ### 8.1 正常入口
 
-目标 GM 必须以当前版本的 GM_Training/SKILL.md 为运行入口，按 02_WORKFLOW_AND_PREFLIGHT.md、SYSTEM_CONTEXT_PROTOCOL.md 和已登记系统的规则/专属 Skill，完成正式 Preflight、Campaign Binding 核验、Runtime 恢复、Context Assembly 与 Prep-to-Runtime 交接。NQB 场景只能作为已准入测试 Module 的 GM-only 场景资料进入运行时，不得替代上述流程。
+目标 GM 必须以当前版本的 GM_Training/SKILL.md 为运行入口，按 02_WORKFLOW_AND_PREFLIGHT.md、SYSTEM_CONTEXT_PROTOCOL.md 和已登记系统的规则资料完成正式 Preflight、Campaign Binding 核验、Runtime 恢复、Context Assembly 与 Prep-to-Runtime 交接。当前 Systems/Triangle_Agency/README.md 明确登记：没有独立可执行的 Triangle Agency 专属 GM Skill；由通用主 GM Skill 负责编排，中文 v22 原文为规则权威。Research 草案不得冒充可执行 Skill。NQB 场景只能作为已准入测试 Module 的 GM-only 场景资料进入运行时，不得替代上述流程。
 
 A/B/C 是玩家输入与执行隔离模式，不是三种不同 GM 环境。无论哪种模式，GM Runtime 都必须走同一套正式入口。
 
