@@ -46,11 +46,12 @@ These are semantic fields, not a mandate to duplicate existing storage. Bind the
 
 ### Lifecycle
 
-1. **Mission setup:** verify the active mission, current Branch Loose Ends tier, starting environmental Chaos (if applicable), target Anomaly / no-target condition, Focus, Domain, Impulse, and prepared effect palette.
-2. **During mission:** accept Chaos generation from the already integrated roll-resolution event and any other explicit system rule (e.g. Special Rule or Disruptive Minor Anomaly). Keep the public balance current. Evaluate Chaos Effects when a valid world-action opportunity occurs; do not poll or spend on every player message.
-3. **Effect resolution:** verify eligibility, cost, Domain treatment, selected effect, target, timing, and resulting state. Apply the resource transition and world consequence under one stable event.
-4. **Mission close:** reconcile all generated/spent/other changes, then clear all unused Chaos at the mission boundary. Do not carry a leftover pool into the next mission.
-5. **Recovery / retry:** reuse the same stable event and its completed fields. Never re-roll, re-spend, or re-apply a world effect because the response was retried.
+1. **Previous mission close:** close the old mission's Pool by recording its remaining balance as discarded when known and setting that mission's final Pool to 0.
+2. **New mission creation:** instantiate a distinct Pool for the new mission at 0; never reuse the previous mission's Pool.
+3. **Mission setup:** read the current Campaign-owned Branch Loose Ends total, resolve the v22 table row, and apply its Starting Chaos to the new Pool as a separate grant. Resolve Weather Event count and cumulative restrictions as separate outputs.
+4. **During mission:** accept Chaos generation from the already integrated roll-resolution event and other explicit system rules. Keep the public balance current. Evaluate Chaos Effects only when a valid world-action opportunity occurs; do not poll or spend on every player message.
+5. **Effect resolution:** verify eligibility, cost, Domain treatment, selected effect, target, timing, and resulting state. Apply the resource transition and world consequence under one stable event.
+6. **Recovery / retry:** reuse the same stable event and its completed fields. Never re-roll, re-spend, re-apply a world effect, or reinitialize the Pool because a response or Session was retried.
 
 ## 4. Generation: input contract, not a second dice engine
 
@@ -73,7 +74,7 @@ The v22 source (General Manager Toolkit, printed page 165 / PDF physical page 16
 1. Read the current authoritative Branch Loose Ends total from the Campaign state / Branch ledger.
 2. Find the applicable threshold row in the printed-page-165 table. A listed threshold applies from that value up to (but not including) the next listed threshold. Do not interpolate or calculate a smooth formula.
 3. Read the row's Starting Chaos, Weather Event count, and cumulative Branch restrictions.
-4. Initialize this mission's Chaos Pool to the table's Starting Chaos. Keep the Branch Loose Ends total and Weather Event history as separate persistent state.
+4. Keep the Branch Loose Ends total and Weather Event history as separate persistent state.
 5. Create the new mission Pool at 0, then apply the row's Starting Chaos as the mission-start grant. Record these as distinct transitions: NEW_MISSION_POOL_CREATED (0), followed by BRANCH_STARTING_CHAOS_GRANTED (+N). Never reuse the closed mission's Pool.
 6. Apply the row's Weather Event count using the book's Weather Events procedure and existing Weather Event history. The count is a setup instruction, not a command to rerun the threshold table after every weather result.
 7. A Weather Event changes Branch Loose Ends only when its specific result explicitly requires a Branch-state change. Ordinary weather description or escalation does not itself imply a Loose Ends adjustment. An extreme weather result that explicitly changes Loose Ends must update Campaign state and be recorded as its own event; do not silently alter unrelated mission initialization outputs.
@@ -226,11 +227,13 @@ If the current balance depends on unresolved events, mark the current value pend
 The Field Agent Manual explicitly states that all unused Chaos disappears at the end of each mission.
 
 At Module Closeout / mission completion:
-1. Verify the mission's final Chaos balance and all relevant generation/spend events.
-2. Record the amount discarded as unused Chaos.
-3. Set the active mission pool to 0 for the closed mission.
-4. Do not carry it into the next mission.
-5. Do not confuse mission-level Chaos reset with Branch Loose Ends, Weather Events, or other persistent campaign/system state.
+1. Reconcile the final balance when it is known. If it remains UNKNOWN, preserve that fact; do not invent the pre-closeout balance.
+2. Record the unused amount as discarded when known; otherwise record discarded_amount: UNKNOWN.
+3. Set the closed mission's Pool to 0 as its post-closeout state, even if the pre-closeout balance was UNKNOWN. This does not resolve the historical balance retroactively.
+4. Mark the old mission Pool CLOSED; never reuse it.
+5. For the next mission, create a separate Pool at 0, then apply the current Branch table's Starting Chaos as a distinct initialization grant.
+6. Do not carry unused Chaos into the next mission.
+7. Do not confuse mission-level Chaos reset with Branch Loose Ends, Weather Events, or other persistent Campaign state.
 
 ## 12. Runtime trigger checklist (internal, event-driven)
 
