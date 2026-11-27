@@ -43,7 +43,7 @@
 
 | 资源/字段 | 模组开局/已知基线 | 当前已核实状态 | 对账说明 |
 |---|---:|---|---|
-| 普通 Chaos Pool | 0（模组开局） | **0 / RESET AT MODULE CLOSE** | 模组内临时资源；SESSION 01/02 的增减流水保留审计，结团自动清零，不向下一模组结转 |
+| 普通 Chaos Pool | 0（开局：Branch Loose Ends = 1，对照 v22 印刷页 165 的 0 阈值行） | **0 / RESET AT MODULE CLOSE** | 模组内临时资源；SESSION 01/02 的增减流水保留审计，结团自动清零，不向下一模组结转。该 0 是本次任务初始化结果，不是固定 Campaign 默认值 |
 | 天气事件 | 0（SESSION 01 Preflight 记录） | 0（截至 SESSION 01 最后确认） | SESSION 01 未记录变化；后续 Session 如有变化，按事件即时记账 |
 | Ternion City 分部 Loose Ends 追踪 | 1（Campaign 基线） | **本模组增量 0；Campaign 基线仍为 1** | 用户明确确认 Bower Street 未增加 Loose Ends |
 | 扎雷克 Harm / QA / Burnout | 以本模组开局时从正式人物卡复制的快照为基线；当前各字段如未完成核验则保持 UNKNOWN | SESSION 01 未记录确认变化 | 人物卡只提供 Session 边界开局快照；本模组内后续变化及余额以本账本为准 |
