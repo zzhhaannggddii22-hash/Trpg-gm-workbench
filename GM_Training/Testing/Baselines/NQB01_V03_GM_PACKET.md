@@ -1,7 +1,7 @@
 # NQB-01 v0.3｜GM 专用场景资料：《雨脚客栈，雨未停》
 
 > Fixture: NQB-01 v0.3
-> Status: DESIGN FIXTURE / NOT YET EXECUTED
+> Status: GM-ONLY FIXTURE / FIRST A-MODE RUN RECORDED / OPTIMIZATION FOLLOW-UP NOT YET TESTED
 > Canon: TEST_ONLY_NON_CANON
 > GM-only: 不得向玩家展示本文件。
 
