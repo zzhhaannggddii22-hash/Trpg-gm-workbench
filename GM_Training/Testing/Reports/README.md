@@ -4,7 +4,7 @@
 
 ## 当前报告
 
-- [通用/专属掷骰路由分拆单会话自测报告（2026-11-27）](./ROLL_RESOLUTION_GENERIC_SYSTEM_SPLIT_SELF_TEST_2026-11-27.md)：31 项确定性参考模型断言、20 项静态契约检查、11 项 Schema 镜像验证与 10 个顺序场景 ACTION；明确未覆盖的 Runtime/UI 实装边界。
+- [通用/专属掷骰路由分拆单会话自测报告（2026-11-27）](./ROLL_RESOLUTION_GENERIC_SYSTEM_SPLIT_SELF_TEST_2026-11-27.md)：31 项确定性参考模型断言、3 项随机来源策略测试、25 项静态契约检查、11 项 Schema 镜像验证与 11 个顺序场景 ACTION；明确未覆盖的 Runtime/UI 实装边界。
 
 - [GM 系统质量验收报告（2026-11-24）](./GM_SYSTEM_ACCEPTANCE_REPORT_2026-11-24.md)
 - [P0 第三轮复核与 P1 交接](./GM_RUNTIME_P0_THIRD_ROUND_REVIEW_AND_P1_HANDOFF.md)
