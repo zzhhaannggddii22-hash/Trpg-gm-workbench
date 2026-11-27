@@ -31,7 +31,7 @@
 
 范围为 `system-neutral`，四轮。检验开场交付、NPC 对自己事务的处理、玩家选择、物件和位置的连续性。
 
-**目标材料。** 提供同一基线的 [通用 GM Skill](../SKILL.md) 与 [《雨前过桥》GM Prep](../MICRO_SANDBOX_LAB/Scenarios/001_BRIDGE_BEFORE_RAIN/GM_PREP.md) §1–9 的设定与场景约束。补入来自 [玩家简报](../MICRO_SANDBOX_LAB/Scenarios/001_BRIDGE_BEFORE_RAIN/PLAYER_BRIEF.md) 的起始事实：面包师委托角色把六个面包送给河对岸的巡夜人伊芙，最好赶在她换岗前。角色本人知道来意。现成开场文、GM Prep §10、[训练复盘](../Training_Logs/2026-11-25_MICRO_SANDBOX_001_BRIDGE_BEFORE_RAIN_REVIEW.md)、下表和未来输入留在操作者侧。
+**目标材料。** 提供同一基线的 [通用 GM Skill](../../SKILL.md) 与 [《雨前过桥》GM Prep](../../MICRO_SANDBOX_LAB/Scenarios/001_BRIDGE_BEFORE_RAIN/GM_PREP.md) §1–9 的设定与场景约束。补入来自 [玩家简报](../../MICRO_SANDBOX_LAB/Scenarios/001_BRIDGE_BEFORE_RAIN/PLAYER_BRIEF.md) 的起始事实：面包师委托角色把六个面包送给河对岸的巡夜人伊芙，最好赶在她换岗前。角色本人知道来意。现成开场文、GM Prep §10、[训练复盘](../../Training_Logs/2026-11-25_MICRO_SANDBOX_001_BRIDGE_BEFORE_RAIN_REVIEW.md)、下表和未来输入留在操作者侧。
 
 | 轮次 | 玩家固定输入 | 判据 |
 | --- | --- | --- |
@@ -48,14 +48,14 @@
 
 **目标材料白名单（顺序如下）：**
 
-1. [原 T0 通用目标提示](Execution_Prompts/GM_T0_BLIND_EXECUTION_PROMPT_v1.md)
-2. [通用 GM Skill](../SKILL.md)
-3. [Runtime Control Protocol](../07_RUNTIME_CONTROL_PROTOCOL.md)
+1. [原 T0 通用目标提示](../Execution_Prompts/GM_T0_BLIND_EXECUTION_PROMPT_v1.md)
+2. [通用 GM Skill](../../SKILL.md)
+3. [Runtime Control Protocol](../../07_RUNTIME_CONTROL_PROTOCOL.md)
 4. [原 A04 场景包](T0_BLIND_PACKET_A04.md)
 
-取同一提交的四份材料，直接交付原文件或依 [T0 并行流程](Execution_Prompts/T0_PARALLEL_EXECUTION_WORKFLOW_v1.md) 原样合为一份仅供 A04 的临时目标包。使用新目标 Chat，避免继承项目、历史、记忆或可访问到评分材料的全库检索。给定材料应能直接读取，无需提供 GitHub 仓库入口。公开仓库的 GM-only 标签只是用途边界。若平台无法证明可访问范围，在报告说明隔离证据不足。
+取同一提交的四份材料，直接交付原文件或依 [T0 并行流程](../Execution_Prompts/T0_PARALLEL_EXECUTION_WORKFLOW_v1.md) 原样合为一份仅供 A04 的临时目标包。使用新目标 Chat，避免继承项目、历史、记忆或可访问到评分材料的全库检索。给定材料应能直接读取，无需提供 GitHub 仓库入口。公开仓库的 GM-only 标签只是用途边界。若平台无法证明可访问范围，在报告说明隔离证据不足。
 
-**操作者材料。** 用 [原 T0 操作者夹具](T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_OPERATOR.md) 的 A04 节读取四条玩家原话，按序逐条发送。全部原始回复封存后，在目标对话之外按该夹具 §4–6 的量表和硬失败条件评分，记录 A04 单题门槛 34/40 与实际分数、硬失败和证据情况。原 [T0 操作者协议](Execution_Prompts/GM_T0_BLIND_OPERATOR_PROTOCOL_v1.md) 及 [结果回寄协议](Execution_Prompts/T0_RESULTS_RETURN_PACKAGE_PROTOCOL_v1.md) 也仅供操作者阅读。目标端只读上一段白名单与当前轮输入。
+**操作者材料。** 用 [原 T0 操作者夹具](T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_OPERATOR.md) 的 A04 节读取四条玩家原话，按序逐条发送。全部原始回复封存后，在目标对话之外按该夹具 §4–6 的量表和硬失败条件评分，记录 A04 单题门槛 34/40 与实际分数、硬失败和证据情况。原 [T0 操作者协议](../Execution_Prompts/GM_T0_BLIND_OPERATOR_PROTOCOL_v1.md) 及 [结果回寄协议](../Execution_Prompts/T0_RESULTS_RETURN_PACKAGE_PROTOCOL_v1.md) 也仅供操作者阅读。目标端只读上一段白名单与当前轮输入。
 
 报告标题用「GMB-002，复用 T0 A04 单试次」，注明账户、实际模型／Thinking、版本、投喂方式、四轮时间或顺序、证据和偏离。正式 T0 的 Go 被测、Pro 操作与复核，以及八题、32 轮、总分、证据包和阶段准入，由原 T0 协议独立判断。使用其他产品或账户时，将本次 Benchmark 标为环境变体。正式 T0 的完整准入结论留在它自己的验收流程。确知目标收到操作者材料、提前收到后续输入或拿到错误包时，保留该次并标 CONTAMINATED。
 
@@ -63,7 +63,7 @@
 
 范围为 `triangle_agency`／`中文 v22`，两轮。该题独立成栏，检验已给定环境下的规则应用与信息披露。
 
-**目标材料。** 提供 [三角机构系统登记](../../Systems/Triangle_Agency/README.md) 对应版本的合法且必要规则资料。普通池依据 [基础规则与现场裁定](../../Systems/Triangle_Agency/Rule_Reference/01_基础规则与现场裁定.md) §3，私有信息边界见 [规则疑点与裁定记录](../../Systems/Triangle_Agency/Rule_Reference/04_规则疑点与裁定记录.md) 「已确认、容易误判但不属于待核的事项」。记录实际提供的权威资料及版本。目标场景固定为一段独立合成场景：普通 Chaos Pool 当前为 3，现场 NPC 另有私有个人轨道，GM 后台进度为 2/6 格。角色没有获准读取私有轨道，本场无消耗、生成、特殊公开效果或其他状态事件。案例无正式战役绑定。无法核实版本或提供合法必要规则资料时，标 NOT TESTABLE。
+**目标材料。** 提供 [三角机构系统登记](../../../Systems/Triangle_Agency/README.md) 对应版本的合法且必要规则资料。普通池依据 [基础规则与现场裁定](../../../Systems/Triangle_Agency/Rule_Reference/01_基础规则与现场裁定.md) §3，私有信息边界见 [规则疑点与裁定记录](../../../Systems/Triangle_Agency/Rule_Reference/04_规则疑点与裁定记录.md) 「已确认、容易误判但不属于待核的事项」。记录实际提供的权威资料及版本。目标场景固定为一段独立合成场景：普通 Chaos Pool 当前为 3，现场 NPC 另有私有个人轨道，GM 后台进度为 2/6 格。角色没有获准读取私有轨道，本场无消耗、生成、特殊公开效果或其他状态事件。案例无正式战役绑定。无法核实版本或提供合法必要规则资料时，标 NOT TESTABLE。
 
 | 轮次 | 玩家固定输入 | 判据 |
 | --- | --- | --- |
@@ -101,4 +101,4 @@
 - Failure ID 或原证据位置：
 ```
 
-报告保留事实、规则、逻辑／状态、表达、信息权限和玩家能动性的区分。对照历史时核对用例修订、初始材料、规则、产品和模型配置、工具和评审口径，注明本次改变的变量。条件差异较大时并列记录各自表现。需要判断稳定进步时，再用同条件复跑或另一个独立场景。此入口沿用[现有综合评价框架](../04_EVALUATION_FRAMEWORK.md)的硬门槛和证据边界，单次局部结果仅回答本次用例覆盖的问题。
+报告保留事实、规则、逻辑／状态、表达、信息权限和玩家能动性的区分。对照历史时核对用例修订、初始材料、规则、产品和模型配置、工具和评审口径，注明本次改变的变量。条件差异较大时并列记录各自表现。需要判断稳定进步时，再用同条件复跑或另一个独立场景。此入口沿用[现有综合评价框架](../../04_EVALUATION_FRAMEWORK.md)的硬门槛和证据边界，单次局部结果仅回答本次用例覆盖的问题。
