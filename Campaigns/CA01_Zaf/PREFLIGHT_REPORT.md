@@ -140,7 +140,7 @@ Open items:
 
 - 后续实际游戏运行及玩家可见交接事故已由 [GitHub Issue #87](https://github.com/zzhhaannggddii22-hash/Trpg-gm-workbench/issues/87) 记录。因此，第 9 节的 `NOT STARTED / NOT ACTIVATED` 只代表原 Preflight 检查时点，不再代表本 Campaign 当前状态。
 - 本 Campaign 当前状态为 `USER_AUTHORIZED_CONTROLLED_LIVE_USE`；Cairn 系统整体仍为 `candidate`。本次授权仅适用于 `CA01_Zaf`，不构成系统级 active 认证。
-- 在当前修复分支的原有 Campaign 目录中，未找到正式的 `03_RUNTIME_STATE.md` 与 `04_SESSION_LOG.md`。本轮新增的是事故后的恢复基线，不是对历史 Session 的补造。
+- 在本次修复前核对的源分支 `feat/cairn-second-system-integration` 中，未找到正式的 `03_RUNTIME_STATE.md` 与 `04_SESSION_LOG.md`。本轮新增的是事故后的恢复基线，不是对历史 Session 的补造。
 - 历史 Session ID、准确游戏内时间、地点、场景节点、行动顺序、资源差分及逐项玩家呈现锚点，在可访问的原权威记录中尚未建立；均保持 `UNKNOWN / NOT_RECONSTRUCTED`。不得从模组 Prep、NPC 档案、模型记忆或 Issue 的概述推算。
 
 ### 11.2 信息泄露的处理边界
