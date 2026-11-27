@@ -95,4 +95,3 @@ Issues #27 and #87 therefore remain OPEN. This self-test is not sufficient to cl
 ## 5. Campaign and incident guard
 
 Twin Lakes remains `candidate_setup / activation: pending / NOT ACTIVATED / NOT STARTED`. This work did not begin or activate the formal campaign and did not alter Campaign CANON, character state, player knowledge or GM-only module information.
-
