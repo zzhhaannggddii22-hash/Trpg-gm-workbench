@@ -66,33 +66,45 @@ The roll-resolution module owns the standard roll's generation calculation and r
 
 ## 5. Starting Chaos and Branch pressure
 
-The v22 source includes a Branch Loose Ends table that relates regional Loose Ends to starting environmental Chaos (printed page 165). This is the **system-level default**. It is not permission to ignore the active Campaign Binding or a specifically approved Campaign adaptation.
+The v22 source (General Manager Toolkit, printed page 165 / PDF physical page 169) requires the GM to check the **current Branch Loose Ends total before every mission**. The table determines three distinct outputs: starting environmental Chaos, Weather Event count, and cumulative Branch restrictions. This is a mission-setup procedure, not a permanent Campaign starting-pool override.
 
-At mission setup, resolve the value in this order:
+### Mission-start procedure
 
-1. Read the active Campaign Binding and its approved adjudication entry.
-2. If an explicit, valid Campaign-scoped ruling overrides the v22 starting-Chaos table, apply that ruling only within its declared scope.
-3. Otherwise, use the v22 Branch Loose Ends table and the verified current Branch count.
-4. If the Binding, adjudication record, module prep, or source interpretation conflict, mark the starting value PENDING / DISPUTED and resolve the provenance before opening the Pool. Do not silently choose 0 or infer a value.
+1. Read the current authoritative Branch Loose Ends total from the Campaign state / Branch ledger.
+2. Find the applicable threshold row in the printed-page-165 table. A listed threshold applies from that value up to (but not including) the next listed threshold. Do not interpolate or calculate a smooth formula.
+3. Read the row's Starting Chaos, Weather Event count, and cumulative Branch restrictions.
+4. Initialize this mission's Chaos Pool to the table's Starting Chaos. Keep the Branch Loose Ends total and Weather Event history as separate persistent state.
+5. Apply the row's Weather Event count using the book's Weather Events procedure and existing Weather Event history. Do not confuse the count column with the Chaos amount.
+6. Record the source total, selected row, all outputs, and the mission-start event in the existing Campaign / Module Resource Ledger.
+7. If the Branch total or applicable row cannot be verified, mark only the dependent setup outputs PENDING; do not substitute 0.
 
-The printed page 165 table lists these rows:
+### Printed-page-165 table
 
-| Branch Loose Ends | Starting Chaos |
-|---:|---:|
-| 0 | 0 |
-| 11 | 5 |
-| 22 | 10 |
-| 33 | 15 |
-| 44 | 20 |
-| 55 | 25 |
-| 66 | N/A; mission-ending / retirement rules apply |
-| 77 | N/A; regional removal rule applies |
+| Current Branch Loose Ends | Starting Chaos | Weather Event count | Cumulative Branch restriction |
+|---:|---:|---:|---|
+| 0–10 | 0 | 0 | Only restrictions in the Agency employment contract |
+| 11–21 | 5 | 1 | Relationships spontaneously remind Agents of Agency duties and the importance of reducing Loose Ends during otherwise normal conversation |
+| 22–32 | 10 | 2 | To receive Triscendence effects, Agents must give a short speech affirming their commitment to eliminating Loose Ends and stabilizing Reality |
+| 33–43 | 15 | 3 | Agents must count to 3 (aloud or equivalently) before every roll |
+| 44–54 | 20 | 4 | Agents are ineligible for Mission MVP awards until Branch Loose Ends fall below 44 |
+| 55–65 | 25 | 5 | Read the book's stated warning about contract termination at 66 and the overtime option to remove 6 Loose Ends alone |
+| 66–76 | N/A | N/A | At the end of the current mission, the active field team is forcibly retired; apply the book's retirement and Loose Ends reduction rules |
+| 77+ | N/A | N/A | The Unraveling is imminent; the Branch region is removed from existence as directed by the book |
 
-Do not invent a smooth formula or extrapolate beyond the printed table. If the current Loose Ends count falls between listed rows and the table's band/threshold interpretation is not established by the active source, verify that interpretation before assigning a value.
+The source table prints thresholds at 0, 11, 22, 33, 44, 55, 66, and 77. The interval notation above operationalizes those thresholds without interpolation: a total of 1 uses the 0 row; 10 also uses the 0 row; 11 enters the 11 row. The special 66 and 77 outcomes take precedence over ordinary Chaos initialization.
 
-An escaped Anomaly adds 7 Loose Ends to the Branch total; this is not itself a direct +7 Chaos event. Loose Ends / Weather Events remain a separate system subsystem. This protocol consumes their verified starting-Chaos result and must not duplicate their roll, escalation, removal, or retirement procedures.
+### Current Zarek setup input
 
-**Known provenance issue to preserve for review:** the current Zarek Campaign Binding records a default ordinary Chaos Pool start of 0 unless the module says otherwise, while Bower Street prep records a concern that the v22 Branch Loose Ends starting-Chaos rule may need to be reconciled and that the 0 default was not represented in Q01–Q04. This is a Campaign-layer authority/provenance issue, not a reason to rewrite the system rule. Before applying it in a future Zarek module, verify that the 0 default has a valid Campaign-scoped approval record or resolve the discrepancy. Do not migrate this Zarek default to another Campaign.
+User-confirmed current Branch Loose Ends total: **1**.
+
+Therefore, the applicable printed-page-165 threshold is **0**:
+- Starting Chaos for the next mission: **0**.
+- Weather Event count: **0**.
+- Branch restrictions: only the Agency employment-contract restrictions.
+
+This is the result of the v22 table, not a Zarek-specific fixed-zero override. At the next mission setup, read the Branch total again; do not reuse this value if the total has changed.
+
+An escaped Anomaly adds 7 Loose Ends to the Branch total; this is not itself a direct +7 Chaos event. Loose Ends / Weather Events remain separate persistent state. This protocol consumes the verified mission-start table outputs and must not duplicate their roll, escalation, removal, or retirement procedures.
 
 ## 6. When Chaos becomes an active world mechanism
 
@@ -150,20 +162,17 @@ Before spending, verify:
 
 Whenever a Chaos Effect is used, read its complete description to the players, as directed by the source text. Keep the effect's identity unknown until it is actually used; players may recognize patterns through observation.
 
-### Domain Benefits and source ambiguity
+### Domain Benefits
 
-The v22 Domain Benefits paragraph on printed page 156 says:
-- Chaos Effects costing `3` or less can manifest for free inside the Anomaly's Domain.
-- Any Chaos that is spent has its actual cost multiplied by three.
+The v22 Domain Benefits paragraph on printed page 156 states that Chaos Effects costing `3` or less can manifest for free inside the Anomaly's Domain, while any Chaos that is spent has its actual cost multiplied by three.
 
-The personalized-effects paragraph on printed page 161 says effects costing **less than** `3` can be used infinitely within the Domain. The difference between “3 or less is free” and “less than 3 is infinitely usable” is preserved as a source-text ambiguity about the unlimited-use statement at exactly 3. Until resolved by the source owner / user, apply the explicit Domain Benefits cost statement (3 or less manifests free), but do not claim the text unambiguously grants infinite repeated use at exactly 3. Record the ambiguity for review.
+**Runtime ruling for this workbench:** treat effects costing `3` or less as free and repeatable within the Domain. This follows the direct Domain Benefits rule and adopts the user's instruction to use that operational reading rather than leave the exact-3 repeat boundary blocking play. Effects costing more than `3` consume three times their listed cost. Do not multiply free effects by three.
 
-Outside the Domain, use the listed effect cost. Inside the Domain, apply the printed-page-156 rule: effects at 3 or less cost 0; effects above 3 consume three times their listed cost. Do not multiply free effects by three.
-
+Outside the Domain, use the listed effect cost.
 ### Custom effects and Special Rules
 
 - **Special Rule:** a specific, consistent rule tied closely to an Anomaly's Focus/function may occur without spending Chaos. It must have an exact trigger and stable behavior. Examples include a rule that adds Chaos when someone screams. This is not a free-form GM complication.
-- **New Chaos Effect:** a flexible action related to the Anomaly's powers but not a strict standing rule. Define its effect and cost; greater disruption to Reality's narrative should cost more. The source gives examples at 2 / 4 / 6 / 8 Chaos. Effects costing less than 3 are described as infinitely usable within the Domain; preserve the ambiguity at exactly 3 noted above.
+- **New Chaos Effect:** a flexible action related to the Anomaly's powers but not a strict standing rule. Define its effect and cost; greater disruption to Reality's narrative should cost more. The source gives examples at 2 / 4 / 6 / 8 Chaos. Effects costing 3 or less are treated as free and repeatable within the Domain under the adopted runtime reading.
 - Do not confuse a Special Rule's independent trigger with a Chaos Effect purchase. A Special Rule may add Chaos, cause an effect, or do both only if its own text says so.
 
 ## 8. Materialize the world effect
@@ -232,7 +241,7 @@ This is a trigger-specific prompt, not a per-message checklist. Invoke it only w
 - Is there an eligible actor / force and a concrete reason to act?
 - Is this a standard effect, a prepared New Chaos Effect, or a Special Rule?
 - Is the target and scope valid?
-- Is the action inside the Domain? Apply free-cost / triple-cost treatment and preserve the 3-cost ambiguity.
+- Is the action inside the Domain? Apply free-cost / triple-cost treatment and apply the adopted repeatable-free reading for costs ≤3.
 - What exact world-state fields change?
 - Apply resource and world changes once under one stable event.
 - Present the effect and its observable consequences without leaking GM-only information.
