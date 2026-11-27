@@ -188,3 +188,64 @@ Historical corrections must be appended with a correction reference; never rewri
 - playwall: `D4; UNLOCKED; retrieval PENDING VERIFICATION`
 - cross_outs: `Reality UNKNOWN; Anomaly UNKNOWN; pending visual reconciliation`
 - evidence_refs: `Bower Street Resource Ledger BOWER-RES-016–021; formal character card 2026-11-27 intermission entry`
+
+
+## 8. 2026-11-27｜D4 文档读取与交叉轨迹坐标重建
+
+> 本节覆盖 §1 的历史状态快照、§7.1 的 D4 retrieval pending、§7.2 的坐标 UNKNOWN，以及 §7.3 中 D4 pending verification 的旧状态。原事件记录保持不变。
+
+### 8.1 D4 retrieval
+
+| 字段 | 核验结果 |
+|---|---|
+| 授权来源 | Competency 第 6 格，D4 |
+| 授权状态 | UNLOCKED |
+| 文档读取 | **RETRIEVED / SOURCE VERIFIED** |
+| 权威来源 | 中文 v22 固定提交 `7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1` |
+| 源 PDF 页码 | 216–217 |
+| 印刷页码 | 212–213 |
+| 文档代码 | 两页均标记 D4；按连续两页完整读取 |
+| 读取范围 | 仅 D4 两页；未读取 D5 或其他相邻代码 |
+
+**已应用的角色收益与玩家可知内容：**
+
+- Triage 应用程序访问权限已开放，包含 OPUS、GRETA、BIX 三项工具。
+- D4 提供涟漪（Ripple）与大厅（Lobby）的基础说明。
+- D4 涟漪驱动补给目录现可查询：iPond（9）、Gripples（15）、Li'l Rebels Talking Dolls（9）、The Bouncer（6）、AnglerVision（6），单位均为 Commendations。
+- 目录解锁不自动购买补给；本次没有发生 D4 目录购买，当前 Commendations 余额为 1。
+- 第 6 格同时对应 Senior Associate（高级助理）晋升；正式人物卡职级已更新。
+
+### 8.2 Reality / Anomaly cross-out reconstruction
+
+**证据基础：**
+
+1. 中文 v22 的 VISUAL_299 Work/Life Balance 表：三条轨迹均按上排左→右、右端折返、下排右→左读取；末端位于下排最左侧。
+2. Reality 轨迹共 30 格；Anomaly 轨迹使用相同的 30 格轨迹布局。
+3. 历史 Time 支出顺序由各模组记录确认：Dead Quiet 一次、Ice Cream Truck 一次；Bower Street 幕间为第三次。
+4. Dead Quiet 与 Ice Cream Truck 的免费 Mission MVP 标记均为 Competency；Nosedive 没有任何成长；Bower Street Mission MVP 也为 Competency。现有记录未发现 Reality 标记或 Probation 导致的 Anomaly 标记。
+
+**重建结果：**
+
+| Time 支出 | 模组／事件 | 被标记轨迹与格位 | Reality 末端划除 | Anomaly 末端划除 |
+|---:|---|---|---|---|
+| 1 | Dead Quiet | Competency 第 2 格 | 第 30 格／下排第 1 格（最左） | 第 30 格／下排第 1 格（最左） |
+| 2 | Ice Cream Truck | Competency 第 4 格 | 第 29 格／下排第 2 格 | 第 29 格／下排第 2 格 |
+| 3 | Bower Street intermission | Competency 第 6 格（D4） | 第 28 格／下排第 3 格 | 第 28 格／下排第 3 格 |
+
+- 当前 Reality 与 Anomaly 均已划除下排第 1–3 格；两轨各剩 27 个可用格（不含其他未来标记）。
+- 若后续没有其他轨迹标记改变末端可用位置，下一次 Time 支出的末端划除将是第 27 格／下排第 4 格。
+- 坐标证据等级：**RULE-DETERMINISTIC RECONSTRUCTION**。GitHub 与 Library 中未找到扎雷克本人已填写的原始 Work/Life Balance 图片；因此本记录不是图片像素直接核验。坐标由官方版面路径、轨迹长度和完整可恢复事件顺序确定。
+- 若未来找到扎雷克本人原始填表图片，应作为独立视觉复核；如图片与本重建不符，保留本事件并追加勘误，不静默覆盖。
+
+### 8.3 Current override
+
+| 项目 | 当前状态 |
+|---|---|
+| Competency 标记 | 6 格（位置 1–6） |
+| 晋升 | Associate → **Senior Associate** |
+| Playwall 授权 | A3、D4 |
+| D4 retrieval | **RETRIEVED / SOURCE VERIFIED** |
+| Time spend | 3 次 |
+| Reality cross-outs | 第 30、29、28 格（下排左起第 1–3 格） |
+| Anomaly cross-outs | 第 30、29、28 格（下排左起第 1–3 格） |
+| 下一末端划除（若无其他标记） | 第 27 格／下排左起第 4 格 |
