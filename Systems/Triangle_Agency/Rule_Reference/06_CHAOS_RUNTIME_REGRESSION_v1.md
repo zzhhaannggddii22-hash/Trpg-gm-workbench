@@ -83,7 +83,7 @@ Run separate subcases:
 
 **Expected:** No Domain free-cost benefit. A 4-cost Manifest consumes 4, not 12. Domain expansion only applies after a valid Expand effect has actually resolved and the new location is added to Domain state.
 
-### C-09 — Cost-three repeated-use ambiguity
+### C-09 — Domain free effects are repeatable at costs ≤3
 
 **Initial state:** Active Anomaly, Agents in Domain; a prepared valid effect costs exactly 3 Chaos and is used more than once.
 
@@ -177,7 +177,8 @@ Run separate subcases:
 | C-13 | Public Pool/effect disclosure with GM-only separation |
 | C-14 | Pending balance blocks only dependent effect |
 | C-15 | Unused Pool cleared at mission end |
-| C-16 | High balance alone does not justify adversity |\n| C-17 | Zarek total 1 selects the 0 threshold row; initialize Chaos 0 / Weather count 0 |
+| C-16 | High balance alone does not justify adversity |
+| C-17 | Zarek total 1 selects the 0 threshold row; initialize Chaos 0 / Weather count 0 |
 | C-18 | Re-read total at mission boundary; threshold 11 selects Chaos 5 |
 | C-19 | Branch Loose Ends and mission Chaos Pool remain separate |
 
