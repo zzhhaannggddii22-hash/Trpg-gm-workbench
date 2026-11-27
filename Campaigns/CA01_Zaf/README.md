@@ -13,6 +13,12 @@
 - [凯瑟琳｜Triangle Agency 人物快照（2026-11-27）](./跨战役基准快照/TA_Catherine_2026-11-27_Snapshot.md)
 - Twin Lakes 与 Triangle Agency 完全隔离；快照是 Twin Lakes 开始时的只读基准，详见 [SYSTEM_BINDING](./SYSTEM_BINDING.md)。
 
+## Preflight 与模组资料
+- [Preflight 核验报告](./PREFLIGHT_REPORT.md)：已完成准备核验；保留待处理事项；战役尚未启动、系统尚未激活。
+- [CAS-1 模组资料](./MODULES/CAS-1/MANIFEST.md)：官方来源归档与 GM-only 主持准备已存入本战役目录。
+- [官方模组原文归档](./MODULES/CAS-1/SOURCE/CAS1_OFFICIAL_SOURCE.md)
+- GM-only：[CAS-1 主持准备](./MODULES/CAS-1/GM_ONLY_PREP.md)，不得向玩家泄露。
+
 ## 当前状态
 - Campaign 名称：Twin Lakes
 - 世界框架：VR 游戏世界
@@ -20,7 +26,7 @@
 - Zaf：基础建卡与携带分配已完成；Bonds 原骰种记录有待玩家决定是否按官方 d20 程序重掷。
 - 凯瑟琳：基础建卡完成，随机结果已锁定。
 - 队伍 Omen：d20 = 2。冬季提前到来，霜纹像一张地图；该预兆已向玩家公开。
-- 本目录只记录已确认的创建结果与战役事实。不得把 Triangle Agency 的异常能力、机构履历、QA、Chaos、Burnout 或人物关系迁入 Cairn。
+- Preflight 已完成（存在待确认/待验证事项）；战役仍未开始，Cairn 仍为 candidate，未正式激活。不得把 Triangle Agency 的异常能力、机构履历、QA、Chaos、Burnout 或人物关系迁入 Cairn。
 
 ## 跨战役连续性隔离
 - Twin Lakes（Cairn 2e）与 Triangle Agency 是彼此独立的游戏世界和战役连续性。**Twin Lakes 中发生的任何事件、关系变化、经历、物品、伤害、成长或记忆，都不会回写、影响或成为 Triangle Agency 的 CANON。**
