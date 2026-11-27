@@ -24,7 +24,7 @@ status: active
 
 以下为本 Campaign 已确认的桌面运行约定；不得自动继承到其他 Triangle Agency Campaign：
 
-- **普通 Chaos Pool 初始值：0**，除非当前模组原文明确规定其他初始值。模组内池与区域 Loose Ends / Weather Effects 分开记录。
+- **普通 Chaos Pool：**每个模组独立建池，初始值为 0，除非当前模组原文明确规定其他初始值；完整模组结团时关闭该模组池并重置为 0，不继承上一模组余额。模组内池与区域 Loose Ends / Weather Effects 分开记录。
 - **QA 对应 Quality：**普通检定只消耗本次检定所用 Quality 的 QA；不得跨 Quality 挪用。人寿保单保障项目 1（Q03）是明确例外，可消耗任意 Quality 的 QA 来忽略 Harm。
 - **Burnout / QA 时序（Q04）：**先检查并结算本次检定已有 Burnout，再处理 QA；同次检定中消耗 QA 不会反向产生本次检定的即时 Burnout。
 - **Time（Q05）：**只有完整模组结团才获得 +1 可使用 Time；单独 Session 结束不触发。可使用 Time 增加与剩余可用 Time 减少是两个独立、反向联动的字段。
