@@ -38,7 +38,8 @@ GitHub 在同一仓库中为 Issue 与 Pull Request 共用原生编号序列。�
 | ISSUE-007 | #41 | 资料不完整时过度阻断分析与调查推进 | OPEN |
 | ISSUE-008 | #42 | Chaos Pool 变化未被持续记录，导致公开资源状态丢失 | OPEN |
 | ISSUE-009 | #43 | Bower Street VHS 对话出现无依据的隐藏空间描述与异常机制提示 | OPEN |
+| ISSUE-010 | #46 | 调查推进中补造未经证实的空间线索 | OPEN |
 
-**下一个可分配编号：`ISSUE-010`**
+**下一个可分配编号：`ISSUE-011`**
 
 > 本表记录的是项目级 Issue ID；GitHub 原生编号仍以 GitHub 页面为准。修改标题或状态时同步维护本表，不得根据 GitHub 原生编号推算项目编号。
