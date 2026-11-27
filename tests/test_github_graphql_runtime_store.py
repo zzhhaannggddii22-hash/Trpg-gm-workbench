@@ -91,7 +91,10 @@ class MemoryGitHubStore(GitHubGraphQLRuntimeStore):
         cursor = self.heads[branch]
         matches = []
         while cursor in self.parents:
-            if path in self.changed.get(cursor, set()) and parent_oid in self.parents[cursor]:
+            if parent_oid is None:
+                if path in self.snapshots[cursor]:
+                    return cursor
+            elif path in self.changed.get(cursor, set()) and parent_oid in self.parents[cursor]:
                 matches.append(cursor)
             parents = self.parents[cursor]
             if not parents:
