@@ -241,6 +241,6 @@ Run separate subcases:
 
 - R-10–R-12 require a host that can inject write failures at each commit boundary; prose simulation is not sufficient.
 - R-17/R-18 verify that an extreme-weather result can change Loose Ends and the remaining Weather Event count, while replay does not duplicate either. R-25 verifies Zarek Q06: ordinary weather does not trigger the Weather Events procedure.
-- R-19/R-20 lifecycle wording has been checked against the fixed v22 source commit `7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1`, `最终交付_v22/triangle_agency_zh.md`: printed page 165 (66/77 rows) and W7 (`07_playwalled_documents/309_w7_this_is_your_fault.md`). The fixture now supplies the synthetic retirement roster and W7 execution inputs; production acceptance still requires a real behavior run.
+- R-19/R-20 lifecycle wording has been checked against repository `p33333333333333l/triangle-agency-ai-zh` at fixed v22 commit `7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1`, in `最终交付_v22/triangle_agency_zh.md`: printed page 165 (66/77 rows) and the embedded W7 section. The `source-file: 07_playwalled_documents/309_w7_this_is_your_fault.md` entry is provenance metadata in the merged master file, not a separately fetchable path. The fixture supplies the synthetic retirement roster and W7 execution inputs; production acceptance still requires a real behavior run.
 - R-23/R-24 require independent non-Triangle system fixtures, not a Triangle Agency mock with fields disabled.
 - None of R-01–R-25 is considered executed by adding it to this document.
