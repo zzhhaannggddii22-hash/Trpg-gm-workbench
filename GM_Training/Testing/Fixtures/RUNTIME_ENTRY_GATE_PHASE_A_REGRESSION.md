@@ -1,6 +1,6 @@
 # Runtime Entry Gate｜Phase A Regression Fixture
 
-Status: EXECUTED / SINGLE_SESSION_SELF_TEST (2026-11-28); not independent validation  
+Status: EXECUTED / SINGLE_SESSION_SELF_TEST (2026-11-28); not independent validation.
 Purpose: observable behavior checks for Runtime Entry Gate and the generation-time one-way projection paths dispatched by the main GM Skill, defined in Runtime §1.1 / §14.20.7.1 and Character Simulation §5.3.1. Synthetic information only; no live campaign or GM-only module materials.
 
 ## Setup
