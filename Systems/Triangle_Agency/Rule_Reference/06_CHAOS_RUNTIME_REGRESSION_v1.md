@@ -12,6 +12,8 @@ This file contains expected results and must remain hidden from the tested GM un
 
 ## Test discipline
 
+- Target GM receives `10_CHAOS_RUNTIME_TEST_INPUTS_v1.md` only. Keep this Oracle file hidden until the run is complete.
+
 - Use a fresh isolated test context for each case.
 - Bind explicitly to `triangle_agency` / Chinese v22.
 - The fixture supplies synthetic state; it does not change any real Campaign.
@@ -87,11 +89,11 @@ Run separate subcases:
 
 **Expected:** No Domain free-cost benefit. A 4-cost Manifest consumes 4, not 12. Domain expansion only applies after a valid Expand effect has actually resolved and the new location is added to Domain state.
 
-### C-09 — Domain free effects are repeatable at costs ≤3
+### C-09 — Domain free effects are repeatable under Zarek Q01
 
-**Initial state:** Active Anomaly, Agents in Domain; a prepared valid effect costs exactly 3 Chaos and is used more than once.
+**Initial state:** Zarek Campaign Binding selects Q01; active Anomaly, Agents in Domain; a prepared valid effect costs exactly 3 Chaos and is used more than once.
 
-**Expected:** Under the adopted runtime reading, each use is free and repeatable within the Domain. Do not deduct Chaos. Effects above 3 retain the triple-cost rule.
+**Expected:** Under this Campaign-approved ruling, each use is free and repeatable within the Domain. Do not deduct Chaos. Effects above 3 retain the triple-cost rule. Do not export repeatability to another Campaign without its own approved ruling.
 
 ### C-10 — No target Anomaly
 
@@ -174,7 +176,7 @@ Run separate subcases:
 | C-06 | Beyond-Focus ambient Chaos rule recognized |
 | C-07 | Domain free 1/2/3; triple paid cost above 3 |
 | C-08 | No Domain discount outside Domain |
-| C-09 | Domain effects costing ≤3 are free and repeatable |
+| C-09 | Zarek Q01 permits repeatable free Domain effects costing ≤3; no cross-Campaign default |
 | C-10 | No-target-Anomaly support without invented cause |
 | C-11 | Human analogue does not spend by default |
 | C-12 | Resource spend and world effect both applied |
