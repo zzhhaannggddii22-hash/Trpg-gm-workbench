@@ -7,17 +7,17 @@
 
 ## 用户确认的执行口径
 
-1. Weather Events：不因普通天气结果机械重算 Loose Ends。只有具体结果明确规定改变分部状态时才更新，特别极端天气按其明确后果处理；保留天气历史，不自动重算已提交的本次任务初始化。
-2. Loose Ends：当前数值属于 Campaign 动态状态，不属于任何系统规则层。Campaign 交接文件拥有当前值；Module Ledger 仅记录历史快照和模组增量；Systems 只保留规则表和执行方法。
+1. Weather Events：Zarek Campaign 按用户确认新增 Q06：只有特别极端且与当前任务相关的天气才执行 Weather Events 掷骰程序；普通天气不掷。此为 Campaign-scoped ruling，不改写 v22 默认程序。触发后严格遵循 v22：若结果使 Loose Ends 变化，立即更新 Campaign 状态并重新计算剩余天气骰次数；不回滚或重做已提交的 Starting Chaos。
+2. Loose Ends：当前数值属于 Campaign 动态状态，不属于任何系统规则层。Campaign 交接文件 §“Campaign 分部 Loose Ends 权威状态”拥有当前值（当前 1）；Module Ledger 仅记录历史快照和模组增量；Systems 只保留规则表和执行方法。
 3. Chaos Pool：旧任务结团时清零并关闭；新任务建立时创建独立 Pool，先初始化为 0，再按当前 Campaign Loose Ends 查表发放 Starting Chaos。旧任务清零与新任务 grant 是不同任务 ID、不同事件。
 
 ## P0 修订状态
 
 | Finding | 修订 | 剩余验收 |
 |---|---|---|
-| CF-01 Weather Events feedback | 已明确普通天气不触发阈值表重算；仅具体规则明确的分部状态变化（含适用极端天气）更新 Campaign Loose Ends；新增 R-17/R-18 | 天气规则完整原文核验及独立行为执行待完成 |
+| CF-01 Weather Events feedback | 新增 Zarek Q06：仅特别极端且与任务相关的天气触发天气骰；触发后若 Loose Ends 改变，按 v22 重新计算剩余天气骰数，不重做 Starting Chaos；新增 R-17/R-18/R-25 | 独立行为执行待完成 |
 | CF-02 generation handoff | 明确 roll adapter 提交 base_delta；Chaos Runtime 唯一应用系统修正并提交 final_delta；保留修正快照、提交状态和语义来源身份 | 独立生成/重放行为测试待完成 |
-| CF-03 66/77 lifecycle | 增加 Campaign 生命周期交接、66 任务结束退休待办、77 Unraveling/Branch removal 处理；特殊档位不转成 0 | 进入阈值后又回落的时序仍标 PENDING，需精确规则原文裁定；R-19/R-20 待执行 |
+| CF-03 66/77 lifecycle | 补齐 66 当前任务结束强制退休、分部 Loose Ends -11，以及每名使用职能退休选项的特工额外 -11；77 进入 W7 指向的 Unraveling / Branch removal；特殊档位不转成 0 | 阈值回落是否取消退休仍保留 PENDING；R-19/R-20 待执行 |
 | CF-04 transaction recovery | 要求复用 Runtime Control / Module Closeout 字段级提交机制；资源、世界状态、可见性、呈现、持久化分别记录，恢复只补未完成字段 | 当前宿主故障注入与跨 Session 持久化仍未验证 |
 | CF-05 activation gate | Chaos Protocol 保持 DRAFT / PENDING BEHAVIORAL VALIDATION；输入与 GM-only Oracle 分离；增加 R-01–R-24 | 独立盲测、真实多轮、宿主集成尚未执行；不得宣称生产启用 |
 
@@ -46,7 +46,7 @@
 - `06_CHAOS_RUNTIME_REGRESSION_v1.md`：GM-only Oracle。
 - `10_CHAOS_RUNTIME_TEST_INPUTS_v1.md`：提供给被测 GM 的无 Oracle 输入。
 - C-01–C-19：历史单会话推演结果不能自动继承为新协议的 PASS，必须重跑。
-- R-01–R-24：已定义，全部 NOT EXECUTED。
+- R-01–R-25：已定义，全部 NOT EXECUTED；新增 R-25 专门验证 Zarek Q06 的普通天气不触发天气骰。
 - 仓库回归套件与 Roll Runtime adapter harness 可以由 PR validation 执行；它们不等于 Chaos 多轮行为验收。
 
 ## CI 记录
@@ -57,7 +57,7 @@
 
 ## 当前限制
 
-- 66/77 的跨生命周期边界与阈值回落时序仍需固定 v22 完整条文最终确认。
+- 66 阈值已按 v22 明确退休与 Loose Ends 减少；阈值回落是否取消已触发退休，规则未明确，仍保留 PENDING。
 - 真实宿主是否自动发现触发、跨 Session 保存效果、部分提交恢复和实际响应延迟仍 NOT VERIFIED。
 - 本记录只追踪协议修订，不回写历史 Session，不补造 Bower Street Chaos 消费或效果，不改变正式战役 CANON。
 - PR #67 保持 OPEN / NOT MERGED，等待独立复审与行为验收。
