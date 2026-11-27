@@ -129,6 +129,17 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         self.assertEqual(first, second)
         self.assertEqual(len(self.store.changed[self.store.heads[self.store.operations_branch]]), 1)
 
+    def test_prepare_lost_ack_is_verified_from_immutable_history(self):
+        self.store.lose_next_ack = True
+        result = self.store.prepare(self.manifest)
+        self.assertEqual(result["status"], "PREPARED")
+        path = ".runtime/operations/BATCH-002.json"
+        head = self.store.heads[self.store.operations_branch]
+        self.assertIsNotNone(self.store._find_path_commit(
+            self.store.operations_branch, path, OPS_BASE
+        ))
+        self.assertIsNotNone(self.store._read_file_at(head, path))
+
     def test_batch_id_cannot_be_reused_for_different_manifest(self):
         self.store.prepare(self.manifest)
         changed = dict(self.manifest)
@@ -214,6 +225,20 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         self.store.parents[new] = [head]
         self.store.changed[new] = {path}
         self.store.heads[self.store.operations_branch] = new
+        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "DISPUTED")
+
+    def test_reconcile_detects_receipt_removed_after_publication(self):
+        self.store.prepare(self.manifest)
+        self.store.publish("BATCH-002", BASE, self.targets)
+        old = self.store.heads[self.store.runtime_branch]
+        snapshot = dict(self.store.snapshots[old])
+        snapshot.pop(".runtime/receipts/BATCH-002.json")
+        self.store.sequence += 1
+        new = f"{self.store.sequence:040x}"
+        self.store.snapshots[new] = snapshot
+        self.store.parents[new] = [old]
+        self.store.changed[new] = {".runtime/receipts/BATCH-002.json"}
+        self.store.heads[self.store.runtime_branch] = new
         self.assertEqual(self.store.reconcile("BATCH-002")["status"], "DISPUTED")
 
     def test_reconcile_detects_tampered_current_receipt(self):
