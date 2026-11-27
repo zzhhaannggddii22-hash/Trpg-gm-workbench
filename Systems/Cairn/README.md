@@ -49,6 +49,23 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 - [../../tests/test_cairn_runtime_protocol.py](../../tests/test_cairn_runtime_protocol.py)：20 项 Cairn 状态协议参考模型自动化测试（不是 GM Runtime 本身）。
 - [Testing/L3_NPC_REENCOUNTER_REGRESSION_REPORT_2026-11-27.md](./Testing/L3_NPC_REENCOUNTER_REGRESSION_REPORT_2026-11-27.md)：扩展离场—重逢连续性回归。
 
+## 系统专属运行分派（runtime_dispatch）
+
+以下入口仅适用于本系统；当前系统状态仍为 `candidate`，此声明不授予正式 Campaign 运行资格。
+
+```yaml
+runtime_dispatch:
+  rule_entry: Systems/Cairn/RUNTIME_PROTOCOL.md
+  core_rules_entry: Systems/Cairn/Rule_Reference/CORE_RULES_RUNTIME.md
+  progression_entry: Systems/Cairn/Rule_Reference/WARDEN_GUIDE_INDEX.md
+  intermission: NOT_APPLICABLE
+  mechanisms:
+    chaos_runtime:
+      status: NOT_APPLICABLE
+```
+
+Cairn 的成长与角色发展依 Cairn 2e 自身规则及 Warden 指引处理；它没有 Triangle Agency 式 Playwall 文档解锁/幕间程序。`NOT_APPLICABLE` 不得被解释为 UNKNOWN，也不得触发其他系统的机制加载。
+
 ## 运行边界
 
 - 当前状态为 candidate。研究、规则学习和隔离测试可以进行；在完成本目录的规则核验、Preflight、正反例与跨系统隔离测试前，不得将其标记为 active，也不得伪装成已完成正式接入。
