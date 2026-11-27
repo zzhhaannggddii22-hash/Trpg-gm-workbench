@@ -1,6 +1,6 @@
 # GM 自测与验收执行协议
 
-> Version: 1.2  
+> Version: 1.3  
 > Status: DEFAULT WORKFLOW  
 > Scope: GM Skill、NPC 模拟、叙事质量、Runtime、Context Assembly、规则裁定可靠性及训练成果迁移的受控自测。
 
