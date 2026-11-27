@@ -249,3 +249,12 @@ Historical corrections must be appended with a correction reference; never rewri
 | Reality cross-outs | 第 30、29、28 格（下排左起第 1–3 格） |
 | Anomaly cross-outs | 第 30、29、28 格（下排左起第 1–3 格） |
 | 下一末端划除（若无其他标记） | 第 27 格／下排左起第 4 格 |
+
+
+### 8.4 官方空白人物表的视觉版面复核
+
+- 已从出版方资源页取得官方可打印人物表，并检查第 3 页（Work/Life Balance）。
+- 官方表格视觉确认：Competency、Reality、Anomaly 三条轨迹均为 **上下两排、每排 15 格，共 30 格**；路径从上排左→右，到右端折返，再沿下排右→左。
+- 因此物理坐标映射已得到官方版面确认：末端第 1 格 = 下排最左格（第 30 格）；末端第 2 格 = 下排左起第 2 格（第 29 格）；末端第 3 格 = 下排左起第 3 格（第 28 格）。
+- 官方空白表只验证轨迹几何，不显示扎雷克本人的标记；扎雷克个人已填写版仍未找到。故最终证据等级保持 **RULE-DETERMINISTIC RECONSTRUCTION + OFFICIAL TEMPLATE VISUAL VERIFIED**，不声称已目视核对个人填写版。
+- Official publisher source: https://cdn.shopify.com/s/files/1/0581/0464/3719/files/Triangle_Agency_-_Character_Organization_Sheets_-_For_Print.pdf#page=3
