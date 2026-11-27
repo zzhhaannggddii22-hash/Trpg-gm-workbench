@@ -56,12 +56,13 @@ active_system:
   campaign_id: zarek
   module_id: blame_it_on_the_trains
 checkpoint:
-  revision: "R1"
+  revision: "R0"
   branch: "ACTIVE"
   last_event_id: "NONE"
-  applied_event_ids: []
   unapplied_event_ids: []
+  applied_event_ids: []
   reconciliation_manifest_refs: []
+  manifest_chain_head: "UNKNOWN"
 resume:
   mode: "NEW START"
   can_advance: false
@@ -73,10 +74,22 @@ resume:
 persistence:
   batch_id: "NONE"
   status: "NOT_STARTED"
+  base_revision: "R0"
+  target_revision: "R0"
+  prepare_manifest_ref: "NONE"
+  previous_published_checkpoint_ref: "NONE"
+  required_targets: []
+  reconciliation:
+    checked_event_ids: []
+    unresolved_targets: []
+    mismatch_reasons: []
   repository_commit_read: "UNKNOWN"
   published_checkpoint_ref: "UNKNOWN"
   t0_mode: "UNKNOWN"
   t0_mode_authority_ref: "UNKNOWN"
+  disputes: []
+state_disputes: []
+t0_incidents: []
 ```
 
 Do not create actual event IDs, revisions, or published checkpoints before a real event occurs. The example above is a schema contract, not a claim that a Session has started.
