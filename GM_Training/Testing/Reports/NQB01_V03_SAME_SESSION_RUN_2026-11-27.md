@@ -7,6 +7,7 @@
 > Fixture files read from the same commit: SPEC / GM PACKET / PLAYER PROMPT / ACTION SEQUENCE / REVIEW CHECKLIST / EXECUTION PROMPT
 > Result: **PARTIAL（初次负荷校准样本）**
 > Canon impact: TEST_ONLY_NON_CANON；未写入任何 Campaign
+> **Runtime validity: INVALID_AS_RUNTIME_TEST** — this historical run used a standalone packet-driven simulation, did not pass the formal GM Skill / Preflight / Campaign Binding / Runtime / Context Assembly entry, and must not be used as evidence of integrated GM Runtime behavior. Retained only as a historical writing sample; no formal Campaign was used or modified.
 
 ## 1. 执行摘要
 
