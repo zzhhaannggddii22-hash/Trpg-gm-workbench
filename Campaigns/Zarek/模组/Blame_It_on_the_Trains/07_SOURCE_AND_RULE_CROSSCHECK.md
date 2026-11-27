@@ -31,7 +31,7 @@ This phase validates what the GM must know to run the module. It is not Prefligh
 | Campaign rulings | Confirm Q01–Q05 scope and approval; do not generalize them | RULE_ADJUDICATIONS.md | VERIFIED AS CAMPAIGN BINDING |
 | QA | Nine Qualities, QA spend/adjustment, quality-specific pool and stated exceptions | v22 Markdown printed pp.34–35; Campaign's quality-to-check constraint; Q03 insurance exception | PARTIAL：通用 QA 调整条文已核；本桌对应 Quality 的使用约束需与既有 Campaign 规则记录一致；Q03 伤害保障明确允许任意 Quality QA |
 | Burnout | Trigger, remove one 3 per Burnout, +1 Chaos per Burnout, stable-three exception and Q04 sequence | v22 Markdown printed pp.35–37; Campaign ruling Q04 | VERIFIED：通用 Burnout 与稳定性文本已核；执行顺序按 Zarek Q04（先 Burnout 后 QA） |
-| Chaos | Initial pool, +1 per die without a 3, public reporting, module effects and close/reset | v22 Markdown printed pp.33, 156; module source; Q01/Q02 | PARTIAL：生成规则与域界规则已核；本模组初始池/结团处理仍须按模组与 Campaign 依据确认 |
+| Chaos | Initial pool, +1 per die without a 3, public reporting, module effects and close/reset | v22 Markdown printed pp.33, 156; Campaign Binding; module source; Q01/Q02 | PARTIAL：生成规则、公开记录和域界规则已核；Campaign 默认初始值 0 已绑定，仍需确认本模组是否有覆盖特例及结团关闭处理 |
 | Harm / Stability / Domain | Harm application, death threshold, anomaly Stability/Threat, Domain costs and benefits | v22 core rules + module source + Q01/Q02/Q03 | OPEN |
 | Ask the Agency | 6d4, Causality Chain, Quality selection, effect scope and failure | v22 printed pp.40–43 | PARTIAL |
 | Module-specific ability text | Smell the Roses trigger, Presence check, success/failure and extra-3 effects | Chinese Vault translation file p.208 | VERIFIED IN CHINESE SOURCE：文本已回读；其规则通用结算仍按 v22 能力规则核验 |
@@ -43,7 +43,7 @@ This phase validates what the GM must know to run the module. It is not Prefligh
 | Normal Briefcase | Target must be exhausted, calm or willing; focus identification is usually needed | v22 Markdown printed pp.21–22 | VERIFIED |
 | Commendations / Demerits | Mission report, optional goals, authorized behaviors and award/penalty timing | v22 performance/report rules + module source | PARTIAL：规则框架已定位；模组结算和历史余额仍须逐项核 |
 | Mission MVP / Probation / Participant | Eligibility, tie-breaks, award order and track benefit | v22 Markdown printed pp.134–135 and Work/Life Balance sheet | VERIFIED; single-player application is straightforward but still checked at closeout |
-| Loose Ends | Regional baseline, additions, weather effects and reporting | v22 regional rules + Campaign records | OPEN |
+| Loose Ends | Regional baseline, +7 per escaped anomaly, weather-event roll/escalation and reporting | v22 Markdown printed pp.164–169; Campaign records | PARTIAL：通用规则与当前基线 1 已核；本模组开始前的天气掷骰/历史结果回读待执行 |
 | Time | Distinguish system rules from Campaign Q05 award timing and reverse-linked field | RULE_ADJUDICATIONS.md Q05 | VERIFIED AS CAMPAIGN RULING ONLY |
 | Equipment handoff | Holder, charge, use, return/restoration basis for each key item | Character card + prior Module Ledger + item rules | OPEN |
 
