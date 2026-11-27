@@ -54,11 +54,11 @@ metadata:
 
 ### 系统规则知识调用
 
-规则不是每次从规则书 PDF 重新开始。先由当前 Campaign Binding 选择系统规则入口，再按该系统的常规规则调用路由分派机制与资料。对 Triangle Agency 中文 v22，默认调用 [常规规则调用路由](../Systems/Triangle_Agency/Rule_Reference/05_常规规则调用路由.md)，优先读取专题协议、基础规则笔记和疑点/裁定记录；需要完整条文时优先回查上游 Markdown 母稿，PDF 只用于图表/轨迹/版式/遮挡/OCR/跨页歧义或用户明确要求的页面核验。
+规则不是每次从规则书 PDF 重新开始。先由当前 Campaign Binding 选择唯一系统入口，再读取该系统 README 声明的 `runtime_dispatch.rule_entry`（或等效字段）及其规则来源优先级，按该系统自己的路由分派机制与资料。通用层不得硬编码系统目录或专属路由；完整原文、PDF/网页及结构化速查的使用顺序由当前系统入口定义。
 
 规则知识在 Preflight 与活动 Session 内按已核验版本和读取范围复用。新 Session 重新确认系统绑定与动态状态，不等于重新读取整本规则书。现场行动只加载其 REQUIRED / CONDITIONAL 规则依赖；红色行动、争议、关键例外、未覆盖机制和高影响结果才扩大到完整条文。任何资料缺口都只阻塞依赖它的子行动。
 
-通用 GM Skill 只定义规则调用方式，不复制 Triangle Agency 机制；具体规则仍由当前系统目录提供。
+通用 GM Skill 只定义规则调用方式，不复制任何系统机制；具体规则、规则检索顺序及专属运行程序均由当前绑定系统目录提供。
 
 选本、比较、推荐及备团进度按 [模组目录标准 §11.3](./09_MODULE_FOLDER_STANDARD.md#113-对用户的汇报边界) 选择接收者范围，此分派适用于系统绑定前的推荐。选本先从公开登记建立选项，再据该公开选项作答；当用户转入准备，只从获准的公开进度生成玩家交付。
 
@@ -219,6 +219,6 @@ Module 结团时，基于多个 Session 的具体片段区分现象、根因和�
 - 不记录思维链，不声称能读取平台完整隐藏 Prompt；重要 Trace 只引用可观察的资料读取、核验、事件、状态变化和呈现证据。
 
 
-## 11. System-specific intermission and unlock gates
+## 11. System-specific progression and intermission dispatch
 
-A module close does not automatically mean character growth is complete. When the active system has an intermission, advancement track, unlock tree, or gated document mechanic, route to that system's authoritative protocol before resolving growth. For `triangle_agency`, use [Playwall Unlock & Intermission Integrity Protocol](../Systems/Triangle_Agency/Rule_Reference/02_PLAYWALL_UNLOCK_AND_INTERMISSION_PROTOCOL.md) and the active Campaign's Playwall ledger. Check every actual track mark—including free marks from Superlatives or other rules—for a code; do not check only Time expenditures. Keep the intermission OPEN while a newly authorized document, its required effect, or its record synchronization remains unresolved. The GM Skill provides the generic dispatch; it does not duplicate or reinterpret system rules.
+A module close does not automatically mean character growth is complete. When the active system defines advancement, an intermission, an unlock tree, or gated documents, read only the progression/intermission entry declared by the active system's `runtime_dispatch` in its registered README, together with the active Campaign's own progression ledger. Apply that system's triggers, costs, order, authorization, effects, and closeout conditions exactly as declared there. If the system declares `NOT_APPLICABLE`, do not create a substitute progression or intermission procedure. The generic GM Skill provides dispatch only; it does not name, copy, or reinterpret any system's progression mechanics.
