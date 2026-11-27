@@ -1,7 +1,7 @@
 # Cairn 2e 核心规则运行手册
 
 > 规则绑定：`system_id: cairn`；`ruleset_version: Cairn Second Edition`
-> 状态：runtime normalization v0.2；供候选系统受控验证调用，不代表已完成全部章节核验或可用于正式 Campaign。
+> 状态：runtime normalization v0.3；已完成官方 Player's Guide / Warden's Guide 章节来源核验。该状态表示规则章节已逐项审阅并完成本地覆盖分类，不代表全部怪物、法术、遗物、背景表或模组条目均已逐项录入，也不代表系统已通过真实跑团验收或可正式激活。
 > 权威来源：[官方 Core Rules](https://cairnrpg.com/second-edition/players-guide/core-rules/)、[Character Creation](https://cairnrpg.com/second-edition/players-guide/character-creation/)、[Procedures](https://cairnrpg.com/second-edition/players-guide/procedures/)。本手册为自写结构化摘要，不替代原文。
 
 ## 0. 使用规则
@@ -23,7 +23,7 @@
 | CR-SAVE | 属性豁免 | 风险行动可能产生负面结果 | VERIFIED_CORE |
 | CR-INFO | 信息与知识 | 描述环境、回答问题、判断角色所知 | VERIFIED_CORE |
 | CR-HP | HP 恢复 | 短暂休息、饮水、地城休息 | VERIFIED_CORE |
-| CR-ATTR-REC | 属性恢复 | 属性损伤后治疗/休养 | PARTIAL |
+| CR-ATTR-REC | 属性恢复 | 属性损伤后治疗/休养 | VERIFIED_CORE |
 | CR-FAT | Deprived / Fatigue | 食物、睡眠或其他关键需求缺失 | VERIFIED_CORE |
 | CR-INV | 库存与负重 | 携带、获得、丢弃物品/Fatigue | VERIFIED_CORE |
 | CR-ARM | Armor | 伤害结算前 | VERIFIED_CORE |
@@ -46,7 +46,7 @@
 | CR-MAGIC | 法术书施法 | 角色使用 Spellbook | VERIFIED_CORE |
 | CR-SCROLL | 卷轴 | 使用一次性 Scroll | VERIFIED_CORE |
 | CR-RELIC | 遗物 | 使用 Relic | VERIFIED_CORE |
-| CR-HIRELING | Hirelings | 招募/创建雇工 | PARTIAL |
+| CR-HIRELING | Hirelings | 招募/创建雇工 | VERIFIED_CORE |
 | CR-DOF | Die of Fate | 事件结果不确定且需随机判断 | VERIFIED_CORE |
 | EX-DUNGEON | 地城探索循环 | 危险地点中的探索行动 | VERIFIED_CORE |
 | EX-DUNGEON-EVENT | 地城事件 | 达到事件触发条件 | VERIFIED_CORE |
@@ -102,9 +102,15 @@
 - 地城休息不恢复 Fatigue；地城内不能安全进行 Make Camp。
 - HP 是 Hit Protection，不等同身体健康，也不能替代 STR/DEX/WIL。
 
-### CR-ATTR-REC｜属性恢复 — PARTIAL
+### CR-ATTR-REC｜属性恢复 — VERIFIED_CORE
 
-属性损失通常需要一周休息，并由治疗者或其他适当专业支持；具体恢复服务、费用、魔法或特殊来源依场景/规则条目而定。正式裁定前需核对对应治疗来源。不得把 HP 恢复套用为属性恢复。
+- 属性损失通常可通过一周休息恢复，并由治疗者或其他适当专业支持协助。
+- 官方允许部分治疗服务免费；魔法或更快捷的恢复方式可能收费。
+- Marketplace 列有 Medical Healing：50 gp。该价格是官方集市服务价，不应被解释为所有属性损伤、所有伤势或所有地区都必然能以 50 gp 完整治愈。
+- 具体服务能否处理某种伤势、是否需要特殊材料/专家、费用是否变化，仍由对应条目与虚构情境决定。
+- HP 恢复与属性恢复是两套不同程序；短暂休息饮水或地城 Turn Rest 不自动恢复属性。
+
+来源：Player's Guide / Core Rules / Healing & Recovery；Marketplace / Upkeep & Recovery。
 
 ### CR-FAT｜Deprived 与 Fatigue — VERIFIED_CORE
 
@@ -112,7 +118,7 @@
 
 **执行**：
 1. 记录 Deprived 状态及起始时间/持续时长。
-2. Deprived 超过一天后，按每一天增加 1 个 Fatigue。
+2. Deprived 超过一天后，按每一天增加 1 个 Fatigue。官方没有规定必须在何种具体钟点/Watch 边界执行周期 tick；Workbench 可以用 deprived_since 与唯一 fatigue_tick_id 防止漏算/重复算，但具体 tick 边界属于 GM_INFERENCE / 运行时记账约定，不得宣称为官方明文。
 3. 每个 Fatigue 占用 1 个库存格。
 4. Deprived 期间不能恢复 HP、属性，也不能清除库存中的 Fatigue。
 5. 若被迫增加 Fatigue 而无空格，必须丢弃一件库存物品。
@@ -348,9 +354,16 @@
 - Relic 是带有法术或特殊力量的物品；不会因使用而增加 Fatigue。
 - 通常有有限使用次数与 Recharge 条件；每次使用按该 Relic 自身条目结算，必须记录剩余次数及充能条件。
 
-### CR-HIRELING｜Hirelings — PARTIAL
+### CR-HIRELING｜Hirelings — VERIFIED_CORE
 
-雇工可凭其独特技能、知识和训练协助冒险。创建方式包括从 Marketplace 的 Hirelings 表选角色，或从背景生成程序构建；属性各掷 3d6，HP 掷 1d6，并按身份赋予装备及人物特征。具体工资、忠诚、角色表和装备必须查 Marketplace 对应条目，不在此臆造。
+- 雇工可凭独特技能、知识与训练协助远征；应按其角色与具体人物设定处理，不将其视为无差别的额外 PC。
+- 标准创建：从 Marketplace 的 Hirelings 表选择适当角色；各属性分别掷 3d6，HP 掷 1d6；赋予符合其身份/岗位的装备；再掷 Character Traits 表补充人物特征。
+- 替代创建：选择 Character Creation 中合适的 Background 和姓名，按该背景流程生成；随后掷/选择 Rations、GP、Attributes、HP 与年龄。
+- Marketplace 官方每日工资（GP/day）：Alchemist 30；Animal Handler 5；Blacksmith 15；Bodyguard 10；Local Guide 5；Lockpick 10；Navigator 10；Sailor 5；Scholar 20；Tracker 5；Trapper 5；Veteran Bodyguard 20。
+- 这些岗位名称与工资已由官方 Marketplace 明确；岗位具体能力、装备和实际可提供的服务须结合人物与情境确定。
+- 核心规则没有给出适用于所有 Hirelings 的统一忠诚度、士气或叛逃检定流程。不得自行补入通用 Loyalty/Morale 数值；具体雇佣关系、报酬、风险与行为按人物动机和虚构情境裁定。
+
+来源：Player's Guide / Core Rules / Hirelings；Marketplace / Hirelings (per day)。
 
 ### CR-DOF｜Die of Fate — VERIFIED_CORE
 
