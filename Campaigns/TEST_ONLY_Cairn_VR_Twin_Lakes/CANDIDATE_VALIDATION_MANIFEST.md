@@ -8,7 +8,9 @@ validation:
   system_id: cairn
   ruleset_version: Cairn Second Edition
   preflight_base_commit: 245fca27b3c2570ea3be0781648bef204e70c36f
-  archive_commit: cc49fa84edd8d11bcb9e7fdbd221d8589f860207
+  source_archive_commit: 4f09f029e1e034e1014ffa30a270fdaf390dff97
+  gm_prep_commit: cc49fa84edd8d11bcb9e7fdbd221d8589f860207
+  latest_prep_revision_commit: b165dea8d2333ced2a7c4d229956ce25e1812609
   module_source_path: Campaigns/TEST_ONLY_Cairn_VR_Twin_Lakes/SOURCE/CAS1_OFFICIAL_SOURCE.md
   gm_prep_path: Campaigns/TEST_ONLY_Cairn_VR_Twin_Lakes/GM_ONLY_PREP.md
   module_source_retrieved_at: 2026-11-27
