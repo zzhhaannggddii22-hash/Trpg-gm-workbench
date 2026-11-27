@@ -1,7 +1,7 @@
 # NQB-01 v0.3｜GM Prep & Runtime Quick Reference
 
 > GM-only｜TEST_ONLY / NON_CANON
-> Prep QA：PASS_WITH_LIMITATIONS（见 [07_PREP_QA_2026-11-27.md](./07_PREP_QA_2026-11-27.md)）
+> Prep QA：已在第一次 Preflight 前完成；审核报告属于操作者专用资料，不加载到目标 GM Runtime。
 > 本文件是运行索引，不复制完整场景事实；详细事实唯一来源为 GM Packet。
 
 ## 1. 本场定位
