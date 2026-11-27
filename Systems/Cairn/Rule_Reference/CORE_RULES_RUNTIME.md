@@ -119,7 +119,8 @@
 - 一般物品占 1 格；Bulky 占 2 格；Petty 不占格。
 - 背包最多容纳 6 格物品或 Fatigue；物品能否装入及其占格按物品描述与 Warden 对虚构情境的裁定。
 - 角色通常只能舒适携带约 4–5 件物品；背包、马匹、车辆、雇工等可改变实际携带能力。
-- 金币等小额财物的占格遵照具体条目；不可自行将所有钱币统一视为 0 格。
+- 价值低于 100gp 的一袋钱币属于 Petty，不占库存格；其他财物按具体物品条目与 Warden 的虚构裁定处理。不可自行将所有钱币统一视为 0 格。
+- 角色通常从创建时获得一个可容纳最多 6 格物品或 Fatigue 的 Backpack；它是容器容量，不额外创造超过角色 10 格的总负重上限。
 - 每次获得、使用、转移、丢弃、损坏或增加 Fatigue，都必须更新账本并重新计算占格与 HP 限制。
 
 来源：Character Creation / Inventory；Core Rules / Deprivation & Fatigue。
@@ -284,12 +285,25 @@
 
 ### EX-WILDERNESS｜荒野探索 — PARTIAL
 
-- 一天分为 Morning、Afternoon、Night 三个 Watches；每名角色每 Watch 选择一个 Wilderness Action。
-- 描述当前地点、路线、天气、地形与队伍状态如何影响旅行；队伍决定或调整路线。
-- 每次循环：选择行动 → 叙述结果并处理 Wilderness Event → 玩家回应 → 记录资源/条件 → 进入下一 Watch。
-- Travel、Explore、Supply、Make Camp 是常用行动；具体距离、路径、地形、天气和迷路修正须按官方表格与具体模组地图计算。
-- 夜间旅行更危险，通常需要在 Wilderness Events 表上掷两次。
-- 未执行 Make Camp、睡眠不足、口粮消耗、守夜与 Fatigue 之间存在相互作用；按当前队伍人数与官方程序核算，不能把单人队伍当作默认完整队伍。
+**Watch 基础**：一天分为 Morning、Afternoon、Night 三个各 8 小时的 Watches。每名角色每 Watch 选择一个 Wilderness Action；队伍分开行动时，各组视为独立实体。
+
+**旅行时间**：从当前 Point 到目标 Point 的耗时由路径距离、路径类型、地形、天气和队伍状态共同决定。将对应惩罚相加，换算为 Watches；水路参考周边地形难度，特别广阔的地形可额外增加最多 +2 Watches。当前速查未收录完整路径/天气修正表，具体行程必须查官方 Procedures 表格或 Campaign Quick Reference。
+
+- 路径：Road 无额外 Watch/迷路风险；Trail +1 Watch、2-in-6 迷路；Wilderness +2 Watches、3-in-6 迷路。
+- 距离：Short +1 Watch；Medium +2 Watches；Long +3 Watches。
+- 地形：Easy +0；Tough +1 Watch；Perilous +2 Watches。
+- 天气：每天按季节掷天气表；连续两次出现 Extreme 则变为 Catastrophic。Unpleasant：增加 Fatigue 或旅程 +1 Watch；Inclement：增加 Fatigue 或 +1 Watch，且地形难度提高一级；Extreme：增加 Fatigue 并 +1 Watch，且地形难度提高一级；Catastrophic 通常无法旅行。
+
+**行动与事件**：每个 Watch 中，队伍成员分别选择一项 Wilderness Action；Travel 通常由全队共同执行，视为一次队伍行动。Warden 叙述结果后掷 Wilderness Events，再处理玩家响应和状态变化。常用行动包括 Travel、Explore、Supply、Make Camp。
+
+- Travel：揭示沿途可见地点/地貌；队伍掷 1d6 判断迷路，风险由路径难度、地图、技能和向导调整。迷路后可能要额外花费一个 Wilderness Action 找回路线，否则抵达路线上的下一 Point。
+- Explore：一名或多名角色搜索大片区域、侦察或谨慎行动，发现地点或地貌；即使区域已探索，离开仍需 Travel。
+- Supply：一名或多名角色狩猎、捕鱼、采集，基础获得 1d4 Rations（每份 3 次使用）；额外参与者可提高骰阶，最高 d12；经验/装备也可能提高收获。
+- Make Camp：每名角色及其坐骑各消耗一份 Ration；安排守夜轮值。小队人数少时，可能需要冒无人守夜风险或跨多日轮换睡眠。成功休息者移除全部 Fatigue。
+
+**夜晚与睡眠**：夜间旅行应在 Wilderness Events 表上掷两次。每天最后一个 Watch 通常用于 Make Camp。若跳过 Make Camp，每名角色增加一份 Fatigue 并陷入 Deprived；睡眠不足时旅行，地形难度提高一级。超出轻微干扰的睡眠中断可能取消睡眠收益。
+
+**单人队伍警告**：不能假设一名 PC 可以安排完整守夜轮值。明确处理无人守夜、分段睡眠或聘用/雇用同伴的选择与后果；不替玩家自动选择。
 
 ### EX-WILDERNESS-EVENT｜荒野事件 — VERIFIED_CORE
 
