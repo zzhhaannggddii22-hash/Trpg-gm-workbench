@@ -64,6 +64,18 @@
 | CRT-45 | PC 使用 Spellbook 施法，且处于安全状态 | CR-MAGIC / CR-FAT | 双手持书并大声朗读；增加 1 Fatigue；有时间和安全时可增强效果而不额外付费 |
 | CRT-46 | PC 在战斗中或 Deprived 时施法 | CR-MAGIC | Warden 可要求 WIL Save；失败后果与预期效果相称，可涉及 Fatigue、法术书毁坏、伤害或死亡 |
 | CRT-47 | PC 使用 Scroll 与 Relic | CR-SCROLL / CR-RELIC | Scroll 为 Petty、一次后消失且不加 Fatigue；Relic 不加 Fatigue，但须记录使用次数与 Recharge 条件 |
+| CRT-48 | Scars HP Lost 1，部位骰 4、后续骰 6，最大 HP 5 | CR-SCARS | 部位为 Chest；6 高于最大 HP 5，最大 HP 提高到 6 |
+| CRT-49 | Scars HP Lost 2，后续骰 5，最大 HP 4 | CR-SCARS | Rattling Blow；5 高于最大 HP 4，最大 HP 提高到 5 |
+| CRT-50 | Scars HP Lost 3，恢复后骰 4 | CR-SCARS | Walloped；Deprived 数小时，休息后最大 HP 增加 4，而不是设为 4 |
+| CRT-51 | Scars HP Lost 4，部位骰 2，恢复后 2d6=9，最大 HP 8 | CR-SCARS | Broken Limb：腿；治愈后最大 HP 提高到 9 |
+| CRT-52 | Scars HP Lost 5，痊愈后 2d6=10，最大 HP 8 | CR-SCARS | Diseased；痊愈后最大 HP 提高到 10 |
+| CRT-53 | Scars HP Lost 6，属性骰 3，3d6=14，DEX 当前 12 | CR-SCARS | Reorienting Head Wound：DEX；DEX 提高到 14 |
+| CRT-54 | Scars HP Lost 7，恢复后 3d6=13，最大 DEX 12 | CR-SCARS | Hamstrung；恢复后最大 DEX 提高到 13 |
+| CRT-55 | Scars HP Lost 8，WIL Save 成功，1d4=3 | CR-SCARS | Deafened；失聪直到非凡援助；最大 WIL 增加 3 |
+| CRT-56 | Scars HP Lost 9，3d6=15，最大 WIL 14 | CR-SCARS | Re-brained；最大 WIL 提高到 15 |
+| CRT-57 | Scars HP Lost 10，WIL Save 成功，1d6=4 | CR-SCARS | Sundered；指定肢体失去功能；最大 WIL 增加 4 |
+| CRT-58 | Scars HP Lost 11，角色未在一小时内获救 | CR-SCARS | Mortal Wound；角色 Deprived、失去行动能力并死亡；若获救恢复，2d6 设为新的最大 HP |
+| CRT-59 | Scars HP Lost 12，下一次 Critical Damage Save 成功，3d6=14，最大 HP 12 | CR-SCARS | Doomed；下一次 Critical Damage Save 失败会死亡；成功则最大 HP 提高到 14 |
 
 ## 3. 关键状态断言
 
