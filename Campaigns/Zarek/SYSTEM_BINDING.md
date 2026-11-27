@@ -17,7 +17,7 @@ status: active
 
 - 系统资料：[Systems/Triangle_Agency](../../Systems/Triangle_Agency/README.md)
 - 规则检阅：[Rule_Reference](../../Systems/Triangle_Agency/Rule_Reference/README.md)
-- 规则原文：[中文 v22 PDF](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/main/最终交付_v22/triangle_agency_zh.pdf)
+- 规则原文：[中文 v22 PDF](https://github.com/p33333333333333l/triangle-agency-ai-zh/blob/7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1/最终交付_v22/triangle_agency_zh.md)
 - 多系统隔离协议：[SYSTEM_CONTEXT_PROTOCOL.md](../../SYSTEM_CONTEXT_PROTOCOL.md)
 
 ## 运行约束
