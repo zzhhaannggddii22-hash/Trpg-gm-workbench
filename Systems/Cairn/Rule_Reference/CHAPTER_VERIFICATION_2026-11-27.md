@@ -47,15 +47,22 @@
 5. CR-INV：官方规定填满 10 格时 HP 降至 0；清空格子后是否自动恢复 HP，官方未说明；不自动回填 HP 是 Workbench 的 GM_INFERENCE。
 6. Downtime：补入一次一项行动、危险/恢复期限制、1–5 Milestones、Costs、Research、Training、Strengthening Ties 的运行程序。官方未规定统一每周次数或固定成长数值。
 
-## 5. 仍然按需查原文的资料，不作为章节核验失败
+## 5. 条目级资料本地化结果
 
-- 每个具体 Bestiary 生物的完整 stat block 与专属能力；
-- 每本具体 Spellbook 的法术效果；
-- 每件具体 Relic 的使用次数、能力和 Recharge 条件；
-- 角色背景专属表格、能力与物品；
-- Campaign/Module 专属地图、NPC、怪物、事件表与特殊规则。
+本轮已将稳定、可复用且有明确官方来源的条目级内容复制到 Systems/Cairn/Rule_Reference/，并建立 OFFICIAL_CATALOG_INDEX.md 作为离线入口：
 
-这些属于条目级数据，而不是通用章节缺失。发生实际调用时必须按确切对象查证，不得以摘要、相似名称或其他版本补洞。
+- Bestiary：84 个怪物条目，包含各自 HP、属性、Armor、攻击、特殊能力和 Critical Damage 描述。
+- Spellbooks：d100 共 100 项，保存法术名称、效果描述及原文附带特征。
+- Reliquary：46 件遗物，保存效果、使用次数/充能次数、库存属性及原文列明的 Recharge 条件。
+- Backgrounds：20 个官方背景，逐个保存完整姓名表、起始装备、背景随机表、能力与特殊说明。
+- NPC Tables：完整生成表。
+- Creating Monsters / Creating Backgrounds：官方生成指南。
+
+这些文件是官方来源快照，日常查阅优先读取本地文件。若官方在线版发生更新或出现版本差异，再按上游原文进行差异核验；不得静默覆盖已锁定战役数据。
+
+Campaign 专属内容不进入系统通用目录。CA01_Zaf 的 CAS-1 官方原文、GM-only Prep 与 REFERENCE_INDEX 已分别保存在 Campaigns/CA01_Zaf/MODULES/CAS-1/。该模块资料包含其 NPC、专属怪物/敌人、遭遇、道路事件、地点/房间、陷阱、事件时钟、独特物品和结局分支。
+
+仍需按需查证的范围仅包括：当前本地快照之后官方新增/修订的条目、其他尚未归档 Campaign 的模块专属资料，以及具体来源之间存在的未解决差异。它们不再构成“本地目录缺失”的理由。
 
 ## 6. 尚未由章节核验解决的验收事项
 
