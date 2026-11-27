@@ -72,6 +72,7 @@ metadata:
 
 - 面向玩家的 Handoff、Session Recap、时间线、事实回顾和 Player Notes 更新，先装配目标玩家/角色对应的 Player Notes 投影与本会话实际可见的对话/呈现记录；它们是玩家侧内容的输入来源。
 - GM-only Prep、模组原文中的隐藏事实、完整 GM Session Log、NPC 私有知识、GM Trace 和模型对历史的回忆，只用于 GM 内部裁定、查证和状态维护；不得直接作为玩家摘要的内容源，也不得以“之后再过滤”为理由把它们混入玩家侧草稿。
+- NPC 的对白、建议、判断与自主行动必须使用该 NPC 自己的知识投影：只包含其实际获得的信息及其合理观察，并与其信念/判断、实际陈述和行动分别处理。GM 的全局 Prep 或其他 NPC 的私有知识不能替代该投影；依据缺失时只限制相关断言/行动，不冻结无关互动。按 [Runtime §14.2.1 / §14.20.3](./07_RUNTIME_CONTROL_PROTOCOL.md) 与 [Clue & Source Ledger §9.5–9.9](./08_CLUE_AND_SOURCE_LEDGER.md) 核验。
 - 只有在某项 GM-side 信息通过有效游戏内事件实际披露给目标接收者后，才可将对应的、且仅限实际披露精度的字段加入玩家投影。GM 知道、NPC 知道、玩家看到过相似摘要，均不能替代该披露事件。
 - 若 Player Notes 缺失、过期或缺少呈现锚点，生成范围受限的回顾，明确未覆盖范围并保留 UNKNOWN；不得回退到 GM-only Prep 补齐“完整故事”。需要恢复旧内容时，先定位并核对实际原始交接/Session 记录。
 - 最终输出仍须通过 [Runtime §14.8 / §14.19](./07_RUNTIME_CONTROL_PROTOCOL.md) 的字段级接收者与呈现准入。该闸门限定生成输入，不取代最终输出检查。
