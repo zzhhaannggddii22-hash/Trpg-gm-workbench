@@ -11,7 +11,7 @@
 - 本次独立审查：用户提供的 `Bower_Street_GM_Audit.md`，审查基线为 main `4e85fc5f2c1ec4343099326b54d5d930894695db`。
 - 审查者报告说明：其核验使用公开中文 v22 交付中的同名 DOCX 与同版可检索译稿；公开 DOCX 已核对通话时间，章节逐项比较使用同版译稿。
 - **版本限制**：尚未确认公开交付与用户 Library 副本逐字一致；英文出版物亦未逐字复核。涉及翻译差异的判断应保留来源说明，不声称已经完成英文原版核对。
-- 规则：Triangle Agency 中文 v22；本 Campaign 绑定 `Campaigns/Zarek/SYSTEM_BINDING.md`，桌裁以 `Campaigns/Zarek/RULE_ADJUDICATIONS.md` 和其批准历史为准。
+- 规则：Triangle Agency 中文 v22；本 Campaign 绑定 `Campaigns/TA01_Zarek/SYSTEM_BINDING.md`，桌裁以 `Campaigns/TA01_Zarek/RULE_ADJUDICATIONS.md` 和其批准历史为准。
 
 ## 二、原文与规则核验状态
 
