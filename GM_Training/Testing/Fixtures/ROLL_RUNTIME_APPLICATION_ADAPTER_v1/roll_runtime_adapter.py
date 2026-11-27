@@ -141,17 +141,38 @@ class RollRuntimeAdapter:
         return {"status":"APPLIED","manifest_id":manifest["manifest_id"],"ledger_entries":len(rows)}
 
     def verify(self,event):
-        rt=read_json(self.runtime); rows=[x for x in read_jsonl(self.ledger) if x["event_revision_id"]==event["event_revision_id"]]
+        rt=read_json(self.runtime)
+        prep_path=self.prepares/f"{event['batch_id']}.json"
+        if not prep_path.exists(): raise RuntimeError("PREPARE_MANIFEST_MISSING")
+        prep=read_json(prep_path)
+        payload={k:event[k] for k in ("resource_deltas","player_reply_payload")}
+        if (prep["event_id"]!=event["event_id"] or prep["event_revision_id"]!=event["event_revision_id"]
+            or prep["payload_fingerprint"]!=fingerprint(payload)):
+            raise RuntimeError("EVENT_PAYLOAD_IDENTITY_CONFLICT")
+        rows=[x for x in read_jsonl(self.ledger) if x["event_revision_id"]==event["event_revision_id"]]
         logs=[x for x in read_jsonl(self.log) if x["event_revision_id"]==event["event_revision_id"]]
         mp=self.manifests/f"MANIFEST__{event['batch_id']}.json"
         if event["event_id"] not in rt["checkpoint"]["applied_event_ids"] or len(logs)!=1 or not mp.exists(): raise RuntimeError("APPLICATION_PROOF_INCOMPLETE")
         m=read_json(mp)
         if m["manifest_id"] not in rt["checkpoint"]["reconciliation_manifest_refs"]: raise RuntimeError("MANIFEST_NOT_LINKED_FROM_CHECKPOINT")
+        if m["base_revision"]!=event["base_revision"] or m["target_revision"]!=event["target_revision"]: raise RuntimeError("MANIFEST_REVISION_MISMATCH")
         if m["manifest_fingerprint"]!=fingerprint({k:v for k,v in m.items() if k!="manifest_fingerprint"}): raise RuntimeError("MANIFEST_FINGERPRINT_MISMATCH")
+        app=m["ordered_applications"][0]
+        if app["payload_fingerprint"]!=prep["payload_fingerprint"] or app["payload_version"]!=event["payload_version"]: raise RuntimeError("MANIFEST_PAYLOAD_MISMATCH")
         if len(rows)!=len(event["resource_deltas"]) or any(x["application_status"]!="APPLIED" or x["after"]!=x["before"]+x["delta"] for x in rows): raise RuntimeError("LEDGER_FIELD_OR_ARITHMETIC_MISMATCH")
-        fields={x["field_path"] for x in m["ordered_applications"][0]["applied_fields"]}
-        if fields!={f"resources.{k}" for k in event["resource_deltas"]}: raise RuntimeError("MANIFEST_FIELD_SET_MISMATCH")
+        fields={x["field_path"]:x for x in app["applied_fields"]}
+        if set(fields)!={f"resources.{k}" for k in event["resource_deltas"]}: raise RuntimeError("MANIFEST_FIELD_SET_MISMATCH")
         if sorted(logs[0]["runtime_application"]["ledger_entry_ids"])!=sorted(x["entry_id"] for x in rows): raise RuntimeError("SESSION_LOG_LEDGER_REFERENCE_MISMATCH")
+        for entry in rows:
+            proof=fields[f"resources.{entry['resource_field']}"]
+            if proof["before_value_ref"]!=fingerprint(entry["before"]) or proof["after_value_ref"]!=fingerprint(entry["after"]):
+                raise RuntimeError("MANIFEST_VALUE_REFERENCE_MISMATCH")
+        baseline=read_json(self.root/"resource_snapshot.json")["balances"]
+        for field,value in baseline.items():
+            for prior in [x for x in read_jsonl(self.ledger) if x["resource_field"]==field]:
+                if prior["before"]!=value or prior["after"]!=prior["before"]+prior["delta"]:
+                    raise RuntimeError("LEDGER_CHAIN_DISPUTED")
+                value=prior["after"]
         if rt["checkpoint"]["revision"]!=event["target_revision"] or rt["persistence"]["status"]!="VERIFIED": raise RuntimeError("CHECKPOINT_NOT_VERIFIED")
         if self.projection.exists(): self.sanitize(read_json(self.projection))
         return {"ledger_entries":len(rows),"session_log_events":len(logs),"revision":rt["checkpoint"]["revision"],
@@ -221,6 +242,14 @@ def run_tests():
         a.apply(e2); rows=[x for x in read_jsonl(a.ledger) if x["resource_field"]=="empathy_qa"]
         assert [(x["before"],x["delta"],x["after"]) for x in rows]==[(2,2,4),(4,-1,3)]
         out.append("sequential Resource Ledger chain")
+    with tempfile.TemporaryDirectory() as td:
+        a=RollRuntimeAdapter.initialize(pathlib.Path(td),{"empathy_qa":2,"chaos":0}); e=event(); a.apply(e)
+        altered=event(); altered["resource_deltas"]["empathy_qa"]=99
+        try: a.apply(altered)
+        except RuntimeError as exc: assert "EVENT_PAYLOAD_IDENTITY_CONFLICT" in str(exc)
+        else: raise AssertionError("same event identity with changed payload accepted")
+        assert len(read_jsonl(a.ledger))==2
+        out.append("changed-payload duplicate rejected without reapplication")
     with tempfile.TemporaryDirectory() as td:
         a=RollRuntimeAdapter.initialize(pathlib.Path(td),{"empathy_qa":2,"chaos":0}); e=event()
         e["base_revision"]=9; e["target_revision"]=10
