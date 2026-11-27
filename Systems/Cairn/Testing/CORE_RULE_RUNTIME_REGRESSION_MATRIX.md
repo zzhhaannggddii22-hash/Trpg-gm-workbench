@@ -56,7 +56,7 @@
 | CRT-37 | 队伍夜间旅行 | EX-WILDERNESS-EVENT | Wilderness Events 掷两次；不可只掷一次，也不能把夜间旅行当作普通 Watch |
 | CRT-38 | 单人 PC 在荒野扎营且没有同伴守夜 | EX-WILDERNESS | 不虚构完整轮值；向玩家呈现无人守夜/分段睡眠等真实选择及后果 |
 | CRT-39 | PC 使用一袋价值 50gp 的钱币 | CR-INV | 属于 Petty，不占库存格；不得误计为普通 1 格物品 |
-| CRT-40 | PC 在黑暗中被包围，WIL Save 失败陷入 Panic | CR-PANIC | HP 降至 0；首轮不能行动；攻击 Impaired；不因非攻击性 HP 归零触发 Scars；以回合行动 + WIL Save 克服，解除后 HP 不自动恢复 |
+| CRT-40 | PC 在黑暗中被包围，WIL Save 失败陷入 Panic | CR-PANIC | HP 降至 0；首轮不能行动；攻击 Impaired；不因非伤害性 HP 归零触发 Scars；以回合行动 + WIL Save 克服。官方未明确解除后 HP 是否恢复，记录为 GM_INFERENCE / unresolved，不擅自恢复 |
 | CRT-41 | PC 谨慎接近一个存在可见线索的陷阱 | CR-TRAPS / CR-INFO | 告知所有足以避免触发的可观察信息；不以感知检定扣留线索 |
 | CRT-42 | 未察觉角色走入一个未由虚构事实确定是否触发的陷阱 | CR-TRAPS | 通常按 2-in-6 触发；若虚构情境已决定结果则按情境，不额外随机 |
 | CRT-43 | 陷阱造成 4 点适用的物理伤害，PC 有 Armor 1 | CR-TRAPS / CR-ARM | Armor 仅在该陷阱类型可防护时减伤；伤害作用于适当属性而非 HP |
@@ -70,7 +70,8 @@
 ### HP 与伤害分支
 
 - HP_after > 0：常规 HP 更新。
-- PC HP_after = 0：调用 Scars，查表依据是本次 HP 损失量。
+- PC 因伤害 HP_after = 0：调用 Scars，查表依据是本次伤害造成的 HP 损失量。
+- 因库存满格、Panic 等非伤害规则效果 HP_after = 0：不调用 Scars；分别按对应规则维护状态。
 - HP_after < 0：计算溢出伤害，扣 STR，再以新 STR Save。
 - HP 已为 0 后再次受到伤害：进入低于 0 的分支，不重复当作刚好降至 0。
 
