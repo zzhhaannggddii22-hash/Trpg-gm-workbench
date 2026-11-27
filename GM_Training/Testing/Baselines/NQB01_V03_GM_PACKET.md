@@ -1,11 +1,11 @@
 # NQB-01 v0.3｜GM 专用场景资料：《雨脚客栈，雨未停》
 
 > Fixture: NQB-01 v0.3
-> Status: TEST-ONLY SCENE SOURCE / NOT A STANDALONE RUNTIME PROMPT / RUNTIME EXECUTION BLOCKED PENDING AN AUTHORIZED PRE-EXISTING TEST CAMPAIGN
+> Status: TEST-ONLY SCENE SOURCE / NOT A STANDALONE RUNTIME PROMPT / ISOLATED TEST CAMPAIGN REGISTERED / SESSION NOT STARTED
 > Canon: TEST_ONLY_NON_CANON
 > GM-only: 不得向玩家展示本文件。
 
-> **入口约束：** 本 Packet 仅是测试场景的 GM-only 来源资料，不是 Campaign、Module、Preflight、Runtime State 或 GM 运行环境。不得直接把它贴给模型后开始扮演。只有在用户授权使用一个已存在、已登记且具有独立隔离存储的 Test Campaign 后，才可按正式 GM Skill、Preflight、系统绑定和 Prep-to-Runtime 流程将其装配为测试场景。不得自行创建或拼装运行环境。当前没有已登记的专用 Test Campaign，故本 Packet 目前不可用于有效 Runtime 执行。
+> **入口约束：** 本 Packet 仅是测试场景的 GM-only 来源资料，不是独立 GM 运行环境。它已登记到用户授权建立的 `Campaigns/NQB01_Runtime_Test/` 测试 Campaign 下，必须通过正式 GM Skill、Preflight、系统绑定和 Prep-to-Runtime 流程装配；不得直接把它贴给模型后开始扮演。当前环境已建立，但 Prep QA / Preflight 与 Session 启动状态以测试 Campaign README 为准。
 
 ## 一、场景概况
 
@@ -19,8 +19,8 @@
 - 三张桌子分布在窗边、炉子旁和柜台斜对面。
 - 柜台后有热水壶、杯子、茶罐、账本和一只零钱盘。
 - 柜台后窄门通向厨房；厨房门边的地板有一处轻微渗水，暂时不影响通行。
-- 墙上挂着一张手写的路况便笺，内容是“北坡路面松软，推车慢行”；它是两小时前一名送货人留下的，不代表最新官方路况。
-- 门廊外停着一辆盖着防水布的手推车，属于来送货的周师傅。
+- 墙上挂着一张手写的路况便笺，内容是“北坡路面松软，推车慢行”；它约两小时前由一名身份未确认的送货人留下，没有署名，不代表最新官方路况。林秋记得有人留下便笺及大致时间，但说不出对方姓名；周师傅不是留下便笺的人，也不知道对方身份。
+- 门廊外停着一辆盖着防水布的手推车，属于来送货的周师傅。车上有已交付给客栈的日用品，也有一只尚未送往下一站“陈家杂货铺”的纸箱；该纸箱仍属于待送货物，不是客栈的货物。
 - 场景开始时玩家可以看到足够的空间锚点，但不要一次性罗列所有细节。
 
 ## 二、三条并行日常事务线
@@ -70,7 +70,7 @@
 - 林秋：在柜台附近整理杯具，厨房门边渗水尚未处理。
 - 周师傅：在门廊下检查被雨打湿的纸箱，手推车停在门廊外。
 - 许闻：坐在靠墙桌边，书放在手边，帆布包靠近椅脚。
-- 玩家：刚到门口，尚未决定坐哪里或与谁交谈。
+- 玩家：唐予安，休假期间私人出行的 Triangle Agency 外勤特工；当前没有执行机构任务。刚到门口，尚未决定坐哪里或与谁交谈。随身带着一把折叠雨伞、一件浅色防雨外套、钱包、个人手机、外部职业工作手机和小型随身包。完整 ARC 与机械数据见测试 Campaign 的 TEST_CHARACTER_SHEET.md。
 
 重要状态应随行动变化。普通背景细节无需全部记账，直到玩家关注或它影响行动。
 
