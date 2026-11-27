@@ -257,7 +257,7 @@ This protocol is DRAFT until behavioral validation passes. At minimum test:
 5. **GM initiative:** a valid opportunity is not silently ignored merely because the GM is waiting for the player to ask.
 6. **No arbitrary adversity:** no effect is spent without supported actor, motive/behavior, target, and rule basis.
 7. **Domain costs:** free 1/2/3 effects, triple-cost paid effects above 3, and no triple charge for free effects.
-8. **Cost-3 ambiguity:** no claim of unlimited repeated use at exactly 3 without an authoritative ruling.
+8. **Domain repeatability:** effects costing 3 or less are free and repeatable under the adopted runtime reading.
 9. **World materialization:** spend changes the relevant world state, not just the displayed balance.
 10. **No-target-Anomaly mission:** Chaos remains tracked and can be used only with an established cause.
 11. **Human-caused analogue:** similar event occurs without a Chaos spend when grounded in human behavior.
@@ -271,4 +271,4 @@ This protocol is DRAFT until behavioral validation passes. At minimum test:
 
 **Operational interpretation introduced here:** event-driven opportunity recognition; the minimal opportunity signals in §6; the requirement to materialize world-state changes; no per-message polling; event-field shape; validation suite. These are integration rules for executing the source faithfully, not claims that the rulebook itself specifies a formal software state machine.
 
-**Open source ambiguity:** printed page 156 says Domain effects costing 3 or less can manifest for free; printed page 161 says effects costing less than 3 can be used infinitely in the Domain. The unlimited-repeat boundary at exactly 3 is not silently resolved here.
+**Adopted runtime interpretation:** printed page 156 directly establishes that Domain effects costing 3 or less manifest for free. For execution, this protocol treats those free effects as repeatable; this is the selected operational reading of the difference in phrasing on printed page 161, not a claim that the two paragraphs use identical wording.
