@@ -1,6 +1,6 @@
 # Training & Runtime Quality Assurance｜训练与运行时质量保证
 
-> 版本：0.1
+> 版本：0.2
 > 建立基线：main@ac551b5e04d7a7c9dc5e3314e30be1658e019f5e（2026-11-26）
 > 状态：IMPLEMENTED AS GOVERNANCE / BEHAVIORAL VALIDATION PENDING
 > 适用范围：跨系统通用 GM 训练、叙事能力沉淀、能力迁移与实际运行质量审计
