@@ -4,7 +4,7 @@
 - 状态：**PASS（隔离文件系统协议测试）**
 - 测试对象：合成 Runtime State、Session Log、PREPARE manifest
 - 执行方式：独立临时目录；写入进程在指定提交点后由 `os._exit` 强制终止；随后由全新进程冷读取并恢复
-- 可重复脚本：[p1_0r_fault_harness.py](../Acceptance_Test_Fixtures/P1_0R/p1_0r_fault_harness.py)
+- 可重复脚本：[p1_0r_fault_harness.py](../../Acceptance_Test_Fixtures/P1_0R/p1_0r_fault_harness.py)
 
 ## 1. 测试目的
 
