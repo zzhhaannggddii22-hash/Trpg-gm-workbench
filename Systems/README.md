@@ -19,7 +19,7 @@ systems:
     status: candidate
 ```
 
-## 接入约定
+## 跨系统规则运行集成\n\n- [System Rule Runtime Integration Protocol](./SYSTEM_RULE_RUNTIME_INTEGRATION_PROTOCOL.md)：跨系统共享的规则运行集成契约。它只规定系统规则如何按触发进入运行、如何连接资源与世界状态，不包含任何具体游戏机制。\n\n## 接入约定
 
 每个系统目录必须有 README，记录正式名称、system_id、规则版本、权威来源、状态、规则索引、专属 Skill 与适配边界。
 
