@@ -37,6 +37,7 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 - [PREFLIGHT.md](./PREFLIGHT.md)：Cairn 专属开团前核验。
 - [Research/INITIAL_RESEARCH.md](./Research/INITIAL_RESEARCH.md)：设计研究、单人测试风险与短团候选。
 - [Testing/L3_NPC_PC_RESOURCE_AND_AUTONOMY_TEST_PLAN.md](./Testing/L3_NPC_PC_RESOURCE_AND_AUTONOMY_TEST_PLAN.md)：将 1–2 次短团同时用于 L3 NPC 的 PC 级资源与自主性验证。
+- [Testing/L3_NPC_SYNTHETIC_SELFPLAY_REPORT_2026-11-27.md](./Testing/L3_NPC_SYNTHETIC_SELFPLAY_REPORT_2026-11-27.md)：8 回合、3 分支的 L3 NPC 合成自运行报告。
 - [Testing/CORE_RULE_RUNTIME_REGRESSION_MATRIX.md](./Testing/CORE_RULE_RUNTIME_REGRESSION_MATRIX.md)：核心规则运行回归用例。
 - [Testing/CORE_RULE_RUNTIME_EXECUTION_REPORT_2026-11-27.md](./Testing/CORE_RULE_RUNTIME_EXECUTION_REPORT_2026-11-27.md)：63 项自执行回归记录与未决事项。
 - [Testing/CORE_RULE_RUNTIME_REGRESSION_MATRIX.md](./Testing/CORE_RULE_RUNTIME_REGRESSION_MATRIX.md)：核心规则运行顺序、边界与状态差分回归矩阵。
