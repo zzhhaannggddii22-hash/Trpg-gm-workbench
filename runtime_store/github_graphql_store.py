@@ -378,7 +378,12 @@ class GitHubGraphQLRuntimeStore:
             if existing is None and self._find_path_commit(self.operations_branch, path, None) is not None:
                 raise DisputedBatch("PREPARE path disappeared after a historical creation")
             if existing is not None:
-                current = json.loads(existing[0])
+                try:
+                    current = json.loads(existing[0])
+                    if not isinstance(current, dict):
+                        raise ValueError("PREPARE envelope must be an object")
+                except (json.JSONDecodeError, ValueError, TypeError) as exc:
+                    raise DisputedBatch("existing PREPARE record is malformed") from exc
                 if (current.get("batch_id") != batch_id
                         or current.get("manifest") != normalized
                         or current.get("manifest_fingerprint") != digest):
