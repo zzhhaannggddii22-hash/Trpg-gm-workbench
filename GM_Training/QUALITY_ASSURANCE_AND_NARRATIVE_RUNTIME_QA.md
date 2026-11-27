@@ -60,11 +60,11 @@
 
 现有重点夹具：
 - [NQB-01 低压叙事基准](./NARRATIVE_QUALITY_BASELINE.md) 及其训练记录；
-- [叙事训练成果向实际跑团迁移回归](./Acceptance_Test_Fixtures/NARRATIVE_RUNTIME_TRANSFER_REGRESSION_v1.md)；
-- [L3 NPC 主动性与离场连续性回归](./Acceptance_Test_Fixtures/L3_NPC_AUTONOMY_AND_DORMANT_CONTINUITY_REGRESSION_v1.md)；
+- [叙事训练成果向实际跑团迁移回归](./Testing/Fixtures/NARRATIVE_RUNTIME_TRANSFER_REGRESSION_v1.md)；
+- [L3 NPC 主动性与离场连续性回归](./Testing/Fixtures/L3_NPC_AUTONOMY_AND_DORMANT_CONTINUITY_REGRESSION_v1.md)；
 - [叙事运行单会话综合可执行伴随夹具](./Acceptance_Test_Fixtures/NARRATIVE_RUNTIME_SINGLE_SESSION_HARNESS_v1/README.md)；
-- [Narrative Stress Test 01](./Training_Logs/NARRATIVE_STRESS_TEST_01_DESIGN.md)；
-- [Context Assembly / Trace 回归夹具](./Acceptance_Test_Fixtures/CONTEXT_ASSEMBLY_TRACE_REGRESSION_v1.md)。
+- [Narrative Stress Test 01](./Testing/Reports/NARRATIVE_STRESS_TEST_01_DESIGN.md)；
+- [Context Assembly / Trace 回归夹具](./Testing/Fixtures/CONTEXT_ASSEMBLY_TRACE_REGRESSION_v1.md)。
 
 新增夹具前，必须先确认上述现有夹具是否能够覆盖问题；优先修订现有夹具，不为同一问题建立重复测试。
 
