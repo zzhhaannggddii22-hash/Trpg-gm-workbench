@@ -37,7 +37,7 @@
 
 - 已将当前可访问的 Cairn 官方上游 CAS-1 Markdown 原文完整归档至 SOURCE/CAS1_OFFICIAL_SOURCE.md，并保留作者、来源、检索日期及 CC-BY-SA 4.0 署名信息。
 - 已建立 GM_ONLY_PREP.md，覆盖地点、NPC、线索、事件时钟、旅行、危险、物品、规则路由、首次接触与未决项；玩家侧不得读取。
-- Cairn Press 2026-03-31 官方发布说明称已补入 Fasha HP 并修正事件时序；但当前官方上游 Markdown 的 Fasha 数据行仍缺 HP，且本轮未直接核验 PDF。Fasha HP 暂记 UNKNOWN，任何补值必须标记 GM_INFERENCE。
+- Cairn Press 2026-03-31 官方发布说明称已补入 Fasha HP 并修正事件时序；官方上游 Markdown 仍缺该数值。另一个 PDF 文本副本显示 Fasha 为 10 HP，因此当前按 GM_INFERENCE 暂用 10 HP，绝不标为官方 SOURCE；官方 PDF 仍待直接核验。
 - 模组旅行程序、Dungeon Events 与两个独立事件时钟已在 GM-only Prep 中明确分流；此前合成测试仍仅属于同一助手自审。
 - 本轮是 GM 自审与合成场景检查，不是独立盲测，也不是实际玩家 Session；不能据此宣称现场主持能力已经通过验证。
 - 角色卡相关的具体生存率与装备可行性尚未测试；本次模组备团不依赖任何未提供的人物属性或装备。
