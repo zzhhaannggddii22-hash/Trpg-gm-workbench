@@ -11,11 +11,16 @@
 
 ## B. 规则准备
 
+- [ ] 读取 `Rule_Reference/CORE_RULES_RUNTIME.md` 与 `RUNTIME_PROTOCOL.md`，确认本次运行调用版本。
+- [ ] 核心规则已按 Rule ID 规范化；常规行动不依赖实时网页搜索。
+- [ ] 标记本次冒险会用到的 PARTIAL / MODULE_DEPENDENT 条目，并提前核对对应官方 2e 原文/表格。
 - [ ] 核对玩家手册：角色创建、Background、属性、HP、库存、装备、法术书。
 - [ ] 核对核心规则：Saves、恢复、Deprivation、Armor、Reaction、Morale、Combat、Critical Damage、属性损伤、死亡、Retreat。
 - [ ] 核对监守手册：Dungeon Exploration、Wilderness Exploration、Pointcrawls、NPC Tables、Bestiary、Growth、Knowledge & Perception。
 - [ ] 所有关键规则均能回查官方英文 2e 原文；中文翻译差异已记录。
 - [ ] 模组使用的规则程序与其适用版本相符。
+- [ ] 确认 Runtime Snapshot 能记录时间阶段、Rule ID、待结算触发与资源差分。
+- [ ] 根据本次模组选择并执行核心规则回归矩阵中的适用用例；失败项修复或明确阻断后才能进入实测。
 
 ## C. 桌面与角色
 
