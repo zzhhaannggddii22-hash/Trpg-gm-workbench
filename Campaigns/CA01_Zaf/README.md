@@ -8,6 +8,11 @@
 - [Zaf｜人物卡与创建记录](./人物档案/Zaf_人物卡.md)
 - [凯瑟琳｜人物卡与创建记录](./人物档案/凯瑟琳_人物卡.md)
 
+## 跨战役基准快照
+- [扎雷克｜Triangle Agency 人物快照（2026-11-27）](./跨战役基准快照/TA_Zarek_2026-11-27_Snapshot.md)
+- [凯瑟琳｜Triangle Agency 人物快照（2026-11-27）](./跨战役基准快照/TA_Catherine_2026-11-27_Snapshot.md)
+- Twin Lakes 与 Triangle Agency 完全隔离；快照是 Twin Lakes 开始时的只读基准，详见 [SYSTEM_BINDING](./SYSTEM_BINDING.md)。
+
 ## 当前状态
 - Campaign 名称：Twin Lakes
 - 世界框架：VR 游戏世界
