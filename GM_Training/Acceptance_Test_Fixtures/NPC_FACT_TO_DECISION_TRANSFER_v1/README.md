@@ -7,7 +7,7 @@ This fixture tests whether NPC-established personal facts meaningfully influence
 - Test type: integrated synthetic regression
 - Execution mode: SINGLE_SESSION_SELF_TEST
 - Workbench under test: `2ba323418d0ae6bc4504bddebd107d2c6b8e6e00`
-- Fixture branch: `test/npc-facts-decision-transfer-2026-11-27`
+- Fixture branch: `test-npc-fact-to-decision-transfer-2026-11-27`
 - Start at: [START.md](./START.md)
 - Oracle: [ORACLE.md](./ORACLE.md), read only after all ACTION files have been executed
 
