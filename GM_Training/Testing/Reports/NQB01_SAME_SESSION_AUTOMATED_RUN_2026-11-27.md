@@ -10,7 +10,8 @@
 
 - Repository: `zzhhaannggddii22-hash/Trpg-gm-workbench`
 - Tested Workbench main commit: `99f41bd4dafd202c9d81430e4ca098356d8e3cc7`
-- QA execution prompt: current QA branch `qa/qa-system-acceptance-foundation-2026-11-27`
+- QA execution prompt at run time: branch `qa/qa-system-acceptance-foundation-2026-11-27`, Blob SHA `49d33cc58a4f3eadaedeb36580b5b4204d8dcb01`
+- 后续修订：执行提示已明确 Review Checklist 仅供审核者在执行完成后读取；本次运行实际也在 8 轮结束后才读取审核表，未在执行前使用评分标准。
 - 模拟玩家行动：8 轮；一条自然行动序列。
 - 本次仅执行模式 A；未执行模式 B 或 C。
 
