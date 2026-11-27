@@ -95,7 +95,38 @@ The 2026-11-27 independent report is treated as a defect lead list, not as autho
 | RES-01 | Duplicate Event ID / Idempotency Key | Synthetic state test | PASS | Duplicate retry no-op; incomplete write reconciled; conflicting before-value marked DISPUTED (SYN-01–04) |
 | PFG-01 | Check mandatory Player-Facing Gate loading and output filtering | Static inspection | PASS (STATIC ONLY) | Quick Reference requires the gate; Player Notes remains empty; no dynamic dialogue test executed |
 
-## 7. Desk simulation results (2026-11-27)\n\n| Test ID | Player action class | Result | Reason / boundary |\n|---|---|---|---|\n| DSK-01 | Choose among the documented entry routes | PASS | Each route has a distinct first-contact/source path; one PC does not require a second PC to enter |\n| DSK-02 | Bypass one anchor NPC | PARTIAL | Other clue-source categories remain; the skipped source's unique information is not automatically replaced |\n| DSK-03 | Bypass a different anchor NPC | PARTIAL | Alternative observation/NPC sources exist; exact clue parity and dependency costs remain unproven |\n| DSK-04 | Act on an incorrect hypothesis | PASS | World facts remain independent; GM procedure distinguishes player inference from confirmed fact |\n| DSK-05 | Use a non-prepared ability/action | BLOCKED | Ability-specific resolution and related v22 mechanics remain OPEN; no guessed ruling allowed |\n| DSK-06 | Choose rescue order or decline one objective | PARTIAL | Player choice is preserved; full action/resource/time cost and downstream feasibility remain unproven |\n| DSK-07 | Re-enter an already visited Sub-Reality | PASS | Source requires one d44 roll per prior entry and cumulative application; Runtime now stores entry count/history |\n| DSK-08 | Complete a rescue, then re-enter the station | PASS | Source trigger is explicit; event ID and checkpoint contract prevent duplicate trigger application |\n| DSK-09 | Proceed without NPC assistance | PARTIAL | One PC remains the only PC; information alternatives exist, but every core route's solo cost is not proven |\n| DSK-10 | Attempt a resource-intensive action with unknown current balances | BLOCKED | Unknown Harm/QA/Chaos/Time values stop dependent mechanics; unrelated narration remains available |\n\nDesk simulation: 10 scenarios executed; 4 PASS, 4 PARTIAL, 2 BLOCKED. This is not a full round-by-round GM/player simulation.\n\n## 8. Synthetic state tests\n\n| Test ID | Test | Result |\n|---|---|---|\n| SYN-01 | Apply a resource transaction once | PASS |\n| SYN-02 | Retry an already VERIFIED idempotency key | PASS — no second application |\n| SYN-03 | Recover an INCOMPLETE entry where target balance already equals expected after-value | PASS — mark VERIFIED without reapplying |\n| SYN-04 | Detect a conflicting before-value | PASS — mark DISPUTED, preserve actual value |\n| SYN-05 | Resume from checkpoint with applied and unapplied events | PASS — do not replay applied event |\n| SYN-06 | Re-enter Sub-Reality with cumulative d44 results | PASS — preserve prior rolls and append the required additional rolls |\n| SYN-07 | Prevent NPC knowledge without source event | PASS — reject unsourced knowledge |\n\nSynthetic tests: 7/7 PASS. These are executed state-model tests in the current work session, not an automated test suite committed to CI.\n\n## 9. Final status
+## 7. Desk simulation results (2026-11-27)
+
+| Test ID | Player action class | Result | Reason / boundary |
+|---|---|---|---|
+| DSK-01 | Choose among the documented entry routes | PASS | Each route has a distinct first-contact/source path; one PC does not require a second PC to enter |
+| DSK-02 | Bypass one anchor NPC | PARTIAL | Other clue-source categories remain; the skipped source's unique information is not automatically replaced |
+| DSK-03 | Bypass a different anchor NPC | PARTIAL | Alternative observation/NPC sources exist; exact clue parity and dependency costs remain unproven |
+| DSK-04 | Act on an incorrect hypothesis | PASS | World facts remain independent; GM procedure distinguishes player inference from confirmed fact |
+| DSK-05 | Use a non-prepared ability/action | BLOCKED | Ability-specific resolution and related v22 mechanics remain OPEN; no guessed ruling allowed |
+| DSK-06 | Choose rescue order or decline one objective | PARTIAL | Player choice is preserved; full action/resource/time cost and downstream feasibility remain unproven |
+| DSK-07 | Re-enter an already visited Sub-Reality | PASS | Source requires one d44 roll per prior entry and cumulative application; Runtime now stores entry count/history |
+| DSK-08 | Complete a rescue, then re-enter the station | PASS | Source trigger is explicit; event ID and checkpoint contract prevent duplicate trigger application |
+| DSK-09 | Proceed without NPC assistance | PARTIAL | One PC remains the only PC; information alternatives exist, but every core route's solo cost is not proven |
+| DSK-10 | Attempt a resource-intensive action with unknown current balances | BLOCKED | Unknown Harm/QA/Chaos/Time values stop dependent mechanics; unrelated narration remains available |
+
+Desk simulation: 10 scenarios executed; 4 PASS, 4 PARTIAL, 2 BLOCKED. This is not a full round-by-round GM/player simulation.
+
+## 8. Synthetic state tests
+
+| Test ID | Test | Result |
+|---|---|---|
+| SYN-01 | Apply a resource transaction once | PASS |
+| SYN-02 | Retry an already VERIFIED idempotency key | PASS — no second application |
+| SYN-03 | Recover an INCOMPLETE entry where target balance already equals expected after-value | PASS — mark VERIFIED without reapplying |
+| SYN-04 | Detect a conflicting before-value | PASS — mark DISPUTED, preserve actual value |
+| SYN-05 | Resume from checkpoint with applied and unapplied events | PASS — do not replay applied event |
+| SYN-06 | Re-enter Sub-Reality with cumulative d44 results | PASS — preserve prior rolls and append the required additional rolls |
+| SYN-07 | Prevent NPC knowledge without source event | PASS — reject unsourced knowledge |
+
+Synthetic tests: 7/7 PASS. These are executed state-model tests in the current work session, not an automated test suite committed to CI.
+
+## 9. Final status
 
 - Artifact：DELIVERED.
 - Prep design：REVIEWED.
