@@ -39,3 +39,10 @@ status: active
 当前 Campaign：[扎雷克战役](../../Campaigns/Zarek/README.md)  
 系统绑定：[SYSTEM_BINDING.md](../../Campaigns/Zarek/SYSTEM_BINDING.md)  
 多系统隔离协议：[SYSTEM_CONTEXT_PROTOCOL.md](../../SYSTEM_CONTEXT_PROTOCOL.md)
+
+
+## 掷骰与结果展示
+
+- [Rule_Reference/02_DICE_RESOLUTION_PROTOCOL.md](./Rule_Reference/02_DICE_RESOLUTION_PROTOCOL.md)：三角机构专用掷骰检定执行协议（设计稿）。
+- [Dice_UI/](./Dice_UI/README.md)：独立骰子结果展示组件契约与事件 Schema（设计稿）。
+- 跨系统调用纪律见 [GM_Training/ROLL_RESOLUTION_PROTOCOL.md](../../GM_Training/ROLL_RESOLUTION_PROTOCOL.md)。
