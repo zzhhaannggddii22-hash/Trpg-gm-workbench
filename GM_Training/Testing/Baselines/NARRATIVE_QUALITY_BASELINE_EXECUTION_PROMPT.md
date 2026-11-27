@@ -13,11 +13,17 @@ GitHub 仓库：`zzhhaannggddii22-hash/Trpg-gm-workbench`
 基线 ref：`main`
 被测 Workbench commit：`EXECUTOR MUST INSERT EXACT COMMIT SHA BEFORE RUN`
 
-所有文件读取必须显式使用上方固定的 Workbench commit SHA，不得只声明分支后依赖默认分支。请读取以下文件：
+所有文件读取必须显式使用上方固定的 Workbench commit SHA，不得只声明分支后依赖默认分支。
+
+**目标 GM 执行阶段读取：**
 1. `GM_Training/NARRATIVE_QUALITY_BASELINE.md`
 2. `GM_Training/Testing/Baselines/NARRATIVE_QUALITY_BASELINE_GM_PACKET.md`
 3. `GM_Training/Testing/Baselines/NARRATIVE_QUALITY_BASELINE_PLAYER_PROMPT.md`
+
+**审核者专用：**
 4. `GM_Training/Testing/Baselines/NARRATIVE_QUALITY_BASELINE_REVIEW_CHECKLIST.md`
+
+Review Checklist 是审核标准，不是 GM 执行输入。模式 A 只能在所有模拟行动与 GM 回复完成后读取；模式 B/C 的目标 Chat 不得读取，必须由与目标 Chat 分离的审核者在收到完整原始结果后读取。
 
 GM 专用资料只供主持侧使用。不得向玩家展示、复述或暗示其中未通过有效渠道开放的信息。玩家启动提示是玩家角色可获得的初始场景信息。
 
@@ -50,7 +56,7 @@ GM 专用资料只供主持侧使用。不得向玩家展示、复述或暗示�
 2. 目标 Chat 只接收本提示、指定版本的权威资料、GM Packet 与允许提供的测试输入；不得提供审核 Oracle、隐藏答案或评分标准。
 3. 目标 Chat 按模式 A 的自动化方法逐轮模拟玩家行动与 GM 响应；不要求用户逐回合输入。
 4. 目标 Chat 完成后输出完整原始行动/回应、状态账本、版本信息和实际读取证据；不得自称独立审核通过。
-5. 操作者将完整结果粘贴到与目标 Chat 分离的审核会话。审核者在收到原始结果后再读取 Oracle，独立检查硬门槛、评分和证据边界。
+5. 操作者将完整结果粘贴到与目标 Chat 分离的审核会话。审核者在收到原始结果后再读取 Review Checklist，独立检查硬门槛、评分和证据边界。
 6. 证据标记为“干净目标会话合成自动化 + 独立结果审核”。它仍不是真实玩家逐轮交互、真实线下团或隐藏平台内部机制证明。
 
 ### 模式 C：真实玩家逐回合验证（非自动化补充证据）
@@ -117,7 +123,7 @@ GM 专用资料只供主持侧使用。不得向玩家展示、复述或暗示�
 
 ## 五、启动与读取失败处理
 
-收到执行请求后，先读取本提示指定的四份资料，并核对分支。若无法读取任何一份关键资料，明确报告具体缺失，不要凭本提示补造 GM 专用资料。
+收到执行请求后，先读取本提示指定的三份主持资料，并核对精确 commit。若无法读取任何一份关键资料，明确报告具体缺失，不要凭本提示补造 GM 专用资料。Review Checklist 只在执行结束后由模式 A 自审或模式 B/C 的独立审核者读取。
 
 - 用户要求自动化自测或未指定模式：使用模式 A。
 - 用户明确要求干净目标 Chat 执行并回传独立审核：使用模式 B。
