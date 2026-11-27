@@ -15,18 +15,18 @@ runtime_ref: ../08_RUNTIME_STATE.md
 仓库：`zzhhaannggddii22-hash/triangle-agency-gm-workbench`
 
 先读取：
-1. `Campaigns/Zarek/模组/俯冲_Nosedive/README.md`
-2. `Campaigns/Zarek/模组/俯冲_Nosedive/08_RUNTIME_STATE.md`
-3. `Campaigns/Zarek/模组/俯冲_Nosedive/Sessions/SESSION_01.md`
-4. `Campaigns/Zarek/模组/俯冲_Nosedive/09_PLAYER_NOTES.md`
-5. `Campaigns/Zarek/模组/俯冲_Nosedive/03_NPC_BEHAVIOR_LEDGER.md`
-6. `Campaigns/Zarek/模组/俯冲_Nosedive/04_CLUE_AND_SOURCE_LEDGER.md`
-7. `Campaigns/Zarek/模组/俯冲_Nosedive/01_GM_PREP.md`（GM-only，严禁向玩家泄露隐藏真相）
-8. `Campaigns/Zarek/模组/俯冲_Nosedive/12_NPC_FIRST_CONTACT_CARDS.md`
-9. `Campaigns/Zarek/人物档案/扎雷克_正式人物卡.md`
-10. `Campaigns/Zarek/人物档案/扎雷克_俯冲_Session_01_场次副本.md`
-11. `Campaigns/Zarek/人物档案/凯瑟琳_长期人物档案.md`
-12. `Campaigns/Zarek/战役记录/战役交接与当前状态.md`
+1. `Campaigns/TA01_Zarek/模组/俯冲_Nosedive/README.md`
+2. `Campaigns/TA01_Zarek/模组/俯冲_Nosedive/08_RUNTIME_STATE.md`
+3. `Campaigns/TA01_Zarek/模组/俯冲_Nosedive/Sessions/SESSION_01.md`
+4. `Campaigns/TA01_Zarek/模组/俯冲_Nosedive/09_PLAYER_NOTES.md`
+5. `Campaigns/TA01_Zarek/模组/俯冲_Nosedive/03_NPC_BEHAVIOR_LEDGER.md`
+6. `Campaigns/TA01_Zarek/模组/俯冲_Nosedive/04_CLUE_AND_SOURCE_LEDGER.md`
+7. `Campaigns/TA01_Zarek/模组/俯冲_Nosedive/01_GM_PREP.md`（GM-only，严禁向玩家泄露隐藏真相）
+8. `Campaigns/TA01_Zarek/模组/俯冲_Nosedive/12_NPC_FIRST_CONTACT_CARDS.md`
+9. `Campaigns/TA01_Zarek/人物档案/扎雷克_正式人物卡.md`
+10. `Campaigns/TA01_Zarek/人物档案/扎雷克_俯冲_Session_01_场次副本.md`
+11. `Campaigns/TA01_Zarek/人物档案/凯瑟琳_长期人物档案.md`
+12. `Campaigns/TA01_Zarek/战役记录/战役交接与当前状态.md`
 
 如需要裁定规则，查用户指定的 Triangle Agency 中文 v22 原文；不要凭印象补规则。若文件之间冲突，以用户明确确认的事实、最新 Runtime State 与 Session Log 为准，并先解决冲突再叙事。不要把历史快照当当前状态。
 
