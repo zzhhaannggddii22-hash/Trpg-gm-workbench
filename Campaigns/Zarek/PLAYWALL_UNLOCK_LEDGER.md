@@ -3,7 +3,7 @@
 > Status: ACTIVE LEDGER  
 > System: `triangle_agency` / 《三角机构》中文 v22  
 > Scope: Zarek's complete Work/Life Balance mark history and Playwall authorization.  
-> Information class: GM-only. Player-facing disclosures must be separately projected.
+> Information class: GM-only. Single-player default: no separate player-private-read or player-sharing receipt is required; player-facing projections still exclude genuinely GM-only secrets.
 
 ## 1. Current state (2026-11-27)
 
@@ -73,7 +73,7 @@ Evidence: `Campaigns/Zarek/模组/死寂/04_REWARDS_AND_SUPERLATIVES.md` records
 
 Evidence: `Campaigns/Zarek/模组/冰淇淋车_Ice_Cream_Truck/03_RUNTIME_STATE.md` and the formal character card record the third Competency mark as the Associate promotion / A3 unlock, followed by the fourth Time Competency mark. The same Runtime record documents the A3 Vault Request and the designed/ purchased requisition.
 
-**Audit result:** A3 was correctly unlocked at the third Competency mark, which was the Ice Cream Truck Mission MVP free mark—not the subsequent Time mark. The A3 promotion and Vault Request effects were substantively applied. The historical files do not contain a separate timestamped “A3 privately read” receipt or a verbatim player disclosure record; therefore the read itself is **NOT_SEPARATELY_RECORDED**, while the unlock and downstream A3 use are supported. This is an evidence/traceability gap, not a confirmed missed unlock or omitted A3 benefit.
+**Audit result:** A3 was correctly unlocked at the third Competency mark, which was the Ice Cream Truck Mission MVP free mark—not the subsequent Time mark. The A3 promotion and Vault Request effects were substantively applied. The historical files do not contain a separate timestamped “A3 privately read” receipt or a verbatim player disclosure record. Under the single-player execution mode now adopted, neither is a required progression record. The A3 unlock and downstream A3 use are supported; no missed unlock or omitted A3 benefit is identified.
 
 ### 3.3 Nosedive — third formal module
 
@@ -130,9 +130,8 @@ playwall:
   code: NONE
   authorization: NO_CODE | UNLOCKED | BLOCKED_OR_UNKNOWN
   source_ref: null
-  player_private_read_status: NOT_APPLICABLE | CONFIRMED | NOT_CONFIRMED | UNKNOWN
+  retrieval_status: NOT_APPLICABLE | RETRIEVED | BLOCKED_OR_UNKNOWN
   effect_status: NOT_APPLICABLE | APPLIED | PARTIAL | DEFERRED | UNKNOWN
-  player_shared_information_status: NOT_APPLICABLE | SHARED | NOT_SHARED | UNKNOWN
 evidence_refs: []
 notes: ""
 ```

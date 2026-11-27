@@ -51,13 +51,15 @@ For each marked box, record and resolve:
 2. **Mark source**: TIME_SPEND / MISSION_MVP / PROBATION / OTHER_RULE.
 3. **Code printed in that exact box**: exact code or NONE.
 4. **Authorization result**: UNLOCKED / NO_CODE / BLOCKED_OR_UNKNOWN.
-5. If unlocked, retrieve **only that exact document** from the authorized v22 source.
-6. Authorize the player to find and privately read **only that exact document**, as the rulebook directs. Playwall documents are personal material; the player controls what they share. The GM must not automatically narrate or disclose the document's full contents.
-7. The GM may consult only the minimum necessary material to adjudicate an immediate mechanical effect or prepare a required scene. Preserve GM-only information boundaries and do not expose neighboring/locked documents.
-8. Apply only effects whose prerequisites are met. Do not silently grant future, conditional, or purchasable benefits.
-9. Record whether the player was authorized and privately read the document, what effects were applied or deferred, and what the player chose to share. If the player has not confirmed reading, record NOT_CONFIRMED rather than assuming.
+5. If unlocked, retrieve **only that exact document** from the authorized v22 source and verify its identity/version.
+6. Resolve the document's listed benefits and conditions. Apply only effects whose prerequisites are met; record effects as APPLIED / PARTIAL / DEFERRED / NOT_APPLICABLE / UNKNOWN. Do not silently grant future, conditional, or purchasable benefits.
+7. Preserve GM-only information boundaries in player-facing narration and notes. Do not expose neighboring or locked documents, and do not turn document retrieval into automatic disclosure of every GM-only detail.
 
-An unlock grants access; it does not imply that the player has shared the document's contents with the GM or other players. Keep the player's private reading, player-shared information, GM adjudication notes, and Player Notes as separate information states.
+### Single-player default
+
+This Campaign framework currently runs with one player. Once a code is unlocked, the GM may retrieve and read the **entire exact authorized document** directly, use it to adjudicate the character's benefits, and prepare any required scene. Do not wait for a separate player-private-read confirmation or track whether the player chose to share the document with other players; neither is a progression gate in a one-player game. Present the information and effects that belong in the player's experience at the appropriate time, while keeping genuinely GM-only secrets and future conditional content within their normal boundaries.
+
+The rulebook's private-reading and player-controlled-sharing distinction remains the default for multiplayer tables. If a Campaign later becomes multiplayer, restore that table's player-private access and disclosure handling explicitly. This single-player simplification changes recordkeeping and execution only; it does **not** change which box unlocks a document, permit browsing adjacent codes, or waive any document prerequisites.
 
 If a newly authorized document cannot be retrieved or its source/version cannot be verified, record BLOCKED_OR_UNKNOWN and pause only effects dependent on it. Do not infer the content from a later document, a wiki, model memory, or an adjacent code.
 
@@ -96,12 +98,11 @@ Each mark event must preserve:
 - cross-outs applied to the other tracks, including exact positions;
 - track benefit and its application status;
 - exact Playwall code or NONE;
-- authorization, source document/version, retrieval status, and player private-read status (CONFIRMED / NOT_CONFIRMED / UNKNOWN);
-- document effects: APPLIED / PARTIAL / DEFERRED / NOT_APPLICABLE / UNKNOWN;
-- player-shared information status (SHARED / NOT_SHARED / UNKNOWN), distinct from private reading, plus evidence reference;
+- authorization, source document/version, and retrieval status;
+- document effects: APPLIED / PARTIAL / DEFERRED / NOT_APPLICABLE / UNKNOWN, with evidence for consequential applications;
 - character-sheet / Runtime / Player Notes synchronization references.
 
-Never backfill a missing historical read, application, presentation, or player choice. Use UNKNOWN / NOT_RECORDED where evidence is absent. Corrections are append-only; do not erase the original history.
+Do not invent historical applications or player choices. In the single-player default, a separate private-read receipt or player-sharing record is not required; retain UNKNOWN / NOT_RECORDED only for facts that materially affect authorization, effects, or campaign continuity. Corrections are append-only; do not erase the original history.
 
 ## 7. Failure handling
 
