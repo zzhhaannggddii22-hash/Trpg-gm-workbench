@@ -22,7 +22,7 @@ GM 可要求补充因果链，并对相关 Quality 有最终决定权。满足�
 
 ### Anomaly Ability
 每次必须读取具体能力完整条文，核对当前角色 ARC、解锁资格、Trigger/Cost、Quality、成功/失败、额外 3、范围、持续时间和例外。资料或资格未核验时标记 `UNSUPPORTED_PENDING_RULE_REVIEW`，不得套用 Ask 的因果链或失败后果。
-中文 v22 当前可用能力规则页已删除能力额外效果中的 `On Triscendence`，不得擅自恢复该项能力专属效果。基础 Triscendence 与能力额外效果分开核验。
+中文 v22 基础异常能力规则页列出的三种当前获准基础能力，已删除能力额外效果中的 `On Triscendence`，不得擅自恢复该项基础能力专属效果。**此结论不代替对 Playwall 解锁文档的逐份核验**；Playwall 文档若包含专属触发，仍须按当前 Playwall 协议读取其完整原文。基础 Triscendence 与能力额外效果分开核验。
 
 ### Conflict Resolution
 直接冲突迹象包括能力阻止对方达成目标、破坏对方目标、循环争执无法推进或特工间暴力。直接冲突期间手册其他规则不再适用：
@@ -50,4 +50,4 @@ Zarek Q04 仅当当前绑定为 `triangle_agency` / `中文 v22` / `zarek` 且 B
 不建立 Dice Ledger。沿用 Runtime §3 稳定事件、当前模组 Resource Ledger、Session Log Entry ID 引用、Runtime State 不存资源余额、Session 结束更新正式人物卡快照，以及 Runtime §14.14 字段级持久化证明。重试不重掷、不重复扣费/发奖。玩家投影按 Runtime §14.19 单一 `player_reply_payload`。
 
 ## Playwall 暂缓
-本轮不实现依赖 Playwall 解锁或专属条文的资格、特殊骰型、额外骰/3、成本时点、免掷、替代成功条件及覆盖。依赖此范围时使用 `UNSUPPORTED_PENDING_RULE_REVIEW`，不得以基础能力路径回退。待办见 `PLAYWALL_DEFERRED_REGISTER.md`。
+Playwall 解锁、精确文档读取和效果处理继续遵循当前 Campaign 的 Playwall 协议；Zarek 单人团在代码解锁后，由 GM 读取对应完整文档并处理其适用效果，不要求额外的玩家私读确认或分享回执，同时继续保护真正的 GM-only 信息，不得读取相邻/未解锁文档。本轮暂缓的是**Playwall 专属能力机制与本骰子结算管线的自动化整合**，包括特殊骰型、额外骰/3、成本时点、免掷、替代成功条件，以及对 Burnout/QA/Triscendence/Stability/Chaos 的覆盖。遇到这类未整合的骰子分支时，按现有 Playwall 协议完成授权文档读取；只暂停依赖该专属骰子机制的子结算，标记 `UNSUPPORTED_PENDING_RULE_REVIEW`，不得套用普通能力流程或猜测。待办见 `PLAYWALL_DEFERRED_REGISTER.md`；本登记不覆盖或关闭现有 Playwall 解锁/读取流程。
