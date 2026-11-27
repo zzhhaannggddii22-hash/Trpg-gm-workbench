@@ -76,7 +76,9 @@ Run separate subcases:
 
 ### C-09 — Domain free effects are repeatable at costs ≤3
 
-**Initial state:** Active Anomaly, Agents in Domain; a prepared valid effect costs exactly 3 Chaos and is used more than once.
+**Campaign Binding:** This is a synthetic Zarek Campaign fixture. Its approved Campaign ruling Q01 is active: Domain effects costing 3 or less are free and repeatable within the Domain. Do not generalize Q01 to other Campaigns.
+
+**Initial state:** Active mission; active Anomaly; Agents and the target are inside the Anomaly's Domain; verified Chaos Pool = 6. A prepared, valid 3-cost effect targeting an object inside the Domain is used twice as two distinct actions.
 
 ### C-10 — No target Anomaly
 
@@ -212,13 +214,13 @@ Host action: fail checkpoint persistence after delivery, then recover and retry.
 
 ## R-13｜Multi-turn Domain expansion
 
-Initial state: active mission; verified Pool 20; Domain initially contains Room-1 only. Room-2 is outside the Domain. A legal Expand effect is selected and its cost is fully payable.
+Initial state: active mission; verified Pool 20; the Domain contains Room-1 only. Room-1 and Room-2 are adjacent rooms on the same floor; Room-2 is immediately outside the current Domain boundary. Room-3 is a separate room on the same floor, not adjacent to Room-1 or Room-2, and is outside the Domain. Each room has one door: Door-1, Door-2 and Door-3 respectively; all doors are OPEN. The Anomaly has a valid, selected Expand effect whose exact target is Room-2; its cost is verified and fully payable from Pool 20.
 
 Sequence:
-1. Resolve Expand to Room-2.
+1. Resolve the selected Expand effect, targeting Room-2. On successful commitment, update Domain membership so Room-1 and Room-2 are inside; Room-3 remains outside.
 2. Perform an unrelated conversation in Room-1.
-3. Attempt a legal 2-cost effect in Room-2.
-4. Attempt a legal 2-cost effect in Room-3, which was never added to the Domain.
+3. In Room-2, resolve a valid 2-cost Distort targeting Door-2 (OPEN → LOCKED).
+4. In Room-3, resolve a valid 2-cost Distort targeting Door-3 (OPEN → LOCKED).
 
 ## R-14｜Minor Anomaly persistence across absence and Session boundary
 
@@ -241,7 +243,7 @@ Sequence:
 
 ## R-16｜Duplicate Module Closeout
 
-Initial state: Mission-C is active; verified Pool 7; all entries are reconciled. The same closeout request is submitted twice using the same source closeout event.
+Initial state: synthetic Campaign; Campaign Branch Loose Ends = 1 (verified and unchanged throughout this fixture). Mission-C is active with verified Pool 7; all entries are reconciled. Assign the closeout source event identity `CLOSEOUT-MISSION-C-01`. The same closeout request is submitted twice using this same source event identity. If next-mission preparation is performed, it must read the supplied Campaign total of 1 and initialize a fresh Pool independently; do not carry Mission-C's Pool forward.
 
 Player input: “Close the mission and prepare the next one.”
 
@@ -273,11 +275,9 @@ Player input: “Apply the confirmed Branch-state change and continue the missio
 
 ## R-20｜Loose Ends 76 to 77
 
-Initial state: active mission; Campaign Branch Loose Ends 76. A verified Campaign event adds 1 Loose End during the mission.
+Initial state: synthetic Campaign; active mission; Campaign Branch Loose Ends = 76. A verified Campaign event with identity `BRANCH-EVENT-R20-01` adds exactly 1 Loose End, moving the total to 77.
 
-**Required source:** Read repository `p33333333333333l/triangle-agency-ai-zh` at fixed v22 commit `7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1`, file `最终交付_v22/triangle_agency_zh.md`, section `W7：这都是你的错（This is Your Fault）`. The `source-file: 07_playwalled_documents/309_w7_this_is_your_fault.md` line is provenance metadata embedded in the merged master file; it is not a separately fetchable path in this repository. Do not search for that marker as an independent file.
-
-**W7 execution brief (GM-only test material):** The Branch region is removed from existence. Reality moves to fill the resulting gap; people who remain forget the former home and cannot perceive the gap. The responsible field team must notify the wider Agency community that its Branch no longer exists, complete the official memo fields (Region, Branch, egregious Loose-End-generating examples with sensitive/Playwall details redacted, GM name, Agent names and ranks, and any additional responsible parties), and share the memo with all reachable Agency colleagues. Treat the memo and notification as required W7 follow-through, not as an optional narrative flourish.
+**Required source:** Independently read repository `p33333333333333l/triangle-agency-ai-zh` at fixed v22 commit `7f6d52f40bbd3ff1a6c383ba2431c9aecda283b1`, file `最终交付_v22/triangle_agency_zh.md`, and locate section `W7：这都是你的错（This is Your Fault）`. The `source-file: 07_playwalled_documents/309_w7_this_is_your_fault.md` line is provenance metadata embedded in the merged master file; it is not a separately fetchable path in this repository. Do not search for that marker as an independent file. Read the W7 section itself and determine the required procedure from the source. Do not use an execution summary, answer key, or other derived description.
 
 Player input: “Apply the confirmed Branch-state change.”
 
@@ -320,7 +320,9 @@ Sequence:
 
 ## R-25｜Zarek Q06 ordinary weather does not trigger Weather Events
 
-Initial state: Zarek Campaign Binding selects Q06. Campaign Loose Ends is 11, so the v22 table returns Starting Chaos 5 and Weather Event count 1. The in-fiction weather is ordinary light rain, with no extreme or materially mission-relevant condition.
+**Campaign Binding:** Synthetic Zarek Campaign. The binding explicitly includes approved ruling `Q06`, scope `CAMPAIGN`, approved by the user on 2026-11-27 and effective from 2026-11-27. Q06 states: only particularly extreme weather that is materially relevant to the current mission triggers the v22 Weather Events procedure; ordinary weather does not trigger Weather Event rolls. This is a Campaign-scoped override, not a change to the v22 default for other Campaigns.
+
+**Initial state:** Campaign Branch Loose Ends = 11 (verified). The v22 mission-start table therefore returns Starting Chaos 5 and Weather Event count 1. The in-fiction weather is ordinary light rain, with no extreme or materially mission-relevant condition. No other weather trigger or Campaign override applies.
 
 Player input: “Complete mission preparation and begin the mission.”
 
