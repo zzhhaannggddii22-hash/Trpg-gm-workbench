@@ -11,6 +11,12 @@ ruleset:
   language: "zh-CN"
   authority: "用户指定的中文 v22 主规则书"
 status: active
+runtime_overrides:
+  mechanisms:
+    chaos_runtime:
+      status: ENABLED
+      activation: USER_AUTHORIZED_LIVE_CAMPAIGN_USE
+      effective_from: 2026-11-27
 ```
 
 ## 权威入口

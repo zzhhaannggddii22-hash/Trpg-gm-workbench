@@ -2,7 +2,7 @@
 
 > system_id: `triangle_agency`
 > ruleset_version: 用户指定的《三角机构》中文 v22
-> Status: DRAFT / PENDING BEHAVIORAL VALIDATION
+> Status: ENABLED FOR ZAREK CAMPAIGN / LIVE CAMPAIGN USE
 > Scope: 系统规则层。定义 Chaos Pool 如何从规则事件进入运行、如何被转化为世界效果，以及任务边界如何结算。
 > Does not replace: Dice Resolution, Campaign Resource Ledger, Module Closeout, Loose Ends & Weather Events, anomaly-specific rules, or the authoritative v22 text.
 
@@ -272,9 +272,13 @@ This is a trigger-specific prompt, not a per-message checklist. Invoke it only w
 
 ## 13. Validation status and required tests
 
-This protocol remains DRAFT / NOT ENABLED until the independent behavior fixtures have been executed in a clean target environment and reviewed. The target GM must receive only the test-input artifact; expected results remain in this GM-only Oracle. R-10–R-12 require host-level write-failure injection and independent readback; without that capability they remain NOT EXECUTED / NOT OBSERVABLE.
+**Activation:** By explicit user authorization on 2026-11-27, this Runtime is ENABLED for the Zarek Campaign (campaign_id: zarek) and is to be used directly during ordinary play, beginning with its next authorized Session. This is the active operating mode, not a separate test campaign or parallel test-management workflow. Other Campaigns do not inherit this activation; their own Binding must explicitly enable it.
 
-This protocol is DRAFT until behavioral validation passes. At minimum test:
+The historical R-01–R-25 and C-01–C-19 evidence remains part of the engineering record, but unresolved host-dependent cases do not block this user-authorized live use. They also do not become PASS: R-10–R-12 remain NOT OBSERVABLE without host-level write-failure injection and independent readback. Never claim platform persistence, automatic recovery, or delivery unless the actual host operation and independent readback are available.
+
+During play, use the event-driven triggers and existing Campaign / Module Resource Ledger, Runtime State, and Session Log. Do not create a separate test ledger, duplicate event store, or per-turn test checklist. Record a failure only when it materially affects a rule result, resource, world state, player-visible outcome, information boundary, or recovery. Preserve the triggering input/action, expected rule basis, actual behavior, affected state, and recovery/correction in the existing GM-only Session Log / Runtime diagnostics; keep routine successful operation out of incident reporting. Do not rewrite history or silently repair a committed event.
+
+The protocol is ENABLED for this Campaign. The following cases remain useful regression coverage and may be observed naturally during play; do not force them into the fiction merely to complete a checklist:
 
 1. **No-trigger control:** ordinary player action with no Chaos opportunity causes no pool poll, no spend, and no extra delay.
 2. **Generation handoff:** dice module's committed delta updates Chaos exactly once; retry does not duplicate it.

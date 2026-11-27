@@ -39,8 +39,9 @@ runtime_dispatch:
   progression_entry: Systems/Triangle_Agency/Rule_Reference/02_PLAYWALL_UNLOCK_AND_INTERMISSION_PROTOCOL.md
   mechanisms:
     chaos_runtime:
-      status: DISABLED
-      readiness: DRAFT_PENDING_BEHAVIORAL_VALIDATION
+      status: ENABLED
+      scope: CAMPAIGN_BINDING_OPT_IN
+      readiness: LIVE_CAMPAIGN_USE
       entry: Systems/Triangle_Agency/Rule_Reference/03_CHAOS_RUNTIME_PROTOCOL.md
     dice_resolution:
       status: DISABLED
@@ -48,7 +49,7 @@ runtime_dispatch:
       entry: Systems/Triangle_Agency/Rule_Reference/02_DICE_RESOLUTION_PROTOCOL.md
 ```
 
-`DISABLED` 表示机制虽已定义但不得作为正式运行时执行。Chaos Runtime 的具体验收门槛以其协议 §13 和独立验收记录为准；本 README 的登记不构成启用授权。Playwall 解锁、文档读取与非骰子效果仍按 progression_entry 正常执行；骰子专属能力整合的暂缓范围见 `PLAYWALL_DEFERRED_REGISTER.md`。
+Chaos Runtime 已具备系统级运行入口，但仅在 Campaign Binding 明确启用时执行；未显式启用的 Triangle Agency Campaign 仍不得加载。扎雷克 Campaign 已按用户授权启用。未验证的宿主持久化/故障恢复能力不得伪称可用。Playwall 解锁、文档读取与非骰子效果仍按 progression_entry 正常执行；骰子专属能力整合的暂缓范围见 `PLAYWALL_DEFERRED_REGISTER.md`。
 
 ## 系统边界
 
