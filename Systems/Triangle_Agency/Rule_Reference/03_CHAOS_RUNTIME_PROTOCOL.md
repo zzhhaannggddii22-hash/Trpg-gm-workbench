@@ -66,9 +66,16 @@ The roll-resolution module owns the standard roll's generation calculation and r
 
 ## 5. Starting Chaos and Branch pressure
 
-Chaos at mission start may be influenced by Branch Loose Ends. Do not infer the value from a smooth formula or extrapolate between rows.
+The v22 source includes a Branch Loose Ends table that relates regional Loose Ends to starting environmental Chaos (printed page 165). This is the **system-level default**. It is not permission to ignore the active Campaign Binding or a specifically approved Campaign adaptation.
 
-For v22, consult the current Branch Loose Ends table in the active system source. The printed page 165 table lists these thresholds:
+At mission setup, resolve the value in this order:
+
+1. Read the active Campaign Binding and its approved adjudication entry.
+2. If an explicit, valid Campaign-scoped ruling overrides the v22 starting-Chaos table, apply that ruling only within its declared scope.
+3. Otherwise, use the v22 Branch Loose Ends table and the verified current Branch count.
+4. If the Binding, adjudication record, module prep, or source interpretation conflict, mark the starting value PENDING / DISPUTED and resolve the provenance before opening the Pool. Do not silently choose 0 or infer a value.
+
+The printed page 165 table lists these rows:
 
 | Branch Loose Ends | Starting Chaos |
 |---:|---:|
@@ -78,11 +85,14 @@ For v22, consult the current Branch Loose Ends table in the active system source
 | 33 | 15 |
 | 44 | 20 |
 | 55 | 25 |
-| 66+ | N/A in the table; mission-ending / retirement rules apply |
+| 66 | N/A; mission-ending / retirement rules apply |
+| 77 | N/A; regional removal rule applies |
 
-The exact current Loose Ends count and any immediate Weather Event changes must be verified at mission setup. An escaped Anomaly adds 7 Loose Ends to the Branch total; this is not itself a direct +7 Chaos event. Starting Chaos is derived from the applicable table at mission setup.
+Do not invent a smooth formula or extrapolate beyond the printed table. If the current Loose Ends count falls between listed rows and the table's band/threshold interpretation is not established by the active source, verify that interpretation before assigning a value.
 
-Loose Ends / Weather Events remain a separate system subsystem. This protocol consumes their verified starting-Chaos result and must not duplicate their roll, escalation, removal, or retirement procedures.
+An escaped Anomaly adds 7 Loose Ends to the Branch total; this is not itself a direct +7 Chaos event. Loose Ends / Weather Events remain a separate system subsystem. This protocol consumes their verified starting-Chaos result and must not duplicate their roll, escalation, removal, or retirement procedures.
+
+**Known provenance issue to preserve for review:** the current Zarek Campaign Binding records a default ordinary Chaos Pool start of 0 unless the module says otherwise, while Bower Street prep records a concern that the v22 Branch Loose Ends starting-Chaos rule may need to be reconciled and that the 0 default was not represented in Q01–Q04. This is a Campaign-layer authority/provenance issue, not a reason to rewrite the system rule. Before applying it in a future Zarek module, verify that the 0 default has a valid Campaign-scoped approval record or resolve the discrepancy. Do not migrate this Zarek default to another Campaign.
 
 ## 6. When Chaos becomes an active world mechanism
 
