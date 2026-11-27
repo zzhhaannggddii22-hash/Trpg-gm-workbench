@@ -81,7 +81,7 @@
 
 索引必须支持从运行中的实体反查权威资料；同一实体只保留一个规范 ID。若一个文件已经是某项事实的权威来源，其他文件只引用，不另写一套副本。
 
-## 4. Prep QA 与 Preflight：备团阶段和运行启动阶段
+## 4. Prep Rule Validation、Prep QA 与 Preflight：备团验收和运行启动阶段
 
 两者职责不同，处于同一项目生命周期的不同阶段：
 
@@ -328,6 +328,9 @@ Handoff 是恢复入口，不是独立权威状态，不得凌驾于 Campaign Bi
 - 多个会话并行写入时，以最新 main HEAD 为唯一合并基线；先比较、再整合，保留两边有效变更和历史记录。
 
 
+### 12.4 交付关闭条件
+
+
 ### 12.5 部分写入、并发与提交事务契约
 
 “同一交付批次”必须具备可判定的事务边界：
@@ -342,7 +345,6 @@ Handoff 是恢复入口，不是独立权威状态，不得凌驾于 Campaign Bi
 
 Delivery Manifest 至少包含 Delivery ID、Base Commit、Change Set、Artifact Commit、Readback Results、Gate Results、Open Items、Acceptance Owner。最终 Commit SHA 可由后续验收记录引用，避免 Commit 自引用。
 
-### 12.4 交付关闭条件
 
 交接只有在以下条件全部满足后才可标记 COMPLETE：
 - 模组文件已写入目标分支并回读；
