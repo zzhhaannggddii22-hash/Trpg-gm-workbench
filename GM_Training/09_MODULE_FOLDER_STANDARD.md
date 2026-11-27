@@ -111,7 +111,7 @@
 - NPC 获得信息必须有实际来源；不能因为 GM 知道就自动知道。
 - 长期 NPC 的经历、记忆、物品、系统资源/伤害状态与关系变化必须进入其长期档案或战役交接。
 - Session 结束后核对 Resource Ledger 与 Session Log，再更新正式人物卡快照、Runtime State、Player Notes，以及必要的战役持续状态；不在多个文件重复记录同一资源余额。系统明确要求按 Session 结算的项目照常结算。
-- Module 结团后完成模组级结算记录、系统定义的后续威胁/未决状态、整体奖励与后果、最终 CANON 归档和完整 GM 复盘；单 Session 模组在本场结束时合并执行。
+- Module 结团按 [Module Closeout & Resource Reconciliation Protocol](./MODULE_CLOSEOUT_AND_RESOURCE_RECONCILIATION_PROTOCOL.md) 执行；完成系统定义的后续威胁/未决状态、整体奖励与后果、最终 CANON 归档和最终发布。Postmortem 独立、可选、只读且非阻塞；单 Session 模组在本场结束时合并执行结团事务。
 - 将本场复盘行动项转化为下一次 Preflight 检查。
 - 完成后回读关键文件，确认链接、状态与索引没有冲突。
 
@@ -254,6 +254,15 @@ Session Log 记录事件历史；Runtime State 记录当前值。某项变化写
 - 每次资源事件发生时，按 §13 的交易契约即时记录；结团对账不能替代实时记账。
 - 自动恢复型资源的历史消耗仍可供审计；恢复不抹除流水。
 - 历史记录缺失时，区分“当前状态已由权威来源确认”和“历史流水不完整”；不得用前者伪造后者。
+
+## 12.4 Module 结团事务与跨模组交接（v0.3）
+
+- Module 结团事务、稳定 Operation Identity、PREPARE Manifest 冷发现、部分写入恢复、最终 CLOSED 发布边界，统一遵循 [Module Closeout & Resource Reconciliation Protocol](./MODULE_CLOSEOUT_AND_RESOURCE_RECONCILIATION_PROTOCOL.md)。
+- 资源作用域和 Resource Ledger 的唯一权威原则仍按本节 §12.1–12.3 执行；本协议不要求为所有临时资源追算无意义的跨模组余额，也不要求把资源流水复制到 Runtime State 或人物卡。
+- PREPARE Manifest 未发布时，已发布检查点仍是正式读者状态；但新会话必须查询活动 Operation/Manifest，不能仅凭旧检查点认定没有待结团事务。
+- 结团最终发布必须同时确立结团结果和 Module CLOSED；Postmortem 未完成不阻塞关闭。
+- 源 Module CLOSED 与目的 Module READY 分离。下一模组必须从最终已发布检查点核对其自身依赖字段；未知字段只阻止依赖它的项目。
+- README、Campaign 索引与 Handoff 只作发布状态投影，不得成为第二个生命周期权威。
 
 ## 13. 备团交付门禁与防止“口头完成”（2026-11-27）
 

@@ -11,7 +11,8 @@ import unittest
 import yaml
 
 from navigation import scan_links
-from reference_runtime import projection, route_incident, write_json
+from reference_runtime import (CloseoutBatch, fields_known, projection, route_incident,
+                               validate_dependency_graph, write_json)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -473,6 +474,251 @@ class ReferenceExercises(unittest.TestCase):
             self.assertEqual(projection(root, segments, "no-readback", forbidden, readable=False), "NOT_PUBLISHED")
             self.assertFalse((root / "unsafe").exists())
             self.assertFalse((root / "no-readback").exists())
+
+
+class CloseoutReferenceExercises(unittest.TestCase):
+    def setUp(self):
+        self.identity = {"campaign_id": "CAMP-SYN-01", "module_id": "MOD-SYN-ALPHA",
+                         "run_id": "RUN-SYN-01", "branch": "branch-A", "scope": "MODULE_CLOSEOUT"}
+        self.operation_id = "CLO-ALPHA-001"
+        self.plan = {
+            "manifest_id": "MAN-ALPHA-001",
+            "batch_id": "BATCH-ALPHA-001",
+            "target_checkpoint_id": "CP-011",
+            "rules_revision": "TA-v22-synthetic-lock",
+            "adapter_revision": "TA-CLOSEOUT-ADAPTER-v1",
+            "campaign_rules_revision": "CAMP-RULES-4",
+            "module_rules_revision": "MOD-RULES-7",
+            "source_event_revision": "EVENTSET-22",
+            "plan_revision": "PLAN-1",
+            "targets": {
+                "usable_time": 8,
+                "qa_cap": 2,
+                "qa_current": 2,
+                "remaining_time": 4,
+                "character_version": 2,
+                "module_lifecycle": "CLOSED",
+            },
+            "field_operation_ids": {
+                "usable_time": "FOP-TIME-PLUS-01",
+                "qa_cap": "FOP-QA-CAP-01",
+                "qa_current": "FOP-QA-RESTORE-01",
+                "remaining_time": "FOP-TIME-MINUS-01",
+                "character_version": "FOP-CHARACTER-SNAPSHOT-01",
+                "module_lifecycle": "FOP-MODULE-CLOSED-01",
+            },
+        }
+
+    def initialize_root(self, root):
+        fields = {"usable_time": 7, "qa_cap": 1, "qa_current": 0,
+                  "remaining_time": 5, "character_version": 1, "module_lifecycle": "ACTIVE"}
+        write_json(root / "operational_diagnostics.json", {"complete": True, "records": []})
+        write_json(root / "runtime_state.json", {"identity": self.identity, "revision": 10, "persistence": {
+            "batch_id": None, "status": "PUBLISHED", "prepare_manifest_ref": None,
+            "previous_published_checkpoint_ref": "CP-010", "reconciliation_manifest_refs": [],
+            "applied_event_ids": []}})
+        write_json(root / "base.json", {"revision": 10, "checkpoint_id": "CP-010", "fields": fields})
+        write_json(root / "candidate.json", {"base_revision": 10, "fields": fields,
+                                             "applied_operations": []})
+        write_json(root / "published.json", {"checkpoint_id": "CP-010"})
+
+    def invoke(self, root, **command):
+        result = subprocess.run([sys.executable, str(WORKER), str(root)],
+                                input=json.dumps(command), text=True, capture_output=True)
+        return result.returncode, json.loads(result.stdout) if result.stdout else {}, result.stderr
+
+    def test_RT20_closeout_partial_apply_cold_resume_and_idempotency(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            self.initialize_root(root)
+            code, interrupted, err = self.invoke(
+                root, op="closeout_finish", identity=self.identity,
+                operation_id=self.operation_id, plan=self.plan, fault_after_fields=2)
+            self.assertEqual(code, 73, err)
+            self.assertIn("partial_field", interrupted)
+
+            # A fresh process discovers the operation from existing GM-only Operational Diagnostics and Runtime Manifest references.
+            code, first_read, err = self.invoke(root, op="closeout_inspect", identity=self.identity)
+            self.assertEqual(code, 0, err)
+            self.assertEqual(first_read["status"], "INCOMPLETE")
+            self.assertEqual(first_read["publication"], "UNPUBLISHED")
+            self.assertEqual(first_read["fields"]["usable_time"], "APPLIED")
+            self.assertEqual(first_read["fields"]["qa_cap"], "APPLIED")
+            self.assertEqual(first_read["fields"]["qa_current"], "NOT_APPLIED")
+            self.assertEqual(first_read["fields"]["remaining_time"], "NOT_APPLIED")
+            self.assertEqual(first_read["fields"]["module_lifecycle"], "NOT_APPLIED")
+
+            code, recovered, err = self.invoke(
+                root, op="closeout_finish", identity=self.identity,
+                operation_id="DIFFERENT-REQUESTED-ID", plan=self.plan)
+            self.assertEqual(code, 0, err)
+            self.assertEqual(recovered["status"], "PUBLISHED")
+            self.assertEqual(recovered["operation_id"], self.operation_id)
+            self.assertEqual(recovered["writes"], 4)
+            state = json.loads((root / "candidate.json").read_bytes())
+            self.assertEqual(state["fields"], self.plan["targets"])
+            self.assertEqual(len(state["applied_operations"]), 6)
+            self.assertEqual(json.loads((root / "published.json").read_bytes())["checkpoint_id"], "CP-011")
+
+            code, retried, err = self.invoke(
+                root, op="closeout_finish", identity=self.identity,
+                operation_id=self.operation_id, plan=self.plan)
+            self.assertEqual(code, 0, err)
+            self.assertEqual(retried["status"], "PUBLISHED")
+            self.assertEqual(retried["writes"], 0)
+            print("\nCLOSEOUT partial recovery: two pre-applied fields preserved; four missing fields applied once; retry writes=0", flush=True)
+
+    def test_RT21_closeout_lost_publication_ack_and_closed_boundary(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            self.initialize_root(root)
+            code, interrupted, err = self.invoke(
+                root, op="closeout_finish", identity=self.identity,
+                operation_id=self.operation_id, plan=self.plan, fault="ack-lost")
+            self.assertEqual(code, 74, err)
+            code, readback, err = self.invoke(root, op="closeout_inspect", identity=self.identity)
+            self.assertEqual(code, 0, err)
+            self.assertEqual(readback["status"], "PUBLISHED")
+            self.assertEqual(readback["publication"], "PUBLISHED")
+            self.assertEqual(readback["fields"]["module_lifecycle"], "APPLIED")
+            code, retry, err = self.invoke(
+                root, op="closeout_finish", identity=self.identity,
+                operation_id=self.operation_id, plan=self.plan)
+            self.assertEqual(code, 0, err)
+            self.assertEqual(retry["writes"], 0)
+            runtime_after_retry = json.loads((root / "runtime_state.json").read_bytes())
+            self.assertEqual(runtime_after_retry["persistence"]["status"], "PUBLISHED")
+
+            # Runtime reconciliation_manifest_refs[] is only a locator. If the referenced
+            # GM-only diagnostics record cannot be read, recovery must fail closed.
+            (root / "operational_diagnostics.json").unlink()
+            runtime = json.loads((root / "runtime_state.json").read_bytes())
+            runtime["persistence"]["prepare_manifest_ref"] = None
+            write_json(root / "runtime_state.json", runtime)
+            code, via_published_refs, err = self.invoke(root, op="closeout_inspect", identity=self.identity)
+            self.assertEqual(code, 0, err)
+            self.assertEqual(via_published_refs["status"], "PENDING_DISCOVERY")
+
+        # Candidate CLOSED is not effective before the final publication pointer moves.
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            self.initialize_root(root)
+            code, interrupted, err = self.invoke(
+                root, op="closeout_finish", identity=self.identity,
+                operation_id=self.operation_id, plan=self.plan, fault_after_fields=6)
+            self.assertEqual(code, 73, err)
+            code, readback, err = self.invoke(root, op="closeout_inspect", identity=self.identity)
+            self.assertEqual(code, 0, err)
+            self.assertEqual(readback["status"], "INCOMPLETE")
+            self.assertEqual(readback["fields"]["module_lifecycle"], "APPLIED")
+            self.assertEqual(readback["publication"], "UNPUBLISHED")
+            self.assertEqual(json.loads((root / "published.json").read_bytes())["checkpoint_id"], "CP-010")
+            code, recovered, err = self.invoke(
+                root, op="closeout_finish", identity=self.identity,
+                operation_id=self.operation_id, plan=self.plan)
+            self.assertEqual(code, 0, err)
+            self.assertEqual(recovered["status"], "PUBLISHED")
+            self.assertEqual(recovered["writes"], 0)
+            print("\nCLOSEOUT final pointer boundary: candidate CLOSED remains unpublished until pointer commit", flush=True)
+
+    def test_RT22_closeout_discovery_and_identity_fail_closed(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            root.mkdir(exist_ok=True)
+            code, result, err = self.invoke(root, op="closeout_inspect", identity=self.identity)
+            self.assertEqual(code, 0, err)
+            self.assertEqual(result["status"], "PENDING_DISCOVERY")
+
+            write_json(root / "operational_diagnostics.json", {"complete": False, "records": []})
+            code, result, err = self.invoke(root, op="closeout_inspect", identity=self.identity)
+            self.assertEqual(code, 0, err)
+            self.assertEqual(result["status"], "PENDING_DISCOVERY")
+
+            # A Runtime persistence block that signals PREPARED but has no readable
+            # Manifest reference cannot be treated as "no pending operation".
+            write_json(root / "operational_diagnostics.json", {"complete": True, "records": []})
+            write_json(root / "runtime_state.json", {"persistence": {
+                "batch_id": "BATCH-UNLOCATED", "status": "PREPARED", "prepare_manifest_ref": None}})
+            code, result, err = self.invoke(root, op="closeout_inspect", identity=self.identity)
+            self.assertEqual(code, 0, err)
+            self.assertEqual(result["status"], "PENDING_DISCOVERY")
+
+            # applied_event_ids is only a locator/index and cannot replace a Manifest ref.
+            (root / "operational_diagnostics.json").unlink()
+            write_json(root / "runtime_state.json", {"persistence": {
+                "batch_id": "BATCH-UNLOCATED", "status": "PUBLISHED",
+                "prepare_manifest_ref": None, "reconciliation_manifest_refs": [],
+                "applied_event_ids": ["EVENT-ONLY-INDEX"]}})
+            code, result, err = self.invoke(root, op="closeout_inspect", identity=self.identity)
+            self.assertEqual(code, 0, err)
+            self.assertEqual(result["status"], "PENDING_DISCOVERY")
+
+            write_json(root / "operational_diagnostics.json", {"complete": True, "records": [
+                {"status": "PREPARED", "manifest_ref": "REF-A", "manifest": {
+                    "identity": self.identity, "operation_id": "CLO-A"}},
+                {"status": "PREPARED", "manifest_ref": "REF-B", "manifest": {
+                    "identity": self.identity, "operation_id": "CLO-B"}},
+            ]})
+            code, result, err = self.invoke(root, op="closeout_inspect", identity=self.identity)
+            self.assertEqual(code, 0, err)
+            self.assertEqual(result["status"], "IDENTITY_CONFLICT")
+
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            self.initialize_root(root)
+            closeout = CloseoutBatch(root)
+            first = closeout.begin(self.identity, "CLO-STABLE", self.plan)
+            second = closeout.begin(self.identity, "CLO-NEW-CHAT-REQUEST", self.plan)
+            self.assertEqual(first["status"], "FOUND")
+            self.assertEqual(second["operation"]["manifest"]["operation_id"], "CLO-STABLE")
+            write_json(root / "runtime_state.json", {"identity": self.identity, "persistence": {
+                "batch_id": None, "status": "PUBLISHED", "prepare_manifest_ref": None,
+                "reconciliation_manifest_refs": [], "applied_event_ids": []}})
+            collision = closeout.begin({**self.identity, "module_id": "MOD-OTHER"}, "CLO-STABLE", self.plan)
+            self.assertEqual(collision["status"], "IDENTITY_CONFLICT")
+            (root / "operational-diagnostics.lock").touch()
+            locked = closeout.begin({**self.identity, "module_id": "MOD-THIRD"}, "CLO-THIRD", self.plan)
+            self.assertEqual(locked["status"], "IDENTITY_UNVERIFIABLE")
+
+    def test_RT23_closeout_plan_freeze_dependency_dag_and_local_blocking(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            self.initialize_root(root)
+            closeout = CloseoutBatch(root)
+            prepared = closeout.prepare(self.identity, self.operation_id, self.plan)
+            self.assertEqual(prepared["status"], "PREPARED")
+            same = closeout.prepare(self.identity, "ANOTHER-CHAT-ID", self.plan)
+            self.assertEqual(same["status"], "PREPARED")
+            self.assertEqual(same["manifest"]["operation_id"], self.operation_id)
+            changed = {**self.plan, "targets": {**self.plan["targets"], "usable_time": 99}}
+            with self.assertRaisesRegex(ValueError, "frozen closeout plan changed"):
+                closeout.prepare(self.identity, self.operation_id, changed)
+
+            # Simulate a crash after the independent manifest is saved but before
+            # Runtime State's prepare_manifest_ref is refreshed. Diagnostics still locates it.
+            runtime = json.loads((root / "runtime_state.json").read_bytes())
+            runtime["persistence"]["prepare_manifest_ref"] = None
+            write_json(root / "runtime_state.json", runtime)
+            repaired = closeout.prepare(self.identity, self.operation_id, self.plan)
+            self.assertEqual(repaired["status"], "PREPARED")
+            self.assertEqual(json.loads((root / "operational_diagnostics.json").read_bytes())["records"][0]["manifest_ref"], "GMOD-CLOSEOUT-BATCH-ALPHA-001")
+            self.assertEqual(json.loads((root / "runtime_state.json").read_bytes())["persistence"]["prepare_manifest_ref"], "GMOD-CLOSEOUT-BATCH-ALPHA-001")
+
+        order = validate_dependency_graph([
+            {"id": "mvp", "depends_on": []},
+            {"id": "qa_cap", "depends_on": ["mvp"]},
+            {"id": "qa_restore", "depends_on": ["qa_cap"]},
+        ])
+        self.assertEqual(order, ["mvp", "qa_cap", "qa_restore"])
+        with self.assertRaisesRegex(ValueError, "dependency cycle"):
+            validate_dependency_graph([
+                {"id": "mvp", "depends_on": ["qa_restore"]},
+                {"id": "qa_restore", "depends_on": ["mvp"]},
+            ])
+        self.assertFalse(fields_known(["Demerits"], ["Time", "QA"]))
+        self.assertTrue(fields_known(["scene_state"], ["scene_state", "Time"]))
+        print("\nCLOSEOUT plan freeze/DAG/local blocking: PASS", flush=True)
+
 
 
 if __name__ == "__main__":

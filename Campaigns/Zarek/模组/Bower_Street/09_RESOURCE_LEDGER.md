@@ -1,6 +1,7 @@
 # Bower Street｜模组资源账本
 
 > 权限：GM-only
+> 结团性质：LEGACY_CLOSEOUT / LEGACY_UNMIGRATED；本文件保留历史资源流水和结团核验视图，但没有 v0.3 PREPARE Manifest / 最终发布批次证明，不得宣称具备 v0.3 原子发布或冷恢复保证。
 > 适用范围：Zarek Campaign / Bower Street 模组全生命周期，覆盖所有 Session。
 > 职责：记录本模组实际发生的资源变化、待核交易和余额对账；不替代系统规则、人物卡或 Runtime State。
 
