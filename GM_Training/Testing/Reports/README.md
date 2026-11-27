@@ -23,6 +23,7 @@
 - [H1-3 工作台缓解决策（2026-11-26）](./H1_3_WORKBENCH_MITIGATION_DECISION_2026-11-26.md)：明确可控风险面、静默隔离规则、平台层限制与后续维护边界。
 
 - [NQB-01 L1 定向 Spot Check 04：人物表达与信息边界（2026-11-27）](./NQB01_L1_SPOTCHECK_2026-11-27.md)：3 个合成 ACTION；人物表达、对话自然度和私人记忆信息边界检查；PASS_WITH_LIMITS，存在历史报告预读污染与单会话自审限制。
+- [NQB-01 L1 真实玩家多轮 Spot Check：日常互动与人物表达（2026-11-27）](./NQB01_L1_REAL_MULTITURN_SPOTCHECK_2026-11-27.md)：4 个真实玩家 ACTION；人物表达与对话自然度均 3/4；保留两项轻微观察。上下文已受历史资料污染，不计为干净留出复测；B 线为事后重建。
 
 ## Module Closeout
 
