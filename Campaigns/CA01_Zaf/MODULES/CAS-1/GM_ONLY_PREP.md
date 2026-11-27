@@ -6,7 +6,7 @@
 > **System:** Cairn Second Edition (Candidate Validation only)
 > **Preparation lineage:** 由 TEST_ONLY_Cairn_VR_Twin_Lakes 的既有主持准备迁入；本文件仅作主持资料，不代表战役已启动
 > **Prep revision:** 1（迁入 CA01_Zaf；源文件 SHA 0cd209de7105b8e0029114bfa44ffaefb5fe9856）
-> **Prepared against:** `SOURCE/CAS1_OFFICIAL_SOURCE.md`
+> **Prepared against:** [SOURCE/CAS1_OFFICIAL_SOURCE.md](./SOURCE/CAS1_OFFICIAL_SOURCE.md)
 > **Official source:** https://github.com/yochaigal/cairn/blob/main/adventures/first-party/cas-1.md
 > **Published official page:** https://cairnrpg.com/adventures/first-party/cas-1/
 > **Official release page:** https://cairnpress.itch.io/trouble-in-twin-lakes
@@ -444,15 +444,15 @@ These are same-assistant self-review and synthetic checks. They are not independ
 
 The following repository references are the first lookup path for this campaign:
 
-- `Systems/Cairn/Rule_Reference/CORE_RULES_RUNTIME.md` — Cairn 2e runtime rules and normalized procedures (v0.4).
-- `Systems/Cairn/Rule_Reference/OFFICIAL_CATALOG_INDEX.md` — offline-first entry point for the complete Bestiary, d100 Spellbooks, Reliquary, NPC Tables, monster/background creation guides, and all 20 official Backgrounds.
-- `Systems/Cairn/Rule_Reference/CAIRN2E_BESTIARY.md` — complete monster stat blocks, abilities, attacks, and Critical Damage effects.
-- `Systems/Cairn/Rule_Reference/CAIRN2E_SPELLBOOKS.md` — full d100 spell list and descriptions.
-- `Systems/Cairn/Rule_Reference/CAIRN2E_RELIQUARY.md` — full Relic descriptions, uses/charges, and Recharge conditions.
-- `Systems/Cairn/Rule_Reference/BG_*.md` — individual complete official background pages; Zaf's Fieldwarden and Catherine's Bonekeeper are included.
-- `Campaigns/CA01_Zaf/MODULES/CAS-1/REFERENCE_INDEX.md` — module-specific NPCs, encounter routes, clocks, locations, traps, unique items, and ending branches.
+- [CORE_RULES_RUNTIME.md](../../../../Systems/Cairn/Rule_Reference/CORE_RULES_RUNTIME.md) — Cairn 2e runtime rules and normalized procedures (v0.4).
+- [OFFICIAL_CATALOG_INDEX.md](../../../../Systems/Cairn/Rule_Reference/OFFICIAL_CATALOG_INDEX.md) — offline-first entry point for the complete Bestiary, d100 Spellbooks, Reliquary, NPC Tables, monster/background creation guides, and all 20 official Backgrounds.
+- [CAIRN2E_BESTIARY.md](../../../../Systems/Cairn/Rule_Reference/CAIRN2E_BESTIARY.md) — complete monster stat blocks, abilities, attacks, and Critical Damage effects.
+- [CAIRN2E_SPELLBOOKS.md](../../../../Systems/Cairn/Rule_Reference/CAIRN2E_SPELLBOOKS.md) — full d100 spell list and descriptions.
+- [CAIRN2E_RELIQUARY.md](../../../../Systems/Cairn/Rule_Reference/CAIRN2E_RELIQUARY.md) — full Relic descriptions, uses/charges, and Recharge conditions.
+- [20 个背景文件](../../../../Systems/Cairn/Rule_Reference/OFFICIAL_CATALOG_INDEX.md#2-全部官方-backgrounds-2020) — individual complete official background pages; Zaf's Fieldwarden and Catherine's Bonekeeper are included.
+- [REFERENCE_INDEX.md](./REFERENCE_INDEX.md) — module-specific NPCs, encounter routes, clocks, locations, traps, unique items, and ending branches.
 - `SOURCE/CAS1_OFFICIAL_SOURCE.md` — full official module text archive.
-- `GM_ONLY_PREP.md` — GM-only Chinese prep, operational timelines, NPC knowledge boundaries, spatial topology, and explicit rulings.
+- [GM_ONLY_PREP.md](./GM_ONLY_PREP.md) — GM-only Chinese prep, operational timelines, NPC knowledge boundaries, spatial topology, and explicit rulings.
 
 **Offline-first policy:** During ordinary play, consult the local catalog snapshots and CAS-1 archive/prep first. Revisit the official web source only when a local snapshot is known to be stale, an actual discrepancy appears, or the required information is not in the archived material. Do not treat the absence of a runtime-normalized summary as absence of source data: the full source catalog is now available locally.
 
