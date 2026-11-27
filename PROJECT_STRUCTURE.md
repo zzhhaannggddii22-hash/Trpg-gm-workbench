@@ -62,6 +62,10 @@
 
 每个 Campaign 必须通过 `SYSTEM_BINDING.md` 绑定唯一 system_id 与规则版本。非 CANON 测试短团可以归档在 Campaign 内，但必须明确标记测试性质、非 CANON 边界和禁止继承的状态。
 
+## 开发工作流
+
+仓库采用唯一主干 `main`，禁止创建功能、修复、测试、实验或临时远程分支。所有修改直接提交到 `main`，不使用 PR 作为常规开发流程。详细规范见 [DEVELOPMENT_WORKFLOW.md](DEVELOPMENT_WORKFLOW.md)。
+
 ## 迁移约定
 
 1. 新文件放到其内容权威归属目录，不按“看起来像文档”统一堆放。
