@@ -58,6 +58,20 @@ Context Assembly 是本次 Preflight 和后续重要行动的资料装配层，�
 
 详细契约以 [Runtime §14.20](./07_RUNTIME_CONTROL_PROTOCOL.md#1420-context-assembly-and-trace) 为准。
 
+### Runtime Entry Gate｜启动与输出实际准入（Runtime §1.1）
+
+本节是 §A 的实际执行入口，不另建第二套 Preflight。每次新对话/新 Session，完成 §A 的证据隔离与适用依赖读取后，必须在生成首条玩家可见摘要或推进角色行动前，将 §1.1 的 Gate 作为本次 Preflight Context 的最终准入：
+
+1. 先完成会话证据隔离；历史摘要、模型记忆和其他 Chat 只用于定位，不成为事实来源。
+2. 核验唯一的 system/ruleset、Campaign、Module、运行身份与模式；绑定错误时不得 READY。
+3. 核验权威 Runtime 检查点、最近已呈现/已回应节点、待回应行动、运行授权及开放争议/T0 范围。首次运行没有旧检查点时，只有在用户明确授权该次新运行后，才可建立并读回合法初始状态；不能把缺失旧检查点当作首次运行。
+4. 核验本次实际读取的规则、模组、状态和资料范围；将玩家知识投影与每个输出接收者的权限范围分离。
+5. 给本次 Preflight Context 形成一个内部 Gate 结果：READY、READY_WITH_LIMITS 或 BLOCKED，并按 Runtime §1.1 隔离缺失依赖。
+
+Gate 结果只表示当前装配/请求可否安全推进，不等于玩家已授权开团。即使 READY，仍须等待 §A 的用户开始授权。READY_WITH_LIMITS 只能限制具体缺失依赖；若场景锚点和当前互动已核验，单个 NPC 知识缺口不得冻结无关对话。BLOCKED 只暂停依赖失效前提的范围。
+
+现场回应、NPC 台词、摘要、交接、Player Notes、结案回顾和状态栏继续按 §1.1 对本次输出涉及的字段执行 Source、Recipient、Presentation、Dependency、Scope 准入。内部检查静默完成；正常游戏回复不播报流程，也不向玩家暴露 GM-only 资料或内部装配细节。
+
 ### 完整路径读取清单
 
 本清单及下方完成标准是完整路径／首次开团基准。健康续接按上文核对相同的适用就绪条件，差别在读取深度；无上场 Session 时明确不适用。

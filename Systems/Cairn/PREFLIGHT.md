@@ -52,6 +52,8 @@
 
 ## F. 运行锁与验收
 
+在候选验证或正式运行前，必须按通用 Runtime Control §1.1 与 Workflow §A 执行实际 Entry Gate，并记录其适用范围。系统身份、规则版本、Campaign/Module 绑定、运行模式、当前权威状态基线、玩家知识投影与接收者范围均须核验。候选验证只可在明确的 `CANDIDATE_VALIDATION / TEST_ONLY_NON_CANON` 范围内通过装配 Gate；这不构成系统激活、正式战役开团许可或玩家授权。Gate 的 READY 不得覆盖本文件的 candidate 激活限制。
+
 - [ ] Runtime 快照记录 `system_id: cairn`、规则版本、Campaign 与 Module。
 - [ ] 规则缺口标为 UNKNOWN，不借用其他系统机制填补。
 - [ ] 正例、反例、边界案例和跨系统污染测试已完成。
