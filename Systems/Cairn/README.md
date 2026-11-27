@@ -18,7 +18,7 @@
    - 该中文页面声明覆盖玩家手册、监守手册的 31 个核心章节及 CAS-1 至 CAS-4。当前按非官方社区翻译使用；规则冲突以对应版本的官方英文原文为准。
 3. **开放许可**
    - 官方 Cairn 2e 规则文本采用 CC BY-SA 4.0。任何基于其规则文本的再发布/改编须遵守署名与相同方式共享要求。
-   - 本仓库公开。遵守项目总 README 的第三方内容边界：不提交受版权保护的规则书或模组全文；仅保存自写规则摘要、定位、来源链接与必要的兼容性说明。
+   - 本仓库公开。Cairn 2e 官方文本采用 CC BY-SA 4.0，允许在遵守署名与相同方式共享条件下复制和改编。本仓库将官方规则目录快照与自写 Runtime 摘要分开保存：官方文本副本保留作者/项目署名、上游路径和来源索引；改编内容继续标注 SOURCE / GM_INFERENCE / TABLE_ADAPTATION。不得将未获相应许可的第三方美术、版式或其他模组全文混入这些目录。
 
 ## 系统定位
 
@@ -36,6 +36,8 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 - [RUNTIME_PROTOCOL.md](./RUNTIME_PROTOCOL.md)：桌面阶段循环、规则调用卡、状态提交与官方原文回查策略。
 - [Rule_Reference/WARDEN_GUIDE_INDEX.md](./Rule_Reference/WARDEN_GUIDE_INDEX.md)：Warden's Guide 23 个章节的用途分类、主持原则与按需查表边界。
 - [Rule_Reference/CHAPTER_VERIFICATION_2026-11-27.md](./Rule_Reference/CHAPTER_VERIFICATION_2026-11-27.md)：官方 Player's Guide 6 章、Warden's Guide 23 章的章节核验记录，以及本轮规则修订与剩余条目级回查范围。
+- [Rule_Reference/OFFICIAL_CATALOG_INDEX.md](./Rule_Reference/OFFICIAL_CATALOG_INDEX.md)：Bestiary、Spellbooks、Reliquary、NPC Tables、怪物/背景创建指南及 20 个官方 Backgrounds 的本地完整来源目录。
+- [Campaigns/CA01_Zaf/MODULES/CAS-1/REFERENCE_INDEX.md](../../Campaigns/CA01_Zaf/MODULES/CAS-1/REFERENCE_INDEX.md)：CAS-1 模组 NPC、地点、遭遇、事件时钟、特殊程序与 GM-only 资料的检索入口。
 - [GM_SKILL.md](./GM_SKILL.md)：Cairn 专属主持执行草案。
 - [PREFLIGHT.md](./PREFLIGHT.md)：Cairn 专属开团前核验。
 - [Testing/CANDIDATE_VALIDATION_MANIFEST.md](./Testing/CANDIDATE_VALIDATION_MANIFEST.md)：Candidate 受控验证的隔离清单与运行模板。
