@@ -56,7 +56,7 @@
 
 Preflight 阶段：
 - 可以核验并装配上下文，建立本次 Preflight 快照。
-- 如仓库工具可用，只允许在测试 Campaign 的 Module 目录创建 `08_PREFLIGHT_RECORD_2026-11-27.md`，记录实际读取的文件/commit、绑定结果、Preflight 检查、就绪状态、未决项和隔离验证；写后必须读回验证。
+- 如仓库工具可用，只允许在测试 Campaign 的 Module 目录创建 `08_PREFLIGHT_RECORD_2026-11-27.md`，记录实际读取的文件/commit、绑定结果、Preflight 检查、就绪状态、未决项和隔离验证；写后必须读回验证。Preflight 成功后，可在 Module README 索引该记录，并将 Campaign README 状态更新为 `PREFLIGHT_COMPLETE_WAITING_FOR_START`；不得更改 Runtime State 的事件字段。
 - 不得修改角色卡、GM Packet、玩家启动材料、初始 Runtime State 的事件字段、Session Log 或 Player Notes。
 - 不得生成虚构事件、推进游戏内时间、呈现场景、扮演 NPC、掷骰、消耗资源或开始 Session。
 - 不得把 `can_advance` 改为 true。只有用户明确说“开始测试”后，才可按正常运行入口开始 S01。
