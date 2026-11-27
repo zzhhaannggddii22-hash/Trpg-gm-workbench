@@ -29,6 +29,27 @@ status: active
 - [Research/](./Research/README.md)：Triangle Agency 专属 AI GM 架构、规则索引、GM 研究、参考资料与单特工桌面配置研究；历史审查材料归入 Research/Archive。
 - [Templates/](./Templates/README.md)：三角机构专属历史模板，不作为跨系统通用模板。
 
+## 系统专属运行分派（runtime_dispatch）
+
+以下入口只在 Campaign Binding 锁定 `system_id: triangle_agency` / 中文 v22 后使用；其他系统不得加载本节内容。
+
+```yaml
+runtime_dispatch:
+  rule_entry: Systems/Triangle_Agency/Rule_Reference/05_常规规则调用路由.md
+  progression_entry: Systems/Triangle_Agency/Rule_Reference/02_PLAYWALL_UNLOCK_AND_INTERMISSION_PROTOCOL.md
+  mechanisms:
+    chaos_runtime:
+      status: DISABLED
+      readiness: DRAFT_PENDING_BEHAVIORAL_VALIDATION
+      entry: Systems/Triangle_Agency/Rule_Reference/03_CHAOS_RUNTIME_PROTOCOL.md
+    dice_resolution:
+      status: DISABLED
+      readiness: DESIGN_NOT_ENABLED
+      entry: Systems/Triangle_Agency/Rule_Reference/02_DICE_RESOLUTION_PROTOCOL.md
+```
+
+`DISABLED` 表示机制虽已定义但不得作为正式运行时执行。Chaos Runtime 的具体验收门槛以其协议 §13 和独立验收记录为准；本 README 的登记不构成启用授权。Playwall 解锁、文档读取与非骰子效果仍按 progression_entry 正常执行；骰子专属能力整合的暂缓范围见 `PLAYWALL_DEFERRED_REGISTER.md`。
+
 ## 系统边界
 
 - 不将其他 TRPG 的通用技能检定、先攻、行动经济、属性结构、资源或伤害惯例带入本系统。
