@@ -449,7 +449,7 @@ The following repository references are the first lookup path for this campaign:
 - [CAIRN2E_BESTIARY.md](../../../../Systems/Cairn/Rule_Reference/CAIRN2E_BESTIARY.md) — complete monster stat blocks, abilities, attacks, and Critical Damage effects.
 - [CAIRN2E_SPELLBOOKS.md](../../../../Systems/Cairn/Rule_Reference/CAIRN2E_SPELLBOOKS.md) — full d100 spell list and descriptions.
 - [CAIRN2E_RELIQUARY.md](../../../../Systems/Cairn/Rule_Reference/CAIRN2E_RELIQUARY.md) — full Relic descriptions, uses/charges, and Recharge conditions.
-- [20 个背景文件](../../../../Systems/Cairn/Rule_Reference/OFFICIAL_CATALOG_INDEX.md#2-全部官方-backgrounds-2020) — individual complete official background pages; Zaf's Fieldwarden and Catherine's Bonekeeper are included.
+- [20 个背景文件](../../../../Systems/Cairn/Rule_Reference/OFFICIAL_CATALOG_INDEX.md) — individual complete official background pages; Zaf's Fieldwarden and Catherine's Bonekeeper are included.
 - [REFERENCE_INDEX.md](./REFERENCE_INDEX.md) — module-specific NPCs, encounter routes, clocks, locations, traps, unique items, and ending branches.
 - `SOURCE/CAS1_OFFICIAL_SOURCE.md` — full official module text archive.
 - [GM_ONLY_PREP.md](./GM_ONLY_PREP.md) — GM-only Chinese prep, operational timelines, NPC knowledge boundaries, spatial topology, and explicit rulings.
