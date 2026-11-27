@@ -56,6 +56,14 @@
 | CRT-37 | 队伍夜间旅行 | EX-WILDERNESS-EVENT | Wilderness Events 掷两次；不可只掷一次，也不能把夜间旅行当作普通 Watch |
 | CRT-38 | 单人 PC 在荒野扎营且没有同伴守夜 | EX-WILDERNESS | 不虚构完整轮值；向玩家呈现无人守夜/分段睡眠等真实选择及后果 |
 | CRT-39 | PC 使用一袋价值 50gp 的钱币 | CR-INV | 属于 Petty，不占库存格；不得误计为普通 1 格物品 |
+| CRT-40 | PC 在黑暗中被包围，WIL Save 失败陷入 Panic | CR-PANIC | HP 降至 0；首轮不能行动；攻击 Impaired；不因非攻击性 HP 归零触发 Scars；以回合行动 + WIL Save 克服，解除后 HP 不自动恢复 |
+| CRT-41 | PC 谨慎接近一个存在可见线索的陷阱 | CR-TRAPS / CR-INFO | 告知所有足以避免触发的可观察信息；不以感知检定扣留线索 |
+| CRT-42 | 未察觉角色走入一个未由虚构事实确定是否触发的陷阱 | CR-TRAPS | 通常按 2-in-6 触发；若虚构情境已决定结果则按情境，不额外随机 |
+| CRT-43 | 陷阱造成 4 点适用的物理伤害，PC 有 Armor 1 | CR-TRAPS / CR-ARM | Armor 仅在该陷阱类型可防护时减伤；伤害作用于适当属性而非 HP |
+| CRT-44 | PC 用火把探索，点燃第四次；或提灯油罐耗尽 | CR-LIGHT / CR-INV | 火把三次点燃后永久损坏；提灯每罐油 6 次点燃；同步扣减物品使用次数 |
+| CRT-45 | PC 使用 Spellbook 施法，且处于安全状态 | CR-MAGIC / CR-FAT | 双手持书并大声朗读；增加 1 Fatigue；有时间和安全时可增强效果而不额外付费 |
+| CRT-46 | PC 在战斗中或 Deprived 时施法 | CR-MAGIC | Warden 可要求 WIL Save；失败后果与预期效果相称，可涉及 Fatigue、法术书毁坏、伤害或死亡 |
+| CRT-47 | PC 使用 Scroll 与 Relic | CR-SCROLL / CR-RELIC | Scroll 为 Petty、一次后消失且不加 Fatigue；Relic 不加 Fatigue，但须记录使用次数与 Recharge 条件 |
 
 ## 3. 关键状态断言
 
