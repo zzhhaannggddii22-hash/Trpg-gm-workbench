@@ -114,6 +114,7 @@
 - [P0 回归夹具 v3](./Testing/Fixtures/GM_RUNTIME_P0_REGRESSION_v3.md)
 - [P1-0C 定向回归夹具 v1](./Testing/Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v1.md)
 - [P1-0C 定向回归夹具 v2](./Testing/Fixtures/GM_RUNTIME_P1_0C_CORRECTIVE_REGRESSION_v2.md)
+- [ISSUE-007–010 定向回归夹具 v1](./Acceptance_Test_Fixtures/ISSUE_007_010_TARGETED_REGRESSION_v1/START.md) 与 [执行报告](./Acceptance_Test_Fixtures/ISSUE_007_010_TARGETED_REGRESSION_v1/RUN_REPORT.md)：不完整数据分析、资源同轮结算、NPC 信息边界与空间事实来源。
 - [T0 自然语言盲测执行状态](./Testing/Reports/T0_NATURAL_LANGUAGE_BLIND_SUITE_v1_PREPARATION_AND_EXECUTION_STATUS_2026-11-24.md)
 - [验收执行提示词与操作者协议](./Testing/Execution_Prompts/README.md)：P0/P1/T0 执行提示与操作者隔离资料。
 
