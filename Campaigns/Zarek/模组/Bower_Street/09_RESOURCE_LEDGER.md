@@ -81,7 +81,7 @@
 
 ## 6. 待核与修订
 
-### PENDING-001｜SESSION 01 Ask the Agency / Chaos Pool
+### CLOSED-BY-RESET｜SESSION 01 Ask the Agency / Chaos Pool
 
 - 待核事项：原始 Ask the Agency 资源结算及临时 +5 的依据、实际应用状态。
 - 已知边界：开局记录为 0；临时报出的 +5 未独立核验；SESSION 01 结束余额 UNKNOWN。
@@ -132,6 +132,10 @@
 | BOWER-RES-009 | SESSION_02 / CLOSEOUT-MVP | Commendations | 15 | +3 | 18 | ACCEPTED_BY_DEFAULT：Mission MVP 奖励 |
 | BOWER-RES-010 | SESSION_02 / MODULE-CLOSE | 可使用 Time | UNKNOWN | +1 | UNKNOWN | VERIFIED_DELTA：玩家明确纠正为完整模组结团 +1；绝对余额无可靠基线 |
 | BOWER-RES-011 | SESSION_02 / MODULE-CLOSE | 剩余可用 Time | UNKNOWN | -1 | UNKNOWN | VERIFIED_DELTA：按玩家确认的双字段反向记账规则；绝对余额无可靠基线 |
+| BOWER-RES-012 | SESSION_02 / MODULE-CLOSE | 普通 Chaos Pool | 模组内余额不再追算 | RESET | 0 | VERIFIED_BY_RULE：用户确认每次模组结束自动清零；此前 +5 等历史流水保留审计 |
+| BOWER-RES-013 | SESSION_02 / MODULE-CLOSE | QA（全部素质） | 任务中消耗后状态 | RESTORED_TO_FULL | 各项当前上限 | VERIFIED_BY_RULE：任务间 QA 完全恢复；缜密上限已由 MVP 提升至 2 |
+| BOWER-RES-014 | SESSION_02 / MODULE-CLOSE | Ripple Gun | 模组内使用状态未完整恢复 | RESTORED_TO_FULL | 1/1 | VERIFIED_BY_RULE：用户确认当前无跨模组一次性资源，模组结束恢复满额 |
+| BOWER-RES-015 | SESSION_02 / MODULE-CLOSE | Ternion City Branch Loose Ends | Campaign 基线 1 | +0 | 1 | USER_CONFIRMED：本模组增量 0；Campaign 基线不变 |
 
 ### 9.2 结团后已知状态
 
@@ -142,22 +146,22 @@
 | Competency | **累计 5 格** | MVP 免费职能格 +1；本次选择 Attentiveness |
 | QA 上限总和 | **14** | 原总上限 13；本次 MVP 选择 Attentiveness +1 |
 | 任务间恢复后的 QA | **专业 3/3、共情 3/3、低调 3/3、缜密 2/2、欺瞒 1/1、活力 1/1、主动 1/1、坚持 0/0、气质 0/0** | 按正式人物卡历史上限 + 本次 Attentiveness 成长；任务间 QA 完全恢复 |
-| 普通 Chaos Pool | **UNKNOWN** | SESSION 01 BOWER-RES-001 未结；SESSION 02 已知 +5 变化量，不代表最终余额 |
+| 普通 Chaos Pool | **0（模组结束自动清零）** | SESSION 01/02 历史增减保留审计，不向下一模组结转 |
 | Harm / Burnout | **UNKNOWN / INCOMPLETE** | 完整 SESSION 02 检定记录未恢复；QA 当前值已按任务间完全恢复规则结算，历史使用次数仍未知 |
-| Demerits | **UNKNOWN / INCOMPLETE** | 无完整逐轮记录，不写成 0 |
+| Demerits | **NONZERO / exact value pending** | 用户确认结团后非零；精确值待历史事件流水核实，不得沿用旧快照 0 |
 | 天气事件 | **UNKNOWN / INCOMPLETE** | SESSION 01 末次确认 0；SESSION 02 未核 |
-| Ternion City 分部 Loose Ends 模组增量 | **UNKNOWN / NOT SETTLED** | Campaign 基线 1 不等于本模组结团余额 |
-| Ripple Gun | **UNKNOWN / NOT RECONCILED** | SESSION 01 最后已知满充 1 发；SESSION 02 使用情况未恢复 |
-| 其他关键道具 | **UNKNOWN / NOT RECONCILED** | 不把未恢复的道具转移或使用写成事实 |
+| Ternion City 分部 Loose Ends 模组增量 | **0** | Campaign 基线 1 保持不变 |
+| Ripple Gun | **1/1（恢复满额）** | 模组结束按规则恢复满额；当前无跨模组一次性资源 |
+| 其他关键道具 | **按规则恢复满额** | 保留关键道具历史事件；没有已知跨模组一次性消耗项 |
 
 ### 9.3 未结事项
 
-#### CLOSED-BY-RESET｜SESSION 01 Ask the Agency / Chaos Pool
+### CLOSED-BY-RESET｜SESSION 01 Ask the Agency / Chaos Pool
 - 开局基线 0；原始结算遗漏；临时补报 +5 未独立核验。
 - SESSION 02 的 BOWER-RES-002 另有一笔可恢复的 +5 变化量；不能用它反推 SESSION 01 的结余或合并成一个未经核实的余额。
 - 状态：OPEN；只影响历史普通 Chaos Pool 的绝对余额核对，不阻止 Bower Street 叙事结团或进入幕间。
 
-#### AUDIT-ONLY｜SESSION 02 缺失的逐轮资源记录
+### AUDIT-ONLY｜SESSION 02 缺失的逐轮资源记录
 - 原始完整玩家输入、GM 回复和全部检定序列未恢复；目前只有一项完整检定（BS2-ROLL-001）及结团奖励摘要。
 - Harm、Burnout、其他 QA 的历史使用次数仍无法完整恢复；QA 已按任务间恢复规则回满。Demerits 确认非零但精确数值待核。Loose Ends 本模组增量明确为 0。装备按模组结束规则恢复满额。
 - 状态：AUDIT-ONLY / SOURCE RECORD INCOMPLETE。若将来恢复原始对话，追加修订，不覆盖已确认交易；除 Demerits 精确数值外，本项不阻止幕间。
