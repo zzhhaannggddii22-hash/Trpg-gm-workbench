@@ -72,7 +72,7 @@
 - Bower Street 的初始异常 Domain 是地下室；房屋追逐阶段原文明确整栋房屋获得 Domain 加成。若此前已实际发动 Expand 并扩展至另一地点，该地点也按 v22 的 Domain 扩展规则计入当时 Domain；不得只因尚未进入整屋追逐阶段就忽略已扩展地点。
 - 因此按本 Campaign 规则换算：Corrupt（2）免费；Manifest（4）实际 12；Attract（5）实际 15；Expand（6）实际 18；Displace（8）实际 24。此表是各效果处于 Domain 内时的换算示例；域外效果不套用域内免费，依 v22 与实际触发条件裁定。
 - 以上是 Campaign 桌裁对模组表的换算，不是模组原文直接印出的最终实际费用。使用前必须核对当前 Chaos Pool 和触发条件。
-- 既有工作记录曾将“模组未另行指定时普通 Chaos Pool 初始 0”作为默认口径；但独立审查指出 v22 另有分部累计 Loose Ends 规则，Q01–Q04 未批准废除该规则，Nosedive 的 0 点开局先例也不能单独证明本模组固定为 0。因此本模组开局 Pool 不在备团阶段硬编码；Preflight 必须按 v22 分部累计规则与扎雷克当前分部状态计算，若核算结果为 0 再据实记录。
+- 本模组开局 Chaos Pool 应按每次任务开始前的 v22 分部限制表计算：读取当时 Ternion City 分部 Loose Ends 总数，确定 Starting Chaos、Weather Event count 与累积分部限制。Bower Street 开局时记录的分部基线为 1，对照印刷页 165 的 0 阈值行，故本模组初始 Chaos 为 0、Weather Event count 为 0；这个 0 是该次任务的表格结果，不是固定 Campaign 默认值。后续任务必须重新读取当时总数。
 
 ### 2.3 资源纪律
 
