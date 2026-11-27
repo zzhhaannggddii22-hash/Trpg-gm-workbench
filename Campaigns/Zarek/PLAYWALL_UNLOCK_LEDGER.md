@@ -258,3 +258,13 @@ Historical corrections must be appended with a correction reference; never rewri
 - 因此物理坐标映射已得到官方版面确认：末端第 1 格 = 下排最左格（第 30 格）；末端第 2 格 = 下排左起第 2 格（第 29 格）；末端第 3 格 = 下排左起第 3 格（第 28 格）。
 - 官方空白表只验证轨迹几何，不显示扎雷克本人的标记；扎雷克个人已填写版仍未找到。故最终证据等级保持 **RULE-DETERMINISTIC RECONSTRUCTION + OFFICIAL TEMPLATE VISUAL VERIFIED**，不声称已目视核对个人填写版。
 - Official publisher source: https://cdn.shopify.com/s/files/1/0581/0464/3719/files/Triangle_Agency_-_Character_Organization_Sheets_-_For_Print.pdf#page=3
+
+
+## 9. D4 补给目录进入长期可选嘉奖商店
+
+- 玩家明确要求：D4 解锁的五件涟漪驱动补给进入扎雷克的**可选 Commendations 购买商店**。
+- 商品目录：iPond（9）、Gripples（15）、Li'l Rebels Talking Dolls（9）、The Bouncer（6）、AnglerVision（6）。
+- 此记录代表长期可选购买资格，不代表已购买、已预留预算或自动扣款。
+- 每次展示扎雷克可用的嘉奖购买选项时，必须包含这五件商品；即使当前余额不足，也保留在商店目录中并标明暂不可购买。
+- 购买必须由玩家明确确认；价格以 Commendations 计，使用时的 QA 消耗按各商品 D4 规则另行支付。
+- 记录时当前 Commendations 余额为 1，五件商品当前均不可购买。
