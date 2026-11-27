@@ -47,6 +47,7 @@
 ## 4. 训练、复盘与缺陷追踪
 
 - [Training & Runtime Quality Assurance](./QUALITY_ASSURANCE_AND_NARRATIVE_RUNTIME_QA.md)：统一训练退化保护、叙事能力迁移、Runtime 会话后审计、根因分类与质量门禁；复用现有基准和夹具，不增加逐轮 QA。
+- [QA System Acceptance](./Testing/QA_System_Acceptance/README.md)：QA 体系自身的事件触发版本验收；不随每次常规测试重复执行。
 - [Narrative Capability Register](./NARRATIVE_CAPABILITY_REGISTER.md)：登记可追溯的 T3/T4 叙事能力、Skill 版本、训练来源、Runtime 入口与实战证据。
 
 - [综合训练体系](./NARRATIVE_TRAINING_PROGRAM.md)：综合诊断、专项修复、重新整合、跨场景迁移与实战验证。
