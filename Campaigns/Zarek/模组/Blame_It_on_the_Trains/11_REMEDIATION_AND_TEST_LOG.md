@@ -98,7 +98,8 @@ The original audit report's summary counts conflict with its own defect table. T
 |---|---|
 | All 11 original module artifacts exist | PASS |
 | Module README and campaign index lifecycle state match | PASS |
-| Campaign README and module index contain no literal `\\n` separators | PASS |
+| Campaign README and module index contain no literal `\
+` separators | PASS |
 | Prep Rule Validation is a mandatory pre-Preflight gate | PASS |
 | Player Notes remains empty and contains no scenario facts | PASS |
 | Quick Reference mandates System Binding, rulings and disclosure gate | PASS |
@@ -200,3 +201,43 @@ The static and synthetic tests verify document contracts and state handling only
 - Player authorization：WAITING FOR USER “开始”.
 
 No test-only event was written to Session Log, Player Notes, Runtime CANON or the character sheet. No GM-only information was included in player-facing files. PR #62 was merged to main after the main-based branch was verified; no external AI review occurred in this batch.
+
+
+## 10. Iteration R2 addendum — rule mapping and solo Runtime regression (2026-11-27)
+
+> This addendum supersedes R1's OPEN/PARTIAL classifications where explicitly stated below. R1 remains intact as historical evidence.
+
+### 10.1 Rule validation changes
+
+- QA is now VERIFIED against the pinned Chinese v22 text and Campaign ruling: ordinary checks use QA from the rolled Quality; one QA changes one die; Policy 1 is the explicit any-Quality exception at 1 QA per 1 Harm.
+- Burnout sequence is made executable: natural exactly-three-before-adjustment Triscendence first; otherwise Burnout before QA under Q04; each Burnout adds 1 Chaos even when no 3 remains to remove; after QA, count remaining non-3 dice plus Burnout Chaos; final exactly three 3s invokes the stability exception and resets Chaos to 0.
+- Ask the Agency is VERIFIED: four request elements, plausible causal chain, GM final say on relevant Quality, established-fact/free-will limits, success/failure consequences and same-location repeat-failure Burnout.
+- Smell the Roses is VERIFIED as an optional module ability: Presence / 6d4; at least one 3 succeeds, zero fails; each additional 3 selects one extra effect. It is not currently on Zarek's character sheet.
+- Harm / Threat / Stability / Domain rules and module stat mapping are VERIFIED against the available Chinese sources. Official English source collation remains PARTIAL / NON-BLOCKING because the English Vault original is not present in the accessible source set.
+- Loose Ends / Weather Event rules are VERIFIED. Actual mission environmental setup is deferred to Preflight; no weather roll was made in this iteration.
+- Equipment rule mechanics are VERIFIED; actual item custody remains a Preflight inventory check. Ripple Gun is confirmed 1/1; Normal Briefcase holder remains UNVERIFIED and cannot be used as an assumed path.
+- Prep Rule Validation is now **COMPLETE AGAINST AVAILABLE CHINESE SOURCES**. This means the rules required for the prepared core path were opened and mapped; it does not claim independent English translation validation.
+
+### 10.2 Executed tests
+
+| Test group | Executed | Result | Boundary |
+|---|---:|---|---|
+| Structural/readiness checks | 20 | 20/20 PASS | File state, lifecycle, authority links, Player Gate, runtime contract and generic standard |
+| Deterministic dice/mechanics regression | 11 | 11/11 PASS | Includes natural Triscendence, Q04 order, burnout with/without available 3, QA same-Quality gate, Policy 1, Q03, Domain Q01/Q02 and Threat/Stability distinction |
+| Single-player action-path cases | 14 | 9 PASS / 2 PASS WITH GATE / 2 PARTIAL / 1 BLOCKED | No second-PC dependency identified; full clue parity not established |
+| Runtime transition traces | 8 | 8/8 PASS | NPC knowledge, identity gate, rescue trigger, re-entry, item custody gates and cumulative d44 state |
+| Full round-by-round GM/player narrative run | 0 | NOT RUN | No campaign start authorization |
+| Real player test | 0 | NOT RUN | No campaign start authorization |
+| Official English original collation | 0 | NOT RUN | Source unavailable in current accessible files |
+
+### 10.3 R2 readiness disposition
+
+- Prep Rule Validation：COMPLETE AGAINST AVAILABLE CHINESE SOURCES.
+- Source validation：PARTIAL / NON-BLOCKING ENGLISH ORIGINAL COLLATION OPEN.
+- Single-player feasibility：PARTIAL / NO SECOND-PC DEPENDENCY FOUND; clue parity across all bypass paths is not guaranteed.
+- Preflight：NOT STARTED / WAITING FOR USER “开始”.
+- Runtime / Session / CANON：NOT STARTED.
+- Optional independent Prep QA：NOT RUN; this iteration is SELF-REVIEW, not independent QA.
+- Dynamic item custody, exact Harm/Demerits/Time balances and mission weather/environment setup remain Preflight tasks.
+
+No real dice were rolled, no mission weather was generated, no resource ledger entry was created, no Session Log or Player Notes were changed, and no GM-only scenario detail was copied to player-facing files.
