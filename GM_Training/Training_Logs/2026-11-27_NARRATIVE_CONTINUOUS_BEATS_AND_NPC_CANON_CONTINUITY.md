@@ -226,4 +226,3 @@ NPC 可以在运行中获得未预先登记的个人经历、兴趣、偏好、�
 3. Mira Fisher, Molly Siler, Stephen G. Ware, [Structure, Agency, and Improvisation in Human-Led Digital Interactive Narrative Exercises](https://cs.uky.edu/~sgware/reading/papers/fisher2025structure.pdf), AIIDE 2025.
 4. D. Vincent Baker, “Coherence and Contradictions,” in [Unframed: The Art of Improvisation for Game Masters](https://enginepublishing.com/files/Unframed-Excerpt.pdf), Engine Publishing, 2014 excerpt.
 5. Yingpeng Ma et al., [Can LLM Agents Stick to the Script? A Benchmark for Long-Horizon Consistency in Interactive Narratives](https://arxiv.org/abs/2608.08160), 2026.
-
