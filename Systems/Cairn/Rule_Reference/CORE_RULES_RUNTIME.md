@@ -49,7 +49,7 @@
 | CR-DOF | Die of Fate | 事件结果不确定且需随机判断 | VERIFIED_CORE |
 | EX-DUNGEON | 地城探索循环 | 危险地点中的探索行动 | VERIFIED_CORE |
 | EX-DUNGEON-EVENT | 地城事件 | 达到事件触发条件 | VERIFIED_CORE |
-| EX-WILDERNESS | 荒野探索与 Watches | 野外旅行/探索 | PARTIAL |
+| EX-WILDERNESS | 荒野探索与 Watches | 野外旅行/探索 | VERIFIED_CORE |
 | EX-WILDERNESS-EVENT | 荒野事件 | 每次荒野行动循环后 | VERIFIED_CORE |
 
 ## 2. 核心角色与检定
@@ -361,6 +361,19 @@
 - 距离：Short +1 Watch；Medium +2 Watches；Long +3 Watches。
 - 地形：Easy +0；Tough +1 Watch；Perilous +2 Watches。
 - 天气：每天按季节掷天气表；连续两次出现 Extreme 则变为 Catastrophic。Nice/Fair 有利于旅行；Unpleasant：增加 Fatigue 或旅程 +1 Watch；Inclement：增加 Fatigue 或 +1 Watch，且地形难度提高一级；Extreme：增加 Fatigue 并 +1 Watch，且地形难度提高一级；Catastrophic 通常无法旅行。
+
+**每日天气表（按季节掷 1d6）**：
+
+| d6 | Spring | Summer | Fall | Winter |
+|---:|---|---|---|---|
+| 1 | Nice | Nice | Fair | Fair |
+| 2 | Fair | Nice | Fair | Unpleasant |
+| 3 | Fair | Fair | Unpleasant | Inclement |
+| 4 | Unpleasant | Unpleasant | Inclement | Inclement |
+| 5 | Inclement | Inclement | Inclement | Extreme |
+| 6 | Extreme | Extreme | Extreme | Extreme |
+
+连续两天掷出 Extreme，天气转为 Catastrophic。
 
 **行动与事件**：每个 Watch 中，队伍成员分别选择一项 Wilderness Action；Travel 通常由全队共同执行，视为一次队伍行动。Warden 叙述结果后掷 Wilderness Events，再处理玩家响应和状态变化。常用行动包括 Travel、Explore、Supply、Make Camp。
 
