@@ -278,11 +278,11 @@ class GitHubGraphQLRuntimeStore:
     def _read_file(self, branch: str, path: str) -> tuple[str, str] | None:
         return self._read_file_at("refs/heads/" + branch, path)
 
-    def _find_receipt_commit(self, path: str, base_head_oid: str) -> str | None:
+    def _find_path_commit(self, branch: str, path: str, parent_oid: str) -> str | None:
         data = self._graphql(_FIND_RECEIPT_COMMIT, {
             "owner": self.owner,
             "name": self.name,
-            "qualifiedName": "refs/heads/" + self.runtime_branch,
+            "qualifiedName": "refs/heads/" + branch,
             "path": path,
         })
         repository = data.get("repository")
@@ -294,11 +294,14 @@ class GitHubGraphQLRuntimeStore:
         for node in nodes:
             parents = node.get("parents", {}).get("nodes", [])
             parent_oids = [item.get("oid") for item in parents]
-            if base_head_oid in parent_oids:
+            if parent_oid in parent_oids:
                 matches.append(node.get("oid"))
         if len(matches) > 1:
-            raise DisputedBatch("multiple commits claim the same PREPARE base and receipt")
+            raise DisputedBatch("multiple commits claim the same parent and immutable path")
         return matches[0] if matches else None
+
+    def _find_receipt_commit(self, path: str, base_head_oid: str) -> str | None:
+        return self._find_path_commit(self.runtime_branch, path, base_head_oid)
 
     def _commit_files(self, branch: str, expected_head_oid: str, message: str, files: Mapping[str, str]) -> str:
         if not _OID_RE.fullmatch(expected_head_oid):
@@ -344,26 +347,34 @@ class GitHubGraphQLRuntimeStore:
         normalized = _validate_manifest(manifest)
         batch_id = normalized["batch_id"]
         digest = fingerprint_text(canonical_json(normalized))
-        envelope = {
-            "schema_version": 1,
-            "batch_id": batch_id,
-            "manifest": normalized,
-            "manifest_fingerprint": digest,
-        }
-        content = canonical_json(envelope) + "\n"
         path = self._operation_path(batch_id)
 
         for _ in range(3):
             existing = self._read_file(self.operations_branch, path)
             if existing is not None:
                 current = json.loads(existing[0])
-                if current != envelope:
+                if (current.get("batch_id") != batch_id
+                        or current.get("manifest") != normalized
+                        or current.get("manifest_fingerprint") != digest):
                     raise BatchConflict("batch_id already exists with different PREPARE content")
+                prepare_parent = current.get("prepare_base_head_oid")
+                commit_oid = self._find_path_commit(self.operations_branch, path, prepare_parent) if prepare_parent else None
+                historical = self._read_file_at(commit_oid, path) if commit_oid else None
+                if historical is None or historical[0] != existing[0]:
+                    raise DisputedBatch("PREPARE manifest is not backed by its immutable creation commit")
                 return {"status": "PREPARED", "batch_id": batch_id,
                         "manifest_ref": self.operations_branch + ":" + path,
                         "manifest_fingerprint": digest}
 
             head = self._read_ref(self.operations_branch)
+            envelope = {
+                "schema_version": 1,
+                "batch_id": batch_id,
+                "prepare_base_head_oid": head,
+                "manifest": normalized,
+                "manifest_fingerprint": digest,
+            }
+            content = canonical_json(envelope) + "\n"
             try:
                 self._commit_files(
                     self.operations_branch, head,
@@ -388,6 +399,10 @@ class GitHubGraphQLRuntimeStore:
             readback = self._read_file(self.operations_branch, path)
             if readback is None or json.loads(readback[0]) != envelope:
                 raise CommitOutcomeUnknown("PREPARE commit returned but independent readback failed")
+            commit_oid = self._find_path_commit(self.operations_branch, path, head)
+            historical = self._read_file_at(commit_oid, path) if commit_oid else None
+            if historical is None or historical[0] != readback[0]:
+                raise CommitOutcomeUnknown("PREPARE creation commit could not be independently verified")
             return {"status": "PREPARED", "batch_id": batch_id,
                     "manifest_ref": self.operations_branch + ":" + path,
                     "manifest_fingerprint": digest}
@@ -490,12 +505,23 @@ class GitHubGraphQLRuntimeStore:
         envelope = json.loads(op_file[0])
         manifest = _validate_manifest(envelope.get("manifest", {}))
         digest = fingerprint_text(canonical_json(manifest))
-        if envelope.get("batch_id") != batch_id or envelope.get("manifest_fingerprint") != digest:
+        if (envelope.get("batch_id") != batch_id
+                or envelope.get("manifest_fingerprint") != digest
+                or not envelope.get("prepare_base_head_oid")):
             return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PREPARE_FINGERPRINT_MISMATCH"}
+        prepare_commit = self._find_path_commit(
+            self.operations_branch, self._operation_path(batch_id), envelope["prepare_base_head_oid"]
+        )
+        historical_prepare = self._read_file_at(prepare_commit, self._operation_path(batch_id)) if prepare_commit else None
+        if historical_prepare is None or historical_prepare[0] != op_file[0]:
+            return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PREPARE_HISTORY_MISMATCH"}
 
         receipt_path = self._receipt_path(batch_id)
         receipt_file = self._read_file(self.runtime_branch, receipt_path)
         if receipt_file is None:
+            prior_receipt_commit = self._find_receipt_commit(receipt_path, manifest["base_head_oid"])
+            if prior_receipt_commit is not None:
+                return {"status": "DISPUTED", "batch_id": batch_id, "reason": "PUBLISHED_RECEIPT_MISSING"}
             return {"status": "PREPARED", "batch_id": batch_id, "manifest_fingerprint": digest}
         try:
             receipt = json.loads(receipt_file[0])
