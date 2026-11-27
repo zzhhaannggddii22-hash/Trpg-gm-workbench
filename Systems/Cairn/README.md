@@ -29,12 +29,15 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 ## 目录
 
 - [Rule_Reference/README.md](./Rule_Reference/README.md)：规则来源优先级、检索与裁定边界。
-- [Rule_Reference/CORE_RULE_INDEX.md](./Rule_Reference/CORE_RULE_INDEX.md)：核心机制导航与已核对规则摘要。
+- [Rule_Reference/CORE_RULE_INDEX.md](./Rule_Reference/CORE_RULE_INDEX.md)：核心机制导航与规则摘要。
+- [Rule_Reference/CORE_RULES_RUNTIME.md](./Rule_Reference/CORE_RULES_RUNTIME.md)：按触发条件、输入、步骤、状态变化规范化的核心规则运行手册。
+- [RUNTIME_PROTOCOL.md](./RUNTIME_PROTOCOL.md)：桌面阶段循环、规则调用卡、状态提交与官方原文回查策略。
 - [Rule_Reference/WARDEN_GUIDE_INDEX.md](./Rule_Reference/WARDEN_GUIDE_INDEX.md)：监守手册中的 NPC、知识/感知、豁免、地城/荒野探索与成长原则。
 - [GM_SKILL.md](./GM_SKILL.md)：Cairn 专属主持执行草案。
 - [PREFLIGHT.md](./PREFLIGHT.md)：Cairn 专属开团前核验。
 - [Research/INITIAL_RESEARCH.md](./Research/INITIAL_RESEARCH.md)：设计研究、单人测试风险与短团候选。
 - [Testing/L3_NPC_PC_RESOURCE_AND_AUTONOMY_TEST_PLAN.md](./Testing/L3_NPC_PC_RESOURCE_AND_AUTONOMY_TEST_PLAN.md)：将 1–2 次短团同时用于 L3 NPC 的 PC 级资源与自主性验证。
+- [Testing/CORE_RULE_RUNTIME_REGRESSION_MATRIX.md](./Testing/CORE_RULE_RUNTIME_REGRESSION_MATRIX.md)：核心规则运行顺序、边界与状态差分回归矩阵。
 
 ## 运行边界
 
@@ -44,6 +47,10 @@ Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游�
 - 不把 Cairn 的豁免或伤害流程移入 Triangle Agency；也不把 Triangle Agency 的 Chaos、QA、Burnout、Harm 或 Playwall 概念映射进 Cairn。
 - 单人玩家测试属于待验证的桌面规模，不代表规则默认支持单人队伍。优先使用规则内的 hirelings 等支持方式；任何超出规则的调整必须明确标记为桌面适配并经用户批准。
 - Cairn 短团还承担 Workbench L3 NPC 测试：明确登记的 L3 NPC 使用 PC 级资源账本和独立目标/计划模型。此为 Workbench 的人物模拟要求，不是 Cairn 官方要求所有 NPC 按 PC 创建；规则裁定仍按 Cairn 2e。
+
+## 运行时规则调用
+
+常规游戏不以在线搜索作为规则运行方式。Warden 先读取 Campaign Binding 与 Runtime Snapshot，再按 [RUNTIME_PROTOCOL.md](./RUNTIME_PROTOCOL.md) 调用 [CORE_RULES_RUNTIME.md](./Rule_Reference/CORE_RULES_RUNTIME.md) 中的规则 ID。官方 Cairn 2e 原文用于建档核验、特殊条目/表格、未收录规则、冲突与高后果边界回查。已规范化的常规核心规则在版本未变且无特殊覆盖时直接调用，不重复搜索网页。任何 PARTIAL / MODULE_DEPENDENT 条目仍须按协议回查。
 
 ## 激活门槛
 
