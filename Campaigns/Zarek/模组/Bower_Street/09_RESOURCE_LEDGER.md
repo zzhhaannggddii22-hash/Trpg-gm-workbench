@@ -260,3 +260,18 @@
 - 第 6 格 D4 已标记；按规则该代码的 Playwall 文档授权成立。文档正文读取/核对状态另记于 Playwall Unlock Ledger；本账本不复述隐藏资料。
 - 两次历史 Time 支出导致的 Reality / Anomaly 轨迹末端划除坐标仍未从原始视觉轨迹表恢复。本次成长的对应划除位置也不在现有文字账本中；保持坐标 UNKNOWN，待恢复原始 Work/Life Balance 表后追加核验，不凭空指定。
 - 本 Requisition 的恢复方式分支尚待玩家最终选择；购买本身已确认，不能把未选分支写成既定效果。
+
+
+## 12. 2026-11-27｜Work/Life Balance Time 轨迹计数与划除坐标核验
+
+> 本节覆盖 §11.3 中“跨轨迹划除坐标待恢复”的旧状态。具体格位的规则推导与证据等级见 [Zarek Playwall Unlock Ledger §8](../../PLAYWALL_UNLOCK_LEDGER.md)。
+
+| Entry ID | 字段 | 变化前 | 变化 | 变化后 | 核验 |
+|---|---|---:|---:|---:|---|
+| BOWER-RES-022 | Work/Life Balance Time 轨迹已投入格数（不是可使用 Time 余额） | 2/30（剩余 28） | +1 次 Time 支出 | **3/30（剩余 27）** | VERIFIED：本次结团 +1 Time 已投入 Competency 第 6 格；与 Dead Quiet、Ice Cream Truck 两次历史 Time 支出合计三次 |
+
+- 本次 Bower Street Time 支出对应 Reality 与 Anomaly 各划除第 28 格（下排左起第 3 格）。
+- 前两次 Time 支出的划除位置分别为两轨第 30 格、第 29 格（下排左起第 1、2 格）。
+- 以上坐标由官方 Work/Life Balance 轨迹路径与已记录成长事件顺序确定，状态为 RULE-DETERMINISTIC RECONSTRUCTION；不是声称已从扎雷克原始填表图片直接读取。
+- “可使用 Time”的绝对余额仍为 UNKNOWN；本节 3/30 只记录 Work/Life Balance 轨迹格数，不用于推算可使用 Time 余额。
+- D4 已读取；读取范围与收益记录见 Playwall Unlock Ledger §8。
