@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """Synthetic reference adapter for roll-result persistence conformance tests.
 
-This is NOT a production Workbench storage connector. It models the existing
-Resource Ledger, Session Log, Runtime checkpoint and immutable-manifest
-contracts on a local filesystem. All data is synthetic and temporary.
+This is not a production ChatGPT/Workbench storage connector. It models the
+repository's existing Resource Ledger, Session Log, Runtime checkpoint and
+immutable-manifest contracts on a local filesystem.
 """
 from __future__ import annotations
 import hashlib, json, os, pathlib, tempfile
 from typing import Any
 
-PLAYER_FIELDS = {"kind","headline","result","dice","choices","resource_changes","current_resources","narrative","pending_notice"}
-FORBIDDEN_PLAYER_KEYS = {"event_id","event_revision_id","batch_id","manifest_id","ledger_entry_id","gm_only","audit","internal_notes","source_document","hidden_truth"}
+PLAYER_FIELDS = {"kind", "headline", "result", "dice", "choices", "resource_changes", "current_resources", "narrative", "pending_notice"}
+FORBIDDEN_PLAYER_KEYS = {"event_id", "event_revision_id", "batch_id", "manifest_id", "ledger_entry_id", "gm_only", "audit", "internal_notes", "source_document", "hidden_truth"}
 
 def canonical(value: Any) -> bytes:
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()
@@ -96,6 +96,8 @@ class RollRuntimeAdapter:
             self.verify(event); return {"status":"IDEMPOTENT_REPLAY"}
         if rt["checkpoint"]["branch"]!="ACTIVE" or not rt["checkpoint"]["can_advance"]: raise RuntimeError("CHECKPOINT_NOT_ADVANCEABLE")
         if rt["checkpoint"]["revision"]!=event["base_revision"]: raise RuntimeError("BASE_REVISION_MISMATCH")
+        # Validate the player-facing projection before any domain/resource write.
+        safe_projection=self.sanitize(event["player_reply_payload"])
         prep=self.prepare(event); self.crash(crash_at,"AFTER_PREPARE")
         baseline=read_json(self.root/"resource_snapshot.json")["balances"]; history=read_jsonl(self.ledger); entry_ids=[]
         for field,delta in sorted(event["resource_deltas"].items()):
@@ -133,7 +135,7 @@ class RollRuntimeAdapter:
         rt=read_json(self.runtime); rt["checkpoint"]["reconciliation_manifest_refs"].append(manifest["manifest_id"])
         rt["persistence"]["status"]="VERIFIED"; atomic_json(self.runtime,rt)
         self.crash(crash_at,"AFTER_RUNTIME_MANIFEST_LINK")
-        atomic_json(self.projection,self.sanitize(event["player_reply_payload"]))
+        atomic_json(self.projection,safe_projection)
         self.crash(crash_at,"AFTER_PROJECTION")
         self.verify(event)
         return {"status":"APPLIED","manifest_id":manifest["manifest_id"],"ledger_entries":len(rows)}
@@ -208,7 +210,10 @@ def run_tests():
         try: a.apply(e)
         except ValueError as exc: assert "PLAYER_PROJECTION_REJECTED" in str(exc)
         else: raise AssertionError("projection leak accepted")
-        assert not a.projection.exists(); out.append("player projection leak rejected")
+        assert not a.projection.exists()
+        rt=read_json(a.runtime); assert rt["checkpoint"]["revision"]==10 and rt["checkpoint"]["applied_event_ids"]==[]
+        assert len(read_jsonl(a.ledger))==0 and len(read_jsonl(a.log))==0
+        out.append("player projection leak rejected before domain writes")
     with tempfile.TemporaryDirectory() as td:
         a=RollRuntimeAdapter.initialize(pathlib.Path(td),{"empathy_qa":2,"chaos":0}); e=event(); a.apply(e)
         e2=event(); e2.update({"event_id":"EVT-ROLL-002","event_revision_id":"EVT-ROLL-002-R1","batch_id":"BATCH-ROLL-002",
@@ -223,6 +228,6 @@ def run_tests():
         except RuntimeError as exc: assert "BASE_REVISION_MISMATCH" in str(exc)
         else: raise AssertionError("stale revision accepted")
         out.append("stale base revision rejected")
-    return {"harness":"synthetic_roll_runtime_application_adapter_v1","tests":len(out),"passed":len(out),"failed":0,"overall":"PASS","cases":out}
+    return {"harness":"synthetic_roll_runtime_application_adapter_v1","test_count":len(out),"passed":len(out),"failed":0,"overall":"PASS","cases":out}
 
 if __name__=="__main__": print(json.dumps(run_tests(),ensure_ascii=False,indent=2))
