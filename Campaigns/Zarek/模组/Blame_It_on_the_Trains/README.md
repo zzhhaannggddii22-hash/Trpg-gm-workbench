@@ -15,8 +15,10 @@
 | [04_SESSION_LOG.md](./04_SESSION_LOG.md) | Session 日志索引；实际发生后追加 | GM-only |
 | [05_PLAYER_NOTES.md](./05_PLAYER_NOTES.md) | 角色已获知事实的空白记录 | 玩家侧 |
 | [06_POSTMORTEM.md](./06_POSTMORTEM.md) | 结团复盘；开团前保持未执行 | GM-only |
-| [07_SOURCE_AND_RULE_CROSSCHECK.md](./07_SOURCE_AND_RULE_CROSSCHECK.md) | 来源定位、规则交叉核验、审查与测试证据 | GM-only |\n| [08_RUNTIME_QUICK_REFERENCE.md](./08_RUNTIME_QUICK_REFERENCE.md) | 现场快速调用索引 | GM-only |
-| [09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md) | 本模组资源交易唯一流水；开团前空账本 | GM-only |\n| [10_PLAYER_FACING_GATE.md](./10_PLAYER_FACING_GATE.md) | 玩家视角信息披露闸门 | GM-only |
+| [07_SOURCE_AND_RULE_CROSSCHECK.md](./07_SOURCE_AND_RULE_CROSSCHECK.md) | 来源定位、规则交叉核验、审查与测试证据 | GM-only |
+| [08_RUNTIME_QUICK_REFERENCE.md](./08_RUNTIME_QUICK_REFERENCE.md) | 现场快速调用索引 | GM-only |
+| [09_RESOURCE_LEDGER.md](./09_RESOURCE_LEDGER.md) | 本模组资源交易唯一流水；开团前空账本 | GM-only |
+| [10_PLAYER_FACING_GATE.md](./10_PLAYER_FACING_GATE.md) | 玩家视角信息披露闸门 | GM-only |
 
 ## 当前门禁
 
