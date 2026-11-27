@@ -54,7 +54,7 @@
 - [微型箱庭 ↔ 实际跑团双向迁移协议](./MICRO_SANDBOX_LAB/CAPABILITY_TRANSFER_PROTOCOL.md)：规定训练方法如何进入真实跑团，以及真实 Session 的缺陷如何反向成为箱庭训练样本。
 - [训练题库](./NARRATIVE_TRAINING_QUESTION_BANK.md)：专项题与综合题候选；题库不定义能力标准。
 - [开放训练问题清单](./Training_Logs/OPEN_TRAINING_BACKLOG.md)：尚未解决的问题及后续验证要求。
-- [2026-11-27 运行缺陷与结团流程复核](./Training_Logs/2026-11-27_RUNTIME_INCIDENT_REVIEW_ISSUE_007_010.md)：汇总 ISSUE-007～010 的根因判断、自测证据边界、结团/Time 修正及未完成事项。
+- [2026-11-27 运行缺陷与结团流程复核](./Training_Logs/2026-11-27_RUNTIME_INCIDENT_REVIEW_ISSUE_007_010.md)：汇总 ISSUE-007～010 的根因判断、自测证据边界、结团/Time 修正及未完成事项。\n- [2026-11-27 备团交付失效复核与流程修订](./Training_Logs/2026-11-27_PREP_DELIVERY_FAILURE_REVIEW_AND_REMEDIATION.md)：记录备团未落库、入口未同步的根因与交付门禁修订。
 - [2026-11-25《雨前过桥》箱庭实测记录](./Training_Logs/2026-11-25_MICRO_SANDBOX_001_BRIDGE_BEFORE_RAIN_REVIEW.md)：首个完成的箱庭运行样本、玩家反馈、观察和待验证项。
 - [Narrative Stress Test 01｜社区中心暴雨撤离](./Testing/Reports/NARRATIVE_STRESS_TEST_01_DESIGN.md)：持续压力下综合叙事质量与信息显著性动态升格测试设计。
 - [Narrative Stress Test 01｜首轮运行记录](./Testing/Reports/NARRATIVE_STRESS_TEST_01_RUN_RECORD.md)：八个合成行动的单会话自测；仅作内部诊断，不是独立盲测或真实跑团证据。
