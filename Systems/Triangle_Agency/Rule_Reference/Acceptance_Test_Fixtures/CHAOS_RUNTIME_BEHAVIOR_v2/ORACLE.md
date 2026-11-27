@@ -38,7 +38,7 @@
 | R-16 | The closeout is applied once. The duplicate request reuses the original closeout event and does not discard/reset twice or create another closeout transaction. |
 | R-17 | Update Campaign Loose Ends from 22 to 21 because the weather result explicitly says so. Do not retroactively change the active mission's committed setup or Starting Chaos. Next mission uses the current total 21 and the corresponding table row. |
 | R-18 | Replaying the same weather event does not reroll, escalate, or reapply the Loose Ends change. A genuinely new extreme-weather event may be resolved as a new event. |
- 
+
 ## R-19 to R-24｜Thresholds and cross-system isolation
 
 | Case | Required result |
