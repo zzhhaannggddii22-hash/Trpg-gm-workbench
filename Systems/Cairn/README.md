@@ -1,0 +1,52 @@
+# Cairn /《石冢》
+
+> system_id: `cairn`  
+> 规则版本：Cairn Second Edition（2e）  
+> 中文参考：社区简体中文 SRD（非官方翻译）  
+> 状态：candidate（第二套系统接入准备中；尚未开放正式运行）
+
+本目录是 Cairn 系统级规则知识的唯一入口。它与 `Systems/Triangle_Agency/` 完全隔离。Cairn 被用户指定为 GM Workbench 的第二套系统；本次接入按独立系统完成，不能把 Triangle Agency 的规则、资源、术语或运行惯例带入。
+
+## 权威来源与版本
+
+1. **首要规则来源：Cairn 2e 官方英文 SRD**
+   - [Second Edition 总入口](https://cairnrpg.com/second-edition/)
+   - [Player's Guide](https://cairnrpg.com/second-edition/players-guide/)
+   - [Warden's Guide](https://cairnrpg.com/second-edition/wardens-guide/)
+2. **中文阅读入口：Cairn 2e 简体中文 SRD**
+   - [社区简体中文 SRD](https://fi.cairnrpg.com/localization/second-edition/chinese/)
+   - 该中文页面声明覆盖玩家手册、监守手册的 31 个核心章节及 CAS-1 至 CAS-4。当前按非官方社区翻译使用；规则冲突以对应版本的官方英文原文为准。
+3. **开放许可**
+   - 官方 Cairn 2e 规则文本采用 CC BY-SA 4.0。任何基于其规则文本的再发布/改编须遵守署名与相同方式共享要求。
+   - 本仓库公开。遵守项目总 README 的第三方内容边界：不提交受版权保护的规则书或模组全文；仅保存自写规则摘要、定位、来源链接与必要的兼容性说明。
+
+## 系统定位
+
+Cairn 是以探索、风险决策和涌现叙事为中心的轻量级冒险游戏。它采用无职业结构、背景驱动角色创建、三属性豁免、攻击直接造成伤害、装备格与疲劳管理，以及明确的地城/荒野探索程序。
+
+其主持原则强调：中立裁定、先看虚构情境、如实且充分地提供可观察信息、随机表生成局势而非预写剧情、NPC 有自身利益与求生意愿。它并非“无规则叙事游戏”：时间、光源、库存、疲劳、危险事件和致命伤害构成了重要的程序化压力。
+
+## 目录
+
+- [Rule_Reference/README.md](./Rule_Reference/README.md)：规则来源优先级、检索与裁定边界。
+- [Rule_Reference/CORE_RULE_INDEX.md](./Rule_Reference/CORE_RULE_INDEX.md)：核心机制导航与已核对规则摘要。
+- [GM_SKILL.md](./GM_SKILL.md)：Cairn 专属主持执行草案。
+- [PREFLIGHT.md](./PREFLIGHT.md)：Cairn 专属开团前核验。
+- [Research/INITIAL_RESEARCH.md](./Research/INITIAL_RESEARCH.md)：设计研究、单人测试风险与短团候选。
+
+## 运行边界
+
+- 当前状态为 candidate。研究、规则学习和隔离测试可以进行；在完成本目录的规则核验、Preflight、正反例与跨系统隔离测试前，不得将其标记为 active，也不得伪装成已完成正式接入。
+- Campaign 必须单独建立 `SYSTEM_BINDING.md`，绑定 `system_id: cairn` 和精确规则版本。当前没有已批准的 Cairn Campaign。
+- Cairn 的属性、豁免、HP、STR/DEX/WIL 损伤、护甲、疲劳、库存格、背景、法术书、成长和探索程序均属于 Cairn 专属规则。
+- 不把 Cairn 的豁免或伤害流程移入 Triangle Agency；也不把 Triangle Agency 的 Chaos、QA、Burnout、Harm 或 Playwall 概念映射进 Cairn。
+- 单人玩家测试属于待验证的桌面规模，不代表规则默认支持单人队伍。优先使用规则内的 hirelings 等支持方式；任何超出规则的调整必须明确标记为桌面适配并经用户批准。
+
+## 激活门槛
+
+1. 官方 2e 玩家手册与监守手册关键规则逐项核验，中文 SRD 逐项交叉核对。
+2. 完成规则索引、系统专属 GM Skill、Preflight 和规则疑点记录。
+3. 完成至少一轮规则正例、反例与边界案例测试。
+4. 完成 Triangle Agency / Cairn 跨系统污染测试。
+5. 建立独立 Cairn Campaign 与模组资料，完成真实 Preflight。
+6. 通过短团实测并复盘后，才评估是否从 candidate 升级为 active。
