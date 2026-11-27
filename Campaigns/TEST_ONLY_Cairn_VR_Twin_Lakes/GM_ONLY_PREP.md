@@ -21,9 +21,9 @@
 2. Cairn's published CAS-1 page is the public official mirror.
 3. Cairn Press's itch.io release page and devlogs establish published release notes.
 4. The 2026-03-31 official devlog states that HP was added for Fasha and event timing was fixed.
-5. **Important unresolved discrepancy:** the currently retrievable official upstream Markdown's Fasha stat line still contains STR 14, DEX 13, WIL 5 and attacks, but no HP value. The PDF release was not directly inspected in this pass. Therefore Fasha HP remains **UNKNOWN** in the local authoritative source. Do not silently fill it or label an inferred value official.
-6. The previous prep's Fasha HP GM_INFERENCE cannot be verified from the current Campaign artifacts. Preserve the fact that a prior inference existed, but do not reuse an unrecorded number. If combat involving Fasha becomes imminent before the PDF value is verified, explicitly resolve this as a documented GM_INFERENCE before the roll; never conceal the gap.
-7. The online source text and the official release note are not perfectly synchronized. Treat the missing HP as a source discrepancy, not proof that the release note is false.
+5. **Important source discrepancy:** the currently retrievable official upstream Markdown's Fasha stat line contains STR 14, DEX 13, WIL 5 and attacks, but no HP value. The official 2026-03-31 devlog says HP was added. A separately hosted PDF text copy indexed by search shows **10 HP** for Fasha, but this copy is not the official release endpoint and the official PDF binary was not directly inspected in this pass.
+6. **Current table ruling: GM_INFERENCE — Fasha 10 HP.** Evidence: secondary PDF text copy reports “10 HP, 14 STR, 13 DEX, 5 WIL”; the official devlog independently confirms that an HP value was added. This is a narrowly scoped provisional value for Fasha only. It is not to be described as official until the official 2026-03-31 PDF is directly verified. If the official PDF later differs, replace the inference through a documented correction before resolving any affected combat.
+7. The online source text and the official release note are not perfectly synchronized. The 10 HP inference is corroborated but remains GM_INFERENCE, not SOURCE.
 
 ## 1. Adventure identity and premise
 
@@ -140,7 +140,7 @@ Do not trigger an encounter simply because a character changes position within a
 ### Fasha
 - Farmer from Dunston; formerly meek and selfish, now empowered and emboldened by the Eye of Vuk.
 - Official source stats: STR 14, DEX 13, WIL 5; fists d8+d8; hook knife d6.
-- **HP: UNKNOWN in the archived upstream Markdown despite the 2026-03-31 official devlog saying HP was added.**
+- **HP: 10 — GM_INFERENCE (provisional).** A secondary PDF text copy gives 10 HP, and the official 2026-03-31 devlog confirms an HP value was added; the official PDF itself remains uninspected. Do not label 10 HP as official SOURCE.
 - Flees toward White Tower Fens if necessary, hoping pursuers trigger traps.
 - If he defeats an opponent and has the opportunity, drags them to the Temple for sacrifice.
 - Do not make him fight to the death by default; his listed flight behavior is relevant.
@@ -425,7 +425,7 @@ These are same-assistant self-review and synthetic checks. They are not independ
 
 | Issue | Status | Impact | Handling |
 |---|---|---|---|
-| Fasha HP absent in retrievable official Markdown despite 2026-03-31 release note | UNKNOWN | Blocks exact Fasha combat stat card | Verify exact current PDF later; otherwise explicit GM_INFERENCE before combat |
+| Fasha HP absent in official Markdown; secondary PDF text copy says 10 HP | GM_INFERENCE: 10 HP | Exact stat usable with explicit inference label | Verify official 2026-03-31 PDF later; if different, correct before affected combat |
 | Exact four spellbooks carried by Annafranax | GM_PREP_CHOICE | Matters only if spellbook use becomes relevant | Select and record before first use; do not imply source fixed the list |
 | Exact starting scene/time | NOT SET | Opening presentation | Decide at start with player input; no pre-start time advance |
 | User PC and Katherine PC final cards | NOT PROVIDED | Initial resource accounting and party loadout | Wait for confirmed cards; no guessed stats or equipment |
