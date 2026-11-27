@@ -20,6 +20,8 @@
 
 ## Runtime 与信息通道
 
+- [Roll Runtime Application Adapter v1](./ROLL_RUNTIME_APPLICATION_ADAPTER_v1/README.md)：可执行参考适配器与本地故障注入脚本；仅合成文件系统，不是生产 Runtime 连接器。
+
 - [P0 合成验收夹具 v1](./GM_RUNTIME_P0_FIXTURE_v1.md)
 - [P0 回归夹具 v2](./GM_RUNTIME_P0_REGRESSION_v2.md)
 - [P0 回归夹具 v3](./GM_RUNTIME_P0_REGRESSION_v3.md)
