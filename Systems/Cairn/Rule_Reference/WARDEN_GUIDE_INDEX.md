@@ -66,14 +66,20 @@ Player's Guide 的基础流程仍然优先：Core Rules 与 Procedures 决定核
 
 ## 4. 本地化与按需回查
 
-以下项目不需要重复复制到本地手册；遇到实际对象时应查官方 2e 对应条目：
-- Bestiary 中具体怪物 stat block、特殊攻击、能力与 Critical Damage 效果；
-- Spellbooks 中具体法术效果；
-- Reliquary 中具体 Relic 的能力、uses/charges 与 Recharge 条件；
-- 未被当前 Campaign 角色卡完整记录的背景专属表格与物品；
-- 模组自定义遭遇、地图、NPC、派系、随机表和地点数据。
+以下稳定且可复用的内容已复制为本地官方来源快照，常规查阅优先使用本地文件，不应再把它们当作必须联网搜索的缺口：
+- Bestiary：完整怪物 stat block、特殊攻击、能力与 Critical Damage 效果，见 CAIRN2E_BESTIARY.md；
+- Spellbooks：完整 d100 法术名称与效果描述，见 CAIRN2E_SPELLBOOKS.md；
+- Reliquary：具体 Relic 的能力、uses/charges、库存属性与 Recharge 条件，见 CAIRN2E_RELIQUARY.md；
+- NPC Tables：姓名、Quirks、Background、Goals、Virtues、Vices，见 CAIRN2E_NPC_TABLES.md；
+- 怪物与背景生成指南：见 CAIRN2E_CREATING_MONSTERS.md、CAIRN2E_CREATING_BACKGROUNDS.md；
+- 20 个官方背景的完整姓名表、起始装备、背景表与专属能力，见 OFFICIAL_CATALOG_INDEX.md 及其链接文件。
 
-稳定通用规则已归入 CORE_RULES_RUNTIME.md 或 RUNTIME_PROTOCOL.md；具体条目仍遵循官方原文。未收录不等于规则不存在。不得用 Cairn 1e、Barebones、Into the Odd 或其他系统补缺。
+仍需按具体对象查阅的内容：
+- 当前 Campaign 尚未归档的模组专属遭遇、地图、NPC、派系、随机表和地点数据；
+- 官方在线版在本地快照之后新增或修改的条目；
+- 本地原文无法解决的版本差异、歧义或规则冲突。
+
+Campaign 专属内容必须归档在该 Campaign 的 SOURCE / GM-only 文件中，不能把模组 NPC、怪物和特殊程序混入系统通用目录。稳定通用规则已归入 CORE_RULES_RUNTIME.md 或 RUNTIME_PROTOCOL.md；具体条目仍遵循官方原文。不得用 Cairn 1e、Barebones、Into the Odd 或其他系统补缺。
 
 ## 5. 官方来源
 
