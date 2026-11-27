@@ -35,6 +35,15 @@
 - revision: 0
 - last_event_id: null
 
+## Prep QA｜非剧透状态
+
+- 已核对官方 CAS-1 在线文本全部主要章节及地点键。
+- 已对照 Cairn 2e Core Rules、Procedures、Warden Combat 和 Dungeon Exploration。
+- 已完成桌面逻辑回归，重点覆盖独立事件时钟、模组专用旅行触发、夜间旅行、地下事件、伤害结算和角色知识隔离。
+- 一项模组 NPC 数值在官方在线文本中缺失；主持侧补值会标为 GM_INFERENCE，不作为官方规则。
+- 当前证据属于 GM 自审与合成逻辑检查；未完成独立盲测或真实玩家回合验证。
+- 未读取、推算或假设任何角色卡数据。
+
 ## 运行约束
 
 - 不因现实时间间隔推进游戏时间。
