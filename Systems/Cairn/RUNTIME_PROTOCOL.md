@@ -1,12 +1,12 @@
 # Cairn 2e Runtime Protocol
 
 > 适用范围：仅 `system_id: cairn` / `Cairn Second Edition`。
-> 状态：candidate runtime protocol v0.3。已补入官方 Procedures 的 Downtime 程序；正式运行必须与 Campaign 的 `SYSTEM_BINDING.md` 一起使用。真实运行时与持久化仍须在实际跑团中验证。
+> 状态：candidate runtime protocol v0.4。已补入官方 Procedures 的 Downtime 程序，并建立官方怪物、Spellbooks、Relics、NPC Tables、创建指南及 20 个背景的本地完整来源目录；正式运行必须与 Campaign 的 `SYSTEM_BINDING.md` 一起使用。真实运行时与持久化仍须在实际跑团中验证。
 > 目的：让 GM 在桌面运行中直接调用已规范化规则，避免每次行动都在线搜索或临场重建规则。
 
 ## 1. 运行原则
 
-1. **规则本地化**：常用核心规则以 `Rule_Reference/CORE_RULES_RUNTIME.md` 为运行速查；不在每次行动中重新搜索网页。
+1. **规则本地化**：常用核心规则以 `Rule_Reference/CORE_RULES_RUNTIME.md` 为运行速查；具体怪物、Spellbooks、Relics、NPC Tables 与 Backgrounds 优先查 `Rule_Reference/OFFICIAL_CATALOG_INDEX.md` 指向的本地完整官方快照；不在每次行动中重新搜索网页。
 2. **权威性不降级**：官方 Cairn 2e 原文仍是最终来源。速查不覆盖、改写或取代原文。
 3. **按需回查**：只在规则未收录、标记 PARTIAL、涉及未本地化表格/特殊能力、出现冲突、版本不明，或高后果边界尚未被 VERIFIED_CORE 条目完整覆盖时查官方原文。高后果本身不要求重复联网检索；完整本地规则按原步骤执行并保留状态事务。
 4. **先情境后机制**：先判断虚构情境是否可行、是否存在真实风险，再调用对应机制；不得为了展示规则而制造无意义掷骰。
@@ -23,7 +23,8 @@
 3. 本文件第 4 节的阶段流程。
 4. `Rule_Reference/CORE_RULES_RUNTIME.md`：按规则 ID 检索对应标准步骤。
 5. `Rule_Reference/WARDEN_GUIDE_INDEX.md`：处理主持程序、NPC、知识与探索原则。
-6. 官方 Cairn 2e 对应章节/表格：仅在需要核验细节、例外或 PARTIAL 条目时回查。
+6. `Rule_Reference/OFFICIAL_CATALOG_INDEX.md`：按需检索完整怪物、法术书、遗物、NPC 生成表和背景数据；Campaign 专属 NPC、遭遇、时钟、地点与特殊程序查 Campaign 的 REFERENCE_INDEX、GM_ONLY_PREP 和 SOURCE 归档。
+7. 官方 Cairn 2e 对应章节/表格：仅在需要核验本地快照更新、差异、例外或本地未收录条目时回查。
 7. 经用户批准的 Table Adaptation：仅在绑定文件明确记录后应用。
 
 规则分类必须明确：
