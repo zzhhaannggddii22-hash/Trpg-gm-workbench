@@ -208,6 +208,22 @@ class GitHubGraphQLRuntimeStoreTests(unittest.TestCase):
         with self.assertRaises(InvalidTargetPath):
             self.store.publish("BATCH-002", BASE, {"../escape.json": "x"})
 
+    def test_reconcile_detects_removed_prepare_manifest(self):
+        self.store.prepare(self.manifest)
+        old = self.store.heads[self.store.operations_branch]
+        snapshot = dict(self.store.snapshots[old])
+        path = ".runtime/operations/BATCH-002.json"
+        snapshot.pop(path)
+        self.store.sequence += 1
+        new = f"{self.store.sequence:040x}"
+        self.store.snapshots[new] = snapshot
+        self.store.parents[new] = [old]
+        self.store.changed[new] = {path}
+        self.store.heads[self.store.operations_branch] = new
+        self.assertEqual(self.store.reconcile("BATCH-002")["status"], "DISPUTED")
+        with self.assertRaises(Exception):
+            self.store.prepare(self.manifest)
+
     def test_reconcile_detects_tampered_prepare_manifest(self):
         self.store.prepare(self.manifest)
         head = self.store.heads[self.store.operations_branch]
