@@ -14,7 +14,9 @@ ruleset:
 status: candidate_setup
 activation: pending
 canon_status: character_creation_in_progress
-player_character: Zaf
+player_characters:
+  - Zaf
+  - Catherine
 ```
 
 ## 规则与状态边界
@@ -29,4 +31,6 @@ player_character: Zaf
 - Zaf 是玩家在 Twin Lakes VR 游戏世界中的角色，由玩家本人控制。
 - Zaf 的实际性格、台词、语气与行动由玩家现场扮演；骰出的角色特征仅作为特征表结果记录，不替玩家决定人格或说话风格。
 - 外貌以扎雷克形象为准；Cairn 的外貌特征骰只记录为风格特性，不覆盖既有外观。
-- 凯瑟琳若作为玩家角色加入，必须建立独立人物卡、独立资源与独立行动逻辑；不得读取 GM-only 信息，也不得为了配合 Zaf 而自动服从。
+- 凯瑟琳是独立 PC，由助手控制，具有独立人物卡、资源与行动逻辑；她不得读取 GM-only 信息，也不得为了配合 Zaf 而自动服从。
+- 凯瑟琳的既有视觉身份可以保留为外貌描述，但 Triangle Agency 的背景履历、异常能力、QA、Chaos、Burnout、机构关系与资源全部不适用于 Cairn。
+- 队伍 Omen：Zaf 为当前最年轻角色，触发 Omen；结果 d20 = 2，已向玩家公开，见 README 与 Zaf 人物卡。
