@@ -10,7 +10,7 @@
 
 GitHub 仓库：`zzhhaannggddii22-hash/Trpg-gm-workbench`
 
-基线 ref：`main`  
+基线 ref：`main`
 被测 Workbench commit：`EXECUTOR MUST INSERT EXACT COMMIT SHA BEFORE RUN`
 
 所有文件读取必须显式使用上方固定的 Workbench commit SHA，不得只声明分支后依赖默认分支。请读取以下文件：
