@@ -50,11 +50,13 @@
 - 不将 SESSION 02 单独结束另算一份 Time。
 - 影像女孩的能力尚未设计、定价、解锁或购买；玩家计划在幕间与她进行专门互动，能力价格目标约 20 嘉奖上下，并要求结团后能够负担。按当前已报告嘉奖余额 18，实际购买价格不得超过 18，除非未来有新的合法收入。
 
-## 仍然未知／未能完整核对的项目
-- SESSION 01 的 BOWER-RES-001（Ask the Agency / 普通 Chaos Pool）仍未解决；SESSION 02 的 +5 已作为已确认变化量记录，但模组最终 Chaos Pool 余额仍 UNKNOWN。
-- SESSION 02 其他检定的完整骰面、QA 使用、Burnout、Harm 变化及最终逐项余额：UNKNOWN / NEEDS RECONCILIATION。
-- Demerits、天气事件计数、Ternion City 分部 Loose Ends 模组增量、其他装备使用/充能及关键道具转移：缺乏完整逐轮证据，保持 UNKNOWN / NOT VERIFIED。
-- Ripple Gun 最后已知满充 1 发是 SESSION 01 的历史状态；SESSION 02 是否使用或变化未能核实，不将其作为当前确认值。
+## 历史审计缺口（不阻止幕间）
+- 普通 Chaos Pool：SESSION 01/02 的模组内历史增减继续保留供审计；Bower Street 结团时按规则自动清零，结团余额为 0，不向下一模组结转。SESSION 01 的 BOWER-RES-001 无需为跨模组余额继续追算。
+- SESSION 02 其他检定的完整骰面、Burnout、Harm 变化及历史资源消耗明细未完整恢复；QA 已按任务间规则恢复至当前上限。历史记录缺口保留作审计，不阻止幕间。
+- Demerits：结团后确认非零，精确数值待从历史事件流水核实；未来每次增减必须即时记账。
+- Ternion City 分部 Loose Ends：本模组增量 0，Campaign 基线 1 不变。
+- 天气事件历史细节仍不完整；关键装备按模组结束规则恢复满额。当前无跨模组一次性资源，Ripple Gun 结团后为 1/1。
+- Ripple Gun：SESSION 02 使用明细未完整恢复；结团时按规则恢复满额，当前为 1/1。
 - SESSION 02 精确起止时间、完整事件顺序和全部 NPC 状态未恢复。
 
 ## 结团后的叙事边界
@@ -63,3 +65,11 @@
 - 影像女孩及影像兔由研究人员接管。女孩已表达离开过去的意愿并进入手提箱；其后续照护与能力设计属于幕间互动，不视为已发生。
 - 现实 Caitlin 与影像兔保持区分；影像兔的客观性质未知。
 - 幕间成长可从已确认的 Mission MVP（Attentiveness +1）与模组结团 Time +1 开始；不得提前扣除尚未发生的 Time 花费或能力购买。
+
+
+## 模组结束自动恢复记录
+- BOWER-RES-012：普通 Chaos Pool 在模组结束自动清零，结团后为 0；SESSION 01/02 历史交易保留供审计。
+- BOWER-RES-013：QA 按任务间规则完全恢复；缜密上限已由 Mission MVP 提升至 2，故当前 2/2。
+- BOWER-RES-014：Ripple Gun 模组结束恢复满额 1/1；当前没有跨模组只能使用一次的资源。
+- BOWER-RES-015：Ternion City 分部 Loose Ends 本模组增量 +0，Campaign 基线 1 不变。
+- Demerits 是跨模组持续资源，结团后确认非零；具体数值需从实际事件流水恢复，不得记成 0 或猜数。
