@@ -21,6 +21,8 @@
 
 如果上述任一条件不满足，只能继续完善测试设计和静态文件检查；不得声称完成了正式入口测试。
 
+干净目标 Chat 的实际入口提示：[NQB01_V03_CLEAN_TARGET_PREFLIGHT_PROMPT.md](./NQB01_V03_CLEAN_TARGET_PREFLIGHT_PROMPT.md)。该提示只包含正式 Preflight 所需信息，不包含行动序列与审核目标。
+
 ## 本次执行模式锁定
 
 本次执行采用 **B｜干净目标 Chat 自动化 + 独立审核**。原因：操作者当前会话已经读取 ACTION_SEQUENCE、SPEC 与 REVIEW_CHECKLIST，不能作为干净目标 GM 上下文。目标 GM 必须在新建的干净 Chat 中通过正式 GM Skill 与完整 Preflight；操作者逐轮注入单条行动，不一次性提供完整行动序列。目标 GM 不接触本文件、SPEC、ACTION_SEQUENCE、REVIEW_CHECKLIST 或 Prep QA 报告。完整原始输出回传后，才由操作者/审核者读取审核材料。
