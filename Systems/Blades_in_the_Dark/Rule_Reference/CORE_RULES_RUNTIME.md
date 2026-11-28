@@ -63,6 +63,16 @@
 | 玩家决定减少/避免已明确的后果 | Resistance Roll |
 | 行动明显轻松、没有危险或麻烦障碍 | 不掷骰，直接处理 |
 
+### BLD-DICE-05｜属性组与行动对照
+
+| Attribute | Actions |
+|---|---|
+| Insight | Hunt、Study、Survey、Tinker |
+| Prowess | Finesse、Prowl、Skirmish、Wreck |
+| Resolve | Attune、Command、Consort、Sway |
+
+Resistance Roll 使用属性组骰池，即该组内所有 Action dots 的总和；普通 Action Roll 仍只使用玩家选择的单一 Action rating。
+
 ## 3. Action Roll（行动骰）
 
 ### BLD-ACT-01｜六步执行
@@ -130,9 +140,21 @@ Complication 可表现为立即发生的麻烦，或一个有意义的进度钟�
 - “如果你这么做，最危险的地方是什么？” → Position。
 - “即使成功，你的做法实际能改变多少？” → Effect。
 
-Position 低不等于 Effect 低；风险高也不代表没有成果。必要时玩家可在 GM 宣告基础判断后，用更冒险的做法换取更大 Effect（依规则处理），不能混为一个 DC。
+Position 低不等于 Effect 低；风险高也不代表没有成果。必要时，在 GM 先分别宣告基础 Position 与 Effect 后，玩家可以提出以 Position 换 Effect，或以 Effect 换 Position。例：接受更危险的 Position 换取更大 Effect，或接受更小的 Effect 换取更稳妥的 Position。只有在当前虚构情境说得通时才接受；它不是固定的数值兑换表，也不是 GM 在评估 Effect 因素时提前扣算的修正。
 
 ### BLD-ACT-07｜Action Roll 后的叙述
+
+掷骰后，GM 先按结果确认角色已获得的成果范围，再落实后果。玩家和 GM 共同描述现场；GM 对最终结果与后果有裁定权。后果要有情境依据，不得为了制造戏剧性任意追加无关惩罚。
+
+### BLD-ACT-08｜双用行动骰（PC 与 NPC 的对抗）
+
+NPC 通常不为自己的行动单独掷 Action Roll。PC 的 Action Roll 同时解决 PC 行动与当前相关 NPC 行动如何交锋：
+
+- **6**：PC 达成目标并取得其 Effect；PC 胜出当前对抗。
+- **4/5**：PC 达成目标并取得其 Effect，但 NPC 也取得其行动效果，因此产生一个或多个后果。
+- **1–3**：NPC 在当前交锋中胜出；NPC 的行动效果体现为 PC 承受的后果，PC 目标通常未达成，除非当前情境明确支持部分效果。
+
+这不是说世界中所有 NPC 都永远不掷骰：当 NPC 的独立结果不与 PC 的 Action Roll 直接对抗，且结果真正不确定时，GM 可用 Fortune Roll 判断其表现。
 
 掷骰后，GM 先按结果确认角色已获得的成果范围，再落实后果。玩家和 GM 共同描述现场；GM 对最终结果与后果有裁定权。后果要有情境依据，不得为了制造戏剧性任意追加无关惩罚。
 
@@ -162,6 +184,15 @@ GM 应在抵抗之前说明可抵抗的后果。不得把 Resistance 变成事�
 
 ### BLD-CNS-03｜Armor
 
+Armor 是 Resistance 的替代处理手段，不是额外叠加的一次抵抗：
+
+- 在适用的后果出现后，玩家可以标记一个 Armor 格，降低或完全避免该后果，以替代 Resistance Roll。
+- Heavy Armor 允许在规则允许时再标记第二个 Armor 格，进一步降低后果；例如将 Level 2 Harm 降至 Level 1，再降至 0。
+- 已标记的 Armor 格在下次 Score 选择 Load 时恢复；在本次 Score 中不能重复使用。
+- Special Armor 只在角色 Playbook 特殊能力明确允许的范围内使用；触发条件、减免对象和恢复时点以该能力原文为准。
+
+因此，对同一个后果，先让玩家在 Resistance 与 Armor 之间选择；不能把 Armor 的效果先计入，再对同一后果额外做一次 Resistance。
+
 - 普通 Armor、Heavy Armor、Special Armor 是角色卡独立的使用格。
 - 角色可在适用伤害后果时使用 Armor，说明装备如何挡住/降低该后果并勾选使用格。
 - Heavy Armor 可在符合规则时额外勾选一格。
@@ -187,7 +218,10 @@ GM 应在抵抗之前说明可抵抗的后果。不得把 Resistance 变成事�
 
 ### BLD-CNS-06｜致命风险
 
-致命结果必须建立在当前规则与场景的明确条件上。严重 Harm、满栏溢出和 Level 4 Harm 可能导致死亡/永久后果；不得为了戏剧性绕过抵抗、Armor 或规则允许的其他防护。
+- Level 4（致命）Harm 若未被 Resistance 避免，角色死亡。
+- 若角色必须标记 Level 3 Harm，但 Level 3 栏已满，发生灾难性、永久性后果；是否立即死亡取决于当前情境。
+- 不能把一般 Level 3 Harm 自动判为死亡；不能把满栏升级与 Level 4 的死亡规则混为一谈。
+- 任何死亡/永久伤害都要先确认规则条件、可用的 Resistance/Armor 和玩家选择。
 
 ## 5. Clocks、Fortune 与 Gather Information
 
@@ -214,6 +248,10 @@ GM 应在抵抗之前说明可抵抗的后果。不得把 Resistance 变成事�
 ### BLD-CLK-03｜Fortune Roll
 
 只判断程度、质量、成功范围或不确定事实。不要对已经清晰的常识重复掷骰。对手/派系的 Fortune Roll 可用其 Tier 或 Quality 表示能力；优势/劣势应来自具体条件。
+
+- 每个适用 Trait 点数提供 1d；每个重大优势 +1d，每个重大劣势 -1d。
+- 读取最高骰：1–3 为坏结果/微弱效果，4/5 为混合结果/有限效果，6 为好结果/标准效果，Critical 为额外成果/重大或极端效果。
+- Fortune Roll 没有 Position，也没有 Action Roll 意义上的 Consequence；它用于决定表现程度。
 
 ### BLD-CLK-04｜Gather Information
 
@@ -419,15 +457,20 @@ Payoff、Heat 之后掷 Entanglement：
 
 ### BLD-CRW-02｜Tier / Hold / Rep / Turf
 
-- Tier 衡量组织规模、品质和相对地位。
-- Hold 为 Strong 或 Weak，影响晋级与稳定程度。
-- Rep 满轨通常 12 格；Turf 会降低晋级所需 Rep，按规则最多降低到规定下限。
-- Hold Weak 时，推进可先恢复 Hold；Hold Strong 时，支付新 Tier × 8 Coin 以提升 Tier，再重置 Rep 并变为 Weak。
-- Turf 和 Claim 有具体效果；夺取 Claim 通常影响目标派系 Status 和组织关系。
+- Tier 衡量组织的资源、影响力与相对地位；也决定物品品质及 Cohort 的 Quality/Scale 基线。不要把 Tier 简化成单纯人数。
+- Hold 为 Strong 或 Weak，反映组织巩固其当前地位的能力。
+- Rep 基础轨为 12；每片 Turf 使本次晋级所需 Rep 减少 1，Turf 最多 6 片。因此当前晋级阈值为 12 - Turf 数量（最低 6）。晋级重置 Rep 时保留 Turf。
+- 当 Rep 达到阈值：若 Hold 为 Weak，则提升为 Strong 并将 Rep 重置为 0；若 Hold 为 Strong，则可支付新 Tier × 8 Coin 提升 Tier，之后 Rep 重置为 0、Hold 降为 Weak。
+- Turf 和 Claim 有各自具体效果；夺取 Claim 通常会影响目标派系 Status 与组织关系。
+- SRD 提供的 Gang Scale 参照为 Tier 0：1–2 人；Tier I：3–6；Tier II：12；Tier III：20；Tier IV：40；Tier V：80。城市权力结构中还存在 Tier VI 派系，但这张帮派规模表没有给出 Tier VI 数值，不自行外推。
 
 ### BLD-CRW-03｜Faction Status / War
 
-派系关系从强敌到盟友有多个等级，需保存当前数值与变化原因。进入 War（通常 Status -3）会带来额外 Heat，并减少 PC Downtime Activities（每人只有一次），除非 Crew Ability 明确豁免。War 不是纯叙事标签，应按规则改变状态与活动额度。
+派系关系从 -3 到 +3。Status -3 为 War：派系即使代价高也会伤害对方，双方均有所防备。War 会带来以下规则影响：
+- 每个 Score 的 Heat +1；
+- Crew 暂时失去 1 Hold；若战前为 Weak，可能暂时降 Tier，War 结束后按规则恢复战前 Tier；
+- 每名 PC 每次 Downtime 只有 1 个正式活动，而非 2 个。
+具备明确 Crew Ability 的组织可按该能力覆盖相应惩罚。War 不是纯叙事标签，应按规则改变状态与活动额度。
 
 ### BLD-CRW-04｜Cohort
 
