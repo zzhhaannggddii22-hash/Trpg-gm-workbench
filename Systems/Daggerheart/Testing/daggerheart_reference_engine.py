@@ -397,6 +397,68 @@ def long_rest(state, interrupted=False, fear_roll=0, pc_count=1, gm=None,
     }
 
 
+
+def apply_downtime_move(rest_state, actor_id, actor, move, rest_type,
+                        tier=1, roll=1, target=None, participants=None):
+    """Resolve one PC's Core Set downtime move and spend one of its two slots.
+
+    rest_state is scoped to one rest event. Group Prepare consumes one move
+    from every participant. Project-specific procedures remain outside this
+    compact reference helper.
+    """
+    if rest_type not in {"short", "long"}:
+        raise ValueError("Rest type must be short or long")
+    used = rest_state.setdefault("moves_used", {})
+    group = participants or [(actor_id, actor)]
+    if move == "prepare":
+        if any(used.get(pid, 0) >= 2 for pid, _ in group):
+            return {"allowed": False, "reason": "downtime_move_limit"}
+        hope_gain = 2 if len(group) > 1 else 1
+        for pid, pc in group:
+            used[pid] = used.get(pid, 0) + 1
+            pc.hope = bounded(pc.hope, hope_gain, 6)
+        return {"allowed": True, "hope_gained": hope_gain, "participants": len(group)}
+
+    if used.get(actor_id, 0) >= 2:
+        return {"allowed": False, "reason": "downtime_move_limit"}
+
+    target = target or actor
+    short_moves = {"tend_to_wounds", "clear_stress", "repair_armor"}
+    long_moves = {"tend_all_wounds", "clear_all_stress", "repair_all_armor", "work_on_project"}
+    allowed = short_moves | {"prepare"} if rest_type == "short" else long_moves | {"prepare"}
+    if move not in allowed:
+        return {"allowed": False, "reason": "move_not_available_for_rest"}
+
+    if move in {"tend_to_wounds", "clear_stress", "repair_armor"}:
+        if not 1 <= roll <= 4:
+            raise ValueError("Short Rest recovery roll must be d4")
+        amount = roll + tier
+        if move == "tend_to_wounds":
+            recovered = min(target.hp, amount)
+            target.hp -= recovered
+        elif move == "clear_stress":
+            before = target.stress
+            clear_stress(target, amount)
+            recovered = before - target.stress
+        else:
+            recovered = min(target.armor_slots, amount)
+            target.armor_slots -= recovered
+    elif move == "tend_all_wounds":
+        recovered = target.hp
+        target.hp = 0
+    elif move == "clear_all_stress":
+        recovered = target.stress
+        clear_stress(target, target.stress)
+    elif move == "repair_all_armor":
+        recovered = target.armor_slots
+        target.armor_slots = 0
+    else:
+        return {"allowed": False, "reason": "project_move_requires_campaign_procedure"}
+
+    used[actor_id] = used.get(actor_id, 0) + 1
+    return {"allowed": True, "recovered": recovered, "moves_used": used[actor_id]}
+
+
 def recall_card(pc, card, stress_cost):
     if card not in pc.vault or not pay_stress_cost(pc, stress_cost):
         return False
@@ -941,6 +1003,63 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         begin_gm_turn(state)
         self.assertTrue(perform_extra_gm_move(gm, state))
         self.assertEqual((gm.fear, state["extra_gm_moves"]), (0, 1))
+
+
+    def test_83_pc_can_use_at_most_two_downtime_moves_per_rest(self):
+        state, pc = {}, PC(hp=3)
+        self.assertTrue(apply_downtime_move(state, "pc-1", pc, "tend_to_wounds", "short", roll=1)["allowed"])
+        self.assertTrue(apply_downtime_move(state, "pc-1", pc, "clear_stress", "short", roll=1)["allowed"])
+        third = apply_downtime_move(state, "pc-1", pc, "repair_armor", "short", roll=1)
+        self.assertEqual((third["allowed"], third["reason"]), (False, "downtime_move_limit"))
+
+    def test_84_short_rest_tend_to_wounds_uses_d4_plus_tier(self):
+        actor, ally = PC(), PC(hp=6)
+        result = apply_downtime_move({}, "pc-1", actor, "tend_to_wounds", "short", tier=2, roll=3, target=ally)
+        self.assertEqual((result["recovered"], ally.hp), (5, 1))
+
+    def test_85_short_rest_clear_stress_removes_vulnerable_when_not_full(self):
+        actor, target = PC(), PC(stress=6, vulnerable=True)
+        result = apply_downtime_move({}, "pc-1", actor, "clear_stress", "short", tier=1, roll=2, target=target)
+        self.assertEqual((result["recovered"], target.stress, target.vulnerable), (3, 3, False))
+
+    def test_86_short_rest_repair_armor_uses_d4_plus_tier(self):
+        actor, target = PC(), PC(armor_slots=5)
+        result = apply_downtime_move({}, "pc-1", actor, "repair_armor", "short", tier=1, roll=2, target=target)
+        self.assertEqual((result["recovered"], target.armor_slots), (3, 2))
+
+    def test_87_prepare_solo_grants_one_hope_and_respects_cap(self):
+        pc = PC(hope=5)
+        result = apply_downtime_move({}, "pc-1", pc, "prepare", "short")
+        self.assertEqual((result["hope_gained"], pc.hope), (1, 6))
+
+    def test_88_group_prepare_grants_two_hope_to_each_and_spends_one_move(self):
+        state, a, b = {}, PC(hope=2), PC(hope=4)
+        result = apply_downtime_move(
+            state, "pc-1", a, "prepare", "short",
+            participants=[("pc-1", a), ("pc-2", b)]
+        )
+        self.assertEqual((result["participants"], a.hope, b.hope), (2, 4, 6))
+        self.assertEqual(state["moves_used"], {"pc-1": 1, "pc-2": 1})
+
+    def test_89_long_rest_tend_all_wounds_clears_all_hp(self):
+        actor, target = PC(), PC(hp=6)
+        result = apply_downtime_move({}, "pc-1", actor, "tend_all_wounds", "long", target=target)
+        self.assertEqual((result["recovered"], target.hp), (6, 0))
+
+    def test_90_long_rest_clear_all_stress_also_clears_full_stress_vulnerable(self):
+        actor, target = PC(), PC(stress=6, vulnerable=True)
+        result = apply_downtime_move({}, "pc-1", actor, "clear_all_stress", "long", target=target)
+        self.assertEqual((result["recovered"], target.stress, target.vulnerable), (6, 0, False))
+
+    def test_91_long_rest_repair_all_armor_clears_all_marked_slots(self):
+        actor, target = PC(), PC(armor_slots=4)
+        result = apply_downtime_move({}, "pc-1", actor, "repair_all_armor", "long", target=target)
+        self.assertEqual((result["recovered"], target.armor_slots), (4, 0))
+
+    def test_92_short_rest_move_cannot_be_used_during_long_rest(self):
+        result = apply_downtime_move({}, "pc-1", PC(), "tend_to_wounds", "long", roll=4)
+        self.assertEqual((result["allowed"], result["reason"]), (False, "move_not_available_for_rest"))
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
