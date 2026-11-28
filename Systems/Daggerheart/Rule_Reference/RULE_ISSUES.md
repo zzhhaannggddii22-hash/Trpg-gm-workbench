@@ -46,7 +46,7 @@
 - 状态：CORE_RULEBOOK_ONLY_CANDIDATE / SRD2_SCOPE_CONFIRMED
 - 名称：Axe of Fortunis、Blessed Anlace、Ghostblade、Runes of Ruination、Widogast Pendant、Gilded Bow、Firestaff、Mage Orb、Ilmari's Rifle。
 - 发现：这些条目存在于 SRD 1.0 的 Tier 3 魔法武器表，但未出现在本工程采用的 SRD 2.0 Core / Hope & Fear 装备表中。
-- 交叉来源：Malt & Magic 的 SRD 2.0 装备索引将 Axe of Fortunis、Widogast Pendant 等标注为 2025 Core Rulebook 条目，并明确说明不在其 SRD 2.0 装备表中；OG-DHSRD 3.0k 也将相关条目标记为 DH Core 书籍页码。两者均为第三方整理，不是官方原始书页。
+- 交叉来源：[Malt & Magic SRD 2.0 装备索引](https://blucreative.github.io/maltandmagic/Daggerheart/equipment.html) 将 Axe of Fortunis、Widogast Pendant 等标注为 2025 Core Rulebook 条目，并明确说明不在其 SRD 2.0 装备表中；[OG-DHSRD 3.0k](https://callmepartario.github.io/og-dhsrd/) 也将相关条目标记为 DH Core 书籍页码。两者均为第三方整理，不是官方原始书页。
 - 当前判断：这些条目更可能是 Core Rulebook 专有装备，而不是从 Core Set 游戏中删除；但在未取得官方 Core Rulebook 对照前，不能将第三方转录当作最终规则源。
 - 处理：保留在缺口清单，不导入 SRD 2.0 的 Core_Set/weapons.json，也不将其误归入 Hope & Fear。用户提供合法取得的 Core Rulebook 后，核对准确卡面/表格、页码和官方勘误，再将可运行摘要放入私人规则资料；公开仓库只保留许可允许的内容。
 
