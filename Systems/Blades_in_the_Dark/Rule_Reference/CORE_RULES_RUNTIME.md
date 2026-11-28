@@ -521,7 +521,7 @@ Crew Creation 的状态输入不可遗漏：
 - Rep 基础轨为 12；每片 Turf 使本次晋级所需 Rep 减少 1，Turf 最多 6 片。因此当前晋级阈值为 12 - Turf 数量（最低 6）。晋级重置 Rep 时保留 Turf。
 - 当 Rep 达到阈值：若 Hold 为 Weak，则提升为 Strong 并将 Rep 重置为 0；若 Hold 为 Strong，则可支付新 Tier × 8 Coin 提升 Tier，之后 Rep 重置为 0、Hold 降为 Weak。
 - Turf 和 Claim 有各自具体效果；夺取 Claim 通常会影响目标派系 Status 与组织关系。
-- SRD 提供的 Gang Scale 参照为 Tier 0：1–2 人；Tier I：3–6；Tier II：12；Tier III：20；Tier IV：40；Tier V：80。城市权力结构中还存在 Tier VI 派系，但这张帮派规模表没有给出 Tier VI 数值，不自行外推。
+- SRD 的 Scale / gang-size 参照为 Tier 0：1–2 人；Tier I：3–6；Tier II：12；Tier III：20；Tier IV：40；Tier V：80；Tier VI：160。此表用于估算规模，不等于每个派系必须按该人数配齐 Cohort。
 
 ### BLD-CRW-02B｜Claims 与 Claim Map
 
