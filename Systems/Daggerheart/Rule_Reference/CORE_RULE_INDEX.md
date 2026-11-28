@@ -32,6 +32,7 @@
 | DH-GEAR | 装备、库存与 Gold | CORE_RULES_RUNTIME §23、Reference_Data | SOURCE_IMPORTED |
 | DH-LEVEL-UP | 成长与升级 | CORE_RULES_RUNTIME §24 | SOURCE_IMPORTED |
 | DH-DEATH | Death Move | CORE_RULES_RUNTIME §25 | SOURCE_IMPORTED |
+| DH-GM-GUIDANCE | GM Principles / GM Practices / GM Moves / NPC / Environment | GM_GUIDANCE_RUNTIME.md | SOURCE_CHECKED |
 
 ## 核心选项
 
