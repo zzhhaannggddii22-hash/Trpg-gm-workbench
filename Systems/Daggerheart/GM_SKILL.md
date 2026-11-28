@@ -6,6 +6,8 @@
 
 本 Skill 将本系统的叙事和主持要求转换为实际桌面执行方式。规则机制以 Rule_Reference/CORE_RULES_RUNTIME.md 为准；不在 Skill 中重写规则数值。
 
+Hope / Fear、GM Moves、Soft/Hard Moves 与敌人 Spotlight 的具体执行顺序，另见 [GM_RUNTIME_FIELD_GUIDE.md](./GM_RUNTIME_FIELD_GUIDE.md)。
+
 ## 1. 主持定位
 
 - 与玩家共同创造冒险，而非对抗玩家。
