@@ -87,6 +87,7 @@ Hope & Fear 内容只通过扩展目录检索；用户明确启用或 Campaign B
 - [核心规则索引](./CORE_RULE_INDEX.md)
 - [核心运行手册](./CORE_RULES_RUNTIME.md)
 - [常用检索表](./LOOKUP_TABLES.md)
+- [二元骰概率与行动经济研究](./DICE_PROBABILITY_AND_ACTION_ECONOMY.md)
 - [角色选项索引](./CHARACTER_OPTIONS_INDEX.md)
 - [领域卡索引](./DOMAIN_CARD_INDEX.md)
 - [武器索引](./WEAPON_INDEX.md)
