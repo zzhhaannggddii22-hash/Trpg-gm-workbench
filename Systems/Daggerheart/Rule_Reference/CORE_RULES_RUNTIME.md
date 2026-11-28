@@ -118,7 +118,7 @@ Core Set 角色选项索引见 [CHARACTER_OPTIONS_INDEX.md](./CHARACTER_OPTIONS_
 - 超过资源上限时不保留超额点数。
 
 ### Fear
-- **起始 Fear 来源待核：** 旧版运行笔记记录为 Campaign 开始时每名 PC 提供 1 Fear，但该条未在当前公开 SRD 2.0 中定位到明确出处。正式 Campaign 初始化前，须以完整 Core Rulebook / 官方明确出处核实；不能把这条标成 SRD 2.0 已核实规则。
+- **Campaign 起始 Fear：** Campaign 开始时，GM 获得每名 PC 1 Fear。官方 SRD 2.0 第 86 页（Using Fear）明确规定。
 - PC 掷出 Fear 结果、队伍休息或能力明确给予时获得 Fear。
 - 上限 12，跨 Session 保留。
 - 花费 1 Fear 可：抢夺 Spotlight 并作 GM Move；作额外 GM Move；启用 Adversary Fear Feature；启用 Environment Fear Feature；为敌方掷骰加入适用 Experience。
