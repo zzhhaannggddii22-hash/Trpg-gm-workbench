@@ -55,8 +55,8 @@
 - 结构化数据：SOURCE_IMPORTED，已按 Core / Hope & Fear 拆分。
 - Errata：完成抽样核验，尚未穷尽。
 - 桌面逻辑模拟：64/64 已完成（非代码自动测试），其中 19 项 GM Move / Fear / 遭遇设计专项见 GM_DESK_SIMULATION_01.md。
-- 独立参考执行器：Run 01 为 42/42；Run 02 为 51/51；Run 03 为 59/59；Run 04 为 66/66；Run 05 已在 2026-11-28 的 GitHub Actions 独立 Daggerheart Job 中以 71/71 通过（DH-REF-067–071 休息与 Downtime 回归全部通过），证据见 AUTOMATED_REFERENCE_EXECUTION_05.md。当前脚本已扩展至 81 项，新增 DH-REF-072–081（GM Turn / Spotlight 成本、连续 Short Rest 边界）尚待 Run 06 自动复跑。执行器只覆盖选定核心状态转移，不代表完整规则覆盖或生产 Runtime 验收。
-- 仓库整体 CI：2026-11-28 main Run 663 全绿。通用 `validate` Job 的 41 项回归测试、Roll Runtime Adapter 一致性测试、非 Markdown patch whitespace 检查均通过；独立 Daggerheart Job 最近一次 71/71 参考执行器测试通过；之后新增 10 项待复跑。此前 4 条失效路径与 8 个 Markdown 锚点已修复。
+- 独立参考执行器：Run 01 为 42/42；Run 02 为 51/51；Run 03 为 59/59；Run 04 为 66/66；Run 05 已在 2026-11-28 的 GitHub Actions 独立 Daggerheart Job 中以 71/71 通过（DH-REF-067–071 休息与 Downtime 回归全部通过），证据见 AUTOMATED_REFERENCE_EXECUTION_05.md。当前脚本已扩展至 82 项，新增 DH-REF-072–082 共 11 项（GM Turn / Spotlight、额外 GM Move、连续 Short Rest 边界）尚待 Run 06 自动复跑。执行器只覆盖选定核心状态转移，不代表完整规则覆盖或生产 Runtime 验收。
+- 仓库整体 CI：2026-11-28 main Run 663 全绿。通用 `validate` Job 的 41 项回归测试、Roll Runtime Adapter 一致性测试、非 Markdown patch whitespace 检查均通过；独立 Daggerheart Job 最近一次 71/71 参考执行器测试通过；之后新增 11 项待复跑。此前 4 条失效路径与 8 个 Markdown 锚点已修复。
 - 内部 Blind Scenario 模拟：第一轮 3 场景已完成（GM_BLIND_SCENARIO_TEST_01.md）；第二轮社交、探索、战斗 3 场景复核已完成（GM_SCENARIO_REVALIDATION_02.md）；独立外部 Blind GM 测试：待执行。
 - 实际玩家短场景 Session：待执行。
 - 正式 Campaign：未建立。
