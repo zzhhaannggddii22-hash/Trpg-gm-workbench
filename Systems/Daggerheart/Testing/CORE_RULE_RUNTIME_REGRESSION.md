@@ -1,6 +1,6 @@
 # Core Rule Runtime Regression Matrix
 
-> 状态：PARTIALLY EXECUTED / DESK TEST  
+> 状态：45/45 DESK-SIMULATED / LIVE VALIDATION PENDING  
 > DH-T01–DH-T45 已进行确定性桌面逻辑模拟（非代码自动测试）。详情见三个 DESK_TEST_BATCH 文件。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
