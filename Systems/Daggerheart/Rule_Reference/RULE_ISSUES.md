@@ -41,12 +41,14 @@
 - 处理：不导入 SRD 数据仓库中的 `campaign_frames/` 文件，不复制官方地图或 Campaign Frame 正文。仅记录官方入口和一般机制摘要。
 - 来源：官方 DPCGL 2.0 §1.9.3、§2.1；详见 [LICENSE_AND_ATTRIBUTION.md](../Reference_Data/LICENSE_AND_ATTRIBUTION.md)。
 
-## DH-I-006｜旧版 SRD 1.0 的九件武器未出现在 SRD 2.0 当前武器数据中
+## DH-I-006｜九件旧 SRD 武器不在 SRD 2.0 装备表中
 
-- 状态：VERSION_CHANGE_RECORDED
-- 情况：对比旧版结构化数据，旧版武器表中有 9 个条目没有出现在 SRD 2.0 的武器表。
+- 状态：CORE_RULEBOOK_ONLY_CANDIDATE / SRD2_SCOPE_CONFIRMED
 - 名称：Axe of Fortunis、Blessed Anlace、Ghostblade、Runes of Ruination、Widogast Pendant、Gilded Bow、Firestaff、Mage Orb、Ilmari's Rifle。
-- 处理：不把旧版条目自动恢复到当前 Core 数据。待核实这是 SRD 修订删除、迁移到其他内容、印刷规则书独有内容还是数据抽取差异。
+- 发现：这些条目存在于 SRD 1.0 的 Tier 3 魔法武器表，但未出现在本工程采用的 SRD 2.0 Core / Hope & Fear 装备表中。
+- 交叉来源：Malt & Magic 的 SRD 2.0 装备索引将 Axe of Fortunis、Widogast Pendant 等标注为 2025 Core Rulebook 条目，并明确说明不在其 SRD 2.0 装备表中；OG-DHSRD 3.0k 也将相关条目标记为 DH Core 书籍页码。两者均为第三方整理，不是官方原始书页。
+- 当前判断：这些条目更可能是 Core Rulebook 专有装备，而不是从 Core Set 游戏中删除；但在未取得官方 Core Rulebook 对照前，不能将第三方转录当作最终规则源。
+- 处理：保留在缺口清单，不导入 SRD 2.0 的 Core_Set/weapons.json，也不将其误归入 Hope & Fear。用户提供合法取得的 Core Rulebook 后，核对准确卡面/表格、页码和官方勘误，再将可运行摘要放入私人规则资料；公开仓库只保留许可允许的内容。
 
 ## DH-I-007｜Adversary 名称调整与别名
 
