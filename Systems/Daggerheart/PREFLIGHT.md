@@ -47,7 +47,7 @@ Preflight 用于在任何正式 Session 开始前确认规则、资料、角色�
 ## 5. 运行状态
 
 - [ ] 当前 PC / NPC / Enemy 状态快照已建立。
-- [ ] Hope 与 Fear 资源初始值正确；Fear 上限 12。
+- [ ] Hope 与 Fear 资源初始值正确；Campaign 开始时 GM Fear = PC 数量（每名 PC 1 Fear）；Fear 上限 12。
 - [ ] HP、Stress、Armor Slots、Conditions、Countdown、使用次数和延迟效果可追踪。
 - [ ] 已明确休息次数、上次 Short / Long Rest 与待刷新效果。
 - [ ] 关键敌人的共享 Pool / Evolution / Token 状态有记录。
