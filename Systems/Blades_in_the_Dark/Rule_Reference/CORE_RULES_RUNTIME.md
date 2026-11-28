@@ -73,7 +73,10 @@
 | Prowess | Finesse、Prowl、Skirmish、Wreck |
 | Resolve | Attune、Command、Consort、Sway |
 
-Resistance Roll 使用属性组骰池，即该组内所有 Action dots 的总和；普通 Action Roll 仍只使用玩家选择的单一 Action rating。
+Resistance Roll 使用属性组骰池，即该组内所有 Action dots 的总和；普通 Action Roll 仍只使用玩家选择的单一 Action rating。选择哪一组由后果性质决定：
+- **Insight**：因欺骗、误判或理解问题造成的后果；
+- **Prowess**：因身体劳累、受伤或身体危险造成的后果；
+- **Resolve**：因心理压力、恐惧或意志力考验造成的后果。
 
 ## 2-A. Action 与 Attribute 对照
 
@@ -184,6 +187,8 @@ NPC 通常不为自己的行动单独掷 Action Roll。PC 的 Action Roll 同时
 受伤按角色卡 Harm 栏登记。若某等级栏已满，必须把伤害记入上一等级栏；若 Level 3 栏也已满，适用灾难性永久后果。伤害影响必须依角色当前做的事情判断相关性，不是所有伤势都对所有行动施加惩罚。
 
 ### BLD-CNS-02｜Resistance
+
+按后果性质选择属性组：Insight 对应欺骗/理解，Prowess 对应身体劳累/伤害，Resolve 对应心理劳累/意志力。GM 说明当前后果以及抵抗能完全避免还是降低严重程度，再让玩家决定是否抵抗。
 
 1. 确定后果具体内容。
 2. 玩家决定是否抵抗。
@@ -470,6 +475,16 @@ Payoff、Heat 之后掷 Entanglement：
 
 典型新 Crew 起点：Tier 0、Strong Hold、0 Rep、2 Coin；还要按 Crew Type 建立声望、Lair、Hunting Grounds、Favored Operation、特殊能力、起始升级与联络人。不同版本/组织卡的明确起始内容优先于泛化摘要。
 
+### BLD-CRW-02A｜Coin / Vault / Stash
+
+- Coin 是组织与角色可用的流动资产单位；不追踪角色日常小额生活开支。
+- PC 随身持有的 Coin 上限通常为 4；每 1 Coin 占用 1 Load。超过随身上限的资产应花费或转入个人 Stash。
+- Crew 的 Vault 初始容量通常为 4 Coin；通过 Vault 升级可提高至 8，再提高至 16。超过 Vault 容量的 Coin 必须在下次 Score 前花费或分配。
+- 休整中，花费 1 Coin 可获得一个额外 Downtime Activity；花费 1 Coin 也可在活动掷骰后提高一个结果等级。
+- 每次 Crew Advance 时，每名 PC 获得等于 Crew Tier + 2 的 Stash；Stash 是长期个人财富，与 Crew Vault / 可随身 Coin 分开记录。
+- 从 Stash 取现按规则折算：每移除 2 Stash 得到 1 Coin；Stash 还决定退休后的生活品质和命运。
+- 组织升级 Tier 时支付新 Tier × 8 Coin；有 Patron 等能力时按能力修改成本。
+
 ### BLD-CRW-02｜Tier / Hold / Rep / Turf
 
 - Tier 衡量组织的资源、影响力与相对地位；也决定物品品质及 Cohort 的 Quality/Scale 基线。不要把 Tier 简化成单纯人数。
@@ -515,7 +530,7 @@ Score、Claim、Tier、Rep、Hold、Status、Heat、Wanted、Coin、Cohort 状�
 
 ### BLD-ADV-01｜PC XP
 
-每次 Desperate Action 在对应 Attribute XP Track 标 1 XP。Session 结束按 Playbook XP triggers、表达角色信念/驱力/出身/背景、与 Vice/Trauma 的冲突结算 XP，按出现次数给 1 或 2 XP。填满对应轨后获得 Action dot 或 Playbook Special Ability。
+每次 Desperate Action 在对应 Attribute XP Track 标 1 XP。这里的“对应属性”是该 Action 所属的 Insight / Prowess / Resolve 属性组，不是单独给该 Action 点数本身加 XP。Session 结束按 Playbook XP triggers、表达角色信念/驱力/出身/背景、与 Vice/Trauma 的冲突结算 XP，按出现次数给 1 或 2 XP。填满对应轨后获得 Action dot 或 Playbook Special Ability。
 
 ### BLD-ADV-02｜Action Rating 上限
 
