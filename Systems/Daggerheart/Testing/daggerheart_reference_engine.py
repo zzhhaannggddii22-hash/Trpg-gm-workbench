@@ -280,6 +280,49 @@ def area_effect_targets_valid(distance_bands, origin_in_range=True):
     )
 
 
+
+def begin_gm_turn(state):
+    state["spotlight_side"] = "gm"
+    state["gm_turn_active"] = True
+    state["enemy_spotlights"] = {}
+    state["total_enemy_spotlights"] = 0
+
+
+def seize_spotlight(gm, state):
+    if state.get("spotlight_side") != "pc" or state.get("gm_turn_active"):
+        return False
+    if not spend_fear(gm, 1):
+        return False
+    begin_gm_turn(state)
+    return True
+
+
+def spotlight_adversary(gm, state, enemy_id, relentless_limit=1, fear_feature_cost=0):
+    if not state.get("gm_turn_active") or state.get("spotlight_side") != "gm":
+        return {"allowed": False, "spotlight_cost": 0, "feature_cost": 0}
+    if fear_feature_cost < 0:
+        raise ValueError("Fear Feature cost cannot be negative")
+    counts = state.setdefault("enemy_spotlights", {})
+    count = counts.get(enemy_id, 0)
+    if count >= relentless_limit:
+        return {"allowed": False, "spotlight_cost": 0, "feature_cost": 0}
+    extra_spotlight = state.get("total_enemy_spotlights", 0) > 0
+    spotlight_cost = 1 if extra_spotlight else 0
+    total_cost = spotlight_cost + fear_feature_cost
+    if not spend_fear(gm, total_cost):
+        return {"allowed": False, "spotlight_cost": spotlight_cost, "feature_cost": fear_feature_cost}
+    counts[enemy_id] = count + 1
+    state["total_enemy_spotlights"] = state.get("total_enemy_spotlights", 0) + 1
+    return {"allowed": True, "spotlight_cost": spotlight_cost, "feature_cost": fear_feature_cost}
+
+
+def end_gm_turn(state):
+    state["spotlight_side"] = "pc"
+    state["gm_turn_active"] = False
+    return True
+
+
+
 def advantage_state(advantage_sources, disadvantage_sources):
     net = advantage_sources - disadvantage_sources
     return "advantage" if net > 0 else "disadvantage" if net < 0 else "none"
@@ -803,6 +846,67 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         gm = GM(fear=11)
         result = short_rest({}, fear_roll=4, gm=gm)
         self.assertEqual((result["gm_fear_gained"], gm.fear), (1, 12))
+
+
+    def test_72_seizing_pc_spotlight_costs_one_fear(self):
+        gm, state = GM(fear=2), {"spotlight_side": "pc"}
+        self.assertTrue(seize_spotlight(gm, state))
+        self.assertEqual((gm.fear, state["spotlight_side"], state["gm_turn_active"]), (1, "gm", True))
+
+    def test_73_cannot_seize_spotlight_without_fear(self):
+        gm, state = GM(fear=0), {"spotlight_side": "pc"}
+        self.assertFalse(seize_spotlight(gm, state))
+        self.assertEqual(state["spotlight_side"], "pc")
+
+    def test_74_first_enemy_spotlight_is_free_and_second_enemy_costs_fear(self):
+        gm, state = GM(fear=2), {}
+        begin_gm_turn(state)
+        first = spotlight_adversary(gm, state, "bandit-a")
+        second = spotlight_adversary(gm, state, "bandit-b")
+        self.assertEqual((first["allowed"], first["spotlight_cost"]), (True, 0))
+        self.assertEqual((second["allowed"], second["spotlight_cost"], gm.fear), (True, 1, 1))
+
+    def test_75_relentless_two_allows_one_repeat_at_one_fear(self):
+        gm, state = GM(fear=1), {}
+        begin_gm_turn(state)
+        first = spotlight_adversary(gm, state, "solo", relentless_limit=2)
+        second = spotlight_adversary(gm, state, "solo", relentless_limit=2)
+        third = spotlight_adversary(gm, state, "solo", relentless_limit=2)
+        self.assertTrue(first["allowed"])
+        self.assertEqual((second["allowed"], second["spotlight_cost"], gm.fear), (True, 1, 0))
+        self.assertFalse(third["allowed"])
+
+    def test_76_fear_feature_cost_is_separate_from_extra_spotlight_cost(self):
+        gm, state = GM(fear=3), {}
+        begin_gm_turn(state)
+        spotlight_adversary(gm, state, "enemy-a")
+        result = spotlight_adversary(gm, state, "enemy-b", fear_feature_cost=2)
+        self.assertEqual((result["spotlight_cost"], result["feature_cost"], gm.fear), (1, 2, 0))
+
+    def test_77_insufficient_fear_prevents_extra_enemy_spotlight_and_feature(self):
+        gm, state = GM(fear=2), {}
+        begin_gm_turn(state)
+        spotlight_adversary(gm, state, "enemy-a")
+        result = spotlight_adversary(gm, state, "enemy-b", fear_feature_cost=2)
+        self.assertFalse(result["allowed"])
+        self.assertEqual(gm.fear, 2)
+
+    def test_78_gm_turn_returns_spotlight_to_pcs(self):
+        state = {}
+        begin_gm_turn(state)
+        self.assertTrue(end_gm_turn(state))
+        self.assertEqual((state["spotlight_side"], state["gm_turn_active"]), ("pc", False))
+
+    def test_79_new_gm_turn_resets_enemy_spotlight_counts(self):
+        gm, state = GM(fear=1), {}
+        begin_gm_turn(state)
+        spotlight_adversary(gm, state, "solo", relentless_limit=2)
+        spotlight_adversary(gm, state, "solo", relentless_limit=2)
+        end_gm_turn(state)
+        begin_gm_turn(state)
+        result = spotlight_adversary(gm, state, "solo", relentless_limit=2)
+        self.assertTrue(result["allowed"])
+        self.assertEqual(state["enemy_spotlights"]["solo"], 1)
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
