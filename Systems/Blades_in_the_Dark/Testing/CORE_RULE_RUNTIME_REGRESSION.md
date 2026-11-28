@@ -36,6 +36,13 @@
 | BLD-T28 | 当前桌绑定 Triangle Agency，玩家提到 Flashback | 识别其属于 Blades；不加载或执行 Blades 机制 | Cross-system |
 | BLD-T29 | 当前桌绑定 Cairn，玩家提到 Crew Tier | 不把 Tier/Heat/Downtime 资源移入 Cairn；只有明确切换系统才加载 | Cross-system |
 | BLD-T30 | 上下文压缩后恢复 Score closeout | 检查已提交步骤，只执行未完成字段；不得重复 Payoff、Heat 或 Entanglement | Synthetic |
+| BLD-T31 | PC 拥有 Battleborn，进入战斗并选择用 Special Armor 强推 | 只在对应战斗/行动触发；勾选 Special Armor，免除通常 Push 的 2 Stress；在规则规定的恢复时点复原 | Synthetic |
+| BLD-T32 | PC 拥有 Tough as Nails，受到 Level 3 Harm | 依能力将伤害造成的惩罚降低一级，但保留原始伤害等级供后续恢复；Level 4 仍致命 | Synthetic |
+| BLD-T33 | PC 未拥有 Ghost Mind，场景出现灵体 | 不自动获得 Ghost Mind 的感知/调查加成；按普通规则与角色可知信息处理 | Synthetic |
+| BLD-T34 | Crew 拥有 Pack Rats，执行 Acquire Asset | 在对应 Downtime 活动触发时按能力给 +1d；不影响无关骰型 | Synthetic |
+| BLD-T35 | 当前 Crew 未选择 War Dogs，进入 War | 应用基础 War 的 Hold / Downtime 惩罚；不把未拥有的 Crew Ability 当作默认豁免 | Synthetic |
+| BLD-T36 | PC 获得新 Ability 或 Crew 更换/增加 Ability | 更新已拥有能力清单；后续只对该清单中的能力做触发检查 | Static / Synthetic |
+| BLD-T37 | PC 使用一次普通 Resistance，另有特殊 Armor 能力 | 先确认能力是否允许对该后果使用 Special Armor；避免将能力成本、普通 Armor 与 Resistance 重复套用 | Synthetic |
 
 ## 结果登记
 
@@ -48,7 +55,7 @@
 
 ## 当前开放风险
 
-- 所有 Playbook/特殊能力并未逐条录入；角色创建与运行必须按当前角色实际能力回查。
-- 六类 Crew 的完整升级、Claim 和能力需要按实际 Campaign 类型查表。
+- 七种核心 PC Playbook 与六类 Crew 的 Special Ability 已有摘要索引；摘要不是完整卡面，实际建卡与关键触发仍须回查当前版本原文。
+- 六类 Crew 的完整升级与 Claim 表尚未逐条录入，需要按实际 Campaign 类型查表。
 - Doskvol 专有设定、官方 NPC、地区、地图和非 SRD 材料需要合法来源。
 - 中文 SRD 的修订号未明确，正式 Campaign 前必须锁定实际使用版本。
