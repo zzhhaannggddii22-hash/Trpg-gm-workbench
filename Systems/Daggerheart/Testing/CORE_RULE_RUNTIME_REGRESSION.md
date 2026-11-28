@@ -67,6 +67,20 @@
 
 以上 10 项尚未执行，不计入已通过数量。专项设计依据见 [GM_RUNTIME_FIELD_GUIDE.md](../GM_RUNTIME_FIELD_GUIDE.md)。
 
+
+## GM 设计 / 遭遇运行专项回归（新增，待执行）
+
+| ID | 场景 | 预期结果 / 关键断言 | 状态 |
+|---|---|---|---|
+| DH-GD-01 | Success with Fear：玩家成功打开锁门，但巡逻队接近 | 门已打开；后果推动巡逻压力，不得把开门改判为失败 | Pending |
+| DH-GD-02 | Success with Fear：角色成功说服守卫放行，但守卫记住其面孔 | 放行成功保留；后果是后续关注/身份暴露，不直接撤销许可 | Pending |
+| DH-GD-03 | Failure with Hope：调查没找到目标证据 | 目标证据未取得；产生可继续推进的轻度变化；不额外增加 GM Fear | Pending |
+| DH-GD-04 | 战斗中敌人开始蓄力并明确预告攻击 | 玩家获得可理解的回应窗口；若之后兑现，按已建立机制处理 | Pending |
+| DH-GD-05 | 敌人获得 Spotlight，Motives & Tactics 是“保护祭司、拖延时间” | 优先保护/拖延，而不是默认攻击最近 PC | Pending |
+| DH-GD-06 | Reaction 的触发条件满足，但敌人当前没有 Spotlight | Reaction 仍按其触发条件结算；不要求敌人获得行动聚焦 | Pending |
+| DH-GD-07 | GM 试图无成本打断玩家当前 Spotlight | 不将“可在 GM Turn 中自由作 Move”误读为无成本抢夺玩家 Spotlight；打断时按 Fear 规则支付 | Pending |
+| DH-GD-08 | Environment Feature 造成烟雾遮蔽与路线改变 | 场景提供新的行动选择；不把环境 Feature 一律转换成伤害 | Pending |
+
 ## 自动化参考执行补充
 
 已新增 `daggerheart_reference_engine.py`，42/42 个确定性参考模型测试通过；结果和边界见 `AUTOMATED_REFERENCE_EXECUTION_01.md`。这些测试验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
@@ -81,7 +95,7 @@
 | 已执行测试 | 45 / 55（桌面模拟；新增 10 项待执行） |
 | 已通过 | 45（桌面模拟） |
 | 已失败 | 0 |
-| 待执行 | 10（GM Move / Fear / Spotlight 专项） |
+| 待执行 | 18（GM Move / Fear / Spotlight / 遭遇设计专项） |
 | 阻塞 | 0 |
 
 本矩阵仍是测试清单兼状态记录。DH-T01–DH-T45 的桌面模拟输入与结果见 DESK_TEST_BATCH_01.md、DESK_TEST_BATCH_02.md、DESK_TEST_BATCH_03.md。桌面逻辑模拟不等同于代码自动测试或完整规则书验收。盲测、短场景主持测试与完整 Core Rulebook 对照仍待完成。
