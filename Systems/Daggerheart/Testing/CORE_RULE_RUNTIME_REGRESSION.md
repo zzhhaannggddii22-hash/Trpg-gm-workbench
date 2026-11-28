@@ -1,6 +1,6 @@
 # Core Rule Runtime Regression Matrix
 
-> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 66/66 PASS；仓库完整 CI Run 649 PASS；LIVE RUNTIME VALIDATION PENDING  
+> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 71/71 PASS；仓库完整 CI Run 659 PASS；LIVE RUNTIME VALIDATION PENDING  
 > DH-T01–DH-T45 已进行确定性桌面逻辑模拟（非代码自动测试）。详情见三个 DESK_TEST_BATCH 文件。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
@@ -121,19 +121,19 @@
 | DH-REF-065 | 远程攻击无视线 | 没有 Line of Sight 时不能进行远程攻击 | Pending rerun |
 | DH-REF-066 | Area of Effect 原点超出效果范围 | 即使目标彼此接近，原点不在效果范围内也无效 | Pending rerun |
 
-## 休息与 Downtime 后果回归（新增代码用例；待自动复跑）
+## 休息与 Downtime 后果回归（代码用例；Run 05 已通过）
 
 | ID | 场景 | 关键断言 | 状态 |
 |---|---|---|---|
-| DH-REF-067 | 正常 Short Rest | GM 获得 1d4 Fear，受 12 点上限约束 | Pending rerun |
-| DH-REF-068 | 正常 Long Rest | GM 获得 1d4 + PC 数量 Fear，并推进一个 Long-term Countdown | Pending rerun |
-| DH-REF-069 | 中断 Long Rest | PC 只获得 Short Rest 收益；GM Fear / Countdown 按 DH-I-019 保守回退，不自动结算 | Pending rerun |
-| DH-REF-070 | Long-term Countdown | 剩余值递减；同一 rest event 不重复推进 | Pending rerun |
-| DH-REF-071 | Rest Fear 上限 | GM Fear 不超过 12，记录实际增加值 | Pending rerun |
+| DH-REF-067 | 正常 Short Rest | GM 获得 1d4 Fear，受 12 点上限约束 | Passed (Run 05) |
+| DH-REF-068 | 正常 Long Rest | GM 获得 1d4 + PC 数量 Fear，并推进一个 Long-term Countdown | Passed (Run 05) |
+| DH-REF-069 | 中断 Long Rest | PC 只获得 Short Rest 收益；GM Fear / Countdown 按 DH-I-019 保守回退，不自动结算 | Passed (Run 05) |
+| DH-REF-070 | Long-term Countdown | 剩余值递减；同一 rest event 不重复推进 | Passed (Run 05) |
+| DH-REF-071 | Rest Fear 上限 | GM Fear 不超过 12，记录实际增加值 | Passed (Run 05) |
 
 ## 自动化参考执行补充
 
-独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，Run 04 为 66/66，均有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 新增并通过 8 项条件状态生命周期回归（DH-REF-052–059）；Run 04 新增并通过 7 项移动、视线与范围效果回归（DH-REF-060–066），详见 `AUTOMATED_REFERENCE_EXECUTION_04.md`。这 66 项验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
+独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，Run 04 为 66/66，Run 05 为 71/71，均有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 新增并通过 8 项条件状态生命周期回归（DH-REF-052–059）；Run 04 新增并通过 7 项移动、视线与范围效果回归（DH-REF-060–066）；Run 05 新增并通过 5 项休息与 Downtime 回归（DH-REF-067–071），详见 `AUTOMATED_REFERENCE_EXECUTION_05.md`。这 71 项验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
 
 ## 测试执行记录
 
@@ -141,9 +141,9 @@
 |---|---|
 | 测试版本 | Core Set / SRD 2.0 (2026-08-25) |
 | 扩展范围 | CORE_ONLY |
-| 矩阵状态 | 64/64 项已桌面逻辑模拟；66/66 参考执行器自动化测试通过 |
-| 已执行测试 | 64 / 64（桌面逻辑模拟）；参考执行器最新可核验记录 66/66 |
-| 已通过 | 64（桌面模拟）；66（参考执行器） |
+| 矩阵状态 | 64/64 项已桌面逻辑模拟；71/71 参考执行器自动化测试通过 |
+| 已执行测试 | 64 / 64（桌面逻辑模拟）；参考执行器最新可核验记录 71/71 |
+| 已通过 | 64（桌面模拟）；71（参考执行器） |
 | 已失败 | 0 |
 | 待执行 | 0（桌面模拟层面）；0（已纳入参考执行器的回归） |
 | 阻塞 | 0 |
