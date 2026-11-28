@@ -126,6 +126,8 @@
 - 状态：PARTIALLY_MAPPED
 - Sledgehammer 的 Massive 特性是 Everyday Hero Starting Equipment 可选武器表的一部分，而不是标准 Core Tier 1 Weapon Tables。SRD 2.0 将其收录在 Supplemental Campaign Mechanics；公开数据单独隔离，默认不加载。
 - Daktadae, The Cleaver：官方 2025 Core Errata 第 322 页确认其 Colossal Power 修正；第三方中文维基可定位到 Stat Block，但 SRD 2.0 Adversaries 数据未收录。当前将其标为 Core Rulebook-only 内容候选：公开仓库只保留 Errata 更正，不复制完整敌人数据；合法取得 Core Rulebook 后再补私人运行资料。
+- Beastbound Companion 的 Ranger Companion Sheet：官方 Errata p.41 / p.352 明确增加 Physical / Magic 伤害类型选项；当前结构化 Core 数据只含 Beastbound 子职业引用，不含完整 Companion Sheet。需取得官方 Sheet 后补齐 Companion 等级选项与伤害类型结算。
+- Team-Up Reaction：官方 Errata p.195 将该特定 Adversary Reaction 的触发距离改为 Very Close；当前 129 条 SRD 2.0 Core Adversary 数据中未找到该特性，按 Core Rulebook-only 候选登记，不把它扩展成通用 Team-Up 规则。
 - 其他不在 SRD 2.0 Core 数据表的 Errata 对象，不能因此推断缺失或失效；可能来自完整 Core Rulebook 示例、Campaign Frame 或未导入的可选章节。需要根据页码和章节归属逐项判断。
 
 ## DH-I-016｜Buckler 的网页 Changelog 与 SRD 2.0 PDF 用语冲突
