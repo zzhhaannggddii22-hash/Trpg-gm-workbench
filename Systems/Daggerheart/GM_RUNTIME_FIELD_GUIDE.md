@@ -97,7 +97,7 @@ GM Move 不等于攻击，也不等于必须花费 Fear。选择时先问：
 - PC 掷出 Fear 结果、队伍休息或特定能力/效果可令 GM 获得 Fear。
 - Short Rest 与 Long Rest 的 Fear 增量按休息规则处理；不得用“每次休息统一 +1”替代骰子程序。
 - Fear 会跨 Session 保留。
-- **Campaign 初始化 Fear**：现有本地手册已将“每名 PC 给予 1 Fear”标为来源待核；在完整 Core Rulebook 或明确官方来源核实前，不自动加值。
+- **Campaign 初始化 Fear**：Campaign 开始时，GM 获得每名 PC 1 Fear。此项已在官方 SRD 2.0 第 86 页（Using Fear）核实。
 
 ### 支出
 
@@ -198,7 +198,7 @@ Fear 可用于：
 ## 11. 资料来源与交叉核验
 
 **官方主要来源**
-- Daggerheart SRD 2.0（2026-08-25）：https://www.daggerheart.com/srd/
+- Daggerheart SRD 2.0（2026-08-25）：https://www.daggerheart.com/srd/ （Fear 初始化见 PDF 第 86 页；GM Moves / Soft & Hard Moves 见 PDF 第 85–86 页）
   - 官方 Changelog 明确记录 SRD 2.0 重写 Action Roll resolution 与 Spotlight mechanics，并修订/实施勘误。
 - Official Downloads / Core GM Guide：https://www.daggerheart.com/downloads/
 - DPCGL：https://darringtonpress.com/license/
