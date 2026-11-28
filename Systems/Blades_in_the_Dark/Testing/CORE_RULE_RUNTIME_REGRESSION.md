@@ -43,6 +43,12 @@
 | BLD-T35 | 当前 Crew 未选择 War Dogs，进入 War | 应用基础 War 的 Hold / Downtime 惩罚；不把未拥有的 Crew Ability 当作默认豁免 | Synthetic |
 | BLD-T36 | PC 获得新 Ability 或 Crew 更换/增加 Ability | 更新已拥有能力清单；后续只对该清单中的能力做触发检查 | Static / Synthetic |
 | BLD-T37 | PC 使用一次普通 Resistance，另有特殊 Armor 能力 | 先确认能力是否允许对该后果使用 Special Armor；避免将能力成本、普通 Armor 与 Resistance 重复套用 | Synthetic |
+| BLD-T38 | PC 选择 Push Yourself 获得 +1 Effect，同时提出接受 Devil's Bargain | Push 与 Devil's Bargain 不可在同一次行动中并用；可选择 Push 的不同收益并分别支付 Stress | Synthetic |
+| BLD-T39 | Crew 在自家 Hunting Grounds 执行 Preferred Operation | 相关 Gather Information +1d，额外获得一次只用于该 Score 准备的免费 Downtime Activity | Synthetic |
+| BLD-T40 | Crew 沿 Claim Map 连接路径夺取 Claim | 作为普通 Score 处理；成功后转移 Claim、更新双方 Faction Status，并开始获得该 Claim 收益 | Synthetic |
+| BLD-T41 | Crew 尝试越过连接路线直接夺取远端 Claim | 可以尝试，但需额外努力/调查，不能自动按常规路径难度处理 | Synthetic |
+| BLD-T42 | Crew 失去 Lair | 暂停所有 Claim 收益，直到通过 Score 恢复/建立新 Lair | Synthetic |
+| BLD-T43 | 新 Crew 创建时选择 Favored Contact 与两项额外 Upgrade | 分别更新升级帮助/受损的派系状态与联系人相关派系状态，不得漏记或重复 | Synthetic |
 
 ## 结果登记
 
