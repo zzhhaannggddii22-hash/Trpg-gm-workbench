@@ -1,47 +1,80 @@
-# Daggerheart 术语表与工作译名
+# 术语表与工作译名
 
-> 状态：初始工作译名，非官方简体中文版定稿。  
-> 依据：公开中文 HTML SRD 与 Role Initiative 页面用语；官方简体中文版交付后统一复核。  
-> 规则范围：Core Set 优先；扩展专属词条单独标注。
+> 当前为中英检索工作译名，不是官方简体中文版定稿。  
+> 标识：Daggerheart™ Compatible。  
+> 官方简体中文版交付后统一复核。
 
-## Core Set 核心术语
+## 核心机制
 
 | English | 当前工作译名 | 说明 |
 |---|---|---|
-| Daggerheart | 匕首心 | 系统名称；以官方简体中文版最终译名为准 |
+| Daggerheart | 匕首心 | 系统名称；最终以官方简体中文版为准 |
 | Duality Dice | 二元骰 | 希望骰与恐惧骰组成的一对 d12 |
-| Hope Die | 希望骰 | 二元骰之一 |
-| Fear Die | 恐惧骰 | 二元骰之一 |
-| Hope | 希望点 | 玩家角色使用的资源；与希望骰不同 |
-| Fear | 恐惧点 | GM 使用的资源；与恐惧骰不同 |
-| Action Roll | 动作掷骰 | 玩家角色行动时使用的核心掷骰 |
-| Difficulty | 难度 | 用于判断总结果是否达到目标 |
-| Hope Result | 希望结果 | 由希望骰与恐惧骰的相对结果决定 |
-| Fear Result | 恐惧结果 | 由希望骰与恐惧骰的相对结果决定 |
-| Critical Success | 关键成功 | 双骰相等时适用的专门结果 |
-| Spotlight | 聚焦 | 当前由哪一方/角色获得行动机会与桌面关注 |
-| Advantage | 优势 | 规则指定的有利骰/修正 |
-| Disadvantage | 劣势 | 规则指定的不利骰/修正 |
-| Experience | 经历 | 角色背景与能力叙述相关的加值来源 |
-| Domain | 领域 | 组织能力卡、法术卡等内容的主题体系 |
-| Domain Card | 领域卡 | 角色可获取和使用的卡牌 |
-| Class | 职业 | 角色的基础能力与两个领域的组合 |
-| Subclass | 子职业 | 职业内部的能力分支 |
-| Ancestry | 种族 / 族裔 | 角色的血统或形态选项；等待官方译名统一 |
-| Community | 社群 | 角色成长背景与所属文化共同体 |
-| Adversary | 敌人 / 对手 | 与玩家角色相对的敌方角色或威胁数据 |
-| Environment | 环境 | 用于组织物理空间、社交压力、险境或事件的场景数据 |
-| Evasion | 闪避 | 防御相关属性 |
-| Damage Threshold | 伤害阈值 | 用于区分伤害严重程度的阈值 |
-| Hit Point | 生命点 | 角色或敌人的生命资源 |
-| Stress | 压力点 | 角色或敌人承受压力的资源 |
-| Armor | 护甲 | 影响伤害结算的防护数值/能力 |
-| Rest | 休息 | 依规则处理资源和状态恢复的程序 |
-| Campaign Frame | 战役框架 | 为一段战役提供背景、约定和可选机制的框架 |
+| Hope Die | 希望骰 | Duality Dice 之一 |
+| Fear Die | 恐惧骰 | Duality Dice 之一 |
+| Hope | 希望点 | PC 使用的元资源；与 Hope Die 区分 |
+| Fear | 恐惧点 | GM 使用的元资源；与 Fear Die 区分 |
+| Action Roll | 动作掷骰 | PC 处理困难/危险行动的核心骰型 |
+| Reaction Roll | 反应掷骰 | 对攻击或迫近危险的应对骰型 |
+| Difficulty | 难度 | 判断总结果是否达到目标 |
+| Success with Hope | 希望成功 | 成功且希望骰高于恐惧骰 |
+| Success with Fear | 恐惧成功 | 成功但伴随代价，恐惧骰更高 |
+| Failure with Hope | 希望失败 | 失败但获得 Hope |
+| Failure with Fear | 恐惧失败 | 失败并产生更严重后果 |
+| Critical Success | 关键成功 / 暴击成功 | Duality Dice 点数相同；视作 Hope 结果 |
+| Spotlight | 聚焦 | 当前叙事和机制注意力落点 |
+| Advantage | 优势 | 通常掷 d6 并加到结果 |
+| Disadvantage | 劣势 | 通常掷 d6 并从结果扣除 |
+| Experience | 经历 | 玩家用 Hope 应用到相关行动/反应掷骰的能力概括 |
+| Trait | 属性 | Agility、Strength、Finesse、Instinct、Presence、Knowledge |
+| Spellcast Roll | 施法掷骰 | 使用子职业 Spellcast Trait 的 Trait Roll |
+| Proficiency | 熟练度 | 决定武器伤害骰数量 |
+| Evasion | 闪避 | 作为敌人攻击 PC 的目标难度 |
+| Hit Point / HP | 生命点 | 角色承受伤害的资源 |
+| Stress | 压力点 | 角色承受心理/身体/情绪负荷的资源 |
+| Armor Score | 护甲值 | 可用 Armor Slots 数量 |
+| Armor Slot | 护甲格 | 可标记以降低伤害严重程度 |
+| Damage Threshold | 伤害阈值 | Major / Severe 两档阈值 |
+| Damage Roll | 伤害掷骰 | 成功攻击后确定造成的伤害值 |
+| Direct Damage | 直接伤害 | 不能通过标记 Armor Slot 降低的伤害 |
+| Resistance | 抵抗 | 对指定伤害类型按规则减免 |
+| Immunity | 免疫 | 忽略指定伤害类型 |
+| Condition | 状态 | 具有明确机械效果的角色状态 |
+| Hidden | 隐匿 | 不在敌人视线内且敌人不知道位置 |
+| Restrained | 受缚 | 不能移动，但仍可从当前位置行动 |
+| Vulnerable | 易伤 | 以该目标为对象的掷骰获得 Advantage |
+| Temporary | 临时 | 可通过规定的行动程序尝试清除的状态标签 |
+| Countdown | 倒计时 | 追踪时间或事件积累的程序 |
+| Progress Countdown | 进度倒计时 | 随行动成功推进的正向进程 |
+| Consequence Countdown | 后果倒计时 | 随失败/代价推进的负面进程 |
+| Short Rest | 短休 | 约一小时、执行两次 Downtime Move |
+| Long Rest | 长休 | 数小时休息/睡眠、执行两次 Downtime Move |
+| Downtime Move | 休整行动 | 休息时用于恢复或推进项目的行动 |
+| Loadout | 装载区 | 当前可使用的领域卡集合，最多五张 |
+| Vault | 收藏库 | 已获得但当前未装载的领域卡 |
+| Recall Cost | 调回成本 | Vault 卡非休息期间调入 Loadout 的 Stress 成本 |
+| Adversary | 敌人 / 对手 | 有完整 Stat Block 的敌方威胁 |
+| Environment | 环境 | 为场景空间、社交局势或事件提供机制的框架 |
+| Battle Points | 战斗点数 | 构筑遭遇的预算工具 |
 
-## Hope & Fear 扩展专属术语
+## Core 选项相关
 
-以下术语可出现在 SRD v2.0 或中文社区站中，但默认不纳入 Core Set：
+| English | 当前工作译名 | 说明 |
+|---|---|---|
+| Class | 职业 | 决定领域、基础数值与 Class Features |
+| Subclass | 子职业 | 职业内部分支，具有 Foundation / Specialization / Mastery |
+| Domain | 领域 | 领域卡所属的主题体系 |
+| Domain Card | 领域卡 | 角色取得并使用的能力/法术/Grimoire |
+| Ancestry | 种族 / 血统 | Heritage 的组成部分之一 |
+| Community | 社群 | Heritage 的组成部分之一 |
+| Heritage | 血统与社群背景 | Ancestry + Community |
+| Beastform | 兽形 | Druid 可选择变形使用的 Core Beastform 数据 |
+| Foundation | 基础特性 | 子职业初始卡 |
+| Specialization | 专精特性 | 子职业进阶卡 |
+| Mastery | 精通特性 | 子职业高阶卡 |
+| Class Hope Feature | 职业希望特性 | 职业专属、通常消耗 3 Hope 的能力 |
+
+## Hope & Fear 扩展专属词条（默认关闭）
 
 | English | 当前工作译名 | 状态 |
 |---|---|---|
@@ -51,11 +84,10 @@
 | Warlock | 邪术师 | HOPE_AND_FEAR |
 | Witch | 女巫 | HOPE_AND_FEAR |
 | Transformation | 转化 | HOPE_AND_FEAR |
-| Evolution | 进化 | HOPE_AND_FEAR 或具体卡牌相关；使用前核查来源 |
 
 ## 译名维护规则
 
-- 以英文原词和 Rule ID 作为稳定检索键；中文译名变动不应破坏规则索引。
-- 同一英文术语在不同来源出现不同译名时，保留来源差异，暂不静默合并。
-- 官方简体中文版未交付前，本表仅用于提高阅读效率；不得将工作译名宣称为官方译名。
-- 对有规则意义的近似概念保持区分，例如 Hope Die / Hope、Fear Die / Fear、Action Roll / 敌方攻击掷骰、Adversary / Environment。
+- 英文原词与 Rule ID 是稳定检索键；中文译名变化不应破坏索引。
+- 同一英文术语在不同社区来源有不同译名时，保留差异，暂不静默合并。
+- 官方简体中文版未交付前，本表只是工作译名；不要称为官方译名。
+- 对近似概念保持区分，例如 Hope Die / Hope、Fear Die / Fear、Action Roll / Reaction Roll、Adversary / Environment。

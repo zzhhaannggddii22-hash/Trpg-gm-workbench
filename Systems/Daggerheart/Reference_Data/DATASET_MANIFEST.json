@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "system_id": "daggerheart",
+  "default_ruleset": "Daggerheart Core Set",
+  "public_source": "Official Daggerheart SRD 2.0",
+  "public_source_release_date": "2026-08-25",
+  "license": "Darrington Press Community Gaming License 2.0",
+  "license_url": "https://darringtonpress.com/license/",
+  "source_url": "https://www.daggerheart.com/srd/",
+  "source_reformat": "https://github.com/JHerrin00/daggerheart-srd-2.0",
+  "split_method": "Comparison against the SRD 1.0 structured dataset, official SRD 2.0 changelog, and official Core/Hope & Fear downloads.",
+  "categories": {
+    "core_set": {
+      "classes": 9,
+      "subclasses": 18,
+      "domains": 9,
+      "domain_cards": 189,
+      "ancestries": 18,
+      "communities": 9,
+      "beastforms": 24,
+      "adversaries": 129,
+      "environments": 19,
+      "weapons": 183,
+      "armor": 34,
+      "items": 60,
+      "consumables": 60,
+      "core_rule_sections": 12
+    },
+    "hope_and_fear": {
+      "classes": 4,
+      "subclasses": 8,
+      "domains": 1,
+      "domain_cards": 21,
+      "ancestries": 7,
+      "communities": 6,
+      "adversaries": 135,
+      "environments": 28,
+      "weapons": 132,
+      "armor": 35,
+      "items": 60,
+      "consumables": 60,
+      "transformations": 6,
+      "transformation_rule_sections": 1
+    },
+    "mixed_version": {
+      "rule_sections": [
+        "Character Creation",
+        "Classes",
+        "Domains"
+      ]
+    },
+    "optional_procedures": {
+      "rule_sections": [
+        "Supplemental Campaign Mechanics"
+      ]
+    }
+  },
+  "exclusions": [
+    "Campaign Frame full text and maps",
+    "Core Rulebook proprietary text not part of SRD",
+    "artwork and card images"
+  ],
+  "generated_at": "2026-11-28"
+}

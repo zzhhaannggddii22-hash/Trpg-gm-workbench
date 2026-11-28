@@ -1,60 +1,64 @@
-# Daggerheart Core Set 核心规则索引
+# 核心规则索引
 
-> 本文件是导航索引，不是完整规则手册。  
-> 默认范围：Core Set only。  
-> SRD 参考：Official Daggerheart SRD v2.0（2026-08-25）；逐项标注 Core / Hope & Fear 来源。  
-> 当前状态：初始目录，尚未逐章核验。
+> 默认范围：Core Set only。Rule Area 用于定位；实际运行优先调用 `CORE_RULES_RUNTIME.md` 的 Rule ID。  
+> 当前运行化状态：首轮本地规则手册已建立；逐项测试仍待进行。
 
-## 规则检索入口
+## 主要规则区域
 
-| Rule Area | 范围 | 优先来源 | 状态 |
+| Rule ID | 规则区域 | 本地运行资料 | 当前状态 |
 |---|---|---|---|
-| 游戏概览与桌面循环 | GM/玩家职责、协作叙事、基本流程 | Core Rulebook / SRD Introduction | PENDING |
-| 二元骰与动作掷骰 | Duality Dice、难度、结果分支、优势/劣势 | Core Rulebook / SRD Core Mechanics | PENDING |
-| 希望与恐惧资源 | 玩家 Hope、GM Fear、上限、获得/消费和聚焦 | Core Rulebook / SRD Core Mechanics | PENDING |
-| 角色创建 | 属性、经历、背景、种族、社群、职业、起始装备 | Core Rulebook / Character Creation | PENDING |
-| 职业与子职业 | 九个核心职业及其子职业、特性、选择时机 | Core Rulebook / Classes | PENDING |
-| 领域与卡牌 | 九个核心领域、领域卡类型、等级、获取/替换规则 | Core Rulebook / Domains | PENDING |
-| 装备与负载 | 武器、护甲、物品、装备配置、宝库/负载 | Core Rulebook / Equipment | PENDING |
-| 战斗与攻击 | 聚焦、攻击掷骰、伤害、闪避、范围、多人协作 | Core Rulebook / Combat | PENDING |
-| 生命、压力与伤害 | 生命点、压力点、伤害阈值、护甲、状态和恢复 | Core Rulebook / Damage & Conditions | PENDING |
-| 休息与恢复 | 短休/长休或对应休息程序、恢复资源、限制 | Core Rulebook / Rest | PENDING |
-| 死亡与角色退场 | 死亡行动、临终选择及角色离场处理 | Core Rulebook / Death | PENDING |
-| 成长与升级 | 等级、成长选项、领域卡、子职业进阶、重选条件 | Core Rulebook / Leveling Up | PENDING |
-| 敌人与环境 | Adversary、Environment 数据结构、位阶、特性、行动 | Core Rulebook / Adversaries & Environments | PENDING |
-| GM 指导与行动 | GM Moves、Fear 使用、威胁构建、难度和后果 | Core Rulebook / GM Guidance | PENDING |
-| 战役框架 | Core Set 内的战役框架及其可选机制 | Core Rulebook / Campaign Frames | PENDING |
+| DH-LOOP | 游戏流程与场景循环 | CORE_RULES_RUNTIME §2 | SOURCE_IMPORTED |
+| DH-SPOTLIGHT | Spotlight 与行动经济 | CORE_RULES_RUNTIME §3 | SOURCE_IMPORTED |
+| DH-CREATE | 角色创建 | CORE_RULES_RUNTIME §4、CHARACTER_OPTIONS_INDEX | SOURCE_IMPORTED |
+| DH-ACTION | Duality Dice 动作掷骰 | CORE_RULES_RUNTIME §5 | SOURCE_IMPORTED |
+| DH-HOPE-FEAR | Hope / Fear 资源 | CORE_RULES_RUNTIME §6 | SOURCE_IMPORTED |
+| DH-GM-MOVE | GM Moves 与后果 | CORE_RULES_RUNTIME §7 | SOURCE_IMPORTED |
+| DH-REACTION | Reaction Roll | CORE_RULES_RUNTIME §8 | SOURCE_IMPORTED |
+| DH-GROUP / DH-TAG-TEAM | 协作行动与 Tag Team | CORE_RULES_RUNTIME §9 | SOURCE_IMPORTED |
+| DH-ADV | Advantage / Disadvantage | CORE_RULES_RUNTIME §10 | SOURCE_IMPORTED |
+| DH-SPELLCAST | Spellcast Roll | CORE_RULES_RUNTIME §11 | SOURCE_IMPORTED |
+| DH-ATTACK | PC 攻击 | CORE_RULES_RUNTIME §12 | SOURCE_IMPORTED |
+| DH-ENEMY-ATTACK | 敌人攻击 | CORE_RULES_RUNTIME §13 | SOURCE_IMPORTED |
+| DH-DAMAGE | HP、阈值、Armor、抗性 | CORE_RULES_RUNTIME §14 | SOURCE_IMPORTED |
+| DH-RANGE | 距离、移动、视线 | CORE_RULES_RUNTIME §15 | SOURCE_IMPORTED |
+| DH-CONDITION | Hidden / Restrained / Vulnerable 等 | CORE_RULES_RUNTIME §16 | SOURCE_IMPORTED |
+| DH-DOMAIN | Domain Cards / Loadout / Vault | CORE_RULES_RUNTIME §17 | SOURCE_IMPORTED |
+| DH-REST | Short / Long Rest | CORE_RULES_RUNTIME §18 | SOURCE_IMPORTED |
+| DH-COUNTDOWN | 倒计时与进度 | CORE_RULES_RUNTIME §19 | SOURCE_IMPORTED |
+| DH-NPC | 普通 NPC 运行 | CORE_RULES_RUNTIME §20 | SOURCE_IMPORTED |
+| DH-ENEMY-DATA | Adversary 数据结构 | CORE_RULES_RUNTIME §21、ADVERSARY_INDEX | SOURCE_IMPORTED |
+| DH-ENV-DATA | Environment 数据结构 | CORE_RULES_RUNTIME §21、ENVIRONMENT_INDEX | SOURCE_IMPORTED |
+| DH-ENCOUNTER | Battle Points 遭遇预算 | CORE_RULES_RUNTIME §22、LOOKUP_TABLES | SOURCE_IMPORTED |
+| DH-GEAR | 装备、库存与 Gold | CORE_RULES_RUNTIME §23、Reference_Data | SOURCE_IMPORTED |
+| DH-LEVEL-UP | 成长与升级 | CORE_RULES_RUNTIME §24 | SOURCE_IMPORTED |
+| DH-DEATH | Death Move | CORE_RULES_RUNTIME §25 | SOURCE_IMPORTED |
 
-> 表中章节名称是检索主题，不保证与不同印次的目录标题逐字一致；后续按实际取得的版本修正。
+## 核心选项
 
-## 核心机制初始锚点
+- 9 个 Core 职业、18 个子职业、9 个核心领域、189 张领域卡。
+- 18 个 Core Ancestries、9 个 Core Communities、24 个 Beastforms。
+- 129 个 Core Adversaries、19 个 Core Environments。
+- 183 件 Core Weapons、34 件 Core Armor、60 件 Core Items、60 种 Core Consumables。
 
-以下仅作为规则识别锚点，详细数值、边界、例外及状态结算仍须回查来源后写入运行手册：
+详细数据见 [Reference_Data/README.md](../Reference_Data/README.md) 和 [CHARACTER_OPTIONS_INDEX.md](./CHARACTER_OPTIONS_INDEX.md)。
 
-- 玩家动作掷骰使用两枚不同颜色的 d12，分别代表 Hope 与 Fear；合计值与难度比较，较高的单骰决定希望/恐惧结果倾向。
-- 希望与恐惧是不同主体使用的叙事资源，不能混成同一资源或当作任意改写世界事实的权限。
-- 聚焦（Spotlight）是行动机会与桌面关注的流转概念，不应直接套用固定先攻/回合顺序。
-- 玩家角色与敌人/环境的行动处理方式不同；敌人数据卡、GM 行动和战斗流程必须作为独立规则模块核验。
+## 不属于默认 Core Set 的内容
 
-## 当前排除项
+- Assassin、Brawler、Warlock、Witch 与对应子职业。
+- Dread Domain 与 21 张 Dread Domain Cards。
+- Hope & Fear 的 6 种 Transformations。
+- Hope & Fear 新增的种族、社群、装备、敌人与环境。
+- SRD 2.0 混合版本的 Character Creation / Classes / Domains 原始章节，统一存放在 `Reference_Data/Mixed_Version/`。
+- Supplemental Campaign Mechanics，单独存放在 `Reference_Data/Optional_Procedures/`。
 
-以下内容即使出现在 SRD v2.0 或中文汇总站，也不属于默认 Core Set 运行集合：
-
-- Assassin、Brawler、Warlock、Witch 四个 Hope & Fear 职业及对应子职业。
-- Dread Domain 及专属领域卡。
-- Hope & Fear 的六种转化（Transformations）。
-- Hope & Fear 新增的种族、社群、装备、战利品、敌人、环境和扩展战役框架。
-- 来源无法确认是否属于 Core Set 的条目（`VERSION_UNRESOLVED`）。
-
-具体名称与判断依据见 [Hope & Fear 扩展隔离清单](../Expansions/Hope_and_Fear/README.md)。
+扩展详细列表见 [Hope & Fear 隔离清单](../Expansions/Hope_and_Fear/README.md)。
 
 ## 下一轮核验顺序
 
-1. Core Mechanics：动作掷骰、结果分类、Hope/Fear、聚焦、优势/劣势。
-2. Character Creation：从初始人物数据到背景、经历、装备完成的完整流程。
-3. Classes / Domains：九个核心职业、子职业和九个核心领域，建立结构化选择索引。
-4. Combat：玩家攻击、敌方攻击、伤害、阈值、护甲、压力与生命结算。
-5. GM Guidance / Adversaries / Environments：主持行动、敌人和环境的可调用数据结构。
-6. Rest / Death / Leveling Up：跨场景的资源恢复、死亡与成长。
+1. 对 CORE_RULES_RUNTIME 中的关键机制建立正例、反例、边界用例，重点是动作掷骰、Reaction Roll、资源时序、伤害/Armor 和休息。
+2. 按 Core Errata 更新卡牌、装备和运行条目。
+3. 核验结构化敌人与环境字段是否能覆盖所有触发和结算需求。
+4. 取得合法 Core Rulebook 后补齐 SRD 未覆盖的 GM 细节、示例与细微规则解释。
+5. 完成独立 Preflight 与短场景主持测试，再评估是否从 candidate 升级。
 
-完成一条规则的核验后，再把它从 PENDING 升级为 VERIFIED；只读过中文摘要或发现某个页面存在，不足以升级状态。
+`SOURCE_IMPORTED` 不等于 `VERIFIED_CORE` 或 `RUNTIME_TESTED`。未经测试的条目不得宣称已验收。

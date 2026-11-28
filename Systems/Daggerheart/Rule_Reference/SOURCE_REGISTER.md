@@ -1,85 +1,87 @@
-# Daggerheart 来源登记
+# 来源登记与版本权威
 
-> 建档日期：2026-11-28  
-> 默认规则集：Core Set  
-> 核验策略：官方来源裁定规则；中文与社区资料提高检索效率。
+> 建档日期：2026-11-28。  
+> 默认规则集：Core Set。  
+> 标识：Daggerheart™ Compatible（非官方个人研究）。  
+> 核心原则：官方规则和勘误裁定机制；社区资料提高检索效率；本地资料作为常规运行入口。
 
 ## A. 官方规则来源
 
 ### A1. Official Daggerheart SRD v2.0
 
 - URL: https://www.daggerheart.com/srd/
-- 发布/修订日期：2026-08-25。
-- 定位：官方公开系统参考文档，覆盖核心机制、角色创建、骰子系统及可供 Daggerheart Compatible 创作使用的规则与内容。
-- 重要版本边界：SRD v2.0 的官方 Changelog 明确说明，它新增了 Core Set 与 Hope & Fear 两套产品中的战役框架机制，并纳入 Hope & Fear 的 Dread Domain、敌人、环境、种族、社群、战利品、装备、四个职业及转化内容。
-- 用法：可作为公开规则检索、术语和规则措辞的主要入口；必须依据原书来源拆分 Core / Hope & Fear。SRD v2.0 不是核心规则书的完整替代品。
+- 版本/发布日期：2026-08-25。
+- 官方定位：当前公开 System Reference Document，涵盖核心机制、角色创建、骰子系统及许可范围内的游戏内容。
+- 许可状态：DPCGL 2.0 明确将 Daggerheart SRD 2.0（包括 Domain Icons）列为 Public Game Content。
+- 重要版本边界：SRD 2.0 Changelog 明确新增 Hope & Fear 的 Dread Domain、职业 Assassin / Brawler / Warlock / Witch、扩展敌人、环境、种族、社群、战利品、装备及六种 Transformations；同时包括 Core Set 与 Hope & Fear 的 Campaign Frame mechanics。
+- 使用方式：作为公开规则检索和结构化数据主要基准；必须按来源拆分 Core / Hope & Fear。SRD 2.0 不等同于完整 Core Rulebook，也不授予复制 Core Rulebook 未纳入 SRD 的精确正文、艺术、地图或 Campaign Frame 全文的权利。
 
 ### A2. Daggerheart Core Set / Core Rulebook
 
 - 官方入口：https://www.daggerheart.com/buy/
-- 定位：基础规则集的主要权威来源。角色创建、完整规则说明、示例、世界设定和主持建议以核心规则书及官方勘误为准。
-- 当前状态：已登记为最高优先级来源；尚未取得并逐章核验完整规则书及实物卡牌资料。
-- 规则版本更新时，记录印刷文本、SRD 及勘误之间的差异，不静默合并。
+- 最高规则来源：基础规则、完整解释、示例、GM 指导与印刷书内容以当前 Core Rulebook 和官方 Core Errata 为准。
+- 当前状态：已登记为最高优先级来源；本轮尚未取得用户提供的完整 Core Rulebook 文件，也未逐章对照印刷书。
+- 版权边界：Core Rulebook 精确正文、图片、版面及其中未列入 SRD 的内容，不因 SRD 2.0 被许可就自动成为 Public Game Content。公开仓库不收录这些内容。
 
-### A3. Official Downloads
+### A3. Official Downloads 与 Errata
 
 - URL: https://www.daggerheart.com/downloads/
-- Core 资料：快速入门冒险、角色卡与指南、角色创建辅助表、GM Guide、核心战役框架材料、核心卡牌打印文件、空白地图、Core Errata。
-- Hope & Fear 资料：扩展职业辅助表、扩展角色卡/指南、扩展卡牌、扩展战役框架材料与 Hope & Fear Errata。
-- 用法：按官方页面的 Core / Hope & Fear 分区存取；初版只整理 Core 部分。
+- Core 分区：职业角色卡与指南、角色创建表、Sidecar、Play Guide、Loadout / Vault / Equipment / Multiclass 表、GM Guide、Core Campaign Frame Materials、可打印 Core Cards、空白地图、Core Errata。
+- Hope & Fear 分区：四个扩展职业辅助表、扩展角色卡、扩展装备表、扩展卡牌、Hope & Fear Campaign Frame Materials、Hope & Fear Errata。
+- 使用方式：严格按官方 Core / Hope & Fear 分区。当前先整理 Core 规则；公开仓库只保留允许分享的数据与自写摘要，不镜像完整图片、地图或商业表单扫描。
 
 ### A4. Daggerheart: Hope & Fear
 
 - 官方介绍：https://www.daggerheart.com/daggerheart-hope-fear-is-now-available/
-- 官方扩展，独立于 Core Set。扩展含四个职业（Assassin、Brawler、Warlock、Witch）、新子职业、Dread Domain、转化卡、扩展种族/社群、敌人、环境、装备与战役框架。
-- 本工程默认不启用。详细隔离项目见 `../Expansions/Hope_and_Fear/README.md`。
+- 作为 Core Set 的首个独立扩展于 2026-08-25 发布。
+- 本工程默认不启用；专属选项和规则见 `../Expansions/Hope_and_Fear/README.md`。
 
-## B. 中文规则与辅助资料
+## B. 中文规则与主持资料
 
 ### B1. 匕首之心 HTML SRD
 
 - URL: https://www.daggerheart.cn/SRD/
-- 定位：社区翻译组维护的公开 SRD 双语 HTML 检索站；可浏览章节、搜索正文、查敌人和环境资料。
-- 优点：便于中文阅读、逐条定位和交叉比较英文原文。
-- 版本注意：页面收录了可识别的 Hope & Fear 新内容；具体页面是否已完整同步 SRD v2.0、每项数据来自 Core 还是扩展，仍须逐项核对。不得把站点收录范围等同于 Core Set。
-- 用法：作为中文阅读入口与检索镜像，不作为版本归属不明时的最终证据。
+- 定位：中文社区维护的公开 SRD 双语 HTML 检索入口，可浏览规则正文、角色、卡牌、敌人和环境。
+- 用法：中文阅读、术语对照与定位；不能以页面出现为由默认该条目属于 Core Set。
+- 版本注意：页面覆盖与 SRD 2.0 的逐条同步状态仍需核验。具体数值、触发、成本、例外和顺序以官方来源为准。
 
 ### B2. Role Initiative｜匕首之心
 
 - URL: https://ttrpg.shinkan42.cn/rule/dagger_heart/
-- 车卡指南：https://ttrpg.shinkan42.cn/rule/dagger_heart/guide/character_creation.html
-- 基础规则说明：https://ttrpg.shinkan42.cn/rule/dagger_heart/guide/general_rule.html
-- 战斗规则：https://ttrpg.shinkan42.cn/rule/dagger_heart/guide/combat.html
-- 领域索引：https://ttrpg.shinkan42.cn/rule/dagger_heart/brief_ref/domain.html
-- 敌人设计研究：https://ttrpg.shinkan42.cn/rule/dagger_heart/brief_ref/adversary_design.html
-- 定位：中文规则讲解、主持研究与机制设计资料。部分页面明确区分核心内容和 Hope & Fear 扩展，并标注依据为官方 SRD 2.0。
-- 用法：适合梳理流程、寻找规则边界和建立主持知识；遇到精确数值、成本、触发条件、例外或冲突，回到官方规则原文核验。
+- 参考页面：
+  - 角色创建：https://ttrpg.shinkan42.cn/rule/dagger_heart/guide/character_creation.html
+  - 通用规则：https://ttrpg.shinkan42.cn/rule/dagger_heart/guide/general_rule.html
+  - 战斗规则：https://ttrpg.shinkan42.cn/rule/dagger_heart/guide/combat.html
+  - 领域索引：https://ttrpg.shinkan42.cn/rule/dagger_heart/brief_ref/domain.html
+  - 敌人设计：https://ttrpg.shinkan42.cn/rule/dagger_heart/brief_ref/adversary_design.html
+- 定位：中文规则讲解、主持研究与机制设计资料。部分页面注明依据 SRD 2.0，并区分扩展选项。
+- 用法：建立理解、发现疑点和辅助检索；精确裁定必须回到官方规则。
 
 ### B3. 灰机 Wiki
 
 - 定位：中文社区百科和补充索引。
-- 用法：作为术语、条目与历史翻译的辅助搜索源；页面版本和完备度不统一，未经核验的内容不进入 VERIFIED 规则。
+- 用法：辅助查术语、历史翻译和条目。页面版本与完备度不统一，未经核验内容不进入 `VERIFIED_CORE`。
 
-## C. 官方简体中文版出版状态
+## C. 官方简体中文版出版项目
 
 - 项目页：https://zhongchou.modian.com/item/159038.html
 - 出版方/项目方：三局两胜工作室（BO3 Studio）。
-- 项目内容：核心规则书简体中文版，以及独立的《匕首心：希望与恐惧》扩展中文版；两者分别提供书籍和电子文档回报选项。
-- 当前记录：众筹已成功结束；项目页面显示预计回报发放时间为 2027 年 6 月内。
-- 使用限制：截至本次建档日（2026-11-28），不能将尚未交付的官方中文版当作已可取得的规则文本。交付后优先用于确认官方中文术语、卡牌翻译和规则措辞，再更新本目录。
+- 项目内容：Core Set 简体中文版，以及独立的《匕首心：希望与恐惧》中文版。
+- 当前记录：众筹已结束；项目公布的预计回报发放时间为 2027 年 6 月。
+- 使用方式：取得并确认实物/电子版后，优先用于统一官方中文术语、卡牌翻译与完整核心书检索；交付前不把尚未取得的中文版作为规则来源。
 
-## D. 来源分类与更新规则
+## D. 许可登记与公开/私人资料边界
 
-每条规则的来源字段使用以下值之一或组合：
+- 当前许可：Darrington Press Community Gaming License 2.0。
+- 官方许可入口：https://darringtonpress.com/license/
+- 官方 DPCGL 2.0 PDF：https://darringtonpress.com/wp-content/uploads/2026/08/DPCGL_2.0_AUG_26_2026.pdf
+- SRD 2.0 被明确列为 Public Game Content；符合许可条款时可分享全部或部分内容。
+- Campaign Frame 的完整文本与地图另受限制；只可在实际游戏记录形式内按许可分享，不得作为普通文档/地图重新发布或改编成新文字作品，除非另获书面许可。
+- 本项目公开仓库已存放 SRD 2.0 许可范围内的结构化规则数据、自写索引与运行摘要；完整许可及修改说明见 [LICENSE_AND_ATTRIBUTION.md](../Reference_Data/LICENSE_AND_ATTRIBUTION.md)。
+- 商业 Core Rulebook 未纳入 SRD 的正文、艺术、地图、卡牌图片、付费模组和未授权资料不进入公开仓库。私人仓库用于私人研究和用户合法取得/提供的原始材料存档；私人可见性本身不等于版权授权。
 
-- `CORE_SOURCE`
-- `CORE_ERRATA`
-- `SRD_CORE_CLARIFICATION`
-- `HOPE_AND_FEAR`
-- `CAMPAIGN_FRAME`
-- `TABLE_ADAPTATION`
-- `GM_INFERENCE`
-- `VERSION_UNRESOLVED`
-- `DISPUTED`
+## E. 规则来源字段
 
-每次引用来源时记录 URL、具体章节/页码或卡牌名称、规则版本、核对日期。中文资料与官方英文资料冲突时，先判断是不是翻译差异或版本混用，再按官方来源处理；不能只改中文术语而不保留对应原文名称。
+规则条目使用 `CORE_SOURCE`、`CORE_ERRATA`、`SRD_CORE_CLARIFICATION`、`HOPE_AND_FEAR`、`MIXED_VERSION`、`OPTIONAL_PROCEDURE`、`TABLE_ADAPTATION`、`GM_INFERENCE`、`VERSION_UNRESOLVED`、`DISPUTED` 等标签。
+
+每次重要规则核验记录 URL、章节/页码或卡牌名称、版本与核验日期。出现冲突时先判断是否为版本或翻译差异，再决定本桌适用来源。

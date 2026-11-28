@@ -7,6 +7,8 @@
 - [Triangle Agency / 三角机构](./Triangle_Agency/README.md) — `system_id: triangle_agency`；当前正式实战规则版本为用户指定的中文 v22。
 - [Cairn /《石冢》](./Cairn/README.md) — `system_id: cairn`；Cairn Second Edition；第二套系统接入准备中，当前为 candidate，尚未开放正式运行。
 - [Blades in the Dark /《暗影之刃》（中文 SRD 译名：《暗夜冷锋》）](./Blades_in_the_Dark/README.md) — `system_id: blades_in_the_dark`；中文 SRD 修订号待核；独立研究中，当前为 candidate，尚未开放正式运行。
+
+- [Daggerheart™ Compatible /《匕首心》](./Daggerheart/README.md) — `system_id: daggerheart`；默认规则集 Daggerheart Core Set；SRD 2.0 混合收录 Core 与 Hope & Fear，已分库并默认关闭扩展；当前为 candidate。
 - [Worlds Without Number（WWN）](./Worlds_Without_Number/README.md) — `system_id: worlds_without_number`；英文核心规则与 SRD 1.0 作为研究基线；独立研究中，当前为 candidate，尚未开放正式运行。
 - [Daggerheart /《匕首心》](./Daggerheart/README.md) — `system_id: daggerheart`；默认基线为 Core Set；官方 SRD v2.0 同时混合收录 Core Set 与 Hope & Fear，扩展默认隔离；当前为 candidate，尚未开放正式运行。
 
@@ -23,6 +25,11 @@ systems:
   - system_id: blades_in_the_dark
     system_entry: Systems/Blades_in_the_Dark/README.md
     ruleset_versions: ["Blades in the Dark SRD / 中文《暗夜冷锋》译本（修订号待核）"]
+    status: candidate
+  - system_id: daggerheart
+    system_entry: Systems/Daggerheart/README.md
+    ruleset_versions: ["Daggerheart Core Set", "Official SRD v2.0 (2026-08-25; mixed Core + Hope & Fear reference)"]
+    default_expansion_scope: CORE_ONLY
     status: candidate
   - system_id: worlds_without_number
     system_entry: Systems/Worlds_Without_Number/README.md

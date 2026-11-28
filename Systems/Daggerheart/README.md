@@ -1,55 +1,71 @@
-# Daggerheart /《匕首心》
+# 《匕首心》规则项目
 
 > system_id: `daggerheart`  
-> 规则基线：Daggerheart Core Set（核心规则）  
+> 标识：Daggerheart™ Compatible（非官方个人研究工作台）  
+> 规则基线：Daggerheart Core Set  
 > 公开参考：Official Daggerheart SRD v2.0（2026-08-25；混合收录 Core Set 与 Hope & Fear 内容）  
-> 状态：candidate（独立规则建档中；尚未开放正式运行）
+> 状态：candidate（独立规则建档与首轮运行化完成；尚未开放正式运行）
 
-本目录是《匕首心》（Daggerheart）系统级规则资料的唯一入口。它与 Triangle Agency、Cairn、Blades in the Dark 完全隔离。当前阶段只建立基础版规则资料、来源索引与后续运行化入口，不创建 Campaign，不继承其他系统的机制或状态。
-
-本项目的总体方向是：先建立可准确检索、可实际主持的基础规则，再通过短场景验证 GM 的叙事驱动、人物塑造、场景推进与规则结算能力。初版控制内容规模，避免一次性引入所有扩展选项。
+本目录是《匕首心》系统级规则资料的唯一入口。与 Triangle Agency、Cairn、Blades in the Dark 完全隔离。当前阶段以基础版 Core Set 为默认规则集，先建立可准确检索、可直接主持的本地规则和数据资料，再通过短场景验证。初版控制复杂度，不默认引入 Hope & Fear。
 
 ## 规则版本与范围
 
-- **默认规则集：Daggerheart Core Set。** 核心规则书、核心角色选项、核心领域、核心装备、核心敌人与环境，以及核心主持规则属于初版研究范围。
-- **公开检索基准：官方 SRD v2.0（2026-08-25）。** 它是当前官方公开的规则参考文档，但并非核心规则书替代品，而且同一份 SRD 也纳入了《Daggerheart: Hope & Fear》的扩展条目。
-- **扩展默认关闭：Hope & Fear。** 新职业、Dread Domain、转化卡、扩展种族/社群、扩展装备/敌人/环境及扩展战役框架，不进入默认基础规则集。具体边界见 [扩展隔离清单](./Expansions/Hope_and_Fear/README.md)。
-- 当 SRD v2.0 条目无法区分来自 Core Set 还是 Hope & Fear 时，先标记 `VERSION_UNRESOLVED`，暂不纳入默认运行；核对官方原书、官方勘误或独立来源后再决定。
-- 基础机制因 SRD v2.0 的措辞修订而更新时，可采用最新官方规则文本，但须记录它与 Core Set 印刷文本的差异，不得静默混合。
+- **默认规则集：Daggerheart Core Set。** 核心角色选项、九大领域、核心装备、敌人/环境和核心 GM 规则属于默认范围。
+- **公开检索基准：官方 SRD v2.0（2026-08-25）。** 官方将 SRD 2.0 纳入 DPCGL 2.0 Public Game Content，但它同时收录 Core Set 与 Hope & Fear 内容；不能将整个 SRD 直接视作纯基础版。
+- **扩展默认关闭：Hope & Fear。** 四个新职业、Dread Domain、转化、扩展种族/社群/装备/敌人/环境均单独存放。只有用户明确启用或 Campaign Binding 指定时才加载。
+- **混合章节隔离。** SRD 2.0 的 Character Creation、Classes、Domains 章节列出 Core 与扩展选项，整段单独存档；默认 Core 数据库不加载它们。
+- **可选战役程序隔离。** Supplemental Campaign Mechanics 单独保存，不默认纳入常规流程。
+- 条目来源无法区分时标记 `VERSION_UNRESOLVED`，不擅自进入默认运行。
+- SRD 2.0 对基础规则的措辞修订可以采用，但要记录与 Core Set 印刷文本、官方勘误之间的差异。
 
 ## 权威来源与中文资料
 
-1. **核心规则权威**：官方 Core Set 规则书及官方 Core Set 勘误。
-2. **公开规则参考**：[官方 Daggerheart SRD](https://www.daggerheart.com/srd/)。使用时必须遵守本目录的 Core / Hope & Fear 分类。
-3. **官方辅助材料**：[官方 Downloads](https://www.daggerheart.com/downloads/)；其中 Core 与 Hope & Fear 的角色卡、卡牌、主持人速查和其他材料分栏提供。
-4. **中文规则检索**：[匕首之心 HTML SRD](https://www.daggerheart.cn/SRD/)，由社区整理公开 SRD 的双语检索入口；用于阅读和定位，版本覆盖与翻译差异仍需核验。
-5. **中文主持研究**：[Role Initiative｜匕首之心](https://ttrpg.shinkan42.cn/rule/dagger_heart/)，作为机制解释、角色创建、战斗、敌人与主持指导的二级研究资料；不能替代官方原文。
-6. **官方简体中文出版项目**：核心规则书与《希望与恐惧》中文版已完成众筹，项目页显示预计于 2027 年 6 月交付。交付前不把尚未取得的中文版作为可用规则来源。
+1. **最高规则来源**：官方 Core Set 规则书及官方 Core Errata。用户未来提供合法取得的规则书时，用于补齐 SRD 未覆盖内容。
+2. **公开规则参考**：[官方 SRD 2.0](https://www.daggerheart.com/srd/)。它属于 DPCGL 2.0 明确列出的 Public Game Content，可按许可条件使用。
+3. **官方辅助材料**：[官方 Downloads](https://www.daggerheart.com/downloads/)，其中 Core 与 Hope & Fear 的角色卡、卡牌、GM Guide、地图材料和勘误分栏。
+4. **中文检索**：[匕首之心 HTML SRD](https://www.daggerheart.cn/SRD/)，用于中文阅读与定位，版本覆盖和翻译差异需核对。
+5. **中文主持研究**：[Role Initiative｜匕首之心](https://ttrpg.shinkan42.cn/rule/dagger_heart/)，用于机制解释、角色创建、战斗、敌人与主持方法研究；不替代官方原文。
+6. **官方简体中文版**：核心规则书与《希望与恐惧》中文版项目已完成众筹；官方项目页面公布的预计发放时间为 2027 年 6 月。交付前不将未取得的中文版作为规则来源。
 
-来源细节、版本说明和许可边界见 [SOURCE_REGISTER.md](./Rule_Reference/SOURCE_REGISTER.md)。
+来源、许可和版本详情见 [SOURCE_REGISTER.md](./Rule_Reference/SOURCE_REGISTER.md) 与 [数据许可说明](./Reference_Data/LICENSE_AND_ATTRIBUTION.md)。
 
-## 目录
+## 快速入口
 
-- [Rule_Reference/README.md](./Rule_Reference/README.md)：本系统的规则检阅、来源优先级、版本分类与裁定状态。
-- [Rule_Reference/SOURCE_REGISTER.md](./Rule_Reference/SOURCE_REGISTER.md)：官方、中文和社区来源登记。
-- [Rule_Reference/CORE_RULE_INDEX.md](./Rule_Reference/CORE_RULE_INDEX.md)：基础版规则导航；仅作定位，不替代规范化运行条目。
-- [Rule_Reference/GLOSSARY.md](./Rule_Reference/GLOSSARY.md)：中英术语与暂定工作译名。
-- [Expansions/Hope_and_Fear/README.md](./Expansions/Hope_and_Fear/README.md)：扩展条目隔离清单；默认不加载。
-- 后续研究完成后再建立：`CORE_RULES_RUNTIME.md`、`RUNTIME_PROTOCOL.md`、`GM_SKILL.md`、`PREFLIGHT.md` 与 Candidate 测试资料。
+- [规则检阅协议](./Rule_Reference/README.md)：来源优先级、规则分类、缺口处理。
+- [核心规则索引](./Rule_Reference/CORE_RULE_INDEX.md)：Rule Area 与 Rule ID 导航。
+- [核心规则运行手册](./Rule_Reference/CORE_RULES_RUNTIME.md)：已规范化的高频核心机制，可按触发直接调用。
+- [常用规则检索表](./Rule_Reference/LOOKUP_TABLES.md)：六属性难度基准、敌人/环境 Tier、遭遇 BP、范围、休息和 Fear 预算。
+- [核心角色选项索引](./Rule_Reference/CHARACTER_OPTIONS_INDEX.md)：九职业、领域和子职业导航。
+- [敌人检索索引](./Rule_Reference/ADVERSARY_INDEX.md)：按 Tier 检索 Core 敌人。
+- [环境检索索引](./Rule_Reference/ENVIRONMENT_INDEX.md)：按 Tier 检索 Core 环境。
+- [结构化规则与检索数据](./Reference_Data/README.md)：Core 与 Hope & Fear 分开的 JSON 数据集合。
+- [规则来源登记](./Rule_Reference/SOURCE_REGISTER.md)：官方、中文和社区资料。
+- [规则疑点登记](./Rule_Reference/RULE_ISSUES.md)：来源差异、版本疑点和未解决问题。
+- [术语表](./Rule_Reference/GLOSSARY.md)：中英术语与暂定工作译名。
+- [Hope & Fear 扩展隔离清单](./Expansions/Hope_and_Fear/README.md)：扩展默认关闭及启用条件。
+
+## 本地优先规则
+
+日常主持不应每次联网检索。默认顺序：
+
+1. 确认 Campaign Binding / 规则版本 / 扩展范围。
+2. 查本地 Rule ID 与 `CORE_RULES_RUNTIME.md`。
+3. 查 `LOOKUP_TABLES.md` 与 `Reference_Data/Core_Set/` 的 JSON。
+4. 本地数据不足或遇到来源冲突，再读取 SRD 对应章节或官方勘误。
+5. 核验结论写回本地运行手册、数据索引或 RULE_ISSUES。
+
+公开仓库保存已授权的 SRD 2.0 Public Game Content 结构化数据、自写摘要、索引与运行协议；不收录商业 Core Rulebook 未公开的精确正文、Campaign Frame 全文/地图、艺术插画或未获许可的模组。私人仓库用于保存个人研究与用户合法提供的原始材料索引；私人仓库本身不改变版权许可。
 
 ## 运行边界
 
-- 当前状态为 `candidate`。允许研究、检索、规则核对和隔离测试；不得将其当作已激活的正式战役系统。
-- 正式 Campaign 必须建立独立 `SYSTEM_BINDING.md`，绑定精确规则版本、采用的勘误、开放/关闭的扩展和桌面适配。
-- 所有核心规则、资源、卡牌、敌人、环境和专属术语均属于 Daggerheart；不得借用 Triangle Agency 的 Chaos / QA / Burnout、Cairn 的属性豁免 / Fatigue / 库存程序或 Blades in the Dark 的 Position / Effect / Score 流程。
-- 先按玩家意图和虚构情境判断是否需要规则，再调用已核验机制；不要把每个叙事动作都转换为检定。
-- 公开仓库只保存自写摘要、索引、定位、术语和合法来源链接；不复制商业规则书、完整中文翻译或付费模组全文。
+- 当前状态为 `candidate`。允许研究、检索、规则核对和隔离测试；不代表已完成正式 Campaign 接入。
+- 正式 Campaign 必须建立独立 `SYSTEM_BINDING.md`，绑定精确规则版本、官方勘误、扩展范围和桌面适配。
+- 不借用 Triangle Agency 的 Chaos / QA / Burnout、Cairn 的豁免 / Fatigue / 库存程序或 Blades in the Dark 的 Position / Effect / Score 流程。
+- 已核验规则从本地调用；未知规则标记并定向回查，不冻结无关互动。
+- 叙事节奏优先：将复杂动作合并处理，减少无意义确认；规则步骤仍须正确结算。
 
-## 初版建设顺序
+## 初版建设状态
 
-1. 核对 Core Set 基础机制与官方勘误，建立核心规则目录。
-2. 按触发、输入、程序、状态变化、例外、结算顺序将高频规则规范化。
-3. 独立整理角色创建、职业/子职业、领域卡、装备与成长资料；所有内容标注 Core / Hope & Fear。
-4. 整理敌人和环境数据的检索方案，优先提高本地检索效率，不在公开仓库镜像未授权全文。
-5. 建立轻量 Runtime Protocol 与 Preflight，再进行规则正反例测试和短场景主持测试。
-6. 只有基础规则验证稳定后，才评估是否启用 Hope & Fear 或引入其他扩展内容。
+已完成：来源与许可登记、Core / Hope & Fear 数据拆分、规则索引、核心运行手册、常用难度与遭遇检索表、敌人/环境索引、译名表及版本差异登记。
+
+待完成：逐项核对官方 Core Errata、取得合法核心规则书后补齐 SRD 未覆盖的 GM 指导与示例、建立完整 Preflight、进行规则正反例回归和短场景实测。
