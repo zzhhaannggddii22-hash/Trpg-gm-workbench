@@ -19,6 +19,7 @@
 - [FACTIONS_AND_MAJOR_PROJECTS.md](./FACTIONS_AND_MAJOR_PROJECTS.md)：Faction Turn、资产行动和重大计划。
 - [GM_TOOLKIT_RESEARCH.md](./GM_TOOLKIT_RESEARCH.md)：五项研究结论、AI GM 适配与许可边界。
 - [Data/README.md](./Data/README.md)：离线规则数据包说明。
+- [../Research/EXTERNAL_RESOURCES.md](../Research/EXTERNAL_RESOURCES.md)：外部工具、社区资料与许可登记。
 - [Data/SRD.md](./Data/SRD.md)：SRD 1.0 原文。
 - [Data/wwn-srd-data.jsonld](./Data/wwn-srd-data.jsonld)：结构化数据图。
 - [Data/catalog.json](./Data/catalog.json)：名称、类型和来源定位目录。
