@@ -73,6 +73,10 @@ clocks: []
 7. 做一次受控短团或真实短团，检查主持行为、信息公平、节奏和状态连续性。
 8. 记录失败样例并修订规则文件，再重复受影响测试。
 
+
+
+
+
 ## 4-C. GM behavior regression cases
 
 - [GM_BEHAVIOR_REGRESSION_CASES.md](./GM_BEHAVIOR_REGRESSION_CASES.md)：18 个依据核心规则书 V1.3 PDF pp.199–207 GM 指南编写的 AI 主持行为案例，检查玩家能动性、信息公平、NPC 动机、节奏、镜头尺度和规则边界。
@@ -87,7 +91,6 @@ clocks: []
 
 - [ARCANE_CRAFTING_REGRESSION_CASES.md](./ARCANE_CRAFTING_REGRESSION_CASES.md)：13 个基于核心规则书 V1.3 PDF pp.228–231 的预期结果案例，覆盖仪式、发明、制作、改造和缺点。
 - 13/13 为人工对照原文审阅；尚未自动执行，也不代表完整引擎模拟或真人跑团验证。
-
 
 以下项目全部完成后才能考虑评估为 active：
 - 规则版本与官方勘误/适用补充来源明确；
