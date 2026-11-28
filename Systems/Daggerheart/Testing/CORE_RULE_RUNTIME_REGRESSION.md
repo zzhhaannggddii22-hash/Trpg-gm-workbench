@@ -55,15 +55,15 @@
 
 
 | DH-GM-01 | Success with Fear，但现场没有敌人 | PC 成功；GM 获得 Fear；选择与现场相符的非攻击 Move | Desk-Simulated |
-| DH-GM-02 | Failure with Hope | PC 失败并获得 Hope；GM 采取较轻 Move；不得额外生成 Fear | Pending |
-| DH-GM-03 | Critical Success | PC 获得 Hope、清除 Stress；不触发 Fear 收入或额外 GM Turn | Pending |
-| DH-GM-04 | Reaction Roll Critical | 不获得 Hope、不清除 Stress；按 Reaction Roll 规则忽略该次影响 | Pending |
-| DH-GM-05 | GM 花 Fear 抢夺 Spotlight 后启用 Fear Feature | 两笔成本分别支付 | Pending |
-| DH-GM-06 | GM 额外 Spotlight 第二名敌人 | 每次额外敌人 Spotlight 按规则支出；第一名敌人行动不自动授权其他敌人 | Pending |
-| DH-GM-07 | 敌人拥有 Relentless (2) | 按特性在同一 GM Turn 内获得最多两次 Spotlight；额外重复聚焦按规则支付 Fear | Pending |
-| DH-GM-08 | 12 Fear 时再次获得 Fear | 不超过上限，不产生隐藏溢出 | Pending |
-| DH-GM-09 | 玩家忽略已预告的环境危险 | GM 可按已建立后果使用 Hard Move；不得改变危险原本的作用范围 | Pending |
-| DH-GM-10 | Hope 结果下出现高强度敌方威胁 | 本次回应优先使用 Soft Move；强硬后果需由独立触发或已成立的不可避免后果支持，不得作为本次 Hope 结果的默认回应 | Pending |
+| DH-GM-02 | Failure with Hope | PC 失败并获得 Hope；GM 采取较轻 Move；不得额外生成 Fear | Desk-Simulated |
+| DH-GM-03 | Critical Success | PC 获得 Hope、清除 Stress；不触发 Fear 收入或额外 GM Turn | Desk-Simulated |
+| DH-GM-04 | Reaction Roll Critical | 不获得 Hope、不清除 Stress；按 Reaction Roll 规则忽略该次影响 | Desk-Simulated |
+| DH-GM-05 | GM 花 Fear 抢夺 Spotlight 后启用 Fear Feature | 两笔成本分别支付 | Desk-Simulated |
+| DH-GM-06 | GM 额外 Spotlight 第二名敌人 | 每次额外敌人 Spotlight 按规则支出；第一名敌人行动不自动授权其他敌人 | Desk-Simulated |
+| DH-GM-07 | 敌人拥有 Relentless (2) | 按特性在同一 GM Turn 内获得最多两次 Spotlight；额外重复聚焦按规则支付 Fear | Desk-Simulated |
+| DH-GM-08 | 12 Fear 时再次获得 Fear | 不超过上限，不产生隐藏溢出 | Desk-Simulated |
+| DH-GM-09 | 玩家忽略已预告的环境危险 | GM 可按已建立后果使用 Hard Move；不得改变危险原本的作用范围 | Desk-Simulated |
+| DH-GM-10 | Hope 结果下出现高强度敌方威胁 | 本次回应优先使用 Soft Move；强硬后果需由独立触发或已成立的不可避免后果支持，不得作为本次 Hope 结果的默认回应 | Desk-Simulated |
 
 以上 10 项已完成桌面逻辑模拟，详情见 [GM_DESK_SIMULATION_01.md](./GM_DESK_SIMULATION_01.md)。这不是代码自动测试或真实桌面验收。专项设计依据见 [GM_RUNTIME_FIELD_GUIDE.md](../GM_RUNTIME_FIELD_GUIDE.md)。
 
@@ -72,14 +72,14 @@
 
 | ID | 场景 | 预期结果 / 关键断言 | 状态 |
 |---|---|---|---|
-| DH-GD-01 | Success with Fear：玩家成功打开锁门，但巡逻队接近 | 门已打开；后果推动巡逻压力，不得把开门改判为失败 | Pending |
-| DH-GD-02 | Success with Fear：角色成功说服守卫放行，但守卫记住其面孔 | 放行成功保留；后果是后续关注/身份暴露，不直接撤销许可 | Pending |
-| DH-GD-03 | Failure with Hope：调查没找到目标证据 | 目标证据未取得；产生可继续推进的轻度变化；不额外增加 GM Fear | Pending |
-| DH-GD-04 | 战斗中敌人开始蓄力并明确预告攻击 | 玩家获得可理解的回应窗口；若之后兑现，按已建立机制处理 | Pending |
-| DH-GD-05 | 敌人获得 Spotlight，Motives & Tactics 是“保护祭司、拖延时间” | 优先保护/拖延，而不是默认攻击最近 PC | Pending |
-| DH-GD-06 | Reaction 的触发条件满足，但敌人当前没有 Spotlight | Reaction 仍按其触发条件结算；不要求敌人获得行动聚焦 | Pending |
-| DH-GD-07 | GM 试图无成本打断玩家当前 Spotlight | 不将“可在 GM Turn 中自由作 Move”误读为无成本抢夺玩家 Spotlight；打断时按 Fear 规则支付 | Pending |
-| DH-GD-08 | Environment Feature 造成烟雾遮蔽与路线改变 | 场景提供新的行动选择；不把环境 Feature 一律转换成伤害 | Pending |
+| DH-GD-01 | Success with Fear：玩家成功打开锁门，但巡逻队接近 | 门已打开；后果推动巡逻压力，不得把开门改判为失败 | Desk-Simulated |
+| DH-GD-02 | Success with Fear：角色成功说服守卫放行，但守卫记住其面孔 | 放行成功保留；后果是后续关注/身份暴露，不直接撤销许可 | Desk-Simulated |
+| DH-GD-03 | Failure with Hope：调查没找到目标证据 | 目标证据未取得；产生可继续推进的轻度变化；不额外增加 GM Fear | Desk-Simulated |
+| DH-GD-04 | 战斗中敌人开始蓄力并明确预告攻击 | 玩家获得可理解的回应窗口；若之后兑现，按已建立机制处理 | Desk-Simulated |
+| DH-GD-05 | 敌人获得 Spotlight，Motives & Tactics 是“保护祭司、拖延时间” | 优先保护/拖延，而不是默认攻击最近 PC | Desk-Simulated |
+| DH-GD-06 | Reaction 的触发条件满足，但敌人当前没有 Spotlight | Reaction 仍按其触发条件结算；不要求敌人获得行动聚焦 | Desk-Simulated |
+| DH-GD-07 | GM 试图无成本打断玩家当前 Spotlight | 不将“可在 GM Turn 中自由作 Move”误读为无成本抢夺玩家 Spotlight；打断时按 Fear 规则支付 | Desk-Simulated |
+| DH-GD-08 | Environment Feature 造成烟雾遮蔽与路线改变 | 场景提供新的行动选择；不把环境 Feature 一律转换成伤害 | Desk-Simulated |
 
 ## 自动化参考执行补充
 
@@ -92,7 +92,7 @@
 | 测试版本 | Core Set / SRD 2.0 (2026-08-25) |
 | 扩展范围 | CORE_ONLY |
 | 矩阵状态 | 63/63 项已桌面逻辑模拟；42/42 参考执行器自动化测试 |
-| 已执行测试 | 45 / 55（桌面模拟；新增 10 项待执行） |
+| 已执行测试 | 63 / 63（桌面逻辑模拟） |
 | 已通过 | 63（桌面模拟） |
 | 已失败 | 0 |
 | 待执行 | 0（桌面模拟层面） |
