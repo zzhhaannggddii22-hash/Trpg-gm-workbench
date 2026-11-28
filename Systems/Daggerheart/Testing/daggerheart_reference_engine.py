@@ -294,19 +294,33 @@ def advance_countdown(state, event_id, amount=1):
     return True
 
 
+
+def tick_down_countdown(state, event_id=None, amount=1):
+    """Advance a Daggerheart countdown by reducing its remaining value."""
+    applied = state.setdefault("applied_events", set())
+    if event_id is not None and event_id in applied:
+        return False
+    state["value"] = max(0, state["value"] - amount)
+    if event_id is not None:
+        applied.add(event_id)
+    return True
+
+
 def short_rest(state, interrupted=False, fear_roll=0, gm=None):
     if interrupted:
         return {"completed": False, "refresh": False, "gm_fear_gained": 0}
     if state.get("short_rests_since_long", 0) >= 2:
         return {"completed": False, "refresh": False, "requires_long_rest": True}
     state["short_rests_since_long"] = state.get("short_rests_since_long", 0) + 1
+    fear_before = gm.fear if gm is not None else 0
     if gm is not None:
         gm.fear = bounded(gm.fear, fear_roll, 12)
-    return {"completed": True, "refresh": True, "gm_fear_gained": fear_roll if gm is not None else 0}
+    return {"completed": True, "refresh": True,
+            "gm_fear_gained": gm.fear - fear_before if gm is not None else 0}
 
 
 def long_rest(state, interrupted=False, fear_roll=0, pc_count=1, gm=None,
-               countdown=None, countdown_event_id="long-rest"):
+               countdown=None, countdown_event_id=None):
     if interrupted:
         # PCs receive short-rest benefits. The SRD does not explicitly clarify
         # whether the GM still gets long-rest Fear / countdown consequences;
@@ -317,14 +331,15 @@ def long_rest(state, interrupted=False, fear_roll=0, pc_count=1, gm=None,
             "countdown_advanced": False,
         }
     state["short_rests_since_long"] = 0
+    fear_before = gm.fear if gm is not None else 0
     if gm is not None:
         gm.fear = bounded(gm.fear, fear_roll + pc_count, 12)
     advanced = False
     if countdown is not None:
-        advanced = advance_countdown(countdown, countdown_event_id)
+        advanced = tick_down_countdown(countdown, countdown_event_id)
     return {
         "completed": True, "refresh": True, "long_rest": True,
-        "gm_fear_gained": fear_roll + pc_count if gm is not None else 0,
+        "gm_fear_gained": gm.fear - fear_before if gm is not None else 0,
         "countdown_advanced": advanced,
     }
 
@@ -762,7 +777,7 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         result = long_rest({}, fear_roll=2, pc_count=2, gm=gm, countdown=countdown)
         self.assertEqual((result["gm_fear_gained"], gm.fear), (4, 4))
         self.assertTrue(result["countdown_advanced"])
-        self.assertEqual(countdown["value"], 4)
+        self.assertEqual(countdown["value"], 2)
 
     def test_69_interrupted_long_rest_gives_short_benefit_without_faking_short_rest(self):
         state, gm, countdown = {"short_rests_since_long": 2}, GM(), {"value": 3}
@@ -775,6 +790,18 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         self.assertFalse(result["long_rest"])
         self.assertEqual(state["short_rests_since_long"], 2)
         self.assertEqual((gm.fear, countdown["value"]), (0, 3))
+
+
+    def test_70_long_term_countdown_ticks_down_once_per_rest_event(self):
+        countdown = {"value": 3}
+        self.assertTrue(tick_down_countdown(countdown, "rest-1"))
+        self.assertFalse(tick_down_countdown(countdown, "rest-1"))
+        self.assertEqual(countdown["value"], 2)
+
+    def test_71_rest_fear_gain_respects_gm_fear_cap(self):
+        gm = GM(fear=11)
+        result = short_rest({}, fear_roll=4, gm=gm)
+        self.assertEqual((result["gm_fear_gained"], gm.fear), (1, 12))
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
