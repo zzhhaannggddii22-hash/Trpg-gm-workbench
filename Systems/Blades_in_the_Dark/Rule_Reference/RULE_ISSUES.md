@@ -34,13 +34,13 @@
 
 ## R-005｜Resistance 与 Armor 的时序
 
-- **问题**：中文翻译与不同官方速查页面容易让“Resistance”“普通 Armor 使用格”和“Special Armor 能力资源”的恢复节点混成一个步骤。
-- **官方交叉核验**：Full Player's Kit v8.2 的 Downtime 速查明确写明在 Downtime 恢复所有 Armor 使用格；多个 Playbook Special Armor 能力也写明在 Downtime 开始时恢复。官方 SRD 的 Resistance & Armor 网页则写明，所有 Armor 在选择下一次 Score 的 Load 时恢复。
-- **差异判断**：两种官方材料给出了不同的恢复节点。不能把网页的“选择下一次 Score 的 Load 时恢复”解释成对 Downtime 恢复的单纯确认；现有资料不足以证明两者等价。
-- **当前候选基线**：本目录当前以 Full Player's Kit v8.2 作为关键流程交叉核验基线，因此暂按其文本在 Downtime 阶段恢复 Armor 使用格；具体 Special Armor 能力若明文规定“Downtime 开始时”恢复，则按该能力时点执行。此项是明确的候选版本选择，不是对官方来源冲突的最终解决。
-- **运行限制**：正式 Campaign 锁定核心规则书/修订版后，必须重新核对 Armor 恢复时序，并按该 Campaign 的来源优先级决定。不得把“下一次 Score 选择 Load”自动改写成所有版本通用的恢复节点，也不得把 v8.2 工具包结论推广到未锁定版本。
-- **本轮审查修正**：撤回此前“Downtime 本身不会恢复 Armor”的错误结论；同时撤回“下一次 Load 只是随后确认资源可用节点”的无依据调和说法。此来源差异保留为 OPEN。
-- **状态**：OPEN / 官方材料存在时序差异；当前 candidate 暂按 Full Player's Kit v8.2 执行。
+- **问题**：中文翻译与不同官方速查资料容易让普通 Armor 使用格与 Playbook Special Armor 能力资源的恢复节点混成一个步骤。
+- **核心规则书核验**：用户提供的《暗夜刀锋》中文版规则书 V1.3 对应英文原版版权页标注 v8.2。核心规则书 PDF 第 39 页明确写明：普通 Armor 使用格在“为下一次刻痕选择负载时”恢复。
+- **Special Armor 核验**：核心规则书 V1.3 的多个 Playbook 能力条目（PDF pp.68、72、76、81、85、89、93）明确写明 Special Armor 在 Downtime 开始时恢复。
+- **资料冲突**：Full Player's Kit v8.2 的 Downtime 速查表将 Armor 恢复列在 Downtime；完整核心规则书正文则把普通 Armor 的恢复时点写为下一次 Score 选择 Load。官方 SRD 的 Resistance & Armor 网页同样写为选择下一次 Score 的 Load 时恢复。
+- **当前处理**：以完整核心规则书正文为普通 Armor 的运行基准：下一次 Score 选择 Load 时恢复。Special Armor 是独立资源，按具体 Playbook 能力文本在 Downtime 开始时恢复。不得把二者合并成统一的“Downtime 恢复全部 Armor”。
+- **证据优先级判断**：完整核心规则书正文高于玩家速查表的简写/汇总；速查表冲突保留为来源注记，不再阻止运行。
+- **状态**：RESOLVED FOR V1.3 / English v8.2 baseline；其他版本仍需按其原文核验。
 
 ## R-006｜0d Action Roll
 
