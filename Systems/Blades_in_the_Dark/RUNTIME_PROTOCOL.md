@@ -212,7 +212,13 @@ Downtime Activity 选择项：
 - 任何行动都必须满足派系目标、资源、机会及当前世界状态。
 - 通过联系人、朋友、Vice purveyor 或可观察事件，把玩家有资格知道的变化传达给他们。
 
-## 10. 未知规则与错误恢复
+## 10. Ability / Arcane Dispatch
+
+- Action、Resistance、Cohort、Score、Downtime、Session 结算触发能力时，只检查当前 PC/Crew 已拥有能力；查 [ABILITY_RUNTIME_MATRIX.md](./Rule_Reference/ABILITY_RUNTIME_MATRIX.md) 的 Trigger / Scope / Cost / Reset。
+- Ritual、Magnitude、发明、打造、改造与炼金品使用事件，查 [ARCANE_AND_CRAFTING_RUNTIME.md](./Rule_Reference/ARCANE_AND_CRAFTING_RUNTIME.md)。
+- 不在每次发言时扫描全部能力或完整超自然手册；只在对应事件触发时加载。
+
+## 11. 未知规则与错误恢复
 
 出现规则不确定时：
 1. 锁定本 Campaign 的规则版本与对应 Rule ID。
@@ -224,7 +230,7 @@ Downtime Activity 选择项：
 
 不得用别的系统的相似规则替代未知条款。
 
-## 11. 性能边界
+## 12. 性能边界
 
 - 新 Campaign / 新 Session：执行一次 Preflight，读取当前快照与需要的规则锚点。
 - 同一活动对话：复用已核验版本、PC/Crew Snapshot 和已知规则；不重复扫描全目录。
