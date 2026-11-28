@@ -237,6 +237,49 @@ def clear_special_condition(state, target, name, requirement_met=False):
     return True
 
 
+
+RANGE_RANK = {
+    "melee": 0, "very_close": 1, "close": 2,
+    "far": 3, "very_far": 4, "out_of_range": 5,
+}
+
+
+def pc_can_reposition(distance_band, action_roll_made, agility_success=False):
+    if distance_band not in RANGE_RANK:
+        raise ValueError("Unknown Daggerheart range band")
+    if action_roll_made and RANGE_RANK[distance_band] <= RANGE_RANK["close"]:
+        return True
+    return bool(agility_success)
+
+
+def adversary_movement(distance_band, part_of_action=True):
+    if distance_band not in RANGE_RANK:
+        raise ValueError("Unknown Daggerheart range band")
+    rank = RANGE_RANK[distance_band]
+    if rank <= RANGE_RANK["close"]:
+        return {"allowed": True, "separate_action_required": False}
+    if rank <= RANGE_RANK["very_far"]:
+        return {"allowed": not part_of_action, "separate_action_required": True}
+    return {"allowed": False, "separate_action_required": True}
+
+
+def ranged_attack_status(line_of_sight, obstruction="none"):
+    if obstruction not in {"none", "partial", "total"}:
+        raise ValueError("Obstruction must be none, partial, or total")
+    if not line_of_sight or obstruction == "total":
+        return {"allowed": False, "roll_state": "blocked"}
+    if obstruction == "partial":
+        return {"allowed": True, "roll_state": "disadvantage"}
+    return {"allowed": True, "roll_state": "normal"}
+
+
+def area_effect_targets_valid(distance_bands):
+    return all(
+        band in RANGE_RANK and RANGE_RANK[band] <= RANGE_RANK["very_close"]
+        for band in distance_bands
+    )
+
+
 def advantage_state(advantage_sources, disadvantage_sources):
     net = advantage_sources - disadvantage_sources
     return "advantage" if net > 0 else "disadvantage" if net < 0 else "none"
@@ -655,6 +698,38 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         self.assertTrue(active_condition(state, "adversary-1", "sealed"))
         self.assertTrue(clear_special_condition(state, "adversary-1", "sealed", requirement_met=True))
         self.assertFalse(active_condition(state, "adversary-1", "sealed"))
+
+
+    def test_60_pc_can_move_within_close_during_action_roll(self):
+        self.assertTrue(pc_can_reposition("close", action_roll_made=True))
+        self.assertFalse(pc_can_reposition("far", action_roll_made=True))
+
+    def test_61_pc_needs_successful_agility_roll_to_reposition_without_action(self):
+        self.assertFalse(pc_can_reposition("close", action_roll_made=False, agility_success=False))
+        self.assertTrue(pc_can_reposition("close", action_roll_made=False, agility_success=True))
+
+    def test_62_adversary_moves_close_with_action_but_very_far_separately(self):
+        close = adversary_movement("close", part_of_action=True)
+        very_far = adversary_movement("very_far", part_of_action=True)
+        separate = adversary_movement("very_far", part_of_action=False)
+        self.assertTrue(close["allowed"])
+        self.assertFalse(very_far["allowed"])
+        self.assertTrue(very_far["separate_action_required"])
+        self.assertTrue(separate["allowed"])
+
+    def test_63_cover_gives_disadvantage_and_total_obstruction_blocks_ranged_attack(self):
+        partial = ranged_attack_status(True, "partial")
+        total = ranged_attack_status(True, "total")
+        self.assertEqual((partial["allowed"], partial["roll_state"]), (True, "disadvantage"))
+        self.assertEqual((total["allowed"], total["roll_state"]), (False, "blocked"))
+
+    def test_64_area_effect_requires_all_targets_within_very_close_of_origin(self):
+        self.assertTrue(area_effect_targets_valid(["melee", "very_close"]))
+        self.assertFalse(area_effect_targets_valid(["melee", "close"]))
+
+    def test_65_ranged_attack_requires_line_of_sight(self):
+        self.assertEqual(ranged_attack_status(False)["roll_state"], "blocked")
+        self.assertTrue(ranged_attack_status(True)["allowed"])
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
