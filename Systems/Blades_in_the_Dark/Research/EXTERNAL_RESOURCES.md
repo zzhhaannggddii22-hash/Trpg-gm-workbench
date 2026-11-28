@@ -16,7 +16,7 @@
 
 ## 2. 值得关注的社区内容
 
-- [The Soul Merchants](https://docs.google.com/document/d/1tA5tivR0OP2RSFzPbj4IlyBXDCYs8oNBXPc5I56jhRs/edit?usp=sharing)：官方 Fan Creations 目录列出的短篇 one-shot，带预制角色。适合作为第一场单次 Score/教学体验候选。
+- [The Soul Merchants](https://docs.google.com/document/d/1tA5tivR0OP2RSFzPbj4IlyBXDCYs8oNBXPc5I56jhRs/edit?usp=sharing)：官方 Fan Creations 目录列出的非官方 one-shot，带预制角色；场景资料标注约 4 小时、3–5 名玩家，并采用简化 Downtime、没有 Crew Sheet/XP。适合多人教学，不适合原封不动用于单玩家测试。
 - [Darque's Ledger](https://bannerlessgames.itch.io/darques-ledger-blades-in-the-dark)：五个非官方 Score，包含委托人、目标、复杂情况、重要人物与时钟；适合未来备团时选取单个案件。
 - [Steelweaver's Rebellion](https://mabelharper.itch.io/steelweavers-rebellion)：完整非官方模组，适合围绕派系冲突和组织长期发展的战役；不应直接视为官方模组。
 - [Unusual Suspects Playbook Jam](https://itch.io/jam/unusual-suspects-a-playbook-jam)：102 个社区提交的额外 Playbook；逐本核对规则和许可，不默认加载。
