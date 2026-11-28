@@ -29,7 +29,7 @@
 
 ## Review record
 
-- 13 Nov 2026? No. This suite was prepared on 2026-11-28; no historical execution is implied.
+- Prepared on 2026-11-28; no historical execution is implied.
 - Manual expected-result review against the cited source text: 13/13 checks reviewed.
 - Automated execution: not performed.
 - Full ability interaction coverage: not performed.
