@@ -1,7 +1,7 @@
 # Blades in the Dark｜核心规则索引
 
 > system_id: `blades_in_the_dark`  
-> 当前阶段：candidate / 首轮运行规则已整理，尚待行为验证  
+> 当前阶段：candidate / 核心与专题运行规则已整理，尚待行为验证  
 > 核心规则来源：中文《暗夜冷锋》SRD；官方 Player's Kit v8.2 用于关键条款交叉核验  
 > 规则正文镜像：存放于用户私人资料库；本公开仓库只保留授权来源、原创摘要与运行逻辑。
 
