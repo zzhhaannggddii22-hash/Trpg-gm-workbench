@@ -112,13 +112,13 @@ Core Set 角色选项索引见 [CHARACTER_OPTIONS_INDEX.md](./CHARACTER_OPTIONS_
 ### Hope
 - 每名 PC 创建时 2 Hope；上限 6；跨 Session 保留。
 - 可用于 Help an Ally、Utilize an Experience、发起 Tag Team Roll、启用 Hope Feature。
-- Class Hope Feature 成本为 3 Hope；其他能力按卡面文本。若 Hope Feature 用于当前这次动作掷骰，且该掷骰结果为 Hope，刚获得的 Hope 可以立即用于支付该 Feature 的成本。若 Hope Feature 用于当前这次动作掷骰，且该掷骰结果为 Hope，刚获得的 Hope 可以立即用于支付该 Feature 的成本。
+- Class Hope Feature 成本为 3 Hope；其他能力按卡面文本。若 Hope Feature 用于当前这次动作掷骰，且该掷骰结果为 Hope，刚获得的 Hope 可以立即用于支付该 Feature 的成本。
 - Help an Ally：每名协助者花费 1 Hope，描述协助方式并掷 d6 Advantage Die；多名协助者可分别花费 Hope，但行动者只加所有适用优势骰（包括行动者自身已有的 Advantage Die）中的最高值。
 - Utilize an Experience：在相关 Action / Reaction Roll 前花 1 Hope，加入 Experience 修正；可同时应用多个不同 Experience，按成本逐项支付。
 - 超过资源上限时不保留超额点数。
 
 ### Fear
-- Campaign 开始时 GM 获得每名 PC 1 Fear。
+- **起始 Fear 来源待核：** 旧版运行笔记记录为 Campaign 开始时每名 PC 提供 1 Fear，但该条未在当前公开 SRD 2.0 中定位到明确出处。正式 Campaign 初始化前，须以完整 Core Rulebook / 官方明确出处核实；不能把这条标成 SRD 2.0 已核实规则。
 - PC 掷出 Fear 结果、队伍休息或能力明确给予时获得 Fear。
 - 上限 12，跨 Session 保留。
 - 花费 1 Fear 可：抢夺 Spotlight 并作 GM Move；作额外 GM Move；启用 Adversary Fear Feature；启用 Environment Fear Feature；为敌方掷骰加入适用 Experience。
@@ -151,7 +151,7 @@ GM Move 是推动场景的工具，不是惩罚玩家的任意权力。后果必
 - PC Reaction Roll 使用动作掷骰的基础结构，但不产生 Hope / Fear、不触发额外 GM Move，其他 PC 不能通过 Help an Ally 协助该反应。
 - PC Reaction Roll Critical Success：忽略该次成功时本会承受的影响，例如伤害或标记 Stress；不获得 Hope，也不清除 Stress。
 - 不得把普通 Action Roll 的资源结算套给 Reaction Roll。
-- 敌方 Reaction Roll 按敌人规则使用单 d20；可依特定规则花 Fear 添加 Experience。敌方 Reaction Roll 自然 20 自动成功，但不附带额外 Critical 收益。敌方 Reaction Roll 自然 20 自动成功，但不附带额外 Critical 收益。
+- 敌方 Reaction Roll 按敌人规则使用单 d20；可依特定规则花 Fear 添加 Experience。敌方 Reaction Roll 自然 20 自动成功，但不附带额外 Critical 收益。
 
 ## 9. DH-GROUP / DH-TAG-TEAM｜协作行动
 
@@ -162,7 +162,7 @@ GM Move 是推动场景的工具，不是惩罚玩家的任意权力。后果必
 4. 协助者 Reaction Roll 不产生 Hope / Fear；Leader 的 Action Roll 正常结算。
 
 ### Tag Team Roll
-- 每名玩家每 Session 可发起一次；花费 3 Hope，邀请另一名 PC 协同完成高光行动。同一 PC 可以参与其他玩家发起的 Tag Team Roll。同一 PC 可以参与其他玩家发起的 Tag Team Roll。
+- 每名玩家每 Session 可发起一次；花费 3 Hope，邀请另一名 PC 协同完成高光行动。同一 PC 可以参与其他玩家发起的 Tag Team Roll。
 - 两名玩家分别作 Action Roll；结算前选择其中一组结果应用于两名角色的共同动作。
 - 被选结果为 Hope 时，所有参与 PC 各获得 1 Hope；为 Fear 时，GM 按参与 PC 人数获得 Fear。
 - 若为成功的 Tag Team 攻击，两名 PC 分别掷伤害并将伤害合计作为同一来源处理。
