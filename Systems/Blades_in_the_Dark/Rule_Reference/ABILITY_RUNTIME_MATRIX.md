@@ -1,6 +1,7 @@
 # Blades in the Dark｜PC / Crew Ability Runtime Matrix
 
-> Baseline: official Full Player's Kit v8.2.  
+> Primary source: user-provided Chinese core rulebook V1.3 (English original 2017 Digital Release v8.2).  
+> Cross-check: official Full Player's Kit v8.2.  
 > Purpose: a trigger-oriented operational index for abilities already selected on active PC/Crew sheets.  
 > The descriptions below are original short summaries, not replacement ability text. Exact trigger wording and exceptions remain tied to the selected official sheet/version.
 
