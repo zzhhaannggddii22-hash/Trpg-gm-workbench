@@ -137,7 +137,7 @@
 |---|---|---|---|
 | DH-REF-072 | PC Spotlight 期间 GM 抢夺聚焦 | 必须支付 1 Fear，成功后进入 GM Turn | Passed (Run 06) |
 | DH-REF-073 | GM Fear 不足 | 不能抢夺 PC Spotlight，聚焦保持不变 | Passed (Run 06) |
-| DH-REF-074 | GM Turn 中首个与第二个敌人 Spotlight | 首个敌人聚焦免费；额外敌人 Spotlight 支付 1 Fear | Pending rerun |
+| DH-REF-074 | GM Turn 中首个与第二个敌人 Spotlight | 首个敌人聚焦免费；额外敌人 Spotlight 支付 1 Fear | Passed (Run 06) |
 | DH-REF-075 | Relentless (2) | 同一 GM Turn 最多两次 Spotlight；第二次支付 1 Fear | Pending rerun |
 | DH-REF-076 | 额外敌人 Spotlight 后启用 Fear Feature | Spotlight 成本与 Fear Feature 成本分别支付 | Pending rerun |
 | DH-REF-077 | Fear 不足以支付额外 Spotlight + Feature | 两项总成本无法支付时，不发生部分扣款或行动 | Pending rerun |
