@@ -442,7 +442,8 @@ def tick_down_countdown(state, event_id=None, amount=1):
 
 def short_rest(state, interrupted=False, fear_roll=0, gm=None):
     if interrupted:
-        return {"completed": False, "refresh": False, "gm_fear_gained": 0}
+        return {"completed": False, "refresh": False, "gm_fear_gained": None,
+                "gm_consequence_required": True}
     if state.get("short_rests_since_long", 0) >= 3:
         return {"completed": False, "refresh": False, "requires_long_rest": True}
     state["short_rests_since_long"] = state.get("short_rests_since_long", 0) + 1
@@ -462,7 +463,7 @@ def long_rest(state, interrupted=False, fear_roll=0, pc_count=1, gm=None,
         return {
             "completed": True, "refresh": True, "long_rest": False,
             "benefit_type": "short_rest", "gm_fear_gained": None,
-            "countdown_advanced": False,
+            "countdown_advanced": None, "gm_consequence_required": True,
         }
     state["short_rests_since_long"] = 0
     fear_before = gm.fear if gm is not None else 0
@@ -716,7 +717,10 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         self.assertEqual(state["value"], 2)
 
     def test_24_interrupted_short_rest_has_no_refresh(self):
-        self.assertFalse(short_rest({}, interrupted=True)["refresh"])
+        result = short_rest({}, interrupted=True)
+        self.assertFalse(result["refresh"])
+        self.assertIsNone(result["gm_fear_gained"])
+        self.assertTrue(result["gm_consequence_required"])
 
     def test_25_fourth_consecutive_short_rest_requires_long_rest(self):
         self.assertTrue(short_rest({"short_rests_since_long": 3})["requires_long_rest"])
@@ -985,6 +989,9 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         self.assertTrue(result["completed"])
         self.assertEqual(result["benefit_type"], "short_rest")
         self.assertFalse(result["long_rest"])
+        self.assertIsNone(result["gm_fear_gained"])
+        self.assertIsNone(result["countdown_advanced"])
+        self.assertTrue(result["gm_consequence_required"])
         self.assertEqual(state["short_rests_since_long"], 2)
         self.assertEqual((gm.fear, countdown["value"]), (0, 3))
 
