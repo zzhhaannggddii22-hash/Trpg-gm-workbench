@@ -135,7 +135,7 @@
 
 | ID | 场景 | 关键断言 | 状态 |
 |---|---|---|---|
-| DH-REF-072 | PC Spotlight 期间 GM 抢夺聚焦 | 必须支付 1 Fear，成功后进入 GM Turn | Pending rerun |
+| DH-REF-072 | PC Spotlight 期间 GM 抢夺聚焦 | 必须支付 1 Fear，成功后进入 GM Turn | Passed (Run 06) |
 | DH-REF-073 | GM Fear 不足 | 不能抢夺 PC Spotlight，聚焦保持不变 | Pending rerun |
 | DH-REF-074 | GM Turn 中首个与第二个敌人 Spotlight | 首个敌人聚焦免费；额外敌人 Spotlight 支付 1 Fear | Pending rerun |
 | DH-REF-075 | Relentless (2) | 同一 GM Turn 最多两次 Spotlight；第二次支付 1 Fear | Pending rerun |
@@ -164,7 +164,7 @@
 | 扩展范围 | CORE_ONLY |
 | 矩阵状态 | 64/64 项已桌面逻辑模拟；82 项参考执行器用例已编写（其中新增 11 项待自动复跑） |
 | 已执行测试 | 64 / 64（桌面逻辑模拟）；参考执行器最新已通过记录 71/71；当前代码 82 项，11 项待 Run 06 |
-| 已通过 | 64（桌面模拟）；71（参考执行器） |
+| 已通过 | 64（桌面模拟）；82（参考执行器） |
 | 已失败 | 0 |
 | 待执行 | 0（桌面模拟层面）；11（新增 GM Turn / Short Rest 回归待执行） |
 | 阻塞 | 0 |
