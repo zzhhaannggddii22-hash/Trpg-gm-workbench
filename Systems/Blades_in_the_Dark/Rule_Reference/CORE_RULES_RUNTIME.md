@@ -73,6 +73,16 @@
 
 Resistance Roll 使用属性组骰池，即该组内所有 Action dots 的总和；普通 Action Roll 仍只使用玩家选择的单一 Action rating。
 
+## 2-A. Action 与 Attribute 对照
+
+| Attribute | Actions |
+|---|---|
+| Insight | Hunt、Study、Survey、Tinker |
+| Prowess | Finesse、Prowl、Skirmish、Wreck |
+| Resolve | Attune、Command、Consort、Sway |
+
+Resistance Roll 使用属性组骰池，即该组内所有 Action dots 的总和；普通 Action Roll 仍只使用玩家选择的单一 Action rating。
+
 ## 3. Action Roll（行动骰）
 
 ### BLD-ACT-01｜六步执行
