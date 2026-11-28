@@ -1,9 +1,9 @@
 # WWN 核心规则运行手册（SRD 1.0）
 
 - 规则基准：Kevin Crawford, *Worlds Without Number System Reference Document v1.0*（2024-03-13）。
-- 范围：仅整理 SRD 明确覆盖的机制；不是完整 Free Edition / Deluxe 手册。
+- 范围：仅整理 SRD 明确覆盖的机制；完整 Free Edition 的教学性解释与 GM 工具另见本目录专题手册。
 - 核验入口：同目录 `Data/SRD.md`；结构化条目见 `Data/wwn-srd-data.jsonld`，名称/章节目录见 `Data/catalog.json`。
-- 下文章节号指 SRD 章节，不代表已核验 Free Edition 印刷页码。
+- 下文章节号指 SRD 章节。完整 Free Edition 已确认是 2021 Free Version，ISBN 978-1-950965-08-3；印刷页码见各专题手册。
 
 ## 1. 核心检定
 
@@ -25,7 +25,7 @@
 
 | 难度 | 常见含义 |
 |---:|---|
-| 6 | 超出日常职责但相对简单；比这更简单的事通常不掷骰 |
+| 6 | 超出日常职责但相对简单；更简单的事通常不掷骰 |
 | 8 | 对胜任的专业人士构成显著挑战 |
 | 10 | 需要熟练专家，专家也可能失败 |
 | 12 | 只有大师能较可靠地完成 |
@@ -49,7 +49,7 @@
 | Mental | 精神攻击、心理创伤、部分魔法 | 16 − 等级 − max(感知修正, 魅力修正) |
 | Luck | 纯粹运气 | 16 − 等级 |
 
-NPC 通常共用一个豁免目标：15 − 向下取整(HD / 2)。
+因此 1 级角色的基础目标值为 15，再减去相应属性修正；公式中的常数 16 不是 1 级角色的最终目标值。NPC 通常共用一个豁免目标：15 − 向下取整(HD / 2)。
 
 ## 2. 时间单位（SRD 2.1）
 
@@ -116,7 +116,6 @@ PC 被致命攻击降至 0 HP 时进入 Mortally Injured。若未稳定伤势，
 ## 5. 追逐（SRD 2.6）
 
 步行追逐由双方各进行一次团队技能检定：
-
 1. 逃跑方由最佳 Dex/Exert 或 Con/Exert 角色掷骰，作为团队 Pace。
 2. 同伴可通过合理行动拖慢追兵；每次成功 +1，最多 +3；有害失败可 -1。
 3. 追逐方做一次 Dex/Exert 或 Con/Exert 检定，按人数、先机、地形熟悉度和追逐动机修正。
@@ -159,7 +158,6 @@ PC 被致命攻击降至 0 HP 时进入 Mortally Injured。若未稳定伤势，
 ### 地下城 / 危险地点
 
 每个 Turn 为 10 分钟：
-
 1. 如有必要，秘密进行漫游遭遇检查。
 2. 玩家决定本 Turn 的主要行动。
 3. GM 告知行动结果。
@@ -195,4 +193,4 @@ PC 被致命攻击降至 0 HP 时进入 Mortally Injured。若未稳定伤势，
 
 ## 10. 数据定位与边界
 
-完整职业、能力、Foci、法术、装备、怪物与阵营资产数据均保存在 Data/wwn-srd-data.jsonld。SRD 不等于完整 Free Edition：示例、解释、正式 GM 工具正文、页码和勘误尚待完整规则书核验。已知截断：Accursed Arts 的 Night-Black Eyes 仅保留开头，不得猜测续文。
+完整职业、能力、Foci、法术、装备、怪物与阵营资产数据均保存在 Data/wwn-srd-data.jsonld。SRD 不等于完整 Free Edition：其角色与规则机制可作为 CC0 参考，但书中 GM 工具的具体创作性正文、示例和设定不在 SRD 内。GM 工具的离线运行摘要分别见 WORLD_BUILDING_RUNTIME、SITE_TAGS_RUNTIME、ADVENTURE_CREATION_RUNTIME。
