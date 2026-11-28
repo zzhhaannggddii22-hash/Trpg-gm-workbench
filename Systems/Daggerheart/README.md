@@ -25,7 +25,7 @@
 3. **官方辅助材料**：[官方 Downloads](https://www.daggerheart.com/downloads/)，其中 Core 与 Hope & Fear 的角色卡、卡牌、GM Guide、地图材料和勘误分栏。
 4. **中文检索**：[匕首之心 HTML SRD](https://www.daggerheart.cn/SRD/)，用于中文阅读与定位，版本覆盖和翻译差异需核对。
 5. **中文主持研究**：[Role Initiative｜匕首之心](https://ttrpg.shinkan42.cn/rule/dagger_heart/)，用于机制解释、角色创建、战斗、敌人与主持方法研究；不替代官方原文。
-6. **官方简体中文版**：核心规则书与《希望与恐惧》中文版项目已完成众筹；官方项目页面公布的预计发放时间为 2027 年 6 月。交付前不将未取得的中文版作为规则来源。
+6. **官方简体中文版**：核心规则书与《希望与恐惧》中文版项目已完成众筹；众筹项目页曾公布预计 2027 年 6 月交付；但官方 2026-07-30 的 Daggerheart Next 更新将简体中文版 Core Set 与 Hope & Fear 标为 Q4 2026。两个公开时间点不一致，当前应视为待确认的出版计划，不以任一日期保证实际到货。交付前不将未取得的中文版作为规则来源。
 
 来源、许可和版本详情见 [SOURCE_REGISTER.md](./Rule_Reference/SOURCE_REGISTER.md) 与 [数据许可说明](./Reference_Data/LICENSE_AND_ATTRIBUTION.md)。
 
@@ -39,6 +39,8 @@
 - [核心角色选项索引](./Rule_Reference/CHARACTER_OPTIONS_INDEX.md)：九职业、领域和子职业导航。
 - [敌人检索索引](./Rule_Reference/ADVERSARY_INDEX.md)：按 Tier 检索 Core 敌人。
 - [环境检索索引](./Rule_Reference/ENVIRONMENT_INDEX.md)：按 Tier 检索 Core 环境。
+- [装备检索索引](./Rule_Reference/GEAR_INDEX.md)：Core 武器、护甲、物品与消耗品。
+- [本地优先检索协议](./Rule_Reference/LOCAL_FIRST_RETRIEVAL.md)：运行时如何先查本地资料。
 - [结构化规则与检索数据](./Reference_Data/README.md)：Core 与 Hope & Fear 分开的 JSON 数据集合。
 - [规则来源登记](./Rule_Reference/SOURCE_REGISTER.md)：官方、中文和社区资料。
 - [规则疑点登记](./Rule_Reference/RULE_ISSUES.md)：来源差异、版本疑点和未解决问题。
