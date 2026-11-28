@@ -1,7 +1,7 @@
 # Cairn 2e Runtime Protocol
 
 > 适用范围：仅 `system_id: cairn` / `Cairn Second Edition`。
-> 状态：candidate runtime protocol v0.2。正式运行必须与 Campaign 的 `SYSTEM_BINDING.md` 一起使用；受控验证使用 TEST_ONLY_NON_CANON Validation Manifest。
+> 状态：candidate runtime protocol v0.3。正式运行必须与 Campaign 的 `SYSTEM_BINDING.md` 一起使用；受控验证使用 TEST_ONLY_NON_CANON Validation Manifest。
 > 目的：让 GM 在桌面运行中直接调用已规范化规则，避免每次行动都在线搜索或临场重建规则。
 
 ## 1. 运行原则
