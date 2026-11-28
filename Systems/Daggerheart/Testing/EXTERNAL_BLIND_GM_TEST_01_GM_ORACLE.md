@@ -1,6 +1,6 @@
 # External Blind GM Test 01 — GM Oracle
 
-<badge>GM ONLY — DO NOT SHOW TO PLAYER</badge>
+**GM ONLY — DO NOT SHOW TO PLAYER**
 
 ## Rules and data binding
 
