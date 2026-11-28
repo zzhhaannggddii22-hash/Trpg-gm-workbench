@@ -114,12 +114,12 @@
 | ID | 场景 | 关键断言 | 状态 |
 |---|---|---|---|
 | DH-REF-060 | PC 在 Action Roll 中移动 | 可在该行动中移动至 Close；更远距离不能免费并入该行动 | Passed (Run 04) |
-| DH-REF-061 | PC 未进行 Action Roll 时重新定位 | 需成功完成 Agility Roll；失败不能安全重新定位 | Pending rerun |
-| DH-REF-062 | Adversary 移动 | Close 内移动可并入行动；移动至 Very Far 需要独立行动 | Pending rerun |
-| DH-REF-063 | 远程攻击遇到掩体 | 部分遮挡允许攻击但带 Disadvantage；完全遮挡阻断视线 | Pending rerun |
-| DH-REF-064 | Area of Effect 多目标 | 所有目标都须在同一个效果范围内原点的 Very Close 范围内 | Pending rerun |
-| DH-REF-065 | 远程攻击无视线 | 没有 Line of Sight 时不能进行远程攻击 | Pending rerun |
-| DH-REF-066 | Area of Effect 原点超出效果范围 | 即使目标彼此接近，原点不在效果范围内也无效 | Pending rerun |
+| DH-REF-061 | PC 未进行 Action Roll 时重新定位 | 需成功完成 Agility Roll；失败不能安全重新定位 | Passed (Run 04) |
+| DH-REF-062 | Adversary 移动 | Close 内移动可并入行动；移动至 Very Far 需要独立行动 | Passed (Run 04) |
+| DH-REF-063 | 远程攻击遇到掩体 | 部分遮挡允许攻击但带 Disadvantage；完全遮挡阻断视线 | Passed (Run 04) |
+| DH-REF-064 | Area of Effect 多目标 | 所有目标都须在同一个效果范围内原点的 Very Close 范围内 | Passed (Run 04) |
+| DH-REF-065 | 远程攻击无视线 | 没有 Line of Sight 时不能进行远程攻击 | Passed (Run 04) |
+| DH-REF-066 | Area of Effect 原点超出效果范围 | 即使目标彼此接近，原点不在效果范围内也无效 | Passed (Run 04) |
 
 ## 休息与 Downtime 后果回归（代码用例；Run 05 已通过）
 
