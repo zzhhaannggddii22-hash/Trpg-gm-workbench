@@ -280,6 +280,10 @@ active_abilities:
 
 六种 Crew Type 的基础 Crew Ability 也已分别建表。该覆盖声明只表示 v8.2 能力选项目录已建立，不表示已逐项验证每个能力的所有边界组合。实际 Campaign 中选中的能力仍要依据该版角色卡/组织表核对成本、触发条件、持续时间、重置点和互相作用；可选 Ghost/Hull/Vampire、社区 Playbook 和其他扩展不在此核心列表内。
 
+## 5-B. 运行时细化矩阵
+
+每项核心能力的事件触发、效果、资源成本、作用范围和常见边界见 [ABILITY_RUNTIME_MATRIX.md](./ABILITY_RUNTIME_MATRIX.md)。该矩阵以官方 Full Player's Kit v8.2 逐项对照，用于实际 PC/Crew 状态的按需装载；本文件保留能力目录和中文检索摘要。
+
 ## 6. 来源与边界
 
 - [Official Full Player's Kit v8.2](https://bladesinthedark.com/sites/default/files/blades_playerkit_v8_2.pdf)
