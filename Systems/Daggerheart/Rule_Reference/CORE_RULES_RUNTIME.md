@@ -166,6 +166,7 @@ GM Move 是推动场景的工具，不是惩罚玩家的任意权力。后果必
 - 两名玩家分别作 Action Roll；结算前选择其中一组结果应用于两名角色的共同动作。
 - 被选结果为 Hope 时，所有参与 PC 各获得 1 Hope；为 Fear 时，GM 按参与 PC 人数获得 Fear。
 - 若为成功的 Tag Team 攻击，两名 PC 分别掷伤害并将伤害合计作为同一来源处理。
+- Tag Team Roll 在追踪 Action Roll 次数的 Countdown 或特性看来，计为一次 Action Roll；不要因双方各自掷了一组骰而推进两次。
 
 ## 10. DH-ADV｜优势与劣势
 
