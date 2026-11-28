@@ -23,6 +23,7 @@
 
 - 当前核心核验基准：私人资料库中的《暗夜刀锋》中文版规则书 V1.3（315 页 PDF；版权页标注英文原版 2017 Digital Release v8.2）。
 - 核心规则书包含第 243 页起的多斯科沃城市指南；公开仓库的 [城市指南索引](./DOSKVOL_CITY_GUIDE_INDEX.md) 提供本地定位。
+- 已拆分的城市运行资料：[地区速查](./DOSKVOL_DISTRICTS_REFERENCE.md)、[26 个详细派系索引](./DOSKVOL_FACTIONS_REFERENCE.md)、[GM 生成工具索引](./DOSKVOL_GM_TABLES_REFERENCE.md)。原书完整 NPC 名单和随机表留在私人资料库。
 - 本轮新增扩展运行入口：[红水之城](./RED_WATERS_CITY_RUNTIME.md)、[义警](./VIGILANTES_PLAYSET_RUNTIME.md)、[利维坦之歌](./LEVIATHAN_SONG_RUNTIME.md)。这些是独立可选模块，不并入核心规则。
 - [角色卡与集团卡字段索引](./PLAYBOOK_SHEETS_REFERENCE.md) 记录用户提供的模板结构；原始 XLSX/ZIP 留在私人资料库。
 
