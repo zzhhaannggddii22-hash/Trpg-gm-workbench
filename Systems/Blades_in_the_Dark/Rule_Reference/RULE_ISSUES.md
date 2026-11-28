@@ -34,11 +34,11 @@
 
 ## R-005｜Resistance 与 Armor 的时序
 
-- **问题**：中文翻译容易让“抵抗后果”和“使用护甲”在执行时混成一个步骤。
-- **官方交叉核验**：官方 v8.2 把 Resistance Roll 单独列出；Armor 是可消耗的装备格，按角色/组织状态在下一次 Score 开始的 Load 选择时恢复。
-- **当前处理**：先确定后果，玩家决定是否用 Armor 或 Resistance；不得对同一后果把二者重复计算成两次抵抗。特殊护甲按对应能力明文处理。已标记 Armor 在下一次 Score 选择 Load 时恢复，不是在进入 Downtime 时恢复。
-- **本轮审查修正**：发现 Runtime Manual 与 Runtime Protocol 的旧表述曾将恢复时点写成 Downtime；已依据官方 Resistance & Armor 页面更正，并将时点加入 BLD-T46 回归覆盖。
-- **状态**：时序已按官方来源核验；Campaign 版本锁定前仍保留版本复核。
+- **问题**：中文翻译与不同官方速查页面容易让“Resistance”“普通 Armor 使用格”和“Special Armor 能力资源”的恢复节点混成一个步骤。
+- **官方交叉核验**：Full Player's Kit v8.2 的 Downtime 速查明确写明在 Downtime 恢复所有 Armor 使用格；多个 Playbook Special Armor 能力也写明在 Downtime 开始时恢复。官方 Resistance & Armor 网页以选择下一次 Score 的 Load 作为恢复节点。
+- **当前处理**：同一后果仍由玩家在适用 Armor 与 Resistance 之间选择，不重复结算。所有已标记 Armor 使用格在 Downtime 阶段恢复；若某项 Special Armor 能力明文规定 Downtime 开始时恢复，则按其更具体的能力时点执行。下一次 Score 选择 Load 是随后确认资源可用的节点，不应将恢复延迟到 Score 已开始之后。
+- **本轮审查修正**：撤回此前“Downtime 本身不会恢复 Armor”的错误结论。已同步修订 Runtime Manual、Runtime Protocol 和 Load Reference。此差异加入回归用例，之后仍以 Campaign 锁定版本为最终依据。
+- **状态**：官方 v8.2 与网页速查已交叉核对；保留版本锁定复核。
 
 ## R-006｜0d Action Roll
 
