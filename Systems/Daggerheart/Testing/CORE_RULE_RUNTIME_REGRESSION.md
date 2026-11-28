@@ -1,6 +1,6 @@
 # Core Rule Runtime Regression Matrix
 
-> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 82/82 PASS；当前脚本 92 项；仓库完整 CI Run 46148205415 PASS；LIVE RUNTIME VALIDATION PENDING  
+> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 92/92 PASS（Run 07）；仓库完整 CI Run 46148205415 PASS；LIVE RUNTIME VALIDATION PENDING  
 > DH-T01–DH-T45 已进行确定性桌面逻辑模拟（非代码自动测试）。详情见三个 DESK_TEST_BATCH 文件。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
@@ -156,7 +156,7 @@
 
 | ID | 场景 | 关键断言 | 状态 |
 |---|---|---|---|
-| DH-REF-083 | 单名 PC 每次休息的 Downtime Move 上限 | 每名 PC 最多执行 2 个；第三个拒绝且不改变状态 | Pending rerun |
+| DH-REF-083 | 单名 PC 每次休息的 Downtime Move 上限 | 每名 PC 最多执行 2 个；第三个拒绝且不改变状态 | Passed (Run 07) |
 | DH-REF-084 | Short Rest：Tend to Wounds | 目标清除 1d4 + 执行者 Tier 个 HP，最多清除已标记数量 | Pending rerun |
 | DH-REF-085 | Short Rest：Clear Stress | 目标清除 1d4 + Tier 个 Stress；不再满 Stress 时解除由满 Stress 引发的 Vulnerable | Pending rerun |
 | DH-REF-086 | Short Rest：Repair Armor | 目标清除 1d4 + Tier 个 Armor Slot | Pending rerun |
@@ -171,7 +171,9 @@
 
 ## 自动化参考执行补充
 
-独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，Run 04 为 66/66，Run 05 为 71/71；Run 06 已通过新增 GM Turn 与 Short Rest 边界回归，均有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 新增并通过 8 项条件状态生命周期回归（DH-REF-052–059）；Run 04 新增并通过 7 项移动、视线与范围效果回归（DH-REF-060–066）；Run 05 新增并通过 5 项休息与 Downtime 回归（DH-REF-067–071），详见 `AUTOMATED_REFERENCE_EXECUTION_05.md`。Run 05 的 71 项验证独立参考执行器与 Core Set 数据；Run 06 已验证全部 82 项；新增 DH-REF-072–082 共 11 项 GM Turn / Spotlight、额外 GM Move 与 Short Rest 边界回归全部通过，不是生产 GM Runtime 的端到端测试。
+- [Run 07：92/92 PASS](./AUTOMATED_REFERENCE_EXECUTION_07.md)
+
+独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，Run 04 为 66/66，Run 05 为 71/71；Run 06 与 Run 07 的新增回归均已通过，且有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 新增并通过 8 项条件状态生命周期回归（DH-REF-052–059）；Run 04 新增并通过 7 项移动、视线与范围效果回归（DH-REF-060–066）；Run 05 新增并通过 5 项休息与 Downtime 回归（DH-REF-067–071），详见 `AUTOMATED_REFERENCE_EXECUTION_05.md`。Run 05 的 71 项、Run 06 的 82 项、Run 07 的 92 项均验证独立参考执行器与 Core Set 数据；Run 06 新增 DH-REF-072–082 共 11 项 GM Turn / Spotlight、额外 GM Move 与 Short Rest 边界回归通过；Run 07 新增 DH-REF-083–092 共 10 项 Downtime Move 回归通过。这些不是生产 GM Runtime 的端到端测试。
 
 ## 测试执行记录
 
@@ -179,11 +181,11 @@
 |---|---|
 | 测试版本 | Core Set / SRD 2.0 (2026-08-25) |
 | 扩展范围 | CORE_ONLY |
-| 矩阵状态 | 64/64 项已桌面逻辑模拟；82/82 项参考执行器用例已通过；新增 10 项 Downtime Move 回归待 Run 07 |
-| 已执行测试 | 64 / 64（桌面逻辑模拟）；参考执行器最新已通过记录 82/82（Run 06）；当前代码 92 项，10 项待 Run 07 |
+| 矩阵状态 | 64/64 项已桌面逻辑模拟；92/92 项参考执行器用例已通过 |
+| 已执行测试 | 64 / 64（桌面逻辑模拟）；参考执行器最新已通过记录 92/92（Run 07） |
 | 已通过 | 64（桌面模拟）；82（参考执行器） |
 | 已失败 | 0 |
-| 待执行 | 0（桌面模拟层面）；10（新增 Downtime Move 回归待执行） |
+| 待执行 | 0（桌面模拟层面）；0（已纳入参考执行器的回归） |
 | 阻塞 | 0 |
 
 本矩阵仍是测试清单兼状态记录。DH-T01–DH-T45 的桌面模拟输入与结果见 DESK_TEST_BATCH_01.md、DESK_TEST_BATCH_02.md、DESK_TEST_BATCH_03.md；新增 19 项见 GM_DESK_SIMULATION_01.md。桌面逻辑模拟不等同于代码自动测试或完整规则书验收。盲测、短场景主持测试与完整 Core Rulebook 对照仍待完成。
