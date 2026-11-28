@@ -1,6 +1,6 @@
 # 数据许可与署名记录
 
-本目录包含 Darrington Press 发布的 **Daggerheart System Reference Document 2.0**（2026-08-25）Public Game Content 的部分规则与数据。DPCGL 2.0 于 2026-08-25 明确将 SRD 2.0（包括 Domain Icons）列为 Public Game Content，并在符合许可条款的前提下允许整体或部分复制、分享。该授权不意味着取得 Darrington Press / Critical Role 的所有知识产权。
+本目录包含 Darrington Press 发布的 **Daggerheart System Reference Document 2.0**（2026-08-25）Public Game Content 的部分规则与数据。DPCGL 2.0（许可 PDF 标注 Last Updated 2026-08-05）明确将 Daggerheart SRD 2.0（包括 Domain Icons）列为 Public Game Content，并在符合许可条款的前提下允许整体或部分复制、分享。该授权不意味着取得 Darrington Press / Critical Role 的所有知识产权。
 
 ## 官方许可
 
