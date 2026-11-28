@@ -134,7 +134,8 @@ Effect 因素通常包括：
 - **Assist**：队友说明如何帮助，得到 +1d；协助者承担 1 Stress。每次 Action Roll 最多一名 Assist。
 - **Push Yourself**：每选择一项强推收益，支付 2 Stress：+1d、+1 Effect，或在失能状态下仍采取行动。每项收益在同一次行动中最多选择一次；可同时选择不同收益并分别支付 Stress（例如 +1d 与 +1 Effect 共支付 4 Stress）。
 - **Devil's Bargain**：由 GM/其他玩家提出一项真实代价；接受后得到 +1d。代价无论最终骰子结果如何都会发生。玩家可拒绝或商议替代方案。
-- 一次行动最多有两种常规奖励来源：Assist，以及 Push Yourself 或 Devil's Bargain。**Push Yourself 与 Devil's Bargain 不能在同一次行动中并用**，即使 Push 选择的是 +1 Effect 而非 +1d。角色特殊能力可以提供额外奖励骰或改变限制，按能力原文处理。
+- **Dice bonus 限制**：Assist 最多提供一个 +1d；另一个 +1d 来源只能在 Push Yourself 与 Devil's Bargain 中选一个。不能用 Push 的 +1d 再叠加 Devil's Bargain 的 +1d。
+- **Effect bonus 是另一项收益**：玩家可以接受 Devil's Bargain 获得 +1d，同时支付 2 Stress Push Yourself 获得 +1 Effect；也可以 Push Yourself 同时获得 +1d 与 +1 Effect（支付 4 Stress）。Push 的各项收益每次行动各最多选择一次。角色特殊能力可以改变限制，按能力原文处理。
 
 ### BLD-ACT-05｜Consequences（后果类型）
 
