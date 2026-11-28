@@ -465,7 +465,7 @@ def advance_dynamic_countdown(state, event_id, roll_result):
             "value": state["value"], "triggered": state["value"] == 0}
 
 
-def work_on_project(project, rest_state, actor_id, approved,
+def work_on_project(project, rest_state, actor_id, approved, rest_type=None,
                     starting_value=None, action_roll_result=None, event_id=None):
     """Resolve a Campaign-bound Work on a Project move during a Long Rest.
 
@@ -474,6 +474,8 @@ def work_on_project(project, rest_state, actor_id, approved,
     """
     if not approved:
         return {"allowed": False, "reason": "gm_approval_required"}
+    if rest_type != "long":
+        return {"allowed": False, "reason": "long_rest_required"}
     if not event_id:
         raise ValueError("Work on a Project requires a unique rest event ID")
     used = rest_state.setdefault("moves_used", {})
@@ -1332,7 +1334,7 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
 
     def test_107_simple_project_uses_progress_countdown_and_completes(self):
         project, rest = {"complexity": "simple"}, {}
-        first = work_on_project(project, rest, "pc-1", True, starting_value=2, event_id="rest-1")
+        first = work_on_project(project, rest, "pc-1", True, rest_type="long", starting_value=2, event_id="rest-1")
         second = work_on_project(project, rest, "pc-1", True, event_id="rest-2")
         self.assertEqual((first["countdown"], second["countdown"], project["status"]), (1, 0, "completed"))
         self.assertEqual(rest["moves_used"]["pc-1"], 2)
@@ -1342,10 +1344,22 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         missing = work_on_project(project, rest, "pc-1", True, starting_value=4, event_id="rest-1")
         self.assertEqual(missing["reason"], "action_roll_required")
         result = work_on_project(
-            project, rest, "pc-1", True, action_roll_result="success_with_hope", event_id="rest-1"
+            project, rest, "pc-1", True, rest_type="long", action_roll_result="success_with_hope", event_id="rest-1"
         )
         self.assertEqual((result["ticks"], result["countdown"]), (2, 2))
         self.assertEqual(rest["moves_used"]["pc-1"], 1)
+
+
+    def test_109_work_on_project_is_rejected_during_short_rest(self):
+        project, rest = {"complexity": "simple"}, {}
+        result = work_on_project(
+            project, rest, "pc-1", True, rest_type="short",
+            starting_value=2, event_id="rest-short"
+        )
+        self.assertFalse(result["allowed"])
+        self.assertEqual(result["reason"], "long_rest_required")
+        self.assertNotIn("countdown", project)
+        self.assertEqual(rest.get("moves_used", {}), {})
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
