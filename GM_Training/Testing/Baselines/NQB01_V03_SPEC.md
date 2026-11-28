@@ -1,0 +1,145 @@
+# NQB-01 v0.3｜常规游戏强度基线规格
+
+> Status: OPERATOR / REVIEWER ONLY｜不得提供给目标 GM
+> Historical sample: first A-mode packet simulation PARTIAL; not valid Runtime-entry evidence
+> Current Runtime admission: PREP_QA_PASS / TEST_CAMPAIGN_REGISTERED / CLEAN_CHAT_PREFLIGHT_PENDING / SESSION_NOT_STARTED
+> Parent fixture: NQB-01 v0.2《雨停之前》
+> Intended evidence for this execution: B-mode clean target Chat, because the operator context has already read the action sequence and reviewer materials; A-mode same-session self-test is not suitable for this specific run. C-mode remains real-player calibration.
+> Canon impact: TEST_ONLY_NON_CANON
+
+## 当前执行模式锁定（2026-11-27）
+
+本次 NQB-01 v0.3 运行采用 **B-mode clean target Chat**。操作者会话已经读取完整行动序列和审核材料，不能再被用作干净目标 GM 上下文。目标 Chat 必须独立完成主 GM Skill、完整 Preflight、系统绑定、规则装配、Context Assembly 与 Prep-to-Runtime；操作者逐轮注入单条玩家行动。目标 GM 不接触 SPEC、ACTION_SEQUENCE、REVIEW_CHECKLIST、EXECUTION_PROMPT 或本 Prep QA 报告。完整原始输出回传后，才由操作者读取审核材料。
+
+这项模式选择是针对本次信息隔离条件的具体路由，不改变 QA 协议中 A-mode 作为日常常规回归默认方式的原则。
+
+## 1. 版本定位
+
+本文件属于操作者与审核者资料，不是 GM 执行资料。4–6 倍单段平均负荷是审核目标，不得提前告知目标 GM，也不得作为 GM 的字数指令。目标 GM 只读取通用叙事质量标准、GM Packet 和玩家启动提示。
+
+v0.2 保留为**低压力基础功能抽检**：8 轮、单一客栈空间、两名 NPC、轻量日常互动。它的历史结果不作废，但不再代表常规游戏强度。
+
+v0.3 是新的**常规游戏强度基线候选**，不是 v0.2 的简单扩写。它应让 GM 在持续互动中同时维护多条日常事务、人物关系、物件状态、时间变化和玩家目标转向，同时保持普通场景的自然性。
+
+本规格获批并不代表基线已校准。至少完成一次有效运行并审核；若要讨论稳定性，仍需另一条明显不同的行动序列，真实玩家证据另行标记。
+
+## 2. 设计目标
+
+### 必须覆盖
+- 12–16 轮有效玩家行动与对应 GM 回应；目标序列为 14 轮。
+- 2–3 条并行但彼此可交叉的互动线，不要求玩家全部追完。
+- 至少 3 名有不同注意力、目标和表达习惯的 NPC。
+- 玩家至少一次改变原先关注目标，GM 应自然跟随而非拉回预设路线。
+- 至少一次复合行动（同一行动中包含多个意图或对象）。
+- 至少一次等待/停顿，让世界和 NPC 在玩家不主动推动时继续变化。
+- 至少一次预案外但合理的行动，检验世界响应与状态连续性。
+- 至少一次回顾或引用早先信息，检验跨轮事实保持。
+- 维护人物、物件、位置、时间、承诺、信息来源和因果状态。
+
+### 不应出现
+- 为制造压力而添加战斗、倒计时、重大危险或强制冲突。
+- 把每个细节都变成线索；普通生活事务可以没有剧情意义。
+- 让 NPC 轮流向玩家倾倒背景信息。
+- 为覆盖测试点而强迫玩家访问所有互动线。
+- 用状态表、摘要或检查清单替代玩家可感知的场景回应。
+- 把字数、形容词数量、NPC 台词数量当成质量本身。
+
+## 3. 负荷校准
+
+相较 v0.2，v0.3 的**同类普通互动中，GM 单段回复的平均篇幅与有效信息量目标为 v0.2 平均水平的约 4–6 倍**。这是对真实游戏段落负荷的校准，不是要求每一轮都达到倍率；简单确认、明确短答仍可短，不能为了倍率扩写空话。执行报告必须分别统计两版 GM 回复的总字符数、段数、平均值、中位数和范围，并报告单段平均倍率与总量倍率，不能只报总量。由于目标轮数也从 8 轮增加到 12–16 轮，整段原始记录的总量可能高于单纯 4–6 倍。GM 回复应自然呈现长短分布：
+- 简单确认、明确价格或短答：可以短。
+- 普通互动、人物回应、局部行动后果：通常中等长度。
+- 初次进入场景、复合行动、空间变化、多人同时发生相关变化：允许较长回应。
+- 不得为了达到篇幅目标重复描述已知状态或堆叠感官修饰。
+
+相对 v0.2，同类互动的 GM 回复平均应达到约 4–6 倍篇幅；扩写必须来自具体行动、人物反应、环境变化、选择后果和状态连续性，而不是空泛描写。若某轮行动本身简单，短答仍然正确，不得机械套用倍率。
+
+## 4. 持续叙事负荷（新增评价维度）
+
+新增维度：**持续叙事负荷 / Sustained Narrative Load**。它不是字数评分，而是检查较长互动中叙事质量能否维持。
+
+重点审查：
+1. 第 10 轮以后是否仍准确保持前面确立的人物、物件、位置、时间和承诺。
+2. 多条互动线交叉时，是否错误合并不同 NPC 的知识或动机。
+3. 玩家改变目标后，GM 是否跟随新目标并保留未完成事务，而不是遗忘或强行回收。
+4. NPC 是否在玩家注意力转移期间继续合理行动，但不过度抢戏。
+5. 等待、延迟、离场、重新返回等时间变化是否产生可信后果。
+6. 长文本是否出现重复、模板化、信息堆积或每轮都同样长的节奏问题。
+7. 长时间互动后，玩家行动权、回应具体性、人物差异和感官选择是否衰减。
+
+评分仍采用 0–4 分，3 分为稳定目标。若场景没有触及某项，标记证据不足，不得猜分。基础正确性仍是不可补偿的硬门槛。
+
+## 5. 执行序列原则
+
+推荐 14 轮行动序列见 [NQB01_V03_ACTION_SEQUENCE.md](./NQB01_V03_ACTION_SEQUENCE.md)。它是模式 A 合成测试的操作者侧行动蓝图，不是 GM 预读资料。模拟玩家只在当前轮读取当前行动；GM 侧不得提前获得后续行动计划。
+
+执行者应允许合理分支：
+- 如果玩家选择追问某条线，NPC 可按其知识与目标回应，其他事务继续但不必强行插入。
+- 如果玩家忽略某条线，不得强行把它变成事件。
+- 如果玩家改变目标，后续行动应顺应新目标，同时保留已经发生的事实。
+- 如果场景自然收束，允许提前结束，并如实记录覆盖不足；不得为凑轮数强留玩家。
+
+## 6. 验收门槛
+
+一次 v0.3 运行至少记录：
+- 精确 Workbench commit SHA、夹具版本、执行模式、实际读取资料与证据等级；
+- 逐轮完整玩家行动与 GM 原始回应；
+- 三层质量判断：基础正确性、交互质量、叙事表现质量；
+- 持续叙事负荷的逐项证据，特别是第 10 轮之后；
+- 所有重大/致命失败与轻微错误的原始次数及影响；
+- 实际文本负荷与 v0.2 样本的粗略比较；
+- 哪些行动线被触及、忽略或自然结束；
+- 自评局限及不能支持的结论。
+
+样本结论可为 PASS / PARTIAL / FAIL / BLOCKED / NOT TESTABLE。不得把完成 14 轮等同于通过；不得以总平均分掩盖任何硬失败或持续性退化。
+
+## 7. 与 v0.2 的关系
+
+| 项目 | v0.2 | v0.3 |
+|---|---|---|
+| 定位 | 低压力基础功能抽检 | 常规游戏强度基线候选 |
+| 互动轮数 | 8 轮样本 | 12–16 轮目标，推荐 14 |
+| 互动线 | 单一主场景、轻量互动 | 2–3 条并行互动线 |
+| NPC | 2 名 | 至少 3 名 |
+| 状态负荷 | 简单连续性 | 跨轮、多对象、时间与承诺 |
+| 持续叙事负荷 | 不单独评价 | 新增重点维度 |
+| 历史证据 | 保留为低压样本 | 执行前状态：NOT TESTED |
+
+v0.3 未经运行和审核前，不得把 NQB-01 整体状态改写为“常规基线已通过”。
+
+## 8. 正式 TRPG 入口与污染隔离门槛（新增硬门槛）
+
+NQB-01 v0.3 不再允许把独立提示包模拟、直接读取 GM Packet 后的自由演绎或 system-neutral 场景扮演计为 GM Runtime 测试。
+
+### 8.1 正常入口
+
+目标 GM 必须以当前版本的 GM_Training/SKILL.md 为运行入口，按 02_WORKFLOW_AND_PREFLIGHT.md、SYSTEM_CONTEXT_PROTOCOL.md 和已登记系统的规则资料完成正式 Preflight、Campaign Binding 核验、Runtime 恢复、Context Assembly 与 Prep-to-Runtime 交接。当前 Systems/Triangle_Agency/README.md 明确登记：没有独立可执行的 Triangle Agency 专属 GM Skill；由通用主 GM Skill 负责编排，中文 v22 原文为规则权威。Research 草案不得冒充可执行 Skill。NQB 场景只能作为已准入测试 Module 的 GM-only 场景资料进入运行时，不得替代上述流程。
+
+A/B/C 是玩家输入与执行隔离模式，不是三种不同 GM 环境。无论哪种模式，GM Runtime 都必须走同一套正式入口。
+
+### 8.2 不得自行创建测试环境
+
+操作者不得在测试执行过程中临时创建或拼装 Campaign、角色卡、SYSTEM_BINDING、system_id、规则版本、Runtime checkpoint、Session Log、NPC 档案、测试数据库或平行运行提示包。只能使用本次测试启动前已建立、已登记、经用户授权且具有隔离存储的专用 Test Campaign。当前指定环境为 Campaigns/NQB01_Runtime_Test/。
+
+用户已明确授权建立专用测试环境。当前已在 Campaigns/README.md 登记独立 Campaign：Campaigns/NQB01_Runtime_Test/，其 SYSTEM_BINDING、测试角色边界、模组入口、初始 Runtime 检查点、Session Log 与 Player Notes 均独立存在。该 Campaign 绑定已登记的 triangle_agency / 中文 v22，不引用 Zarek Campaign 的任何角色、桌裁、状态或事件。当前准入状态更新为 PREP_QA_PASS / TEST_CAMPAIGN_REGISTERED / CLEAN_CHAT_PREFLIGHT_PENDING；测试角色基础 ARC 与 QA 已建立，Prep QA 已在第一次 Preflight 前完成。干净目标 Chat 的 Preflight 尚未执行，测试 Session 尚未获准启动，不能计为有效 Runtime 样本。不得借用 Zarek Campaign。
+
+### 8.3 零污染要求
+
+测试内容及运行中产生的所有数据均为 TEST_ONLY_NON_CANON。测试不得读取或依赖任何正式 Campaign 的角色、NPC、关系、资源、装备、人物记忆、模组、Session/Event Log、Runtime State 或玩家笔记；不得将任何测试输出、事件或状态写入正式 Campaign。
+
+测试运行的状态持久化目标必须在启动前验证为专用隔离存储。若运行接口不能证明写入目标隔离，必须 BLOCK，不得以“事后不合并”替代写入隔离。测试结束后不得执行正式 Campaign 的状态结算或 CANON 发布。
+
+任何正式数据被意外读取、修改或作为写入目标，均记为 POLLUTION_INCIDENT；停止执行并保留审计证据，不得自行回滚或清理。
+
+### 8.4 有效证据要求
+
+有效 Runtime 样本必须同时记录：
+- 精确 Workbench commit 与夹具版本；
+- Test Campaign ID、SYSTEM_BINDING 修订、system_id / ruleset_version；
+- 测试 Module ref 与 Runtime checkpoint；
+- 主 Skill、相关专项 Skill、系统规则和运行协议的实际读取证据；
+- Preflight、Context Assembly、运行身份和隔离写入目标证据；
+- 完整玩家输入、GM 原始输出及事件/状态差异；
+- 运行后零污染核验。
+
+缺少任何关键入口或隔离证据时，结论为 BLOCKED / NOT TESTABLE，不得降格为“部分通过”。
