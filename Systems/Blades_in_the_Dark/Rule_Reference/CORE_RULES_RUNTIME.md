@@ -47,7 +47,7 @@
 
 ### BLD-DICE-03｜Resistance Roll
 
-**触发**：GM 已明确给出一个可抵抗的 Consequence，玩家决定承受还是抵抗。
+**触发**：某个具体后果已经发生或即将落到 PC 身上，玩家决定承受还是抵抗。常规时点是 GM 宣布行动后果之后；若敌人/危险在 PC 行动前就拥有压倒性优势（例如剑术高手先一步缴械），GM 可以先宣布该后果并要求 Resistance，再让 PC 继续行动。Resistance 不能在尚无具体威胁/后果时预先掷。
 
 - 由 Consequence 类型确定属性组：Insight、Prowess 或 Resolve。
 - 骰池等于该属性组内所有 Action dots 的总数。
@@ -119,7 +119,7 @@ Position 不等同于成功率修正，也不改变骰池；它规定不同结�
 | Standard | 2 格 | 达成符合预期的标准成果 |
 | Great | 3 格 | 取得明显超额成果或额外收益 |
 
-这些格数适用于有进度钟的情形；Effect 也可用非数值方式描述成果范围、目标改变或额外好处。Critical 令 Effect 提高一级。
+这些格数适用于有进度钟的情形；Effect 也可用非数值方式描述成果范围、目标改变或额外好处。因素可能将 Effect 降到 **Zero Effect**（没有实质成果），或提高到 **Extreme Effect**（超过 Great 的成果）。角色能力提供的 +1 Effect 在 GM 完成因素评估后应用；Push Yourself 也可用 2 Stress 换取 +1 Effect。Critical 令 Effect 提高一级。
 
 Effect 因素通常包括：
 - **Potency**：某种能力/方法对目标是否特别有效；
@@ -146,7 +146,7 @@ Effect 因素通常包括：
 4. **Lost Opportunity**：原本的机会消失，需要新方法/新机会。
 5. **Worse Position**：接下来处于更危险的位置。
 
-Complication 可表现为立即发生的麻烦，或一个有意义的进度钟；不能把每次失败都机械地转成新钟。不可使用“你成功了但目标无事发生”来抹消玩家已赢得的行动成果，除非明确是 1–3 且情境允许行动未能生效。
+Complication 可表现为立即发生的麻烦，或一个有意义的进度钟；轻微/标准/严重复杂状况通常分别推进危险钟 1/2/3 格。GM 可按当前情势提出一个或多个后果；玩家可以选择抵抗其中一个或多个，每个后果分别处理。不能把每次失败都机械地转成新钟。不可使用“你成功了但目标无事发生”来抹消玩家已赢得的行动成果，除非明确是 1–3 且情境允许行动未能生效。
 
 ### BLD-ACT-06｜Position 与 Effect 独立
 
@@ -189,6 +189,10 @@ NPC 通常不为自己的行动单独掷 Action Roll。PC 的 Action Roll 同时
 ### BLD-CNS-02｜Resistance
 
 按后果性质选择属性组：Insight 对应欺骗/理解，Prowess 对应身体劳累/伤害，Resolve 对应心理劳累/意志力。GM 说明当前后果以及抵抗能完全避免还是降低严重程度，再让玩家决定是否抵抗。
+
+- 常规时点：Action Roll 已结算，GM 提出具体 Consequence 后，玩家选择抵抗。
+- 先手威胁例外：若强势敌人已在 PC 行动前造成明确后果（例如先行缴械），可以先处理 Resistance，再进行 PC 行动。
+- 不允许无具体后果时预先掷骰，也不能先掷 Resistance 再决定是否承担代价。
 
 1. 确定后果具体内容。
 2. 玩家决定是否抵抗。
@@ -480,7 +484,7 @@ Payoff、Heat 之后掷 Entanglement：
 - Coin 是组织与角色可用的流动资产单位；不追踪角色日常小额生活开支。
 - PC 随身持有的 Coin 上限通常为 4；每 1 Coin 占用 1 Load。超过随身上限的资产应花费或转入个人 Stash。
 - Crew 的 Vault 初始容量通常为 4 Coin；通过 Vault 升级可提高至 8，再提高至 16。超过 Vault 容量的 Coin 必须在下次 Score 前花费或分配。
-- 休整中，花费 1 Coin 可获得一个额外 Downtime Activity；花费 1 Coin 也可在活动掷骰后提高一个结果等级。
+- 休整中，花费 1 Coin 或 1 Rep 可获得一个额外 Downtime Activity；花费 1 Coin 也可在活动掷骰后提高一个结果等级。每多花一枚 Coin，提升一个结果等级。
 - 每次 Crew Advance 时，每名 PC 获得等于 Crew Tier + 2 的 Stash；Stash 是长期个人财富，与 Crew Vault / 可随身 Coin 分开记录。
 - 从 Stash 取现按规则折算：每移除 2 Stash 得到 1 Coin；Stash 还决定退休后的生活品质和命运。
 - 组织升级 Tier 时支付新 Tier × 8 Coin；有 Patron 等能力时按能力修改成本。
