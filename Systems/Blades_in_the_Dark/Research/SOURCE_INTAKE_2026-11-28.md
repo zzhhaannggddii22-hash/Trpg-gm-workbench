@@ -103,3 +103,12 @@
 - 表格字段字典：已完成首轮字段索引；原始模板仍留在私人资料库。
 - 核心规则逐条交叉核验：进行中；R-005 普通 Armor 与 Special Armor 的恢复时序已按完整核心规则书 V1.3 分开处理。
 - Campaign 激活：未进行。
+
+
+## 9. 核心规则专项复核追加记录（2026-11-28）
+
+- 已直接回查私人归档的《核心规则书-中文版-v1.3.pdf》，仪式与造物章节 PDF pp.228–231；不再仅以 SRD / Player's Kit 作为该专题的主依据。
+- 已修订公开运行摘要 [ARCANE_AND_CRAFTING_RUNTIME.md](../Rule_Reference/ARCANE_AND_CRAFTING_RUNTIME.md)：明确仪式能力的学习/施展资格、仪式问答与来源、Magnitude 和施法时间对压力成本的判断、危险行动骰与效果不确定时的命运骰、Downtime 命运骰可按 1:1 花费 Coin 提高结果等级，以及发明/制作/改造/缺点的执行边界。
+- 本轮纠正一处过度推导：原摘要曾写“延长施法时间可以降低压力成本”。核心规则书实际要求 GM 结合量级表中的持续时间来确定压力成本，并指出仪式通常至少需要约一小时；并没有给出“每延长时间自动减压”的独立兑换规则。现已删除该自动折扣说法。
+- 已将 [ABILITY_RUNTIME_MATRIX.md](../Rule_Reference/ABILITY_RUNTIME_MATRIX.md) 与 [PLAYBOOKS_AND_CREW_REFERENCE.md](../Rule_Reference/PLAYBOOKS_AND_CREW_REFERENCE.md) 的来源标识统一为核心规则书 V1.3（对应英文 v8.2），官方 Full Player's Kit v8.2 保留为交叉核验来源。
+- 本轮属于规则文本核验与运行摘要修订；尚未对全部 Playbook/Crew 能力做完逐项卡面复核，也未完成所有能力交互模拟或真人短团验证。系统继续保持 candidate。
