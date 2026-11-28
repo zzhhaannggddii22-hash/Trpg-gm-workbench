@@ -82,7 +82,7 @@
 | DH-GD-08 | Environment Feature 造成烟雾遮蔽与路线改变 | 场景提供新的行动选择；不把环境 Feature 一律转换成伤害 | Desk-Simulated |
 | DH-GD-09 | Success with Fear：行动成功但后果直接兑现 | 主要成果保留；后果严重度仍为次要，但可以采用 Hard Move 形式，不得混淆严重度与回应窗口 | Desk-Simulated |
 
-## 参考执行器伤害交互回归（代码用例；新增部分待自动复跑）
+## 参考执行器伤害交互回归（代码用例；Run 02 已通过）
 
 | ID | 场景 | 关键断言 | 状态 |
 |---|---|---|---|
@@ -96,9 +96,22 @@
 | DH-REF-050 | 混合伤害两种类型均有 Immunity | 两种类型伤害均忽略 | Passed (Run 02) |
 | DH-REF-051 | 混合伤害分别受到 Resistance 与 Immunity | 两种类型均有防护时，分别应用对应防护再合计 | Passed (Run 02) |
 
+## 条件状态生命周期回归（代码用例；Run 03 已通过）
+
+| ID | 场景 | 关键断言 | 状态 |
+|---|---|---|---|
+| DH-REF-052 | 同一目标重复施加同一标准条件 | 不叠加；不同目标可分别拥有该条件 | Passed (Run 03) |
+| DH-REF-053 | Hidden 条件与目标攻击 | 针对 Hidden 目标的掷骰带 Disadvantage；目标攻击后 Hidden 解除 | Passed (Run 03) |
+| DH-REF-054 | Restrained 条件 | 不能移动，但仍可从当前位置行动 | Passed (Run 03) |
+| DH-REF-055 | Vulnerable 条件 | 所有以该目标为对象的掷骰带 Advantage | Passed (Run 03) |
+| DH-REF-056 | Hidden 与 Vulnerable 同时存在 | Advantage / Disadvantage 抵消，净结果为普通掷骰 | Passed (Run 03) |
+| DH-REF-057 | PC 清除 Temporary 条件 | 失败不清除；成功的适当 Action Roll 清除 | Passed (Run 03) |
+| DH-REF-058 | Adversary 清除 Temporary 条件 | 不占 Spotlight 不清除；用自身 Spotlight 清除并消费本次 Spotlight | Passed (Run 03) |
+| DH-REF-059 | 清除 Special Condition | 只有满足该效果规定的具体条件才可清除 | Passed (Run 03) |
+
 ## 自动化参考执行补充
 
-独立参考执行器 Run 01 为 42/42 通过，见 `AUTOMATED_REFERENCE_EXECUTION_01.md`。随后新增 9 项伤害交互回归（DH-REF-043–051）；Run 02 已于 2026-11-28 在 GitHub Actions 的独立 Daggerheart Job 中以 51/51 通过，详见 `AUTOMATED_REFERENCE_EXECUTION_02.md`。这 51 项验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
+独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，均有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 再新增并通过 8 项条件状态生命周期回归（DH-REF-052–059），详见 `AUTOMATED_REFERENCE_EXECUTION_03.md`。这 59 项验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
 
 ## 测试执行记录
 
@@ -106,11 +119,11 @@
 |---|---|
 | 测试版本 | Core Set / SRD 2.0 (2026-08-25) |
 | 扩展范围 | CORE_ONLY |
-| 矩阵状态 | 64/64 项已桌面逻辑模拟；51/51 参考执行器自动化测试通过 |
-| 已执行测试 | 64 / 64（桌面逻辑模拟）；参考执行器最新可核验记录 51/51 |
-| 已通过 | 64（桌面模拟）；42（参考执行器历史记录） |
+| 矩阵状态 | 64/64 项已桌面逻辑模拟；59/59 参考执行器自动化测试通过 |
+| 已执行测试 | 64 / 64（桌面逻辑模拟）；参考执行器最新可核验记录 59/59 |
+| 已通过 | 64（桌面模拟）；59（参考执行器） |
 | 已失败 | 0 |
-| 待执行 | 0（桌面模拟层面）；0（参考执行器回归待执行） |
+| 待执行 | 0（桌面模拟层面）；0（已纳入参考执行器的回归） |
 | 阻塞 | 0 |
 
 本矩阵仍是测试清单兼状态记录。DH-T01–DH-T45 的桌面模拟输入与结果见 DESK_TEST_BATCH_01.md、DESK_TEST_BATCH_02.md、DESK_TEST_BATCH_03.md；新增 19 项见 GM_DESK_SIMULATION_01.md。桌面逻辑模拟不等同于代码自动测试或完整规则书验收。盲测、短场景主持测试与完整 Core Rulebook 对照仍待完成。
