@@ -226,11 +226,12 @@ GM Move 是推动场景的工具，不是惩罚玩家的任意权力。后果必
 - 换装后重算阈值；未穿护甲时按基础规则计算。
 
 ### 抗性、免疫与特殊伤害
-- Resistance：该类型 Incoming Damage 先减半，再比较阈值；按系统通用向上取整规则处理小数。
-- Immunity：忽略该类型伤害。
+- Resistance：对应伤害类型的 Incoming Damage 先减半，再比较阈值；小数向上取整。Resistance 先于 Armor Slot 生效。
+- Immunity：忽略对应伤害类型的 Incoming Damage。
 - 多个相同伤害类型的 Resistance 不叠加。
-- 混合 Physical / Magic Damage 时，只有对两种类型都具备抵抗/免疫才能对整体伤害享受该防护。
-- Direct Damage 不能通过标记 Armor Slot 降低。
+- 混合 Physical / Magic Damage：只有角色对两种伤害类型都具备 Resistance 或 Immunity，才能对该混合伤害应用防护；只防护其中一种时，不得只减免该部分。
+- 同时发生的多个伤害来源先合计，再比较 HP Threshold；同一类型的伤害先按类型合计后应用 Resistance。
+- Direct Damage 不能通过标记 Armor Slot 降低，但仍受适用的 Resistance / Immunity 影响。
 - Incoming Damage 指同一次攻击或来源、标记 Armor Slots 前的伤害总值。
 
 ## 15. DH-RANGE｜范围、移动与视线
