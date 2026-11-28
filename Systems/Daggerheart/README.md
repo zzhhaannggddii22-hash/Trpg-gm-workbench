@@ -4,7 +4,7 @@
 > 标识：Daggerheart™ Compatible（非官方个人研究工作台）  
 > 规则基线：Daggerheart Core Set  
 > 公开参考：Official Daggerheart SRD v2.0（2026-08-25；混合收录 Core Set 与 Hope & Fear 内容）  
-> 状态：candidate（原有45项桌面模拟与42项参考执行器自动化测试完成；新增10项GM专项回归待执行；完整规则覆盖、生产Runtime与实际短场景仍未验收）
+> 状态：candidate（63项规则与GM专项已完成桌面逻辑模拟；42项参考执行器自动化测试通过；生产Runtime与实际短场景仍未验收）
 
 本目录是《匕首心》系统级规则资料的唯一入口。与 Triangle Agency、Cairn、Blades in the Dark 完全隔离。当前阶段以基础版 Core Set 为默认规则集，先建立可准确检索、可直接主持的本地规则和数据资料，再通过短场景验证。初版控制复杂度，不默认引入 Hope & Fear。
 
@@ -36,6 +36,7 @@
 - [核心规则运行手册](./Rule_Reference/CORE_RULES_RUNTIME.md)：已规范化的高频核心机制，可按触发直接调用。
 - [专属 GM Skill](./GM_SKILL.md)：Core Set 主持原则、场景节奏、GM Move、Fear、NPC 与战斗准备。
 - [GM 运行专题：Hope / Fear、GM Moves 与 Spotlight](./GM_RUNTIME_FIELD_GUIDE.md)：细化骰子结果、聚焦转移、GM Move 严重度、Fear 收支、敌人 Spotlight 和运行测试。
+- [GM 设计专题：后果选择、战斗叙事与敌人行为](./GM_DESIGN_FIELD_GUIDE.md)：后果选择、战斗节奏、敌人动机与类型、环境使用、敌人设计及轻量备团方法。
 - [单人 PC 适配研究](./Rule_Reference/SINGLE_PC_ADAPTATION_RESEARCH.md)：仅在 1 PC Campaign 中使用的非默认桌面适配边界与测试计划。
 - [常用规则检索表](./Rule_Reference/LOOKUP_TABLES.md)：六属性难度基准、敌人/环境 Tier、遭遇 BP、范围、休息和 Fear 预算。
 - [核心角色选项索引](./Rule_Reference/CHARACTER_OPTIONS_INDEX.md)：九职业、领域和子职业导航。
@@ -53,7 +54,7 @@
 - [规则疑点登记](./Rule_Reference/RULE_ISSUES.md)：来源差异、版本疑点和未解决问题。
 - [Core Errata 交叉核验](./Rule_Reference/ERRATA_CROSSCHECK.md)：旧版官方勘误与 SRD 2.0 当前条目逐项抽样对照。
 - [Preflight](./PREFLIGHT.md)：Campaign / Session 开始前核验。
-- [回归测试矩阵](./Testing/CORE_RULE_RUNTIME_REGRESSION.md)：45 项原有测试已完成桌面逻辑模拟（非程序自动测试）；另有 10 项 GM Move / Fear / Spotlight 专项测试待执行。盲测场景模拟第一轮已完成，实际短场景和外部盲测仍待验证。
+- [回归测试矩阵](./Testing/CORE_RULE_RUNTIME_REGRESSION.md)：63 项规则与 GM 专项已完成桌面逻辑模拟（非程序自动测试）；42 项参考执行器测试为代码自动化。详见 [GM 专项桌面模拟记录](./Testing/GM_DESK_SIMULATION_01.md)。实际短场景和外部盲测仍待验证。
 - [术语表](./Rule_Reference/GLOSSARY.md)：中英术语与暂定工作译名。
 - [Hope & Fear 扩展隔离清单](./Expansions/Hope_and_Fear/README.md)：扩展默认关闭及启用条件。
 
