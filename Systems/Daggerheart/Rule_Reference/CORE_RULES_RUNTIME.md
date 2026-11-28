@@ -302,7 +302,7 @@ GM Move 是推动场景的工具，不是惩罚玩家的任意权力。后果必
   - Work on a Project：需 GM 批准，创建 Countdown；简单项目每次使用自动推进，复杂项目由 GM 决定是否掷 Action Roll 推进。
 - 结束时刷新 per-rest / per-long-rest 次数，并结束相应持续效果。
 - GM 获得 1d4 + PC 数量 Fear；通常推进一个与当前局势相关的 Long-term Countdown 一次。若具体卡牌、环境、Campaign 规则规定了不同推进条件，按其文本处理。
-- 中断边界：规则明确 PC 的恢复收益如何降级，但未明确中断的 Short / Long Rest 是否仍触发 GM Fear 与 Long-term Countdown 后果。当前参考执行器采用保守回退：中断 Long Rest 只发放 Short Rest 的 PC 收益，不自动结算 GM Fear / Countdown，也不改变 Short Rest 连续次数；中断 Short Rest 不发放 PC 收益。该项是待桌面裁定的实现边界，不应冒充官方明确裁定。
+- 中断边界：规则明确 PC 的恢复收益如何降级，但未明确中断的 Short / Long Rest 是否仍触发 GM Fear 与 Long-term Countdown 后果。当前参考执行器不自动结算这些 GM 后果，并返回 gm_consequence_required 标记，要求 Campaign Binding / 桌面裁定；中断 Long Rest 只发放 Short Rest 的 PC 收益且不改变 Short Rest 连续次数；中断 Short Rest 不发放 PC 收益。这里的“不自动结算”不等于官方确认 GM 后果为 0。
 
 ## 19. DH-COUNTDOWN｜倒计时
 
