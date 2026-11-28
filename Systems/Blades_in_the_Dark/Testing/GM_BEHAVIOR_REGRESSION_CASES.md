@@ -34,8 +34,8 @@
 
 - Source review: GM 指南章节，核心规则书 V1.3 PDF pp.199–207。
 - Case count: 18.
-- Automated execution: 0.
 - Manual review: 18/18 case definitions reviewed against the V1.3 GM guidance and core procedure pages; this is a review of the test criteria, not an execution of live GM responses.
 - Automated execution: 0.
+- Live GM response evaluation: pending.
 - Real playtest: pending.
 - These cases are behavioral prompts and review criteria, not executable engine tests.
