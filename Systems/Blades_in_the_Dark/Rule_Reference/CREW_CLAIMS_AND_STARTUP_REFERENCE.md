@@ -87,6 +87,15 @@ Crew Type 不禁止从事其他犯罪活动。它定义组织最常做、最容�
 
 专属升级只对相应 Crew Type 可用，必须按实际 Crew Sheet 核对，不应把一个组织的 Rigging、Elite Cohort 或其他专属升级跨类型调用。
 
+## 4-A. Crew 库存与 Coin 容量
+
+- 新 Crew 的资金为 2 Coin；Lair 默认可存放最多 4 Coin。
+- Vault 升级第一次把库存容量提高至 8，第二次提高至 16。
+- 组织存款超出容量时，应在下次 Score 前尽快花掉或分配给成员。
+- Crew Sheet 上的 Coin 与 Vaults 是两个不同状态：前者追踪当前可用现金，后者决定保管容量。
+- PC 个人散放现金超过 4 Coin 不方便；过量应转入自己的 Stash，或分配/存入 Crew 库存。
+- 实体现金随身携带时，每 1 Coin 占 1 Load；请查看 [Items & Load](./STANDARD_ITEMS_AND_LOAD_REFERENCE.md)。
+
 ## 5. Crew Advancement 与 Coin 相关字段
 
 - Crew XP 轨填满后，组织可取得一项 Crew Special Ability 或两个 Upgrade boxes（依规则/表单执行）。
