@@ -65,7 +65,7 @@ FREE PLAY
 | Downtime、Payoff、Heat、Entanglement | 已整理 | 中文 SRD + 官方 v8.2 | 对应合成用例通过；真人待测 |
 | Crew、Faction、Cohort、成长 | 已补充 Cohort 生命周期与 Faction Downtime | 官方 Crew / Faction Game 页面及 v8.2 | T26、T55–T61 合成通过；真人待测 |
 | Ritual、Magnitude、Crafting | 初步整理 | 以中文 SRD 为主 | 未纳入本轮矩阵；待测 |
-| 所有 Playbook / Crew Ability | 未穷尽 | 需按实际 Campaign 角色/组织回查 | 仅测部分能力边界；其余待测 |
+| 七种核心 Playbook / 六种 Crew Ability | 已建立触发、成本、范围与边界矩阵 | 官方 Full Player's Kit v8.2 | T70–T75 与既有能力用例合成通过；真人待测 |
 | Doskvol / NPC / District 设定 | 未完整收录 | 需要合法官方设定资料 | 未测 |
 
 ## 5. Playbook / Crew 能力调用
