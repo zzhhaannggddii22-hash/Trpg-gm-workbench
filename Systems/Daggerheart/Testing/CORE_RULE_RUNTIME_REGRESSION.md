@@ -187,6 +187,13 @@
 | DH-REF-099 | Fear Feature 本身召唤并授予 Adversary Spotlight | 只支付 Feature 自身 Fear，不再叠加普通额外 Spotlight 成本 | Passed (Run 09) |
 | DH-REF-100 | Feature-granted Spotlight 但 Fear 不足 | Spotlight 费用覆盖不免除 Feature 自身的 Fear 成本 | Passed (Run 09) |
 
+## Spotlighting Feature 链式限制回归（新增代码用例；待自动复跑）
+
+| ID | 场景 | 关键断言 | 状态 |
+|---|---|---|---|
+| DH-REF-101 | 一个 Spotlighting Feature 授予多个 Adversary Spotlight | 只要该 Feature 授予的目标仍待行动，就不能链式触发另一项 Spotlighting Feature | Pending rerun |
+| DH-REF-102 | Spotlighting Feature 锁的释放 | 只有该 Feature 授予 Spotlight 的目标完成行动后才释放；无关目标不能解除锁 | Pending rerun |
+
 ## 自动化参考执行补充
 
 - [Run 07：92/92 PASS](./AUTOMATED_REFERENCE_EXECUTION_07.md)
