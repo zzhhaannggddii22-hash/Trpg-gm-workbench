@@ -1,6 +1,6 @@
 # Core Rule Runtime Regression Matrix
 
-> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 102/102 PASS（Run 10）；仓库完整 CI Run 46149557047 PASS；LIVE RUNTIME VALIDATION PENDING  
+> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 109/109 PASS（Run 11）；仓库完整 CI Run 46149995171 PASS；LIVE RUNTIME VALIDATION PENDING  
 > DH-T01–DH-T45 已进行确定性桌面逻辑模拟（非代码自动测试）。详情见三个 DESK_TEST_BATCH 文件。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
@@ -200,8 +200,9 @@
 - [Run 08：98/98 PASS](./AUTOMATED_REFERENCE_EXECUTION_08.md)
 - [Run 09：100/100 PASS](./AUTOMATED_REFERENCE_EXECUTION_09.md)
 - [Run 10：102/102 PASS](./AUTOMATED_REFERENCE_EXECUTION_10.md)
+- [Run 11：109/109 PASS](./AUTOMATED_REFERENCE_EXECUTION_11.md)
 
-独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，Run 04 为 66/66，Run 05 为 71/71；Run 06 与 Run 07 的新增回归均已通过，且有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 新增并通过 8 项条件状态生命周期回归（DH-REF-052–059）；Run 04 新增并通过 7 项移动、视线与范围效果回归（DH-REF-060–066）；Run 05 新增并通过 5 项休息与 Downtime 回归（DH-REF-067–071），详见 `AUTOMATED_REFERENCE_EXECUTION_05.md`。Run 05 的 71 项、Run 06 的 82 项、Run 07 的 92 项、Run 08 的 98 项均验证独立参考执行器与 Core Set 数据；Run 06 新增 DH-REF-072–082 共 11 项 GM Turn / Spotlight、额外 GM Move 与 Short Rest 边界回归通过；Run 07 新增 DH-REF-083–092 共 10 项 Downtime Move 回归通过；Run 08 新增 DH-REF-093–098 共 6 项 Encounter Battle Points 回归通过；Run 09 新增 DH-REF-099–100 共 2 项 Feature-granted Spotlight 成本回归通过；Run 10 新增 DH-REF-101–102 共 2 项 Spotlighting Feature 链式限制回归通过。这些不是生产 GM Runtime 的端到端测试。
+独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，Run 04 为 66/66，Run 05 为 71/71；Run 06 与 Run 07 的新增回归均已通过，且有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 新增并通过 8 项条件状态生命周期回归（DH-REF-052–059）；Run 04 新增并通过 7 项移动、视线与范围效果回归（DH-REF-060–066）；Run 05 新增并通过 5 项休息与 Downtime 回归（DH-REF-067–071），详见 `AUTOMATED_REFERENCE_EXECUTION_05.md`。Run 05 的 71 项、Run 06 的 82 项、Run 07 的 92 项、Run 08 的 98 项均验证独立参考执行器与 Core Set 数据；Run 06 新增 DH-REF-072–082 共 11 项 GM Turn / Spotlight、额外 GM Move 与 Short Rest 边界回归通过；Run 07 新增 DH-REF-083–092 共 10 项 Downtime Move 回归通过；Run 08 新增 DH-REF-093–098 共 6 项 Encounter Battle Points 回归通过；Run 09 新增 DH-REF-099–100 共 2 项 Feature-granted Spotlight 成本回归通过；Run 10 新增 DH-REF-101–102 共 2 项 Spotlighting Feature 链式限制回归通过；Run 11 新增 DH-REF-103–109 共 7 项 Countdown、Simple / Complex Project 与 Long Rest Move 限制回归通过。这些不是生产 GM Runtime 的端到端测试。
 
 ## 测试执行记录
 
@@ -223,7 +224,7 @@
 
 | ID | 场景 | 关键断言 | 状态 |
 |---|---|---|---|
-| DH-REF-103 | Standard Countdown 推进 | 每次有效 Action Roll 减 1；到 0 后不低于 0 | Pending Run 11 |
+| DH-REF-103 | Standard Countdown 推进 | 每次有效 Action Roll 减 1；到 0 后不低于 0 | Passed (Run 11) |
 | DH-REF-104 | Dynamic Progress Countdown | 按五种 Action Roll 结果推进 0–3 | Pending Run 11 |
 | DH-REF-105 | Dynamic Consequence Countdown | 按五种 Action Roll 结果推进 0–3 | Pending Run 11 |
 | DH-REF-106 | Dynamic Countdown 类型边界 | 非 Progress / Consequence 类型拒绝动态推进 | Pending Run 11 |
