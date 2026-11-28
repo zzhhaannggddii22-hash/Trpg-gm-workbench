@@ -112,8 +112,8 @@ Core Set 角色选项索引见 [CHARACTER_OPTIONS_INDEX.md](./CHARACTER_OPTIONS_
 ### Hope
 - 每名 PC 创建时 2 Hope；上限 6；跨 Session 保留。
 - 可用于 Help an Ally、Utilize an Experience、发起 Tag Team Roll、启用 Hope Feature。
-- Class Hope Feature 成本为 3 Hope；其他能力按卡面文本。
-- Help an Ally：描述协助方式，掷 d6 Advantage Die；多名协助者可分别花费 Hope，但行动者只加所有适用优势骰中的最高值。
+- Class Hope Feature 成本为 3 Hope；其他能力按卡面文本。若 Hope Feature 用于当前这次动作掷骰，且该掷骰结果为 Hope，刚获得的 Hope 可以立即用于支付该 Feature 的成本。
+- Help an Ally：每名协助者花费 1 Hope，描述协助方式并掷 d6 Advantage Die；多名协助者可分别花费 Hope，但行动者只加所有适用优势骰（包括行动者自身已有的 Advantage Die）中的最高值。
 - Utilize an Experience：在相关 Action / Reaction Roll 前花 1 Hope，加入 Experience 修正；可同时应用多个不同 Experience，按成本逐项支付。
 - 超过资源上限时不保留超额点数。
 
@@ -151,7 +151,7 @@ GM Move 是推动场景的工具，不是惩罚玩家的任意权力。后果必
 - PC Reaction Roll 使用动作掷骰的基础结构，但不产生 Hope / Fear、不触发额外 GM Move，其他 PC 不能通过 Help an Ally 协助该反应。
 - PC Reaction Roll Critical Success：忽略该次成功时本会承受的影响，例如伤害或标记 Stress；不获得 Hope，也不清除 Stress。
 - 不得把普通 Action Roll 的资源结算套给 Reaction Roll。
-- 敌方 Reaction Roll 按敌人规则使用单 d20；可依特定规则花 Fear 添加 Experience。
+- 敌方 Reaction Roll 按敌人规则使用单 d20；可依特定规则花 Fear 添加 Experience。敌方 Reaction Roll 自然 20 自动成功，但不附带额外收益。
 
 ## 9. DH-GROUP / DH-TAG-TEAM｜协作行动
 
@@ -162,7 +162,7 @@ GM Move 是推动场景的工具，不是惩罚玩家的任意权力。后果必
 4. 协助者 Reaction Roll 不产生 Hope / Fear；Leader 的 Action Roll 正常结算。
 
 ### Tag Team Roll
-- 每名玩家每 Session 可发起一次；花费 3 Hope，邀请另一名 PC 协同完成高光行动。
+- 每名玩家每 Session 可发起一次；花费 3 Hope，邀请另一名 PC 协同完成高光行动。同一 PC 可以参与其他玩家发起的 Tag Team Roll。
 - 两名玩家分别作 Action Roll；结算前选择其中一组结果应用于两名角色的共同动作。
 - 被选结果为 Hope 时，所有参与 PC 各获得 1 Hope；为 Fear 时，GM 按参与 PC 人数获得 Fear。
 - 若为成功的 Tag Team 攻击，两名 PC 分别掷伤害并将伤害合计作为同一来源处理。
@@ -221,7 +221,7 @@ GM Move 是推动场景的工具，不是惩罚玩家的任意权力。后果必
 - Armor Score 代表可标记的 Armor Slots 数量，上限 12。
 - 受到伤害时可标记一个 Armor Slot，将伤害严重程度降低一级：Severe→Major→Minor→无 HP 损失。
 - Armor Score 为 0 时不能标记 Armor Slot。
-- 临时提升 Armor Score 时，获得对应额外 Armor Slots；效果结束时额外 Slots 同时消失。
+- 临时提升 Armor Score 时，获得对应额外 Armor Slots；效果结束时额外 Slots 同时消失。卸下护甲时保留该护甲原有已标记格数，之后重新装备仍沿用。
 - 换装后重算阈值；未穿护甲时按基础规则计算。
 
 ### 抗性、免疫与特殊伤害
@@ -273,7 +273,7 @@ GM Move 是推动场景的工具，不是惩罚玩家的任意权力。后果必
 - 子职业、种族和社群卡不占 Loadout 上限，持续生效。
 - 每次休息开始、Downtime Moves 前，可免费在 Loadout 与 Vault 间调换卡牌。
 - 其他时间从 Vault 调回 Loadout，须标记该卡 Recall Cost 数量的 Stress；如 Loadout 已满，先免费把一张当前卡移入 Vault。
-- 升级新获得的 Domain Card 可免费立即放入 Loadout；若已满，仍需把另一张卡移入 Vault。
+- 升级新获得的 Domain Card 可免费立即放入 Loadout；若已满，仍需把另一张卡移入 Vault。升级时也可将一张已获得领域卡替换为一张等级相同或更低的新卡。
 - 用途次数限制按卡牌文本记录；某些特性根据 Trait 修正赋予次数，修正为 +0 或更低时得到 0 次。
 
 ## 18. DH-REST｜休息与 Downtime
@@ -466,3 +466,14 @@ PC 标记最后一个 HP 时立即进行 Death Move，选择一项：
 
 本次已直接对照官方 SRD 2.0 的 Core Mechanics（PDF 第 45–55 页）核验：Core Gameplay Loop、Spotlight、Action Roll 结果、Reaction Roll、Group Action、Tag Team、Advantage / Disadvantage、Hope / Fear、HP / Stress、Attack / Damage、Resistance、Range、Conditions、Rest、Death、Rounding、Countdown、Leveling Up、Equipment。  
 这表示这些条目已达到 `SOURCE_CHECKED`（SRD 2.0 基准），但仍未完成 Core Rulebook 全书逐章比对和 Runtime 回归测试；不得标记为 `RUNTIME_TESTED`。
+
+
+## 32. 常见运行边界补充
+
+- **Hope Feature 的即时支付：** 当 PC 的 Action Roll 结果为 Hope，获得的 Hope 可立即用于该次行动所触发的 Hope Feature；不要先把它当作不可用资源结算。
+- **协助成本：** Help an Ally 每位协助者花费 1 Hope；不是免费协助，也不是由行动者代付。
+- **Tag Team 使用次数：** 每位玩家每 Session 最多主动发起一次，但同一 PC 可以参与其他玩家发起的 Tag Team Roll。
+- **Domain Card 成长替换：** Level Up 取得新卡时，除新增外，也可以用新卡替换一张此前取得的同等级或更低等级领域卡。
+- **护甲卸下：** Armor Slots 属于具体护甲。卸下后记录其已标记格数；换装时重新计算阈值，之后重新装备原护甲时恢复该护甲的格数状态。
+- **Long Rest 中断：** Long Rest 被打断时，只取得 Short Rest 的收益；Short Rest 被打断则没有休息收益。
+- **敌人 Reaction Critical：** Adversary 的 Reaction Roll 自然 20 自动成功，但不获得额外 Critical 收益。
