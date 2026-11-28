@@ -18,6 +18,8 @@
 - [ ] 关键冲突与疑点已查阅 Rule_Reference/RULE_ISSUES.md。
 - [ ] 规则版本与官方勘误/免费工具包交叉核验范围明确。
 - [ ] 关键角色能力、Crew 能力、装备、Ritual、Crafting 与特殊状态已定位原文。
+- [ ] 已读取 `ABILITY_RUNTIME_MATRIX.md`，并只登记当前 PC/Crew 实际拥有的能力。
+- [ ] 若当前战役涉及 Ritual / Magnitude / Invention / Crafting，已定位 `ARCANE_AND_CRAFTING_RUNTIME.md` 与具体设计/仪式记录。
 - [ ] 未将商业核心书或非 SRD 世界设定当作已公开授权素材。
 
 ## C. PC 与 Crew 状态
@@ -59,7 +61,9 @@ Crew：
 4. Payoff、Heat、Entanglement、Downtime、成长的完整结算测试；
 5. Crew/Faction/Cohort 与 PC 状态的连续性测试；
 6. 与 Triangle Agency、Cairn 的规则隔离测试；
-7. 一轮真实短团或明确授权的受控测试，并完成复盘。
+7. Ritual、Magnitude、Invention、Crafting、Modification 与 Drawbacks 的边界测试；
+8. 核心 PC/Crew Ability 的触发、资源、范围和重置点测试；
+9. 一轮真实短团或明确授权的受控测试，并完成复盘。
 
 Candidate 验证必须使用 TEST_ONLY_NON_CANON Validation Manifest，不创建正式 Campaign 状态。通过模拟测试不等于真实实战验收；通过候选验证也不自动意味着系统已 active。
 
