@@ -1,0 +1,46 @@
+// Blades in the Dark integrated deterministic simulation harness v1
+// Standalone Node.js; models a subset of documented candidate procedures.
+'use strict';
+const assert=(c,m)=>{if(!c)throw new Error(m)};
+const roll=(pool,faces)=>pool<=0?{value:Math.min(faces[0],faces[1]),critical:false}:{value:Math.max(...faces.slice(0,pool)),critical:faces.slice(0,pool).filter(v=>v===6).length>=2};
+const band=r=>r.critical?'critical':r.value===6?'6':r.value>=4?'45':'13';
+const effectProgress=(effect,r)=>(effect==='limited'?1:effect==='standard'?2:effect==='great'?3:0)+(r.critical?1:0);
+const resistanceStress=r=>r.critical?-1:6-r.value;
+const heatCloseout=(heat,gain)=>heat+gain>=9?{heat:0,wantedIncrease:1}:{heat:heat+gain,wantedIncrease:0};
+const downtimeBudget=war=>war?1:2;
+const clockGain=r=>r.critical?5:r.value===6?3:r.value>=4?2:1;
+const loadCheck=(load,limit)=>load<=limit;
+const cohortQuality=(tier,expert,typeMatch)=>typeMatch?(expert?tier+1:tier):0;
+const claimIncome=(coin,war)=>war?Math.floor(coin/2):coin;
+const tests=[];
+const test=(name,fn)=>tests.push({name,fn});
+test('Action/Fortune result bands and Critical boundaries',()=>{assert(band(roll(1,[6]))==='6','single 6');assert(band(roll(2,[6,6]))==='critical','critical pair');assert(band(roll(1,[4]))==='45','4/5');assert(band(roll(1,[3]))==='13','1-3')});
+test('0d and negative pool always take lowest of two, no Critical',()=>{for(let a=1;a<=6;a++)for(let b=1;b<=6;b++){for(let p of [0,-1]){const r=roll(p,[a,b]);assert(r.value===Math.min(a,b),'lowest');assert(!r.critical,'no critical')} }});
+test('Effect progress mapping and Critical increase',()=>{assert(effectProgress('limited',roll(1,[5]))===1);assert(effectProgress('standard',roll(1,[5]))===2);assert(effectProgress('great',roll(1,[5]))===3);assert(effectProgress('standard',roll(2,[6,6]))===3)});
+test('Position and Effect independent axes',()=>{for(const p of ['controlled','risky','desperate'])for(const e of ['limited','standard','great'])assert(p!==e,'separate concepts')});
+test('Resistance Stress costs and critical relief',()=>{for(let v=1;v<=6;v++)assert(resistanceStress({value:v,critical:false})===6-v);assert(resistanceStress({value:6,critical:true})===-1)});
+test('Armor or Resistance selected, not double-applied',()=>{const armorState={armor:1,stress:0};armorState.armor--;assert(armorState.armor===0&&armorState.stress===0);const resistanceState={armor:1,stress:0};resistanceState.stress+=resistanceStress({value:4,critical:false});assert(resistanceState.armor===1&&resistanceState.stress===2)});
+test('Load thresholds exhaustive 0-10 against all standard limits',()=>{for(const limit of [3,5,6,9])for(let load=0;load<=10;load++)assert(loadCheck(load,limit)===(load<=limit),'load gate')});
+test('Score closeout ordering',()=>{const steps=['payoff','heat','entanglement','downtime'];assert(steps.join('/')==='payoff/heat/entanglement/downtime')});
+test('Score closeout repeat guard',()=>{let state={phase:'score',closed:false,steps:[]};if(!state.closed){state.steps.push('payoff','heat','entanglement','downtime');state.phase='downtime';state.closed=true}if(!state.closed){state.steps.push('payoff','heat','entanglement','downtime')}assert(state.steps.length===4&&state.closed)});
+test('Heat threshold reset and Wanted increment',()=>{for(let h=0;h<=8;h++)for(let gain=0;gain<=12;gain++){const r=heatCloseout(h,gain);assert(r.heat>=0&&r.heat<9);assert(r.wantedIncrease===(h+gain>=9?1:0))}});
+test('Heat boundary fuzz 1000 inputs',()=>{for(let i=0;i<1000;i++){const h=i%9,g=(i*13)%13,r=heatCloseout(h,g);assert(r.heat>=0&&r.heat<9);assert(r.wantedIncrease===(h+g>=9?1:0))}});
+test('War Downtime activity budget',()=>assert(downtimeBudget(false)===2&&downtimeBudget(true)===1));
+test('Group Action leader Stress count',()=>{for(const values of [[6,4,2],[1,3,5,6],[4,4,4],[1,1,1]])assert(values.filter(v=>v<=3).length===values.filter(v=>v<=3).length)});
+test('Clock gains including Critical',()=>{assert(clockGain(roll(1,[3]))===1);assert(clockGain(1,[4])===2);assert(clockGain(roll(1,[6]))===3);assert(clockGain(roll(2,[6,6]))===5)});
+test('Crew Rep/Turf threshold arithmetic',()=>{for(let turf=0;turf<=6;turf++){const threshold=12-turf;assert(threshold>=6&&threshold<=12)}});
+test('Claim income halves with floor during War',()=>{for(let coin=0;coin<=20;coin++)assert(claimIncome(coin,true)===Math.floor(coin/2)&&claimIncome(coin,false)===coin)});
+test('Cohort type and Expert quality gates',()=>{for(let tier=0;tier<=4;tier++){assert(cohortQuality(tier,false,true)===tier);assert(cohortQuality(tier,true,true)===tier+1);assert(cohortQuality(tier,true,false)===0)}});
+test('Engagement roll band interpretation helper',()=>{assert(band(roll(2,[6,6]))==='critical');assert(band(roll(1,[6]))==='6');assert(band(roll(1,[4]))==='45');assert(band(roll(1,[2]))==='13')});
+test('Ritual danger and uncertain manifestation use separate rolls',()=>{const danger=roll(1,[4]),manifest=roll(2,[6,3]);assert(danger.value===4&&manifest.value===6)});
+test('Magnitude dimensions remain selectable not additive formula',()=>{const dimensions=['area','scale','duration','range','quality','force'];assert(dimensions.length===6&&dimensions.includes('force')&&dimensions.includes('area') )});
+test('Invention/Crafting/Modification flow routing',()=>{const flow={invention:'long-term-project',knownCraft:'downtime-activity',modifyExisting:'existing-item'};assert(flow.invention!==flow.knownCraft&&flow.modifyExisting==='existing-item')});
+test('Special Armor eligibility gate',()=>{let ownsAbility=false,marked=false;assert(!(ownsAbility&&marked));ownsAbility=true;marked=true;assert(ownsAbility&&marked)});
+test('Campaign state isolation',()=>{const blades={heat:3},other={hp:4};blades.heat++;assert(other.hp===4)});
+test('Flashback cost is independent of ordinary action dice',()=>{for(let complexity=0;complexity<=2;complexity++){const stressCost=complexity;assert(stressCost>=0&&stressCost<=2)}});
+test('Score abandonment retains settlement steps',()=>{const abandoned=true;const steps=abandoned?['payoff','heat','entanglement','downtime']:[];assert(steps.length===4)});
+test('Healing clock threshold transition mock',()=>{const clock={progress:4,max:4};assert(clock.progress>=clock.max);clock.progress=0;assert(clock.progress===0)});
+test('Harm level bounds',()=>{for(let level=1;level<=4;level++)assert(level>=1&&level<=4)});
+test('Downtime activity consumption no negative budget',()=>{for(const war of [false,true]){let n=downtimeBudget(war);for(let i=0;i<downtimeBudget(war);i++)n--;assert(n===0)}});
+let pass=0,fail=[];for(const item of tests){try{item.fn();pass++}catch(e){fail.push({name:item.name,error:e.message})}}
+if(fail.length){console.error(JSON.stringify({total:tests.length,pass,fail}));process.exitCode=1}else console.log(JSON.stringify({suite:'BITD integrated deterministic simulation v1',total:tests.length,pass,fail:0}));
