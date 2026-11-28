@@ -62,7 +62,7 @@ Load 是装备/携带能力的抽象格数，不是重量单位，也不要求�
 - **Standard Armor**：本次 Score Loadout 必须声明携带，占 2 Load；适用后果出现时勾选 Armor 格。
 - **Heavy Armor**：在 Standard Armor 基础上额外占 3 Load（共 5）；可在同一适用后果上再勾选 Heavy 格，进一步减轻该后果。
 - **Special Armor**：只有具有相应 Playbook Ability 的 PC 才能使用。它通常是触发该能力的资源，不是通用护甲减伤。
-- 本次 Score 勾选过的 Armor 使用格在 Downtime 阶段恢复；官方网页 Resistance & Armor 将下一次 Score 的 Load 选择作为恢复节点。具有专属恢复说明的 Special Armor 能力，按能力文本在 Downtime 开始时恢复。
+- 当前 candidate 以官方 Full Player's Kit v8.2 为基线，本次 Score 勾选过的 Armor 使用格在 Downtime 阶段恢复；官方 SRD Resistance & Armor 网页写的是选择下一次 Score 的 Load 时恢复，两者存在未解决的来源时序差异，见 [R-005](./RULE_ISSUES.md#r-005resistance-与-armor-的时序)。具有专属恢复说明的 Special Armor 能力，按能力文本在 Downtime 开始时恢复。
 
 ## 4. 运行时处理步骤
 
