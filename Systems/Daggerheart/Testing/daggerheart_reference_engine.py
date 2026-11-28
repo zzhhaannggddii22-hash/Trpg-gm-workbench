@@ -909,7 +909,7 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         self.assertEqual(state["enemy_spotlights"]["solo"], 1)
 
 
-    def test_72_third_short_rest_is_allowed_but_fourth_requires_long_rest(self):
+    def test_80_third_short_rest_is_allowed_but_fourth_requires_long_rest(self):
         state = {"short_rests_since_long": 2}
         third = short_rest(state, fear_roll=1, gm=GM())
         self.assertTrue(third["completed"])
@@ -918,7 +918,7 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         self.assertTrue(fourth["requires_long_rest"])
         self.assertEqual(state["short_rests_since_long"], 3)
 
-    def test_73_interrupted_short_rest_does_not_increment_streak(self):
+    def test_81_interrupted_short_rest_does_not_increment_streak(self):
         state = {"short_rests_since_long": 2}
         result = short_rest(state, interrupted=True, fear_roll=4, gm=GM())
         self.assertFalse(result["completed"])
