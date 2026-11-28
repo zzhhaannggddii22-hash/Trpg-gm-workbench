@@ -38,7 +38,16 @@ Crew：
 - [ ] Coin/Vault、Heat、Wanted Level、Faction Status。
 - [ ] 相关 Faction 与 NPC 的目标、利益、关系和必要项目钟。
 
-## D. 规则运行就绪
+## D. GM 主持能力就绪
+- [ ] 已读取 `GM_SKILL.md`，理解 GM 是呈现情境、提供机遇并跟随行动与后果，而非预写剧情。
+- [ ] 能通过提问澄清玩家目标，并帮助玩家创造可行机遇，而不是堵死行动路线。
+- [ ] 能区分潜在虚构与既定虚构，保持已确立事实连续，同时允许未确立细节灵活调整。
+- [ ] NPC 有具体渴望、偏好手段、能力与限制，并据此行动。
+- [ ] 能按玩家兴趣调整镜头尺度，避免无意义的细碎掷骰与冗长准备。
+- [ ] 能主动提供角色有资格知道的信息，不把所有线索都藏在检定之后。
+- [ ] 能保持玩家可见信息与 GM-only 信息隔离。
+
+## E. 规则运行就绪
 
 - [ ] 能按 Action Roll 六步处理目标、Action、Position、Effect、奖励骰和结果。
 - [ ] Position 和 Effect 分开判定。
@@ -52,7 +61,7 @@ Crew：
 - [ ] NPC/Faction Downtime 只推进相关对象，不做全城逐 NPC 模拟。
 - [ ] 规则未知时能暂停相关裁定、记录问题并使用对应来源继续核验。
 
-## E. Candidate Validation
+## F. Candidate Validation
 
 当前尚为 candidate。正式 Campaign 开始前，至少完成：
 1. 骰型、Action Roll、Position/Effect 与后果的正例/反例测试；
@@ -67,7 +76,7 @@ Crew：
 
 Candidate 验证必须使用 TEST_ONLY_NON_CANON Validation Manifest，不创建正式 Campaign 状态。通过模拟测试不等于真实实战验收；通过候选验证也不自动意味着系统已 active。
 
-## F. Session 启动快照
+## G. Session 启动快照
 
 ```yaml
 active_system:
@@ -85,7 +94,7 @@ runtime:
   open_rule_issues: []
 ```
 
-## G. Preflight 结果
+## H. Preflight 结果
 
 记录本次结果：
 - READY：本次行动可按当前规则运行；
