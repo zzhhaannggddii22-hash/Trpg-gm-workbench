@@ -141,7 +141,7 @@ Core Set 角色选项索引见 [CHARACTER_OPTIONS_INDEX.md](./CHARACTER_OPTIONS_
 - Failure with Fear：局势明显恶化，带来重大危险、分离、失去重要机会或多名敌人聚焦；GM 获得 Fear。
 
 Soft Move：呈现危险、线索或即将发生的影响，并留出反应窗口。  
-Hard Move：后果更直接、更严重，PC 没有机会先阻止或改变结果。
+Hard Move：后果更直接地兑现，PC 没有机会先中断、改变或预判结果。Hard / Soft 描述回应窗口，不直接决定后果严重度。
 
 GM Move 是推动场景的工具，不是惩罚玩家的任意权力。后果必须来自已建立的威胁、行动方式、局势或明确机制触发。
 
