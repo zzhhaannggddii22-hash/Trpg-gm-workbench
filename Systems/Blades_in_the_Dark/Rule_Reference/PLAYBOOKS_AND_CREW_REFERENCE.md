@@ -263,6 +263,7 @@ active_abilities:
 ## 6. 来源与边界
 
 - [Official Full Player's Kit v8.2](https://bladesinthedark.com/sites/default/files/blades_playerkit_v8_2.pdf)
+- 已对照官方 v8.2 Playbook Ability 列表；当前索引包含 Cutter 的 Vigorous 与 Leech 的 Venomous。
 - [Official Downloads](https://bladesinthedark.com/downloads)
 - [Chinese SRD](https://bitd.wayneh.tw/)
 - 中文 SRD 私人镜像位于用户私有仓库 `personal-context-archive/research/trpg/blades_in_the_dark/zh_srd/`；公开仓库不放正文副本。
