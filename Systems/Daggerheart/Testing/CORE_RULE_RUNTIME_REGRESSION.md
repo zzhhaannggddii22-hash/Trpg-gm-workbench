@@ -1,6 +1,6 @@
 # Core Rule Runtime Regression Matrix
 
-> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器最近一次可核验记录为 42/42，当前脚本 50 项（新增 8 项待复跑）；LIVE RUNTIME VALIDATION PENDING  
+> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器最近一次可核验记录为 42/42，当前脚本 51 项（新增 8 项待复跑）；LIVE RUNTIME VALIDATION PENDING  
 > DH-T01–DH-T45 已进行确定性桌面逻辑模拟（非代码自动测试）。详情见三个 DESK_TEST_BATCH 文件。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
@@ -82,9 +82,23 @@
 | DH-GD-08 | Environment Feature 造成烟雾遮蔽与路线改变 | 场景提供新的行动选择；不把环境 Feature 一律转换成伤害 | Desk-Simulated |
 | DH-GD-09 | Success with Fear：行动成功但后果直接兑现 | 主要成果保留；后果严重度仍为次要，但可以采用 Hard Move 形式，不得混淆严重度与回应窗口 | Desk-Simulated |
 
+## 参考执行器伤害交互回归（代码用例；新增部分待自动复跑）
+
+| ID | 场景 | 关键断言 | 状态 |
+|---|---|---|---|
+| DH-REF-043 | Direct Damage 同时受到 Resistance | Resistance 仍减半；Direct 只绕过 Armor Slot | Pending rerun |
+| DH-REF-044 | Resistance 与 Armor Slot 同时存在 | 先减半、向上取整，再按严重度标记；Armor 再降低一级 | Pending rerun |
+| DH-REF-045 | 同类型 Resistance 有多个来源 | Resistance 不叠加，只减半一次 | Pending rerun |
+| DH-REF-046 | 单一类型伤害命中 Immunity | 对应伤害归零，不标记 HP | Pending rerun |
+| DH-REF-047 | 混合伤害只抵抗其中一种类型 | 不得只减免其中一部分；整体不享受该防护 | Pending rerun |
+| DH-REF-048 | 混合伤害两种类型均有 Resistance | 两种类型分别减半并向上取整，再合计比较阈值 | Pending rerun |
+| DH-REF-049 | 同时发生的同类型多来源伤害 | 先合计伤害，再比较阈值 | Pending rerun |
+| DH-REF-050 | 混合伤害两种类型均有 Immunity | 两种类型伤害均忽略 | Pending rerun |
+| DH-REF-051 | 混合伤害分别受到 Resistance 与 Immunity | 两种类型均有防护时，分别应用对应防护再合计 | Pending rerun |
+
 ## 自动化参考执行补充
 
-独立参考执行器最近一次有记录的执行为 42/42 通过，见 `AUTOMATED_REFERENCE_EXECUTION_01.md`。之后新增 8 项伤害交互回归（当前脚本共 50 项，新增 DH-REF-043–050）；本次修改后的自动化重跑尚未取得可核验结果，因此仍按 42/42 作为最后一次已验证成绩，新增 8 项均标记待复跑。这些测试验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
+独立参考执行器最近一次有记录的执行为 42/42 通过，见 `AUTOMATED_REFERENCE_EXECUTION_01.md`。之后新增 9 项伤害交互回归（当前脚本共 51 项，新增 DH-REF-043–051）；本次修改后的自动化重跑尚未取得可核验结果，因此仍按 42/42 作为最后一次已验证成绩，新增 9 项均标记待复跑。这些测试验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
 
 ## 测试执行记录
 
@@ -92,11 +106,11 @@
 |---|---|
 | 测试版本 | Core Set / SRD 2.0 (2026-08-25) |
 | 扩展范围 | CORE_ONLY |
-| 矩阵状态 | 64/64 项已桌面逻辑模拟；42/42 参考执行器历史自动化测试通过；8 项新增伤害回归待复跑 |
+| 矩阵状态 | 64/64 项已桌面逻辑模拟；42/42 参考执行器历史自动化测试通过；9 项新增伤害回归待复跑 |
 | 已执行测试 | 64 / 64（桌面逻辑模拟）；参考执行器最新可核验记录 42/42；当前脚本 50 项 |
 | 已通过 | 64（桌面模拟）；42（参考执行器历史记录） |
 | 已失败 | 0 |
-| 待执行 | 0（桌面模拟层面）；8（新增自动化回归待复跑） |
+| 待执行 | 0（桌面模拟层面）；9（新增自动化回归待复跑） |
 | 阻塞 | 0 |
 
 本矩阵仍是测试清单兼状态记录。DH-T01–DH-T45 的桌面模拟输入与结果见 DESK_TEST_BATCH_01.md、DESK_TEST_BATCH_02.md、DESK_TEST_BATCH_03.md；新增 19 项见 GM_DESK_SIMULATION_01.md。桌面逻辑模拟不等同于代码自动测试或完整规则书验收。盲测、短场景主持测试与完整 Core Rulebook 对照仍待完成。
