@@ -58,14 +58,14 @@ FREE PLAY
 
 | 规则域 | 文档状态 | 交叉核验 | 行为验证 |
 |---|---|---|---|
-| 骰型、Action Roll、Position、Effect | 已整理 | 中文 SRD + 官方 v8.2 | 待测 |
-| Consequence、Resistance、Armor | 已整理 | 中文 SRD + 官方 v8.2 | 待测 |
-| Clocks、Fortune、Gather Info | 已整理 | 中文 SRD + 官方规则页 | 待测 |
-| Score、Engagement、Flashback、Teamwork | 已整理 | 中文 SRD + 官方规则页 | 待测 |
-| Downtime、Payoff、Heat、Entanglement | 已整理 | 中文 SRD + 官方 v8.2 | 待测 |
-| Crew、Faction、Cohort、成长 | 初步整理 | 部分与官方工具包交叉核验 | 待测 |
-| Ritual、Magnitude、Crafting | 初步整理 | 以中文 SRD 为主 | 待测 |
-| 所有 Playbook / Crew Ability | 未穷尽 | 需按实际 Campaign 角色/组织回查 | 未测 |
+| 骰型、Action Roll、Position、Effect | 已整理 | 中文 SRD + 官方 v8.2 | 对应合成用例通过；真人待测 |
+| Consequence、Resistance、Armor | 已整理 | 中文 SRD + 官方 v8.2 | 对应合成用例通过；真人待测 |
+| Clocks、Fortune、Gather Info | 已整理 | 中文 SRD + 官方规则页 | 对应合成用例通过；真人待测 |
+| Score、Engagement、Flashback、Teamwork | 已整理 | 中文 SRD + 官方规则页 | 对应合成用例通过；真人待测 |
+| Downtime、Payoff、Heat、Entanglement | 已整理 | 中文 SRD + 官方 v8.2 | 对应合成用例通过；真人待测 |
+| Crew、Faction、Cohort、成长 | 已补充 Cohort 生命周期与 Faction Downtime | 官方 Crew / Faction Game 页面及 v8.2 | T26、T55–T61 合成通过；真人待测 |
+| Ritual、Magnitude、Crafting | 初步整理 | 以中文 SRD 为主 | 未纳入本轮矩阵；待测 |
+| 所有 Playbook / Crew Ability | 未穷尽 | 需按实际 Campaign 角色/组织回查 | 仅测部分能力边界；其余待测 |
 | Doskvol / NPC / District 设定 | 未完整收录 | 需要合法官方设定资料 | 未测 |
 
 ## 5. Playbook / Crew 能力调用
