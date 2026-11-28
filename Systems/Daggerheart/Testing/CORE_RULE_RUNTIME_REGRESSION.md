@@ -1,6 +1,6 @@
 # Core Rule Runtime Regression Matrix
 
-> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 59/59 PASS；仓库完整 CI Run 641 PASS；LIVE RUNTIME VALIDATION PENDING  
+> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 66/66 PASS；仓库完整 CI Run 649 PASS；LIVE RUNTIME VALIDATION PENDING  
 > DH-T01–DH-T45 已进行确定性桌面逻辑模拟（非代码自动测试）。详情见三个 DESK_TEST_BATCH 文件。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
@@ -109,11 +109,11 @@
 | DH-REF-058 | Adversary 清除 Temporary 条件 | 不占 Spotlight 不清除；用自身 Spotlight 清除并消费本次 Spotlight | Passed (Run 03) |
 | DH-REF-059 | 清除 Special Condition | 只有满足该效果规定的具体条件才可清除 | Passed (Run 03) |
 
-## 移动、视线与范围效果回归（新增代码用例；待自动复跑）
+## 移动、视线与范围效果回归（代码用例；Run 04 已通过）
 
 | ID | 场景 | 关键断言 | 状态 |
 |---|---|---|---|
-| DH-REF-060 | PC 在 Action Roll 中移动 | 可在该行动中移动至 Close；更远距离不能免费并入该行动 | Pending rerun |
+| DH-REF-060 | PC 在 Action Roll 中移动 | 可在该行动中移动至 Close；更远距离不能免费并入该行动 | Passed (Run 04) |
 | DH-REF-061 | PC 未进行 Action Roll 时重新定位 | 需成功完成 Agility Roll；失败不能安全重新定位 | Pending rerun |
 | DH-REF-062 | Adversary 移动 | Close 内移动可并入行动；移动至 Very Far 需要独立行动 | Pending rerun |
 | DH-REF-063 | 远程攻击遇到掩体 | 部分遮挡允许攻击但带 Disadvantage；完全遮挡阻断视线 | Pending rerun |
@@ -123,7 +123,7 @@
 
 ## 自动化参考执行补充
 
-独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，均有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 再新增并通过 8 项条件状态生命周期回归（DH-REF-052–059），详见 `AUTOMATED_REFERENCE_EXECUTION_03.md`。这 59 项验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
+独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，Run 04 为 66/66，均有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 新增并通过 8 项条件状态生命周期回归（DH-REF-052–059）；Run 04 新增并通过 7 项移动、视线与范围效果回归（DH-REF-060–066），详见 `AUTOMATED_REFERENCE_EXECUTION_04.md`。这 66 项验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
 
 ## 测试执行记录
 
@@ -131,9 +131,9 @@
 |---|---|
 | 测试版本 | Core Set / SRD 2.0 (2026-08-25) |
 | 扩展范围 | CORE_ONLY |
-| 矩阵状态 | 64/64 项已桌面逻辑模拟；59/59 参考执行器自动化测试通过 |
-| 已执行测试 | 64 / 64（桌面逻辑模拟）；参考执行器最新可核验记录 59/59 |
-| 已通过 | 64（桌面模拟）；59（参考执行器） |
+| 矩阵状态 | 64/64 项已桌面逻辑模拟；66/66 参考执行器自动化测试通过 |
+| 已执行测试 | 64 / 64（桌面逻辑模拟）；参考执行器最新可核验记录 66/66 |
+| 已通过 | 64（桌面模拟）；66（参考执行器） |
 | 已失败 | 0 |
 | 待执行 | 0（桌面模拟层面）；0（已纳入参考执行器的回归） |
 | 阻塞 | 0 |
