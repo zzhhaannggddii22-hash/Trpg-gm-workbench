@@ -35,10 +35,12 @@
 ## R-005｜Resistance 与 Armor 的时序
 
 - **问题**：中文翻译与不同官方速查页面容易让“Resistance”“普通 Armor 使用格”和“Special Armor 能力资源”的恢复节点混成一个步骤。
-- **官方交叉核验**：Full Player's Kit v8.2 的 Downtime 速查明确写明在 Downtime 恢复所有 Armor 使用格；多个 Playbook Special Armor 能力也写明在 Downtime 开始时恢复。官方 Resistance & Armor 网页以选择下一次 Score 的 Load 作为恢复节点。
-- **当前处理**：同一后果仍由玩家在适用 Armor 与 Resistance 之间选择，不重复结算。所有已标记 Armor 使用格在 Downtime 阶段恢复；若某项 Special Armor 能力明文规定 Downtime 开始时恢复，则按其更具体的能力时点执行。下一次 Score 选择 Load 是随后确认资源可用的节点，不应将恢复延迟到 Score 已开始之后。
-- **本轮审查修正**：撤回此前“Downtime 本身不会恢复 Armor”的错误结论。已同步修订 Runtime Manual、Runtime Protocol 和 Load Reference。此差异加入回归用例，之后仍以 Campaign 锁定版本为最终依据。
-- **状态**：官方 v8.2 与网页速查已交叉核对；保留版本锁定复核。
+- **官方交叉核验**：Full Player's Kit v8.2 的 Downtime 速查明确写明在 Downtime 恢复所有 Armor 使用格；多个 Playbook Special Armor 能力也写明在 Downtime 开始时恢复。官方 SRD 的 Resistance & Armor 网页则写明，所有 Armor 在选择下一次 Score 的 Load 时恢复。
+- **差异判断**：两种官方材料给出了不同的恢复节点。不能把网页的“选择下一次 Score 的 Load 时恢复”解释成对 Downtime 恢复的单纯确认；现有资料不足以证明两者等价。
+- **当前候选基线**：本目录当前以 Full Player's Kit v8.2 作为关键流程交叉核验基线，因此暂按其文本在 Downtime 阶段恢复 Armor 使用格；具体 Special Armor 能力若明文规定“Downtime 开始时”恢复，则按该能力时点执行。此项是明确的候选版本选择，不是对官方来源冲突的最终解决。
+- **运行限制**：正式 Campaign 锁定核心规则书/修订版后，必须重新核对 Armor 恢复时序，并按该 Campaign 的来源优先级决定。不得把“下一次 Score 选择 Load”自动改写成所有版本通用的恢复节点，也不得把 v8.2 工具包结论推广到未锁定版本。
+- **本轮审查修正**：撤回此前“Downtime 本身不会恢复 Armor”的错误结论；同时撤回“下一次 Load 只是随后确认资源可用节点”的无依据调和说法。此来源差异保留为 OPEN。
+- **状态**：OPEN / 官方材料存在时序差异；当前 candidate 暂按 Full Player's Kit v8.2 执行。
 
 ## R-006｜0d Action Roll
 
