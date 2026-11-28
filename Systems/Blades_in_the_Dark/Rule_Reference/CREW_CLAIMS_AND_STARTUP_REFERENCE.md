@@ -35,7 +35,7 @@ Crew Type 不禁止从事其他犯罪活动。它定义组织最常做、最容�
 8. **Favorite Contact**：从组织联系人中选一名长期盟友/朋友/犯罪伙伴。确定一个与联系人友好的派系（+1 Status）与一个敌对派系（-1 Status）；可按规则将关系强度提高至 +2 / -2。
 9. **Initial Resources**：Tier 0、Strong Hold、0 Rep、2 Coin。组织专属起始升级、起始同伙、Crew Sheet 上已预选内容依所选版本核对。
 
-### BLD-CRW-START-01｜起始 Crew 升级对照
+### BLD-CRW-START-01｜Crew 专属升级选项
 
 | Crew Type | 起始预选升级与专属升级池（v8.2 工具包摘要） |
 |---|---|
