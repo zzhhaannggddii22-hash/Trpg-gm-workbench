@@ -6,6 +6,8 @@
 
 ## 1. Load 档位
 
+### BLD-ITEM-01｜Load 上限与物品选择
+
 每名 PC 在 Score 开始时选择自己的 Load 上限；不是提前逐件锁定背包。选择后，行动中可以在此限额内声明自己带有某项符合角色背景、准备和装备清单的物品。
 
 | Load 档位 | 负载上限 | 典型表现 |
@@ -18,6 +20,8 @@
 Load 是装备/携带能力的抽象格数，不是重量单位，也不要求玩家逐件在 Score 开始前声明。
 
 ## 2. 官方 Standard Items（v8.2）
+
+### BLD-ITEM-02｜标准物品 Load 速查
 
 | 物品类别 | Load | 说明 |
 |---|---:|---|
@@ -42,6 +46,8 @@ Load 是装备/携带能力的抽象格数，不是重量单位，也不要求�
 
 ## 2-A. Coin 与 Load
 
+### BLD-ITEM-03｜现金携带与存储
+
 - Coin 是抽象现金，不追踪日常零钱。
 - 超过 4 Coin 属于不便随身/散放的金额，应花掉或转入 Stash。
 - 携带的实体银币或其他大宗现金，每 1 Coin 占 1 个 Load 物品格。
@@ -49,6 +55,8 @@ Load 是装备/携带能力的抽象格数，不是重量单位，也不要求�
 - 个人 Stash 是长期财富，不计入当前 Score 的 Load；每 10 Stash 对应一档 Lifestyle Quality。
 
 ## 3. 护甲的 Load 与使用格
+
+### BLD-ITEM-04｜Armor Loadout 与恢复
 
 - 角色卡有 Standard Armor、Heavy Armor、Special Armor 三种使用格，但拥有格子不代表可以不带装备就使用。
 - **Standard Armor**：本次 Score Loadout 必须声明携带，占 2 Load；适用后果出现时勾选 Armor 格。
