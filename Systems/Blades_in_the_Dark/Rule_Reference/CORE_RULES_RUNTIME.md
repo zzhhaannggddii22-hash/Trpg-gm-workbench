@@ -2,7 +2,7 @@
 
 > system_id: blades_in_the_dark  
 > 适用阶段：candidate / 行为验证前  
-> 核心来源：Blades in the Dark SRD（中文《暗夜冷锋》译本）；关键流程以官方规则网页及官方 Full Player's Kit v8.2 交叉核验。  
+> 核心来源：用户提供《暗夜刀锋》中文版规则书 V1.3（英文原版版权页标注 2017 Digital Release v8.2）；中文 SRD 与官方 Full Player's Kit v8.2 用于补充交叉核验。  
 > 本文为原创运行摘要，不是规则书全文，也不替代 Campaign 锁定版本的原文。
 
 本文把常用规则整理成可触发执行的步骤。普通叙事不必逐项扫描；只有触发相应规则时才调用对应章节。
@@ -211,8 +211,8 @@ Armor 是 Resistance 的替代处理手段，不是额外叠加的一次抵抗�
 - **Standard Armor**：角色需要在本次 Score 将 Armor 作为携带物品声明，标准护甲占 2 Load。合适后果出现时，可标记角色卡上的 Standard Armor 格来减轻或避免后果。
 - **Heavy Armor**：以标准 Armor 为基础，额外占 3 Load（合计 5 Load）。在适用后果上可标记 Heavy Armor 格，提供第二次减轻；例如先用 Standard Armor 将 Level 2 Harm 降至 Level 1，再以 Heavy Armor 降至 0。
 - **Special Armor**：每张角色卡有独立 Special Armor 格；只有角色拥有明确使用 Special Armor 的 Playbook Ability 时才能勾选。它通常用来触发该能力，而不是通用伤害减免。
-- 每个已标记的 Armor 格在本次 Score 中不能重复使用。当前 candidate 以官方 Full Player's Kit v8.2 为基线，在 Downtime 阶段恢复 Armor 使用格；官方 SRD Resistance & Armor 网页写的是选择下一次 Score 的 Load 时恢复，两者存在未解决的来源时序差异，见 [R-005](./RULE_ISSUES.md#r-005resistance-与-armor-的时序)。正式 Campaign 锁定版本后必须复核。
-- 特殊能力使用的 Special Armor 仍须按能力明文触发；多项能力明确写明在 Downtime 开始时恢复。不要把 Special Armor 当作普通护甲减伤格。 
+- 每个已标记的 Armor 格在本次 Score 中不能重复使用。核心规则书 V1.3 第 39 页明确规定：普通 Armor 使用格在为下一次 Score 选择 Load 时恢复。此条与 Full Player's Kit v8.2 的 Downtime 速查表表述不同；本项目以完整核心规则书正文为准。见 [R-005](./RULE_ISSUES.md#r-005resistance-与-armor-的时序)。正式 Campaign 锁定版本后必须复核。
+- Special Armor 是独立能力资源：核心规则书 V1.3 的 Playbook 能力文本（PDF pp.68、72、76、81、85、89、93）多处明确写明在 Downtime 开始时恢复。不要把 Special Armor 与普通 Armor 的恢复节点混为一谈。 
 - 若角色本次 Loadout 没有带上适用的 Standard/Heavy Armor，则不能临时声明携带并使用；除非某项特殊能力明确豁免 Load 或提供特殊保护。
 
 因此，对同一个后果，先让玩家在可用的 Armor 与 Resistance 之间选择；不能把 Armor 的效果先计入，再对同一后果额外做一次 Resistance。
@@ -220,7 +220,7 @@ Armor 是 Resistance 的替代处理手段，不是额外叠加的一次抵抗�
 - 普通 Armor、Heavy Armor、Special Armor 是角色卡独立的使用格。
 - 角色可在适用伤害后果时使用 Armor，说明装备如何挡住/降低该后果并勾选使用格。
 - Heavy Armor 可在符合规则时额外勾选一格。
-- 当前 candidate 按 Full Player's Kit v8.2 在 Downtime 阶段恢复 Armor 使用格；官方 SRD 网页存在不同表述，不能将其擅自解释为“随后确认”，详见 R-005。
+- 普通 Armor：在为下一次 Score 选择 Load 时恢复（核心规则书 V1.3，PDF p.39）。Special Armor：按各 Playbook 能力文本，在 Downtime 开始时恢复（核心规则书 V1.3，多处能力条目）。两者分开处理，详见 R-005。
 - 特殊能力中的 Special Armor 有独立用途；必须按该角色能力的明文触发条件执行。
 
 **互斥与时序**：对同一后果，不能既将 Armor 视为已完全解决，又重复把同一后果交给 Resistance 再结算一次。先说明具体后果，再选择可用的处理手段。
