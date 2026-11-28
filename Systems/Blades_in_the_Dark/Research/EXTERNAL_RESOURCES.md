@@ -47,6 +47,11 @@
 - [Crew Playbook](https://bladesinthedark.com/crew-playbook)：组织创建、Claims、Crew Special Abilities 与升级规则入口。
 - [GM Goals, Principles & Actions（历史快速入门 v7）](https://www.seannittner.com/wp-content/uploads/2016/08/blades_quickstart_v7.pdf)：较早版本的主持原则与 GM Moves 参考。作为主持风格/历史资料，不应覆盖当前版本的具体规则。
 
+## 6-A. 教学与简化 Hack 对照
+
+- [World of Blades](https://mrdrhobo.itch.io/world-of-blades)：MRDR HOBO / Duamn Figueroa 制作的简化版 Blades via World of Dungeons，适合新玩家、活动和时间有限的 Session。作者说明该 Hack 移除了 Flashback 与 Engagement，并简化 Downtime，以降低入门负担。适合研究教学和减负设计；**不得将它的简化机制混入本项目 Full Blades Runtime**。
+- [The Soul Merchants](https://docs.google.com/document/d/1tA5tivR0OP2RSFzPbj4IlyBXDCYs8oNBXPc5I56jhRs/edit?usp=sharing)：非官方 one-shot，附预制角色，约 4 小时、3–5 名玩家，采用简化 Downtime 且不使用常规 Crew Sheet/XP；适合多人入门，不是单玩家规则变体。
+
 ## 7. 单玩家桌面适配调查
 
 目前在已检查的官方核心规则页、Downloads 与 Fan Creations 入口中，没有找到明确的官方“一名玩家 + GM”专用规则变体。核心设计仍以 Crew 为长期主角，并假定角色之间存在 Teamwork；因此单玩家运行不是简单删去其他 PC 即可完成的等价版本。
