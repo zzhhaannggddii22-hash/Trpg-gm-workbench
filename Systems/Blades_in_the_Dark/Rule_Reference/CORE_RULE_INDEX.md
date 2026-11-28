@@ -22,6 +22,7 @@
 | Crew / Factions / Cohorts | BLD-CRW-01–07 | 组织成长、派系关系或同伙受影响 | [§10](./CORE_RULES_RUNTIME.md#10-crew-factions与cohorts) |
 | XP / Advancement / Vice | BLD-ADV-01–05 | Session 结束、XP 结算、角色成长 | [§11](./CORE_RULES_RUNTIME.md#11-pc与crew成长) |
 | Ritual / Magnitude / Crafting | BLD-ARC-01–05 | 超自然仪式、炼金/机电/奥术发明与打造 | [§12](./CORE_RULES_RUNTIME.md#12-ritual-magnitude与crafting) |
+| PC / Crew Ability | BLD-ABIL-01–04 | 创建角色/组织、获得能力、触发特殊能力效果 | [PLAYBOOKS_AND_CREW_REFERENCE.md](./PLAYBOOKS_AND_CREW_REFERENCE.md) |
 
 ## 2. Action 与 Attribute 对照
 
@@ -65,7 +66,15 @@ FREE PLAY
 | 所有 Playbook / Crew Ability | 未穷尽 | 需按实际 Campaign 角色/组织回查 | 未测 |
 | Doskvol / NPC / District 设定 | 未完整收录 | 需要合法官方设定资料 | 未测 |
 
-## 5. 使用约定
+## 5. Playbook / Crew 能力调用
+
+- 新建 PC / Crew 或选择成长能力时，先定位对应 Playbook / Crew Type。
+- 记录角色/组织实际拥有的 Ability ID（使用官方英文名作为稳定 ID）。
+- 运行时只检查当前事件相关的已拥有能力，不扫描全部未选择能力。
+- 特殊能力改变骰池、Position、Effect、Resistance、Armor、Stress、Load、Downtime、Heat、Rep 或 Cohort 行为时，按其触发时点即时应用。
+- 能力原文、角色卡版本或例外条件不明确时，回查 Campaign 指定版本的卡面；摘要不能替代完整能力文字。
+
+## 6. 使用约定
 
 - 规则触发时只调用对应 Rule ID；普通叙事互动不扫描全索引。
 - 关键裁定须回到 Campaign 指定版本的完整原文核对条件、成本、时序、例外和状态变化。
