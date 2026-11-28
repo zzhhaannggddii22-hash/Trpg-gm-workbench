@@ -71,7 +71,7 @@ runtime_dispatch:
 - [RUNTIME_PROTOCOL.md](./RUNTIME_PROTOCOL.md)：Free Play / Score / Downtime 的运行状态、调用步骤与持久化边界。
 - [GM_SKILL.md](./GM_SKILL.md)：本系统的主持原则、叙事和节奏要求。
 - [PREFLIGHT.md](./PREFLIGHT.md)：未来新 Campaign / 新 Session 的启动核验。
-- [Testing/](./Testing/CANDIDATE_VALIDATION_MANIFEST.md)：Candidate 验证边界与回归测试矩阵。
+- [Testing/](./Testing/CANDIDATE_VALIDATION_MANIFEST.md)：Candidate 验证边界与回归测试矩阵。\n- [自动化检查报告](./Testing/AUTOMATED_CANDIDATE_CHECKS_2026-11-28.md)：31 项文档不变量与确定性微模型检查；仅属有限自动化检查，不代表完整引擎或真人验收。
 - [Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md)、[第二轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R2.md)、[第三轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R3.md) 与 [第四轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R4.md)：四轮共 75 个固定输入合成用例的执行记录；不等同于自动化测试或真人跑团验收。
 - [Research/CHINESE_SRD_SOURCE_REVIEW_2026-11-28.md](./Research/CHINESE_SRD_SOURCE_REVIEW_2026-11-28.md)：中文 SRD 来源审查。
 - [Research/EXTERNAL_RESOURCES.md](./Research/EXTERNAL_RESOURCES.md)：官方免费资料、社区扩展与额外资料入口。
