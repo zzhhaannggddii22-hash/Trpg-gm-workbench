@@ -80,6 +80,7 @@
 | DH-GD-06 | Reaction 的触发条件满足，但敌人当前没有 Spotlight | Reaction 仍按其触发条件结算；不要求敌人获得行动聚焦 | Desk-Simulated |
 | DH-GD-07 | GM 试图无成本打断玩家当前 Spotlight | 不将“可在 GM Turn 中自由作 Move”误读为无成本抢夺玩家 Spotlight；打断时按 Fear 规则支付 | Desk-Simulated |
 | DH-GD-08 | Environment Feature 造成烟雾遮蔽与路线改变 | 场景提供新的行动选择；不把环境 Feature 一律转换成伤害 | Desk-Simulated |
+| DH-GD-09 | Success with Fear：行动成功但后果直接兑现 | 主要成果保留；后果严重度仍为次要，但可以采用 Hard Move 形式，不得混淆严重度与回应窗口 | Desk-Simulated |
 
 ## 自动化参考执行补充
 
@@ -91,11 +92,11 @@
 |---|---|
 | 测试版本 | Core Set / SRD 2.0 (2026-08-25) |
 | 扩展范围 | CORE_ONLY |
-| 矩阵状态 | 63/63 项已桌面逻辑模拟；42/42 参考执行器自动化测试 |
-| 已执行测试 | 63 / 63（桌面逻辑模拟） |
-| 已通过 | 63（桌面模拟） |
+| 矩阵状态 | 64/64 项已桌面逻辑模拟；42/42 参考执行器自动化测试 |
+| 已执行测试 | 64 / 64（桌面逻辑模拟） |
+| 已通过 | 64（桌面模拟） |
 | 已失败 | 0 |
 | 待执行 | 0（桌面模拟层面） |
 | 阻塞 | 0 |
 
-本矩阵仍是测试清单兼状态记录。DH-T01–DH-T45 的桌面模拟输入与结果见 DESK_TEST_BATCH_01.md、DESK_TEST_BATCH_02.md、DESK_TEST_BATCH_03.md；新增 18 项见 GM_DESK_SIMULATION_01.md。桌面逻辑模拟不等同于代码自动测试或完整规则书验收。盲测、短场景主持测试与完整 Core Rulebook 对照仍待完成。
+本矩阵仍是测试清单兼状态记录。DH-T01–DH-T45 的桌面模拟输入与结果见 DESK_TEST_BATCH_01.md、DESK_TEST_BATCH_02.md、DESK_TEST_BATCH_03.md；新增 19 项见 GM_DESK_SIMULATION_01.md。桌面逻辑模拟不等同于代码自动测试或完整规则书验收。盲测、短场景主持测试与完整 Core Rulebook 对照仍待完成。
