@@ -125,13 +125,14 @@
 - Sledgehammer 的 Massive 特性是 Everyday Hero Starting Equipment 可选武器表的一部分，而不是标准 Core Tier 1 Weapon Tables。SRD 2.0 将其收录在 Supplemental Campaign Mechanics；公开数据单独隔离，默认不加载。
 - 其他不在 SRD 2.0 Core 数据表的 Errata 对象，不能因此推断缺失或失效；可能来自完整 Core Rulebook 示例、Campaign Frame 或未导入的可选章节。需要根据页码和章节归属逐项判断。
 
-## DH-I-016｜SRD 2.0 结构化导出中的 Buckler 文本字段误差
+## DH-I-016｜Buckler 的网页 Changelog 与 SRD 2.0 PDF 用语冲突
 
-- 状态：CORRECTED_IN_LOCAL_DATA
-- 来源：第三方 SRD 2.0 Markdown / JSON 导出将 Buckler 的 Deflecting 特性写成 `available Armor Score`。
-- 官方 SRD 2.0 Changelog 的修订文本为：标记一个 Armor Slot 后，获得等于当前可用 Armor Slots 数量的 Evasion 加值。
-- 处理：已将 `Reference_Data/Core_Set/weapons.json` 的 Buckler 文本修正为 `available Armor Slots`。
-- 意义：这证明结构化导出只能作为本地索引与数据加工底稿；高影响的能力文本仍须对照官方 SRD 原文，不得将第三方 JSON 视为无误的官方数据库。
+- 状态：DOCUMENTED_SOURCE_CONFLICT / LOCAL_DATA_ALIGNED_TO_PDF
+- 2025 Core Errata 与官方 SRD 网页 Changelog 的条目使用 “available Armor Slots”。
+- 2026-08-25 官方 SRD 2.0 PDF 第 67 页当前 Buckler 卡面则写作 “available Armor Score”。
+- 第三方结构化 JSON 原先也采用 “available Armor Score”；本地曾根据网页 Changelog 将其改成 “available Armor Slots”，这一步不符合本项目当前“SRD 2.0 PDF 为运行基准”的版本选择。
+- 处理：本地 Core_Set/weapons.json 已恢复为官方 SRD 2.0 PDF 的 “available Armor Score”。保留两种官方来源文本差异，不把 Changelog 引文误标为 PDF 正文。
+- 规则影响：该加值究竟按 Armor Score 总值还是未标记 Armor Slots 计算，可能影响 Buckler 的防御结算；当前运行按 PDF 文本执行，遇到争议时标记 DISPUTED，不自行改写。
 
 
 ## DH-I-017｜SRD 2.0 已整合的 Core 机械修正抽样核验
