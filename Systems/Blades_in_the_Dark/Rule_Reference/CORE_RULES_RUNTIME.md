@@ -219,7 +219,7 @@ Armor 是 Resistance 的替代处理手段，不是额外叠加的一次抵抗�
 - 普通 Armor、Heavy Armor、Special Armor 是角色卡独立的使用格。
 - 角色可在适用伤害后果时使用 Armor，说明装备如何挡住/降低该后果并勾选使用格。
 - Heavy Armor 可在符合规则时额外勾选一格。
-- Armor 使用格在 Downtime 恢复。
+- Armor 使用格在下一次 Score 选择 Load 时恢复；进入 Downtime 本身不会恢复已标记的 Armor。
 - 特殊能力中的 Special Armor 有独立用途；必须按该角色能力的明文触发条件执行。
 
 **互斥与时序**：对同一后果，不能既将 Armor 视为已完全解决，又重复把同一后果交给 Resistance 再结算一次。先说明具体后果，再选择可用的处理手段。
