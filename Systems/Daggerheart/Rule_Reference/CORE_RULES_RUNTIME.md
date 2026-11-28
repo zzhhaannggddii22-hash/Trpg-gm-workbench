@@ -112,7 +112,7 @@ Core Set 角色选项索引见 [CHARACTER_OPTIONS_INDEX.md](./CHARACTER_OPTIONS_
 ### Hope
 - 每名 PC 创建时 2 Hope；上限 6；跨 Session 保留。
 - 可用于 Help an Ally、Utilize an Experience、发起 Tag Team Roll、启用 Hope Feature。
-- Class Hope Feature 成本为 3 Hope；其他能力按卡面文本。若 Hope Feature 用于当前这次动作掷骰，且该掷骰结果为 Hope，刚获得的 Hope 可以立即用于支付该 Feature 的成本。
+- Class Hope Feature 成本为 3 Hope；其他能力按卡面文本。若 Hope Feature 用于当前这次动作掷骰，且该掷骰结果为 Hope，刚获得的 Hope 可以立即用于支付该 Feature 的成本。若 Hope Feature 用于当前这次动作掷骰，且该掷骰结果为 Hope，刚获得的 Hope 可以立即用于支付该 Feature 的成本。
 - Help an Ally：每名协助者花费 1 Hope，描述协助方式并掷 d6 Advantage Die；多名协助者可分别花费 Hope，但行动者只加所有适用优势骰（包括行动者自身已有的 Advantage Die）中的最高值。
 - Utilize an Experience：在相关 Action / Reaction Roll 前花 1 Hope，加入 Experience 修正；可同时应用多个不同 Experience，按成本逐项支付。
 - 超过资源上限时不保留超额点数。
@@ -151,7 +151,7 @@ GM Move 是推动场景的工具，不是惩罚玩家的任意权力。后果必
 - PC Reaction Roll 使用动作掷骰的基础结构，但不产生 Hope / Fear、不触发额外 GM Move，其他 PC 不能通过 Help an Ally 协助该反应。
 - PC Reaction Roll Critical Success：忽略该次成功时本会承受的影响，例如伤害或标记 Stress；不获得 Hope，也不清除 Stress。
 - 不得把普通 Action Roll 的资源结算套给 Reaction Roll。
-- 敌方 Reaction Roll 按敌人规则使用单 d20；可依特定规则花 Fear 添加 Experience。敌方 Reaction Roll 自然 20 自动成功，但不附带额外 Critical 收益。
+- 敌方 Reaction Roll 按敌人规则使用单 d20；可依特定规则花 Fear 添加 Experience。敌方 Reaction Roll 自然 20 自动成功，但不附带额外 Critical 收益。敌方 Reaction Roll 自然 20 自动成功，但不附带额外 Critical 收益。
 
 ## 9. DH-GROUP / DH-TAG-TEAM｜协作行动
 
@@ -162,7 +162,7 @@ GM Move 是推动场景的工具，不是惩罚玩家的任意权力。后果必
 4. 协助者 Reaction Roll 不产生 Hope / Fear；Leader 的 Action Roll 正常结算。
 
 ### Tag Team Roll
-- 每名玩家每 Session 可发起一次；花费 3 Hope，邀请另一名 PC 协同完成高光行动。同一 PC 可以参与其他玩家发起的 Tag Team Roll。
+- 每名玩家每 Session 可发起一次；花费 3 Hope，邀请另一名 PC 协同完成高光行动。同一 PC 可以参与其他玩家发起的 Tag Team Roll。同一 PC 可以参与其他玩家发起的 Tag Team Roll。
 - 两名玩家分别作 Action Roll；结算前选择其中一组结果应用于两名角色的共同动作。
 - 被选结果为 Hope 时，所有参与 PC 各获得 1 Hope；为 Fear 时，GM 按参与 PC 人数获得 Fear。
 - 若为成功的 Tag Team 攻击，两名 PC 分别掷伤害并将伤害合计作为同一来源处理。
@@ -273,7 +273,7 @@ GM Move 是推动场景的工具，不是惩罚玩家的任意权力。后果必
 - 子职业、种族和社群卡不占 Loadout 上限，持续生效。
 - 每次休息开始、Downtime Moves 前，可免费在 Loadout 与 Vault 间调换卡牌。
 - 其他时间从 Vault 调回 Loadout，须标记该卡 Recall Cost 数量的 Stress；如 Loadout 已满，先免费把一张当前卡移入 Vault。
-- 升级新获得的 Domain Card 可免费立即放入 Loadout；若已满，仍需把另一张卡移入 Vault。升级时也可将一张已获得领域卡替换为一张等级相同或更低的新卡。
+- 升级新获得的 Domain Card 可免费立即放入 Loadout；若已满，仍需把另一张卡移入 Vault。升级时也可将一张已获得领域卡替换为一张等级相同或更低的新卡。升级时也可将一张已获得领域卡替换为一张等级相同或更低的新卡。
 - 用途次数限制按卡牌文本记录；某些特性根据 Trait 修正赋予次数，修正为 +0 或更低时得到 0 次。
 
 ## 18. DH-REST｜休息与 Downtime
@@ -461,6 +461,36 @@ PC 标记最后一个 HP 时立即进行 Death Move，选择一项：
 - 标记最后一个 HP 通常立即触发 Death Move。
 - 但若角色行为按世界逻辑会直接导致即时死亡（例如无保护跳入活火山），GM 可以裁定不触发 Death Move；这种重大后果必须在行动完成前明确告知玩家，并符合世界逻辑。
 - 这是基于虚构的裁定，不是 GM 在普通战斗中任意取消 Death Move 的权限。
+
+
+## 37. DH-STRESS｜压力耗尽
+
+- 所有 PC 初始有 6 Stress Slots；成长与效果可提高，最大 12。
+- 当角色标记最后一个 Stress 时，立即获得 Vulnerable，直到至少清除 1 Stress。
+- 当角色必须标记至少 1 Stress，但已无可标记 Stress 时，改为标记 1 HP。
+- 当角色所有 Stress 均已标记时，不能使用要求其标记 Stress 的 Move / Feature。
+
+## 38. DH-GENERAL｜通用规则边界
+
+- **Rounding Up：** 不使用小数；需要取整时一律向上取整，除非规则另有说明。遇到歧义时优先作有利于 PC 的解释。
+- **Reroll：** 能力允许重掷时，默认采用新结果，除非能力另有说明。
+- **Incoming Damage：** 指单次攻击或单一来源造成的总伤害，且以标记 Armor Slots 之前的总值为准。
+- **Simultaneous Effects：** 多个效果同时发生且规则未规定先后时，由控制这些效果的一方（玩家或 GM）决定结算顺序。
+- **Stacking：** 除 Conditions、Advantage / Disadvantage 外，效果默认可以叠加，除非条目另有说明。
+- **Ongoing Spell Effects：** 未注明机械结束条件的法术效果，在控制者选择结束或故事自然要求结束时终止；GM 可花 Fear 结束 Temporary Effect。
+- **Spending Resources：** 除非效果另有说明，不能在同一掷骰中对同一个 Feature 多次花 Hope 或标记 Stress 来叠加/重复其效果。
+- **Post-roll Features：** 若能力允许在结果汇总后影响掷骰，可在 GM 宣布成功/失败后、后果展开或下一次掷骰发生前使用。
+- **Massive Damage：** 单次伤害达到 Severe Threshold 两倍时标记 4 HP 而非 3 HP，是可选规则；默认 Core 运行不启用，除非 Campaign Binding 明确开启。
+
+## 39. 装备与敌人结算边界
+
+- PC 的 Armor Score 上限为 12；HP Slots 与 Stress Slots 上限也各为 12。
+- 卸下护甲时保留该护甲已标记的 Armor Slots；重新装备时恢复其状态。
+- Adversary 的 Major / Severe Threshold 与 HP 读取 Stat Block；受到伤害后按相同阈值分档标记 1–3 HP。标记最后一个 HP 即 Defeated，具体表现由虚构决定。
+- Adversary 没有默认 Armor Score / Armor Slots；若某个敌人有相关能力，按 Stat Block 明文处理。
+- Adversary 的 Stress 按其 Feature 或效果要求标记；不要擅自将 PC 的 Stress 耗尽规则套用到敌人。
+- Long Rest 被打断时只获得 Short Rest 收益；Short Rest 被打断则没有休息收益。
+- 角色行为若按世界逻辑会导致即时死亡，GM 可以在行动完成前明确告知重大后果并裁定不触发 Death Move；这不是普通战斗中任意取消 Death Move 的权限。
 
 
 ## 37. DH-STRESS｜压力耗尽
