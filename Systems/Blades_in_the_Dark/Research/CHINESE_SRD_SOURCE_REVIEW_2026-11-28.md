@@ -1,7 +1,7 @@
 # Blades in the Dark 中文 SRD 首轮来源审查
 
 > 日期：2026-11-28  
-> 状态：首轮结构审查完成；规则逐条核验尚未完成  
+> 状态：中文 SRD 全文结构与核心规则首轮详细校读完成；完整能力目录与行为验证仍未完成  
 > 系统：`blades_in_the_dark`  
 > 当前用途：独立规则学习，不是 Campaign 备团，不是正式 Runtime 接入
 
@@ -74,7 +74,7 @@
 - 中文 SRD 介绍页没有明确标示具体规则修订号；不能仅凭当前网页内容推断未来 Campaign 的精确版本。
 - 官方 Player's Kit 文件名标注 v8.2，但工具包版本不能自动替代核心规则书的版本声明。
 - 中文翻译使用繁体中文。本地索引可以使用简体中文叙述，但关键规则裁定应保留原文术语和来源定位，逐步建立稳定术语表。
-- 目前完成的是章节结构审查和代表性章节的首轮阅读；尚未完成所有条款、角色能力、组织能力、装备、仪式、打造、派系和世界资料的逐项对照。
+- 目前已逐章阅读核心规则、角色、组织、案件和休整的主要文本，并将常见裁定整理为系统专属 Runtime Manual、Runtime Protocol、GM Skill 与 Preflight。尚未完成全部 Playbook/Crew Ability、特殊装备、完整 Claim 表和非 SRD 世界资料的逐项对照；也没有真实跑团行为验收。
 - 未确认的翻译差异、规则缺口、版本差异均应保留为待核事项，不以其他 Forged in the Dark 游戏或其他 TRPG 的相似规则填补。
 
 ## 5. 对仓库的处理决定
@@ -99,3 +99,37 @@
 - [中文化团队关于授权原则的说明](https://hazmole.github.io/Free-Open-TRPG-Translation/about/)
 - [官方 Downloads](https://bladesinthedark.com/downloads)
 - [官方 Full Player's Kit v8.2 PDF](http://bladesinthedark.com/sites/default/files/blades_playerkit_v8_2.pdf)
+
+
+## 7. 私人镜像与运行文档
+
+中文 SRD 的 33 份 Markdown 正文已按原目录结构保存到用户私人资料库：
+`research/trpg/blades_in_the_dark/zh_srd/content/`。私人镜像只包含授权 SRD 正文，不包含非 SRD 在线工具包、商业规则书、地图与未单独核定许可的二进制图片。后续规则查询应优先读取私人镜像及本仓库运行手册，只有来源缺口、版本差异或特殊能力需要进一步核验时才定向回查网页。
+
+公开 Workbench 已建立：
+- `Rule_Reference/CORE_RULE_INDEX.md`：按触发条件检索规则 ID；
+- `Rule_Reference/CORE_RULES_RUNTIME.md`：首轮可运行规则摘要；
+- `RUNTIME_PROTOCOL.md`：Free Play / Score / Downtime 的状态和结算流程；
+- `GM_SKILL.md` 与 `PREFLIGHT.md`：本系统主持行为和启动核验；
+- `Rule_Reference/RULE_ISSUES.md`：翻译/版本问题；
+- `Testing/`：Candidate 验证清单与回归矩阵。
+
+## 8. 已确认的运行要点
+
+- Action Roll 只用于危险或麻烦的障碍；Position 决定后果严重程度，Effect 决定成果影响量。
+- Action Roll 是 PC 与相关 NPC 行动的双用骰：6 时 PC 胜出；4/5 时双方都取得效果；1–3 时 NPC 胜出，NPC 行动体现为 PC 后果。无需为同一交锋机械地再掷一轮 NPC Action Roll。
+- Resistance 在明确后果后决定，Stress 成本为 6 减去最高骰；Critical 可清除 1 Stress。适用 Armor 可替代 Resistance，不能对同一后果重复结算。
+- 玩家可以在 GM 给出基础 Position / Effect 后，按当前虚构情境协商以 Position 换 Effect，或以 Effect 换 Position；不是固定兑换公式。
+- Clocks 用来表示真实复杂障碍/持续进程，名称应描述阻碍本身而不是解决方法。简单阻碍不需要钟。
+- Score 以 Plan + Detail + Load + Engagement Roll 快速切入；Flashback 在障碍出现后补充过去准备，不回溯改写已确立事实。
+- Score 的结算顺序是 Payoff → Heat → Entanglements → Downtime。
+- 普通 Free Play 互动不消耗 Downtime Activity 次数；只有限定清单内的活动受额度约束。
+- 组织层级、Rep、Turf、Hold、Faction Status、Heat、Wanted Level 与 Cohort 都属于独立但互有关联的持续状态，需要按事件记录变化。
+
+## 9. 首轮交叉核验问题
+
+- 中文 SRD 对 Long-Term Project Critical 进度存在文本不一致；官方 Player's Kit v8.2 明确为 5 格，当前运行摘要采用 5 格。
+- 中文页面未明确 SRD 修订号，v8.2 Player's Kit 不自动等于核心书版次；正式 Campaign 仍需锁定具体规则版本。
+- 官方 Licensing 明确 SRD 许可不覆盖 Doskvol/Duskwall 世界设定、NPC、艺术和地图；这些资料不可因 SRD 为 CC BY 就一并镜像。
+- 当前并未穷尽全部 Playbook、Crew、特殊能力、Claim、装备、Ritual 与非 SRD 设定资料。正式角色创建/能力触发前按实际需要回查。
+
