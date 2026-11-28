@@ -312,11 +312,6 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         result = take_damage(PC(), 11, resistant=True)
         self.assertEqual((result["final_damage"], result["hp_marks"]), (6, 2))
 
-    def test_43_direct_damage_still_applies_resistance_but_bypasses_armor(self):
-        pc = PC(armor_slots=1)
-        result = take_damage(pc, 11, direct=True, resistant=True, use_armor=True)
-        self.assertEqual((result["final_damage"], result["hp_marks"], pc.armor_slots), (6, 2, 1))
-
     def test_22_countdown_event_is_idempotent(self):
         state = {"value": 0}
         self.assertTrue(advance_countdown(state, "roll-1"))
@@ -420,6 +415,11 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         self.assertGreaterEqual(len(data), 10)
         self.assertTrue({"domain_cards", "weapons", "environments"} <= set(data))
 
+
+    def test_43_direct_damage_still_applies_resistance_but_bypasses_armor(self):
+        pc = PC(armor_slots=1)
+        result = take_damage(pc, 11, direct=True, resistant=True, use_armor=True)
+        self.assertEqual((result["final_damage"], result["hp_marks"], pc.armor_slots), (6, 2, 1))
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
