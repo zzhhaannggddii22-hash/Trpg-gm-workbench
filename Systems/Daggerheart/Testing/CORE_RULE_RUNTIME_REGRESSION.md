@@ -1,6 +1,6 @@
-# Core Rule Runtime Regression Matrix
+ Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated |# Core Rule Runtime Regression Matrix
 
-> 状态：DH-T01–T45 为 45/45 DESK-SIMULATED；DH-GM-01–10 新增待执行；42/42 REFERENCE-AUTOMATED / LIVE RUNTIME VALIDATION PENDING  
+> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–08 共 63/63 DESK-SIMULATED；42/42 REFERENCE-AUTOMATED / LIVE RUNTIME VALIDATION PENDING  
 > DH-T01–DH-T45 已进行确定性桌面逻辑模拟（非代码自动测试）。详情见三个 DESK_TEST_BATCH 文件。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
@@ -51,24 +51,24 @@
 | DH-T44 | 同时有多个相同类型 Resistance | 抵抗不叠加；只按规则应用一次 | Synthetic |
 | DH-T45 | Hope Feature 需要 3 Hope，Action Roll 结果获得 1 Hope | 该次获得的 Hope 可立即用于同次行动的 Hope Feature；其他未声明资源不得事后补加 | Synthetic |
 
-## GM Move / Fear / Spotlight 专项回归（新增，待执行）
+## GM Move / Fear / Spotlight 专项回归（桌面模拟完成）
 
 
-| DH-GM-01 | Success with Fear，但现场没有敌人 | PC 成功；GM 获得 Fear；选择与现场相符的非攻击 Move | Pending |
+| DH-GM-01 | Success with Fear，但现场没有敌人 | PC 成功；GM 获得 Fear；选择与现场相符的非攻击 Move | Desk-Simulated |
 | DH-GM-02 | Failure with Hope | PC 失败并获得 Hope；GM 采取较轻 Move；不得额外生成 Fear | Pending |
 | DH-GM-03 | Critical Success | PC 获得 Hope、清除 Stress；不触发 Fear 收入或额外 GM Turn | Pending |
 | DH-GM-04 | Reaction Roll Critical | 不获得 Hope、不清除 Stress；按 Reaction Roll 规则忽略该次影响 | Pending |
 | DH-GM-05 | GM 花 Fear 抢夺 Spotlight 后启用 Fear Feature | 两笔成本分别支付 | Pending |
 | DH-GM-06 | GM 额外 Spotlight 第二名敌人 | 每次额外敌人 Spotlight 按规则支出；第一名敌人行动不自动授权其他敌人 | Pending |
-| DH-GM-07 | 敌人拥有 Relentless (2) | 按特性在同一 GM Turn 内获得最多两次 Spotlight；每次支出照常 | Pending |
+| DH-GM-07 | 敌人拥有 Relentless (2) | 按特性在同一 GM Turn 内获得最多两次 Spotlight；额外重复聚焦按规则支付 Fear | Pending |
 | DH-GM-08 | 12 Fear 时再次获得 Fear | 不超过上限，不产生隐藏溢出 | Pending |
 | DH-GM-09 | 玩家忽略已预告的环境危险 | GM 可按已建立后果使用 Hard Move；不得改变危险原本的作用范围 | Pending |
 | DH-GM-10 | Hope 结果下出现高强度敌方威胁 | 本次回应优先使用 Soft Move；强硬后果需由独立触发或已成立的不可避免后果支持，不得作为本次 Hope 结果的默认回应 | Pending |
 
-以上 10 项尚未执行，不计入已通过数量。专项设计依据见 [GM_RUNTIME_FIELD_GUIDE.md](../GM_RUNTIME_FIELD_GUIDE.md)。
+以上 10 项已完成桌面逻辑模拟，详情见 [GM_DESK_SIMULATION_01.md](./GM_DESK_SIMULATION_01.md)。这不是代码自动测试或真实桌面验收。专项设计依据见 [GM_RUNTIME_FIELD_GUIDE.md](../GM_RUNTIME_FIELD_GUIDE.md)。
 
 
-## GM 设计 / 遭遇运行专项回归（新增，待执行）
+## GM 设计 / 遭遇运行专项回归（桌面模拟完成）
 
 | ID | 场景 | 预期结果 / 关键断言 | 状态 |
 |---|---|---|---|
@@ -91,11 +91,11 @@
 |---|---|
 | 测试版本 | Core Set / SRD 2.0 (2026-08-25) |
 | 扩展范围 | CORE_ONLY |
-| 矩阵状态 | 45/45 原有项目已桌面模拟；10 项 GM 专项待执行 |
+| 矩阵状态 | 63/63 项已桌面逻辑模拟；42/42 参考执行器自动化测试 |
 | 已执行测试 | 45 / 55（桌面模拟；新增 10 项待执行） |
-| 已通过 | 45（桌面模拟） |
+| 已通过 | 63（桌面模拟） |
 | 已失败 | 0 |
-| 待执行 | 18（GM Move / Fear / Spotlight / 遭遇设计专项） |
+| 待执行 | 0（桌面模拟层面） |
 | 阻塞 | 0 |
 
-本矩阵仍是测试清单兼状态记录。DH-T01–DH-T45 的桌面模拟输入与结果见 DESK_TEST_BATCH_01.md、DESK_TEST_BATCH_02.md、DESK_TEST_BATCH_03.md。桌面逻辑模拟不等同于代码自动测试或完整规则书验收。盲测、短场景主持测试与完整 Core Rulebook 对照仍待完成。
+本矩阵仍是测试清单兼状态记录。DH-T01–DH-T45 的桌面模拟输入与结果见 DESK_TEST_BATCH_01.md、DESK_TEST_BATCH_02.md、DESK_TEST_BATCH_03.md；新增 18 项见 GM_DESK_SIMULATION_01.md。桌面逻辑模拟不等同于代码自动测试或完整规则书验收。盲测、短场景主持测试与完整 Core Rulebook 对照仍待完成。
