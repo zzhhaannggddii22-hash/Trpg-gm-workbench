@@ -7,8 +7,8 @@
 
 ## 1. Execution result
 
-- Executed: 16 selected cases.
-- Passed: 16.
+- Executed: 18 selected cases.
+- Passed: 18.
 - Failed: 0.
 - Deferred: Full 54-case regression matrix, actual character/crew sheet audit, and real session.
 - Campaign state: none. All examples are synthetic and TEST_ONLY_NON_CANON.
@@ -32,6 +32,7 @@ A pass means the declared procedure and state arithmetic were applied consistent
 | BLD-T25 | Crew has 3 Turf and Strong Hold; Rep reaches 9 | Required Rep = 12−3 = 9. Pay new Tier × 8 Coin to advance one Tier; reset Rep and reduce Hold to Weak. | PASS |
 | BLD-T26 | Crew enters War at Faction Status −3; no War-protecting Crew Ability | Each Score adds +1 Heat; Crew temporarily loses 1 Hold; each PC receives only 1 Downtime Activity. If pre-war Hold was Weak, Tier temporarily falls and is restored after War ends. | PASS |
 | BLD-T38 | PC accepts Devil's Bargain for +1d and Pushes for +1 Effect | Legal combination: the Devil's Bargain provides the extra die; Push for +1 Effect costs 2 Stress. | PASS |
+| BLD-T53 | PC Pushes for +1d and also accepts Devil's Bargain for +1d | Illegal combination: the extra action die must come from Push or Bargain, not both. The player may instead push for +1 Effect and accept the Bargain die. | PASS |
 | BLD-T46 | PC loads Standard Armor and Heavy Armor | Standard Armor costs 2 Load; Heavy adds 3 Load (5 total). The PC cannot claim this protection without carrying it in the current Score Loadout. | PASS |
 | BLD-T48 | PC recovers without a separate healer | The recovering PC spends their own Recover Activity, takes 2 Stress for self-treatment, and makes the normal recovery roll. | PASS |
 | BLD-T50 | PC A treats PC B's Harm | PC B spends the Recover Activity. PC A does not spend one of their own Downtime Activities to provide the treatment. | PASS |
