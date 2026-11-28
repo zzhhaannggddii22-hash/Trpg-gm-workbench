@@ -4,7 +4,7 @@
 > 标识：Daggerheart™ Compatible（非官方个人研究工作台）  
 > 规则基线：Daggerheart Core Set  
 > 公开参考：Official Daggerheart SRD v2.0（2026-08-25；混合收录 Core Set 与 Hope & Fear 内容）  
-> 状态：candidate（64项规则与GM专项已完成桌面逻辑模拟；参考执行器最近一次71项自动化测试全部通过；当前代码新增10项GM Turn与休息边界回归待复跑；生产Runtime与实际短场景仍未验收）
+> 状态：candidate（64项规则与GM专项已完成桌面逻辑模拟；参考执行器82项自动化测试全部通过（GitHub Actions Run 46148086763）；生产Runtime与实际短场景仍未验收）
 
 本目录是《匕首心》系统级规则资料的唯一入口。与 Triangle Agency、Cairn、Blades in the Dark 完全隔离。当前阶段以基础版 Core Set 为默认规则集，先建立可准确检索、可直接主持的本地规则和数据资料，再通过短场景验证。初版控制复杂度，不默认引入 Hope & Fear。
 
@@ -55,7 +55,7 @@
 - [规则疑点登记](./Rule_Reference/RULE_ISSUES.md)：来源差异、版本疑点和未解决问题。
 - [Core Errata 交叉核验](./Rule_Reference/ERRATA_CROSSCHECK.md)：旧版官方勘误与 SRD 2.0 当前条目逐项抽样对照。
 - [Preflight](./PREFLIGHT.md)：Campaign / Session 开始前核验。
-- [回归测试矩阵](./Testing/CORE_RULE_RUNTIME_REGRESSION.md)：64 项规则与 GM 专项已完成桌面逻辑模拟（非程序自动测试）；参考执行器最近一次 71 项代码自动化测试全部通过；当前脚本已扩展至 82 项，新增 11 项 GM Turn / Spotlight、额外 GM Move 与 Short Rest 边界回归待 Run 06 验证。详见 [自动化执行记录 Run 05](./Testing/AUTOMATED_REFERENCE_EXECUTION_05.md)、[GM 专项桌面模拟记录](./Testing/GM_DESK_SIMULATION_01.md) 与 [第二轮 GM 场景复核](./Testing/GM_SCENARIO_REVALIDATION_02.md)。内部 GM 场景模拟已覆盖社交、探索和战斗流程；实际短场景和外部盲测仍待验证。
+- [回归测试矩阵](./Testing/CORE_RULE_RUNTIME_REGRESSION.md)：64 项规则与 GM 专项已完成桌面逻辑模拟（非程序自动测试）；参考执行器 82 项代码自动化测试全部通过，包含 GM Turn / Spotlight、额外 GM Move 与 Short Rest 边界回归；详见 [自动化执行记录 Run 06](./Testing/AUTOMATED_REFERENCE_EXECUTION_06.md)、[GM 专项桌面模拟记录](./Testing/GM_DESK_SIMULATION_01.md) 与 [第二轮 GM 场景复核](./Testing/GM_SCENARIO_REVALIDATION_02.md)。内部 GM 场景模拟已覆盖社交、探索和战斗流程；实际短场景和外部盲测仍待验证。
 - [术语表](./Rule_Reference/GLOSSARY.md)：中英术语与暂定工作译名。
 - [Hope & Fear 扩展隔离清单](./Expansions/Hope_and_Fear/README.md)：扩展默认关闭及启用条件。
 
@@ -81,6 +81,6 @@
 
 ## 初版建设状态
 
-已完成：来源与许可登记、Core / Hope & Fear 数据拆分、规则索引、核心运行手册、常用难度与遭遇检索表、敌人/环境索引、译名表、版本差异登记、Errata 抽样核验、GM Skill、Preflight 草案、64 项规则/GM 桌面逻辑模拟、42 项历史已验证参考执行器测试（另有 9 项新增伤害回归待复跑），以及 GM 专题与二元骰概率研究。
+已完成：来源与许可登记、Core / Hope & Fear 数据拆分、规则索引、核心运行手册、常用难度与遭遇检索表、敌人/环境索引、译名表、版本差异登记、Errata 抽样核验、GM Skill、Preflight 草案、64 项规则/GM 桌面逻辑模拟、82 项已验证参考执行器自动化测试，以及 GM 专题与二元骰概率研究。
 
 待完成：穷尽核对官方 Core Errata、取得合法核心规则书后补齐 SRD 未覆盖的 GM 指导与示例、执行规则正反例回归、Blind GM 测试和短场景实测。
