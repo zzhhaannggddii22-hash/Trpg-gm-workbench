@@ -3,7 +3,7 @@ name: PR validation
 on:
   push:
     branches:
-      - fix/pr3-runtime-reliability
+      - main
   pull_request:
     branches:
       - main
@@ -44,6 +44,9 @@ jobs:
 
       - name: Run roll runtime adapter conformance harness
         run: python GM_Training/Testing/Fixtures/ROLL_RUNTIME_APPLICATION_ADAPTER_v1/roll_runtime_adapter.py
+
+      - name: Run Daggerheart Core reference executor tests
+        run: python Systems/Daggerheart/Testing/daggerheart_reference_engine.py
 
       - name: Check patch whitespace
         shell: bash
