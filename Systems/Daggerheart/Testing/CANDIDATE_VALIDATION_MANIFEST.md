@@ -29,6 +29,7 @@
 - Battle Points / Environment
 - Level Up / Death Move
 - Core / Hope & Fear 数据隔离
+- SRD 2.0 未覆盖的 Core Rulebook-only 条目；九件 Tier 3 魔法武器暂列 DH-I-006 缺口，不把第三方转录视为正式规则源
 
 ## 3. 测试类型
 
