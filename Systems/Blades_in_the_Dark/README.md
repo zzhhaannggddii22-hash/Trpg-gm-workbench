@@ -58,6 +58,8 @@ runtime_dispatch:
 - [Rule_Reference/CORE_RULE_INDEX.md](./Rule_Reference/CORE_RULE_INDEX.md)：按触发条件调用的核心规则索引与 Rule ID。
 - [Rule_Reference/CORE_RULES_RUNTIME.md](./Rule_Reference/CORE_RULES_RUNTIME.md)：骰型、Action/Position/Effect、后果、Score、Downtime、Crew/Faction 等可运行规则摘要。
 - [Rule_Reference/RULE_ISSUES.md](./Rule_Reference/RULE_ISSUES.md)：翻译差异、版本疑点与待核规则。
+- [Rule_Reference/GLOSSARY.md](./Rule_Reference/GLOSSARY.md)：规则术语与译名对照。
+- [Rule_Reference/PLAYBOOKS_AND_CREW_REFERENCE.md](./Rule_Reference/PLAYBOOKS_AND_CREW_REFERENCE.md)：七种核心 PC Playbook 与六种 Crew 的能力摘要及按需加载方式。
 - [RUNTIME_PROTOCOL.md](./RUNTIME_PROTOCOL.md)：Free Play / Score / Downtime 的运行状态、调用步骤与持久化边界。
 - [GM_SKILL.md](./GM_SKILL.md)：本系统的主持原则、叙事和节奏要求。
 - [PREFLIGHT.md](./PREFLIGHT.md)：未来新 Campaign / 新 Session 的启动核验。
@@ -76,13 +78,14 @@ runtime_dispatch:
 
 已完成：
 - 33 份中文 SRD Markdown 正文已镜像至用户私人资料库，供后续优先本地检索；公开仓库不放规则正文镜像。
-- 已建立系统专属核心规则索引、初版 Runtime Manual、Runtime Protocol、GM Skill 和 Preflight。
+- 已建立系统专属核心规则索引、初版 Runtime Manual、Runtime Protocol、GM Skill、Preflight 和术语表。
+- 已建立七种核心 PC Playbook 与六种 Crew 的 Special Ability 初始索引；角色/组织只按实际选取的能力进行触发式加载。
 - 已建立来源与授权索引、额外资料目录、规则疑点登记，以及 Candidate 验证矩阵。
 - 已将中文 SRD 与官方 Player's Kit v8.2 的关键流程做首轮交叉校对，并记录已发现的译文差异。
 
 仍待完成：
 1. 未来 Campaign 必须锁定具体核心规则版本与勘误；中文 SRD 页面自身未提供清晰修订号。
-2. 角色 Playbook、Crew Playbook、特殊能力、升级、Claims、Cohort、装备、仪式与打造条目尚未按实际战役角色/组织逐项穷尽。
+2. 七种核心 PC Playbook 与六种 Crew 的能力已有初步摘要索引，但每项能力仍须在实际角色/组织建档时按所选版本卡面核对触发条件、成本、持续时间和例外；升级、Claims、Cohort、装备、仪式与打造条目也需要按实际战役范围继续补齐。
 3. 执行 Candidate 回归测试、跨系统隔离测试，并至少完成一次短团实测和复盘。
 4. 建立独立 Campaign Binding；在用户确认前，系统继续保持 candidate。
 
