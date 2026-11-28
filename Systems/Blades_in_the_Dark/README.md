@@ -64,7 +64,7 @@ runtime_dispatch:
 - [Rule_Reference/CORE_RULES_RUNTIME.md](./Rule_Reference/CORE_RULES_RUNTIME.md)：骰型、Action/Position/Effect、后果、Score、Downtime、Crew/Faction 等可运行规则摘要。
 - [Rule_Reference/DOSKVOL_CITY_GUIDE_INDEX.md](./Rule_Reference/DOSKVOL_CITY_GUIDE_INDEX.md)：核心规则书多斯科沃城市指南的本地检索入口。
 - [Rule_Reference/DOSKVOL_DISTRICTS_REFERENCE.md](./Rule_Reference/DOSKVOL_DISTRICTS_REFERENCE.md)：多斯科沃 12 个地区的特征值与场景速查。
-- [Rule_Reference/DOSKVOL_FACTIONS_REFERENCE.md](./Rule_Reference/DOSKVOL_FACTIONS_REFERENCE.md)：多斯科沃 13 个主要派系的运行索引。
+- [Rule_Reference/DOSKVOL_FACTIONS_REFERENCE.md](./Rule_Reference/DOSKVOL_FACTIONS_REFERENCE.md)：多斯科沃 26 个详细派系条目与其他派系简表的运行索引。
 - [Rule_Reference/DOSKVOL_GM_TABLES_REFERENCE.md](./Rule_Reference/DOSKVOL_GM_TABLES_REFERENCE.md)：城市事件、流言、NPC、超自然与刻痕生成工具的运行索引。
 - [Rule_Reference/RED_WATERS_CITY_RUNTIME.md](./Rule_Reference/RED_WATERS_CITY_RUNTIME.md)：红水之城替代世设与三种新 Crew。
 - [Rule_Reference/VIGILANTES_PLAYSET_RUNTIME.md](./Rule_Reference/VIGILANTES_PLAYSET_RUNTIME.md)：义警 Crew 游玩套件。
