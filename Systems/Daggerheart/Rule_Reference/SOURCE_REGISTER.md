@@ -64,6 +64,37 @@
 - 定位：中文社区百科和补充索引。
 - 用法：辅助查术语、历史翻译和条目。页面版本与完备度不统一，未经核验内容不进入 `VERIFIED_CORE`。
 
+### B4. 中文社区主持研究与实战资料（用户提供索引，待逐篇核验）
+
+- **贤者恩泽 Sage-Touched**：https://vcn3zvu2w61p.feishu.cn/wiki/FOziwMdb6iFF4nkU4fkc5jsjnKg  
+  规则解释、裁定案例、主持问题与设计师澄清汇总。优先研究与具体 Rule ID 相关的条目；不能将作者解释自动视为官方规则。
+- **恐惧成功指南——后果、麻烦与代价**：https://ai.feishu.cn/wiki/TseowovKriVOJikd6mfcmE5Znrd  
+  重点用于建立 Success with Fear / Failure with Fear 的后果选择案例库。
+- **通用的敌人恐惧行动**：https://my.feishu.cn/wiki/F2lMwjJ1yi42G5k8KevcWFCInve  
+  重点用于整理 Fear Move 的敌人行动案例，并核对是否混用旧版规则。
+- **战斗中的 GM 行动时机与示例**：https://u5glinc33f.feishu.cn/wiki/PS5CwMuV3iTy0NksnZJc1od5noc  
+  重点用于战斗中的 Spotlight、敌人行动、目标变化与遭遇强度控制。
+- **自定义敌人制作指南（RightKnight）**：https://u5glinc33f.feishu.cn/docx/ZdcfdtIJPoOt61x5bjucgU0Xnif  
+  重点用于敌人特性、数值区间、行动与 Fear Feature 设计；与本地 Adversary 数据结构交叉核验。
+- **恐惧点追踪器一览**：https://my.feishu.cn/wiki/NAKhw3XOkiLqiakI3Xgc61jLnAb  
+  属于实体/数字工具参考，不作为规则来源。
+- **挖掘思想 Thought Delver**：https://my.feishu.cn/wiki/SSbJwzB69ioBEQkk6zGcAAornic  
+  社媒、博客与视频的二级索引；仅用于发现材料，引用具体观点时回到原始作者/来源。
+- **星界投影 Astral Projection**：https://lcnw6r5edbf2.feishu.cn/wiki/Xj3UwNWo4i4jDOkQYHRcsgZ2nZf  
+  官方团队采访整理，用于理解设计意图；不覆盖正式规则文本。
+- **无可讳言 Tell No Lies**：https://lcnw6r5edbf2.feishu.cn/wiki/PV8vwrMT2icvGAkLgYRcKN3jnmf  
+  社群讨论与投票结果，作为桌面经验/社区倾向，不视为官方裁定。
+- **武器自制指南**：https://vcn3zvu2w61p.feishu.cn/wiki/V0OHwvSG0iJXbCkwG1Vc44pWnXe  
+  用于第三方武器设计研究，须核对当前 Core 数值结构与 DPCGL 许可。
+- **官方术语汇总与规范**：https://lcnw6r5edbf2.feishu.cn/wiki/Lcc4wsRQcik7p3kqxVdcL8UUnNd  
+  当前工作译名交叉参考；官方简体中文版定稿前不冻结术语。
+- **宏伟宝库**：https://dhvault.top/  
+  第三方资源发现入口；逐个资源核对作者、版本、许可与内容完整性，不批量镜像。
+- **官方 The Void**：https://www.daggerheart.com/thevoid/  
+  测试内容入口。The Void 内容默认不属于 Core Set，不得混入默认角色/敌人/装备数据。
+
+本节来源由用户于 2026-11-28 提供。当前仅完成分类登记，尚未逐篇打开、核验内容或确认各飞书链接权限；后续研究需记录具体页面标题、作者、更新日期、对应 Rule ID、观点摘要与冲突状态。
+
 ## C. 官方简体中文版出版项目
 
 - 项目页：https://zhongchou.modian.com/item/159038.html
