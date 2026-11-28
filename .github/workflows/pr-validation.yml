@@ -46,6 +46,7 @@ jobs:
         run: python GM_Training/Testing/Fixtures/ROLL_RUNTIME_APPLICATION_ADAPTER_v1/roll_runtime_adapter.py
 
       - name: Run Daggerheart Core reference executor tests
+        if: always()
         run: python Systems/Daggerheart/Testing/daggerheart_reference_engine.py
 
       - name: Check patch whitespace
