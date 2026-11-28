@@ -80,9 +80,11 @@
 - 刻痕客户、目标、工作类型与复杂化因素；
 - 城市文化与地区相关生成参考。
 
-推荐后续拆分：
-1. `DOSKVOL_DISTRICTS_REFERENCE.md`：地区、地标、环境和特征；
-2. `DOSKVOL_FACTIONS_REFERENCE.md`：派系、NPC、地盘和进度钟；
+已拆分的本地速查：
+1. [DOSKVOL_DISTRICTS_REFERENCE.md](./DOSKVOL_DISTRICTS_REFERENCE.md)：12 个地区的特征值、场景定位与地区专属机会/修正；
+2. [DOSKVOL_FACTIONS_REFERENCE.md](./DOSKVOL_FACTIONS_REFERENCE.md)：13 个主要派系的层级、定位和运行字段。
+
+仍待拆分：
 3. `DOSKVOL_GM_TABLES_REFERENCE.md`：流言、人名、场景、刻痕与随机生成表。
 
 ## 6. 运行时原则
