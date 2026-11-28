@@ -22,7 +22,9 @@
 | Crew / Factions / Cohorts | BLD-CRW-01–07 | 组织成长、派系关系或同伙受影响 | [§10](./CORE_RULES_RUNTIME.md#10-crew-factions与cohorts) |
 | XP / Advancement / Vice | BLD-ADV-01–05 | Session 结束、XP 结算、角色成长 | [§11](./CORE_RULES_RUNTIME.md#11-pc与crew成长) |
 | Ritual / Magnitude / Crafting | BLD-ARC-01–08 | 超自然仪式、Magnitude、发明/打造/改造与炼金物品 | [ARCANE_AND_CRAFTING_RUNTIME.md](./ARCANE_AND_CRAFTING_RUNTIME.md) |
-| PC / Crew Ability | BLD-ABIL-01–04 | 创建角色/组织、获得能力、触发特殊能力效果 | [ABILITY_RUNTIME_MATRIX.md](./ABILITY_RUNTIME_MATRIX.md)；[PLAYBOOKS_AND_CREW_REFERENCE.md](./PLAYBOOKS_AND_CREW_REFERENCE.md) |\n| Doskvol City Guide | BLD-CITY-01 | 地区、派系、NPC、街头流言与城市生成表 | [DOSKVOL_CITY_GUIDE_INDEX.md](./DOSKVOL_CITY_GUIDE_INDEX.md) |\n| Optional Playsets | BLD-EXT-01–03 | Campaign 明确启用红水之城/义警/利维坦之歌 | [RED_WATERS_CITY_RUNTIME.md](./RED_WATERS_CITY_RUNTIME.md)；[VIGILANTES_PLAYSET_RUNTIME.md](./VIGILANTES_PLAYSET_RUNTIME.md)；[LEVIATHAN_SONG_RUNTIME.md](./LEVIATHAN_SONG_RUNTIME.md) |
+| PC / Crew Ability | BLD-ABIL-01–04 | 创建角色/组织、获得能力、触发特殊能力效果 | [ABILITY_RUNTIME_MATRIX.md](./ABILITY_RUNTIME_MATRIX.md)；[PLAYBOOKS_AND_CREW_REFERENCE.md](./PLAYBOOKS_AND_CREW_REFERENCE.md) |
+| Doskvol City Guide | BLD-CITY-01 | 地区、派系、NPC、街头流言与城市生成表 | [DOSKVOL_CITY_GUIDE_INDEX.md](./DOSKVOL_CITY_GUIDE_INDEX.md) |
+| Optional Playsets | BLD-EXT-01–03 | Campaign 明确启用红水之城/义警/利维坦之歌 | [RED_WATERS_CITY_RUNTIME.md](./RED_WATERS_CITY_RUNTIME.md)；[VIGILANTES_PLAYSET_RUNTIME.md](./VIGILANTES_PLAYSET_RUNTIME.md)；[LEVIATHAN_SONG_RUNTIME.md](./LEVIATHAN_SONG_RUNTIME.md) |
 | Items / Load / Armor Loadout | BLD-ITEM-01–04 | Score 负载、标准物品、护甲携带与消耗 | [STANDARD_ITEMS_AND_LOAD_REFERENCE.md](./STANDARD_ITEMS_AND_LOAD_REFERENCE.md) |
 | Crew Creation / Hunting Grounds / Claims | BLD-CRW-START-01、BLD-CRW-HUNT-01–02、BLD-CRW-CLAIM-01–03 | 建立组织、偏好业务奖励、夺取/失去 Claim | [CREW_CLAIMS_AND_STARTUP_REFERENCE.md](./CREW_CLAIMS_AND_STARTUP_REFERENCE.md) |
 
