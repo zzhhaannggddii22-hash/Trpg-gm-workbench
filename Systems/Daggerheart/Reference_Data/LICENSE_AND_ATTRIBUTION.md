@@ -1,6 +1,6 @@
 # 数据许可与署名记录
 
-本目录包含 Darrington Press 发布的 **Daggerheart System Reference Document 2.0**（2026-08-25）Public Game Content 的部分规则与数据。DPCGL 2.0（许可 PDF 标注 Last Updated 2026-08-05）明确将 Daggerheart SRD 2.0（包括 Domain Icons）列为 Public Game Content，并在符合许可条款的前提下允许整体或部分复制、分享。该授权不意味着取得 Darrington Press / Critical Role 的所有知识产权。
+本目录包含 Darrington Press 发布的 **Daggerheart System Reference Document 2.0**（2026-08-25）Public Game Content 的部分规则与数据。DPCGL 2.0 于 2026-08-25 明确将 SRD 2.0（包括 Domain Icons）列为 Public Game Content，并在符合许可条款的前提下允许整体或部分复制、分享。该授权不意味着取得 Darrington Press / Critical Role 的所有知识产权。
 
 ## 官方许可
 
@@ -26,10 +26,12 @@
 
 ## 必须保留的署名与修改说明
 
-> This product includes materials from the Daggerheart System Reference Document 2.0, © Critical Role, LLC. under the terms of the Darrington Press Community Gaming (DPCGL) License. More information can be found at https://www.daggerheart.com.  
-> Source: https://www.daggerheart.com/srd/  
-> License: https://darringtonpress.com/license/  
-> This project uses a third-party Markdown/JSON reformat of SRD 2.0 by JHerrin00 (https://github.com/JHerrin00/daggerheart-srd-2.0) as a structured extraction aid. That source reformat includes text cleanup and data restructuring. This project further separates Core Set and Hope & Fear entries, moves mixed-version sections out of the default Core Set data, creates local indexes, and adds original runtime summaries.  
-> This project is unofficial and is not affiliated with, endorsed, or sponsored by Critical Role or Darrington Press. Daggerheart™ Compatible.
+DPCGL 2.0 第 4.1 节要求公开分享时保留版权通知、说明 DRP 为 Public Game Content 的创作者、提供 SRD 链接、提供许可链接，并说明本次是否修改内容及是否存在此前修改。
 
-如未来将该内容进一步公开分享，继续检查 DPCGL 版本是否更新，并按当时许可要求保留版权、来源、许可、改动与标记说明。不得把公开 SRD 数据解释为商业核心规则书全文的授权。
+本项目在公开仓库中采用如下署名/修改说明：
+
+> This product includes materials from the Daggerheart System Reference Document 2.0, © Critical Role, LLC. Darrington Press (DRP) is the creator of this Public Game Content. The SRD 2.0 is used under the Darrington Press Community Gaming License (DPCGL) 2.0. Source: https://www.daggerheart.com/srd/ . License: https://darringtonpress.com/license/ . This project modifies and reorganizes SRD 2.0 Public Game Content into Markdown/JSON reference data, separates Core Set and Hope & Fear entries, isolates mixed-version and optional sections, and adds original indexes, terminology and runtime summaries. The structured Markdown/JSON source format was prepared by JHerrin00 (https://github.com/JHerrin00/daggerheart-srd-2.0); this project is based on that prior formatting and further modifies it as described above. This project is unofficial and is not affiliated with, endorsed, or sponsored by Critical Role or Darrington Press. It is Daggerheart™ Compatible.
+
+本项目没有复制 Core Rulebook 未纳入 SRD 的逐字正文、插图、地图或 Campaign Frame 完整文本。若继续修改公开数据，需同步更新修改说明。
+
+**标记使用限制：** DPCGL 2.0 §2.5 规定 Name Marks 不得用于作品或章节标题，也不得出现在封面；在描述/营销文字中使用时必须与 “Compatible” 相邻。本工作区因此使用中文规则目录名，并将 “Daggerheart™ Compatible” 仅作为兼容性描述，不宣称官方关联或背书。

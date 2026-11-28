@@ -10,6 +10,7 @@
 ### A1. Official Daggerheart SRD v2.0
 
 - URL: https://www.daggerheart.com/srd/
+- 官方 SRD 2.0 PDF（2026-08-25）：https://www.daggerheart.com/wp-content/uploads/2026/08/DH_SRD_2_2026_08_25.pdf
 - 版本/发布日期：2026-08-25。
 - 官方定位：当前公开 System Reference Document，涵盖核心机制、角色创建、骰子系统及许可范围内的游戏内容。
 - 许可状态：DPCGL 2.0 明确将 Daggerheart SRD 2.0（包括 Domain Icons）列为 Public Game Content。
@@ -27,6 +28,7 @@
 
 - URL: https://www.daggerheart.com/downloads/
 - Core 分区：职业角色卡与指南、角色创建表、Sidecar、Play Guide、Loadout / Vault / Equipment / Multiclass 表、GM Guide、Core Campaign Frame Materials、可打印 Core Cards、空白地图、Core Errata。
+- 已定位的 Core Errata（2025-09-09）：https://www.daggerheart.com/wp-content/uploads/2025/09/Daggerheart-Errata-September9th2025.pdf 。当前作为印刷核心书勘误参考；SRD 2.0 Changelog 声明已落实既有勘误，但个别术语/摘要仍需与 SRD 2.0 当前文本逐项比较。
 - Hope & Fear 分区：四个扩展职业辅助表、扩展角色卡、扩展装备表、扩展卡牌、Hope & Fear Campaign Frame Materials、Hope & Fear Errata。
 - 使用方式：严格按官方 Core / Hope & Fear 分区。当前先整理 Core 规则；公开仓库只保留允许分享的数据与自写摘要，不镜像完整图片、地图或商业表单扫描。
 

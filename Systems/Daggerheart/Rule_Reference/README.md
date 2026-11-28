@@ -24,6 +24,7 @@ SRD v2.0 同时收录 Core Set 与 Hope & Fear。不能仅凭条目出现在 SRD
 3. 官方 Core 辅助资料（角色卡、GM Guide、卡牌打印文件、速查表），用于确认字段、卡牌与流程。
 4. 本地 `CORE_RULES_RUNTIME.md`、`LOOKUP_TABLES.md`、结构化 JSON 和已核验索引。
 5. 中文 HTML SRD、Role Initiative、灰机 Wiki 等社区资料，用于阅读、交叉检查和发现问题，不作为冲突时的最终裁判。
+6. 本地 [ERRATA_CROSSCHECK.md](./ERRATA_CROSSCHECK.md) 用于查看已核对的勘误差异；若官方发布新版本，仍须重新核对来源。
 
 Hope & Fear 内容只通过扩展目录检索；用户明确启用或 Campaign Binding 指定后才加载。
 
@@ -91,7 +92,11 @@ Hope & Fear 内容只通过扩展目录检索；用户明确启用或 Campaign B
 - [环境索引](./ENVIRONMENT_INDEX.md)
 - [术语表](./GLOSSARY.md)
 - [来源登记](./SOURCE_REGISTER.md)
+- [Core Errata 交叉核验](./ERRATA_CROSSCHECK.md)
 - [规则疑点](./RULE_ISSUES.md)
+- [专属 GM Skill](../GM_SKILL.md)
+- [Preflight](../PREFLIGHT.md)
+- [回归测试矩阵](../Testing/CORE_RULE_RUNTIME_REGRESSION.md)
 - [结构化数据集](../Reference_Data/README.md)
 
 ## 8. 版权与仓库边界

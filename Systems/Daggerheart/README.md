@@ -34,7 +34,7 @@
 - [规则检阅协议](./Rule_Reference/README.md)：来源优先级、规则分类、缺口处理。
 - [核心规则索引](./Rule_Reference/CORE_RULE_INDEX.md)：Rule Area 与 Rule ID 导航。
 - [核心规则运行手册](./Rule_Reference/CORE_RULES_RUNTIME.md)：已规范化的高频核心机制，可按触发直接调用。
-- [GM 主持指导运行手册](./Rule_Reference/GM_GUIDANCE_RUNTIME.md)：Core Set GM 原则、GM Move、Fear、NPC、敌人与环境主持程序。
+- [专属 GM Skill](./GM_SKILL.md)：Core Set 主持原则、场景节奏、GM Move、Fear、NPC 与战斗准备。
 - [常用规则检索表](./Rule_Reference/LOOKUP_TABLES.md)：六属性难度基准、敌人/环境 Tier、遭遇 BP、范围、休息和 Fear 预算。
 - [核心角色选项索引](./Rule_Reference/CHARACTER_OPTIONS_INDEX.md)：九职业、领域和子职业导航。
 - [敌人检索索引](./Rule_Reference/ADVERSARY_INDEX.md)：按 Tier 检索 Core 敌人。
@@ -42,7 +42,9 @@
 - [结构化规则与检索数据](./Reference_Data/README.md)：Core 与 Hope & Fear 分开的 JSON 数据集合。
 - [规则来源登记](./Rule_Reference/SOURCE_REGISTER.md)：官方、中文和社区资料。
 - [规则疑点登记](./Rule_Reference/RULE_ISSUES.md)：来源差异、版本疑点和未解决问题。
-- [Candidate 回归矩阵](./Rule_Reference/CANDIDATE_TEST_MATRIX.md)：高频规则与版本隔离测试用例（尚未执行）。
+- [Core Errata 交叉核验](./Rule_Reference/ERRATA_CROSSCHECK.md)：旧版官方勘误与 SRD 2.0 当前条目逐项抽样对照。
+- [Preflight](./PREFLIGHT.md)：Campaign / Session 开始前核验。
+- [回归测试矩阵](./Testing/CORE_RULE_RUNTIME_REGRESSION.md)：45 项测试计划，当前尚未执行。
 - [术语表](./Rule_Reference/GLOSSARY.md)：中英术语与暂定工作译名。
 - [Hope & Fear 扩展隔离清单](./Expansions/Hope_and_Fear/README.md)：扩展默认关闭及启用条件。
 
@@ -68,6 +70,6 @@
 
 ## 初版建设状态
 
-已完成：来源与许可登记、Core / Hope & Fear 数据拆分、规则索引、核心运行手册、常用难度与遭遇检索表、敌人/环境索引、译名表及版本差异登记。
+已完成：来源与许可登记、Core / Hope & Fear 数据拆分、规则索引、核心运行手册、常用难度与遭遇检索表、敌人/环境索引、译名表、版本差异登记、Errata 抽样核验、GM Skill、Preflight 草案和 45 项回归测试计划。
 
-待完成：逐项核对官方 Core Errata、取得合法核心规则书后补齐 SRD 未覆盖的 GM 指导与示例、建立完整 Preflight、进行规则正反例回归和短场景实测。
+待完成：穷尽核对官方 Core Errata、取得合法核心规则书后补齐 SRD 未覆盖的 GM 指导与示例、执行规则正反例回归、Blind GM 测试和短场景实测。

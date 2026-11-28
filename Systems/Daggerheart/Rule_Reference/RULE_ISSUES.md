@@ -73,11 +73,15 @@
 - 处理：本工程以 SRD 2.0 建立高频规则运行基础；对 SRD 未覆盖的部分保留官方书籍章节定位。用户合法取得并提供核心规则书后，再补充私人研究笔记与定位。
 - 版权处理：不从网络复制商业核心规则书全文。私人仓库可保存用户合法提供的个人资料及自写研究记录，但私人仓库本身不改变版权许可。
 
-## DH-I-010｜Core Errata 尚未逐项合并
+## DH-I-010｜Core Errata 与 SRD 2.0 的逐项对应
 
-- 状态：OPEN
-- 影响：官方 Downloads 分别提供 Core Errata 与 Hope & Fear Errata。SRD 2.0 Changelog 提及已实现若干勘误，但不能推断它已纳入所有印刷规则书和实体卡牌修正。
-- 处理：下一轮按官方 Core Errata PDF 逐项核对，记录影响 Rule ID、角色卡、领域卡、装备、敌人或环境数据；完成后更新运行手册与结构化数据版本。
+- 状态：PARTIALLY_RESOLVED
+- 来源：官方 Core Errata（2025-09-09）https://www.daggerheart.com/wp-content/uploads/2025/09/Daggerheart-Errata-September9th2025.pdf；官方 SRD 2.0 Changelog 声明其修正拼写并落实勘误；SRD 2.0 PDF：https://www.daggerheart.com/wp-content/uploads/2026/08/DH_SRD_2_2026_08_25.pdf。
+- 已抽样核对并在 SRD 2.0 数据中找到对应修正：Powerful Beast 的 Strength +3 / Evasion +1；Spear / Longsword / Glowing Rings 的核心武器数据；Sweet Moss；Glass Snake 的 Armor-Shredding Shards；Adult Flickerfly 的 Hallucinatory Breath 标为 Reaction；Battle Box 的 Relentless (2)；Whirlwind、I See It Coming、Splintering Strike、Book of Grynn 等领域卡。
+- Sledgehammer 的 Massive 特性（−1 Evasion）存在于 SRD 2.0 的 Optional Supplemental Campaign Mechanics / Everyday Hero Starting Equipment，不属于默认 Core 武器清单；本工程将该章节隔离，不能将其误当成默认起始装备。
+- **仍有术语差异：** 2025 Core Errata 对 Buckler 的 Deflecting 特性使用“available Armor Slots”；SRD 2.0 现行 PDF 和结构化数据写作“available Armor Score”。当前 Core 运行库遵循较新的 SRD 2.0 文本，保留此差异供未来印刷书/新版勘误核对，不擅自替换。
+- 2025 Errata 还包括 Core Rulebook 的若干完整书籍示例与不在当前公开结构化数据集中的内容；SRD 2.0 没有逐项暴露的内容仍需保留缺口。
+- 处理：已将抽样校验记录放入 [ERRATA_CROSSCHECK.md](./ERRATA_CROSSCHECK.md)。未来若官方更新 Errata 或 Core Rulebook 勘误，继续逐项对照并记录版本，不因 SRD 2.0 Changelog 有“implemented errata”一句就关闭所有差异。
 
 ## DH-I-011｜结构化导出源存在第三方格式整理
 
@@ -107,3 +111,16 @@
 - 证据：SRD 2.0 `ancestries.json` 中 Elemental Kin 记录没有 Ancestry Feature；角色创建可选种族列表列出 Earthkin、Emberkin、Skykin、Tidekin，而不列 Elemental Kin。
 - 处理：保留 Elemental Kin 总述数据，便于理解四种元素血统；角色创建可选项仅计四种变体。扩展实际新增可选种族为 Aetheris、Gnome、Earthkin、Emberkin、Skykin、Tidekin，共 6 个。
 - 统计口径：Hope & Fear ancestry JSON 为 7 条记录，但实际可选 Ancestry 是 6 个；Core 18 + 扩展 6 = 24。
+
+
+## DH-I-014｜2025 Buckler Errata 与 SRD 2.0 当前术语不同
+
+- 状态：DOCUMENTED_DIFFERENCE
+- 2025-09-09 Core Errata 将 Buckler 的 Deflecting 写为 “available Armor Slots”；2026-08-25 SRD 2.0 PDF 和结构化 JSON 写为 “available Armor Score”。
+- 处理：当前运行依较新的 SRD 2.0 文本；不将旧 PDF 的措辞直接覆盖到公开数据。未来取得 Core Rulebook/最新勘误后核验是否为有意改词或印刷书版本差异。
+
+## DH-I-015｜部分 Errata 对象属于可选程序或书本特有内容
+
+- 状态：PARTIALLY_MAPPED
+- Sledgehammer 的 Massive 特性是 Everyday Hero Starting Equipment 可选武器表的一部分，而不是标准 Core Tier 1 Weapon Tables。SRD 2.0 将其收录在 Supplemental Campaign Mechanics；公开数据单独隔离，默认不加载。
+- 其他不在 SRD 2.0 Core 数据表的 Errata 对象，不能因此推断缺失或失效；可能来自完整 Core Rulebook 示例、Campaign Frame 或未导入的可选章节。需要根据页码和章节归属逐项判断。
