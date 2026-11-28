@@ -14,3 +14,8 @@ WWN 同时提供奇幻角色规则与系统中立沙盒主持工具。出版方�
 SRD 1.0 已离线化：原文、结构化法术/职业/装备/怪物/阵营记录与搜索索引均保存在 Rule_Reference/Data。核心机制与 Faction / Major Projects 已建立中文运行摘要。
 
 缺口：完整 Free Edition PDF 尚未取得并逐页核验，故完整 GM Tags、社区/遗迹/宫廷/荒野生成表、冒险生成器、印刷页码和勘误仍未完成。SRD 数据是离线子集，不是完整规则书。
+
+
+## 外部资源
+
+- [EXTERNAL_RESOURCES.md](./EXTERNAL_RESOURCES.md)：官方资料、角色卡、Foundry VTT、Obsidian、随机生成器与许可边界。
