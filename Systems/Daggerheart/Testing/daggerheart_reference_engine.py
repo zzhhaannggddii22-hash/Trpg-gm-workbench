@@ -316,6 +316,16 @@ def spotlight_adversary(gm, state, enemy_id, relentless_limit=1, fear_feature_co
     return {"allowed": True, "spotlight_cost": spotlight_cost, "feature_cost": fear_feature_cost}
 
 
+
+def perform_extra_gm_move(gm, state):
+    if not state.get("gm_turn_active") or state.get("spotlight_side") != "gm":
+        return False
+    if not spend_fear(gm, 1):
+        return False
+    state["extra_gm_moves"] = state.get("extra_gm_moves", 0) + 1
+    return True
+
+
 def end_gm_turn(state):
     state["spotlight_side"] = "pc"
     state["gm_turn_active"] = False
@@ -924,6 +934,13 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         self.assertFalse(result["completed"])
         self.assertEqual(state["short_rests_since_long"], 2)
 
+
+
+    def test_80_extra_gm_move_costs_one_fear_during_gm_turn(self):
+        gm, state = GM(fear=1), {}
+        begin_gm_turn(state)
+        self.assertTrue(perform_extra_gm_move(gm, state))
+        self.assertEqual((gm.fear, state["extra_gm_moves"]), (0, 1))
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
