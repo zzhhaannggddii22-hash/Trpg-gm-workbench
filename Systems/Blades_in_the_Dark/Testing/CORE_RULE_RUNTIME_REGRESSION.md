@@ -43,7 +43,7 @@
 | BLD-T35 | 当前 Crew 未选择 War Dogs，进入 War | 应用基础 War 的 Hold / Downtime 惩罚；不把未拥有的 Crew Ability 当作默认豁免 | Synthetic |
 | BLD-T36 | PC 获得新 Ability 或 Crew 更换/增加 Ability | 更新已拥有能力清单；后续只对该清单中的能力做触发检查 | Static / Synthetic |
 | BLD-T37 | PC 使用一次普通 Resistance，另有特殊 Armor 能力 | 先确认能力是否允许对该后果使用 Special Armor；避免将能力成本、普通 Armor 与 Resistance 重复套用 | Synthetic |
-| BLD-T38 | PC 选择 Push Yourself 获得 +1 Effect，同时提出接受 Devil's Bargain | Push 与 Devil's Bargain 不可在同一次行动中并用；可选择 Push 的不同收益并分别支付 Stress | Synthetic |
+| BLD-T38 | PC 接受 Devil's Bargain 获得 +1d，同时 Push Yourself 获得 +1 Effect | 合法组合：Devil's Bargain 提供唯一的额外 +1d 来源，Push 为 +1 Effect 支付 2 Stress；不能再额外 Push 获得第二个 +1d | Synthetic |
 | BLD-T39 | Crew 在自家 Hunting Grounds 执行 Preferred Operation | 相关 Gather Information +1d，额外获得一次只用于该 Score 准备的免费 Downtime Activity | Synthetic |
 | BLD-T40 | Crew 沿 Claim Map 连接路径夺取 Claim | 作为普通 Score 处理；成功后转移 Claim、更新双方 Faction Status，并开始获得该 Claim 收益 | Synthetic |
 | BLD-T41 | Crew 尝试越过连接路线直接夺取远端 Claim | 可以尝试，但需额外努力/调查，不能自动按常规路径难度处理 | Synthetic |
@@ -57,6 +57,8 @@
 | BLD-T49 | PC 没有治疗者但选择 Tough It Out | 承受 1 Stress，以 0d（2d 取低）推进 Healing Clock | Synthetic |
 | BLD-T50 | A 治疗 B 的 Harm | B 花费自己的 Recover Activity；治疗者不消耗自己的 Downtime Activity | Synthetic |
 | BLD-T51 | PC 的 Loadout 已满，行动中想临时声明重甲 | Load limit 不允许，除非有明确能力/虚构来源提高 Load；不得免费增加 Armor | Synthetic |
+| BLD-T52 | PC Push Yourself 同时选择 +1d 与 +1 Effect | 每项收益各支付 2 Stress，共 4 Stress；每项每次行动最多选择一次 | Synthetic |
+| BLD-T53 | PC Push Yourself 选择 +1d，再接受 Devil's Bargain | 不合法：同一额外骰来源只能二选一；改选 Push +1 Effect + Devil's Bargain +1d 才可组合 | Synthetic |
 
 ## 结果登记
 
