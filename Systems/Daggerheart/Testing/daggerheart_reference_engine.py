@@ -936,7 +936,7 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
 
 
 
-    def test_80_extra_gm_move_costs_one_fear_during_gm_turn(self):
+    def test_82_extra_gm_move_costs_one_fear_during_gm_turn(self):
         gm, state = GM(fear=1), {}
         begin_gm_turn(state)
         self.assertTrue(perform_extra_gm_move(gm, state))
