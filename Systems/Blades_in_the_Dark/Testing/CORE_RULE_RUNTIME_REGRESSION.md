@@ -22,7 +22,7 @@
 | BLD-T14 | 调查角色查看可自由取得的公开档案 | 常识/可知信息直接提供；若无危险或不确定，无需掷骰 | Synthetic |
 | BLD-T15 | 玩家要知道不确定 NPC 是否背叛 | 用适用 Trait 作 Fortune Roll，不设置 Position/Effect | Synthetic |
 | BLD-T16 | Crew 选择 Stealth Plan，Detail 未知 | 可先 Gather Information；Plan + Detail + Load 完成后进行 Engagement Roll | Synthetic |
-| BLD-T17 | Engagement Roll 为 Critical | PC 已越过第一个障碍，直接进入行动更深处；后续 Action Roll 的 Position 按新场景重新判断，不自动视为 Controlled | Synthetic |
+| BLD-T17 | Engagement Roll 为 Critical | PC 已越过第一个障碍，并以 Controlled Position 进入更深处的下一行动；该初始 Position 只作为开场，之后的 Action Roll 按新场景重新评估 | Synthetic |
 | BLD-T18 | Score 中遇到卫兵，玩家 Flashback 曾买通过守卫 | GM 按复杂程度设 0/1/2+ Stress；危险行动掷 Action Roll，不撤销已确立事实 | Synthetic |
 | BLD-T19 | Group Action 三名 PC 结果 6、4/5、1–3 | 全组按最高结果处理；Leader 对 1–3 成员承受 1 Stress | Synthetic |
 | BLD-T20 | Score 结束后连续结算 | 顺序为 Payoff → Heat → Entanglements → Downtime；禁止跳步或重复结算 | Synthetic |
