@@ -55,7 +55,7 @@
 - [规则疑点登记](./Rule_Reference/RULE_ISSUES.md)：来源差异、版本疑点和未解决问题。
 - [Core Errata 交叉核验](./Rule_Reference/ERRATA_CROSSCHECK.md)：旧版官方勘误与 SRD 2.0 当前条目逐项抽样对照。
 - [Preflight](./PREFLIGHT.md)：Campaign / Session 开始前核验。
-- [回归测试矩阵](./Testing/CORE_RULE_RUNTIME_REGRESSION.md)：64 项规则与 GM 专项已完成桌面逻辑模拟（非程序自动测试）；参考执行器最近一次 71 项代码自动化测试全部通过；当前脚本已扩展至 81 项，新增 GM Turn / Spotlight 与 Short Rest 边界回归待 Run 06 验证。详见 [自动化执行记录 Run 05](./Testing/AUTOMATED_REFERENCE_EXECUTION_05.md)、[GM 专项桌面模拟记录](./Testing/GM_DESK_SIMULATION_01.md) 与 [第二轮 GM 场景复核](./Testing/GM_SCENARIO_REVALIDATION_02.md)。内部 GM 场景模拟已覆盖社交、探索和战斗流程；实际短场景和外部盲测仍待验证。
+- [回归测试矩阵](./Testing/CORE_RULE_RUNTIME_REGRESSION.md)：64 项规则与 GM 专项已完成桌面逻辑模拟（非程序自动测试）；参考执行器最近一次 71 项代码自动化测试全部通过；当前脚本已扩展至 82 项，新增 11 项 GM Turn / Spotlight、额外 GM Move 与 Short Rest 边界回归待 Run 06 验证。详见 [自动化执行记录 Run 05](./Testing/AUTOMATED_REFERENCE_EXECUTION_05.md)、[GM 专项桌面模拟记录](./Testing/GM_DESK_SIMULATION_01.md) 与 [第二轮 GM 场景复核](./Testing/GM_SCENARIO_REVALIDATION_02.md)。内部 GM 场景模拟已覆盖社交、探索和战斗流程；实际短场景和外部盲测仍待验证。
 - [术语表](./Rule_Reference/GLOSSARY.md)：中英术语与暂定工作译名。
 - [Hope & Fear 扩展隔离清单](./Expansions/Hope_and_Fear/README.md)：扩展默认关闭及启用条件。
 
