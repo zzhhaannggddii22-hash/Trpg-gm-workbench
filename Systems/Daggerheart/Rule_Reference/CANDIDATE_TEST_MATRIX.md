@@ -45,6 +45,8 @@
 | DH-V04 | Optional Procedures | Supplemental Campaign Mechanics 默认关闭 | DESIGNED |
 | DH-V05 | Dataset | Core Adversaries / Environments 数量分别为 129 / 19 | DESIGNED |
 
+| DH-T19 | DH-BUCKLER | Armor Score 3，已有 1 个 Armor Slot 标记；遭受攻击并触发 Buckler: Deflecting | 分别记录 SRD 2.0 PDF 的 “available Armor Score” 与 Errata/网页 Changelog 的 “available Armor Slots” 两种解释；不强行合并 | BLOCKED / DH-I-016 |
+
 ## 验收门槛
 
 - 规则时序、资源变化和数值预期均正确；
