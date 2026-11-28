@@ -13,7 +13,7 @@
 | `Core_Set/subclasses.json` | 18 | 核心职业的两个子职业 |
 | `Core_Set/domains.json` | 9 | 九个核心领域 |
 | `Core_Set/domain_cards.json` | 189 | 核心领域卡 |
-| `Core_Set/ancestries.json` | 18 | 核心种族选项 |
+| `Core_Set/ancestries.json` | 18 | 核心可选种族 |
 | `Core_Set/communities.json` | 9 | 核心社群 |
 | `Core_Set/beastforms.json` | 24 | 核心 Beastform 数据 |
 | `Core_Set/adversaries.json` | 129 | 核心敌人 Stat Blocks |
@@ -22,32 +22,34 @@
 | `Core_Set/armor.json` | 34 | 核心护甲 |
 | `Core_Set/items.json` | 60 | Core Set 物品表 |
 | `Core_Set/consumables.json` | 60 | Core Set 消耗品表 |
-| `Core_Set/core_rules.json` | 12 | 已确认可独立作为核心规则条目的章节 |
+| `Core_Set/core_rules.json` | 12 | 可独立作为核心规则条目的章节 |
 
 ## Hope & Fear 数据（默认关闭）
 
-| 文件 | 数量 |
-|---|---:|
-| `Hope_and_Fear/classes.json` | 4 |
-| `Hope_and_Fear/subclasses.json` | 8 |
-| `Hope_and_Fear/domains.json` | 1 |
-| `Hope_and_Fear/domain_cards.json` | 21 |
-| `Hope_and_Fear/ancestries.json` | 7 |
-| `Hope_and_Fear/communities.json` | 6 |
-| `Hope_and_Fear/adversaries.json` | 135 |
-| `Hope_and_Fear/environments.json` | 28 |
-| `Hope_and_Fear/weapons.json` | 132 |
-| `Hope_and_Fear/armor.json` | 35 |
-| `Hope_and_Fear/items.json` | 60 |
-| `Hope_and_Fear/consumables.json` | 60 |
-| `Hope_and_Fear/transformations.json` | 6 |
-| `Hope_and_Fear/transformation_rules.json` | 1 |
+| 文件 | 记录数 | 说明 |
+|---|---:|---|
+| `Hope_and_Fear/classes.json` | 4 | 四个扩展职业 |
+| `Hope_and_Fear/subclasses.json` | 8 | 扩展子职业 |
+| `Hope_and_Fear/domains.json` | 1 | Dread Domain |
+| `Hope_and_Fear/domain_cards.json` | 21 | Dread 领域卡 |
+| `Hope_and_Fear/ancestries.json` | 7 | 7 条记录，其中 Elemental Kin 是族群总述；实际新增可选种族 6 个 |
+| `Hope_and_Fear/communities.json` | 6 | 扩展社群 |
+| `Hope_and_Fear/adversaries.json` | 135 | 扩展敌人 |
+| `Hope_and_Fear/environments.json` | 28 | 扩展环境 |
+| `Hope_and_Fear/weapons.json` | 132 | 扩展武器 |
+| `Hope_and_Fear/armor.json` | 35 | 扩展护甲 |
+| `Hope_and_Fear/items.json` | 60 | 扩展物品 |
+| `Hope_and_Fear/consumables.json` | 60 | 扩展消耗品 |
+| `Hope_and_Fear/transformations.json` | 6 | 扩展转化 |
+| `Hope_and_Fear/transformation_rules.json` | 1 | 转化规则章节 |
+
+Core 与扩展合计 24 个可选种族：Core 18 个 + Hope & Fear 6 个。Elemental Kin 是四种元素血统的总述条目，自己没有 Ancestry Feature，不是额外的第 25 个可选种族。
 
 ## 不自动加载的数据
 
 - `Mixed_Version/mixed_rule_sections.json`：Character Creation、Classes、Domains 三段来自 SRD 2.0 的混合版本说明，其中选项清单同时列出 Core 与 Hope & Fear。为避免把扩展职业、Dread Domain 等误纳入基础选项，整段隔离；具体基础选项已在 Core_Set 分类数据中分离。
 - `Optional_Procedures/supplemental_campaign_mechanics.json`：SRD 中的可选战役机制汇总。它们是可按 Campaign 需要加载的可选规则，不是默认基础玩法。
-- 不导入 `campaign_frames/`：Campaign Frame 的完整文本、地图和专有设定不属于普通 SRD 规则数据的自由分发范围。
+- 不导入 `campaign_frames/`：Campaign Frame 的完整文本、地图和专有设定不属于普通规则数据的自由分发范围。
 
 ## 数据结构
 

@@ -15,7 +15,7 @@
 
 - 状态：SOURCE_SPLIT_CREATED
 - Core Set 数据量：9 职业、18 子职业、9 领域、189 领域卡、18 种族、9 社群、24 Beastforms、129 敌人、19 环境、183 武器、34 护甲、60 物品、60 消耗品。
-- Hope & Fear 数据量：4 职业、8 子职业、Dread 领域、21 Dread 卡、7 种族、6 社群、135 敌人、28 环境、132 武器、35 护甲、60 物品、60 消耗品、6 种 Transformations。
+- Hope & Fear 数据量：4 职业、8 子职业、Dread 领域、21 Dread 卡、7 条种族数据记录（其中 Elemental Kin 是父级介绍，实际新增可选种族 6 个）、6 社群、135 敌人、28 环境、132 武器、35 护甲、60 物品、60 消耗品、6 种 Transformations。
 - 依据：与旧 SRD 1.0 的结构化类别数据逐项比较，并对照 SRD 2.0 官方 Changelog 与 Core / Hope & Fear 官方 Downloads 分类。
 - 处理：拆分方式与限制见 [VERSION_SPLIT_METHOD.md](../Reference_Data/VERSION_SPLIT_METHOD.md) 和 [DATASET_MANIFEST.json](../Reference_Data/DATASET_MANIFEST.json)。
 - 注意：本次分类是工程来源划分，不替代对每个印刷卡牌/规则勘误的最终核验。
@@ -99,3 +99,11 @@
 3. 结构化 JSON 与官方 SRD / 卡牌数据抽样核验。
 4. 用户提供的合法核心规则书资料入库后，补充 GM 指导、示例与 SRD 未覆盖细节。
 5. 完成 Preflight 与短场景实测。
+
+
+## DH-I-013｜Elemental Kin 是种族家族总述，不是额外可选种族
+
+- 状态：CLARIFIED
+- 证据：SRD 2.0 `ancestries.json` 中 Elemental Kin 记录没有 Ancestry Feature；角色创建可选种族列表列出 Earthkin、Emberkin、Skykin、Tidekin，而不列 Elemental Kin。
+- 处理：保留 Elemental Kin 总述数据，便于理解四种元素血统；角色创建可选项仅计四种变体。扩展实际新增可选种族为 Aetheris、Gnome、Earthkin、Emberkin、Skykin、Tidekin，共 6 个。
+- 统计口径：Hope & Fear ancestry JSON 为 7 条记录，但实际可选 Ancestry 是 6 个；Core 18 + 扩展 6 = 24。

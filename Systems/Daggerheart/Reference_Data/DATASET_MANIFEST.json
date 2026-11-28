@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "system_id": "daggerheart",
   "default_ruleset": "Daggerheart Core Set",
   "public_source": "Official Daggerheart SRD 2.0",
@@ -8,14 +8,14 @@
   "license_url": "https://darringtonpress.com/license/",
   "source_url": "https://www.daggerheart.com/srd/",
   "source_reformat": "https://github.com/JHerrin00/daggerheart-srd-2.0",
-  "split_method": "Comparison against the SRD 1.0 structured dataset, official SRD 2.0 changelog, and official Core/Hope & Fear downloads.",
+  "split_method": "Comparison against SRD 1.0 structured data, official SRD 2.0 changelog, Core/Hope & Fear downloads and direct SRD section review.",
   "categories": {
     "core_set": {
       "classes": 9,
       "subclasses": 18,
       "domains": 9,
       "domain_cards": 189,
-      "ancestries": 18,
+      "selectable_ancestries": 18,
       "communities": 9,
       "beastforms": 24,
       "adversaries": 129,
@@ -31,7 +31,8 @@
       "subclasses": 8,
       "domains": 1,
       "domain_cards": 21,
-      "ancestries": 7,
+      "ancestry_records": 7,
+      "selectable_ancestries": 6,
       "communities": 6,
       "adversaries": 135,
       "environments": 28,
@@ -55,6 +56,7 @@
       ]
     }
   },
+  "ancestry_note": "The Elemental Kin record is an ancestry family introduction without selectable Ancestry Features; Earthkin, Emberkin, Skykin and Tidekin are selectable variants. Do not count Elemental Kin as a separate character creation option.",
   "exclusions": [
     "Campaign Frame full text and maps",
     "Core Rulebook proprietary text not part of SRD",
