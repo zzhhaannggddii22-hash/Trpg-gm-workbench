@@ -1,6 +1,6 @@
 # Core Rule Runtime Regression Matrix
 
-> 状态：45/45 DESK-SIMULATED / LIVE VALIDATION PENDING  
+> 状态：45/45 DESK-SIMULATED；42/42 REFERENCE-AUTOMATED / LIVE RUNTIME VALIDATION PENDING  
 > DH-T01–DH-T45 已进行确定性桌面逻辑模拟（非代码自动测试）。详情见三个 DESK_TEST_BATCH 文件。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
@@ -50,6 +50,10 @@
 | DH-T43 | 角色尝试装备高于自身 Tier 的武器/护甲 | 不允许装备，除非有明确规则覆盖 | Static |
 | DH-T44 | 同时有多个相同类型 Resistance | 抵抗不叠加；只按规则应用一次 | Synthetic |
 | DH-T45 | Hope Feature 需要 3 Hope，Action Roll 结果获得 1 Hope | 该次获得的 Hope 可立即用于同次行动的 Hope Feature；其他未声明资源不得事后补加 | Synthetic |
+
+## 自动化参考执行补充
+
+已新增 `daggerheart_reference_engine.py`，42/42 个确定性参考模型测试通过；结果和边界见 `AUTOMATED_REFERENCE_EXECUTION_01.md`。这些测试验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
 
 ## 测试执行记录
 
