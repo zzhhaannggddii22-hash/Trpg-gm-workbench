@@ -4,7 +4,7 @@
 > 标识：Daggerheart™ Compatible（非官方个人研究工作台）  
 > 规则基线：Daggerheart Core Set  
 > 公开参考：Official Daggerheart SRD v2.0（2026-08-25；混合收录 Core Set 与 Hope & Fear 内容）  
-> 状态：candidate（64项规则与GM专项已完成桌面逻辑模拟；参考执行器100项自动化测试全部通过（GitHub Actions Run 46148877080）；生产Runtime与实际短场景仍未验收）
+> 状态：candidate（64项规则与GM专项已完成桌面逻辑模拟；参考执行器102项自动化测试全部通过（GitHub Actions Run 46149067716）；生产Runtime与实际短场景仍未验收）
 
 本目录是《匕首心》系统级规则资料的唯一入口。与 Triangle Agency、Cairn、Blades in the Dark 完全隔离。当前阶段以基础版 Core Set 为默认规则集，先建立可准确检索、可直接主持的本地规则和数据资料，再通过短场景验证。初版控制复杂度，不默认引入 Hope & Fear。
 
