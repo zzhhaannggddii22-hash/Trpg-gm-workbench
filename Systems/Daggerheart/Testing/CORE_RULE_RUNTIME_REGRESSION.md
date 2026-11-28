@@ -1,6 +1,6 @@
 # Core Rule Runtime Regression Matrix
 
-> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器最新独立 Job 51/51 PASS；LIVE RUNTIME VALIDATION PENDING  
+> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 51/51 PASS；仓库完整 CI Run 633 PASS；LIVE RUNTIME VALIDATION PENDING  
 > DH-T01–DH-T45 已进行确定性桌面逻辑模拟（非代码自动测试）。详情见三个 DESK_TEST_BATCH 文件。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
