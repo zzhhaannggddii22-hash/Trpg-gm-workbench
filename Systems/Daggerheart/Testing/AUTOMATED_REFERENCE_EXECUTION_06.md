@@ -8,8 +8,8 @@
 
 - Test runner: `Systems/Daggerheart/Testing/daggerheart_reference_engine.py`
 - GitHub Actions workflow: `.github/workflows/pr-validation.yml`
-- Commit under test: `6dfa0cb0e5d1d67264c6e1c2d4df651033112103`
-- Workflow run: [Run 46148086763](https://github.com/zzhhaannggddii22-hash/Trpg-gm-workbench/actions/runs/46148086763)
+- Commit under test: `e0a69563fe81131749b7cfbf53f973b9dc3c6011`
+- Workflow run: [Run 46148205415](https://github.com/zzhhaannggddii22-hash/Trpg-gm-workbench/actions/runs/46148205415)
 - Daggerheart reference job: **success**, 82 tests.
 - Repository-wide `validate` job: **success**.
   - 41 general repository regression tests: passed.
