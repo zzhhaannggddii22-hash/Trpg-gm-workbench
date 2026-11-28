@@ -16,6 +16,8 @@
 
 ## 2. 角色创建运行要点
 
+### BLD-ABIL-01｜PC Playbook 创建与起始选择
+
 - Playbook 是角色的专注领域、能力选择和 XP 触发方式，不是职业限制；任何 PC 都可以使用全部 12 项 Action。
 - 每个 Playbook 卡上有 3 个预置 Action dots；玩家额外分配 4 dots，总计 7 dots。创建时任何 Action rating 不能超过 2。
 - 依次选择 Heritage、Background、Playbook Special Ability、一个 Friend、一个 Rival、Vice 与 Vice Purveyor，填写姓名/别名/外貌，并检查起始物品和 XP Trigger。
@@ -23,6 +25,8 @@
 - Score 前只选择 Load 档位；行动期间再按 Load 额度声明携带的道具。
 
 ## 3. 七种核心 PC Playbooks
+
+### BLD-ABIL-02｜PC Special Ability 参考表
 
 ### 3.1 Cutter｜利刃 / 危险且具有威慑力的战士
 
@@ -137,6 +141,8 @@
 
 ## 4. 六种核心 Crew Types
 
+### BLD-ABIL-03｜Crew Special Ability 参考表
+
 Crew Special Ability 是组织层面的持续规则，不只作用于某个 PC。选取后写入 Crew State，并在触发时检查。
 
 ### 4.1 Assassins｜刺客 / 受雇杀手
@@ -230,6 +236,8 @@ Crew Special Ability 是组织层面的持续规则，不只作用于某个 PC�
 | Veteran | 从允许的其他 Crew 能力来源选择 |
 
 ## 5. 运行时能力装载
+
+### BLD-ABIL-04｜按触发条件装载已拥有能力
 
 正式 Campaign 建立 PC / Crew Sheet 后，建立一份已选能力清单：
 
