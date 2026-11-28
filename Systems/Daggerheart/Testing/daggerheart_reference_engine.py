@@ -104,17 +104,13 @@ def damage_marks(damage, major, severe):
 
 
 def take_damage(pc, damage, direct=False, resistant=False, use_armor=False):
-    # Resistance halves incoming damage (round up) before thresholds and Armor.
-    # Direct damage bypasses Armor Slots only; it does not bypass Resistance.
-    final = max(0, damage)
-    if resistant:
-        final = (final + 1) // 2
-    marks = damage_marks(final, pc.major, pc.severe)
-    if use_armor and not direct and marks and pc.armor_slots:
-        marks -= 1
-        pc.armor_slots -= 1
-    mark_hp(pc, marks)
-    return {"final_damage": final, "hp_marks": marks}
+    # Compatibility wrapper: untyped legacy test damage defaults to physical.
+    resistances = {"phy"} if resistant else set()
+    result = resolve_incoming_damage(
+        pc, [{"amount": max(0, damage), "type": "phy"}],
+        resistances=resistances, direct=direct, use_armor=use_armor
+    )
+    return {"final_damage": result["final_damage"], "hp_marks": result["hp_marks"]}
 
 
 
