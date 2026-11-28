@@ -32,7 +32,7 @@ runtime_dispatch:
       status: DOCUMENTED_CANDIDATE
   source_conflicts:
     armor_recovery:
-      status: OPEN_SOURCE_CONFLICT
+      status: RESOLVED_FOR_V1_3_BASELINE
       tracking: Rule_Reference/RULE_ISSUES.md#r-005
 ```
 
