@@ -156,7 +156,4 @@
 - 处理：核心运行手册已恢复该初始化规则；正式开团按 PC 数量初始化 Fear。原先“公开 SRD 未定位到”的判断为检索遗漏，现已更正。
 - 仍需区分：初始化 Fear 与休息时 Fear 增量是不同触发；Short Rest / Long Rest 仍按 DH-REST 规则结算，不可重复套用起始资源。
 
-- 当前运行笔记曾记录“Campaign 开始时 GM 获得每名 PC 1 Fear”。
-- 核验结果：在当前官方 SRD 2.0 的 Fear 章节与可检索全文中，已确认 GM 可从玩家掷出 Fear、休息及能力效果获得 Fear；Short Rest 获得 1d4，Long Rest 获得 1d4 + PC 数量，Fear 上限为 12。尚未定位到 Campaign 初始化时“每名 PC 1 Fear”的公开 SRD 条文。
-- 处理：核心运行手册已将该项降级为待核来源，不再将其标记为 SRD 2.0 已核实。正式 Campaign 开始前，应对照合法取得的完整 Core Rulebook 或明确的官方勘误/指导确认；在来源未确认前，不自动据此加值。
-- 证据边界：这是“当前公开 SRD 未定位到”的检索结论，不等同于证明完整 Core Rulebook 不存在该规则。
+
