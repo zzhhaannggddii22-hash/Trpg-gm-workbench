@@ -73,6 +73,11 @@ clocks: []
 7. 做一次受控短团或真实短团，检查主持行为、信息公平、节奏和状态连续性。
 8. 记录失败样例并修订规则文件，再重复受影响测试。
 
+## 4-B. Special Armor ability regression cases
+
+- [ABILITY_SPECIAL_ARMOR_REGRESSION_CASES.md](./ABILITY_SPECIAL_ARMOR_REGRESSION_CASES.md)：12 个依据核心规则书 V1.3 PDF pp.88–93 与 R-005 编写的资源/触发边界案例。
+- 12/12 人工对照审阅；未自动执行，不代表全能力交互验收。
+
 ## 4-A. Arcane & Crafting regression cases
 
 - [ARCANE_CRAFTING_REGRESSION_CASES.md](./ARCANE_CRAFTING_REGRESSION_CASES.md)：13 个基于核心规则书 V1.3 PDF pp.228–231 的预期结果案例，覆盖仪式、发明、制作、改造和缺点。
