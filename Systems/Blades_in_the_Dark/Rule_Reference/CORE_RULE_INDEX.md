@@ -13,14 +13,14 @@
 |---|---|---|---|
 | 骰型与裁定 | BLD-DICE-01–05 | 出现行动、结果不确定或抵抗 | [CORE_RULES_RUNTIME §2](./CORE_RULES_RUNTIME.md#2-骰型与基础结算) |
 | Action / Position / Effect | BLD-ACT-01–08 | 玩家试图克服危险/麻烦障碍 | [§3](./CORE_RULES_RUNTIME.md#3-action-roll行动骰) |
-| Consequence / Resistance / Armor | BLD-CNS-01–06 | Action Roll 产生后果、玩家决定抵抗 | [§4](./CORE_RULES_RUNTIME.md#4-consequence-resistance与armor) |
-| Clocks / Fortune / Gather Info | BLD-CLK-01–05 | 存在持续进度、未知程度或调查问题 | [§5](./CORE_RULES_RUNTIME.md#5-clocks-fortune与gather-information) |
-| Score / Plan / Engagement | BLD-SCR-01–06 | Crew 确定一个任务目标并进入行动 | [§6](./CORE_RULES_RUNTIME.md#6-score计划与engagement-roll) |
-| Flashback / Teamwork | BLD-FLB-01–04 | 玩家补充过去准备或团队协作 | [§7](./CORE_RULES_RUNTIME.md#7-flashback与teamwork) |
-| Downtime | BLD-DOW-01–08 | Score 结束、进入组织休整阶段 | [§8](./CORE_RULES_RUNTIME.md#8-downtime活动) |
-| Payoff / Heat / Entanglement | BLD-SET-01–05 | 每次 Score 结算 | [§9](./CORE_RULES_RUNTIME.md#9-score结算payoff-heat-entanglements) |
-| Crew / Factions / Cohorts | BLD-CRW-01–07 | 组织成长、派系关系或同伙受影响 | [§10](./CORE_RULES_RUNTIME.md#10-crew-factions与cohorts) |
-| XP / Advancement / Vice | BLD-ADV-01–05 | Session 结束、XP 结算、角色成长 | [§11](./CORE_RULES_RUNTIME.md#11-pc与crew成长) |
+| Consequence / Resistance / Armor | BLD-CNS-01–06 | Action Roll 产生后果、玩家决定抵抗 | [§4](./CORE_RULES_RUNTIME.md#4-consequenceresistance-与-armor) |
+| Clocks / Fortune / Gather Info | BLD-CLK-01–05 | 存在持续进度、未知程度或调查问题 | [§5](./CORE_RULES_RUNTIME.md#5-clocksfortune-与-gather-information) |
+| Score / Plan / Engagement | BLD-SCR-01–06 | Crew 确定一个任务目标并进入行动 | [§6](./CORE_RULES_RUNTIME.md#6-score计划与-engagement-roll) |
+| Flashback / Teamwork | BLD-FLB-01–04 | 玩家补充过去准备或团队协作 | [§7](./CORE_RULES_RUNTIME.md#7-flashback-与-teamwork) |
+| Downtime | BLD-DOW-01–08 | Score 结束、进入组织休整阶段 | [§8](./CORE_RULES_RUNTIME.md#8-downtime-活动) |
+| Payoff / Heat / Entanglement | BLD-SET-01–05 | 每次 Score 结算 | [§9](./CORE_RULES_RUNTIME.md#9-score-结算payoffheatentanglements) |
+| Crew / Factions / Cohorts | BLD-CRW-01–07 | 组织成长、派系关系或同伙受影响 | [§10](./CORE_RULES_RUNTIME.md#10-crewfactions-与-cohorts) |
+| XP / Advancement / Vice | BLD-ADV-01–05 | Session 结束、XP 结算、角色成长 | [§11](./CORE_RULES_RUNTIME.md#11-pc-与-crew-成长) |
 | Ritual / Magnitude / Crafting | BLD-ARC-01–08 | 超自然仪式、Magnitude、发明/打造/改造与炼金物品 | [ARCANE_AND_CRAFTING_RUNTIME.md](./ARCANE_AND_CRAFTING_RUNTIME.md) |
 | PC / Crew Ability | BLD-ABIL-01–04 | 创建角色/组织、获得能力、触发特殊能力效果 | [ABILITY_RUNTIME_MATRIX.md](./ABILITY_RUNTIME_MATRIX.md)；[PLAYBOOKS_AND_CREW_REFERENCE.md](./PLAYBOOKS_AND_CREW_REFERENCE.md) |
 | Doskvol City Guide | BLD-CITY-01 | 地区、派系、NPC、街头流言与城市生成表 | [DOSKVOL_CITY_GUIDE_INDEX.md](./DOSKVOL_CITY_GUIDE_INDEX.md) |
