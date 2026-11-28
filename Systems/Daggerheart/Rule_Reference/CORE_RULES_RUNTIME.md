@@ -446,3 +446,18 @@ PC 标记最后一个 HP 时立即进行 Death Move，选择一项：
 - 这个时序是对通常“掷骰前声明资源和修正”规则的明确例外：只有该次 Hope 结果所生成的 Hope，才能依本条用于同次行动的 Hope Feature。
 - 不得据此在结果出来后补报其他 Experiences、普通额外骰或未声明的资源效果；其他事后生效能力仍按其自身文本和 DH-GENERAL 处理。
 - Critical Success 视为 Hope 结果，因此其获得的 Hope 也符合本条。
+
+
+## 33. Adversary 伤害与生命状态（补充）
+
+- Adversary 的 Major / Severe Threshold 与 HP 直接读取 Stat Block；受到伤害后按与 PC 相同的阈值分档标记 1–3 HP：低于 Major 标记 1，达到 Major 标记 2，达到 Severe 标记 3。
+- Adversary 标记最后一个 HP 时即为 Defeated；其表现为失能、逃跑、被制服、死亡或其他状态，由桌面结合虚构决定。
+- Adversary 的 Stress 记录在 Stat Block 中，按其 Feature 或效果要求标记；不要把 PC 的 Vulnerable / Stress 耗尽规则擅自套到敌人身上，除非规则明确适用。
+- Adversary 没有默认 Armor Score / Armor Slots；若某个敌人有相关能力或效果，按其 Stat Block 明文处理。
+- PC 的 Armor Score 上限为 12；PC 的 HP 与 Stress Slots 上限也各为 12。
+
+## 34. Death Move 的叙事边界（补充）
+
+- 标记最后一个 HP 通常立即触发 Death Move。
+- 但若角色行为按世界逻辑会直接导致即时死亡（例如无保护跳入活火山），GM 可以裁定不触发 Death Move；这种重大后果必须在行动完成前明确告知玩家，并符合世界逻辑。
+- 这是基于虚构的裁定，不是 GM 在普通战斗中任意取消 Death Move 的权限。
