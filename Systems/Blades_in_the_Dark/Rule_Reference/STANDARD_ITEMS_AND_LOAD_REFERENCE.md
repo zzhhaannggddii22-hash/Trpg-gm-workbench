@@ -40,6 +40,14 @@ Load 是装备/携带能力的抽象格数，不是重量单位，也不要求�
 
 官方工具包也列有各 Playbook 的专属物品和 Crew 升级提供的额外 Load；这些要按实际 PC / Crew Sheet 检索，不要用本表覆盖。
 
+## 2-A. Coin 与 Load
+
+- Coin 是抽象现金，不追踪日常零钱。
+- 超过 4 Coin 属于不便随身/散放的金额，应花掉或转入 Stash。
+- 携带的实体银币或其他大宗现金，每 1 Coin 占 1 个 Load 物品格。
+- 组织 Lair 默认储存 4 Coin；Vault 升级将容量扩展到 8，再到 16。
+- 个人 Stash 是长期财富，不计入当前 Score 的 Load；每 10 Stash 对应一档 Lifestyle Quality。
+
 ## 3. 护甲的 Load 与使用格
 
 - 角色卡有 Standard Armor、Heavy Armor、Special Armor 三种使用格，但拥有格子不代表可以不带装备就使用。
