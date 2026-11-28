@@ -85,3 +85,9 @@ clocks: []
 - 用户确认建立正式 Campaign。
 
 通过文档检查或合成用例不等于真实跑团验收。Candidate 不会自动升级为 active。
+
+
+## 自动化检查追加记录（2026-11-28）
+
+- [AUTOMATED_CANDIDATE_CHECKS_2026-11-28.md](./AUTOMATED_CANDIDATE_CHECKS_2026-11-28.md)：31 项文档不变量/确定性微模型检查 PASS。
+- 本轮没有完整规则引擎执行、全部 75 固定场景自动重放或真人短团测试；Armor 来源冲突 R-005 仍 OPEN。
