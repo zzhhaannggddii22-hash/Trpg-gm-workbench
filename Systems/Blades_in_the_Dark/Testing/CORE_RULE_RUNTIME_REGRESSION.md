@@ -2,7 +2,7 @@
 
 > Fixture: BITD_CANDIDATE_V01  
 > Status: 75/75 SYNTHETIC CASES EXECUTED; LIVE PLAY NOT PERFORMED  
-> 结果记录区分：STATIC REVIEW、SYNTHETIC EXECUTION、LIVE PLAY。已执行的固定输入用例见 [Synthetic Execution Report](./SYNTHETIC_EXECUTION_REPORT_2026-11-28.md)。
+> 结果记录区分：STATIC REVIEW、SYNTHETIC EXECUTION、LIVE PLAY。四轮执行记录见 [第四轮报告](./SYNTHETIC_EXECUTION_REPORT_2026-11-28_R4.md)；完整分轮记录列于结果登记表。
 
 | ID | 输入/场景 | 预期规则行为 | 结果类型 |
 |---|---|---|---|
@@ -96,6 +96,6 @@
 ## 当前开放风险
 
 - 七种核心 PC Playbook 与六类 Crew 的 Special Ability 已建立触发式矩阵；Veteran、特殊资源、角色卡版本差异仍须按实际建卡回查。
-- 六类 Crew 的完整升级与 Claim 表尚未逐条录入，需要按实际 Campaign 类型查表。
+- 已建立六类 Crew 的创建、升级、Hunting Grounds 与 Claim 参考；但尚未对每种 Crew 的全部升级/Claim 收益做逐项合成回归，正式 Campaign 仍须按所选 Crew 卡面核验。
 - Doskvol 专有设定、官方 NPC、地区、地图和非 SRD 材料需要合法来源。
 - 中文 SRD 的修订号未明确，正式 Campaign 前必须锁定实际使用版本。
