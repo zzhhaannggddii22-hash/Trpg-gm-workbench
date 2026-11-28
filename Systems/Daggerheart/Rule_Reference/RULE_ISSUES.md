@@ -170,3 +170,18 @@
 - 当前参考执行器策略：中断 Long Rest 只发放 Short Rest 的 PC 收益，不自动结算 GM Fear / Countdown，且不改变连续 Short Rest 计数；中断 Short Rest 不发放 PC 收益。此为保守运行回退，不是官方裁定。
 - 后续处理：实际开团前在 Campaign Binding 中明确采用的桌面裁定；若后续官方 FAQ / Errata 给出明确说明，再替换本地策略。
 - 来源：官方 Daggerheart SRD 休息与 Downtime Consequences 章节；SRD 2.0 第 52 页第三方索引仅作页码定位，仍以官方 PDF 为准。
+
+
+## DH-I-020｜Feature 授予 Spotlight 与通用额外 Spotlight Fear 成本
+
+- 状态：PARTIALLY_RESOLVED / FEATURE_SPECIFIC_CASES_PENDING
+- 已确认的一般规则：
+  - GM 普通地 Spotlight 额外 Adversary 时支付 1 Fear。
+  - Adversary / Environment Fear Feature 的成本，须在此前已支付的抢夺 Spotlight 或其他能力成本之外另行支付。
+  - Relentless (X) 允许同一 Adversary 在一个 GM Turn 内多次获得 Spotlight，并明确要求按常规支付 Fear。
+  - 明确授予一个或多个 Adversary Spotlight 的 Spotlighting Feature，除非其文本另有要求，通常不需要额外 Fear；且不能在该 Spotlighting Feature 授予的 Spotlight 尚未结束时链式触发另一项 Spotlighting Feature。
+- 具体案例：
+  - Raging River 的 Patient Hunter：支付 1 Fear 召唤 Glass Snake，并写明其立即获得 Spotlight 使用 Spinning Serpent。当前按“Fear Feature 的 1 Fear 已支付；立即 Spotlight 属于该 Feature 的效果”处理，不再机械叠加普通额外 Spotlight 的 1 Fear。
+  - Glass Snake 的 Spitter：支付 1 Fear 引入 Spitter Die，并允许 Glass Snake 在本 GM Turn 再次获得 Spotlight。SRD 文字没有明确说明这次额外 Spotlight 是否另付 1 Fear；在官方 FAQ / Errata 澄清前标记 DISPUTED，不自动作出双重收费或免费处理。
+- 当前参考执行器的 spotlight_adversary 只模拟普通额外 Spotlight、Relentless 重复 Spotlight 与 Fear Feature 独立成本；尚未实现 Spotlighting Feature 的链式限制和特定 Feature 费用覆盖。
+- 来源：官方 SRD 2.0 的 Making Moves / Using Adversaries；官方 Homebrew Kit 对召唤型 Environment Feature 的说明；Core Rulebook Spotlighting Features / Relentless 规则。第三方社区讨论仅作问题定位，不作为裁定依据。
