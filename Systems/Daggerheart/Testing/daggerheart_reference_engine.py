@@ -166,6 +166,77 @@ def resolve_incoming_damage(pc, sources, resistances=(), immunities=(), direct=F
     }
 
 
+
+def apply_condition(state, target, name, source, tag="standard"):
+    """Apply a condition once per target, retaining source and lifecycle data."""
+    conditions = state.setdefault("conditions", [])
+    if any(c["target"] == target and c["name"] == name and c["active"] for c in conditions):
+        return False
+    conditions.append({
+        "target": target, "name": name, "source": source,
+        "tag": tag, "active": True, "cleared_by": None,
+    })
+    return True
+
+
+def active_condition(state, target, name):
+    return any(
+        c["target"] == target and c["name"] == name and c["active"]
+        for c in state.get("conditions", [])
+    )
+
+
+def condition_effects(state, target):
+    hidden = active_condition(state, target, "hidden")
+    vulnerable = active_condition(state, target, "vulnerable")
+    restrained = active_condition(state, target, "restrained")
+    net = int(vulnerable) - int(hidden)
+    return {
+        "roll_state": "advantage" if net > 0 else "disadvantage" if net < 0 else "none",
+        "can_move": not restrained,
+        "can_act": True,
+    }
+
+
+def clear_condition(state, target, name, cleared_by):
+    for condition in state.get("conditions", []):
+        if condition["target"] == target and condition["name"] == name and condition["active"]:
+            condition["active"] = False
+            condition["cleared_by"] = cleared_by
+            return True
+    return False
+
+
+def clear_temporary_condition(state, target, actor_kind, action_success=False, has_spotlight=False):
+    condition = next((
+        c for c in state.get("conditions", [])
+        if c["target"] == target and c["active"] and c["tag"] == "temporary"
+    ), None)
+    if condition is None:
+        return {"cleared": False, "spotlight_consumed": False}
+    if actor_kind == "pc" and action_success:
+        condition["active"] = False
+        condition["cleared_by"] = "successful_action_roll"
+        return {"cleared": True, "spotlight_consumed": False}
+    if actor_kind == "adversary" and has_spotlight:
+        condition["active"] = False
+        condition["cleared_by"] = "adversary_spotlight"
+        return {"cleared": True, "spotlight_consumed": True}
+    return {"cleared": False, "spotlight_consumed": False}
+
+
+def clear_special_condition(state, target, requirement_met=False):
+    condition = next((
+        c for c in state.get("conditions", [])
+        if c["target"] == target and c["active"] and c["tag"] == "special"
+    ), None)
+    if condition is None or not requirement_met:
+        return False
+    condition["active"] = False
+    condition["cleared_by"] = "specific_requirement"
+    return True
+
+
 def advantage_state(advantage_sources, disadvantage_sources):
     net = advantage_sources - disadvantage_sources
     return "advantage" if net > 0 else "disadvantage" if net < 0 else "none"
@@ -525,6 +596,65 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
             resistances={"phy"}, immunities={"mag"}
         )
         self.assertEqual((result["final_damage"], result["hp_marks"]), (6, 2))
+
+
+    def test_52_standard_condition_does_not_stack_on_same_target(self):
+        state = {}
+        self.assertTrue(apply_condition(state, "pc-1", "hidden", "behind-wall"))
+        self.assertFalse(apply_condition(state, "pc-1", "hidden", "smoke"))
+        self.assertTrue(apply_condition(state, "pc-2", "hidden", "behind-wall"))
+        self.assertEqual(len(state["conditions"]), 2)
+
+    def test_53_hidden_gives_disadvantage_and_ends_when_target_attacks(self):
+        state = {}
+        apply_condition(state, "pc-1", "hidden", "out-of-sight")
+        self.assertEqual(condition_effects(state, "pc-1")["roll_state"], "disadvantage")
+        self.assertTrue(clear_condition(state, "pc-1", "hidden", "target-attacked"))
+        self.assertEqual(condition_effects(state, "pc-1")["roll_state"], "none")
+
+    def test_54_restrained_prevents_movement_but_not_actions(self):
+        state = {}
+        apply_condition(state, "pc-1", "restrained", "web")
+        effects = condition_effects(state, "pc-1")
+        self.assertEqual((effects["can_move"], effects["can_act"]), (False, True))
+
+    def test_55_vulnerable_gives_advantage_to_rolls_targeting_creature(self):
+        state = {}
+        apply_condition(state, "adversary-1", "vulnerable", "exposed")
+        self.assertEqual(condition_effects(state, "adversary-1")["roll_state"], "advantage")
+
+    def test_56_hidden_and_vulnerable_cancel_pairwise(self):
+        state = {}
+        apply_condition(state, "pc-1", "hidden", "darkness")
+        apply_condition(state, "pc-1", "vulnerable", "opening")
+        self.assertEqual(condition_effects(state, "pc-1")["roll_state"], "none")
+
+    def test_57_pc_clears_temporary_condition_only_on_success(self):
+        state = {}
+        apply_condition(state, "pc-1", "pinned", "net", tag="temporary")
+        failed = clear_temporary_condition(state, "pc-1", "pc", action_success=False)
+        self.assertFalse(failed["cleared"])
+        passed = clear_temporary_condition(state, "pc-1", "pc", action_success=True)
+        self.assertTrue(passed["cleared"])
+        self.assertFalse(passed["spotlight_consumed"])
+
+    def test_58_adversary_clears_temporary_condition_with_its_spotlight(self):
+        state = {}
+        apply_condition(state, "adversary-1", "pinned", "snare", tag="temporary")
+        no_spotlight = clear_temporary_condition(state, "adversary-1", "adversary")
+        self.assertFalse(no_spotlight["cleared"])
+        with_spotlight = clear_temporary_condition(
+            state, "adversary-1", "adversary", has_spotlight=True
+        )
+        self.assertEqual((with_spotlight["cleared"], with_spotlight["spotlight_consumed"]), (True, True))
+
+    def test_59_special_condition_requires_its_specific_requirement(self):
+        state = {}
+        apply_condition(state, "adversary-1", "sealed", "ritual", tag="special")
+        self.assertFalse(clear_special_condition(state, "adversary-1", requirement_met=False))
+        self.assertTrue(active_condition(state, "adversary-1", "sealed"))
+        self.assertTrue(clear_special_condition(state, "adversary-1", requirement_met=True))
+        self.assertFalse(active_condition(state, "adversary-1", "sealed"))
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
