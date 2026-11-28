@@ -45,10 +45,6 @@ jobs:
       - name: Run roll runtime adapter conformance harness
         run: python GM_Training/Testing/Fixtures/ROLL_RUNTIME_APPLICATION_ADAPTER_v1/roll_runtime_adapter.py
 
-      - name: Run Daggerheart Core reference executor tests
-        if: always()
-        run: python Systems/Daggerheart/Testing/daggerheart_reference_engine.py
-
       - name: Check patch whitespace
         shell: bash
         run: |
@@ -57,3 +53,17 @@ jobs:
           else
             git diff --check 6c6109202d92d7bbacd638d5aa37d00418262d2b..HEAD
           fi
+
+  daggerheart-reference:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run Daggerheart Core reference executor tests
+        run: python Systems/Daggerheart/Testing/daggerheart_reference_engine.py
