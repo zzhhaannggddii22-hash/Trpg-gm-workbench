@@ -419,18 +419,10 @@ def advantage_state(advantage_sources, disadvantage_sources):
     return "advantage" if net > 0 else "disadvantage" if net < 0 else "none"
 
 
-def advance_countdown(state, event_id, amount=1):
-    applied = state.setdefault("applied_events", set())
-    if event_id in applied:
-        return False
-    state["value"] += amount
-    applied.add(event_id)
-    return True
-
-
-
 def tick_down_countdown(state, event_id=None, amount=1):
     """Advance a Daggerheart countdown by reducing its remaining value."""
+    if amount < 0:
+        raise ValueError("Countdown advancement cannot be negative")
     applied = state.setdefault("applied_events", set())
     if event_id is not None and event_id in applied:
         return False
@@ -438,6 +430,88 @@ def tick_down_countdown(state, event_id=None, amount=1):
     if event_id is not None:
         applied.add(event_id)
     return True
+
+
+def advance_countdown(state, event_id, amount=1):
+    """Advance a standard/long-term countdown; advancement means ticking down."""
+    return tick_down_countdown(state, event_id, amount)
+
+
+def advance_dynamic_countdown(state, event_id, roll_result):
+    """Apply the SRD 2.0 dynamic countdown table to a progress/consequence clock."""
+    progress = {
+        "failure_with_fear": 0,
+        "failure_with_hope": 0,
+        "success_with_fear": 1,
+        "success_with_hope": 2,
+        "critical_success": 3,
+    }
+    consequence = {
+        "failure_with_fear": 3,
+        "failure_with_hope": 2,
+        "success_with_fear": 1,
+        "success_with_hope": 0,
+        "critical_success": 0,
+    }
+    kind = state.get("type")
+    if kind not in {"progress", "consequence"}:
+        raise ValueError("Dynamic countdown type must be progress or consequence")
+    table = progress if kind == "progress" else consequence
+    if roll_result not in table:
+        raise ValueError("Unknown action roll result")
+    amount = table[roll_result]
+    applied = tick_down_countdown(state, event_id, amount)
+    return {"applied": applied, "ticks": amount if applied else 0,
+            "value": state["value"], "triggered": state["value"] == 0}
+
+
+def work_on_project(project, rest_state, actor_id, approved,
+                    starting_value=None, action_roll_result=None, event_id=None):
+    """Resolve a Campaign-bound Work on a Project move during a Long Rest.
+
+    GM approval and project complexity/value are Campaign decisions. A complex
+    project uses an already-resolved Action Roll result as progress input.
+    """
+    if not approved:
+        return {"allowed": False, "reason": "gm_approval_required"}
+    if project.get("status", "active") != "active":
+        return {"allowed": False, "reason": "project_not_active"}
+    if "countdown" not in project:
+        if starting_value is None or starting_value < 1:
+            return {"allowed": False, "reason": "starting_value_required"}
+        project["countdown"] = {"type": "progress", "value": starting_value}
+    complexity = project.get("complexity", "simple")
+    if complexity not in {"simple", "complex"}:
+        raise ValueError("Project complexity must be simple or complex")
+    if complexity == "complex" and action_roll_result is None:
+        return {"allowed": False, "reason": "action_roll_required"}
+    if complexity == "simple":
+        applied = tick_down_countdown(project["countdown"], event_id, 1)
+        ticks = 1 if applied else 0
+        value = project["countdown"]["value"]
+        triggered = value == 0
+        result = {"applied": applied, "ticks": ticks, "value": value,
+                  "triggered": triggered}
+    else:
+        result = advance_dynamic_countdown(
+            project["countdown"], event_id, action_roll_result
+        )
+        applied = result["applied"]
+    if not applied:
+        return {"allowed": False, "reason": "duplicate_project_event",
+                "countdown": project["countdown"]["value"]}
+    used = rest_state.setdefault("moves_used", {})
+    if used.get(actor_id, 0) >= 2:
+        # Roll back the tick: a rejected downtime move must not advance work.
+        project["countdown"]["value"] += result["ticks"]
+        project["countdown"].setdefault("applied_events", set()).discard(event_id)
+        return {"allowed": False, "reason": "downtime_move_limit"}
+    used[actor_id] = used.get(actor_id, 0) + 1
+    if result["triggered"]:
+        project["status"] = "completed"
+    return {"allowed": True, "moves_used": used[actor_id],
+            "countdown": result["value"], "ticks": result["ticks"],
+            "triggered": result["triggered"], "complexity": complexity}
 
 
 def short_rest(state, interrupted=False, fear_roll=0, gm=None):
@@ -704,17 +778,17 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         result = take_damage(PC(), 11, resistant=True)
         self.assertEqual((result["final_damage"], result["hp_marks"]), (6, 2))
 
-    def test_22_countdown_event_is_idempotent(self):
-        state = {"value": 0}
+    def test_22_countdown_event_is_idempotent_and_ticks_down(self):
+        state = {"value": 2}
         self.assertTrue(advance_countdown(state, "roll-1"))
         self.assertFalse(advance_countdown(state, "roll-1"))
         self.assertEqual(state["value"], 1)
 
     def test_23_distinct_rolls_advance_countdown_separately(self):
-        state = {"value": 0}
+        state = {"value": 2}
         advance_countdown(state, "roll-1")
         advance_countdown(state, "roll-2")
-        self.assertEqual(state["value"], 2)
+        self.assertEqual(state["value"], 0)
 
     def test_24_interrupted_short_rest_has_no_refresh(self):
         result = short_rest({}, interrupted=True)
@@ -1222,6 +1296,57 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         self.assertTrue(can_use_spotlighting_feature(state) is False)
         self.assertTrue(complete_feature_spotlight(state, "ally-a"))
         self.assertTrue(can_use_spotlighting_feature(state))
+
+
+    def test_103_standard_countdown_ticks_down_and_clamps_at_zero(self):
+        clock = {"value": 1}
+        self.assertTrue(advance_countdown(clock, "action-1"))
+        self.assertEqual(clock["value"], 0)
+        self.assertTrue(advance_countdown(clock, "action-2"))
+        self.assertEqual(clock["value"], 0)
+
+    def test_104_dynamic_progress_countdown_uses_srd_advancement_table(self):
+        expected = {
+            "failure_with_fear": 0, "failure_with_hope": 0,
+            "success_with_fear": 1, "success_with_hope": 2,
+            "critical_success": 3,
+        }
+        for result, ticks in expected.items():
+            clock = {"type": "progress", "value": 5}
+            applied = advance_dynamic_countdown(clock, result, result)
+            self.assertEqual((applied["ticks"], clock["value"]), (ticks, 5 - ticks))
+
+    def test_105_dynamic_consequence_countdown_uses_srd_advancement_table(self):
+        expected = {
+            "failure_with_fear": 3, "failure_with_hope": 2,
+            "success_with_fear": 1, "success_with_hope": 0,
+            "critical_success": 0,
+        }
+        for result, ticks in expected.items():
+            clock = {"type": "consequence", "value": 5}
+            applied = advance_dynamic_countdown(clock, result, result)
+            self.assertEqual((applied["ticks"], clock["value"]), (ticks, 5 - ticks))
+
+    def test_106_dynamic_countdown_rejects_non_dynamic_types(self):
+        with self.assertRaises(ValueError):
+            advance_dynamic_countdown({"type": "standard", "value": 3}, "r1", "success_with_hope")
+
+    def test_107_simple_project_uses_progress_countdown_and_completes(self):
+        project, rest = {"complexity": "simple"}, {}
+        first = work_on_project(project, rest, "pc-1", True, starting_value=2, event_id="rest-1")
+        second = work_on_project(project, rest, "pc-1", True, event_id="rest-2")
+        self.assertEqual((first["countdown"], second["countdown"], project["status"]), (1, 0, "completed"))
+        self.assertEqual(rest["moves_used"]["pc-1"], 2)
+
+    def test_108_complex_project_requires_roll_and_uses_progress_table(self):
+        project, rest = {"complexity": "complex"}, {}
+        missing = work_on_project(project, rest, "pc-1", True, starting_value=4, event_id="rest-1")
+        self.assertEqual(missing["reason"], "action_roll_required")
+        result = work_on_project(
+            project, rest, "pc-1", True, action_roll_result="success_with_hope", event_id="rest-1"
+        )
+        self.assertEqual((result["ticks"], result["countdown"]), (2, 2))
+        self.assertEqual(rest["moves_used"]["pc-1"], 1)
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
