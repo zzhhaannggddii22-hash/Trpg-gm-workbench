@@ -53,11 +53,12 @@
 - 初版规则运行手册：SOURCE_IMPORTED。
 - 结构化数据：SOURCE_IMPORTED，已按 Core / Hope & Fear 拆分。
 - Errata：完成抽样核验，尚未穷尽。
-- 桌面逻辑模拟：45/45 已完成（非代码自动测试）。
+- 桌面逻辑模拟：64/64 已完成（非代码自动测试），其中 19 项 GM Move / Fear / 遭遇设计专项见 GM_DESK_SIMULATION_01.md。
 - 独立参考执行器：42/42 自动化用例通过；仅覆盖首批核心状态转移，不代表完整规则覆盖或生产 Runtime 验收。
 - 仓库整体 CI：当前因 4 个既有 Markdown 链接缺失而失败；Daggerheart 专项测试步骤成功执行。
-- Blind GM 测试：待执行。
-- Session 测试：待执行。
+- 内部 Blind Scenario 模拟：第一轮 3 场景已完成，第二轮 3 场景复核已完成；独立外部 Blind GM 测试：待执行。
+- 实际玩家短场景 Session：待执行。
 - 正式 Campaign：未建立。
+- 单人场景复核：社交、探索与战斗流程已做内部模拟；单人遭遇平衡仍未验证。
 
 正式状态保持 candidate。
