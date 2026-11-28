@@ -80,7 +80,7 @@ clocks: []
 ## 4-C. GM behavior regression cases
 
 - [GM_BEHAVIOR_REGRESSION_CASES.md](./GM_BEHAVIOR_REGRESSION_CASES.md)：18 个依据核心规则书 V1.3 PDF pp.199–207 GM 指南编写的 AI 主持行为案例，检查玩家能动性、信息公平、NPC 动机、节奏、镜头尺度和规则边界。
-- [GM_BEHAVIOR_SELF_TEST_2026-11-28.md](./GM_BEHAVIOR_SELF_TEST_2026-11-28.md)：逐项运行 18 个案例，结果 16 PASS / 2 PARTIAL / 0 FAIL；同模型生成并自评，非独立评估。根据两项 PARTIAL 已修订 GM Skill。无自动化引擎执行，未进行真人短团验证。
+- [GM_BEHAVIOR_SELF_TEST_2026-11-28.md](./GM_BEHAVIOR_SELF_TEST_2026-11-28.md)：逐项运行 18 个案例，初次结果 16 PASS / 2 PARTIAL / 0 FAIL；根据两项 PARTIAL 修订 GM Skill 后，GM-03 / GM-07 定向复测 2/2 PASS。另完成 11/11 文档结构/交叉链接检查。均为同模型自评或静态检查，非独立评估；无自动化引擎执行，未进行真人短团验证。
 
 ## 4-B. Special Armor ability regression cases
 
