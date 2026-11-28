@@ -23,6 +23,7 @@ WWN 不只是角色与战斗规则，也提供世界构建、地点 Tags、冒�
 - [离线规则数据](./Rule_Reference/Data/README.md)
 - [研究计划](./Research/RESEARCH_PLAN.md)
 - [资料来源与许可](./Research/SOURCES.md)
+- [外部资源目录](./Research/EXTERNAL_RESOURCES.md)
 - [测试入口](./Testing/README.md)
 
 ## 权威与许可边界
