@@ -1,6 +1,6 @@
 # Core Rule Runtime Regression Matrix
 
-> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 71/71 PASS；仓库完整 CI Run 663 PASS；LIVE RUNTIME VALIDATION PENDING  
+> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 81/81 PASS；仓库完整 CI Run 663 PASS；LIVE RUNTIME VALIDATION PENDING  
 > DH-T01–DH-T45 已进行确定性桌面逻辑模拟（非代码自动测试）。详情见三个 DESK_TEST_BATCH 文件。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
@@ -144,9 +144,29 @@
 | DH-REF-078 | GM Turn 结束 | Spotlight 交还 PC 一侧 | Pending rerun |
 | DH-REF-079 | 新 GM Turn 开始 | 敌人本 Turn 的 Spotlight 次数重置 | Pending rerun |
 
+## GM Turn / Spotlight 运行时回归（代码用例；新增批次待自动复跑）
+
+| ID | 场景 | 关键断言 | 状态 |
+|---|---|---|---|
+| DH-REF-072 | PC Spotlight 中 GM 抢夺聚焦 | 支付 1 Fear 后进入 GM Turn | Pending rerun |
+| DH-REF-073 | GM Fear 不足时抢夺 Spotlight | 不得进入 GM Turn，PC Spotlight 保持 | Pending rerun |
+| DH-REF-074 | GM Turn 中第一个敌人获得 Spotlight | 首个敌人免费；第二个敌人需额外支付 1 Fear | Pending rerun |
+| DH-REF-075 | Relentless(2) 敌人重复 Spotlight | 同一 GM Turn 可再获得一次 Spotlight，但额外聚焦支付 Fear；第三次超出上限 | Pending rerun |
+| DH-REF-076 | 第二个敌人同时使用 Fear Feature | 额外 Spotlight 与 Fear Feature 成本分别支付 | Pending rerun |
+| DH-REF-077 | Fear 不足以支付 Spotlight 与 Feature 总成本 | 本次行动整体失败，不扣除部分 Fear | Pending rerun |
+| DH-REF-078 | GM Turn 结束 | Spotlight 返回 PC，GM Turn 标记关闭 | Pending rerun |
+| DH-REF-079 | 新 GM Turn 开始 | 重置本轮敌人 Spotlight 次数 | Pending rerun |
+
+## Short Rest 次数边界回归（代码用例；新增批次待自动复跑）
+
+| ID | 场景 | 关键断言 | 状态 |
+|---|---|---|---|
+| DH-REF-080 | 第三次连续 Short Rest | 允许完成第三次；此后第四次必须 Long Rest | Pending rerun |
+| DH-REF-081 | 中断 Short Rest | 不增加连续 Short Rest 计数 | Pending rerun |
+
 ## 自动化参考执行补充
 
-独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，Run 04 为 66/66，Run 05 为 71/71，均有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 新增并通过 8 项条件状态生命周期回归（DH-REF-052–059）；Run 04 新增并通过 7 项移动、视线与范围效果回归（DH-REF-060–066）；Run 05 新增并通过 5 项休息与 Downtime 回归（DH-REF-067–071），详见 `AUTOMATED_REFERENCE_EXECUTION_05.md`。这 71 项验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
+独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，Run 04 为 66/66，Run 05 为 71/71；当前新增 GM Turn 与 Short Rest 边界回归待 Run 06，均有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 新增并通过 8 项条件状态生命周期回归（DH-REF-052–059）；Run 04 新增并通过 7 项移动、视线与范围效果回归（DH-REF-060–066）；Run 05 新增并通过 5 项休息与 Downtime 回归（DH-REF-067–071），详见 `AUTOMATED_REFERENCE_EXECUTION_05.md`。Run 05 的 71 项验证独立参考执行器与 Core Set 数据；当前代码已扩展至 81 项，新增 10 项待 Run 06 验证，不是生产 GM Runtime 的端到端测试。
 
 ## 测试执行记录
 
@@ -154,11 +174,11 @@
 |---|---|
 | 测试版本 | Core Set / SRD 2.0 (2026-08-25) |
 | 扩展范围 | CORE_ONLY |
-| 矩阵状态 | 64/64 项已桌面逻辑模拟；71/71 参考执行器自动化测试通过 |
-| 已执行测试 | 64 / 64（桌面逻辑模拟）；参考执行器最新可核验记录 71/71 |
+| 矩阵状态 | 64/64 项已桌面逻辑模拟；81 项参考执行器用例已编写（其中新增 10 项待自动复跑） |
+| 已执行测试 | 64 / 64（桌面逻辑模拟）；参考执行器最新已通过记录 71/71；当前代码 81 项，10 项待 Run 06 |
 | 已通过 | 64（桌面模拟）；71（参考执行器） |
 | 已失败 | 0 |
-| 待执行 | 0（桌面模拟层面）；0（已纳入参考执行器的回归） |
+| 待执行 | 0（桌面模拟层面）；10（新增 GM Turn / Short Rest 回归待执行） |
 | 阻塞 | 0 |
 
 本矩阵仍是测试清单兼状态记录。DH-T01–DH-T45 的桌面模拟输入与结果见 DESK_TEST_BATCH_01.md、DESK_TEST_BATCH_02.md、DESK_TEST_BATCH_03.md；新增 19 项见 GM_DESK_SIMULATION_01.md。桌面逻辑模拟不等同于代码自动测试或完整规则书验收。盲测、短场景主持测试与完整 Core Rulebook 对照仍待完成。
