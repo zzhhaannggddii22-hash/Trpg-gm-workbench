@@ -4,6 +4,20 @@
 
 ## 官方 / 作者来源
 
+### Worlds Without Number Free Edition（2021 Free Version）
+完整 PDF 镜像（研究阅读入口）：
+https://tesera.ru/images/items/2287261/worldswithoutnumber-free.pdf
+
+封面与版权页核验：
+- 标识：FREE VERSION
+- © 2021 Sine Nomine Publishing, Inc.
+- ISBN 978-1-950965-08-3
+- Written by Kevin Crawford
+
+目录定位：Creating Your Campaign，印刷页 114–221；Creating Adventures，pp.222–279；Creatures of a Far Age，pp.280–321；Factions and Major Projects，pp.322–345。
+
+说明：这是第三方托管的 PDF 镜像，不是出版方直接下载源。仅用于研究核验；本仓库不保存或公开复制完整 PDF 及受保护正文。
+
 ### Sine Nomine Publishing：产品系列
 https://www.sinenominepublishing.com/collections/worlds-without-number
 
@@ -12,12 +26,7 @@ https://www.sinenominepublishing.com/collections/worlds-without-number
 ### Sine Nomine Publishing：Worlds Without Number Deluxe PDF
 https://sine-nomine-publishing.myshopify.com/products/worlds-without-number-deluxe-pdf
 
-用途：出版方对系统内容的说明。页面提到 OSR-compatible 角色规则、约 200 个 worldbuilding tags、历史/社会/政府/宗教/地理构建、冒险创建和 Faction Rules，并称核心工具也包含在 Free Edition。Deluxe 另有 Fractal Adventure Seeds、Iterums 和补充 GM 表格。这是产品范围描述，不等于逐页核验正文。
-
-### Worlds Without Number Free Edition
-https://www.drivethrurpg.com/product/348809/Worlds-Without-Number-Free-Edition
-
-用途：完整规则书主要阅读来源。当前尚未核实本地已有完整 PDF，因此版本、印刷页码、勘误与 GM 工具正文仍待核。
+用途：出版方对系统内容的说明。页面提到约 200 个 Worldbuilding Tags、历史/社会/政府/宗教/地理构建、冒险创建和 Faction Rules，并称主要工具也包含在 Free Edition。Deluxe 另有 Fractal Adventure Seeds、Iterums 和补充 GM 表格。这是产品范围描述，不替代正文核验。
 
 ### Worlds Without Number System Reference Document v1.0
 作者 Kevin Crawford；日期 2024-03-13；许可 CC0 1.0 Universal。
@@ -28,8 +37,7 @@ https://f.rpghq.org/kqcYORA3rYon.pdf?n=WorldsWithoutNumber_SRD_1.0.pdf
 SRD Markdown 阅读入口（社区转录）：
 https://rpg.blulaktuko.net/wwn/srd.md
 
-许可：
-https://creativecommons.org/publicdomain/zero/1.0/
+许可：https://creativecommons.org/publicdomain/zero/1.0/
 
 SRD 覆盖角色、核心规则、装备、魔法、怪物、Faction 和 Major Projects 机制；明确不是完整玩家手册，排除 Latter Earth 设定及大部分 GM 工具创作文本。
 
@@ -51,12 +59,14 @@ https://hazmole.github.io/Free-Open-TRPG-Translation/
 ## 本地离线资料
 
 - Rule_Reference/Data/SRD.md：SRD 原文。
-- Rule_Reference/Data/wwn-srd-data.jsonld：完整结构化数据图。
+- Rule_Reference/Data/wwn-srd-data.jsonld：结构化数据图。
 - Rule_Reference/Data/catalog.json：章节/名称目录。
 - Rule_Reference/Data/search-index.json：本地全文倒排索引。
 - Rule_Reference/CORE_RUNTIME_GUIDE.md：核心机制摘要。
+- Rule_Reference/WORLD_BUILDING_RUNTIME.md：世界构建摘要。
+- Rule_Reference/SITE_TAGS_RUNTIME.md：Site Tags 结构与组合流程。
+- Rule_Reference/ADVENTURE_CREATION_RUNTIME.md：冒险创建摘要。
 - Rule_Reference/FACTIONS_AND_MAJOR_PROJECTS.md：阵营与重大计划摘要。
-- Rule_Reference/GM_TOOLKIT_RESEARCH.md：GM 工具类别和缺口。
 
 ## 许可边界
 
