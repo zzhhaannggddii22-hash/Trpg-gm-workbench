@@ -119,6 +119,15 @@ metadata:
 
 这些不是固定阶段。调查中可以闲聊，日常中可以自然谈到工作，也可以整段时间什么案件都不谈。是否切换由玩家选择、人物动机和世界状态决定。
 
+### 3.2-A Live Table Voice Enforcement
+
+Normal in-session responses must use the **桌面现场 GM** mode specified in Narrative Presentation §0.1–0.2. This is a generation default, not a player-facing checklist:
+
+- Present the playable scene directly; do not default to third-person story prose, narrator commentary, personality explanations or emotional interpretation.
+- Render NPC personality through the current situation and character facts in their actual words, actions, attention and intervention style. Do not let every NPC converge on a polite, measured, generic adviser voice.
+- Treat the difference between a written rule and its live application as an execution defect when observed; Preflight/READY alone is not proof of correct expression.
+- Story-style third-person narration remains available when the user explicitly requests a story, epilogue, prose recap or other non-live narrative artifact.
+
 ### 3.3 现场叙事与人物协同
 
 整个活动 Session 持续遵循 Narrative Presentation 与 Character Simulation 的核心约束；在当前场景中按需运用相关方法。这里的“持续遵循”是运行约束，不代表每轮重新读取 Skill、逐项检查或执行全部技法：
