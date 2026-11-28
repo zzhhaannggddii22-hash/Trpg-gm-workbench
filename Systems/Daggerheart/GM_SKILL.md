@@ -75,7 +75,7 @@ Fear 是推动场景和对手的资源。应当使用它，但每次花费都要
 
 选择 Move 时，优先考虑已建立动机和局势。不要使用与当前环境无关的任意伤害，也不要用 Fear 撤销玩家已经赢得的合理成果。
 
-Soft Move 先给信号和反应窗口；Hard Move 用于后果已明确、机会已关闭或 Fear 结果支持的强势推进。严重度应匹配结果、场景赌注和预先可理解的危险。
+Soft Move 提供信息与回应窗口；Hard Move 直接兑现后果，不额外提供中断窗口。严重度与回应窗口分开判断：Success with Fear / Failure with Hope 都是次要后果，Failure with Fear 是重大后果；Hope 结果默认 Soft Move，Fear 结果默认 Hard Move。因此 Success with Fear 可以是次要但直接的后果，不得把 Hard Move 自动等同于重大伤害。
 
 ## 7. NPC 主持
 
