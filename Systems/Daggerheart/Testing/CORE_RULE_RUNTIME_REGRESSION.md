@@ -1,6 +1,6 @@
 # Core Rule Runtime Regression Matrix
 
-> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器最近一次可核验记录为 42/42，当前脚本 51 项（新增 9 项待复跑）；LIVE RUNTIME VALIDATION PENDING  
+> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器最新独立 Job 51/51 PASS；LIVE RUNTIME VALIDATION PENDING  
 > DH-T01–DH-T45 已进行确定性桌面逻辑模拟（非代码自动测试）。详情见三个 DESK_TEST_BATCH 文件。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
@@ -98,7 +98,7 @@
 
 ## 自动化参考执行补充
 
-独立参考执行器最近一次有记录的执行为 42/42 通过，见 `AUTOMATED_REFERENCE_EXECUTION_01.md`。之后新增 9 项伤害交互回归（当前脚本共 51 项，新增 DH-REF-043–051）；本次修改后的自动化重跑尚未取得可核验结果，因此仍按 42/42 作为最后一次已验证成绩，新增 9 项均标记待复跑。这些测试验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
+独立参考执行器 Run 01 为 42/42 通过，见 `AUTOMATED_REFERENCE_EXECUTION_01.md`。随后新增 9 项伤害交互回归（DH-REF-043–051）；Run 02 已于 2026-11-28 在 GitHub Actions 的独立 Daggerheart Job 中以 51/51 通过，详见 `AUTOMATED_REFERENCE_EXECUTION_02.md`。这 51 项验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
 
 ## 测试执行记录
 
@@ -106,11 +106,11 @@
 |---|---|
 | 测试版本 | Core Set / SRD 2.0 (2026-08-25) |
 | 扩展范围 | CORE_ONLY |
-| 矩阵状态 | 64/64 项已桌面逻辑模拟；42/42 参考执行器历史自动化测试通过；9 项新增伤害回归待复跑 |
-| 已执行测试 | 64 / 64（桌面逻辑模拟）；参考执行器最新可核验记录 42/42；当前脚本 51 项 |
+| 矩阵状态 | 64/64 项已桌面逻辑模拟；51/51 参考执行器自动化测试通过 |
+| 已执行测试 | 64 / 64（桌面逻辑模拟）；参考执行器最新可核验记录 51/51 |
 | 已通过 | 64（桌面模拟）；42（参考执行器历史记录） |
 | 已失败 | 0 |
-| 待执行 | 0（桌面模拟层面）；9（新增自动化回归待复跑） |
+| 待执行 | 0（桌面模拟层面）；0（参考执行器回归待执行） |
 | 阻塞 | 0 |
 
 本矩阵仍是测试清单兼状态记录。DH-T01–DH-T45 的桌面模拟输入与结果见 DESK_TEST_BATCH_01.md、DESK_TEST_BATCH_02.md、DESK_TEST_BATCH_03.md；新增 19 项见 GM_DESK_SIMULATION_01.md。桌面逻辑模拟不等同于代码自动测试或完整规则书验收。盲测、短场景主持测试与完整 Core Rulebook 对照仍待完成。
