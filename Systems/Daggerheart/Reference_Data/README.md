@@ -7,6 +7,8 @@
 
 ## Core Set 数据
 
+> 范围说明：下表是官方 SRD 2.0 中可公开整理的 Core Set 数据，不代表完整 Core Rulebook 的全部条目。DH-I-006 记录了 9 件旧 SRD 1.0 Tier 3 魔法武器；第三方索引将其标为 Core Rulebook 专有条目、未列入 SRD 2.0 表。当前不把它们补进公开 JSON，等待合法取得的 Core Rulebook 来源核验。
+
 | 文件 | 数量 | 说明 |
 |---|---:|---|
 | `Core_Set/classes.json` | 9 | 核心职业完整结构 |
