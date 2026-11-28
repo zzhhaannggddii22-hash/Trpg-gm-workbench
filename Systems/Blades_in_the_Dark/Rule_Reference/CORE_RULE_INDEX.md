@@ -11,7 +11,7 @@
 
 | 规则域 | Rule IDs | 触发条件 | 运行入口 |
 |---|---|---|---|
-| 骰型与裁定 | BLD-DICE-01–04 | 出现行动、结果不确定或抵抗 | [CORE_RULES_RUNTIME §2](./CORE_RULES_RUNTIME.md#2-骰型与基础结算) |
+| 骰型与裁定 | BLD-DICE-01–05 | 出现行动、结果不确定或抵抗 | [CORE_RULES_RUNTIME §2](./CORE_RULES_RUNTIME.md#2-骰型与基础结算) |
 | Action / Position / Effect | BLD-ACT-01–08 | 玩家试图克服危险/麻烦障碍 | [§3](./CORE_RULES_RUNTIME.md#3-action-roll行动骰) |
 | Consequence / Resistance / Armor | BLD-CNS-01–06 | Action Roll 产生后果、玩家决定抵抗 | [§4](./CORE_RULES_RUNTIME.md#4-consequence-resistance与armor) |
 | Clocks / Fortune / Gather Info | BLD-CLK-01–05 | 存在持续进度、未知程度或调查问题 | [§5](./CORE_RULES_RUNTIME.md#5-clocks-fortune与gather-information) |
