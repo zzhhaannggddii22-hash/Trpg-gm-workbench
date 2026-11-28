@@ -34,6 +34,7 @@
 - [规则检阅协议](./Rule_Reference/README.md)：来源优先级、规则分类、缺口处理。
 - [核心规则索引](./Rule_Reference/CORE_RULE_INDEX.md)：Rule Area 与 Rule ID 导航。
 - [核心规则运行手册](./Rule_Reference/CORE_RULES_RUNTIME.md)：已规范化的高频核心机制，可按触发直接调用。
+- [GM 主持指导运行手册](./Rule_Reference/GM_GUIDANCE_RUNTIME.md)：Core Set GM 原则、GM Move、Fear、NPC、敌人与环境主持程序。
 - [常用规则检索表](./Rule_Reference/LOOKUP_TABLES.md)：六属性难度基准、敌人/环境 Tier、遭遇 BP、范围、休息和 Fear 预算。
 - [核心角色选项索引](./Rule_Reference/CHARACTER_OPTIONS_INDEX.md)：九职业、领域和子职业导航。
 - [敌人检索索引](./Rule_Reference/ADVERSARY_INDEX.md)：按 Tier 检索 Core 敌人。
