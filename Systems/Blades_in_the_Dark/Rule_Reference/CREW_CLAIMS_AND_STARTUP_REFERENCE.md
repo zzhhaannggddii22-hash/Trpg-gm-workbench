@@ -37,7 +37,7 @@ Crew Type 不禁止从事其他犯罪活动。它定义组织最常做、最容�
 
 ### BLD-CRW-START-01｜Crew 专属升级选项
 
-| Crew Type | 起始预选升级与专属升级池（v8.2 工具包摘要） |
+| Crew Type | Crew Sheet 专属升级选项（v8.2 工具包摘要） |
 |---|---|
 | Assassins | Assassin Rigging（武器/装备免费 Load）、Ironhook Contacts（监狱中 +1 Tier）、Elite Skulks、Elite Thugs、Hardened（+1 Trauma 格） |
 | Bravos | Bravos Rigging（武器/护甲免费 Load）、Ironhook Contacts、Elite Rovers、Elite Thugs、Hardened（+1 Trauma 格） |
@@ -46,7 +46,7 @@ Crew Type 不禁止从事其他犯罪活动。它定义组织最常做、最容�
 | Smugglers | Smuggler's Rigging（2 件物品完美隐藏）、Camouflage（载具静止时完全隐藏）、Elite Rovers、Barge（巢穴机动性）、Steady（+1 Stress 格） |
 | Shadows | Thief Rigging（工具/装备免费 Load）、Underground Maps & Passkeys、Elite Rooks、Elite Skulks、Steady（+1 Stress 格） |
 
-> 起始升级是组织卡上的具体构成，不要将表中所有项目都当成已免费获得。建档时必须以选定版本的 Crew Sheet 勾选状态为准。
+> 表中列出各 Crew Sheet 的专属升级选项，不代表全部已购入。新 Crew 按规则先取得该表两项预选升级，再自行选择两项；具体预选状态与已勾选项目以本次使用的 Crew Sheet 为准，不能把整张选项表都当作免费升级。
 
 ## 3. Hunting Grounds 与 Preferred Operation
 
