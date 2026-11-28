@@ -55,8 +55,8 @@
 - Errata：完成抽样核验，尚未穷尽。
 - 桌面逻辑模拟：64/64 已完成（非代码自动测试），其中 19 项 GM Move / Fear / 遭遇设计专项见 GM_DESK_SIMULATION_01.md。
 - 独立参考执行器：42/42 自动化用例通过；仅覆盖首批核心状态转移，不代表完整规则覆盖或生产 Runtime 验收。
-- 仓库整体 CI：当前因 4 个既有 Markdown 链接缺失而失败；Daggerheart 专项测试步骤成功执行。
-- 内部 Blind Scenario 模拟：第一轮 3 场景已完成，第二轮 3 场景复核已完成；独立外部 Blind GM 测试：待执行。
+- 仓库整体 CI：本轮查询最新 main 提交的 combined status 未返回任何 status checks；此前记录的 4 个 Markdown 链接问题尚未重新核验，不将旧状态视为当前 CI 结论。
+- 内部 Blind Scenario 模拟：第一轮 3 场景已完成（GM_BLIND_SCENARIO_TEST_01.md）；第二轮社交、探索、战斗 3 场景复核已完成（GM_SCENARIO_REVALIDATION_02.md）；独立外部 Blind GM 测试：待执行。
 - 实际玩家短场景 Session：待执行。
 - 正式 Campaign：未建立。
 - 单人场景复核：社交、探索与战斗流程已做内部模拟；单人遭遇平衡仍未验证。
