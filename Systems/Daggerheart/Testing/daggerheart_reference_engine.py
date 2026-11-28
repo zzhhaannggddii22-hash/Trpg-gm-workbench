@@ -294,22 +294,39 @@ def advance_countdown(state, event_id, amount=1):
     return True
 
 
-def short_rest(state, interrupted=False):
+def short_rest(state, interrupted=False, fear_roll=0, gm=None):
     if interrupted:
-        return {"completed": False, "refresh": False}
+        return {"completed": False, "refresh": False, "gm_fear_gained": 0}
     if state.get("short_rests_since_long", 0) >= 2:
         return {"completed": False, "refresh": False, "requires_long_rest": True}
     state["short_rests_since_long"] = state.get("short_rests_since_long", 0) + 1
-    return {"completed": True, "refresh": True}
+    if gm is not None:
+        gm.fear = bounded(gm.fear, fear_roll, 12)
+    return {"completed": True, "refresh": True, "gm_fear_gained": fear_roll if gm is not None else 0}
 
 
-def long_rest(state, interrupted=False, fear_roll=0, pc_count=1, gm=None):
+def long_rest(state, interrupted=False, fear_roll=0, pc_count=1, gm=None,
+               countdown=None, countdown_event_id="long-rest"):
     if interrupted:
-        return short_rest(state)
+        # PCs receive short-rest benefits. The SRD does not explicitly clarify
+        # whether the GM still gets long-rest Fear / countdown consequences;
+        # keep those un-applied pending a table ruling.
+        return {
+            "completed": True, "refresh": True, "long_rest": False,
+            "benefit_type": "short_rest", "gm_fear_gained": None,
+            "countdown_advanced": False,
+        }
     state["short_rests_since_long"] = 0
     if gm is not None:
         gm.fear = bounded(gm.fear, fear_roll + pc_count, 12)
-    return {"completed": True, "refresh": True, "long_rest": True}
+    advanced = False
+    if countdown is not None:
+        advanced = advance_countdown(countdown, countdown_event_id)
+    return {
+        "completed": True, "refresh": True, "long_rest": True,
+        "gm_fear_gained": fear_roll + pc_count if gm is not None else 0,
+        "countdown_advanced": advanced,
+    }
 
 
 def recall_card(pc, card, stress_cost):
@@ -733,6 +750,31 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
 
     def test_66_area_effect_origin_must_be_within_effect_range(self):
         self.assertFalse(area_effect_targets_valid(["melee"], origin_in_range=False))
+
+
+    def test_67_successful_short_rest_gives_gm_one_d4_fear(self):
+        gm = GM()
+        result = short_rest({}, fear_roll=3, gm=gm)
+        self.assertEqual((result["gm_fear_gained"], gm.fear), (3, 3))
+
+    def test_68_successful_long_rest_adds_pc_count_fear_and_advances_countdown(self):
+        gm, countdown = GM(), {"value": 3}
+        result = long_rest({}, fear_roll=2, pc_count=2, gm=gm, countdown=countdown)
+        self.assertEqual((result["gm_fear_gained"], gm.fear), (4, 4))
+        self.assertTrue(result["countdown_advanced"])
+        self.assertEqual(countdown["value"], 4)
+
+    def test_69_interrupted_long_rest_gives_short_benefit_without_faking_short_rest(self):
+        state, gm, countdown = {"short_rests_since_long": 2}, GM(), {"value": 3}
+        result = long_rest(
+            state, interrupted=True, fear_roll=2, pc_count=2,
+            gm=gm, countdown=countdown
+        )
+        self.assertTrue(result["completed"])
+        self.assertEqual(result["benefit_type"], "short_rest")
+        self.assertFalse(result["long_rest"])
+        self.assertEqual(state["short_rests_since_long"], 2)
+        self.assertEqual((gm.fear, countdown["value"]), (0, 3))
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
