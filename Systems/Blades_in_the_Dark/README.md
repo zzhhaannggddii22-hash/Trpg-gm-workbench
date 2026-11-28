@@ -82,8 +82,8 @@ runtime_dispatch:
 - [GM_SKILL.md](./GM_SKILL.md)：本系统的主持原则、叙事和节奏要求。
 - [PREFLIGHT.md](./PREFLIGHT.md)：未来新 Campaign / 新 Session 的启动核验。
 - [Testing/](./Testing/CANDIDATE_VALIDATION_MANIFEST.md)：Candidate 验证边界与回归测试矩阵。
-- [自动化检查报告](./Testing/AUTOMATED_CANDIDATE_CHECKS_2026-11-28.md)：31 项文档不变量与确定性微模型检查；仅属有限自动化检查，不代表完整引擎或真人验收。
-- [集成引擎模拟报告](./Testing/ENGINE_SIMULATION_REPORT_2026-11-28.md) 与 [模拟 harness](./Testing/ENGINE_SIMULATION_V1.js)：对规则流程/状态边界进行确定性子集模拟；不等于完整引擎或真人验收。
+- [自动化检查报告](./Testing/AUTOMATED_CANDIDATE_CHECKS_2026-11-28.md)：有限的文档不变量与确定性微模型检查，仅作辅助质量门槛，不代表 GM 能力或真人验收。
+- [历史规则模拟报告](./Testing/ENGINE_SIMULATION_REPORT_2026-11-28.md) 与 [模拟 harness](./Testing/ENGINE_SIMULATION_V1.js)：仅为规则流程/状态边界的有限实验材料，不是本系统的 GM 运行主体，也不构成完整引擎。后续优先级以 GM Skill、Runtime Protocol、真实主持表现与复盘为准。
 - [Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md)、[第二轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R2.md)、[第三轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R3.md) 与 [第四轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R4.md)：四轮共 75 个固定输入合成用例的执行记录；不等同于自动化测试或真人跑团验收。
 - [Research/CHINESE_SRD_SOURCE_REVIEW_2026-11-28.md](./Research/CHINESE_SRD_SOURCE_REVIEW_2026-11-28.md)：中文 SRD 来源审查。
 - [Research/EXTERNAL_RESOURCES.md](./Research/EXTERNAL_RESOURCES.md)：官方免费资料、社区扩展与额外资料入口。
@@ -100,7 +100,7 @@ runtime_dispatch:
 已完成：
 - 本轮新增的 7 个原始 PDF/XLSX/ZIP 已归档至私人资料库 `/TRPG/Blades in the Dark/Source Files/`；公开仓库只保存原创整理与索引。
 - 已确认核心规则书 V1.3 对应英文原版 v8.2，并建立章节导航、多斯科沃城市指南总索引、12 个地区速查、26 个详细派系条目索引和 GM 生成工具速查。
-- 已建立系统专属核心规则索引、初版 Runtime Manual、Runtime Protocol、GM Skill、Preflight 和术语表。
+- 已建立系统专属核心规则索引、Runtime Manual、Runtime Protocol、GM Skill、Preflight 和术语表；GM Skill 现以 AI 如何实际主持对话、提供机遇、扮演 NPC、控制镜头与处理玩家能动性为核心。
 - 已建立七种核心 PC Playbook 与六种 Crew 的能力目录及触发式运行矩阵；角色/组织只按实际选取的能力进行触发式加载。
 - 已建立来源与授权索引、额外资料目录、规则疑点登记，以及 Candidate 验证矩阵；75/75 固定输入合成用例已通过四轮人工推演。
 - 已将中文 SRD、官方 Player's Kit v8.2 与完整核心规则书 V1.3 纳入来源对照；Armor 普通护甲/特殊护甲恢复时序已按完整规则书拆分处理。
