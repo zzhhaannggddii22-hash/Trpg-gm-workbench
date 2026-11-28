@@ -48,10 +48,11 @@ jobs:
       - name: Check patch whitespace
         shell: bash
         run: |
+          # Markdown's two trailing spaces are valid hard line breaks; Markdown link/anchor integrity is checked by RT-16.
           if [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then
-            git diff --check "origin/${{ github.event.pull_request.base.ref }}...${{ github.event.pull_request.head.sha }}"
+            git diff --check "origin/${{ github.event.pull_request.base.ref }}...${{ github.event.pull_request.head.sha }}" -- . ':(exclude,glob)**/*.md'
           else
-            git diff --check 6c6109202d92d7bbacd638d5aa37d00418262d2b..HEAD
+            git diff --check 6c6109202d92d7bbacd638d5aa37d00418262d2b..HEAD -- . ':(exclude,glob)**/*.md'
           fi
 
   daggerheart-reference:
