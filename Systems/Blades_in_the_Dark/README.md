@@ -17,10 +17,12 @@ ruleset_versions:
   - "Blades in the Dark SRD / 中文《暗夜冷锋》译本（修订号待核）"
 status: candidate
 runtime_dispatch:
-  rule_entry: Systems/Blades_in_the_Dark/Rule_Reference/README.md
-  progression_entry: Systems/Blades_in_the_Dark/Rule_Reference/README.md
-  readiness: STUDY_ONLY
+  rule_entry: Systems/Blades_in_the_Dark/RUNTIME_PROTOCOL.md
+  progression_entry: Systems/Blades_in_the_Dark/Rule_Reference/CORE_RULES_RUNTIME.md
+  readiness: CANDIDATE_RUNTIME_DRAFT_COMPLETE_VALIDATION_PENDING
   mechanisms:
+    action_resolution:
+      status: PENDING
     score_procedure:
       status: PENDING
     flashback:
@@ -52,8 +54,16 @@ runtime_dispatch:
 
 ## 目录
 
-- [Rule_Reference/](./Rule_Reference/README.md)：中文 SRD 与官方补充资料索引、覆盖范围、版本和授权边界。
-- [Research/](./Research/CHINESE_SRD_SOURCE_REVIEW_2026-11-28.md)：中文规则来源审查与初步研究记录。
+- [Rule_Reference/README.md](./Rule_Reference/README.md)：规则来源、版本与授权边界。
+- [Rule_Reference/CORE_RULE_INDEX.md](./Rule_Reference/CORE_RULE_INDEX.md)：按触发条件调用的核心规则索引与 Rule ID。
+- [Rule_Reference/CORE_RULES_RUNTIME.md](./Rule_Reference/CORE_RULES_RUNTIME.md)：骰型、Action/Position/Effect、后果、Score、Downtime、Crew/Faction 等可运行规则摘要。
+- [Rule_Reference/RULE_ISSUES.md](./Rule_Reference/RULE_ISSUES.md)：翻译差异、版本疑点与待核规则。
+- [RUNTIME_PROTOCOL.md](./RUNTIME_PROTOCOL.md)：Free Play / Score / Downtime 的运行状态、调用步骤与持久化边界。
+- [GM_SKILL.md](./GM_SKILL.md)：本系统的主持原则、叙事和节奏要求。
+- [PREFLIGHT.md](./PREFLIGHT.md)：未来新 Campaign / 新 Session 的启动核验。
+- [Testing/](./Testing/CANDIDATE_VALIDATION_MANIFEST.md)：Candidate 验证边界与回归测试矩阵。
+- [Research/CHINESE_SRD_SOURCE_REVIEW_2026-11-28.md](./Research/CHINESE_SRD_SOURCE_REVIEW_2026-11-28.md)：中文 SRD 来源审查。
+- [Research/EXTERNAL_RESOURCES.md](./Research/EXTERNAL_RESOURCES.md)：官方免费资料、社区扩展与额外资料入口。
 
 ## 系统边界
 
@@ -62,9 +72,18 @@ runtime_dispatch:
 - 从本系统得到的 GM 技巧只有经过跨系统验证后，才可提炼到 `GM_Training/`；具体规则和专属流程始终留在本目录。
 - 当前 candidate 阶段只用于学习、查证和建立索引。未来正式开团时，必须另建 Campaign 并通过 `SYSTEM_BINDING.md` 锁定精确规则版本与规则来源。
 
-## 激活前待完成事项
+## 当前完成度与激活前待完成事项
 
-1. 确认未来 Campaign 实际采用的规则版本、修订号与勘误。
-2. 逐项核对中文 SRD 的规则覆盖、术语和关键裁定；对 SRD 未覆盖部分回查合法取得的官方原文或官方免费资料。
-3. 建立系统专属规则索引、运行路由与 Preflight；不预先复制其他系统的结构性机制。
-4. 建立独立 Campaign Binding，并完成规则边界与跨系统隔离验证。
+已完成：
+- 33 份中文 SRD Markdown 正文已镜像至用户私人资料库，供后续优先本地检索；公开仓库不放规则正文镜像。
+- 已建立系统专属核心规则索引、初版 Runtime Manual、Runtime Protocol、GM Skill 和 Preflight。
+- 已建立来源与授权索引、额外资料目录、规则疑点登记，以及 Candidate 验证矩阵。
+- 已将中文 SRD 与官方 Player's Kit v8.2 的关键流程做首轮交叉校对，并记录已发现的译文差异。
+
+仍待完成：
+1. 未来 Campaign 必须锁定具体核心规则版本与勘误；中文 SRD 页面自身未提供清晰修订号。
+2. 角色 Playbook、Crew Playbook、特殊能力、升级、Claims、Cohort、装备、仪式与打造条目尚未按实际战役角色/组织逐项穷尽。
+3. 执行 Candidate 回归测试、跨系统隔离测试，并至少完成一次短团实测和复盘。
+4. 建立独立 Campaign Binding；在用户确认前，系统继续保持 candidate。
+
+因此，当前已形成可供进一步测试的规则运行草案，但尚不标记 active，也不用于任何正式 Campaign。
