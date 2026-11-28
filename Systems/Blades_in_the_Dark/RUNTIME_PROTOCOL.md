@@ -54,8 +54,9 @@ runtime:
 ### 3.2 Crew State
 
 Crew 保存：
-- Type、Tier、Hold、Rep、Turf、Claims；
+- Type、Tier、Hold、Rep、Turf、Claims（含每个 Claim 的控制者、位置、生效收益）；
 - Reputation、Lair、Hunting Grounds、Favored Operation；
+- 起始升级选择、Crew Type 专属升级、Claim Map 路径与当前持有节点；
 - Crew Special Abilities、Upgrades；
 - Coin / Vault、Heat、Wanted Level；
 - 各 Faction Status；
@@ -92,6 +93,17 @@ Crew 保存：
 5. 当出现值得追求的任务目标或玩家明确选择行动，进入 Score Setup。
 
 Free Play 不强制每个对话都掷骰，也不要求玩家在接到任务前先完成一套“任务准备清单”。
+
+## 4-A. Crew / Claim 经营触发
+
+**新建 Campaign / 新建 Crew 时**，按 [Crew Claims & Startup Reference](./Rule_Reference/CREW_CLAIMS_AND_STARTUP_REFERENCE.md) 完整执行 Crew Creation。起始的区域势力关系、升级影响派系、Favorite Contact 关系必须写入 Faction Status；不能只填 Crew Tier / Coin 就结束建档。
+
+**准备 Preferred Operation 时**，若目标位于 Crew 自己的 Hunting Grounds 且业务类型吻合：
+- Gather Information +1d；
+- 免费获得一个用于该 Score 准备的额外 Downtime Activity。
+这个奖励须与普通 Downtime Activity 预算分开记账，不能挪给无关项目。
+
+**声明夺取 Claim 时**，按 Claim Map 确认节点和路径，识别原控制 Faction，建立一次 Score。成功后记录 Claim 移交、Faction Status 改变及新收益；失去 Claim 或 Lair 时同步撤销收益。
 
 ## 5. Score Setup → Engagement
 
