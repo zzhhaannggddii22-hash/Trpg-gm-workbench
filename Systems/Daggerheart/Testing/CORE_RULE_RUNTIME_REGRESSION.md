@@ -1,6 +1,6 @@
 # Core Rule Runtime Regression Matrix
 
-> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 92/92 PASS（Run 07）；仓库完整 CI Run 46148383257 PASS；LIVE RUNTIME VALIDATION PENDING  
+> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 98/98 PASS（Run 08）；仓库完整 CI Run 46148577036 PASS；LIVE RUNTIME VALIDATION PENDING  
 > DH-T01–DH-T45 已进行确定性桌面逻辑模拟（非代码自动测试）。详情见三个 DESK_TEST_BATCH 文件。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
@@ -173,7 +173,7 @@
 
 | ID | 场景 | 关键断言 | 状态 |
 |---|---|---|---|
-| DH-REF-093 | Encounter BP 基础预算 | 3 × PC 数量 + 2 | Pending rerun |
+| DH-REF-093 | Encounter BP 基础预算 | 3 × PC 数量 + 2 | Passed (Run 08) |
 | DH-REF-094 | Encounter BP 调整 | Light / Solo 数量 / 全体伤害加成 / 低 Tier 敌人 / 难度调整按表累计 | Pending rerun |
 | DH-REF-095 | Adversary Type BP 成本 | Social / Support=1；Horde / Ranged / Skulk / Standard=2；Leader=3；Bruiser=4；Solo=5 | Pending rerun |
 | DH-REF-096 | Minion 群组 BP | Minion 数量等于 PC 数量时成本 1；数量不符不套用该成本 | Pending rerun |
@@ -183,8 +183,9 @@
 ## 自动化参考执行补充
 
 - [Run 07：92/92 PASS](./AUTOMATED_REFERENCE_EXECUTION_07.md)
+- [Run 08：98/98 PASS](./AUTOMATED_REFERENCE_EXECUTION_08.md)
 
-独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，Run 04 为 66/66，Run 05 为 71/71；Run 06 与 Run 07 的新增回归均已通过，且有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 新增并通过 8 项条件状态生命周期回归（DH-REF-052–059）；Run 04 新增并通过 7 项移动、视线与范围效果回归（DH-REF-060–066）；Run 05 新增并通过 5 项休息与 Downtime 回归（DH-REF-067–071），详见 `AUTOMATED_REFERENCE_EXECUTION_05.md`。Run 05 的 71 项、Run 06 的 82 项、Run 07 的 92 项均验证独立参考执行器与 Core Set 数据；Run 06 新增 DH-REF-072–082 共 11 项 GM Turn / Spotlight、额外 GM Move 与 Short Rest 边界回归通过；Run 07 新增 DH-REF-083–092 共 10 项 Downtime Move 回归通过。这些不是生产 GM Runtime 的端到端测试。
+独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，Run 04 为 66/66，Run 05 为 71/71；Run 06 与 Run 07 的新增回归均已通过，且有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 新增并通过 8 项条件状态生命周期回归（DH-REF-052–059）；Run 04 新增并通过 7 项移动、视线与范围效果回归（DH-REF-060–066）；Run 05 新增并通过 5 项休息与 Downtime 回归（DH-REF-067–071），详见 `AUTOMATED_REFERENCE_EXECUTION_05.md`。Run 05 的 71 项、Run 06 的 82 项、Run 07 的 92 项、Run 08 的 98 项均验证独立参考执行器与 Core Set 数据；Run 06 新增 DH-REF-072–082 共 11 项 GM Turn / Spotlight、额外 GM Move 与 Short Rest 边界回归通过；Run 07 新增 DH-REF-083–092 共 10 项 Downtime Move 回归通过；Run 08 新增 DH-REF-093–098 共 6 项 Encounter Battle Points 回归通过。这些不是生产 GM Runtime 的端到端测试。
 
 ## 测试执行记录
 
