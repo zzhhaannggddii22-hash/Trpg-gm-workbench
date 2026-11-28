@@ -2,52 +2,62 @@
 
 最后核验：2026-11-28
 
-## 一级来源
+## 官方 / 作者来源
 
-### 1. Sine Nomine Publishing：Worlds Without Number 产品系列
+### Sine Nomine Publishing：产品系列
+https://www.sinenominepublishing.com/collections/worlds-without-number
 
-链接：<https://www.sinenominepublishing.com/collections/worlds-without-number>
+用途：出版方、产品系列与官方产品入口。
 
-用途：确认出版方、当前产品系列及官方补充产品入口。具体版本、产品内容和可用性以实际产品页为准。
+### Sine Nomine Publishing：Worlds Without Number Deluxe PDF
+https://sine-nomine-publishing.myshopify.com/products/worlds-without-number-deluxe-pdf
 
-### 2. Sine Nomine Publishing：Worlds Without Number Deluxe PDF 产品说明
+用途：出版方对系统内容的说明。页面提到 OSR-compatible 角色规则、约 200 个 worldbuilding tags、历史/社会/政府/宗教/地理构建、冒险创建和 Faction Rules，并称核心工具也包含在 Free Edition。Deluxe 另有 Fractal Adventure Seeds、Iterums 和补充 GM 表格。这是产品范围描述，不等于逐页核验正文。
 
-链接：<https://sine-nomine-publishing.myshopify.com/products/worlds-without-number-deluxe-pdf>
+### Worlds Without Number Free Edition
+https://www.drivethrurpg.com/product/348809/Worlds-Without-Number-Free-Edition
 
-用途：出版方对系统定位和内容构成的说明。页面介绍 WWN 与 Stars Without Number 的兼容关系，描述了系统中立 GM 工具、世界构建工具、冒险创建工具和阵营规则，并说明其中列出的主要工具内容也包含在 Free Edition 中；Deluxe 版本另含更多内容。
+用途：完整规则书主要阅读来源。当前尚未核实本地已有完整 PDF，因此版本、印刷页码、勘误与 GM 工具正文仍待核。
 
-### 3. Worlds Without Number Free Edition
+### Worlds Without Number System Reference Document v1.0
+作者 Kevin Crawford；日期 2024-03-13；许可 CC0 1.0 Universal。
 
-DriveThruRPG：<https://www.drivethrurpg.com/product/348809/Worlds-Without-Number-Free-Edition>
+作者原始 PDF 可发现入口（镜像）：
+https://f.rpghq.org/kqcYORA3rYon.pdf?n=WorldsWithoutNumber_SRD_1.0.pdf
 
-用途：完整研究基础规则和 GM 工具的主要阅读来源。当前尚未在本仓库保存 PDF；如用户提供或授权访问其本地文件，应以实际文件的版权页、版本与页码为准。
+SRD Markdown 阅读入口（社区转录）：
+https://rpg.blulaktuko.net/wwn/srd.md
 
-### 4. Worlds Without Number SRD
+许可：
+https://creativecommons.org/publicdomain/zero/1.0/
 
-阅读入口：<https://wwn.quadrifons.com/>
+SRD 覆盖角色、核心规则、装备、魔法、怪物、Faction 和 Major Projects 机制；明确不是完整玩家手册，排除 Latter Earth 设定及大部分 GM 工具创作文本。
 
-用途：核对作者明确开放的规则机制。该网页是社区维护的 HTML 阅读入口，页面包含 Kevin Crawford 的 SRD 引言。作者在引言中说明 SRD 以 CC0 放弃版权及相关权利，同时明确 SRD 不是 Free Edition 的替代品，省略了大量示例和教学内容，也不包含 Latter Earth 设定、国家、个别 NPC、GM 工具原文或其他未纳入 SRD 的创作性内容。
+## 第三方结构化索引
 
-许可注意：CC0 只适用于 SRD 明确覆盖的内容，不自动延伸至 Free Edition、Deluxe、Latter Earth、插画、NPC 或其他出版内容。使用前仍应检查具体材料是否确实属于 SRD。
+### Worlds Without Number System JSON
+https://github.com/klrkdekira/wwn-system-json
+https://cheeleong.dev/wwn-system-json/
 
-## 辅助检索来源
+用途：第三方将 SRD 抽取为 JSON-LD 数据，含 Rule、Table、Skill、Class、Art、Focus、Spell、Equipment、Foe、Faction Asset、Faction Goal 和 Project Rule 等类型。本仓库纳入其规则数据作为检索层；不把第三方数据称为官方文本。
 
-### 5. WWN SRD 清理版文本镜像
+## 中文与辅助来源
 
-链接：<https://rpg.blulaktuko.net/wwn/index.html>
+### Free Open TRPG Translation
+https://hazmole.github.io/Free-Open-TRPG-Translation/
 
-用途：便于全文检索的 SRD 转录/整理版本。维护者说明其基于 SRD 1.0 自动转换并人工清理，且可能存在错误。只作为检索辅助，不能替代原始 SRD PDF 或规则书。
+用途：检查中文翻译与社区资料。尚未确认其中有完整 WWN 中文规则。
 
-### 6. Free Open TRPG Translation
+## 本地离线资料
 
-链接：<https://hazmole.github.io/Free-Open-TRPG-Translation/>
+- Rule_Reference/Data/SRD.md：SRD 原文。
+- Rule_Reference/Data/wwn-srd-data.jsonld：完整结构化数据图。
+- Rule_Reference/Data/catalog.json：章节/名称目录。
+- Rule_Reference/Data/search-index.json：本地全文倒排索引。
+- Rule_Reference/CORE_RUNTIME_GUIDE.md：核心机制摘要。
+- Rule_Reference/FACTIONS_AND_MAJOR_PROJECTS.md：阵营与重大计划摘要。
+- Rule_Reference/GM_TOOLKIT_RESEARCH.md：GM 工具类别和缺口。
 
-用途：检查中文翻译、公开译本及相关社区资料。尚未确认该站是否收录完整 WWN 中文规则；确认前不将其登记为已存在的完整中文版本。
+## 许可边界
 
-## 核验纪律
-
-- 规则机制优先回到目标规则书与作者 SRD。
-- 第三方网页可用于发现资料、术语和潜在线索，但不直接决定争议裁定。
-- 记录引用应尽量包括来源、章节/页码、版本和访问日期。
-- 不将搜索摘要或转录错误当作官方规则。
-- 本仓库公开；不提交未获许可的规则书全文、扫描版、插画或受保护设定文本。
+SRD 的 CC0 不自动延伸到完整 Free Edition / Deluxe、Latter Earth 设定、插画、NPC、地点、SRD 外标签正文或受保护生成表。本仓库公开；不提交未获许可的规则书全文或受保护的大段正文。
