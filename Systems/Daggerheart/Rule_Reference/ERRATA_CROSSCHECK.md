@@ -10,6 +10,7 @@
 - [官方 SRD 2.0 页面](https://www.daggerheart.com/srd/)
 - [官方 SRD 2.0 PDF（2026-08-25）](https://www.daggerheart.com/wp-content/uploads/2026/08/DH_SRD_2_2026_08_25.pdf)
 - [官方 Downloads / Errata](https://www.daggerheart.com/downloads/)
+- [第三方中文维基：Daktadae, The Cleaver](https://daggerheart.huijiwiki.com/wiki/%E2%80%9C%E9%93%A1%E5%88%80%E2%80%9D%EF%BC%8C%E8%BE%BE%E5%85%8B%E5%A1%94%E6%88%B4)（仅用于定位，非权威规则源）
 
 官方 SRD 2.0 Changelog 声明已修复拼写/抽取错误并落实此前勘误；官方 Downloads 仍保留 Core 与 Hope & Fear 的 Errata 分区。因此本文件不把“SRD 2.0 已实现勘误”解释成“所有 Core Rulebook 印刷版、卡牌与辅助表差异都已逐项消失”。
 
@@ -43,7 +44,7 @@
 | Zombie Legion | 攻击名称改为 Undead Hands | 当前公开数据使用 Undead Hands | Adversary 数据匹配 |
 | Sledgehammer | Massive：−1 Evasion，而不是 −1 Agility | 出现在 Supplemental Campaign Mechanics 的 Everyday Hero 起始装备可选表，不在默认 Core 武器表 | 保留在 Optional Procedures，不纳入默认装备 |
 | Revolver | Western 可选武器伤害骰调整为 d8 | 出现在 Supplemental Campaign Mechanics 的 Western 选项表 | 保留在 Optional Procedures，不纳入默认装备 |
-| Daktadae, The Cleaver | Colossal Power 改为 Reaction；失败攻击时 GM 获得 Fear | 公开 SRD 2.0 Adversary JSON 未找到 Daktadae | 未导入；须用完整合法来源核验 |
+| Daktadae, The Cleaver | Colossal Power 改为 Reaction；失败攻击时 GM 获得 Fear | 官方 Core Errata（p.322）确认修正文本；第三方中文维基可定位到完整 Stat Block，但公开 SRD 2.0 Adversary JSON 未收录 | 仅记录公开 Errata 修正；不将第三方完整 Stat Block 复制进公开数据，待合法 Core Rulebook 来源核验 |
 | Whirlwind | 文字与额外目标伤害说明调整 | 当前领域卡文本与 SRD 2.0 数据一致 | Core Domain Card 匹配 |
 | I See It Coming | 触发条件与 Stress 成本澄清 | 当前领域卡文本一致 | Core Domain Card 匹配 |
 | Splintering Strike | 使用范围和伤害分配步骤澄清 | 当前领域卡文本一致 | Core Domain Card 匹配 |
