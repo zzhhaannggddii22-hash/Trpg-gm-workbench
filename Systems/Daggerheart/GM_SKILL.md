@@ -8,6 +8,8 @@
 
 Hope / Fear、GM Moves、Soft/Hard Moves 与敌人 Spotlight 的具体执行顺序，另见 [GM_RUNTIME_FIELD_GUIDE.md](./GM_RUNTIME_FIELD_GUIDE.md)。
 
+后果选择、战斗中的叙事推进、敌人动机/类型、Environment 与轻量遭遇备团方法，另见 [GM_DESIGN_FIELD_GUIDE.md](./GM_DESIGN_FIELD_GUIDE.md)。
+
 ## 1. 主持定位
 
 - 与玩家共同创造冒险，而非对抗玩家。
