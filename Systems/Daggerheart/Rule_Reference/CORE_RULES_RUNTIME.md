@@ -439,3 +439,30 @@ PC 标记最后一个 HP 时立即进行 Death Move，选择一项：
 - `UNKNOWN` / `DISPUTED` / `VERSION_UNRESOLVED`：仍待解决。
 
 本版完成第一轮结构化和运行化，不代表全部条目已达到 VERIFIED_CORE 或 RUNTIME_TESTED。
+
+## 29. DH-STRESS｜压力耗尽与资源边界（补充核验）
+
+- 所有 PC 初始有 6 个 Stress Slots；成长与效果可提高，最大 12。
+- 当角色标记最后一个 Stress 时，立即获得 Vulnerable，直到至少清除 1 Stress。
+- 当角色必须标记至少 1 Stress，但已无可标记 Stress 时，改为标记 1 HP。
+- 当角色所有 Stress 均已标记时，不能使用要求其标记 Stress 的 Move / Feature。
+- Reaction Roll Critical Success 不获得 Hope、不清除 Stress；只忽略本次成功时本会承受的影响（例如伤害或 Stress）。
+- Resistance 将对应类型的 Incoming Damage 减半，先于 Armor Slot 处理；系统所有需要整数的数值向上取整。多重相同伤害类型 Resistance 不叠加。
+- 若一次攻击同时造成 Physical 与 Magic Damage，只有同时对两种类型都具备 Resistance / Immunity，才对该次混合伤害适用对应防护。
+
+## 30. DH-GENERAL｜通用规则边界（补充核验）
+
+- **Rounding Up：** 不使用小数；需要取整时一律向上取整，除非规则另有说明。遇到歧义时优先作有利于 PC 的解释。
+- **Reroll：** 能力允许重掷时，默认采用新结果，除非能力另有说明。
+- **Incoming Damage：** 指单次攻击或单一来源造成的总伤害，且以标记 Armor Slots 之前的总值为准。
+- **Simultaneous Effects：** 多个效果同时发生且规则未规定先后时，由控制这些效果的一方（玩家或 GM）决定结算顺序。
+- **Stacking：** 除 Conditions、Advantage / Disadvantage 外，效果默认可以叠加，除非条目另有说明。
+- **Ongoing Spell Effects：** 未注明机械结束条件的法术效果，在控制者选择结束或故事自然要求结束时终止；GM 可花 Fear 结束 Temporary Effect。
+- **Spending Resources：** 除非效果另有说明，不能在同一掷骰中对同一个 Feature 多次花 Hope 或标记 Stress 来叠加/重复其效果。
+- **Post-roll Features：** 若能力允许在结果汇总后影响掷骰，可在 GM 宣布成功/失败后、后果展开或下一次掷骰发生前使用。
+- **Massive Damage：** 官方将“单次伤害达到 Severe Threshold 两倍时标记 4 HP 而非 3 HP”列为可选规则，默认 Core 运行不启用，除非 Campaign Binding 明确开启。
+
+## 31. 规则核验状态更新
+
+本次已直接对照官方 SRD 2.0 的 Core Mechanics（PDF 第 45–55 页）核验：Core Gameplay Loop、Spotlight、Action Roll 结果、Reaction Roll、Group Action、Tag Team、Advantage / Disadvantage、Hope / Fear、HP / Stress、Attack / Damage、Resistance、Range、Conditions、Rest、Death、Rounding、Countdown、Leveling Up、Equipment。  
+这表示这些条目已达到 `SOURCE_CHECKED`（SRD 2.0 基准），但仍未完成 Core Rulebook 全书逐章比对和 Runtime 回归测试；不得标记为 `RUNTIME_TESTED`。
