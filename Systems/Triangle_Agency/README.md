@@ -20,6 +20,14 @@ status: active
 
 规则摘要、索引与速查用于定位和恢复知识，不替代完整原文。具体裁定必须回查当前 Campaign 指定版本的相关原文、页码和适用条件。
 
+## 私人源文件归档
+
+- [三角机构系统源文件目录](https://github.com/zzhhaannggddii22-hash/personal-context-archive/tree/main/TRPG/SYSTEMS/Triangle_Agency)
+- [三角机构模组源文件目录](https://github.com/zzhhaannggddii22-hash/personal-context-archive/tree/main/TRPG/MODULES/Triangle_Agency)
+- [The Vault（《密库》）私人源文件归档](https://github.com/zzhhaannggddii22-hash/personal-context-archive/tree/main/TRPG/MODULES/Triangle_Agency/The_Vault)
+
+以上链接指向私人仓库，需具备相应访问权限。版权受限源文件不会复制到本公开工程；本仓库仅维护整理后的运行资料与必要来源说明。
+
 ## 目录
 
 - [Rule_Reference/](./Rule_Reference/README.md)：规则检阅协议、基础规则与现场裁定、规则疑点及本桌裁定记录。
