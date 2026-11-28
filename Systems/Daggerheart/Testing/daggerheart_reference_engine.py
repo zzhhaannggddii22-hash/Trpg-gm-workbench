@@ -1335,13 +1335,13 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
     def test_107_simple_project_uses_progress_countdown_and_completes(self):
         project, rest = {"complexity": "simple"}, {}
         first = work_on_project(project, rest, "pc-1", True, rest_type="long", starting_value=2, event_id="rest-1")
-        second = work_on_project(project, rest, "pc-1", True, event_id="rest-2")
+        second = work_on_project(project, rest, "pc-1", True, rest_type="long", event_id="rest-2")
         self.assertEqual((first["countdown"], second["countdown"], project["status"]), (1, 0, "completed"))
         self.assertEqual(rest["moves_used"]["pc-1"], 2)
 
     def test_108_complex_project_requires_roll_and_uses_progress_table(self):
         project, rest = {"complexity": "complex"}, {}
-        missing = work_on_project(project, rest, "pc-1", True, starting_value=4, event_id="rest-1")
+        missing = work_on_project(project, rest, "pc-1", True, rest_type="long", starting_value=4, event_id="rest-1")
         self.assertEqual(missing["reason"], "action_roll_required")
         result = work_on_project(
             project, rest, "pc-1", True, rest_type="long", action_roll_result="success_with_hope", event_id="rest-1"
