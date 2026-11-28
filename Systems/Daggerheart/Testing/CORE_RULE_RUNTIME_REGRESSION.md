@@ -169,7 +169,7 @@
 
 > Work on a Project 依赖 Campaign 项目定义、GM 批准及 Countdown 类型；本批参考执行器不自动替代该桌面程序，仍按 Campaign Binding 处理。
 
-## Encounter Battle Points 回归（新增代码用例；待自动复跑）
+## Encounter Battle Points 回归（Run 08 已通过）
 
 | ID | 场景 | 关键断言 | 状态 |
 |---|---|---|---|
@@ -217,3 +217,17 @@
 | 阻塞 | 0 |
 
 本矩阵仍是测试清单兼状态记录。DH-T01–DH-T45 的桌面模拟输入与结果见 DESK_TEST_BATCH_01.md、DESK_TEST_BATCH_02.md、DESK_TEST_BATCH_03.md；新增 19 项见 GM_DESK_SIMULATION_01.md。桌面逻辑模拟不等同于代码自动测试或完整规则书验收。盲测、短场景主持测试与完整 Core Rulebook 对照仍待完成。
+
+
+## Countdown 与 Work on a Project 回归（新增；Run 11 待验证）
+
+| ID | 场景 | 关键断言 | 状态 |
+|---|---|---|---|
+| DH-REF-103 | Standard Countdown 推进 | 每次有效 Action Roll 减 1；到 0 后不低于 0 | Pending Run 11 |
+| DH-REF-104 | Dynamic Progress Countdown | 按五种 Action Roll 结果推进 0–3 | Pending Run 11 |
+| DH-REF-105 | Dynamic Consequence Countdown | 按五种 Action Roll 结果推进 0–3 | Pending Run 11 |
+| DH-REF-106 | Dynamic Countdown 类型边界 | 非 Progress / Consequence 类型拒绝动态推进 | Pending Run 11 |
+| DH-REF-107 | Simple Project | 获批后创建 Progress Countdown；每次 Move 自动减 1，归零完成；遵守 Move 上限 | Pending Run 11 |
+| DH-REF-108 | Complex Project | 需要 Action Roll；按 Progress 动态表推进；消耗一个 Downtime Move | Pending Run 11 |
+
+Countdown 与项目的完整桌面程序见 [COUNTDOWN_AND_PROJECT_RUNTIME.md](../Rule_Reference/COUNTDOWN_AND_PROJECT_RUNTIME.md)。
