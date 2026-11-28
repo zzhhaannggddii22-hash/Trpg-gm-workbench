@@ -14,7 +14,8 @@
 ```yaml
 system_id: blades_in_the_dark
 ruleset_versions:
-  - "核心规则书：中文《暗夜刀锋》V1.3（英文原版 v8.2）"\n  - "中文 SRD / 《暗夜冷锋》译本（修订号待核，辅助对照）"
+  - "核心规则书：中文《暗夜刀锋》V1.3（英文原版 v8.2）"
+  - "中文 SRD / 《暗夜冷锋》译本（修订号待核，辅助对照）"
 status: candidate
 runtime_dispatch:
   rule_entry: Systems/Blades_in_the_Dark/RUNTIME_PROTOCOL.md
@@ -60,7 +61,13 @@ runtime_dispatch:
 
 - [Rule_Reference/README.md](./Rule_Reference/README.md)：规则来源、版本与授权边界。
 - [Rule_Reference/CORE_RULE_INDEX.md](./Rule_Reference/CORE_RULE_INDEX.md)：按触发条件调用的核心规则索引与 Rule ID。
-- [Rule_Reference/CORE_RULES_RUNTIME.md](./Rule_Reference/CORE_RULES_RUNTIME.md)：骰型、Action/Position/Effect、后果、Score、Downtime、Crew/Faction 等可运行规则摘要。\n- [Rule_Reference/DOSKVOL_CITY_GUIDE_INDEX.md](./Rule_Reference/DOSKVOL_CITY_GUIDE_INDEX.md)：核心规则书多斯科沃城市指南的本地检索入口。\n- [Rule_Reference/RED_WATERS_CITY_RUNTIME.md](./Rule_Reference/RED_WATERS_CITY_RUNTIME.md)：红水之城替代世设与三种新 Crew。\n- [Rule_Reference/VIGILANTES_PLAYSET_RUNTIME.md](./Rule_Reference/VIGILANTES_PLAYSET_RUNTIME.md)：义警 Crew 游玩套件。\n- [Rule_Reference/LEVIATHAN_SONG_RUNTIME.md](./Rule_Reference/LEVIATHAN_SONG_RUNTIME.md)：利维坦猎船、航行与狩猎扩展。\n- [Rule_Reference/PLAYBOOK_SHEETS_REFERENCE.md](./Rule_Reference/PLAYBOOK_SHEETS_REFERENCE.md)：角色卡/集团卡模板字段索引。\n- [Research/SOURCE_INTAKE_2026-11-28.md](./Research/SOURCE_INTAKE_2026-11-28.md)：本轮原始资料清单、版本基线与版权边界。
+- [Rule_Reference/CORE_RULES_RUNTIME.md](./Rule_Reference/CORE_RULES_RUNTIME.md)：骰型、Action/Position/Effect、后果、Score、Downtime、Crew/Faction 等可运行规则摘要。
+- [Rule_Reference/DOSKVOL_CITY_GUIDE_INDEX.md](./Rule_Reference/DOSKVOL_CITY_GUIDE_INDEX.md)：核心规则书多斯科沃城市指南的本地检索入口。
+- [Rule_Reference/RED_WATERS_CITY_RUNTIME.md](./Rule_Reference/RED_WATERS_CITY_RUNTIME.md)：红水之城替代世设与三种新 Crew。
+- [Rule_Reference/VIGILANTES_PLAYSET_RUNTIME.md](./Rule_Reference/VIGILANTES_PLAYSET_RUNTIME.md)：义警 Crew 游玩套件。
+- [Rule_Reference/LEVIATHAN_SONG_RUNTIME.md](./Rule_Reference/LEVIATHAN_SONG_RUNTIME.md)：利维坦猎船、航行与狩猎扩展。
+- [Rule_Reference/PLAYBOOK_SHEETS_REFERENCE.md](./Rule_Reference/PLAYBOOK_SHEETS_REFERENCE.md)：角色卡/集团卡模板字段索引。
+- [Research/SOURCE_INTAKE_2026-11-28.md](./Research/SOURCE_INTAKE_2026-11-28.md)：本轮原始资料清单、版本基线与版权边界。
 - [Rule_Reference/ARCANE_AND_CRAFTING_RUNTIME.md](./Rule_Reference/ARCANE_AND_CRAFTING_RUNTIME.md)：Magnitude、Ritual、Invention、Crafting、Modification、Drawbacks 的完整触发式流程。
 - [Rule_Reference/RULE_ISSUES.md](./Rule_Reference/RULE_ISSUES.md)：翻译差异、版本疑点与待核规则。
 - [Rule_Reference/GLOSSARY.md](./Rule_Reference/GLOSSARY.md)：规则术语与译名对照。
@@ -71,7 +78,9 @@ runtime_dispatch:
 - [RUNTIME_PROTOCOL.md](./RUNTIME_PROTOCOL.md)：Free Play / Score / Downtime 的运行状态、调用步骤与持久化边界。
 - [GM_SKILL.md](./GM_SKILL.md)：本系统的主持原则、叙事和节奏要求。
 - [PREFLIGHT.md](./PREFLIGHT.md)：未来新 Campaign / 新 Session 的启动核验。
-- [Testing/](./Testing/CANDIDATE_VALIDATION_MANIFEST.md)：Candidate 验证边界与回归测试矩阵。\n- [自动化检查报告](./Testing/AUTOMATED_CANDIDATE_CHECKS_2026-11-28.md)：31 项文档不变量与确定性微模型检查；仅属有限自动化检查，不代表完整引擎或真人验收。\n- [集成引擎模拟报告](./Testing/ENGINE_SIMULATION_REPORT_2026-11-28.md) 与 [模拟 harness](./Testing/ENGINE_SIMULATION_V1.js)：对规则流程/状态边界进行确定性子集模拟；不等于完整引擎或真人验收。
+- [Testing/](./Testing/CANDIDATE_VALIDATION_MANIFEST.md)：Candidate 验证边界与回归测试矩阵。
+- [自动化检查报告](./Testing/AUTOMATED_CANDIDATE_CHECKS_2026-11-28.md)：31 项文档不变量与确定性微模型检查；仅属有限自动化检查，不代表完整引擎或真人验收。
+- [集成引擎模拟报告](./Testing/ENGINE_SIMULATION_REPORT_2026-11-28.md) 与 [模拟 harness](./Testing/ENGINE_SIMULATION_V1.js)：对规则流程/状态边界进行确定性子集模拟；不等于完整引擎或真人验收。
 - [Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md)、[第二轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R2.md)、[第三轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R3.md) 与 [第四轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R4.md)：四轮共 75 个固定输入合成用例的执行记录；不等同于自动化测试或真人跑团验收。
 - [Research/CHINESE_SRD_SOURCE_REVIEW_2026-11-28.md](./Research/CHINESE_SRD_SOURCE_REVIEW_2026-11-28.md)：中文 SRD 来源审查。
 - [Research/EXTERNAL_RESOURCES.md](./Research/EXTERNAL_RESOURCES.md)：官方免费资料、社区扩展与额外资料入口。
@@ -86,17 +95,21 @@ runtime_dispatch:
 ## 当前完成度与激活前待完成事项
 
 已完成：
-- 本轮新增的 7 个原始 PDF/XLSX/ZIP 已归档至私人资料库 `/TRPG/Blades in the Dark/Source Files/`；公开仓库只保存原创整理与索引。\n- 已确认核心规则书 V1.3 对应英文原版 v8.2，并建立章节导航与多斯科沃城市指南索引。
+- 本轮新增的 7 个原始 PDF/XLSX/ZIP 已归档至私人资料库 `/TRPG/Blades in the Dark/Source Files/`；公开仓库只保存原创整理与索引。
+- 已确认核心规则书 V1.3 对应英文原版 v8.2，并建立章节导航与多斯科沃城市指南索引。
 - 已建立系统专属核心规则索引、初版 Runtime Manual、Runtime Protocol、GM Skill、Preflight 和术语表。
 - 已建立七种核心 PC Playbook 与六种 Crew 的能力目录及触发式运行矩阵；角色/组织只按实际选取的能力进行触发式加载。
 - 已建立来源与授权索引、额外资料目录、规则疑点登记，以及 Candidate 验证矩阵；75/75 固定输入合成用例已通过四轮人工推演。
-- 已将中文 SRD、官方 Player's Kit v8.2 与完整核心规则书 V1.3 纳入来源对照；Armor 普通护甲/特殊护甲恢复时序已按完整规则书拆分处理。\n- 已建立红水之城、义警、利维坦之歌三个独立扩展运行入口，以及角色卡/集团卡字段索引。
+- 已将中文 SRD、官方 Player's Kit v8.2 与完整核心规则书 V1.3 纳入来源对照；Armor 普通护甲/特殊护甲恢复时序已按完整规则书拆分处理。
+- 已建立红水之城、义警、利维坦之歌三个独立扩展运行入口，以及角色卡/集团卡字段索引。
 
 仍待完成：
 1. 未来 Campaign 必须锁定具体核心规则版本与勘误；中文 SRD 页面自身未提供清晰修订号。
 2. 七种核心 PC Playbook 与六种 Crew 的能力已建立触发式运行矩阵，但每项能力仍须在实际角色/组织建档时按所选版本卡面核对触发条件、成本、持续时间和例外；Veteran 来源、实际选中能力的完整卡面、升级/Claims 与具体公式/仪式效果仍需按实际战役版本回查。
 3. 75 条 Candidate 合成回归用例已通过；仍需补做独立跨系统隔离测试，并至少完成一次短团实测和复盘。
 4. 建立独立 Campaign Binding；在用户确认前，系统继续保持 candidate。
-5. 普通 Armor 与 Special Armor 的恢复时序已按 V1.3 核心规则书分别处理；其他版本仍需重新核验，见 [R-005](./Rule_Reference/RULE_ISSUES.md#r-005resistance-与-armor-的时序)。\n6. 多斯科沃城市指南、地区、派系和附录随机表仍需从私人原书继续拆解为 GM 可直接调用的本地参考资料。\n7. 红水之城仍是预览版；义警与利维坦之歌仍需按各自版本完成规则交叉核验与模块测试。
+5. 普通 Armor 与 Special Armor 的恢复时序已按 V1.3 核心规则书分别处理；其他版本仍需重新核验，见 [R-005](./Rule_Reference/RULE_ISSUES.md#r-005resistance-与-armor-的时序)。
+6. 多斯科沃城市指南、地区、派系和附录随机表仍需从私人原书继续拆解为 GM 可直接调用的本地参考资料。
+7. 红水之城仍是预览版；义警与利维坦之歌仍需按各自版本完成规则交叉核验与模块测试。
 
 因此，当前已形成可供进一步测试的规则运行草案，但尚不标记 active，也不用于任何正式 Campaign。
