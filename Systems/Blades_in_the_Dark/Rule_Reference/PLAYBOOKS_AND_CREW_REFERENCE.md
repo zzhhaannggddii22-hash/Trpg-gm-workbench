@@ -84,6 +84,7 @@
 | Expertise（专业技术） | 选定一项 Action；以此 Action 领导 Group Action 时，因失败成员造成的 Leader Stress 最多为 1 |
 | Ghost Veil（幽影） | 部分进入 Ghost Field，短暂成为暗影/非实体；延长、隐形或漂浮等附加特性会增加 Stress |
 | Reflexes（反射） | 有先后次序争议时先行动；另一个拥有 Reflexes 的角色与之同时行动 |
+| Shadow（暗影） | 消耗 Special Armor 抵抗侦测/安保措施造成的后果，或在运动/潜行行动中 Push Yourself |
 | Veteran | 从允许的其他能力来源选择 |
 
 ### 3.5 Slide｜骗子 / 操纵者与间谍
