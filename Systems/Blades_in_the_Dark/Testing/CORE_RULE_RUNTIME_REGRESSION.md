@@ -59,6 +59,7 @@
 | BLD-T51 | PC 的 Loadout 已满，行动中想临时声明重甲 | Load limit 不允许，除非有明确能力/虚构来源提高 Load；不得免费增加 Armor | Synthetic |
 | BLD-T52 | PC Push Yourself 同时选择 +1d 与 +1 Effect | 每项收益各支付 2 Stress，共 4 Stress；每项每次行动最多选择一次 | Synthetic |
 | BLD-T53 | PC Push Yourself 选择 +1d，再接受 Devil's Bargain | 不合法：同一额外骰来源只能二选一；改选 Push +1 Effect + Devil's Bargain +1d 才可组合 | Synthetic |
+| BLD-T54 | Lurk 拥有 Shadow，面对侦测/安保后果 | 可用 Special Armor 抵抗该类后果，或 Push Yourself 用于运动/潜行；其他后果不能泛化套用 | Synthetic |
 
 ## 结果登记
 
