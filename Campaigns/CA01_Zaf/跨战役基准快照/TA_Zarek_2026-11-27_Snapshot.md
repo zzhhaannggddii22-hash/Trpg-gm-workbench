@@ -138,7 +138,7 @@ Zarek 原本生活在现实世界，拥有良好大学研究生学历，并有�
 
 ### 已完成的成长（正式战役累计）
 
-Playwall 授权与每次轨迹标记的逐笔依据见 [Zarek Playwall Unlock Ledger](../PLAYWALL_UNLOCK_LEDGER.md)。当前已确认授权的文档为 **A3、D4**；D4 已读取，其他代码未因当前已标记的 Competency 格子解锁。
+Playwall 授权与轨迹标记的当前可核验依据见本快照的“已完成的成长”“Competency 成长”和“D4 Playwall”记录。独立 Playwall Unlock Ledger 当前未在 main 中找到；本快照只记录已确认的标记、授权和读取状态，不代表恢复了完整逐笔交易账本。当前已确认授权的文档为 **A3、D4**；D4 已读取，其他代码未因当前已标记的 Competency 格子解锁。
 
 1. 《死寂》Mission MVP 免费职能格：缜密 QA 上限 +1，获得 +3 嘉奖。
 2. 《死寂》后幕间 1 Time 投入职能轨迹：欺瞒 QA 上限 +1，获得 +3 嘉奖；按规则划除现实与异常轨迹末端各一格。
