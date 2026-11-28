@@ -125,7 +125,7 @@
 - Sledgehammer 的 Massive 特性是 Everyday Hero Starting Equipment 可选武器表的一部分，而不是标准 Core Tier 1 Weapon Tables。SRD 2.0 将其收录在 Supplemental Campaign Mechanics；公开数据单独隔离，默认不加载。
 - 其他不在 SRD 2.0 Core 数据表的 Errata 对象，不能因此推断缺失或失效；可能来自完整 Core Rulebook 示例、Campaign Frame 或未导入的可选章节。需要根据页码和章节归属逐项判断。
 
-## DH-I-013｜SRD 2.0 结构化导出中的 Buckler 文本字段误差
+## DH-I-016｜SRD 2.0 结构化导出中的 Buckler 文本字段误差
 
 - 状态：CORRECTED_IN_LOCAL_DATA
 - 来源：第三方 SRD 2.0 Markdown / JSON 导出将 Buckler 的 Deflecting 特性写成 `available Armor Score`。
@@ -134,7 +134,7 @@
 - 意义：这证明结构化导出只能作为本地索引与数据加工底稿；高影响的能力文本仍须对照官方 SRD 原文，不得将第三方 JSON 视为无误的官方数据库。
 
 
-## DH-I-014｜SRD 2.0 已整合的 Core 机械修正抽样核验
+## DH-I-017｜SRD 2.0 已整合的 Core 机械修正抽样核验
 
 - 状态：SAMPLE_CHECKED
 - 官方 SRD 2.0 Changelog 明确记载：Core 规则的若干机械修正已实施；本轮与本地数据完成以下抽样对照：
@@ -145,3 +145,12 @@
   - Splintering Strike：已采用 SRD 2.0 的多目标伤害分配文本，数据正确。
   - Buckler：第三方 JSON 曾误写 available Armor Score；已修正为 available Armor Slots。
 - 结论：SRD 2.0 是本地数据更新基准，但第三方结构化导出仍可能有个别字段错误。继续按高影响条目抽样回查；不要将抽样结果表述为完整勘误验收。
+
+
+## DH-I-018｜GM 起始 Fear 的公开来源尚未定位
+
+- 状态：SOURCE_UNVERIFIED
+- 当前运行笔记曾记录“Campaign 开始时 GM 获得每名 PC 1 Fear”。
+- 核验结果：在当前官方 SRD 2.0 的 Fear 章节与可检索全文中，已确认 GM 可从玩家掷出 Fear、休息及能力效果获得 Fear；Short Rest 获得 1d4，Long Rest 获得 1d4 + PC 数量，Fear 上限为 12。尚未定位到 Campaign 初始化时“每名 PC 1 Fear”的公开 SRD 条文。
+- 处理：核心运行手册已将该项降级为待核来源，不再将其标记为 SRD 2.0 已核实。正式 Campaign 开始前，应对照合法取得的完整 Core Rulebook 或明确的官方勘误/指导确认；在来源未确认前，不自动据此加值。
+- 证据边界：这是“当前公开 SRD 未定位到”的检索结论，不等同于证明完整 Core Rulebook 不存在该规则。
