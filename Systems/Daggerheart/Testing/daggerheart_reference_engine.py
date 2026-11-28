@@ -273,8 +273,8 @@ def ranged_attack_status(line_of_sight, obstruction="none"):
     return {"allowed": True, "roll_state": "normal"}
 
 
-def area_effect_targets_valid(distance_bands):
-    return all(
+def area_effect_targets_valid(distance_bands, origin_in_range=True):
+    return bool(origin_in_range) and all(
         band in RANGE_RANK and RANGE_RANK[band] <= RANGE_RANK["very_close"]
         for band in distance_bands
     )
@@ -730,6 +730,9 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
     def test_65_ranged_attack_requires_line_of_sight(self):
         self.assertEqual(ranged_attack_status(False)["roll_state"], "blocked")
         self.assertTrue(ranged_attack_status(True)["allowed"])
+
+    def test_66_area_effect_origin_must_be_within_effect_range(self):
+        self.assertFalse(area_effect_targets_valid(["melee"], origin_in_range=False))
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
