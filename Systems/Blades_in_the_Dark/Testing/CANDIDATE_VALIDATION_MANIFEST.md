@@ -67,9 +67,11 @@ clocks: []
 1. 先做静态规则一致性检查：规则索引 ID、运行手册、Runtime Protocol、GM Skill 与 Preflight 是否使用相同术语和顺序。
 2. 做单条规则正例/反例。
 3. 做跨机制组合测试：Action → Resistance/Armor → 状态写入；Score → Settlement → Downtime。
-4. 做跨系统隔离测试。
-5. 做一次受控短团或真实短团，检查主持行为、信息公平、节奏和状态连续性。
-6. 记录失败样例并修订规则文件，再重复受影响测试。
+4. 做 Magnitude、Ritual、Invention、Crafting、Modification、Drawbacks 的正例/反例与组合测试。
+5. 做七种核心 PC Playbook / 六种 Crew Ability 的触发、资源、范围、次数、重置与冲突测试。
+6. 做跨系统隔离测试。
+7. 做一次受控短团或真实短团，检查主持行为、信息公平、节奏和状态连续性。
+8. 记录失败样例并修订规则文件，再重复受影响测试。
 
 ## 5. Candidate 状态门槛
 
