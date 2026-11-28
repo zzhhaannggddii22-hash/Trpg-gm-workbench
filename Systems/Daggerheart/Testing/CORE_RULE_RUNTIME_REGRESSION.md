@@ -143,6 +143,7 @@
 | DH-REF-077 | Fear 不足以支付额外 Spotlight + Feature | 两项总成本无法支付时，不发生部分扣款或行动 | Pending rerun |
 | DH-REF-078 | GM Turn 结束 | Spotlight 交还 PC 一侧 | Pending rerun |
 | DH-REF-079 | 新 GM Turn 开始 | 敌人本 Turn 的 Spotlight 次数重置 | Pending rerun |
+| DH-REF-082 | GM Turn 中额外 GM Move | 额外 GM Move 支付 1 Fear | Pending rerun |
 
 ## GM Turn / Spotlight 运行时回归（代码用例；新增批次待自动复跑）
 
