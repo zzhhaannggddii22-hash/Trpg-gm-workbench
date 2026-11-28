@@ -128,7 +128,11 @@
 - 普通 Free Play 互动不消耗 Downtime Activity 次数；只有限定清单内的活动受额度约束。
 - 组织层级、Rep、Turf、Hold、Faction Status、Heat、Wanted Level 与 Cohort 都属于独立但互有关联的持续状态，需要按事件记录变化。
 
-## 9. 首轮交叉核验问题
+## 9. Synthetic Runtime Validation
+
+2026-11-28 对 54 条回归矩阵中的 18 条执行了固定输入的人工合成追踪，18 条全部通过。结果记录见 `Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md`。这是对规则流程和状态更新的桌面推演，不是自动化测试，也不是实战跑团；其余 36 条和真人短团仍待验证。
+
+## 10. 首轮交叉核验问题
 
 - 中文 SRD 对 Long-Term Project Critical 进度存在文本不一致；官方 Player's Kit v8.2 明确为 5 格，当前运行摘要采用 5 格。
 - 中文页面未明确 SRD 修订号，v8.2 Player's Kit 不自动等于核心书版次；正式 Campaign 仍需锁定具体规则版本。
