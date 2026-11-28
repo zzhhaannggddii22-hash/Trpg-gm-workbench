@@ -121,6 +121,16 @@
 | DH-REF-065 | 远程攻击无视线 | 没有 Line of Sight 时不能进行远程攻击 | Pending rerun |
 | DH-REF-066 | Area of Effect 原点超出效果范围 | 即使目标彼此接近，原点不在效果范围内也无效 | Pending rerun |
 
+## 休息与 Downtime 后果回归（新增代码用例；待自动复跑）
+
+| ID | 场景 | 关键断言 | 状态 |
+|---|---|---|---|
+| DH-REF-067 | 正常 Short Rest | GM 获得 1d4 Fear，受 12 点上限约束 | Pending rerun |
+| DH-REF-068 | 正常 Long Rest | GM 获得 1d4 + PC 数量 Fear，并推进一个 Long-term Countdown | Pending rerun |
+| DH-REF-069 | 中断 Long Rest | PC 只获得 Short Rest 收益；GM Fear / Countdown 按 DH-I-019 保守回退，不自动结算 | Pending rerun |
+| DH-REF-070 | Long-term Countdown | 剩余值递减；同一 rest event 不重复推进 | Pending rerun |
+| DH-REF-071 | Rest Fear 上限 | GM Fear 不超过 12，记录实际增加值 | Pending rerun |
+
 ## 自动化参考执行补充
 
 独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，Run 04 为 66/66，均有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 新增并通过 8 项条件状态生命周期回归（DH-REF-052–059）；Run 04 新增并通过 7 项移动、视线与范围效果回归（DH-REF-060–066），详见 `AUTOMATED_REFERENCE_EXECUTION_04.md`。这 66 项验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
