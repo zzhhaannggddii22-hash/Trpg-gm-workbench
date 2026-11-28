@@ -35,6 +35,7 @@
 - [核心规则索引](./Rule_Reference/CORE_RULE_INDEX.md)：Rule Area 与 Rule ID 导航。
 - [核心规则运行手册](./Rule_Reference/CORE_RULES_RUNTIME.md)：已规范化的高频核心机制，可按触发直接调用。
 - [专属 GM Skill](./GM_SKILL.md)：Core Set 主持原则、场景节奏、GM Move、Fear、NPC 与战斗准备。
+- [单人 PC 适配研究](./Rule_Reference/SINGLE_PC_ADAPTATION_RESEARCH.md)：仅在 1 PC Campaign 中使用的非默认桌面适配边界与测试计划。
 - [常用规则检索表](./Rule_Reference/LOOKUP_TABLES.md)：六属性难度基准、敌人/环境 Tier、遭遇 BP、范围、休息和 Fear 预算。
 - [核心角色选项索引](./Rule_Reference/CHARACTER_OPTIONS_INDEX.md)：九职业、领域和子职业导航。
 - [领域卡索引](./Rule_Reference/DOMAIN_CARD_INDEX.md)：189 张 Core 领域卡按 Domain / Level 检索。
