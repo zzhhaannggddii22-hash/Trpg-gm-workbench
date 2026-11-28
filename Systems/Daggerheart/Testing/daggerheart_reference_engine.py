@@ -117,6 +117,60 @@ def take_damage(pc, damage, direct=False, resistant=False, use_armor=False):
     return {"final_damage": final, "hp_marks": marks}
 
 
+
+def resolve_incoming_damage(pc, sources, resistances=(), immunities=(), direct=False, use_armor=False):
+    """Resolve one simultaneous incoming-damage event.
+
+    Each source is {"amount": int, "type": "phy"|"mag"}. Sources are
+    aggregated by type before Resistance. For mixed-type damage, defenses
+    apply only when every damage type is covered by Resistance or Immunity.
+    Direct damage bypasses Armor Slots, not Resistance or Immunity.
+    """
+    totals = {"phy": 0, "mag": 0}
+    for source in sources:
+        damage_type = source["type"]
+        if damage_type not in totals:
+            raise ValueError("Damage type must be phy or mag")
+        amount = source["amount"]
+        if amount < 0:
+            raise ValueError("Damage amount cannot be negative")
+        totals[damage_type] += amount
+
+    active_types = {kind for kind, amount in totals.items() if amount > 0}
+    resistances = set(resistances)
+    immunities = set(immunities)
+    if not active_types:
+        final = 0
+    elif len(active_types) > 1 and not all(
+        kind in resistances or kind in immunities for kind in active_types
+    ):
+        # Mixed damage receives no partial defense unless both types are covered.
+        final = sum(totals.values())
+    else:
+        final = 0
+        for kind in active_types:
+            amount = totals[kind]
+            if kind in immunities:
+                continue
+            if kind in resistances:
+                amount = (amount + 1) // 2
+            final += amount
+
+    marks = damage_marks(final, pc.major, pc.severe)
+    armor_spent = False
+    if use_armor and not direct and marks and pc.armor_slots:
+        marks -= 1
+        pc.armor_slots -= 1
+        armor_spent = True
+    mark_hp(pc, marks)
+    return {
+        "final_damage": final,
+        "hp_marks": marks,
+        "armor_spent": armor_spent,
+        "damage_by_type": totals,
+    }
+
+
 def advantage_state(advantage_sources, disadvantage_sources):
     net = advantage_sources - disadvantage_sources
     return "advantage" if net > 0 else "disadvantage" if net < 0 else "none"
@@ -420,6 +474,55 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         pc = PC(armor_slots=1)
         result = take_damage(pc, 11, direct=True, resistant=True, use_armor=True)
         self.assertEqual((result["final_damage"], result["hp_marks"], pc.armor_slots), (6, 2, 1))
+
+    def test_44_resistance_applies_before_armor_slot(self):
+        pc = PC(armor_slots=1)
+        result = resolve_incoming_damage(
+            pc, [{"amount": 11, "type": "phy"}],
+            resistances={"phy"}, use_armor=True
+        )
+        self.assertEqual((result["final_damage"], result["hp_marks"], pc.armor_slots), (6, 1, 0))
+
+    def test_45_duplicate_resistance_does_not_stack(self):
+        result = resolve_incoming_damage(
+            PC(), [{"amount": 11, "type": "phy"}],
+            resistances=["phy", "phy"]
+        )
+        self.assertEqual(result["final_damage"], 6)
+
+    def test_46_immunity_negates_matching_damage_type(self):
+        pc = PC()
+        result = resolve_incoming_damage(
+            pc, [{"amount": 12, "type": "mag"}], immunities={"mag"}
+        )
+        self.assertEqual((result["final_damage"], result["hp_marks"]), (0, 0))
+
+    def test_47_mixed_damage_gets_no_partial_defense(self):
+        result = resolve_incoming_damage(
+            PC(), [{"amount": 6, "type": "phy"}, {"amount": 5, "type": "mag"}],
+            resistances={"phy"}
+        )
+        self.assertEqual((result["final_damage"], result["hp_marks"]), (11, 3))
+
+    def test_48_mixed_damage_applies_matching_resistance_to_both_types(self):
+        result = resolve_incoming_damage(
+            PC(), [{"amount": 11, "type": "phy"}, {"amount": 5, "type": "mag"}],
+            resistances={"phy", "mag"}
+        )
+        self.assertEqual((result["final_damage"], result["hp_marks"]), (9, 2))
+
+    def test_49_simultaneous_sources_are_combined_before_thresholds(self):
+        result = resolve_incoming_damage(
+            PC(), [{"amount": 3, "type": "phy"}, {"amount": 3, "type": "phy"}]
+        )
+        self.assertEqual((result["final_damage"], result["hp_marks"]), (6, 2))
+
+    def test_50_mixed_damage_can_be_fully_ignored_when_immune_to_both(self):
+        result = resolve_incoming_damage(
+            PC(), [{"amount": 6, "type": "phy"}, {"amount": 5, "type": "mag"}],
+            immunities={"phy", "mag"}
+        )
+        self.assertEqual((result["final_damage"], result["hp_marks"]), (0, 0))
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
