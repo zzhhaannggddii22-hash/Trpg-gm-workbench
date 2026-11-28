@@ -1,0 +1,39 @@
+{
+  "system_id": "worlds_without_number",
+  "title": "Worlds Without Number System Reference Document v1.0",
+  "author": "Kevin Crawford",
+  "version": "1.0",
+  "date": "2024-03-13",
+  "license": "CC0-1.0",
+  "contentDigest": "sha256-c336627066600040eced23076756f6171fd1258ae26cd995900cb637c7702f0b",
+  "upstreamProject": "klrkdekira/wwn-system-json",
+  "upstreamCommit": "edc62dfe9ddc651d7f5ef0f7a7dfeaf9ef6a60e8",
+  "upstreamBundleBlob": "e7a5dc0a5dc9fcdf99c855156dfb386186b8291d",
+  "gameRecordCount": 1171,
+  "sourceMetadataCount": 1,
+  "typeCounts": {
+    "Rule": 382,
+    "Table": 113,
+    "Attribute": 6,
+    "Skill": 21,
+    "Background": 2,
+    "Class": 19,
+    "Art": 216,
+    "Focus": 35,
+    "Spell": 83,
+    "Equipment": 130,
+    "WeaponTrait": 12,
+    "Foe": 35,
+    "FactionTag": 10,
+    "FactionAction": 7,
+    "FactionAsset": 81,
+    "FactionGoal": 10,
+    "ProjectRule": 9
+  },
+  "limitations": [
+    "SRD is not the complete Free Edition or Deluxe.",
+    "Most creative GM tool text and Latter Earth setting are excluded.",
+    "Known truncation: Accursed Arts / Night-Black Eyes; do not infer missing text.",
+    "Structured records are third-party extracted; verify important rulings against SRD.md and the official rulebook."
+  ]
+}

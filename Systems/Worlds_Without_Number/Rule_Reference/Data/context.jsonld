@@ -1,0 +1,80 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@base": "https://cheeleong.dev/wwn-system-json/vocab/",
+    "@vocab": "https://cheeleong.dev/wwn-system-json/vocab/",
+    "wwn": "https://cheeleong.dev/wwn-system-json/vocab/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "name": "schema:name",
+    "description": "schema:description",
+    "slug": "wwn:slug",
+    "rulesText": "wwn:rulesText",
+    "source": {
+      "@id": "dcterms:source",
+      "@type": "@id"
+    },
+    "sourceLocator": "wwn:sourceLocator",
+    "license": "wwn:licenseCode",
+    "licenseUrl": {
+      "@id": "wwn:licenseUrl",
+      "@type": "@id"
+    },
+    "seeAlso": {
+      "@id": "wwn:seeAlso",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "relatedRules": {
+      "@id": "wwn:relatedRule",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "relatedTables": {
+      "@id": "wwn:relatedTable",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "classes": {
+      "@id": "wwn:class",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "skills": {
+      "@id": "wwn:skill",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "arts": {
+      "@id": "wwn:art",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "spells": {
+      "@id": "wwn:spell",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "tradition": {
+      "@id": "wwn:tradition",
+      "@type": "@id"
+    },
+    "traditionName": "wwn:traditionName",
+    "collections": {
+      "@id": "wwn:collections",
+      "@type": "@json"
+    },
+    "collectionSchemas": {
+      "@id": "wwn:collectionSchemas",
+      "@type": "@json"
+    },
+    "metadata": "wwn:metadata",
+    "contentDigest": "wwn:contentDigest",
+    "sourceFile": "wwn:sourceFile",
+    "canonicalUrl": {
+      "@id": "wwn:canonicalUrl",
+      "@type": "@id"
+    },
+    "srdVersion": "wwn:srdVersion"
+  }
+}
