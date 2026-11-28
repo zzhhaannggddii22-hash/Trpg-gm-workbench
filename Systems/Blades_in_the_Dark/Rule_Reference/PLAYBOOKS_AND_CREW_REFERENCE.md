@@ -1,7 +1,7 @@
 # Blades in the Dark｜PC Playbook 与 Crew 能力索引
 
 > 规则身份：`blades_in_the_dark`  
-> 交叉核验：官方 Full Player's Kit v8.2；中文《暗夜冷锋》SRD 的能力说明。  
+> 主要核验来源：用户提供的《暗夜刀锋》中文版核心规则书 V1.3（对应英文原版 v8.2）。交叉核验：官方 Full Player's Kit v8.2；中文《暗夜冷锋》SRD。  
 > 用途：角色/组织建档时选择实际能力，并在运行中按触发条件调用。  
 > 本文是原创短摘要，不复制官方工具包或中文 SRD 的完整能力描述。正式裁定仍以 Campaign 锁定版本的卡面原文为准。
 
