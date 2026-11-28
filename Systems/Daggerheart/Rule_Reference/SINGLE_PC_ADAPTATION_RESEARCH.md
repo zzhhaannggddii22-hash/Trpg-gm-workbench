@@ -49,7 +49,7 @@ Daggerheart SRD 对游戏人数的基础描述是 1 名 GM、2–5 名玩家。�
 - 单 PC 遭遇预算是否需要一个专门的折算表：待测试，不预先规定。
 - 是否允许固定 NPC 伙伴参与部分战斗：由 Campaign 决定；若参与，需明确其机制权限与 Spotlight 处理。
 - 单 PC 是否获得额外初始资源、Hope、HP 或免费优势：默认不提供，除非用户明确批准桌规。
-- 起始 GM Fear 的初始化规则：见 [RULE_ISSUES.md](./RULE_ISSUES.md) 的 DH-I-018；当前公开 SRD 2.0 尚未定位到每 PC 1 Fear 的 Campaign 初始化条文。
+- 起始 GM Fear：已由官方 SRD 2.0 第 86 页确认，Campaign 开始时 GM 获得每名 PC 1 Fear。1 PC Campaign 因此按 1 Fear 初始化；这是原规则，不是单人桌适配。见 [RULE_ISSUES.md](./RULE_ISSUES.md) 的 DH-I-018。
 
 ## 6. 官方依据
 
