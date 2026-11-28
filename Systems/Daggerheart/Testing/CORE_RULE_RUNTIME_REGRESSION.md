@@ -63,7 +63,7 @@
 | DH-GM-07 | 敌人拥有 Relentless (2) | 按特性在同一 GM Turn 内获得最多两次 Spotlight；每次支出照常 | Pending |
 | DH-GM-08 | 12 Fear 时再次获得 Fear | 不超过上限，不产生隐藏溢出 | Pending |
 | DH-GM-09 | 玩家忽略已预告的环境危险 | GM 可按已建立后果使用 Hard Move；不得改变危险原本的作用范围 | Pending |
-| DH-GM-10 | Hope 结果下出现高强度敌方威胁 | 不机械禁止强 Move，但须有独立触发/既有危险/资源规则支持，且不能抹消玩家已赢得的成果 | Pending |
+| DH-GM-10 | Hope 结果下出现高强度敌方威胁 | 本次回应优先使用 Soft Move；强硬后果需由独立触发或已成立的不可避免后果支持，不得作为本次 Hope 结果的默认回应 | Pending |
 
 以上 10 项尚未执行，不计入已通过数量。专项设计依据见 [GM_RUNTIME_FIELD_GUIDE.md](../GM_RUNTIME_FIELD_GUIDE.md)。
 
