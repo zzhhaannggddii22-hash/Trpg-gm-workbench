@@ -1,6 +1,6 @@
 # Core Rule Runtime Regression Matrix
 
-> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 92/92 PASS（Run 07）；仓库完整 CI Run 46148205415 PASS；LIVE RUNTIME VALIDATION PENDING  
+> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 92/92 PASS（Run 07）；仓库完整 CI Run 46148383257 PASS；LIVE RUNTIME VALIDATION PENDING  
 > DH-T01–DH-T45 已进行确定性桌面逻辑模拟（非代码自动测试）。详情见三个 DESK_TEST_BATCH 文件。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
@@ -157,15 +157,15 @@
 | ID | 场景 | 关键断言 | 状态 |
 |---|---|---|---|
 | DH-REF-083 | 单名 PC 每次休息的 Downtime Move 上限 | 每名 PC 最多执行 2 个；第三个拒绝且不改变状态 | Passed (Run 07) |
-| DH-REF-084 | Short Rest：Tend to Wounds | 目标清除 1d4 + 执行者 Tier 个 HP，最多清除已标记数量 | Pending rerun |
-| DH-REF-085 | Short Rest：Clear Stress | 目标清除 1d4 + Tier 个 Stress；不再满 Stress 时解除由满 Stress 引发的 Vulnerable | Pending rerun |
-| DH-REF-086 | Short Rest：Repair Armor | 目标清除 1d4 + Tier 个 Armor Slot | Pending rerun |
-| DH-REF-087 | 单人 Prepare | 获得 1 Hope，并遵守 Hope 上限 | Pending rerun |
-| DH-REF-088 | 多人共同 Prepare | 每名参与者获得 2 Hope，并各自消耗一个 Downtime Move 名额 | Pending rerun |
-| DH-REF-089 | Long Rest：Tend to All Wounds | 清除目标全部已标记 HP | Pending rerun |
-| DH-REF-090 | Long Rest：Clear All Stress | 清除目标全部 Stress，并解除满 Stress Vulnerable | Pending rerun |
-| DH-REF-091 | Long Rest：Repair All Armor | 清除目标全部已标记 Armor Slot | Pending rerun |
-| DH-REF-092 | Short Rest 专属 Move 出现在 Long Rest | 不允许将 Short Rest 的部分恢复 Move 错用于 Long Rest | Pending rerun |
+| DH-REF-084 | Short Rest：Tend to Wounds | 目标清除 1d4 + 执行者 Tier 个 HP，最多清除已标记数量 | Passed (Run 07) |
+| DH-REF-085 | Short Rest：Clear Stress | 目标清除 1d4 + Tier 个 Stress；不再满 Stress 时解除由满 Stress 引发的 Vulnerable | Passed (Run 07) |
+| DH-REF-086 | Short Rest：Repair Armor | 目标清除 1d4 + Tier 个 Armor Slot | Passed (Run 07) |
+| DH-REF-087 | 单人 Prepare | 获得 1 Hope，并遵守 Hope 上限 | Passed (Run 07) |
+| DH-REF-088 | 多人共同 Prepare | 每名参与者获得 2 Hope，并各自消耗一个 Downtime Move 名额 | Passed (Run 07) |
+| DH-REF-089 | Long Rest：Tend to All Wounds | 清除目标全部已标记 HP | Passed (Run 07) |
+| DH-REF-090 | Long Rest：Clear All Stress | 清除目标全部 Stress，并解除满 Stress Vulnerable | Passed (Run 07) |
+| DH-REF-091 | Long Rest：Repair All Armor | 清除目标全部已标记 Armor Slot | Passed (Run 07) |
+| DH-REF-092 | Short Rest 专属 Move 出现在 Long Rest | 不允许将 Short Rest 的部分恢复 Move 错用于 Long Rest | Passed (Run 07) |
 
 > Work on a Project 依赖 Campaign 项目定义、GM 批准及 Countdown 类型；本批参考执行器不自动替代该桌面程序，仍按 Campaign Binding 处理。
 
