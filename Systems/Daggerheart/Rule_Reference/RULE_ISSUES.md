@@ -183,5 +183,5 @@
 - 具体案例：
   - Raging River 的 Patient Hunter：支付 1 Fear 召唤 Glass Snake，并写明其立即获得 Spotlight 使用 Spinning Serpent。当前按“Fear Feature 的 1 Fear 已支付；立即 Spotlight 属于该 Feature 的效果”处理，不再机械叠加普通额外 Spotlight 的 1 Fear。
   - Glass Snake 的 Spitter：支付 1 Fear 引入 Spitter Die，并允许 Glass Snake 在本 GM Turn 再次获得 Spotlight。SRD 文字没有明确说明这次额外 Spotlight 是否另付 1 Fear；在官方 FAQ / Errata 澄清前标记 DISPUTED，不自动作出双重收费或免费处理。
-- 当前参考执行器的 spotlight_adversary 只模拟普通额外 Spotlight、Relentless 重复 Spotlight 与 Fear Feature 独立成本；尚未实现 Spotlighting Feature 的链式限制和特定 Feature 费用覆盖。
+- 当前参考执行器已支持 Spotlighting Feature 的逐目标 Spotlight 锁、禁止链式触发，以及每个明确授予 Spotlight 的 Feature 成本覆盖；普通额外 Spotlight、Relentless 重复 Spotlight 与 Fear Feature 独立成本仍分开结算。Glass Snake Spitter 的第二次 Spotlight 费用仍待官方澄清。
 - 来源：官方 SRD 2.0 的 Making Moves / Using Adversaries；官方 Homebrew Kit 对召唤型 Environment Feature 的说明；Core Rulebook Spotlighting Features / Relentless 规则。第三方社区讨论仅作问题定位，不作为裁定依据。
