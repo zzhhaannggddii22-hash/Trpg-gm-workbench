@@ -211,7 +211,7 @@ Armor 是 Resistance 的替代处理手段，不是额外叠加的一次抵抗�
 - **Standard Armor**：角色需要在本次 Score 将 Armor 作为携带物品声明，标准护甲占 2 Load。合适后果出现时，可标记角色卡上的 Standard Armor 格来减轻或避免后果。
 - **Heavy Armor**：以标准 Armor 为基础，额外占 3 Load（合计 5 Load）。在适用后果上可标记 Heavy Armor 格，提供第二次减轻；例如先用 Standard Armor 将 Level 2 Harm 降至 Level 1，再以 Heavy Armor 降至 0。
 - **Special Armor**：每张角色卡有独立 Special Armor 格；只有角色拥有明确使用 Special Armor 的 Playbook Ability 时才能勾选。它通常用来触发该能力，而不是通用伤害减免。
-- 每个已标记的 Armor 格在本次 Score 中不能重复使用。官方 v8.2 将 Armor 使用格恢复放在 Downtime 阶段；Resistance & Armor 网页速查也以“选择下一次 Score 的 Load”作为恢复节点。运行时在 Downtime 恢复，不延迟到下一次 Score 行动开始后。
+- 每个已标记的 Armor 格在本次 Score 中不能重复使用。当前 candidate 以官方 Full Player's Kit v8.2 为基线，在 Downtime 阶段恢复 Armor 使用格；官方 SRD Resistance & Armor 网页写的是选择下一次 Score 的 Load 时恢复，两者存在未解决的来源时序差异，见 [R-005](./RULE_ISSUES.md#r-005resistance-与-armor-的时序)。正式 Campaign 锁定版本后必须复核。
 - 特殊能力使用的 Special Armor 仍须按能力明文触发；多项能力明确写明在 Downtime 开始时恢复。不要把 Special Armor 当作普通护甲减伤格。 
 - 若角色本次 Loadout 没有带上适用的 Standard/Heavy Armor，则不能临时声明携带并使用；除非某项特殊能力明确豁免 Load 或提供特殊保护。
 
@@ -220,7 +220,7 @@ Armor 是 Resistance 的替代处理手段，不是额外叠加的一次抵抗�
 - 普通 Armor、Heavy Armor、Special Armor 是角色卡独立的使用格。
 - 角色可在适用伤害后果时使用 Armor，说明装备如何挡住/降低该后果并勾选使用格。
 - Heavy Armor 可在符合规则时额外勾选一格。
-- Armor 使用格在 Downtime 阶段恢复；选择下一次 Score 的 Load 是随后确认已恢复资源的节点。
+- 当前 candidate 按 Full Player's Kit v8.2 在 Downtime 阶段恢复 Armor 使用格；官方 SRD 网页存在不同表述，不能将其擅自解释为“随后确认”，详见 R-005。
 - 特殊能力中的 Special Armor 有独立用途；必须按该角色能力的明文触发条件执行。
 
 **互斥与时序**：对同一后果，不能既将 Armor 视为已完全解决，又重复把同一后果交给 Resistance 再结算一次。先说明具体后果，再选择可用的处理手段。
