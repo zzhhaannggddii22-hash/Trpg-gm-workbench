@@ -2,7 +2,7 @@
 
 > system_id: `blades_in_the_dark`  
 > 当前阶段：candidate / 核心与专题运行规则已整理，尚待行为验证  
-> 核心规则来源：中文《暗夜冷锋》SRD；官方 Player's Kit v8.2 用于关键条款交叉核验  
+> 核心规则来源：用户提供《暗夜刀锋》中文版规则书 V1.3（英文原版 v8.2）；中文 SRD 与官方 Player's Kit v8.2 用于交叉核验  
 > 规则正文镜像：存放于用户私人资料库；本公开仓库只保留授权来源、原创摘要与运行逻辑。
 
 本索引用于按触发定位运行规则。它不要求每轮把整本规则重新加载，也不替代 Campaign 指定版本的完整原文。
@@ -22,7 +22,7 @@
 | Crew / Factions / Cohorts | BLD-CRW-01–07 | 组织成长、派系关系或同伙受影响 | [§10](./CORE_RULES_RUNTIME.md#10-crew-factions与cohorts) |
 | XP / Advancement / Vice | BLD-ADV-01–05 | Session 结束、XP 结算、角色成长 | [§11](./CORE_RULES_RUNTIME.md#11-pc与crew成长) |
 | Ritual / Magnitude / Crafting | BLD-ARC-01–08 | 超自然仪式、Magnitude、发明/打造/改造与炼金物品 | [ARCANE_AND_CRAFTING_RUNTIME.md](./ARCANE_AND_CRAFTING_RUNTIME.md) |
-| PC / Crew Ability | BLD-ABIL-01–04 | 创建角色/组织、获得能力、触发特殊能力效果 | [ABILITY_RUNTIME_MATRIX.md](./ABILITY_RUNTIME_MATRIX.md)；[PLAYBOOKS_AND_CREW_REFERENCE.md](./PLAYBOOKS_AND_CREW_REFERENCE.md) |
+| PC / Crew Ability | BLD-ABIL-01–04 | 创建角色/组织、获得能力、触发特殊能力效果 | [ABILITY_RUNTIME_MATRIX.md](./ABILITY_RUNTIME_MATRIX.md)；[PLAYBOOKS_AND_CREW_REFERENCE.md](./PLAYBOOKS_AND_CREW_REFERENCE.md) |\n| Doskvol City Guide | BLD-CITY-01 | 地区、派系、NPC、街头流言与城市生成表 | [DOSKVOL_CITY_GUIDE_INDEX.md](./DOSKVOL_CITY_GUIDE_INDEX.md) |\n| Optional Playsets | BLD-EXT-01–03 | Campaign 明确启用红水之城/义警/利维坦之歌 | [RED_WATERS_CITY_RUNTIME.md](./RED_WATERS_CITY_RUNTIME.md)；[VIGILANTES_PLAYSET_RUNTIME.md](./VIGILANTES_PLAYSET_RUNTIME.md)；[LEVIATHAN_SONG_RUNTIME.md](./LEVIATHAN_SONG_RUNTIME.md) |
 | Items / Load / Armor Loadout | BLD-ITEM-01–04 | Score 负载、标准物品、护甲携带与消耗 | [STANDARD_ITEMS_AND_LOAD_REFERENCE.md](./STANDARD_ITEMS_AND_LOAD_REFERENCE.md) |
 | Crew Creation / Hunting Grounds / Claims | BLD-CRW-START-01、BLD-CRW-HUNT-01–02、BLD-CRW-CLAIM-01–03 | 建立组织、偏好业务奖励、夺取/失去 Claim | [CREW_CLAIMS_AND_STARTUP_REFERENCE.md](./CREW_CLAIMS_AND_STARTUP_REFERENCE.md) |
 
@@ -66,7 +66,7 @@ FREE PLAY
 | Crew、Faction、Cohort、成长 | 已补充 Cohort 生命周期与 Faction Downtime | 官方 Crew / Faction Game 页面及 v8.2 | T26、T55–T61 合成通过；真人待测 |
 | Ritual、Magnitude、Crafting | 已建立完整触发式专题手册 | 官方 Magnitude / Rituals / Crafting 页面及 Player's Kit v8.2 | T62–T69 合成通过；真人待测 |
 | 七种核心 Playbook / 六种 Crew Ability | 已建立触发、成本、范围与边界矩阵 | 官方 Full Player's Kit v8.2 | T70–T75 与既有能力用例合成通过；真人待测 |
-| Doskvol / NPC / District 设定 | 未完整收录 | 需要合法官方设定资料 | 未测 |
+| Doskvol / NPC / District 设定 | 来源已取得并建立城市指南索引；地区/派系/NPC 细项仍待拆解 | 核心规则书 V1.3 城市指南 | 未测 |
 
 ## 5. Playbook / Crew 能力调用
 
