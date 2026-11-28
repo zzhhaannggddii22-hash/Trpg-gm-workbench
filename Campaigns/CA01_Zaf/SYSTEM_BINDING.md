@@ -27,7 +27,7 @@ Twin Lakes 只绑定 Cairn Second Edition。系统成熟度仍为 candidate；�
 ## 权威资料
 - [Cairn 系统入口](../../Systems/Cairn/README.md)
 - [核心规则运行手册](../../Systems/Cairn/Rule_Reference/CORE_RULES_RUNTIME.md)
-- [角色创建与背景参考](../../Systems/Cairn/Rule_Reference/CHARACTER_CREATION_AND_BACKGROUNDS.md)
+- [Cairn 2e 官方角色创建规则](https://cairnrpg.com/second-edition/players-guide/character-creation/)
 - [Campaign README](./README.md)
 - [人物卡目录](./人物档案/)
 - [EBB Manifest](./MODULES/EBB_Escape_to_Blackboot_Bog/MANIFEST.md)
