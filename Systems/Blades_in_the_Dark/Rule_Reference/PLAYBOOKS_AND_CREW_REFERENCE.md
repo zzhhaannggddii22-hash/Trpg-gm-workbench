@@ -263,6 +263,6 @@ active_abilities:
 - [Official Full Player's Kit v8.2](https://bladesinthedark.com/sites/default/files/blades_playerkit_v8_2.pdf)
 - [Official Downloads](https://bladesinthedark.com/downloads)
 - [Chinese SRD](https://bitd.wayneh.tw/)
-- [中文 SRD 私人镜像说明](../../../../personal-context-archive-not-accessible-from-public/README.md)（实际正文存放于用户私人资料库）
+- 中文 SRD 私人镜像位于用户私有仓库 `personal-context-archive/research/trpg/blades_in_the_dark/zh_srd/`；公开仓库不放正文副本。
 
 官方 Player's Kit 提供核心 Playbook 和 Crew Sheet 能力；该文件是免费官方工具包，不等于完整商业核心规则书。本文件以原创短摘要记录能力效果，不镜像官方 PDF 或未授权角色/组织表单。未列在此处的社区扩展、付费 Playbook、Fan-made Crew 不属于基础规则。
