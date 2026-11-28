@@ -1,0 +1,54 @@
+# Blades in the Dark｜Core Runtime Regression Matrix
+
+> Fixture: BITD_CANDIDATE_V01  
+> Status: TEST CASES DEFINED / NOT YET RUN AS LIVE PLAY  
+> 结果记录区分：STATIC REVIEW、SYNTHETIC EXECUTION、LIVE PLAY。
+
+| ID | 输入/场景 | 预期规则行为 | 结果类型 |
+|---|---|---|---|
+| BLD-T01 | 角色试图跨过没有危险/麻烦的矮栅栏 | 不掷 Action Roll；直接叙述通过 | Static / Synthetic |
+| BLD-T02 | 角色在敌人火力下冲过庭院 | 先确定目标、Action、Position、Effect，再掷 Action Roll；默认 Risky | Synthetic |
+| BLD-T03 | 玩家用 Study 去砸开厚重木门 | Action 与虚构不匹配，GM 解释其风险/效果显著较差，玩家可改方法；不自动允许用高评级代替合理行动 | Synthetic |
+| BLD-T04 | Risky 行动骰结果为 4/5 | PC 达成目标；GM 按情境给适当后果；玩家可在明确后果后选择 Resistance/Armor | Synthetic |
+| BLD-T05 | Desperate Action Roll 结果为 1–3，PC 正与 NPC 争斗 | NPC 在对抗中胜出，NPC 行动体现为 PC 后果；不另为同一交锋重复掷 NPC Action Roll | Synthetic |
+| BLD-T06 | Controlled 结果为 4/5 | 允许玩家撤回/改换方法，或达成目标并承受轻微后果 | Synthetic |
+| BLD-T07 | GM 先定 Risky/Standard，玩家提出接受 Desperate 以换 Great Effect | 只有虚构情境合理时允许 Position ↔ Effect 交易；不使用固定兑换表 | Synthetic |
+| BLD-T08 | Resistance Dice 最高骰为 4 | Consequence 减轻/避免；PC 承受 2 Stress；记录属性组骰池和后果变化 | Synthetic |
+| BLD-T09 | Resistance Roll 得到 Critical | 正常抵抗后果，并额外清除 1 Stress | Synthetic |
+| BLD-T10 | PC 对 Level 2 Harm 使用 Heavy Armor | 先以 Armor 替代 Resistance；可按规则勾选两格 Armor 进一步降低；同一后果不再重复 Resistance | Synthetic |
+| BLD-T11 | Level 3 Harm 槽已满，再承受 Level 3 Harm | 触发灾难性永久后果；是否死亡取决于场景；不能自动当作一般 Level 3 | Synthetic |
+| BLD-T12 | 0d Action Roll | 掷 2d 取最低，不得产生 Critical | Static / Synthetic |
+| BLD-T13 | 复杂障碍“内部巡逻”持续升级 | 建立以障碍本身命名的 Clock；不以某一种解法命名 | Synthetic |
+| BLD-T14 | 调查角色查看可自由取得的公开档案 | 常识/可知信息直接提供；若无危险或不确定，无需掷骰 | Synthetic |
+| BLD-T15 | 玩家要知道不确定 NPC 是否背叛 | 用适用 Trait 作 Fortune Roll，不设置 Position/Effect | Synthetic |
+| BLD-T16 | Crew 选择 Stealth Plan，Detail 未知 | 可先 Gather Information；Plan + Detail + Load 完成后进行 Engagement Roll | Synthetic |
+| BLD-T17 | Engagement Roll 为 Critical | PC 已越过第一个障碍，以 Controlled Position 进入后续行动；不再叙述漫长接近过程 | Synthetic |
+| BLD-T18 | Score 中遇到卫兵，玩家 Flashback 曾买通过守卫 | GM 按复杂程度设 0/1/2+ Stress；危险行动掷 Action Roll，不撤销已确立事实 | Synthetic |
+| BLD-T19 | Group Action 三名 PC 结果 6、4/5、1–3 | 全组按最高结果处理；Leader 对 1–3 成员承受 1 Stress | Synthetic |
+| BLD-T20 | Score 结束后连续结算 | 顺序为 Payoff → Heat → Entanglements → Downtime；禁止跳步或重复结算 | Synthetic |
+| BLD-T21 | Downtime 中 PC 进行 Long-Term Project，掷出 Critical | 推进 5 格；Coin 可以在掷后提升结果等级 | Static / Synthetic |
+| BLD-T22 | PC 有两个 Downtime Activities 后继续访友/普通调查 | 普通 Free Play 不消耗活动次数；只有正式六种活动受预算限制 | Synthetic |
+| BLD-T23 | Crew Heat 为 8，获得 3 Heat | Wanted Level +1；Heat 清除并结转超额 2 Heat | Synthetic |
+| BLD-T24 | Wanted Level 为 0，掷 Entanglement | 掷 2d 取最低；根据 Heat 档读表 | Static / Synthetic |
+| BLD-T25 | Crew 有 3 Turf，Rep track 达 9 | 晋级阈值为 12-3=9；晋级后保留 Turf | Synthetic |
+| BLD-T26 | Crew 与某派系 Status -3 | 进入 War；每 Score +1 Heat、暂时失去 Hold、PC Downtime 变为每人 1 次，按规则处理恢复 | Synthetic |
+| BLD-T27 | 只与一个无关派系有关的城内新闻 | 不为了模拟世界而推进所有派系；只更新会影响 PC/Crew 的对象 | Static / Synthetic |
+| BLD-T28 | 当前桌绑定 Triangle Agency，玩家提到 Flashback | 识别其属于 Blades；不加载或执行 Blades 机制 | Cross-system |
+| BLD-T29 | 当前桌绑定 Cairn，玩家提到 Crew Tier | 不把 Tier/Heat/Downtime 资源移入 Cairn；只有明确切换系统才加载 | Cross-system |
+| BLD-T30 | 上下文压缩后恢复 Score closeout | 检查已提交步骤，只执行未完成字段；不得重复 Payoff、Heat 或 Entanglement | Synthetic |
+
+## 结果登记
+
+| 验证阶段 | 日期 | 结果 | 证据 |
+|---|---|---|---|
+| Source review | 2026-11-28 | 已完成主要 SRD 章节校读与部分官方 v8.2 交叉核验 | 中文 SRD 私人镜像、官方 Player's Kit v8.2 |
+| Static document review | 2026-11-28 | 文档已建立，细节仍需第二轮审阅 | 本测试矩阵、Runtime、Index、Protocol |
+| Synthetic execution | Pending | 未执行 | — |
+| Live play | Pending | 尚无实战证据 | — |
+
+## 当前开放风险
+
+- 所有 Playbook/特殊能力并未逐条录入；角色创建与运行必须按当前角色实际能力回查。
+- 六类 Crew 的完整升级、Claim 和能力需要按实际 Campaign 类型查表。
+- Doskvol 专有设定、官方 NPC、地区、地图和非 SRD 材料需要合法来源。
+- 中文 SRD 的修订号未明确，正式 Campaign 前必须锁定实际使用版本。
