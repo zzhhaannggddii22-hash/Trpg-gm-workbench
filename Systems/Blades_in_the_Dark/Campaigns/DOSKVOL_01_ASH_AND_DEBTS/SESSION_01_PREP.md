@@ -12,8 +12,8 @@
 - [ ] Crew 起始 Faction Status 已按规则写入。
 - [ ] 精确规则版本与 SYSTEM_BINDING 一致。
 - [ ] 根据实际 Lair / Hunting Grounds / Contacts 选择 3–5 个活跃派系。
-- [ ] 建立 3–6 名重要 NPC；每名 NPC 有目标、手段、资源、限制和与 Crew 的关系。
-- [ ] 生成 2–3 个不同来源的 Score 机会，但不预设玩家选择。
+- [ ] 先建立 2–4 名与 Crew 当前关系直接相关的重要 NPC；其余人物在 Score 或玩家行动触发时按需生成。每名重要 NPC 有目标、手段、资源、限制和与 Crew 的关系。
+- [ ] 在 GM-only 机会池中准备 2–3 个来源不同的潜在 Score 机会；不一次性展示成任务菜单，也不预设玩家选择。玩家可以拒绝或自创目标。
 - [ ] 建立初始城市事件/流言仅在有助于开场时使用。
 - [ ] GM-only 资料与玩家可见信息分开。
 
@@ -38,3 +38,8 @@
 - 不替玩家选择 PC、Crew、Plan、Action 或任务目标。
 - 不泄露 GM-only 资料。
 - 不把候选机会当作已经接受的 Score。
+
+
+## 建团依赖核对
+
+Crew Creation 必须逐项完成 Crew Type、Reputation/Lair、Hunting Grounds 与控制派系 Status、Preferred Operation、起始 Crew Ability、Crew Sheet 预选与玩家选择的升级、升级影响派系 Status、Favorite Contact 关系、起始资源及适用的 Cohort。不能仅以 Crew 名称、Tier 与 Coin 作为建团完成标准。详见 `Rule_Reference/CREW_CLAIMS_AND_STARTUP_REFERENCE.md`。
