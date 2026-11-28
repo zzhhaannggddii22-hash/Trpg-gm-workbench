@@ -18,8 +18,8 @@
 - 版权状态：受版权保护；不得因SRD CC0而推断Deluxe内容也开放。
 
 ### Atlas of the Latter Earth
-- 出版方WWN系列入口：https://www.sinenominepublishing.com/collections/worlds-without-number
-- 当前系列页列有Atlas of the Latter Earth印刷版；数字版/可购买状态需在产品页核实。
+- 出版方WWN系列入口：https://www.sinenominepublishing.com/collections/worlds-without-number/products/atlas-of-the-latter-earth-offset-edition
+- 当前页面列出Offset Print Edition，US$64.99；购买后提供PDF/MOBI/EPUB。
 - 用途：Latter Earth世界设定和地域资料。版权保护，私人合法持有副本。
 
 ## B. CC0规则与结构化数据
