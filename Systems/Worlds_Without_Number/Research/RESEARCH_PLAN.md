@@ -1,12 +1,12 @@
-# Worlds Without Number｜研究计划
+# Worlds Without Number｜研究与验证计划
 
 ## 目标
 
-完整理解 WWN 规则与 GM 工具体系，评估其是否适合 AI 主持长期单人沙盒。先研究和离线保存规则，再做短测，不提前开发复杂 Runtime。
+完整理解 WWN 规则与 GM 工具体系，评估其是否适合 AI 主持长期单人沙盒。先研究并离线保存规则，再做短测；不提前开发复杂 Runtime。
 
 ## 原则
 
-1. 官方规则、作者开放 SRD、第三方解释和 house rule 分开记录。
+1. 官方规则、作者开放 SRD、第三方解释和 House Rule 分开记录。
 2. 先研究完整系统，再决定简化。
 3. 机制只在触发时进入 Runtime。
 4. 世界模拟使用有意义的抽象层级。
@@ -14,43 +14,40 @@
 6. 资料不足时记录缺口，不从其他系统推测。
 7. 合法可保存的规则和索引尽量放入本地仓库，减少运行时查网。
 
-## 研究阶段
+## 研究范围与状态
 
-### A. 资料与版本基线
-核实 Free Edition / Deluxe / SRD 对应关系、版权页、印次、勘误、目录、页码及中文资料。
+| 方向 | 状态 | 本地入口 |
+|---|---|---|
+| A. 版本、来源与许可 | 已核验 | SOURCES.md、GM_TOOLKIT_RESEARCH.md |
+| B. 核心机制与角色规则 | SRD 摘要完成；需行为测试 | CORE_RUNTIME_GUIDE.md、Data/ |
+| C. World / Region / Polity / Site 构建 | 研究摘要完成 | WORLD_BUILDING_RUNTIME.md |
+| D. Site Tags | 结构和组合流程完成；原书 Tag 正文不复制 | SITE_TAGS_RUNTIME.md |
+| E. 冒险创建 | 四类挑战与准备流程摘要完成 | ADVENTURE_CREATION_RUNTIME.md |
+| F. Faction / Major Projects | SRD 机制摘要完成 | FACTIONS_AND_MAJOR_PROJECTS.md |
+| G. AI GM / 单人适配 | 初步建议完成；尚未验证 | GM_TOOLKIT_RESEARCH.md、Testing/ |
 
-### B. 核心规则
-角色创建；属性/技能检定与豁免；战斗、伤势、恢复；负重、旅行、野外与地下城探索；装备经济；魔法、职业和法术；怪物、Reaction、Morale 与 Instinct。
-
-### C. GM 沙盒工具
-世界和地区构建；社群、政府、宗教、历史、地理；World / Site Tags；城镇、遗迹、野外兴趣点；冒险创建；传闻、遭遇与可行动机会；预制世界的使用边界。
-
-### D. 世界持续运行
-Faction 属性、资产、目标、行动与经济；Faction Turn 的触发、顺序、判定和资源；玩家介入；Major Projects；哪些状态需要持久化。
-
-### E. AI GM 适配
-按需规则调用、最小状态读取、时间推进、地点/NPC/阵营变化、自由探索、单人角色与雇员/随从。
-
-### F. 最小验证
-检定、完整战斗、野外旅行、地点/冒险生成、Faction Turn、Major Project 和单人遭遇。测试标记 TEST_ONLY_NON_CANON，不连接正式 Campaign。
-
-## 本轮已完成
+## 已完成的研究工作
 
 - [x] 建立 WWN 独立系统目录和 Candidate 边界。
-- [x] 核对出版方产品页及 Deluxe 商品说明。
-- [x] 确认 SRD 1.0 作者、日期、版本与 CC0 边界。
-- [x] 将 SRD 全文、结构化数据和本地搜索索引纳入仓库。
-- [x] 完成核心规则运行摘要。
-- [x] 完成 Faction / Major Projects 运行摘要。
-- [x] 建立 GM 工具范围、版权边界和研究缺口。
+- [x] 核对 SRD 1.0 作者、日期、CC0 边界。
+- [x] 将 SRD 原文、结构化数据和本地搜索索引纳入仓库。
+- [x] 核对 Free Edition 版本、版权页、ISBN 和章节目录。
+- [x] 完成核心规则运行摘要，并明确一级豁免目标值计算。
+- [x] 完成 World / Region / Polity / Sites 背景层级与准备原则。
+- [x] 完成四类 Site、五类 Tag 素材和双 Tag 组合流程摘要。
+- [x] 完成 Combat / Exploration / Investigation / Social 冒险挑战流程摘要。
+- [x] 完成 Faction Turn、Faction Actions 与 Major Projects 摘要。
+- [x] 建立 AI Runtime 适配建议和许可边界。
+- [x] 将五项研究入口加入本地索引。
 
-## 未完成
+## 剩余工作：验证而非继续堆文档
 
-- [ ] 取得并核验官方 Free Edition PDF。
-- [ ] 核实完整规则书印次、勘误和页码。
-- [ ] 提取完整 GM 工具章节、表名、Tags 和生成步骤。
-- [ ] 核实完整中文译本。
-- [ ] 核心机制与 GM 工具行为测试。
-- [ ] 单人适配评估。
-- [ ] AI GM Runtime 设计与验证。
-- [ ] Candidate → Active 评估。
+1. 核心检定、豁免、战斗、Shock、濒死和恢复的规则行为测试。
+2. Tags 生成地点与冒险入口的可用性测试。
+3. Investigation 多线索、失败推进和信息闭环测试。
+4. Faction Turn 资产行动、维护、Goal 和状态变化测试。
+5. Major Project 难度、投入、反对力量变化与完成测试。
+6. 单人 PC 的生存压力、雇员/随从价值和遭遇规模测试。
+7. 通过测试后再评估 Candidate → Active；不以文档数量代替验证。
+
+所有测试使用 TEST_ONLY_NON_CANON，不连接正式 Campaign。
