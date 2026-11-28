@@ -30,6 +30,7 @@
 - [SCORE_SEEDS.md](./SCORE_SEEDS.md)：首轮机会池与任务生成规范。
 - [SESSION_01_PREP.md](./SESSION_01_PREP.md)：首次游戏准备与开场流程。
 - [SESSION_LOG_TEMPLATE.md](./SESSION_LOG_TEMPLATE.md)：会话记录模板。
+- [PREP_AUDIT_2026-11-28.md](./PREP_AUDIT_2026-11-28.md)：战役框架自审、规则依赖核查与未完成事项。
 - [GM_ONLY/GM_CAMPAIGN_DOSSIER.md](./GM_ONLY/GM_CAMPAIGN_DOSSIER.md)：主持人专用备团资料。遵守 GM-only 信息隔离。
 
 ## 仍待玩家决定
