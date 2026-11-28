@@ -22,7 +22,7 @@
 | Striking Serpent | Venomous Strike 使用 Direct Physical Damage | 当前 Feature 文本一致 | Core 数据保留 |
 | Legendary Hybrid | 攻击伤害类型补为 Physical | 当前记录为 phy | Core 数据保留 |
 | Beastform Step 4 | 变形时选择合适的 Physical / Magic Damage | 属于规则步骤；仍须以对应书籍规则确认完整上下文 | Runtime 结合 Beastform 规则调用 |
-| Beastbound Companion | Companion 伤害类型选项调整 | SRD2 的相关子职业文本需进一步逐卡确认 | 未标为完全核验 |
+| Beastbound Companion | Companion Sheet 增加 Physical / Magic 伤害类型选择 | Core Set Beastbound 子职业记录存在，但 Ranger Companion Sheet 本体未进入当前结构化数据；需取得对应官方 Sheet 核对完整等级选项 | 标记为 Sheet 级来源缺口；Runtime 记录伤害类型选择 |
 | Rogue: Cloaked | 脱离 Hidden 的条件补充：攻击或结束移动后进入敌人视线 | Rogue Class Feature 当前文本包含两种结束条件 | Core 数据匹配 |
 | Rogue Hope Feature | 没有攻击成功时，Evasion 加值持续到下次休息 | 当前 Class Hope Feature 文本一致 | Core 数据匹配 |
 | HP / Stress 上限 | 两类资源槽最大 12 | 当前 Runtime 按 12 上限记录 | Runtime 已纳入 |
@@ -36,7 +36,7 @@
 | Sweet Moss | 休息时可清除 1d10 HP 或 Stress | 当前 Consumable 数据一致 | Core 消耗品匹配 |
 | Long-term Countdown | 长休通常推进一个相关长期倒计时一次 | SRD 2.0 Rest 摘要允许 GM 推进一个 Long-term Countdown；2025 Errata 进一步建议长休时通常推进一次与当前局势相关的长期倒计时 | Runtime 采用“通常推进一个相关倒计时一次”；具体规则文本优先 |
 | Adversary Actions | 补充 Adversary Rolls 的交叉引用 | SRD 2.0 有独立 Adversary Action / Roll 指引 | Runtime 已补入非攻击行动与 Reaction 区分 |
-| Team-Up Reaction | 触发距离改为 Very Close | 当前需按具体 Adversary Feature 文本检查；未作为通用机制写入 | 单项 Feature 核验 |
+| Team-Up Reaction | 触发距离改为 Very Close | 在当前 129 条 SRD 2.0 Core Adversary 结构化记录中未找到 Team-Up 文本；该条目来自 Core Rulebook p.195 的特定 Adversary Reaction | 标记为 Core Rulebook-only 候选；遇到该具体特性时按 Errata 使用 Very Close，不推广为通用协作规则 |
 | Glass Snake | Armor-Shredding Shards：无法标记 Armor Slot 时标记 HP | 当前 Glass Snake Feature 一致 | Core Adversary 数据匹配 |
 | The Box | Relentless 改为 (2) | 当前公开 SRD 对应 Stat Block 名称为 Battle Box，相关 Feature 文本仍以 The Box 指称，Relentless (2) | 按 SRD 2.0 名称保存；旧称作为定位别名 |
 | Adult Flickerfly | Hallucinatory Breath 类型改为 Reaction | 当前 Feature 类型为 Reaction | 对应数据匹配 |
