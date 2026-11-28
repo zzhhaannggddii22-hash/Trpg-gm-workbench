@@ -37,6 +37,7 @@
 | Mule（骡子） | Load 上限提高：Light 5、Normal 7、Heavy 8 |
 | Not to Be Trifled With（万夫莫敌） | Push Yourself 做出超人级身体力量，或与最多 6 人的小帮派平等近战，不受相应 Scale 弱化 |
 | Savage（野蛮） | 释放身体暴力时特别吓人；Command 被恐惧影响的目标时 +1d |
+| Vigorous（强健） | Healing Clock 开始时永久标记 1 格；治疗处置骰额外 +1d |
 | Veteran | 从允许的其他能力来源选择 |
 
 ### 3.2 Hound｜猎犬 / 致命射手与追踪者
@@ -67,6 +68,7 @@
 | Ghost Ward（超自然防壁） | 用奥术物质与方法破坏一个区域，使灵体厌恶或趋向该区域；范围和持续时间按能力原文裁定 |
 | Physicker（医者） | 使用 Tinker 处理伤病、稳定濒死者、研究疾病/尸体；Crew 全员治疗骰 +1d |
 | Saboteur（破坏者） | Wreck 的破坏更安静，损坏也较难从日常检查中发现 |
+| Venomous（有毒） | 选择一种自己已接触/携带的毒药或药物，获得对其免疫；Push Yourself 可从皮肤、唾液或呼气中分泌该物质 |
 | Veteran | 从允许的其他能力来源选择 |
 
 ### 3.4 Lurk｜潜行者 / 潜入者与窃贼
