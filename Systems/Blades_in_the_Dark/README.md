@@ -22,13 +22,17 @@ runtime_dispatch:
   readiness: CANDIDATE_RUNTIME_DRAFT_COMPLETE_VALIDATION_PENDING
   mechanisms:
     action_resolution:
-      status: PENDING
+      status: DOCUMENTED_CANDIDATE
     score_procedure:
-      status: PENDING
+      status: DOCUMENTED_CANDIDATE
     flashback:
-      status: PENDING
+      status: DOCUMENTED_CANDIDATE
     downtime:
-      status: PENDING
+      status: DOCUMENTED_CANDIDATE
+  source_conflicts:
+    armor_recovery:
+      status: OPEN_SOURCE_CONFLICT
+      tracking: Rule_Reference/RULE_ISSUES.md#r-005
 ```
 
 ## 权威来源与资料边界
@@ -68,7 +72,7 @@ runtime_dispatch:
 - [GM_SKILL.md](./GM_SKILL.md)：本系统的主持原则、叙事和节奏要求。
 - [PREFLIGHT.md](./PREFLIGHT.md)：未来新 Campaign / 新 Session 的启动核验。
 - [Testing/](./Testing/CANDIDATE_VALIDATION_MANIFEST.md)：Candidate 验证边界与回归测试矩阵。
-- [Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md )、[第二轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R2.md)、[第三轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R3.md) 与 [第四轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R4.md)：四轮共 75 个固定输入合成用例的执行记录；不等同于自动化测试或真人跑团验收。
+- [Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md)、[第二轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R2.md)、[第三轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R3.md) 与 [第四轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R4.md)：四轮共 75 个固定输入合成用例的执行记录；不等同于自动化测试或真人跑团验收。
 - [Research/CHINESE_SRD_SOURCE_REVIEW_2026-11-28.md](./Research/CHINESE_SRD_SOURCE_REVIEW_2026-11-28.md)：中文 SRD 来源审查。
 - [Research/EXTERNAL_RESOURCES.md](./Research/EXTERNAL_RESOURCES.md)：官方免费资料、社区扩展与额外资料入口。
 
