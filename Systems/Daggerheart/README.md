@@ -4,7 +4,7 @@
 > 标识：Daggerheart™ Compatible（非官方个人研究工作台）  
 > 规则基线：Daggerheart Core Set  
 > 公开参考：Official Daggerheart SRD v2.0（2026-08-25；混合收录 Core Set 与 Hope & Fear 内容）  
-> 状态：candidate（64项规则与GM专项已完成桌面逻辑模拟；参考执行器102项自动化测试全部通过（GitHub Actions Run 46149557047）；生产Runtime与实际短场景仍未验收）
+> 状态：candidate（64项规则与GM专项已完成桌面逻辑模拟；参考执行器109项自动化测试全部通过（GitHub Actions Run 46149995171）；生产Runtime与实际短场景仍未验收）
 
 本目录是《匕首心》系统级规则资料的唯一入口。与 Triangle Agency、Cairn、Blades in the Dark 完全隔离。当前阶段以基础版 Core Set 为默认规则集，先建立可准确检索、可直接主持的本地规则和数据资料，再通过短场景验证。初版控制复杂度，不默认引入 Hope & Fear。
 
@@ -56,7 +56,7 @@
 - [规则疑点登记](./Rule_Reference/RULE_ISSUES.md)：来源差异、版本疑点和未解决问题。
 - [Core Errata 交叉核验](./Rule_Reference/ERRATA_CROSSCHECK.md)：旧版官方勘误与 SRD 2.0 当前条目逐项抽样对照。
 - [Preflight](./PREFLIGHT.md)：Campaign / Session 开始前核验。
-- [回归测试矩阵](./Testing/CORE_RULE_RUNTIME_REGRESSION.md)：64 项规则与 GM 专项已完成桌面逻辑模拟（非程序自动测试）；参考执行器 102 项代码自动化测试全部通过（Run 10）；Countdown / Project 新增 6 项用例待 Run 11 验证；详见 [自动化执行记录 Run 10](./Testing/AUTOMATED_REFERENCE_EXECUTION_10.md)、[GM 专项桌面模拟记录](./Testing/GM_DESK_SIMULATION_01.md) 与 [第二轮 GM 场景复核](./Testing/GM_SCENARIO_REVALIDATION_02.md)。内部 GM 场景模拟已覆盖社交、探索和战斗流程；[外部盲测执行协议](./Testing/EXTERNAL_BLIND_GM_TEST_01_EXECUTION_PROTOCOL.md)、[玩家简报](./Testing/EXTERNAL_BLIND_GM_TEST_01_PLAYER_BRIEF.md)、[GM Oracle](./Testing/EXTERNAL_BLIND_GM_TEST_01_GM_ORACLE.md) 与 [评估表](./Testing/EXTERNAL_BLIND_GM_TEST_01_SCORECARD.md) 已准备，实际执行仍待验证。
+- [回归测试矩阵](./Testing/CORE_RULE_RUNTIME_REGRESSION.md)：64 项规则与 GM 专项已完成桌面逻辑模拟（非程序自动测试）；参考执行器 109 项代码自动化测试全部通过（Run 11），新增 Countdown / Project 与 Long Rest Move 限制回归已通过；详见 [自动化执行记录 Run 11](./Testing/AUTOMATED_REFERENCE_EXECUTION_11.md)、[GM 专项桌面模拟记录](./Testing/GM_DESK_SIMULATION_01.md) 与 [第二轮 GM 场景复核](./Testing/GM_SCENARIO_REVALIDATION_02.md)。内部 GM 场景模拟已覆盖社交、探索和战斗流程；[外部盲测执行协议](./Testing/EXTERNAL_BLIND_GM_TEST_01_EXECUTION_PROTOCOL.md)、[玩家简报](./Testing/EXTERNAL_BLIND_GM_TEST_01_PLAYER_BRIEF.md)、[GM Oracle](./Testing/EXTERNAL_BLIND_GM_TEST_01_GM_ORACLE.md) 与 [评估表](./Testing/EXTERNAL_BLIND_GM_TEST_01_SCORECARD.md) 已准备，实际执行仍待验证。
 - [术语表](./Rule_Reference/GLOSSARY.md)：中英术语与暂定工作译名。
 - [Hope & Fear 扩展隔离清单](./Expansions/Hope_and_Fear/README.md)：扩展默认关闭及启用条件。
 
@@ -82,6 +82,6 @@
 
 ## 初版建设状态
 
-已完成：来源与许可登记、Core / Hope & Fear 数据拆分、规则索引、核心运行手册、常用难度与遭遇检索表、敌人/环境索引、译名表、版本差异登记、Errata 抽样核验、GM Skill、Preflight 草案、64 项规则/GM 桌面逻辑模拟、102 项已验证参考执行器自动化测试（Run 10），以及 GM 专题与二元骰概率研究。
+已完成：来源与许可登记、Core / Hope & Fear 数据拆分、规则索引、核心运行手册、常用难度与遭遇检索表、敌人/环境索引、译名表、版本差异登记、Errata 抽样核验、GM Skill、Preflight 草案、64 项规则/GM 桌面逻辑模拟、109 项已验证参考执行器自动化测试（Run 10），以及 GM 专题与二元骰概率研究。
 
 待完成：穷尽核对官方 Core Errata、取得合法核心规则书后补齐 SRD 未覆盖的 GM 指导与示例、执行剩余规则正反例回归、外部 Blind GM 测试（测试包已准备）和实际短场景实测。
