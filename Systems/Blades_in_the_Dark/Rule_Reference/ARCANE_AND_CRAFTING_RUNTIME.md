@@ -198,4 +198,7 @@ Need an occult effect?
 
 ## 10. Validation boundary
 
+Source-grounded expected-result checks: [ARCANE_CRAFTING_REGRESSION_CASES.md](../Testing/ARCANE_CRAFTING_REGRESSION_CASES.md). This suite contains 13 manually reviewed cases; it has not been automated or validated in live play.
+
+
 This reference covers the general procedures and the listed official ability hooks. It does not reproduce the full Sample Creations catalogue or the proprietary/full text of individual item descriptions. Specific formula effects, ritual effects, spirit/demon powers, and item edge cases must be checked against the relevant licensed rule text and the campaign's locked version. Keep `candidate` until the campaign version is selected and live play validates the procedure.
