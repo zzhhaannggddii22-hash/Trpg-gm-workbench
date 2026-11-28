@@ -170,7 +170,7 @@ Free Play 不强制每个对话都掷骰，也不要求玩家在接到任务前�
 2. **Heat**：确定基础曝光与修正项；写入 Crew Heat。
 3. **Wanted Level**：Heat 达 9 时提升 Wanted，并清除/结转 Heat。
 4. **Entanglements**：按 Heat/Wanted 查表掷骰，并确定事件如何落到世界。
-5. **Downtime**：PC 进入活动选择；已标记的 Armor 不在此时恢复，而是在下一次 Score 选择 Load 时恢复。
+5. **Downtime**：PC 进入活动选择；按官方 v8.2 在 Downtime 阶段恢复 Armor 使用格。具有专属恢复说明的 Special Armor 能力按其文本在 Downtime 开始时恢复。
 6. **NPC/Faction Downtime**：推动当前相关派系的计划和项目钟，选择合理的 1–2 个行动。
 7. 保存新的 Crew、PC、Faction、Clock 与 Score history 状态。
 
@@ -189,6 +189,7 @@ Free Play 不强制每个对话都掷骰，也不要求玩家在接到任务前�
 6. 记录 Coin/Rep 支出、Stress、Harm、Heat、项目钟、资源或能力状态变化。
 7. 正式活动次数用完后，仍可继续普通 Free Play 行动。
 8. Downtime 结束时，处理当前相关派系变化及新机会，回到 Free Play。
+9. 若 PC 拥有 Ritual / Alchemist / Artificer / Strange Methods 等能力，只有在对应仪式、发明或打造事件触发时才加载 [ARCANE_AND_CRAFTING_RUNTIME.md](./Rule_Reference/ARCANE_AND_CRAFTING_RUNTIME.md)。
 
 Downtime Activity 选择项：
 - Acquire Asset；
