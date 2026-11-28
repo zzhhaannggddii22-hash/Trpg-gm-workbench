@@ -155,7 +155,7 @@ Hard Move：更直接、更严重，角色没有机会先中断、改变或预�
 - **Passive**：持续生效，不额外消耗资源，除非文本另有说明。
 - **Fear Feature**：按卡面支付 Fear；不得把抢夺 Spotlight 的成本当成已支付。
 - **Stress**：若特性要求敌人标记 Stress，必须记在该敌人自己的 Stress 上。
-- **Relentless (X)**：同一 GM Turn 可获得最多 X 次 Spotlight，但每次仍按规则支付 Fear。
+- **Relentless (X)**：同一 GM Turn 可获得最多 X 次 Spotlight；首次作为该 GM Turn 的敌人聚焦，后续重复/额外聚焦按规则支付 Fear。
 
 ## 6. 敌人设计：先定战斗职责，再定数值
 
