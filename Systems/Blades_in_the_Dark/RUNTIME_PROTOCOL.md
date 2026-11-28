@@ -170,7 +170,7 @@ Free Play 不强制每个对话都掷骰，也不要求玩家在接到任务前�
 2. **Heat**：确定基础曝光与修正项；写入 Crew Heat。
 3. **Wanted Level**：Heat 达 9 时提升 Wanted，并清除/结转 Heat。
 4. **Entanglements**：按 Heat/Wanted 查表掷骰，并确定事件如何落到世界。
-5. **Downtime**：PC 进入活动选择；按官方 v8.2 在 Downtime 阶段恢复 Armor 使用格。具有专属恢复说明的 Special Armor 能力按其文本在 Downtime 开始时恢复。
+5. **Downtime**：PC 进入活动选择；当前 candidate 按官方 Full Player's Kit v8.2 在 Downtime 阶段恢复 Armor 使用格。官方 SRD 网页的下一次 Score Load 恢复表述与此不同，属于未解决的来源时序差异；正式 Campaign 锁定版本后复核，见 [R-005](./Rule_Reference/RULE_ISSUES.md#r-005resistance-与-armor-的时序)。具有专属恢复说明的 Special Armor 能力按其文本在 Downtime 开始时恢复。
 6. **NPC/Faction Downtime**：推动当前相关派系的计划和项目钟，选择合理的 1–2 个行动。
 7. 保存新的 Crew、PC、Faction、Clock 与 Score history 状态。
 
