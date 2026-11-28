@@ -67,7 +67,7 @@
 ### B4. 中文社区主持研究与实战资料（用户提供索引，待逐篇核验）
 
 - **贤者恩泽 Sage-Touched**：https://vcn3zvu2w61p.feishu.cn/wiki/FOziwMdb6iFF4nkU4fkc5jsjnKg  
-  规则解释、裁定案例、主持问题与设计师澄清汇总。优先研究与具体 Rule ID 相关的条目；不能将作者解释自动视为官方规则。
+  规则解释、裁定案例、主持问题与设计师澄清汇总。已确认目录中的数据研究子文章标题包括《匕首之心》的掷骰概率、玩家与GM回合数对比：匕首之心动作经济解析、匕首之心二元骰概率与初步战斗策略；另有回忆知识/观察周围的掷骰、叙事型敌人设计、行动与聚焦适应等主持问题。当前页面提取可读到目录与简介，但子文章正文/独立链接未成功提取；不得把目录标题当作已完成研究。优先研究与具体 Rule ID 相关的条目；不能将作者解释自动视为官方规则。
 - **恐惧成功指南——后果、麻烦与代价**：https://ai.feishu.cn/wiki/TseowovKriVOJikd6mfcmE5Znrd  
   重点用于建立 Success with Fear / Failure with Fear 的后果选择案例库。
 - **通用的敌人恐惧行动**：https://my.feishu.cn/wiki/F2lMwjJ1yi42G5k8KevcWFCInve  
