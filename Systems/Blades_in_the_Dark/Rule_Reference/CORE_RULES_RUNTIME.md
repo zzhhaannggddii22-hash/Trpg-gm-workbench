@@ -132,9 +132,9 @@ Effect 因素通常包括：
 ### BLD-ACT-04｜奖励骰
 
 - **Assist**：队友说明如何帮助，得到 +1d；协助者承担 1 Stress。每次 Action Roll 最多一名 Assist。
-- **Push Yourself**：每次选择一项强推收益，支付 2 Stress：+1d、+1 Effect，或在失能状态下仍采取行动。每种收益在同一次行动中最多选择一次；选择多种不同收益时分别支付 Stress。
+- **Push Yourself**：每选择一项强推收益，支付 2 Stress：+1d、+1 Effect，或在失能状态下仍采取行动。每项收益在同一次行动中最多选择一次；可同时选择不同收益并分别支付 Stress（例如 +1d 与 +1 Effect 共支付 4 Stress）。
 - **Devil's Bargain**：由 GM/其他玩家提出一项真实代价；接受后得到 +1d。代价无论最终骰子结果如何都会发生。玩家可拒绝或商议替代方案。
-- Assist 可与一个奖励骰来源并用；为取得 +1d 的 Push Yourself 与 Devil's Bargain 二选一。+1 Effect / 失能时行动属于强推的其他收益，不应与“奖励骰位”混为同一问题。角色特殊能力可改变规则。
+- 一次行动最多有两种常规奖励来源：Assist，以及 Push Yourself 或 Devil's Bargain。**Push Yourself 与 Devil's Bargain 不能在同一次行动中并用**，即使 Push 选择的是 +1 Effect 而非 +1d。角色特殊能力可以提供额外奖励骰或改变限制，按能力原文处理。
 
 ### BLD-ACT-05｜Consequences（后果类型）
 
@@ -479,6 +479,23 @@ Payoff、Heat 之后掷 Entanglement：
 
 典型新 Crew 起点：Tier 0、Strong Hold、0 Rep、2 Coin；还要按 Crew Type 建立声望、Lair、Hunting Grounds、Favored Operation、特殊能力、起始升级与联络人。不同版本/组织卡的明确起始内容优先于泛化摘要。
 
+Crew Creation 的状态输入不可遗漏：
+1. 选择 Crew Type；它决定常见业务、Crew XP 触发点、Crew Ability 与专属升级。
+2. 选择 Reputation 与 Lair。
+3. 选择 Hunting Grounds，并处理声称拥有该区域的 Faction：支付 1 Coin 换取活动空间；或支付 2 Coin 获得 +1 Status；或不付钱并承受 -1 Status。
+4. 选择 Preferred Operation、Crew Special Ability。
+5. Crew Sheet 已预选两项升级，再选择两项，总计四项；按升级影响记录一个帮助派系（+1 Status，可付 1 Coin 改为 +2）和一个受损派系（-2 Status，可付 1 Coin 改为 -1）。
+6. 选择 Favorite Contact；记录一个友好派系 +1 Status、一个敌对派系 -1 Status；可按规则改为 +2/-2。
+7. 确认初始 Cohort、特殊升级、Coin/Vault 与 Claim Map 节点。
+
+### BLD-CRW-01A｜Hunting Grounds 与 Preferred Operation
+
+当 Crew 准备在自己的 Hunting Grounds 执行所选 Preferred Operation 时：
+- 该次准备所需的 Gather Information Rolls 获得 +1d；
+- 获得一个免费的额外 Downtime Activity，且必须用于贡献这次 Score 的准备（例如发现机会、获取资产或寻找客户）。
+
+这项免费活动不是通常的额外活动购买，不消耗 1 Coin / 1 Rep。若已获得 Turf，Crew 可扩大 Hunting Grounds 的区域和/或业务类型。
+
 ### BLD-CRW-02A｜Coin / Vault / Stash
 
 - Coin 是组织与角色可用的流动资产单位；不追踪角色日常小额生活开支。
@@ -497,6 +514,15 @@ Payoff、Heat 之后掷 Entanglement：
 - 当 Rep 达到阈值：若 Hold 为 Weak，则提升为 Strong 并将 Rep 重置为 0；若 Hold 为 Strong，则可支付新 Tier × 8 Coin 提升 Tier，之后 Rep 重置为 0、Hold 降为 Weak。
 - Turf 和 Claim 有各自具体效果；夺取 Claim 通常会影响目标派系 Status 与组织关系。
 - SRD 提供的 Gang Scale 参照为 Tier 0：1–2 人；Tier I：3–6；Tier II：12；Tier III：20；Tier IV：40；Tier V：80。城市权力结构中还存在 Tier VI 派系，但这张帮派规模表没有给出 Tier VI 数值，不自行外推。
+
+### BLD-CRW-02B｜Claims 与 Claim Map
+
+- 每种 Crew Type 有专属 Claim Map，从 Lair 节点向外连接，显示典型的组织成长路线。
+- 通常沿连接路径逐步夺取 Claim；地图路径是推荐路线，不是绝对限制。直接挑战不相邻 Claim 或地图外特殊 Claim 通常特别困难，可能需要额外调查/搜集情报来发现机会。
+- Claim 已被某个 Faction 控制。玩家声明想夺取的 Claim 后，GM 给出地点、描述与当前控制者。
+- 夺取 Claim 是一次正常 Score。成功后 Crew 获得 Claim，原派系失去它；通常对原控制派系 -2 Status，可能对其敌对派系 +1 Status。
+- Claim 的收益只在 Crew 持有期间生效；失去 Claim 后立即失去该收益。若 Lair 被夺走，所有 Claim 收益暂时停用，直到 Crew 通过 Score 恢复或建立新 Lair。
+- 各 Crew 的 Claim 名称与简要收益见 [CREW_CLAIMS_AND_STARTUP_REFERENCE.md](./CREW_CLAIMS_AND_STARTUP_REFERENCE.md)。实际路径、重复 Turf 节点与位置以 Campaign 锁定版本的 Crew Sheet 为准。
 
 ### BLD-CRW-03｜Faction Status / War
 
