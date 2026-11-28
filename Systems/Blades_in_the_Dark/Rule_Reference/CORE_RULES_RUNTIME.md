@@ -506,13 +506,13 @@ Crew Creation 的状态输入不可遗漏：
 
 ### BLD-CRW-02A｜Coin / Vault / Stash
 
-- Coin 是组织与角色可用的流动资产单位；不追踪角色日常小额生活开支。
-- PC 随身持有的 Coin 上限通常为 4；每 1 Coin 占用 1 Load。超过随身上限的资产应花费或转入个人 Stash。
-- Crew 的 Vault 初始容量通常为 4 Coin；通过 Vault 升级可提高至 8，再提高至 16。超过 Vault 容量的 Coin 必须在下次 Score 前花费或分配。
-- 休整中，花费 1 Coin 或 1 Rep 可获得一个额外 Downtime Activity；花费 1 Coin 也可在活动掷骰后提高一个结果等级。每多花一枚 Coin，提升一个结果等级。
-- 每次 Crew Advance 时，每名 PC 获得等于 Crew Tier + 2 的 Stash；Stash 是长期个人财富，与 Crew Vault / 可随身 Coin 分开记录。
-- 从 Stash 取现按规则折算：每移除 2 Stash 得到 1 Coin；Stash 还决定退休后的生活品质和命运。
-- 组织升级 Tier 时支付新 Tier × 8 Coin；有 Patron 等能力时按能力修改成本。
+- Coin 是抽象现金/流动资产单位；PC 日常零碎支出不逐笔追踪。小额贿赂等日常目标，使用 PC 的 Lifestyle Quality 作 Fortune Roll。
+- **个人散放现金**：超过 4 Coin 是不方便随身/散放的金额；多余部分应花掉或转入个人 Stash。若将实体银币或其他大宗现金带在身上，每 1 Coin 占 1 个 Load 物品格。
+- **Crew 库存**：组织的 Lair 默认可存放 4 Coin。Vault 第一次升级把容量提高至 8，第二次提高至 16。超过组织容量的 Coin 应尽快花掉（通常在下一次 Score 前）或分配给组织成员。
+- **个人 Stash**：长期个人财富，单独记录在 PC 卡上。每个完整的 10 Stash 表示一档 Lifestyle Quality（0–4）；达到最终 Trauma 退场时，Stash 决定角色退休后的生活。每移除 2 Stash，换回 1 Coin 现金。
+- 常见 Coin 用途：每花 1 Coin 获得一个额外 Downtime Activity；每花 1 Coin 可在 Downtime 掷骰后提升一个结果等级；也可用于避免部分 Crew Entanglements、升级 Crew Tier，或转入个人 Stash。
+- 每次 Crew Advance 时，每名 PC 获得等于 Crew Tier + 2 的 Stash；这一增加是个人 Stash，不是 Crew 的可花费 Coin。
+- 组织升级 Tier 时支付新 Tier × 8 Coin；Patron 等能力可修改成本。
 
 ### BLD-CRW-02｜Tier / Hold / Rep / Turf
 
