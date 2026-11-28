@@ -112,7 +112,7 @@
 | Ritual | Study/create/perform ritual | Can safely study/create ritual sorcery; starts with one known ritual | Use the Ritual procedure; not free spellcasting |
 | Strange Methods | Invent/craft arcane creation | +1 result level; starts with one arcane design | Only arcane features |
 | Tempest | Push Yourself | Lightning as weapon or summon local storm | Choose one; local storm scale is bounded by fiction and magnitude |
-| Warded | Supernatural consequence or Push while dealing with arcane forces | Spend Special Armor to resist eligible consequence or Push without normal 2 Stress | Mark Special Armor; check scope |
+| Warded | Supernatural consequence or Push while dealing with arcane forces | Spend Special Armor to cancel/reduce eligible supernatural consequence, including when not present if prior protection is narrated; or Push without usual 2 Stress | Unlike most matching abilities, consequence wording allows either cancellation or reduction; mark Special Armor; restores at Downtime start |
 | Veteran | Ability selection/advancement | Choose one ability from another allowed source | Record source and exact ability |
 
 ## 3. Crew ability catalogue
@@ -204,9 +204,10 @@
 
 ### 4.2 Special Armor abilities
 - Trigger must match the named consequence or action category. A Special Armor box is not a universal Resistance roll.
-- Mark the Special Armor use when expended. For abilities that let it replace Push Yourself, choose one listed normal Push benefit; the ability waives the usual 2 Stress.
-- For abilities that use Special Armor to resist an eligible consequence, resolve the ability's explicit reduction/avoidance text; do not also charge the ordinary Push cost.
-- All armor uses recover during Downtime in the official v8.2 procedure. The individual ability text may specify this at the beginning of Downtime; the general procedure restores armor during the Downtime phase.
+- Mark the Special Armor use when expended. For abilities that let it replace Push Yourself, choose one listed normal Push benefit (+1d, +1 Effect, or ignore a severe Harm penalty); the ability waives the usual 2 Stress. This is an alternative way to Push, not a free extra benefit.
+- For abilities that use Special Armor to resist an eligible consequence, resolve the ability's own wording: most listed abilities say the consequence is completely avoided, while Whisper's Warded says it cancels or reduces the severity. Do not generalize one ability's wording to another.
+- Several abilities explicitly allow remote protection: Spider's Mastermind and Whisper's Warded state that the PC need not be present, provided the player narrates how prior preparation or protection applies. This is not blanket permission to resist any remote consequence.
+- Special Armor restores at the beginning of Downtime, as stated in the relevant ability texts. Do not apply this timing to ordinary Armor / Heavy Armor: those recover when Load is selected for the next Score (see R-005 in RULE_ISSUES.md).
 
 ### 4.3 Scope, stacking, and timing
 - +1d to a roll does not automatically add to a related Fortune Roll or Engagement Roll unless the ability names that roll.
