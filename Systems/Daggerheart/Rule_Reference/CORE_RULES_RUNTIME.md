@@ -350,6 +350,7 @@ Hope & Fear 对应数据单独放在 `Reference_Data/Hope_and_Fear/`，默认关
 - Reaction 在触发时结算，不需等待 Spotlight；Passive 持续生效；Action 在 Spotlight 时使用。
 - Fear Feature 按其文本消耗 Fear；若已花费 Fear 抢夺 Spotlight，Fear Feature 的成本是额外支出。
 - Horde、Minion、Relentless、Slow、Pool 和 Evolution 等特性按敌人卡面执行，不要只凭类型猜规则。
+- Core Rulebook p.195 的特定 Team-Up Reaction 经 2025 Errata 修正为 Very Close 触发距离；该特性未出现在当前 SRD 2.0 的 129 条 Core Adversary 数据中。只在取得并确认对应敌人原文后应用，不推广成通用 Team-Up 距离规则。
 
 ## 22. DH-ENCOUNTER｜遭遇预算（Battle Points）
 
@@ -431,6 +432,12 @@ Hope & Fear 对应数据单独放在 `Reference_Data/Hope_and_Fear/`，默认关
 - 之后选择新 Domain Card 时，可以改选 Multiclass 时选择的 Domain；该 Domain 的卡等级不得超过当前角色等级的一半，向上取整。
 - 选择 Multiclass 后，划掉本 Tier 的 Upgraded Subclass Advancement，并划掉角色卡上所有其他 Multiclass Advancement 选项。
 - 选择 Upgraded Subclass Advancement 后，划掉本 Tier 的 Multiclass 选项。
+
+### Beastbound Companion
+
+- Beastbound 子职业提供动物伙伴，并使用独立的 Ranger Companion Sheet；伙伴有自己的 Stress、Evasion、攻击和成长选项。
+- 2025 Core Errata 明确加入 Physical / Magic 伤害类型选择；创建或更新伙伴时记录玩家选择的类型，不默认固定为 Physical。
+- 当前结构化 Core JSON 只包含 Beastbound 子职业文本，不含完整 Companion Sheet；伙伴数值、等级选项与具体特性以官方 Sheet 为准。
 
 不得把 Tier Achievement、两项 Advancement、Damage Threshold +1 与 Step 4 领域卡获得合并成一个模糊的“升级加点”；这些步骤均须结算。
 
