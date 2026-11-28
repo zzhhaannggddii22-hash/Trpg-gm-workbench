@@ -64,3 +64,28 @@ GM Skill 已说明 Resistance 可减轻或避免后果，但在主持陷阱章�
 2. 在新会话仅加载系统入口与 GM Skill，重复相同案例，检查规范能否在最小上下文中被正确调用。
 3. 进行一次短场景真人跑团，重点观察玩家能动性、NPC 可信度、信息公平和镜头节奏。
 4. 依据真实表现更新案例，不为追求全 PASS 而降低验收标准。
+
+
+## 6. Targeted retest after corrections
+
+对两项 PARTIAL 进行针对性复测：
+
+- **GM-03 — PASS（targeted retest）**：修订后的 GM Skill 明确要求 0 Action Rating 仍可尝试，并调用 CORE_RULES_RUNTIME 的零骰程序，不得自行取消行动或发明骰池处理。
+- **GM-07 — PASS（targeted retest）**：修订后的 GM Skill 明确 Resistance 可减轻或完全避免某项后果，但不能撤销行动骰已确立的虚构事实。
+
+因此，本轮 18 个案例均已有符合预期的候选回应：初次 16 PASS / 2 PARTIAL；修订后对两项 PARTIAL 定向复测 2/2 PASS。此结果仍是同模型自评，不应改写成独立评估或真人跑团通过。
+
+## 7. Static integration checks
+
+对 main 上的 GM Skill、Runtime Protocol、Preflight、README、案例集、自测报告和 Manifest 执行 11 项文本/结构检查：
+
+- GM Skill 章节结构与关键条款；
+- 0 Action Rating 的规则锚点；
+- Resistance 可完全避免后果且不撤销既定事实；
+- Runtime Protocol 委托 GM Skill；
+- Preflight 包含 GM 行为就绪检查；
+- 18 个案例 ID 唯一且齐全；
+- 自测报告覆盖 GM-18 且结果汇总一致；
+- Manifest 和 README 的交叉链接。
+
+结果：11/11 PASS。该检查验证文档结构和互相引用，不验证实际主持质量。
