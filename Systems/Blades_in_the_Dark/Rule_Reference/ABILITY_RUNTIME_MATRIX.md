@@ -136,7 +136,7 @@
 | Dangerous | PC Action rating allocation | Each PC +1 rating to Hunt, Skirmish, or Wreck; max 3 |
 | Blood Brothers | Fight alongside Cohort in combat | Cohorts +1d on Teamwork Setup/Group Action; all Cohorts gain Thugs Type free (if already Thugs, add another Type) |
 | Door Kickers | Assault Plan Engagement | +1d Engagement |
-| Fiends | Determine Turf for relevant rules | Each Wanted Level counts as Turf; apply maximums/minimum Rep costs from full ability text |
+| Fiends | Determine Turf for relevant rules / Tier advancement | Each Wanted Level counts as Turf; Wanted Level max is 4; minimum Rep cost to advance Tier remains 6 regardless of Turf |
 | Forged in the Fire | PC Resistance Roll | Each PC +1d |
 | Patron | Crew Tier advance | Tier advance costs half normal Coin |
 | War Dogs | Crew at War (-3 Status) | Crew does not lose 1 Hold; PCs retain 2 Downtime Activities instead of 1 |
@@ -197,7 +197,7 @@
 ## 4. Ability interaction and adjudication rules
 
 ### 4.1 Action rating increases
-- Crew abilities such as Deadly/Dangerous/Chosen/Silver Tongues/Renegades/Everyone Steals add +1 Action rating to a listed Action, with max 3. They do not grant +1d and do not increase the rating above 3.
+- Crew abilities such as Deadly/Dangerous/Chosen/Silver Tongues/Renegades/Everyone Steals add +1 Action rating to a listed Action, with max 3. They do not grant +1d and do not increase the rating above 3. If Deadly is selected during initial character/Crew creation, its official text says it supersedes the normal starting Action rating limit.
 - Apply the Crew ability when setting up PC ratings/advancement state, not as a temporary die bonus on every roll.
 - If multiple sources affect the same rating, follow the full sheet's stacking/cap language; never exceed the stated max 3 unless another explicit rule (e.g. Mastery) permits it.
 
