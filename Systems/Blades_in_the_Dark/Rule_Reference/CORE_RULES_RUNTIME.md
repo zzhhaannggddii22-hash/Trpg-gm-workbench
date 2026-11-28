@@ -205,14 +205,15 @@ GM 应在抵抗之前说明可抵抗的后果。不得把 Resistance 变成事�
 
 ### BLD-CNS-03｜Armor
 
-Armor 是 Resistance 的替代处理手段，不是额外叠加的一次抵抗：
+Armor 是 Resistance 的替代处理手段，不是额外叠加的一次抵抗。必须先确认本次 Score 的 Loadout：
 
-- 在适用的后果出现后，玩家可以标记一个 Armor 格，降低或完全避免该后果，以替代 Resistance Roll。
-- Heavy Armor 允许在规则允许时再标记第二个 Armor 格，进一步降低后果；例如将 Level 2 Harm 降至 Level 1，再降至 0。
-- 已标记的 Armor 格在下次 Score 选择 Load 时恢复；在本次 Score 中不能重复使用。
-- Special Armor 只在角色 Playbook 特殊能力明确允许的范围内使用；触发条件、减免对象和恢复时点以该能力原文为准。
+- **Standard Armor**：角色需要在本次 Score 将 Armor 作为携带物品声明，标准护甲占 2 Load。合适后果出现时，可标记角色卡上的 Standard Armor 格来减轻或避免后果。
+- **Heavy Armor**：以标准 Armor 为基础，额外占 3 Load（合计 5 Load）。在适用后果上可标记 Heavy Armor 格，提供第二次减轻；例如先用 Standard Armor 将 Level 2 Harm 降至 Level 1，再以 Heavy Armor 降至 0。
+- **Special Armor**：每张角色卡有独立 Special Armor 格；只有角色拥有明确使用 Special Armor 的 Playbook Ability 时才能勾选。它通常用来触发该能力，而不是通用伤害减免。
+- 每个已标记的 Armor 格在本次 Score 中不能重复使用；所有 Armor 在下次 Score 选择 Load 时恢复。
+- 若角色本次 Loadout 没有带上适用的 Standard/Heavy Armor，则不能临时声明携带并使用；除非某项特殊能力明确豁免 Load 或提供特殊保护。
 
-因此，对同一个后果，先让玩家在 Resistance 与 Armor 之间选择；不能把 Armor 的效果先计入，再对同一后果额外做一次 Resistance。
+因此，对同一个后果，先让玩家在可用的 Armor 与 Resistance 之间选择；不能把 Armor 的效果先计入，再对同一后果额外做一次 Resistance。
 
 - 普通 Armor、Heavy Armor、Special Armor 是角色卡独立的使用格。
 - 角色可在适用伤害后果时使用 Armor，说明装备如何挡住/降低该后果并勾选使用格。
@@ -388,12 +389,12 @@ Flashback 按真实行动类型处理：有危险用 Action Roll；结果不确�
 
 ### BLD-DOW-02｜Acquire Asset
 
-临时取得一项资产：特殊物品/普通装备组、Cohort、载具或服务。掷 Crew Tier：
+临时取得一项资产：特殊物品/普通装备组、Cohort、载具或服务。临时使用通常持续一个有意义的使用期，常见为本次 Score。掷 Crew Tier：
 - 1–3：Tier -1；
 - 4/5：Tier；
 - 6：Tier +1；
 - Critical：Tier +2。
-进一步提高品质每 Tier 花 2 Coin。GM 可设最低品质门槛；达不到则无法取得。重复取得同一资产可 +1d。危险化学品、毒药、炸弹等受限资产按规则增加 Heat。
+若想把结果提高到 Critical 以上，每增加一个 Tier 花费 2 Coin。GM 可设最低品质门槛；达不到则无法取得。重复取得同一资产可 +1d，持续重新租用可近似长期使用。危险化学品、毒药、炸弹等高限制资产如通过 Acquire Asset 取得（而非自行打造），增加 +2 Heat。永久取得资产应通过 Crew Upgrade 或 Long-Term Project 实现。
 
 ### BLD-DOW-03｜Long-Term Project
 
@@ -401,7 +402,13 @@ Flashback 按真实行动类型处理：有危险用 Action Roll；结果不确�
 
 ### BLD-DOW-04｜Recover
 
-治疗者以规则允许的方法掷骰推进 Healing Clock；填满后所有现有 Harm 各降一级并清钟，多余进度结转。角色新受伤会清除 Healing Clock 已累积的进度。
+Recover 由需要治疗的角色花费自己的 Downtime Activity；治疗者进行掷骰：
+- PC Physicker/治疗能力通常使用 Tinker 或 Attune（依能力）；NPC 治疗者按 Quality 掷骰。
+- 1–3 推 1 格、4/5 推 2 格、6 推 3 格、Critical 推 5 格。
+- 角色可自行治疗，但需额外承受 2 Stress。
+- 没有治疗者仍可硬撑：承受 1 Stress，以 0d 掷骰（掷 2d 取低值）。
+- 帮别人治疗不会消耗治疗者自己的 Downtime Activity；被治疗者仍要花自己的 Recover 活动。
+- Healing Clock 填满后，所有现有 Harm 各降一级并清钟，多余进度结转。角色新受伤会清除 Healing Clock 已累积的进度。
 
 ### BLD-DOW-05｜Reduce Heat
 
