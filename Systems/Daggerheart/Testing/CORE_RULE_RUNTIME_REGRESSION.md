@@ -180,6 +180,13 @@
 | DH-REF-097 | 遭遇总 BP | 各敌人 BP 累加，并可判断是否超过预算 | Pending rerun |
 | DH-REF-098 | 缺少主要敌人类型 | 没有 Bruiser / Horde / Leader / Solo 时预算 +1 | Pending rerun |
 
+## Feature-granted Spotlight 成本回归（新增代码用例；待自动复跑）
+
+| ID | 场景 | 关键断言 | 状态 |
+|---|---|---|---|
+| DH-REF-099 | Fear Feature 本身召唤并授予 Adversary Spotlight | 只支付 Feature 自身 Fear，不再叠加普通额外 Spotlight 成本 | Pending rerun |
+| DH-REF-100 | Feature-granted Spotlight 但 Fear 不足 | Spotlight 费用覆盖不免除 Feature 自身的 Fear 成本 | Pending rerun |
+
 ## 自动化参考执行补充
 
 - [Run 07：92/92 PASS](./AUTOMATED_REFERENCE_EXECUTION_07.md)
