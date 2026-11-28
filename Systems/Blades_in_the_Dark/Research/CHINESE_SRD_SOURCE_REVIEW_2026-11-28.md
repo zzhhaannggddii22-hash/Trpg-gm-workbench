@@ -1,7 +1,7 @@
 # Blades in the Dark 中文 SRD 首轮来源审查
 
 > 日期：2026-11-28  
-> 状态：中文 SRD 全文结构与核心规则首轮详细校读完成；完整能力目录与行为验证仍未完成  
+> 状态：中文 SRD 全文结构与核心规则首轮详细校读完成；核心 Playbook/Crew 能力已建立摘要索引；行为验证仍未完成  
 > 系统：`blades_in_the_dark`  
 > 当前用途：独立规则学习，不是 Campaign 备团，不是正式 Runtime 接入
 
@@ -74,7 +74,7 @@
 - 中文 SRD 介绍页没有明确标示具体规则修订号；不能仅凭当前网页内容推断未来 Campaign 的精确版本。
 - 官方 Player's Kit 文件名标注 v8.2，但工具包版本不能自动替代核心规则书的版本声明。
 - 中文翻译使用繁体中文。本地索引可以使用简体中文叙述，但关键规则裁定应保留原文术语和来源定位，逐步建立稳定术语表。
-- 目前已逐章阅读核心规则、角色、组织、案件和休整的主要文本，并将常见裁定整理为系统专属 Runtime Manual、Runtime Protocol、GM Skill 与 Preflight。尚未完成全部 Playbook/Crew Ability、特殊装备、完整 Claim 表和非 SRD 世界资料的逐项对照；也没有真实跑团行为验收。
+- 目前已逐章阅读核心规则、角色、组织、案件和休整的主要文本，并将常见裁定整理为系统专属 Runtime Manual、Runtime Protocol、GM Skill 与 Preflight。已根据官方 Player's Kit v8.2 为七种核心 PC Playbook 与六种核心 Crew 建立独立能力摘要索引（见 `Rule_Reference/PLAYBOOKS_AND_CREW_REFERENCE.md`）。该索引用于按需路由，不是卡面全文；每项能力在实际战役启用前仍须回查对应版本的角色卡/组织表。特殊装备、完整 Claim 表、所有升级、可选 Ghost/Hull/Vampire 角色表和非 SRD 世界资料尚未穷尽；也没有真实跑团行为验收。
 - 未确认的翻译差异、规则缺口、版本差异均应保留为待核事项，不以其他 Forged in the Dark 游戏或其他 TRPG 的相似规则填补。
 
 ## 5. 对仓库的处理决定
@@ -112,6 +112,8 @@
 - `RUNTIME_PROTOCOL.md`：Free Play / Score / Downtime 的状态和结算流程；
 - `GM_SKILL.md` 与 `PREFLIGHT.md`：本系统主持行为和启动核验；
 - `Rule_Reference/RULE_ISSUES.md`：翻译/版本问题；
+- `Rule_Reference/PLAYBOOKS_AND_CREW_REFERENCE.md`：七种核心 PC Playbook 与六种 Crew 的能力摘要；
+- `Rule_Reference/GLOSSARY.md`：核心术语与译名约定；
 - `Testing/`：Candidate 验证清单与回归矩阵。
 
 ## 8. 已确认的运行要点
