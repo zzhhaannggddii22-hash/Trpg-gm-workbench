@@ -474,6 +474,11 @@ def work_on_project(project, rest_state, actor_id, approved,
     """
     if not approved:
         return {"allowed": False, "reason": "gm_approval_required"}
+    if not event_id:
+        raise ValueError("Work on a Project requires a unique rest event ID")
+    used = rest_state.setdefault("moves_used", {})
+    if used.get(actor_id, 0) >= 2:
+        return {"allowed": False, "reason": "downtime_move_limit"}
     if project.get("status", "active") != "active":
         return {"allowed": False, "reason": "project_not_active"}
     if "countdown" not in project:
@@ -500,12 +505,6 @@ def work_on_project(project, rest_state, actor_id, approved,
     if not applied:
         return {"allowed": False, "reason": "duplicate_project_event",
                 "countdown": project["countdown"]["value"]}
-    used = rest_state.setdefault("moves_used", {})
-    if used.get(actor_id, 0) >= 2:
-        # Roll back the tick: a rejected downtime move must not advance work.
-        project["countdown"]["value"] += result["ticks"]
-        project["countdown"].setdefault("applied_events", set()).discard(event_id)
-        return {"allowed": False, "reason": "downtime_move_limit"}
     used[actor_id] = used.get(actor_id, 0) + 1
     if result["triggered"]:
         project["status"] = "completed"
