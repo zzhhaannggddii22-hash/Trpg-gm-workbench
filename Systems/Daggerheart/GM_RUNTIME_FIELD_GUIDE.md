@@ -2,7 +2,7 @@
 
 > 适用规则集：Daggerheart Core Set  
 > 规则基准：Official Daggerheart SRD v2.0（2026-08-25）  
-> 状态：RESEARCHED / DESK-READY DRAFT；尚待与完整 Core Rulebook 对照及实际短场景验证  
+> 状态：RESEARCHED / DESK-READY DRAFT；10 项 GM 专项桌面模拟已完成，仍待完整 Core Rulebook 对照与实际短场景验证  
 > 本文性质：原创运行研究与流程整理，不替代规则正文。
 
 ## 1. 目的与核心判断
