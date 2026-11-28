@@ -160,3 +160,13 @@
 - 仍需区分：初始化 Fear 与休息时 Fear 增量是不同触发；Short Rest / Long Rest 仍按 DH-REST 规则结算，不可重复套用起始资源。
 
 
+
+
+## DH-I-019｜中断休息时 GM Fear 与 Long-term Countdown 的结算边界
+
+- 状态：OPEN / TABLE_RULING_REQUIRED
+- 官方明确内容：中断 Short Rest 时，PC 不获得休息收益；中断 Long Rest 时，PC 只获得 Short Rest 收益。正常 Short Rest 时 GM 获得 1d4 Fear；正常 Long Rest 时 GM 获得 1d4 + PC 数量 Fear，并推进一个 Long-term Countdown。
+- 未明确内容：官方文本没有单独说明中断的 Short / Long Rest 是否仍触发 GM 的 Fear 与 Countdown 后果，也没有说明中断 Long Rest 是否改变连续 Short Rest 计数。
+- 当前参考执行器策略：中断 Long Rest 只发放 Short Rest 的 PC 收益，不自动结算 GM Fear / Countdown，且不改变连续 Short Rest 计数；中断 Short Rest 不发放 PC 收益。此为保守运行回退，不是官方裁定。
+- 后续处理：实际开团前在 Campaign Binding 中明确采用的桌面裁定；若后续官方 FAQ / Errata 给出明确说明，再替换本地策略。
+- 来源：官方 Daggerheart SRD 休息与 Downtime Consequences 章节；SRD 2.0 第 52 页第三方索引仅作页码定位，仍以官方 PDF 为准。
