@@ -534,31 +534,64 @@ Crew Creation 的状态输入不可遗漏：
 
 ### BLD-CRW-03｜Faction Status / War
 
-派系关系从 -3 到 +3。Status -3 为 War：派系即使代价高也会伤害对方，双方均有所防备。War 会带来以下规则影响：
+Faction Status 的范围为 -3 至 +3，表达派系对 Crew 的实际态度：
+- **+3 Allies**：即使帮助 Crew 不符合派系利益，也会出手；并期待 Crew 回报。
+- **+2 Friendly**：在不会给自己造成严重麻烦时提供帮助。
+- **+1 Helpful**：在不造成麻烦或显著成本时提供帮助。
+- **0 Neutral**：中立。
+- **-1 Interfering**：只要风险/成本很低，就会寻找机会制造麻烦或从 Crew 的困境中获利。
+- **-2 Hostile**：只要不会造成严重问题，就会主动伤害 Crew，并采取防范措施。
+- **-3 War**：即使代价高也会主动伤害 Crew，双方均有所防备。
+
+Score 造成派系损益时：
+- 受 Crew 行动伤害的派系通常 -1 或 -2 Status；
+- 从行动中受益的派系可 +1 Status；
+- 若行动完全低调、无人知晓，通常不改变派系关系；
+- 帮忙、拒绝要求、兑现/违背承诺等也可改变 Status，但必须有明确事件依据。
+
+War 的基础影响（对任意数量的 War 派系均适用）：
 - 每个 Score 的 Heat +1；
-- Crew 暂时失去 1 Hold；若战前为 Weak，可能暂时降 Tier，War 结束后按规则恢复战前 Tier；
-- 每名 PC 每次 Downtime 只有 1 个正式活动，而非 2 个。
-具备明确 Crew Ability 的组织可按该能力覆盖相应惩罚。War 不是纯叙事标签，应按规则改变状态与活动额度。
+- Crew 暂时失去 1 Hold；若战前 Hold 为 Weak，可能因此暂时降低 Tier，War 结束后恢复战前 Tier；
+- 每名 PC 每次 Downtime 只有 1 个正式活动；
+- 产生 Coin 的 Claims（如 Vice Den、Fighting Pits、Fence）收入减半，向下取整。
+具备明确 Crew Ability 的组织可按能力覆盖其明确指定的惩罚。War 可通过消灭敌对派系或协商建立新的 Status 结束。
 
-### BLD-CRW-04｜Cohort
+### BLD-CRW-04｜Cohort 创建与使用
 
-Cohort 可以是 Gang 或 Expert：
-- Gang 以 Crew Tier 决定 Quality/Scale；人数规模由 Tier 决定。
-- Expert 通常 Quality = Crew Tier+1，Scale 为单人。
-- Cohort 可有 Types、Edges 和 Flaws；按相关领域使用 Quality。
-- 任务中派遣 Cohort 可由 GM 按 Quality 作 Fortune Roll；PC 直接领导/参与时按 Teamwork 或相应 Action 处理。
+Cohort 是 Crew 雇用的 Gang 或单名 Expert；招募一个新 Cohort 通常花费 2 个 Crew Upgrade：
+- **Gang**：选择 Adepts、Rooks、Rovers、Skulks 或 Thugs 类型；Quality 与 Scale 均等于当前 Crew Tier。Crew Tier 提升时，Gang 的 Quality/Scale 随之提升。
+- **Expert**：记录其专长类型；Quality = Crew Tier + 1，Scale = 0（单人）。Crew Tier 提升时，Expert Quality 随之提升。
+- 创建时赋予 1–2 个 Edges，并赋予相同数量的 Flaws。Edges：Fearsome、Independent、Loyal、Tenacious；Flaws：Principled、Savage、Unreliable、Wild。按实际行为体现，不把它们自动转换为通用数值加成。
+- Cohort 可通过再花费 2 个 Crew Upgrade 增加一个 Type；每个 Cohort 最多两个 Type。执行与其 Type 匹配的行动时使用完整 Quality；不匹配时 Quality 为 0。
+- 部分 Elite 升级使 Cohort 在对应 Type 的掷骰获得 +1d；仅在升级实际拥有且 Type 匹配时应用。
 
-### BLD-CRW-05｜Cohort 状态
+派遣 Cohort 时：
+- Cohort 独立执行目标：以其 Quality 掷骰，按 Fortune Roll 结果与当前虚构确定成败和后果。
+- PC 通过命令指挥 Cohort：PC 掷 Command。
+- PC 与 Cohort 一同执行行动：PC 掷对应 Action；可按 Group Action 处理，Cohort 以自身 Quality 掷骰。
+- 对手相对 Cohort 的 Quality/Scale 会影响行动的 Position 与 Effect。不能将 Cohort 当作无需代价的额外 PC。
 
-- Weakened：Effect 降低；
-- Impaired：相关行动 -1d；
-- Broken：恢复前不能行动；
-- Armor：按 Cohort 自身规则消耗。
-休整期间通常恢复一个伤害等级；PC 花费相应活动照料可加快恢复。Dead/Destroyed 需要按成本/活动重新招募或替换。
+### BLD-CRW-05｜Cohort Harm / Armor / Healing
 
-### BLD-CRW-06｜Faction Clock
+Cohort 有四级 Harm 状态：
+1. **Weakened**：Effect 降低。
+2. **Impaired**：Quality 降低 1（-1d）。
+3. **Broken**：恢复前不能行动。
+4. **Dead**：Cohort 被摧毁。
+Cohort Sheet 上如有独立 Armor 标记，按对应表单/升级使用；Armor 不是额外的第五级 Harm。
 
-每个重要派系应有目标和必要时的项目钟。只有当它与 PC/Crew 的处境、已知利益或当前冲突相关时才推进。NPC 不能因 GM 想制造戏剧性就获得无来源的行动能力；行动必须符合目标、资源、机会与世界事实。
+- 所有 Cohort 在 Downtime 都会恢复；若条件允许，每个 Cohort 自动移除 1 级 Harm。
+- 若 PC 花费 1 个 Downtime Activity 帮助某 Cohort 恢复，该 Cohort 本次可移除 2 级 Harm，而不是 1 级。
+- Cohort 被摧毁后可以替换：支付 Coin = Crew Tier + 2，并花费 2 个 Downtime Activities 招募新 Gang 成员或雇用新 Expert。
+- Cohort 的 Harm、Armor、可用性与替换成本必须作为持续状态记录；不能因场景切换自动清空。
+
+### BLD-CRW-06｜Faction Downtime / Faction Clock
+
+NPC 与 Faction 也会在 PC Downtime 期间行动：
+- GM 只推进当前感兴趣、与 PC/Crew 处境或世界焦点相关的派系；每个关注派系选择一到两个符合其目标、资源与机会的 Downtime Maneuver，例如夺取 Claim、增强 Hold、使敌人暴露弱点、收集情报、完成短期目标、获取资产、请求盟友援助或施加政治压力。
+- 被暂时忽略的派系无需每轮后台模拟；当其重新进入焦点时，可补做若干阶段的合理追赶。
+- 不确定项目钟推进量时，以派系 Tier 为基础 Trait 作 Fortune Roll，并根据阻力/机会调整骰池：1–3 推进 1 格，4/5 推进 2 格，6 推进 3 格，Critical 推进 5 格。
+- 派系在地下社会中公开发生的行动，通过朋友、联系人、Vice Purveyor 或可观察事件传达给玩家；只提供角色有资格知道的信息。
 
 ### BLD-CRW-07｜状态持续性
 
