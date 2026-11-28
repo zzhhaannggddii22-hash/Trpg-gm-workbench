@@ -4,7 +4,7 @@
 > 标识：Daggerheart™ Compatible（非官方个人研究工作台）  
 > 规则基线：Daggerheart Core Set  
 > 公开参考：Official Daggerheart SRD v2.0（2026-08-25；混合收录 Core Set 与 Hope & Fear 内容）  
-> 状态：candidate（63项规则与GM专项已完成桌面逻辑模拟；42项参考执行器自动化测试通过；生产Runtime与实际短场景仍未验收）
+> 状态：candidate（64项规则与GM专项已完成桌面逻辑模拟；42项参考执行器自动化测试通过；生产Runtime与实际短场景仍未验收）
 
 本目录是《匕首心》系统级规则资料的唯一入口。与 Triangle Agency、Cairn、Blades in the Dark 完全隔离。当前阶段以基础版 Core Set 为默认规则集，先建立可准确检索、可直接主持的本地规则和数据资料，再通过短场景验证。初版控制复杂度，不默认引入 Hope & Fear。
 
@@ -54,7 +54,7 @@
 - [规则疑点登记](./Rule_Reference/RULE_ISSUES.md)：来源差异、版本疑点和未解决问题。
 - [Core Errata 交叉核验](./Rule_Reference/ERRATA_CROSSCHECK.md)：旧版官方勘误与 SRD 2.0 当前条目逐项抽样对照。
 - [Preflight](./PREFLIGHT.md)：Campaign / Session 开始前核验。
-- [回归测试矩阵](./Testing/CORE_RULE_RUNTIME_REGRESSION.md)：63 项规则与 GM 专项已完成桌面逻辑模拟（非程序自动测试）；42 项参考执行器测试为代码自动化。详见 [GM 专项桌面模拟记录](./Testing/GM_DESK_SIMULATION_01.md)。实际短场景和外部盲测仍待验证。
+- [回归测试矩阵](./Testing/CORE_RULE_RUNTIME_REGRESSION.md)：64 项规则与 GM 专项已完成桌面逻辑模拟（非程序自动测试）；42 项参考执行器测试为代码自动化。详见 [GM 专项桌面模拟记录](./Testing/GM_DESK_SIMULATION_01.md)。实际短场景和外部盲测仍待验证。
 - [术语表](./Rule_Reference/GLOSSARY.md)：中英术语与暂定工作译名。
 - [Hope & Fear 扩展隔离清单](./Expansions/Hope_and_Fear/README.md)：扩展默认关闭及启用条件。
 
