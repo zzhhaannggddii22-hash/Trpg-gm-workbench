@@ -98,8 +98,8 @@
 - 《通用的敌人恐惧行动》：已读取页面可提取正文与译者注，但页面的 12 条行动表格主体未出现在文本提取结果中。材料引用 SRD 1.0，列出 Sax / PerfectlyCircularSeal 与 AeronDrake 等创作者，并包含译者自行调整/建议；原始 Reddit 讨论可定位但当前读取受 403 限制。不得据译者注反推未读到的行动全文；只借鉴已确认的设计提醒，具体机制回查 SRD 2.0。
 - 《战斗中的 GM 行动时机与示例》：已读取主要正文。作者明确声明含个人解释、不具官方权威；关于无 Fear 打断 PC Spotlight 的宽泛观点不纳入 Core 规则。
 - RightKnight《敌人自制指南》：已读取可访问正文的主要部分，包含类型职责、位阶调整思路和斗士示例；尚未完成全文逐类型核验，不复制其详细数值表。
-- 《贤者恩泽 Sage-Touched》：已读取目录页，确认其包含掷骰概率、动作经济和战斗策略子文章；子文章尚未逐篇读取。
-- 官方 SRD 镜像中的 GM Guidance、Making Moves & Taking Action、Core GM Mechanics、Using Adversaries、Using Environments 已用于交叉核验；精确规则仍以官方 SRD 2.0 PDF 为准。
+- 《贤者恩泽 Sage-Touched》：已读取目录页，确认其包含掷骰概率、动作经济和战斗策略子文章；子文章尚未逐篇读取。本轮再次搜索并尝试打开飞书目录，仍未取得子文章 URL 或正文；搜索结果中出现的同名 Sage-Touched 是游戏内领域能力卡，与该中文研究专栏无关，不作为其内容证据。待取得可访问的子文章链接后再逐篇核验。
+- 官方 SRD 镜像中的 GM Guidance、Making Moves & Taking Action、Core GM Mechanics、Using Adversaries、Using Environments 已用于交叉核验；Malt & Magic 的 SRD 2.0 页面可作为第三方结构化索引，辅助核对 PDF 页码与术语，但不具官方权威；精确规则仍以官方 SRD 2.0 PDF 为准。
 
 未读取的其他链接仍保持“待研究”状态。后续每篇资料需记录具体页面标题、作者、更新日期、对应 Rule ID、观点摘要与冲突状态；不能把目录页读取等同于整套专栏研究完成。
 
