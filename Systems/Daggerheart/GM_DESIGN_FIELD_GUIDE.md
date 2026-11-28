@@ -2,7 +2,7 @@
 
 > 规则范围：Daggerheart Core Set  
 > 规则基准：Official Daggerheart SRD 2.0（2026-08-25）  
-> 文档状态：RESEARCHED / DESK-READY DRAFT；待回归测试与实际主持验证  
+> 文档状态：RESEARCHED / DESK-READY DRAFT；19 项专项桌面模拟已完成，待实际主持验证  
 > 文档性质：原创运行指南。官方机制、社区解释与本工程建议分别标注。
 
 ## 1. 核心立场：让局势回应玩家，而不是让骰子惩罚玩家
@@ -39,8 +39,13 @@ GM 选择后果时，先完整承认行动结果，再决定世界回应。不�
 | Failure with Fear | 未达成意图；GM 获得 Fear | 更严重的危险、失去机会、分离、局势升级或多重威胁 |
 
 Soft Move：给出信息、信号或变化，让玩家有机会采取行动或调整选择。  
-Hard Move：更直接、更严重，角色没有机会先中断、改变或预判结果。  
-官方建议 Hope 结果倾向较柔和的 Move，Fear 结果倾向较强硬的 Move；具体仍要结合情境，不把结果机械等同于伤害等级。
+Hard Move：更直接地兑现后果，角色没有机会先中断、改变或预判结果。
+
+**严重度与回应窗口必须分开判断：**
+- 严重度：Success with Fear 与 Failure with Hope 都引入次要后果；Failure with Fear 引入重大后果。
+- 回应窗口：官方建议 Hope 结果使用 Soft Move，Fear 结果使用 Hard Move。
+- 所以 Success with Fear 可以是“次要但直接”的后果；Hard Move 不自动意味着重大伤害。Failure with Hope 则是“较轻但留有回应机会”。
+- 社区战斗文章提出的三档选择权梯度可作为主持人思考后果的辅助语言，但不是官方规则术语，也不取代 Soft / Hard Move 定义。
 
 ### 后果菜单：按场景挑选，不要随机惩罚
 
