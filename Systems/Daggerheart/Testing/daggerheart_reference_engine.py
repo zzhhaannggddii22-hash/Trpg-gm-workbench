@@ -534,7 +534,8 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         state = {"short_rests_since_long": 0}
         r = long_rest(state, interrupted=True)
         self.assertTrue(r["completed"])
-        self.assertNotIn("long_rest", r)
+        self.assertFalse(r["long_rest"])
+        self.assertEqual(r["benefit_type"], "short_rest")
 
     def test_28_recall_uses_stress_and_preserves_five_card_loadout(self):
         pc = PC(loadout=list("abcde"), vault=["f"])
