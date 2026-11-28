@@ -49,6 +49,14 @@
 | BLD-T41 | Crew 尝试越过连接路线直接夺取远端 Claim | 可以尝试，但需额外努力/调查，不能自动按常规路径难度处理 | Synthetic |
 | BLD-T42 | Crew 失去 Lair | 暂停所有 Claim 收益，直到通过 Score 恢复/建立新 Lair | Synthetic |
 | BLD-T43 | 新 Crew 创建时选择 Favored Contact 与两项额外 Upgrade | 分别更新升级帮助/受损的派系状态与联系人相关派系状态，不得漏记或重复 | Synthetic |
+| BLD-T44 | Cutter 拥有 Vigorous，开始一次 Recover | Healing Clock 有一格永久起始进度，治疗处置骰 +1d；不因普通恢复重复填入永久格 | Synthetic |
+| BLD-T45 | Leech 拥有 Venomous，使用其选定毒药/药物 | 角色对选定物质免疫；Push Yourself 后才可由皮肤/唾液/呼气分泌，不自动免费触发 | Synthetic |
+| BLD-T46 | PC 选择 Heavy Load 携带 Armor | Standard Armor 占 2 Load，Heavy 加 3（总计 5）；没有携带不能以普通 Armor 处理后果 | Static / Synthetic |
+| BLD-T47 | PC 声称使用 Special Armor，但没有相应 Playbook Ability | 不具备使用资格；不能仅凭角色卡上的空格触发 Special Armor | Synthetic |
+| BLD-T48 | PC 自行 Recover | PC 消耗自己的 Downtime Activity，额外承受 2 Stress，完成正常治疗掷骰 | Synthetic |
+| BLD-T49 | PC 没有治疗者但选择 Tough It Out | 承受 1 Stress，以 0d（2d 取低）推进 Healing Clock | Synthetic |
+| BLD-T50 | A 治疗 B 的 Harm | B 花费自己的 Recover Activity；治疗者不消耗自己的 Downtime Activity | Synthetic |
+| BLD-T51 | PC 的 Loadout 已满，行动中想临时声明重甲 | Load limit 不允许，除非有明确能力/虚构来源提高 Load；不得免费增加 Armor | Synthetic |
 
 ## 结果登记
 
