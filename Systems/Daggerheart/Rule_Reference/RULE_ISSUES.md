@@ -132,3 +132,16 @@
 - 官方 SRD 2.0 Changelog 的修订文本为：标记一个 Armor Slot 后，获得等于当前可用 Armor Slots 数量的 Evasion 加值。
 - 处理：已将 `Reference_Data/Core_Set/weapons.json` 的 Buckler 文本修正为 `available Armor Slots`。
 - 意义：这证明结构化导出只能作为本地索引与数据加工底稿；高影响的能力文本仍须对照官方 SRD 原文，不得将第三方 JSON 视为无误的官方数据库。
+
+
+## DH-I-014｜SRD 2.0 已整合的 Core 机械修正抽样核验
+
+- 状态：SAMPLE_CHECKED
+- 官方 SRD 2.0 Changelog 明确记载：Core 规则的若干机械修正已实施；本轮与本地数据完成以下抽样对照：
+  - Powerful Beast：Strength +3、Evasion +1，结构化数据正确。
+  - Adult Flickerfly：Hallucinatory Breath 已是 Reaction，结构化数据正确。
+  - Spear / Longsword：Tier 1–4 伤害修正按 SRD Changelog 记录，数据正确。
+  - Glowing Rings：Tier 1 伤害为 d10+2，数据正确。
+  - Splintering Strike：已采用 SRD 2.0 的多目标伤害分配文本，数据正确。
+  - Buckler：第三方 JSON 曾误写 available Armor Score；已修正为 available Armor Slots。
+- 结论：SRD 2.0 是本地数据更新基准，但第三方结构化导出仍可能有个别字段错误。继续按高影响条目抽样回查；不要将抽样结果表述为完整勘误验收。
