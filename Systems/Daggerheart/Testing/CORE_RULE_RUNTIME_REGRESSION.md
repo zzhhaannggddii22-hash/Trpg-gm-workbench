@@ -1,6 +1,6 @@
- Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated | Desk-Simulated |# Core Rule Runtime Regression Matrix
+# Core Rule Runtime Regression Matrix
 
-> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；42/42 prior REFERENCE-AUTOMATED checks verified; 1 new resistance/direct-damage regression added and awaiting a confirmed rerun / LIVE RUNTIME VALIDATION PENDING  
+> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器最近一次可核验记录为 42/42，当前脚本 50 项（新增 8 项待复跑）；LIVE RUNTIME VALIDATION PENDING  
 > DH-T01–DH-T45 已进行确定性桌面逻辑模拟（非代码自动测试）。详情见三个 DESK_TEST_BATCH 文件。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
