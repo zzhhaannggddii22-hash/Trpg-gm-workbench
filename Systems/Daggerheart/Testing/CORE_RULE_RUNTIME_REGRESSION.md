@@ -169,6 +169,17 @@
 
 > Work on a Project 依赖 Campaign 项目定义、GM 批准及 Countdown 类型；本批参考执行器不自动替代该桌面程序，仍按 Campaign Binding 处理。
 
+## Encounter Battle Points 回归（新增代码用例；待自动复跑）
+
+| ID | 场景 | 关键断言 | 状态 |
+|---|---|---|---|
+| DH-REF-093 | Encounter BP 基础预算 | 3 × PC 数量 + 2 | Pending rerun |
+| DH-REF-094 | Encounter BP 调整 | Light / Solo 数量 / 全体伤害加成 / 低 Tier 敌人 / 难度调整按表累计 | Pending rerun |
+| DH-REF-095 | Adversary Type BP 成本 | Social / Support=1；Horde / Ranged / Skulk / Standard=2；Leader=3；Bruiser=4；Solo=5 | Pending rerun |
+| DH-REF-096 | Minion 群组 BP | Minion 数量等于 PC 数量时成本 1；数量不符不套用该成本 | Pending rerun |
+| DH-REF-097 | 遭遇总 BP | 各敌人 BP 累加，并可判断是否超过预算 | Pending rerun |
+| DH-REF-098 | 缺少主要敌人类型 | 没有 Bruiser / Horde / Leader / Solo 时预算 +1 | Pending rerun |
+
 ## 自动化参考执行补充
 
 - [Run 07：92/92 PASS](./AUTOMATED_REFERENCE_EXECUTION_07.md)
