@@ -58,7 +58,7 @@ clocks: []
 
 ## 3. 范围边界
 
-包含：基础骰型、PC 行动、抵抗、伤害、压力与创伤、时钟、调查、Score、Flashback、Teamwork、Downtime、Heat、Wanted、Entanglements、Crew 成长、Faction/Cohort 运行。
+包含：基础骰型、PC 行动、抵抗、伤害、压力与创伤、时钟、调查、Score、Flashback、Teamwork、Downtime、Heat、Wanted、Entanglements、Crew 成长、Faction/Cohort、Magnitude、Ritual、Invention、Crafting、Modification、Drawbacks，以及七种核心 PC Playbook / 六种 Crew 的已拥有能力触发。
 
 不包含：未经获取和核对的商业核心书独占内容、官方城市地图/派系设定/完整 NPC、未许可的角色表或工具包、任何未批准的 Fan-made Playbook/Crew/Score。
 
