@@ -64,7 +64,7 @@ FREE PLAY
 | Score、Engagement、Flashback、Teamwork | 已整理 | 中文 SRD + 官方规则页 | 对应合成用例通过；真人待测 |
 | Downtime、Payoff、Heat、Entanglement | 已整理 | 中文 SRD + 官方 v8.2 | 对应合成用例通过；真人待测 |
 | Crew、Faction、Cohort、成长 | 已补充 Cohort 生命周期与 Faction Downtime | 官方 Crew / Faction Game 页面及 v8.2 | T26、T55–T61 合成通过；真人待测 |
-| Ritual、Magnitude、Crafting | 初步整理 | 以中文 SRD 为主 | 未纳入本轮矩阵；待测 |
+| Ritual、Magnitude、Crafting | 已建立完整触发式专题手册 | 官方 Magnitude / Rituals / Crafting 页面及 Player's Kit v8.2 | T62–T69 合成通过；真人待测 |
 | 七种核心 Playbook / 六种 Crew Ability | 已建立触发、成本、范围与边界矩阵 | 官方 Full Player's Kit v8.2 | T70–T75 与既有能力用例合成通过；真人待测 |
 | Doskvol / NPC / District 设定 | 未完整收录 | 需要合法官方设定资料 | 未测 |
 
