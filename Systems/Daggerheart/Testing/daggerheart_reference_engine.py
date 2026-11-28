@@ -368,7 +368,7 @@ def calculate_encounter_budget(pc_count, adversary_types, light=False,
         adjustments["all_enemy_damage_boosted"] = -2
     if has_lower_tier_enemy:
         adjustments["lower_tier_enemy"] = 1
-    if not any(kind in {"bruiser", "horde", "leader", "solo"} for kind in types):
+    if types and not any(kind in {"bruiser", "horde", "leader", "solo"} for kind in types):
         adjustments["no_major_type"] = 1
     if harder:
         adjustments["harder_or_longer"] = 2
