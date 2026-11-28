@@ -33,13 +33,13 @@
 | Buckler: Deflecting | 2025 Errata 用语为 “available Armor Slots” | SRD 2.0 PDF / 结构化记录用语为 “available Armor Score” | 术语差异保留；当前运行按较新的 SRD 2.0 用语 |
 | Knuckle Claws | Tier 4 Burden 改为 One-Handed | 当前 Tier 4 Knuckle Claws 为 One-Handed | Core 武器数据匹配 |
 | Sweet Moss | 休息时可清除 1d10 HP 或 Stress | 当前 Consumable 数据一致 | Core 消耗品匹配 |
-| Long-term Countdown | 长休通常推进一个相关长期倒计时一次 | SRD 2.0 Rest 摘要表述为 GM 可推进一个自选 Long-term Countdown | Runtime 采用“通常推进一个相关倒计时一次”；具体规则文本优先 |
+| Long-term Countdown | 长休通常推进一个相关长期倒计时一次 | SRD 2.0 Rest 摘要允许 GM 推进一个 Long-term Countdown；2025 Errata 进一步建议长休时通常推进一次与当前局势相关的长期倒计时 | Runtime 采用“通常推进一个相关倒计时一次”；具体规则文本优先 |
 | Adversary Actions | 补充 Adversary Rolls 的交叉引用 | SRD 2.0 有独立 Adversary Action / Roll 指引 | Runtime 已补入非攻击行动与 Reaction 区分 |
 | Team-Up Reaction | 触发距离改为 Very Close | 当前需按具体 Adversary Feature 文本检查；未作为通用机制写入 | 单项 Feature 核验 |
 | Glass Snake | Armor-Shredding Shards：无法标记 Armor Slot 时标记 HP | 当前 Glass Snake Feature 一致 | Core Adversary 数据匹配 |
-| The Box | Relentless 改为 (2) | 当前公开 SRD 对应 Stat Block 名称为 Battle Box，Relentless (2) | 按 SRD 2.0 名称保存；旧称作为定位别名 |
+| The Box | Relentless 改为 (2) | 当前公开 SRD 对应 Stat Block 名称为 Battle Box，相关 Feature 文本仍以 The Box 指称，Relentless (2) | 按 SRD 2.0 名称保存；旧称作为定位别名 |
 | Adult Flickerfly | Hallucinatory Breath 类型改为 Reaction | 当前 Feature 类型为 Reaction | 对应数据匹配 |
-| Seraph（Adversary） | Relentless 改为 (3) | 公开 SRD 2.0 Adversary JSON 中未找到同名 Stat Block | 未导入；不要与 Core Class Seraph 混淆 |
+| Seraph（Adversary） | Relentless 改为 (3) | 公开 SRD 2.0 对应 Stat Block 名称为 High Seraph，其文本以 The Seraph 指称，Relentless (3) | 按 High Seraph 的当前数据保存；不要与 Core Class Seraph 混淆 |
 | Zombie Legion | 攻击名称改为 Undead Hands | 当前公开数据使用 Undead Hands | Adversary 数据匹配 |
 | Sledgehammer | Massive：−1 Evasion，而不是 −1 Agility | 出现在 Supplemental Campaign Mechanics 的 Everyday Hero 起始装备可选表，不在默认 Core 武器表 | 保留在 Optional Procedures，不纳入默认装备 |
 | Revolver | Western 可选武器伤害骰调整为 d8 | 出现在 Supplemental Campaign Mechanics 的 Western 选项表 | 保留在 Optional Procedures，不纳入默认装备 |
@@ -61,7 +61,7 @@ Seraph 是 Core Set 的 PC Class；Errata 中被修正 Relentless (3) 的 Seraph
 2025 Errata 的 Buckler Deflecting 使用 “available Armor Slots”；SRD 2.0 PDF 与对应 JSON 使用 “available Armor Score”。当前本地 Runtime / 数据按 SRD 2.0 当前文本执行，并将印刷版/旧 Errata 差异保留在 RULE_ISSUES。取得最新官方 Core Rulebook 或新 Errata 后再复核。
 
 ### 书籍/可选章节独有项目
-Sledgehammer 和 Revolver 的勘误目标来自可选 Supplemental Campaign Mechanics，不属于基础装备表。Seraph（Adversary）与 Daktadae 在公开 SRD 2.0 Adversaries 数据中未找到，不应因为 Errata 提到就自行编造 Stat Block。它们需通过合法取得的完整 Core Rulebook / 相关卡片或官方后续公开资料核验。
+Sledgehammer 和 Revolver 的勘误目标来自可选 Supplemental Campaign Mechanics，不属于基础装备表。High Seraph 已与公开 SRD 2.0 的当前 Stat Block 对应；Daktadae 仍未在公开 SRD 2.0 Adversaries 数据中找到，不应因为 Errata 提到就自行编造 Stat Block。Daktadae 需通过合法取得的完整 Core Rulebook / 相关卡片或官方后续公开资料核验。
 
 ## 4. 当前结论
 
