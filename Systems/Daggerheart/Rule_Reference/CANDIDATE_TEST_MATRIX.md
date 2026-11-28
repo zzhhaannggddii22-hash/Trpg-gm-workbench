@@ -20,7 +20,7 @@
 | DH-T02 | DH-ACTION | 总值低于 Difficulty；Fear Die 高于 Hope Die | Failure with Fear；GM +1 Fear；重大后果；聚焦给 GM | DESIGNED |
 | DH-T03 | DH-ACTION | Duality Dice 相同 | 自动成功；PC +1 Hope、清除 1 Stress；视作 Hope 结果 | DESIGNED |
 | DH-T04 | DH-REACTION | PC Reaction Roll 双骰相同 | 忽略本次成功时本会承受的影响；不获 Hope、不清 Stress、不触发额外 GM Move | DESIGNED |
-| DH-T05 | DH-HOPE-FEAR | PC 只有 1 Hope，Action Roll 成功 with Hope，同时触发 Class Hope Feature（成本 3） | 本次新获得 Hope 可用于支付；最终资源差分按完整成本与获得顺序结算 | DESIGNED |
+| DH-T05 | DH-HOPE-FEAR | PC 有 2 Hope，Action Roll 成功 with Hope，同时触发 Class Hope Feature（成本 3） | 本次新获得的 1 Hope 可立即支付，Feature 成功发动后 Hope 余额为 0 | DESIGNED |
 | DH-T06 | DH-ADV | 同一行动有 3 个 Advantage 来源、1 个 Disadvantage 来源 | 抵消后只掷 1 个 Advantage d6；不同时掷 Advantage 与 Disadvantage | DESIGNED |
 | DH-T07 | DH-ADV | 两名盟友 Help an Ally，行动者也有普通 Advantage | 每位盟友各付 1 Hope 并掷 d6；最终只取所有相关 d6 的最高值 | DESIGNED |
 | DH-T08 | DH-GROUP | 两名协助者分别成功、失败；Leader 正常掷 Action Roll | Leader 结果 +1、−1 抵消；协助 Reaction Roll 不产生 Hope/Fear | DESIGNED |
