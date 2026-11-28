@@ -211,7 +211,8 @@ Armor 是 Resistance 的替代处理手段，不是额外叠加的一次抵抗�
 - **Standard Armor**：角色需要在本次 Score 将 Armor 作为携带物品声明，标准护甲占 2 Load。合适后果出现时，可标记角色卡上的 Standard Armor 格来减轻或避免后果。
 - **Heavy Armor**：以标准 Armor 为基础，额外占 3 Load（合计 5 Load）。在适用后果上可标记 Heavy Armor 格，提供第二次减轻；例如先用 Standard Armor 将 Level 2 Harm 降至 Level 1，再以 Heavy Armor 降至 0。
 - **Special Armor**：每张角色卡有独立 Special Armor 格；只有角色拥有明确使用 Special Armor 的 Playbook Ability 时才能勾选。它通常用来触发该能力，而不是通用伤害减免。
-- 每个已标记的 Armor 格在本次 Score 中不能重复使用；所有 Armor 在下次 Score 选择 Load 时恢复。
+- 每个已标记的 Armor 格在本次 Score 中不能重复使用。官方 v8.2 将 Armor 使用格恢复放在 Downtime 阶段；Resistance & Armor 网页速查也以“选择下一次 Score 的 Load”作为恢复节点。运行时在 Downtime 恢复，不延迟到下一次 Score 行动开始后。
+- 特殊能力使用的 Special Armor 仍须按能力明文触发；多项能力明确写明在 Downtime 开始时恢复。不要把 Special Armor 当作普通护甲减伤格。 
 - 若角色本次 Loadout 没有带上适用的 Standard/Heavy Armor，则不能临时声明携带并使用；除非某项特殊能力明确豁免 Load 或提供特殊保护。
 
 因此，对同一个后果，先让玩家在可用的 Armor 与 Resistance 之间选择；不能把 Armor 的效果先计入，再对同一后果额外做一次 Resistance。
@@ -219,7 +220,7 @@ Armor 是 Resistance 的替代处理手段，不是额外叠加的一次抵抗�
 - 普通 Armor、Heavy Armor、Special Armor 是角色卡独立的使用格。
 - 角色可在适用伤害后果时使用 Armor，说明装备如何挡住/降低该后果并勾选使用格。
 - Heavy Armor 可在符合规则时额外勾选一格。
-- Armor 使用格在下一次 Score 选择 Load 时恢复；进入 Downtime 本身不会恢复已标记的 Armor。
+- Armor 使用格在 Downtime 阶段恢复；选择下一次 Score 的 Load 是随后确认已恢复资源的节点。
 - 特殊能力中的 Special Armor 有独立用途；必须按该角色能力的明文触发条件执行。
 
 **互斥与时序**：对同一后果，不能既将 Armor 视为已完全解决，又重复把同一后果交给 Resistance 再结算一次。先说明具体后果，再选择可用的处理手段。
@@ -621,26 +622,11 @@ Vice 是 Stress 缓解方法，也会带来 Overindulgence 后果；Trauma 是�
 
 ## 12. Ritual、Magnitude 与 Crafting
 
-### BLD-ARC-01｜Magnitude
+完整触发式运行流程见 [ARCANE_AND_CRAFTING_RUNTIME.md](./ARCANE_AND_CRAFTING_RUNTIME.md)。本节只保留 Rule ID 路由：
 
-Magnitude 是 GM 判断超自然实体、力量、品质、范围、规模和持续时间的量级参照（通常 0–6）。它是裁定辅助，不是所有维度都自动相加的公式。判断力量对目标有多大影响时，可在不确定时使用 Magnitude 作为 Fortune Roll Trait。
+- BLD-ARC-01：Magnitude 判断；不可把各维度机械相加。
+- BLD-ARC-02–03：Ritual 来源、学习、定义、施展与代价。
+- BLD-ARC-04–07：发明、打造、改造与缺点。
+- BLD-ARC-08：炼金品/特殊创造物使用与状态记录。
 
-### BLD-ARC-02｜Ritual 来源与学习
-
-有 Ritual 能力的角色通常开始时知道一个仪式。新仪式需要找到来源，再通过 Long-Term Project 学习；常见学习钟为 8 格。玩家与 GM 共同定义仪式的效果、怪异之处、执行方法、材料/时间/代价，以及施术者获得的新信念或恐惧。
-
-### BLD-ARC-03｜执行 Ritual
-
-仪式通常消耗一个或更多 Downtime Activities，并按 Magnitude 产生 Stress 成本；延长施法时间可以降低成本。危险/麻烦的执行需要 Action Roll；效果不确定需要 Fortune Roll；既危险又不确定时两者都可能需要。可以使用 Clock 表示仪式引发的后续奥术力量/威胁。不得将 Ritual 当作免费、稳定、无后果的法术列表。
-
-### BLD-ARC-04｜Invention / Crafting
-
-- 发明新的配方/设计通常通过 8 格 Long-Term Project。
-- 玩家定义创造物类型与用途；GM 根据 Magnitude 判断最低品质，玩家补充其稀有/奇异/不常见之处，GM 定义缺点。
-- 打造通常消耗一项 Downtime Activity，以 Tinker 掷骰决定品质；基础品质为 Crew Tier，结果将其调整为 Tier-1/Tier/Tier+1/Tier+2。
-- Coin 可逐级提高品质；Workshop 等升级可能提高可用品质。
-- 改造已有物品按预期效果设置最低品质；越超常的改造需求越高。
-
-### BLD-ARC-05｜Craft 缺点
-
-可能包括复杂（多阶段）、显眼（反复使用带来 Heat）、消耗品、稀有材料、不可靠（使用时掷 Fortune）、不稳定（危险副作用）。缺点必须在发明/打造阶段建立，并记录在物品状态中。
+规则触发时按该专题手册执行；具体效果、仪式和物品原文仍以 Campaign 锁定版本为准。
