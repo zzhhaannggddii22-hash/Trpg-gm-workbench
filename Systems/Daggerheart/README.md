@@ -11,7 +11,7 @@
 ## 规则版本与范围
 
 - **默认规则集：Daggerheart Core Set。** 核心角色选项、九大领域、核心装备、敌人/环境和核心 GM 规则属于默认范围。
-- **公开检索基准：官方 SRD v2.0（2026-08-25）。** 官方将 SRD 2.0 纳入 DPCGL 2.0 Public Game Content，但它同时收录 Core Set 与 Hope & Fear 内容；不能将整个 SRD 直接视作纯基础版。
+- **公开检索基准：官方 SRD v2.0（2026-08-25）。** 官方将 SRD 2.0 纳入 DPCGL 2.0 Public Game Content，但它同时收录 Core Set 与 Hope & Fear 内容；不能将整个 SRD 直接视作纯基础版。当前结构化数据是 SRD 2.0 的 Core Set 子集，不等同于完整 Core Rulebook：九件 Tier 3 魔法武器被第三方索引标为 Core Rulebook 专有条目、未列入 SRD 2.0 表，待取得合法 Core Rulebook 来源后再核验，不视为已从 Core Set 删除。
 - **扩展默认关闭：Hope & Fear。** 四个新职业、Dread Domain、转化、扩展种族/社群/装备/敌人/环境均单独存放。只有用户明确启用或 Campaign Binding 指定时才加载。
 - **混合章节隔离。** SRD 2.0 的 Character Creation、Classes、Domains 章节列出 Core 与扩展选项，整段单独存档；默认 Core 数据库不加载它们。
 - **可选战役程序隔离。** Supplemental Campaign Mechanics 单独保存，不默认纳入常规流程。
