@@ -39,6 +39,7 @@
 - [GM 设计专题：后果选择、战斗叙事与敌人行为](./GM_DESIGN_FIELD_GUIDE.md)：后果选择、战斗节奏、敌人动机与类型、环境使用、敌人设计及轻量备团方法。
 - [单人 PC 适配研究](./Rule_Reference/SINGLE_PC_ADAPTATION_RESEARCH.md)：仅在 1 PC Campaign 中使用的非默认桌面适配边界与测试计划。
 - [常用规则检索表](./Rule_Reference/LOOKUP_TABLES.md)：六属性难度基准、敌人/环境 Tier、遭遇 BP、范围、休息和 Fear 预算。
+- [二元骰概率与行动经济研究](./Rule_Reference/DICE_PROBABILITY_AND_ACTION_ECONOMY.md)：144 种基础骰面枚举、成功率、Hope/Fear 分布与 GM Spotlight 转移率。
 - [核心角色选项索引](./Rule_Reference/CHARACTER_OPTIONS_INDEX.md)：九职业、领域和子职业导航。
 - [领域卡索引](./Rule_Reference/DOMAIN_CARD_INDEX.md)：189 张 Core 领域卡按 Domain / Level 检索。
 - [武器索引](./Rule_Reference/WEAPON_INDEX.md)：183 件 Core 武器按 Tier / Primary / Secondary 检索。
@@ -80,6 +81,6 @@
 
 ## 初版建设状态
 
-已完成：来源与许可登记、Core / Hope & Fear 数据拆分、规则索引、核心运行手册、常用难度与遭遇检索表、敌人/环境索引、译名表、版本差异登记、Errata 抽样核验、GM Skill、Preflight 草案和 45 项回归测试计划。
+已完成：来源与许可登记、Core / Hope & Fear 数据拆分、规则索引、核心运行手册、常用难度与遭遇检索表、敌人/环境索引、译名表、版本差异登记、Errata 抽样核验、GM Skill、Preflight 草案、64 项规则/GM 桌面逻辑模拟、42 项参考执行器自动化测试，以及 GM 专题与二元骰概率研究。
 
 待完成：穷尽核对官方 Core Errata、取得合法核心规则书后补齐 SRD 未覆盖的 GM 指导与示例、执行规则正反例回归、Blind GM 测试和短场景实测。
