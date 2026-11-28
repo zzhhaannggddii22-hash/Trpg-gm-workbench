@@ -8,11 +8,13 @@
 
 - Test runner: `Systems/Daggerheart/Testing/daggerheart_reference_engine.py`
 - GitHub Actions workflow: `.github/workflows/pr-validation.yml`
-- Commit under test: `8c6e66274a61d6e22609f3363bf4d42c136283de`
-- Workflow run: [Run 46146790931](https://github.com/zzhhaannggddii22-hash/Trpg-gm-workbench/actions/runs/46146790931)
+- Commit under test: `6893ac40072c11fa9ee09e75e35ab35788633fe8`
+- Workflow run: [Run 46147070208](https://github.com/zzhhaannggddii22-hash/Trpg-gm-workbench/actions/runs/46147070208)
 - Daggerheart job: **success**.
 - Exact output: `Ran 51 tests in 0.009s — OK`.
+- Repository-wide `validate` job: **success**; 41 general regression tests, roll runtime adapter conformance harness, and patch whitespace check all passed.
 - The 9 added damage-interaction tests DH-REF-043–051 all passed.
+- This is the first fully green main-branch CI run after repairing the Markdown links/anchors and scoping whitespace checks to non-Markdown files.
 
 ## New coverage added after Run 01
 
@@ -30,7 +32,7 @@
 
 ## Repository-wide CI distinction
 
-At the same commit, the separate repository-wide validation job failed its Markdown anchor audit on eight stale anchors in the Blades in the Dark rule index. This did not affect the Daggerheart-specific job or its 51/51 result. The eight anchors were corrected afterward in commit `a19f979c532cabd4c40adc59e8e33435fcfa2506`; a later full-repository run is required to verify that repair.
+An earlier run failed its Markdown anchor audit on eight stale anchors in the Blades in the Dark rule index; those anchors were corrected in commit `a19f979c532cabd4c40adc59e8e33435fcfa2506`. A later run also showed that `git diff --check` treated valid Markdown hard-break spaces as errors across the accumulated patch. The workflow now checks non-Markdown files for trailing whitespace and relies on RT-16 for Markdown link/anchor integrity. Run 46147070208 confirms both fixes: the complete repository validation is green.
 
 ## Scope and limitations
 
