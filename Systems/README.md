@@ -6,6 +6,7 @@
 
 - [Triangle Agency / 三角机构](./Triangle_Agency/README.md) — `system_id: triangle_agency`；当前正式实战规则版本为用户指定的中文 v22。
 - [Cairn /《石冢》](./Cairn/README.md) — `system_id: cairn`；Cairn Second Edition；第二套系统接入准备中，当前为 candidate，尚未开放正式运行。
+- [Blades in the Dark /《暗影之刃》（中文 SRD 译名：《暗夜冷锋》）](./Blades_in_the_Dark/README.md) — `system_id: blades_in_the_dark`；中文 SRD 修订号待核；独立研究中，当前为 candidate，尚未开放正式运行。
 
 ```yaml
 systems:
@@ -16,6 +17,10 @@ systems:
   - system_id: cairn
     system_entry: Systems/Cairn/README.md
     ruleset_versions: ["Cairn Second Edition"]
+    status: candidate
+  - system_id: blades_in_the_dark
+    system_entry: Systems/Blades_in_the_Dark/README.md
+    ruleset_versions: ["Blades in the Dark SRD / 中文《暗夜冷锋》译本（修订号待核）"]
     status: candidate
 ```
 
