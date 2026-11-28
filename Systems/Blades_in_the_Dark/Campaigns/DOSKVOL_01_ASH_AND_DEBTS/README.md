@@ -28,6 +28,9 @@
 - [WORLD_AND_FACTIONS.md](./WORLD_AND_FACTIONS.md)：城市环境、相关派系调用原则。
 - [NPC_ROSTER.md](./NPC_ROSTER.md)：NPC 建档规范与空白名册。
 - [SCORE_SEEDS.md](./SCORE_SEEDS.md)：首轮机会池与任务生成规范。
+- [EMERGENT_CAMPAIGN_RUNTIME.md](./EMERGENT_CAMPAIGN_RUNTIME.md)：开放式战役的持续运行方法。
+- [SCORE_PREP_TEMPLATE.md](./SCORE_PREP_TEMPLATE.md)：玩家选定目标后的 Score 准备模板。
+- [CREW_CREATION_WORKSHEET.md](./CREW_CREATION_WORKSHEET.md)：Crew 建团逐项记录与验收。
 - [SESSION_01_PREP.md](./SESSION_01_PREP.md)：首次游戏准备与开场流程。
 - [SESSION_LOG_TEMPLATE.md](./SESSION_LOG_TEMPLATE.md)：会话记录模板。
 - [PREP_AUDIT_2026-11-28.md](./PREP_AUDIT_2026-11-28.md)：战役框架自审、规则依赖核查与未完成事项。
