@@ -86,15 +86,15 @@
 
 | ID | 场景 | 关键断言 | 状态 |
 |---|---|---|---|
-| DH-REF-043 | Direct Damage 同时受到 Resistance | Resistance 仍减半；Direct 只绕过 Armor Slot | Pending rerun |
-| DH-REF-044 | Resistance 与 Armor Slot 同时存在 | 先减半、向上取整，再按严重度标记；Armor 再降低一级 | Pending rerun |
-| DH-REF-045 | 同类型 Resistance 有多个来源 | Resistance 不叠加，只减半一次 | Pending rerun |
-| DH-REF-046 | 单一类型伤害命中 Immunity | 对应伤害归零，不标记 HP | Pending rerun |
-| DH-REF-047 | 混合伤害只抵抗其中一种类型 | 不得只减免其中一部分；整体不享受该防护 | Pending rerun |
-| DH-REF-048 | 混合伤害两种类型均有 Resistance | 两种类型分别减半并向上取整，再合计比较阈值 | Pending rerun |
-| DH-REF-049 | 同时发生的同类型多来源伤害 | 先合计伤害，再比较阈值 | Pending rerun |
-| DH-REF-050 | 混合伤害两种类型均有 Immunity | 两种类型伤害均忽略 | Pending rerun |
-| DH-REF-051 | 混合伤害分别受到 Resistance 与 Immunity | 两种类型均有防护时，分别应用对应防护再合计 | Pending rerun |
+| DH-REF-043 | Direct Damage 同时受到 Resistance | Resistance 仍减半；Direct 只绕过 Armor Slot | Passed (Run 02) |
+| DH-REF-044 | Resistance 与 Armor Slot 同时存在 | 先减半、向上取整，再按严重度标记；Armor 再降低一级 | Passed (Run 02) |
+| DH-REF-045 | 同类型 Resistance 有多个来源 | Resistance 不叠加，只减半一次 | Passed (Run 02) |
+| DH-REF-046 | 单一类型伤害命中 Immunity | 对应伤害归零，不标记 HP | Passed (Run 02) |
+| DH-REF-047 | 混合伤害只抵抗其中一种类型 | 不得只减免其中一部分；整体不享受该防护 | Passed (Run 02) |
+| DH-REF-048 | 混合伤害两种类型均有 Resistance | 两种类型分别减半并向上取整，再合计比较阈值 | Passed (Run 02) |
+| DH-REF-049 | 同时发生的同类型多来源伤害 | 先合计伤害，再比较阈值 | Passed (Run 02) |
+| DH-REF-050 | 混合伤害两种类型均有 Immunity | 两种类型伤害均忽略 | Passed (Run 02) |
+| DH-REF-051 | 混合伤害分别受到 Resistance 与 Immunity | 两种类型均有防护时，分别应用对应防护再合计 | Passed (Run 02) |
 
 ## 自动化参考执行补充
 
