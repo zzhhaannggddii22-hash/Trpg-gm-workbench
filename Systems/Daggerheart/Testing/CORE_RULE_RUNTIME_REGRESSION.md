@@ -1,6 +1,6 @@
 # Core Rule Runtime Regression Matrix
 
-> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 102/102 PASS（Run 10）；仓库完整 CI Run 46149067716 PASS；LIVE RUNTIME VALIDATION PENDING  
+> 状态：DH-T01–T45 与 DH-GM-01–10、DH-GD-01–09 共 64/64 DESK-SIMULATED；参考执行器 102/102 PASS（Run 10）；仓库完整 CI Run 46149557047 PASS；LIVE RUNTIME VALIDATION PENDING  
 > DH-T01–DH-T45 已进行确定性桌面逻辑模拟（非代码自动测试）。详情见三个 DESK_TEST_BATCH 文件。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
@@ -150,7 +150,7 @@
 | ID | 场景 | 关键断言 | 状态 |
 |---|---|---|---|
 | DH-REF-080 | 第三次连续 Short Rest | 允许完成第三次；此后第四次必须 Long Rest | Passed (Run 06) |
-| DH-REF-081 | 中断 Short Rest | 不增加连续 Short Rest 计数 | Passed (Run 06) |
+| DH-REF-081 | 中断 Short Rest | PC 不获得休息收益；不增加连续 Short Rest 计数；GM Fear 结算标记为需桌面裁定 | Passed (Run 06) |
 
 ## Downtime Move 执行回归（代码用例；Run 07 已通过）
 
@@ -174,11 +174,11 @@
 | ID | 场景 | 关键断言 | 状态 |
 |---|---|---|---|
 | DH-REF-093 | Encounter BP 基础预算 | 3 × PC 数量 + 2 | Passed (Run 08) |
-| DH-REF-094 | Encounter BP 调整 | Light / Solo 数量 / 全体伤害加成 / 低 Tier 敌人 / 难度调整按表累计 | Pending rerun |
-| DH-REF-095 | Adversary Type BP 成本 | Social / Support=1；Horde / Ranged / Skulk / Standard=2；Leader=3；Bruiser=4；Solo=5 | Pending rerun |
-| DH-REF-096 | Minion 群组 BP | Minion 数量等于 PC 数量时成本 1；数量不符不套用该成本 | Pending rerun |
-| DH-REF-097 | 遭遇总 BP | 各敌人 BP 累加，并可判断是否超过预算 | Pending rerun |
-| DH-REF-098 | 缺少主要敌人类型 | 没有 Bruiser / Horde / Leader / Solo 时预算 +1 | Pending rerun |
+| DH-REF-094 | Encounter BP 调整 | Light / Solo 数量 / 全体伤害加成 / 低 Tier 敌人 / 难度调整按表累计 | Passed (Run 08) |
+| DH-REF-095 | Adversary Type BP 成本 | Social / Support=1；Horde / Ranged / Skulk / Standard=2；Leader=3；Bruiser=4；Solo=5 | Passed (Run 08) |
+| DH-REF-096 | Minion 群组 BP | Minion 数量等于 PC 数量时成本 1；数量不符不套用该成本 | Passed (Run 08) |
+| DH-REF-097 | 遭遇总 BP | 各敌人 BP 累加，并可判断是否超过预算 | Passed (Run 08) |
+| DH-REF-098 | 缺少主要敌人类型 | 没有 Bruiser / Horde / Leader / Solo 时预算 +1 | Passed (Run 08) |
 
 ## Feature-granted Spotlight 成本回归（新增代码用例；待自动复跑）
 
