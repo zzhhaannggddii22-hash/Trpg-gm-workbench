@@ -103,8 +103,12 @@ def damage_marks(damage, major, severe):
     return 1
 
 
-def take_damage(pc, damage, direct=False, resistance=0, use_armor=False):
-    final = max(0, damage - (0 if direct else max(0, resistance)))
+def take_damage(pc, damage, direct=False, resistant=False, use_armor=False):
+    # Resistance halves incoming damage (round up) before thresholds and Armor.
+    # Direct damage bypasses Armor Slots only; it does not bypass Resistance.
+    final = max(0, damage)
+    if resistant:
+        final = (final + 1) // 2
     marks = damage_marks(final, pc.major, pc.severe)
     if use_armor and not direct and marks and pc.armor_slots:
         marks -= 1
@@ -304,9 +308,14 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         result = take_damage(pc, 10, direct=True, use_armor=True)
         self.assertEqual((result["hp_marks"], pc.armor_slots), (3, 1))
 
-    def test_21_resistance_precedes_threshold(self):
-        result = take_damage(PC(), 11, resistance=2)
-        self.assertEqual((result["final_damage"], result["hp_marks"]), (9, 2))
+    def test_21_resistance_halves_and_rounds_up_before_threshold(self):
+        result = take_damage(PC(), 11, resistant=True)
+        self.assertEqual((result["final_damage"], result["hp_marks"]), (6, 2))
+
+    def test_43_direct_damage_still_applies_resistance_but_bypasses_armor(self):
+        pc = PC(armor_slots=1)
+        result = take_damage(pc, 11, direct=True, resistant=True, use_armor=True)
+        self.assertEqual((result["final_damage"], result["hp_marks"], pc.armor_slots), (6, 2, 1))
 
     def test_22_countdown_event_is_idempotent(self):
         state = {"value": 0}
