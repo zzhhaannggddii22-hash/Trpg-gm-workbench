@@ -297,17 +297,18 @@ def seize_spotlight(gm, state):
     return True
 
 
-def spotlight_adversary(gm, state, enemy_id, relentless_limit=1, fear_feature_cost=0):
+def spotlight_adversary(gm, state, enemy_id, relentless_limit=1, fear_feature_cost=0,
+                        spotlight_cost_override=None):
     if not state.get("gm_turn_active") or state.get("spotlight_side") != "gm":
         return {"allowed": False, "spotlight_cost": 0, "feature_cost": 0}
-    if fear_feature_cost < 0:
-        raise ValueError("Fear Feature cost cannot be negative")
+    if fear_feature_cost < 0 or (spotlight_cost_override is not None and spotlight_cost_override < 0):
+        raise ValueError("Fear costs cannot be negative")
     counts = state.setdefault("enemy_spotlights", {})
     count = counts.get(enemy_id, 0)
     if count >= relentless_limit:
         return {"allowed": False, "spotlight_cost": 0, "feature_cost": 0}
     extra_spotlight = state.get("total_enemy_spotlights", 0) > 0
-    spotlight_cost = 1 if extra_spotlight else 0
+    spotlight_cost = spotlight_cost_override if spotlight_cost_override is not None else (1 if extra_spotlight else 0)
     total_cost = spotlight_cost + fear_feature_cost
     if not spend_fear(gm, total_cost):
         return {"allowed": False, "spotlight_cost": spotlight_cost, "feature_cost": fear_feature_cost}
@@ -1145,6 +1146,29 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
     def test_98_encounter_without_bruiser_horde_leader_or_solo_gets_one_bp_adjustment(self):
         self.assertEqual(calculate_encounter_budget(2, ["standard", "ranged"])["budget"], 9)
         self.assertEqual(calculate_encounter_budget(2, ["leader", "standard"])["budget"], 8)
+
+
+    def test_99_feature_granted_spotlight_does_not_double_charge_generic_cost(self):
+        gm, state = GM(fear=1), {}
+        begin_gm_turn(state)
+        spotlight_adversary(gm, state, "enemy-a")
+        result = spotlight_adversary(
+            gm, state, "glass-snake", fear_feature_cost=1,
+            spotlight_cost_override=0
+        )
+        self.assertEqual((result["allowed"], result["spotlight_cost"], result["feature_cost"], gm.fear),
+                         (True, 0, 1, 0))
+
+    def test_100_feature_granted_spotlight_still_requires_its_feature_cost(self):
+        gm, state = GM(fear=0), {}
+        begin_gm_turn(state)
+        spotlight_adversary(gm, state, "enemy-a")
+        result = spotlight_adversary(
+            gm, state, "glass-snake", fear_feature_cost=1,
+            spotlight_cost_override=0
+        )
+        self.assertFalse(result["allowed"])
+        self.assertEqual(gm.fear, 0)
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
