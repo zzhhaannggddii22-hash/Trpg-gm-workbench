@@ -113,7 +113,6 @@ def take_damage(pc, damage, direct=False, resistant=False, use_armor=False):
     return {"final_damage": result["final_damage"], "hp_marks": result["hp_marks"]}
 
 
-
 def resolve_incoming_damage(pc, sources, resistances=(), immunities=(), direct=False, use_armor=False):
     """Resolve one simultaneous incoming-damage event.
 
