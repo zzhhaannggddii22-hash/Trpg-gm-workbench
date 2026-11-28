@@ -131,6 +131,19 @@
 | DH-REF-070 | Long-term Countdown | 剩余值递减；同一 rest event 不重复推进 | Passed (Run 05) |
 | DH-REF-071 | Rest Fear 上限 | GM Fear 不超过 12，记录实际增加值 | Passed (Run 05) |
 
+## GM Turn、Spotlight 与 Fear 经济回归（新增代码用例；待自动复跑）
+
+| ID | 场景 | 关键断言 | 状态 |
+|---|---|---|---|
+| DH-REF-072 | PC Spotlight 期间 GM 抢夺聚焦 | 必须支付 1 Fear，成功后进入 GM Turn | Pending rerun |
+| DH-REF-073 | GM Fear 不足 | 不能抢夺 PC Spotlight，聚焦保持不变 | Pending rerun |
+| DH-REF-074 | GM Turn 中首个与第二个敌人 Spotlight | 首个敌人聚焦免费；额外敌人 Spotlight 支付 1 Fear | Pending rerun |
+| DH-REF-075 | Relentless (2) | 同一 GM Turn 最多两次 Spotlight；第二次支付 1 Fear | Pending rerun |
+| DH-REF-076 | 额外敌人 Spotlight 后启用 Fear Feature | Spotlight 成本与 Fear Feature 成本分别支付 | Pending rerun |
+| DH-REF-077 | Fear 不足以支付额外 Spotlight + Feature | 两项总成本无法支付时，不发生部分扣款或行动 | Pending rerun |
+| DH-REF-078 | GM Turn 结束 | Spotlight 交还 PC 一侧 | Pending rerun |
+| DH-REF-079 | 新 GM Turn 开始 | 敌人本 Turn 的 Spotlight 次数重置 | Pending rerun |
+
 ## 自动化参考执行补充
 
 独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，Run 04 为 66/66，Run 05 为 71/71，均有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 新增并通过 8 项条件状态生命周期回归（DH-REF-052–059）；Run 04 新增并通过 7 项移动、视线与范围效果回归（DH-REF-060–066）；Run 05 新增并通过 5 项休息与 Downtime 回归（DH-REF-067–071），详见 `AUTOMATED_REFERENCE_EXECUTION_05.md`。这 71 项验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
