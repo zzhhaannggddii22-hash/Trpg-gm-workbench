@@ -59,3 +59,42 @@
 - 角色退场、入狱、Trauma 与 Crew 连续性如何在只有一名玩家角色时保持可玩性。
 
 不得为了弥补单 PC 的人数劣势，默默提高 PC 属性、免费发放额外行动、降低敌方 Tier 或改写 Crew 资源。需要修改时，逐项记录适配理由、影响和测试结果。
+
+
+## 8. 补充核实：资源入口与用途边界（2026-11-28）
+
+### 官方规则页（本地运行手册的定向回查入口）
+
+- [Coin & Stash](https://bladesinthedark.com/coin-stash)：个人散放现金的 4 Coin 实用上限、随身现金每 Coin 占 1 Load、Crew Lair 默认 4 Coin、Vault 8/16、Stash 与退休生活品质。当前 Runtime Manual 的货币模型据此校正。
+- [Crew](https://bladesinthedark.com/crew)：Crew 创建、Hunting Grounds、Preferred Operation、升级和 Cohort。
+- [Faction Game](https://bladesinthedark.com/faction-game)：Tier、Rep、Turf、Hold、Faction Status、War、Claim 的完整流程。
+- [Action Roll](https://bladesinthedark.com/action-roll)、[Setting Position & Effect](https://bladesinthedark.com/setting-position-effect)、[Resistance & Armor](https://bladesinthedark.com/resistance-armor)：行动骰、Position/Effect、抵抗与护甲的专门规则页面。
+- [Downtime Recover](https://bladesinthedark.com/downtime-recover)：治疗、恢复骰、自疗/硬撑成本及治疗者不消耗自己的 Downtime Activity 等细节。
+
+### 社区单次 Score 与开局材料
+
+官方 Fan Creations 目录列出以下非官方 Score/短模组入口：
+- **Gaddoc Rail**、**Charterhall University**、**Scurlock Manor**：Sean Nittner 的独立案件，目录从他的作品站统一导航。
+- **The Soul Merchants**：Ziv Wities；目录标注为完整 one-shot/scenario 并附预制角色。它是预制角色教学案件候选，但并非官方单人规则变体；原材料的玩家人数需求须在实际使用前重新核对。
+- **Doskvol Riots of 847**：以城市骚乱开场、Crew 直接卷入局势的事件型 Score。
+- **Spirit Warden Escape**：借 Spirit Warden 主力调离 Bellweather Crematorium 的机会引发夺取行动。
+- **Darque's Ledger**：五个非官方 Score，附 patron、prize、complication、notable figures 和 clocks，适合快速选择一个案件再按战役世界适配。
+- [Underground Maps & Passkeys](https://mythopoeia.itch.io/bitdcharityzine)：官方 Discord 社区成员编写的替代开场情境与其他补充材料，可用于生成 Score 开局和初始局势。
+
+### 社区规则扩展与简化 Hack
+
+- [Unusual Suspects Playbook Jam](https://itch.io/jam/unusual-suspects-a-playbook-jam/entries)：官方目录称有 **100+** 社区 Playbook；不要把全部投稿当作同一许可或同等平衡度。
+- [The Unusual Suspects](https://benkrosenbloom.itch.io/unusual-suspects)：Ben K. Rosenbloom 的派系/世界建构补充，作者页面注明以 CC BY 3.0 发布。适合研究如何让玩家共同生成派系、问题与关系。
+- [World of Blades](https://mrdrhobo.itch.io/world-of-blades)：Duamn Figueroa 制作的简化版 Blades，明确面向新手/休闲玩家与快速 one-shot。它适合研究教学和减负设计，但属于独立简化 Hack；**不得将它的规则混入本项目 Full Blades Runtime**。
+- [Steelweaver's Rebellion](https://mabelharper.itch.io/steelweavers-rebellion)：完整、非官方的革命主题模组，突出工人派系、社区联盟与地区控制，可作为长期 Crew 战役的候选。
+- [Johnstone's Iruvian Playbooks](https://redboxvancouver.files.wordpress.com/2018/02/alt_iruvian_playbooks_20171121.pdf)：九个重新设计的 Iruvian Playbook，属于世界文化/角色扩展，不进入核心七本。
+- [District Handout Sheets](http://ad1066.com/bens-character-sheets/blades-in-the-dark-playbooks)：非官方可填写表单与地区资料，使用前核对许可。
+- [Doskvol Street Maps](https://www.drivethrurpg.com/product/307609/Doskvol-Street-Maps--Detailed-Maps-for-Blades-in-the-Dark)：付费街道地图；SRD 授权不覆盖官方 Doskvol 地图与艺术，不能因买到或能下载就默认可以镜像/再分发。
+
+### 适用结论
+
+1. 学习运行规则：优先官方核心规则页、SRD 与官方 v8.2 Player's Kit。
+2. 准备快速独立 Score：先看 Soul Merchants、Sean Nittner 的开局/案件、Darque's Ledger；运行前核对玩家人数、所需 Crew 状态与模组许可。
+3. 学习低负担教学：研究 World of Blades 的教学结构，但把它作为比较对象，不把简化机制合并进 Full Blades。
+4. 扩展角色/组织：Playbook Jam、Iruvian Playbooks 等按需单件审查，必须记为 OPTIONAL / FAN-MADE。
+5. 以上 Fan Creations 由官方站点收录仅为展示；该目录明确说明这些作品**不是官方授权产品，也不代表官方背书**。每件作品的作者、许可、版本和所使用的专有设定都需分别核验。
