@@ -207,10 +207,10 @@ def clear_condition(state, target, name, cleared_by):
     return False
 
 
-def clear_temporary_condition(state, target, actor_kind, action_success=False, has_spotlight=False):
+def clear_temporary_condition(state, target, name, actor_kind, action_success=False, has_spotlight=False):
     condition = next((
         c for c in state.get("conditions", [])
-        if c["target"] == target and c["active"] and c["tag"] == "temporary"
+        if c["target"] == target and c["name"] == name and c["active"] and c["tag"] == "temporary"
     ), None)
     if condition is None:
         return {"cleared": False, "spotlight_consumed": False}
@@ -225,10 +225,10 @@ def clear_temporary_condition(state, target, actor_kind, action_success=False, h
     return {"cleared": False, "spotlight_consumed": False}
 
 
-def clear_special_condition(state, target, requirement_met=False):
+def clear_special_condition(state, target, name, requirement_met=False):
     condition = next((
         c for c in state.get("conditions", [])
-        if c["target"] == target and c["active"] and c["tag"] == "special"
+        if c["target"] == target and c["name"] == name and c["active"] and c["tag"] == "special"
     ), None)
     if condition is None or not requirement_met:
         return False
@@ -632,28 +632,28 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
     def test_57_pc_clears_temporary_condition_only_on_success(self):
         state = {}
         apply_condition(state, "pc-1", "pinned", "net", tag="temporary")
-        failed = clear_temporary_condition(state, "pc-1", "pc", action_success=False)
+        failed = clear_temporary_condition(state, "pc-1", "pinned", "pc", action_success=False)
         self.assertFalse(failed["cleared"])
-        passed = clear_temporary_condition(state, "pc-1", "pc", action_success=True)
+        passed = clear_temporary_condition(state, "pc-1", "pinned", "pc", action_success=True)
         self.assertTrue(passed["cleared"])
         self.assertFalse(passed["spotlight_consumed"])
 
     def test_58_adversary_clears_temporary_condition_with_its_spotlight(self):
         state = {}
         apply_condition(state, "adversary-1", "pinned", "snare", tag="temporary")
-        no_spotlight = clear_temporary_condition(state, "adversary-1", "adversary")
+        no_spotlight = clear_temporary_condition(state, "adversary-1", "pinned", "adversary")
         self.assertFalse(no_spotlight["cleared"])
         with_spotlight = clear_temporary_condition(
-            state, "adversary-1", "adversary", has_spotlight=True
+            state, "adversary-1", "pinned", "adversary", has_spotlight=True
         )
         self.assertEqual((with_spotlight["cleared"], with_spotlight["spotlight_consumed"]), (True, True))
 
     def test_59_special_condition_requires_its_specific_requirement(self):
         state = {}
         apply_condition(state, "adversary-1", "sealed", "ritual", tag="special")
-        self.assertFalse(clear_special_condition(state, "adversary-1", requirement_met=False))
+        self.assertFalse(clear_special_condition(state, "adversary-1", "sealed", requirement_met=False))
         self.assertTrue(active_condition(state, "adversary-1", "sealed"))
-        self.assertTrue(clear_special_condition(state, "adversary-1", requirement_met=True))
+        self.assertTrue(clear_special_condition(state, "adversary-1", "sealed", requirement_met=True))
         self.assertFalse(active_condition(state, "adversary-1", "sealed"))
 
 if __name__ == "__main__":
