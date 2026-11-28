@@ -30,7 +30,7 @@ A pass means the fixed scenario was resolved consistently with the current local
 | BLD-T14 | Publicly accessible records with no danger, opposition, or meaningful uncertainty are simply available; do not manufacture a roll to gate routine information. | PASS |
 | BLD-T15 | An uncertain NPC loyalty question can use a relevant Fortune Roll; it has no Position/Effect and should be rolled only if the answer will materially affect play. | PASS |
 | BLD-T16 | For a Stealth Plan, gather missing actionable detail if needed, then resolve Plan + Detail + each PC's Load before Engagement. Do not require a complete tactical blueprint. | PASS |
-| BLD-T17 | Engagement Critical moves the crew past the initial obstacle and deeper into the Score. The next action's Position is assessed from the new fiction; Critical does not automatically grant Controlled Position. | PASS |
+| BLD-T17 | Engagement Critical means the crew has already overcome the first obstacle and is in a Controlled Position for what comes next. This establishes the next action's starting Position; after that initial action is resolved, Position is assessed normally from the current fiction. | PASS |
 | BLD-T18 | A flashback establishes a plausible past action relevant to the present obstacle. Assign 0/1/2+ Stress by complexity; roll only if that past action was uncertain or challenging. It cannot erase established facts. | PASS |
 | BLD-T19 | Group Action uses the best result for the group. With results 6, 4/5, and 1–3, the group gets the 6 result and the leader takes 1 Stress for the one participant who rolled 1–3. | PASS |
 | BLD-T20 | Closeout is Payoff → Heat (including Wanted threshold/overflow) → Entanglements → Downtime Activities. Each committed step is recorded so a resumed session cannot duplicate payment or consequences. | PASS |
@@ -57,11 +57,11 @@ A pass means the fixed scenario was resolved consistently with the current local
 | BLD-T51 | A full Loadout cannot gain extra armor retroactively. Reassess only if a specific ability or established fictional source changes the Load limit or access to the item. | PASS |
 | BLD-T52 | Push Yourself for both +1d and +1 Effect is legal when each benefit is paid separately: 2 Stress + 2 Stress = 4 Stress total. Each benefit can be selected only once per roll. | PASS |
 
-## 3. Correction discovered
+## 3. Source cross-check clarification
 
-**BLD-T17 previously overstated the Engagement Critical result.** The matrix had said that the crew entered the next action in Controlled Position. The official Planning & Engagement rule says a Critical carries the action beyond the initial obstacle, deeper into the Score; it does not make every subsequent action automatically Controlled. The matrix now requires the GM to assess the next action's Position from the new fictional situation.
+The second-round source check confirms the original intended Engagement Critical handling: the official rule explicitly says the crew has already overcome the first obstacle and is in a Controlled Position for what comes next. The subsequent Outcomes paragraph describes the same result as carrying the action beyond the initial obstacle, deeper into the Score. These statements are complementary, not contradictory.
 
-This correction is recorded in the regression matrix. It does not change the rule that Engagement results of 1–3 / 4–5 / 6 establish Desperate / Risky / Controlled initial Position respectively.
+The Controlled Position is the starting Position for the next action after the engagement; once that initial action is resolved, the GM returns to the normal process for setting Position on later rolls. The regression matrix therefore records this bounded Controlled starting Position rather than treating Critical as either “no Position” or a permanent protection.
 
 ## 4. Source cross-checks used this round
 
