@@ -318,6 +318,33 @@ def spotlight_adversary(gm, state, enemy_id, relentless_limit=1, fear_feature_co
 
 
 
+
+def begin_spotlighting_feature(state, feature_id, adversary_ids):
+    if state.get("spotlighting_feature_active") or not adversary_ids:
+        return False
+    state["spotlighting_feature_active"] = True
+    state["spotlighting_feature_id"] = feature_id
+    state["pending_feature_spotlights"] = list(adversary_ids)
+    return True
+
+
+def complete_feature_spotlight(state, adversary_id):
+    if not state.get("spotlighting_feature_active"):
+        return False
+    pending = state.get("pending_feature_spotlights", [])
+    if adversary_id not in pending:
+        return False
+    pending.remove(adversary_id)
+    if not pending:
+        state["spotlighting_feature_active"] = False
+        state["spotlighting_feature_id"] = None
+    return True
+
+
+def can_use_spotlighting_feature(state):
+    return not state.get("spotlighting_feature_active", False)
+
+
 def perform_extra_gm_move(gm, state):
     if not state.get("gm_turn_active") or state.get("spotlight_side") != "gm":
         return False
@@ -1169,6 +1196,25 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         )
         self.assertFalse(result["allowed"])
         self.assertEqual(gm.fear, 0)
+
+
+    def test_101_spotlighting_features_cannot_chain_while_prior_spotlights_are_active(self):
+        state = {}
+        self.assertTrue(begin_spotlighting_feature(state, "tactician", ["ally-a", "ally-b"]))
+        self.assertFalse(can_use_spotlighting_feature(state))
+        self.assertFalse(begin_spotlighting_feature(state, "ally-feature", ["ally-c"]))
+        self.assertTrue(complete_feature_spotlight(state, "ally-a"))
+        self.assertFalse(can_use_spotlighting_feature(state))
+        self.assertTrue(complete_feature_spotlight(state, "ally-b"))
+        self.assertTrue(can_use_spotlighting_feature(state))
+
+    def test_102_spotlighting_feature_lock_only_clears_for_its_own_targets(self):
+        state = {}
+        begin_spotlighting_feature(state, "tactician", ["ally-a"])
+        self.assertFalse(complete_feature_spotlight(state, "ally-b"))
+        self.assertTrue(can_use_spotlighting_feature(state) is False)
+        self.assertTrue(complete_feature_spotlight(state, "ally-a"))
+        self.assertTrue(can_use_spotlighting_feature(state))
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
