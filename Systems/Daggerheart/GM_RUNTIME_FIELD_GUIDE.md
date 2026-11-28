@@ -104,8 +104,10 @@ Fear 可用于：
 
 关键成本规则：
 
-- 抢夺 Spotlight 的 Fear，与之后启用 Fear Feature 所需的 Fear 是分开的；不能把前者当作后者已付。
-- 每次额外敌人 Spotlight 都要按规则支付相应 Fear；不能将一次支出视为整个敌方队伍无限行动的通行证。
+- PC 当前持有 Spotlight 时，GM 花费 1 Fear 可打断并抢夺 Spotlight；由 Action Roll 失败、Fear 结果或其他规则触发自然交给 GM 的 Spotlight 不收这笔抢夺费用。
+- GM Turn 内首次将 Spotlight 交给一个 Adversary 不额外收费；每次额外 Adversary Spotlight 支付 1 Fear。不能将首次敌人聚焦视为整个敌方队伍的免费行动权。
+- Relentless (X) 提高同一 Adversary 在一个 GM Turn 内可获得 Spotlight 的次数上限，不免除重复/额外 Spotlight 的 Fear 成本。
+- 额外 GM Move 支付 1 Fear；Adversary / Environment Fear Feature 按其卡面支付独立成本。抢夺 Spotlight、额外 Spotlight、额外 GM Move 与 Fear Feature 的费用分别记账，不得合并或重复抵扣。
 - 不需要 Fear 的普通 GM Move，不应伪造资源成本。
 - Fear 达到上限时，超额收入不应继续累积成隐藏债务。
 
@@ -127,7 +129,7 @@ Fear 可用于：
 
 - 先看敌人 Motives & Tactics、位置、目标、可用能力与状态，再决定行动。
 - Action、Reaction、Passive、Fear Feature 的触发时机不可互换。
-- Relentless 等特性可能改变同一 GM Turn 内某个敌人可获得 Spotlight 的次数；按 Stat Block 逐条执行。
+- Relentless (X) 等特性可能改变同一 GM Turn 内某个敌人可获得 Spotlight 的次数；按 Stat Block 逐条执行，但不自动免除额外 Spotlight 的 Fear 成本。
 - 多个敌人不是自动同时行动。额外敌人 Spotlight 需要按规则支付 Fear。
 - 敌人攻击、敌人能力、环境效果的结算，继续调用对应 Rule ID；不要在 GM Move 流程中跳过攻击/伤害/Reaction 规则。
 
