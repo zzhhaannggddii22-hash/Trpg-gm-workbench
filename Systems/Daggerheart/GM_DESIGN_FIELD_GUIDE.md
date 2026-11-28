@@ -220,7 +220,7 @@ RightKnight 的自制敌人指南强调：类型与位阶数据区间是可靠�
 - 《恐惧成功指南 - 后果与代价》：<https://my.feishu.cn/wiki/TseowovKriVOJikd6mfcmE5Znrd>
   - 提供通用、战斗、调查、施法后果菜单；作者明确标注为社区建议。
 - 《通用的敌人恐惧行动》：<https://my.feishu.cn/wiki/F2lMwjJ1yi42G5k8KevcWFCInve>
-  - 提供 12 种通用敌人 Fear 行动创意；原始主题来自 Sax / PerfectlyCircularSeal，扩展主题来自 AeronDrake；译者明确说明原文存在规则错误并加入个人建议。只借鉴创意，不复制成规则。
+  - 该页面介绍一份 12 种通用敌人 Fear 行动清单；原始主题来自 Sax / PerfectlyCircularSeal，扩展主题来自 AeronDrake。当前页面提取未包含表格主体，只能确认译者说明存在规则修订与个人建议；未读到的具体行动不纳入本地规则。
 - 《战斗中的 GM 行动时机与示例》：<https://my.feishu.cn/wiki/PS5CwMuV3iTy0NksnZJc1od5noc>
   - 重点讨论战斗中的 Move 时机、温和/强硬程度和从玩家行动接续。作者明确声明文章包含个人解释，不具官方权威。关于无 Fear 打断 PC Spotlight 的宽泛解释不纳入本工程规则。
 - RightKnight《敌人自制指南》：<https://my.feishu.cn/docx/ZdcfdtIJPoOt61x5bjucgU0Xnif>
