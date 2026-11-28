@@ -1,7 +1,7 @@
 # Blades in the Dark｜Core Runtime Regression Matrix
 
 > Fixture: BITD_CANDIDATE_V01  
-> Status: 61/61 SYNTHETIC CASES EXECUTED; EXPANSION CASES PENDING; LIVE PLAY NOT PERFORMED  
+> Status: 75/75 SYNTHETIC CASES EXECUTED; LIVE PLAY NOT PERFORMED  
 > 结果记录区分：STATIC REVIEW、SYNTHETIC EXECUTION、LIVE PLAY。已执行的固定输入用例见 [Synthetic Execution Report](./SYNTHETIC_EXECUTION_REPORT_2026-11-28.md)。
 
 | ID | 输入/场景 | 预期规则行为 | 结果类型 |
@@ -51,7 +51,7 @@
 | BLD-T43 | 新 Crew 创建时选择 Favored Contact 与两项额外 Upgrade | 分别更新升级帮助/受损的派系状态与联系人相关派系状态，不得漏记或重复 | Synthetic |
 | BLD-T44 | Cutter 拥有 Vigorous，开始一次 Recover | Healing Clock 有一格永久起始进度，治疗处置骰 +1d；不因普通恢复重复填入永久格 | Synthetic |
 | BLD-T45 | Leech 拥有 Venomous，使用其选定毒药/药物 | 角色对选定物质免疫；Push Yourself 后才可由皮肤/唾液/呼气分泌，不自动免费触发 | Synthetic |
-| BLD-T46 | PC 选择 Heavy Load 携带 Armor | Standard Armor 占 2 Load，Heavy 加 3（总计 5）；没有携带不能以普通 Armor 处理后果；已标记 Armor 在下一次 Score 选择 Load 时恢复，而非进入 Downtime 时恢复 | Static / Synthetic |
+| BLD-T46 | PC 选择 Heavy Load 携带 Armor | Standard Armor 占 2 Load，Heavy 加 3（总计 5）；没有携带不能以普通 Armor 处理后果；已标记 Armor 在 Downtime 阶段恢复，下一次 Score 选择 Load 时确认可用 | Static / Synthetic |
 | BLD-T47 | PC 声称使用 Special Armor，但没有相应 Playbook Ability | 不具备使用资格；不能仅凭角色卡上的空格触发 Special Armor | Synthetic |
 | BLD-T48 | PC 自行 Recover | PC 消耗自己的 Downtime Activity，额外承受 2 Stress，完成正常治疗掷骰 | Synthetic |
 | BLD-T49 | PC 没有治疗者但选择 Tough It Out | 承受 1 Stress，以 0d（2d 取低）推进 Healing Clock | Synthetic |
@@ -69,18 +69,33 @@
 | BLD-T60 | Crew 与任意派系处于 War，拥有产生 Coin 的 Claim | War 期间此类 Claim 的 Coin 收入减半并向下取整；与 +1 Heat、-1 Hold、Downtime 活动减少分别记录 | Synthetic |
 | BLD-T61 | Downtime 推进当前关注派系的项目钟，另有暂时忽略的派系 | 只推进当前相关派系；需要追赶时以派系 Tier Fortune Roll，按 1–3/4–5/6/Critical 推进 1/2/3/5 格 | Synthetic |
 
+| BLD-T62 | Whisper 评估 Magnitude 6 的强力巨浪，其影响范围自然覆盖码头 | Magnitude 以实际决定效果的维度为准；面积可由效果自然包含，不自动与 Force 相加；多维相加必须有明确复合需求 | Synthetic |
+| BLD-T63 | PC 获得一本仪式书，准备学习新 Ritual | 先取得来源，再以通常 8 格 Long-Term Project 学习；没有来源不能直接开始学习，定义效果/怪异性/方法/代价/信念恐惧 | Synthetic |
+| BLD-T64 | Ritual 执行过程危险，且效果表现程度不确定 | 危险性用 Action Roll（通常 Attune）处理；效果程度用 Fortune Roll；两项独立，不以一个掷骰代替另一个 | Synthetic |
+| BLD-T65 | PC 延长仪式施法时间以降低 Stress | 按 Magnitude 时长示例降低预设 Stress 成本；通常不低于约一小时；更长时间可能给目标逃离/察觉机会，需记录 Clock/暴露 | Synthetic |
+| BLD-T66 | PC 发明一项新炼金配方，另一个 PC 想制作常见普通物品 | 新特殊设计通常需要 8 格发明项目；已知设计再花 Downtime Activity Craft；普通物品/常见炼金品可按常见说明直接 Craft | Synthetic |
+| BLD-T67 | Tier II Crew 有 Workshop，Leech 用 Tinker 制作炼金物品，骰出 4/5 并使用 Alchemist | Workshop 使有效 Tier +1；Alchemist 提高结果等级；分别应用有效 Tier 与结果档，不把 +1 result level 误当 +1d 或额外 Quality 直接叠加 | Synthetic |
+| BLD-T68 | PC 给现有武器增加弧能伤害恶魔的功能 | 属于现有物品改造，无需新设计项目；弧能/火花工艺/炼金改造最低质量通常为 Tier+3 | Synthetic |
+| BLD-T69 | 已发明创造物具有 Conspicuous、Consumable、Unreliable、Volatile、Complex、Rare 缺点 | 每种缺点按定义单独结算；Conspicuous 每 Score +1 Heat；所有炼金品须消耗品；Unreliable 用 Quality Fortune Roll；Volatile 副作用是可抵抗后果 | Synthetic |
+| BLD-T70 | Cutter 用 Bodyguard Protect 队友，随后为当前情境搜集威胁情报 | Protect 后果的 Resistance +1d；当前情境威胁 Gather Information +1 Effect；不扩展为所有抵抗/所有调查加值 | Synthetic |
+| BLD-T71 | Crew 选择 Deadly 并在角色创建时应用给 PC 的 Hunt | +1 Action Rating（上限 3），不是 +1d；若在初始创建时选择，按官方说明可突破通常初始 Action rating 2 的限制 | Synthetic |
+| BLD-T72 | Bravos 拥有 Fiends，Crew 计算 Turf / Tier advancement | Wanted Level 可视为 Turf；Wanted 最大 4；无论 Turf 如何累计，Tier advancement 最低 Rep 成本始终为 6 | Synthetic |
+| BLD-T73 | Spider 在一个 Score 内多次使用 Foresight Assist | 每个 Score 最多两次免 Stress Assist；每次仍需描述事前准备并满足 Assist 的虚构条件 | Synthetic |
+| BLD-T74 | PC 使用 Special Armor 能力抵抗符合条件的后果，Score 后进入 Downtime | 必须拥有对应能力且触发条件匹配；标记 Special Armor；在 Downtime 阶段恢复，能力文本写明 Downtime 开始时则按其具体时点 | Synthetic |
+| BLD-T75 | Shadows 拥有 Synchronized，Group Action 中两名不同 PC 各掷出 6 | 不同参与者的多个 6 可合并视为 Critical；不能将单个 PC 同一掷骰中的多个 6 作为该能力要求的“不同掷骰” | Synthetic |
+
 ## 结果登记
 
 | 验证阶段 | 日期 | 结果 | 证据 |
 |---|---|---|---|
 | Source review | 2026-11-28 | 已完成主要 SRD 章节校读与部分官方 v8.2 交叉核验 | 中文 SRD 私人镜像、官方 Player's Kit v8.2 |
 | Static document review | 2026-11-28 | 文档已建立，细节仍需第二轮审阅 | 本测试矩阵、Runtime、Index、Protocol |
-| Synthetic execution | 2026-11-28 | 61/61 固定输入用例完成三轮人工桌面推演；非自动化测试 | [首轮报告](./SYNTHETIC_EXECUTION_REPORT_2026-11-28.md)；[第二轮报告](./SYNTHETIC_EXECUTION_REPORT_2026-11-28_R2.md)；[第三轮报告](./SYNTHETIC_EXECUTION_REPORT_2026-11-28_R3.md) |
+| Synthetic execution | 2026-11-28 | 75/75 固定输入用例完成四轮人工桌面推演；非自动化测试 | [首轮报告](./SYNTHETIC_EXECUTION_REPORT_2026-11-28.md)；[第二轮报告](./SYNTHETIC_EXECUTION_REPORT_2026-11-28_R2.md)；[第三轮报告](./SYNTHETIC_EXECUTION_REPORT_2026-11-28_R3.md)；[第四轮报告](./SYNTHETIC_EXECUTION_REPORT_2026-11-28_R4.md) |
 | Live play | Pending | 尚无实战证据 | — |
 
 ## 当前开放风险
 
-- 七种核心 PC Playbook 与六类 Crew 的 Special Ability 已有摘要索引；摘要不是完整卡面，实际建卡与关键触发仍须回查当前版本原文。
+- 七种核心 PC Playbook 与六类 Crew 的 Special Ability 已建立触发式矩阵；Veteran、特殊资源、角色卡版本差异仍须按实际建卡回查。
 - 六类 Crew 的完整升级与 Claim 表尚未逐条录入，需要按实际 Campaign 类型查表。
 - Doskvol 专有设定、官方 NPC、地区、地图和非 SRD 材料需要合法来源。
 - 中文 SRD 的修订号未明确，正式 Campaign 前必须锁定实际使用版本。
