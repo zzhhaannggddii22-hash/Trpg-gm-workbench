@@ -63,6 +63,8 @@ runtime_dispatch:
 - [Rule_Reference/CORE_RULE_INDEX.md](./Rule_Reference/CORE_RULE_INDEX.md)：按触发条件调用的核心规则索引与 Rule ID。
 - [Rule_Reference/CORE_RULES_RUNTIME.md](./Rule_Reference/CORE_RULES_RUNTIME.md)：骰型、Action/Position/Effect、后果、Score、Downtime、Crew/Faction 等可运行规则摘要。
 - [Rule_Reference/DOSKVOL_CITY_GUIDE_INDEX.md](./Rule_Reference/DOSKVOL_CITY_GUIDE_INDEX.md)：核心规则书多斯科沃城市指南的本地检索入口。
+- [Rule_Reference/DOSKVOL_DISTRICTS_REFERENCE.md](./Rule_Reference/DOSKVOL_DISTRICTS_REFERENCE.md)：多斯科沃 12 个地区的特征值与场景速查。
+- [Rule_Reference/DOSKVOL_FACTIONS_REFERENCE.md](./Rule_Reference/DOSKVOL_FACTIONS_REFERENCE.md)：多斯科沃 13 个主要派系的运行索引。
 - [Rule_Reference/RED_WATERS_CITY_RUNTIME.md](./Rule_Reference/RED_WATERS_CITY_RUNTIME.md)：红水之城替代世设与三种新 Crew。
 - [Rule_Reference/VIGILANTES_PLAYSET_RUNTIME.md](./Rule_Reference/VIGILANTES_PLAYSET_RUNTIME.md)：义警 Crew 游玩套件。
 - [Rule_Reference/LEVIATHAN_SONG_RUNTIME.md](./Rule_Reference/LEVIATHAN_SONG_RUNTIME.md)：利维坦猎船、航行与狩猎扩展。
