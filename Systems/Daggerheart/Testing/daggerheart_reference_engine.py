@@ -155,6 +155,60 @@ def recall_card(pc, card, stress_cost):
     return True
 
 
+def help_ally(pc, advantage_rolls):
+    cost = len(advantage_rolls)
+    if cost == 0 or pc.hope < cost:
+        return None
+    pc.hope -= cost
+    return max(advantage_rolls)
+
+
+def group_action_modifier(helper_reactions):
+    # Each helper contributes +1 on success and -1 on failure.
+    return sum(1 if success else -1 for success in helper_reactions)
+
+
+def adversary_attack(d20, attack_modifier, pc_evasion):
+    if not 1 <= d20 <= 20:
+        raise ValueError("Adversary attack die must be d20")
+    total = d20 + attack_modifier
+    return {"total": total, "hit": total >= pc_evasion}
+
+
+def spend_fear(gm, amount=1):
+    if amount < 0 or gm.fear < amount:
+        return False
+    gm.fear -= amount
+    return True
+
+
+def add_shared_pool_token(pool, token=1):
+    pool["tokens"] = pool.get("tokens", 0) + token
+
+
+def consume_shared_pool_token(pool):
+    if pool.get("tokens", 0) <= 0:
+        return False
+    pool["tokens"] -= 1
+    return True
+
+
+def trigger_evolution_once(state, evolution_id):
+    triggered = state.setdefault("triggered_evolutions", set())
+    if evolution_id in triggered:
+        return False
+    triggered.add(evolution_id)
+    return True
+
+
+def can_equip_tier(character_tier, item_tier):
+    return item_tier <= character_tier
+
+
+def loadout_is_valid(loadout):
+    return len(loadout) <= 5
+
+
 def load_core_data():
     manifest = json.loads((DATA / "DATASET_MANIFEST.json").read_text(encoding="utf-8"))
     datasets = {p.stem: json.loads(p.read_text(encoding="utf-8"))
@@ -296,14 +350,63 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         self.assertFalse(recall_card(pc, "b", 1))
         self.assertEqual(pc.loadout, ["a"])
 
-    def test_30_core_dataset_counts_and_expansion_isolation(self):
+    def test_30_help_an_ally_uses_highest_advantage_die(self):
+        pc = PC(hope=3)
+        self.assertEqual(help_ally(pc, [2, 6, 4]), 6)
+        self.assertEqual(pc.hope, 0)
+
+    def test_31_help_an_ally_requires_hope_per_helper(self):
+        pc = PC(hope=1)
+        self.assertIsNone(help_ally(pc, [3, 5]))
+        self.assertEqual(pc.hope, 1)
+
+    def test_32_group_action_success_and_failure_net_to_zero(self):
+        self.assertEqual(group_action_modifier([True, False]), 0)
+
+    def test_33_group_action_all_successes_add_up(self):
+        self.assertEqual(group_action_modifier([True, True, True]), 3)
+
+    def test_34_adversary_attack_uses_d20_plus_modifier_vs_evasion(self):
+        self.assertTrue(adversary_attack(12, 3, 15)["hit"])
+        self.assertFalse(adversary_attack(8, 3, 15)["hit"])
+
+    def test_35_adversary_attack_rejects_non_d20(self):
+        with self.assertRaises(ValueError):
+            adversary_attack(21, 0, 10)
+
+    def test_36_gm_must_have_fear_to_spend(self):
+        gm = GM(fear=1)
+        self.assertTrue(spend_fear(gm))
+        self.assertFalse(spend_fear(gm))
+        self.assertEqual(gm.fear, 0)
+
+    def test_37_shared_pool_tokens_are_shared_and_consumed_once(self):
+        pool = {}
+        add_shared_pool_token(pool)
+        self.assertTrue(consume_shared_pool_token(pool))
+        self.assertFalse(consume_shared_pool_token(pool))
+
+    def test_38_enemy_evolution_triggers_only_once_per_scene(self):
+        state = {}
+        self.assertTrue(trigger_evolution_once(state, "evolve"))
+        self.assertFalse(trigger_evolution_once(state, "evolve"))
+
+    def test_39_item_tier_cannot_exceed_character_tier(self):
+        self.assertTrue(can_equip_tier(2, 2))
+        self.assertFalse(can_equip_tier(1, 2))
+
+    def test_40_loadout_limit_is_five(self):
+        self.assertTrue(loadout_is_valid(list("abcde")))
+        self.assertFalse(loadout_is_valid(list("abcdef")))
+
+    def test_41_core_dataset_counts_and_expansion_isolation(self):
         manifest, data = load_core_data()
         self.assertEqual(manifest["default_ruleset"], "Daggerheart Core Set")
         self.assertEqual(manifest["categories"]["core_set"]["adversaries"], len(data["adversaries"]))
         self.assertTrue((DATA / "Hope_and_Fear").is_dir())
         self.assertNotIn("Hope_and_Fear", data)
 
-    def test_31_all_core_json_files_parse(self):
+    def test_42_all_core_json_files_parse(self):
         _, data = load_core_data()
         self.assertGreaterEqual(len(data), 10)
         self.assertTrue({"domain_cards", "weapons", "environments"} <= set(data))
