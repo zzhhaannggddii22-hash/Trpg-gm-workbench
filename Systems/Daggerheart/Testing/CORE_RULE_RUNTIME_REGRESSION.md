@@ -225,11 +225,11 @@
 | ID | 场景 | 关键断言 | 状态 |
 |---|---|---|---|
 | DH-REF-103 | Standard Countdown 推进 | 每次有效 Action Roll 减 1；到 0 后不低于 0 | Passed (Run 11) |
-| DH-REF-104 | Dynamic Progress Countdown | 按五种 Action Roll 结果推进 0–3 | Pending Run 11 |
-| DH-REF-105 | Dynamic Consequence Countdown | 按五种 Action Roll 结果推进 0–3 | Pending Run 11 |
-| DH-REF-106 | Dynamic Countdown 类型边界 | 非 Progress / Consequence 类型拒绝动态推进 | Pending Run 11 |
-| DH-REF-107 | Simple Project | 获批后创建 Progress Countdown；每次 Move 自动减 1，归零完成；遵守 Move 上限 | Pending Run 11 |
-| DH-REF-108 | Complex Project | 需要 Action Roll；按 Progress 动态表推进；消耗一个 Downtime Move | Pending Run 11 |
-| DH-REF-109 | Work on a Project 休息类型限制 | Short Rest 中拒绝；不创建 Countdown、不消耗 Move | Pending Run 11 |
+| DH-REF-104 | Dynamic Progress Countdown | 按五种 Action Roll 结果推进 0–3 | Passed (Run 11) |
+| DH-REF-105 | Dynamic Consequence Countdown | 按五种 Action Roll 结果推进 0–3 | Passed (Run 11) |
+| DH-REF-106 | Dynamic Countdown 类型边界 | 非 Progress / Consequence 类型拒绝动态推进 | Passed (Run 11) |
+| DH-REF-107 | Simple Project | 获批后创建 Progress Countdown；每次 Move 自动减 1，归零完成；遵守 Move 上限 | Passed (Run 11) |
+| DH-REF-108 | Complex Project | 需要 Action Roll；按 Progress 动态表推进；消耗一个 Downtime Move | Passed (Run 11) |
+| DH-REF-109 | Work on a Project 休息类型限制 | Short Rest 中拒绝；不创建 Countdown、不消耗 Move | Passed (Run 11) |
 
 Countdown 与项目的完整桌面程序见 [COUNTDOWN_AND_PROJECT_RUNTIME.md](../Rule_Reference/COUNTDOWN_AND_PROJECT_RUNTIME.md)。
