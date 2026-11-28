@@ -23,6 +23,7 @@
 | XP / Advancement / Vice | BLD-ADV-01–05 | Session 结束、XP 结算、角色成长 | [§11](./CORE_RULES_RUNTIME.md#11-pc与crew成长) |
 | Ritual / Magnitude / Crafting | BLD-ARC-01–05 | 超自然仪式、炼金/机电/奥术发明与打造 | [§12](./CORE_RULES_RUNTIME.md#12-ritual-magnitude与crafting) |
 | PC / Crew Ability | BLD-ABIL-01–04 | 创建角色/组织、获得能力、触发特殊能力效果 | [PLAYBOOKS_AND_CREW_REFERENCE.md](./PLAYBOOKS_AND_CREW_REFERENCE.md) |
+| Crew Creation / Hunting Grounds / Claims | BLD-CRW-START-01、BLD-CRW-HUNT-01–02、BLD-CRW-CLAIM-01–03 | 建立组织、偏好业务奖励、夺取/失去 Claim | [CREW_CLAIMS_AND_STARTUP_REFERENCE.md](./CREW_CLAIMS_AND_STARTUP_REFERENCE.md) |
 
 ## 2. Action 与 Attribute 对照
 
