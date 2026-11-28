@@ -82,6 +82,7 @@ runtime_dispatch:
 - [GM_SKILL.md](./GM_SKILL.md)：本系统的主持原则、叙事和节奏要求。
 - [PREFLIGHT.md](./PREFLIGHT.md)：未来新 Campaign / 新 Session 的启动核验。
 - [Testing/](./Testing/CANDIDATE_VALIDATION_MANIFEST.md)：Candidate 验证边界与回归测试矩阵。
+- [GM 行为回归案例](./Testing/GM_BEHAVIOR_REGRESSION_CASES.md)：18 个基于核心规则书 GM 指南设计的 AI 主持行为检查点，不是规则模拟器。
 - [自动化检查报告](./Testing/AUTOMATED_CANDIDATE_CHECKS_2026-11-28.md)：有限的文档不变量与确定性微模型检查，仅作辅助质量门槛，不代表 GM 能力或真人验收。
 - [历史规则模拟报告](./Testing/ENGINE_SIMULATION_REPORT_2026-11-28.md) 与 [模拟 harness](./Testing/ENGINE_SIMULATION_V1.js)：仅为规则流程/状态边界的有限实验材料，不是本系统的 GM 运行主体，也不构成完整引擎。后续优先级以 GM Skill、Runtime Protocol、真实主持表现与复盘为准。
 - [Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md)、[第二轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R2.md)、[第三轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R3.md) 与 [第四轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R4.md)：四轮共 75 个固定输入合成用例的执行记录；不等同于自动化测试或真人跑团验收。
