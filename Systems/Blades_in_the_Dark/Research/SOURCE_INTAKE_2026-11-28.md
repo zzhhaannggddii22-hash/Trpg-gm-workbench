@@ -112,3 +112,12 @@
 - 本轮纠正一处过度推导：原摘要曾写“延长施法时间可以降低压力成本”。核心规则书实际要求 GM 结合量级表中的持续时间来确定压力成本，并指出仪式通常至少需要约一小时；并没有给出“每延长时间自动减压”的独立兑换规则。现已删除该自动折扣说法。
 - 已将 [ABILITY_RUNTIME_MATRIX.md](../Rule_Reference/ABILITY_RUNTIME_MATRIX.md) 与 [PLAYBOOKS_AND_CREW_REFERENCE.md](../Rule_Reference/PLAYBOOKS_AND_CREW_REFERENCE.md) 的来源标识统一为核心规则书 V1.3（对应英文 v8.2），官方 Full Player's Kit v8.2 保留为交叉核验来源。
 - 本轮属于规则文本核验与运行摘要修订；尚未对全部 Playbook/Crew 能力做完逐项卡面复核，也未完成所有能力交互模拟或真人短团验证。系统继续保持 candidate。
+
+
+## 10. PC Special Armor 能力专项复核追加记录（2026-11-28）
+
+- 回查核心规则书 V1.3 PDF pp.88–93 的 Battleborn、Focused、Fortitude、Shadow、Subterfuge、Mastermind、Warded 等能力文本。
+- 修订 [ABILITY_RUNTIME_MATRIX.md](../Rule_Reference/ABILITY_RUNTIME_MATRIX.md)：区分各能力可抵抗的后果类型、Special Armor 替代 Push 的效果与成本、远程保护权限，以及 Warded 与其他能力在“抵消/降低后果”措辞上的差异。
+- 修正一个容易混淆的总括句：Special Armor 在休整期开始时恢复；普通 Armor / Heavy Armor 则按 R-005 在下一次 Score 选择 Load 时恢复。两者不得合并成笼统的“所有护甲在 Downtime 恢复”。
+- 新增 [ABILITY_SPECIAL_ARMOR_REGRESSION_CASES.md](../Testing/ABILITY_SPECIAL_ARMOR_REGRESSION_CASES.md)，12 个案例均已人工对照能力原文与 R-005 记录；未自动执行。
+- 本轮只覆盖特殊护甲能力的触发/资源边界，不代表全部 PC/Crew 能力或能力组合已验收。系统仍保持 candidate。
