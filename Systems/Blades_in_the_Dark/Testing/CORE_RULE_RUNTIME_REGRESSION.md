@@ -51,7 +51,7 @@
 | BLD-T43 | 新 Crew 创建时选择 Favored Contact 与两项额外 Upgrade | 分别更新升级帮助/受损的派系状态与联系人相关派系状态，不得漏记或重复 | Synthetic |
 | BLD-T44 | Cutter 拥有 Vigorous，开始一次 Recover | Healing Clock 有一格永久起始进度，治疗处置骰 +1d；不因普通恢复重复填入永久格 | Synthetic |
 | BLD-T45 | Leech 拥有 Venomous，使用其选定毒药/药物 | 角色对选定物质免疫；Push Yourself 后才可由皮肤/唾液/呼气分泌，不自动免费触发 | Synthetic |
-| BLD-T46 | PC 选择 Heavy Load 携带 Armor | Standard Armor 占 2 Load，Heavy 加 3（总计 5）；没有携带不能以普通 Armor 处理后果 | Static / Synthetic |
+| BLD-T46 | PC 选择 Heavy Load 携带 Armor | Standard Armor 占 2 Load，Heavy 加 3（总计 5）；没有携带不能以普通 Armor 处理后果；已标记 Armor 在下一次 Score 选择 Load 时恢复，而非进入 Downtime 时恢复 | Static / Synthetic |
 | BLD-T47 | PC 声称使用 Special Armor，但没有相应 Playbook Ability | 不具备使用资格；不能仅凭角色卡上的空格触发 Special Armor | Synthetic |
 | BLD-T48 | PC 自行 Recover | PC 消耗自己的 Downtime Activity，额外承受 2 Stress，完成正常治疗掷骰 | Synthetic |
 | BLD-T49 | PC 没有治疗者但选择 Tough It Out | 承受 1 Stress，以 0d（2d 取低）推进 Healing Clock | Synthetic |
