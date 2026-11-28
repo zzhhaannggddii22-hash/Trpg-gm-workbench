@@ -73,7 +73,11 @@ clocks: []
 7. 做一次受控短团或真实短团，检查主持行为、信息公平、节奏和状态连续性。
 8. 记录失败样例并修订规则文件，再重复受影响测试。
 
-## 5. Candidate 状态门槛
+## 4-A. Arcane & Crafting regression cases
+
+- [ARCANE_CRAFTING_REGRESSION_CASES.md](./ARCANE_CRAFTING_REGRESSION_CASES.md)：13 个基于核心规则书 V1.3 PDF pp.228–231 的预期结果案例，覆盖仪式、发明、制作、改造和缺点。
+- 13/13 为人工对照原文审阅；尚未自动执行，也不代表完整引擎模拟或真人跑团验证。
+
 
 以下项目全部完成后才能考虑评估为 active：
 - 规则版本与官方勘误/适用补充来源明确；
