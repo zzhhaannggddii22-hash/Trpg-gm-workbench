@@ -62,7 +62,7 @@ Seraph 是 Core Set 的 PC Class；Errata 中被修正 Relentless (3) 的 Seraph
 2025 Errata 的 Buckler Deflecting 使用 “available Armor Slots”；SRD 2.0 PDF 与对应 JSON 使用 “available Armor Score”。当前本地 Runtime / 数据按 SRD 2.0 当前文本执行，并将印刷版/旧 Errata 差异保留在 RULE_ISSUES。取得最新官方 Core Rulebook 或新 Errata 后再复核。
 
 ### 书籍/可选章节独有项目
-Sledgehammer 和 Revolver 的勘误目标来自可选 Supplemental Campaign Mechanics，不属于基础装备表。High Seraph 已与公开 SRD 2.0 的当前 Stat Block 对应；Daktadae 仍未在公开 SRD 2.0 Adversaries 数据中找到，不应因为 Errata 提到就自行编造 Stat Block。Daktadae 需通过合法取得的完整 Core Rulebook / 相关卡片或官方后续公开资料核验。
+Sledgehammer 和 Revolver 的勘误目标来自可选 Supplemental Campaign Mechanics，不属于基础装备表。High Seraph 已与公开 SRD 2.0 的当前 Stat Block 对应。Daktadae 的存在与 Colossal Power 修正已由官方 Core Errata 确认，但完整 Stat Block 不在公开 SRD 2.0 Adversaries 数据中；第三方中文维基可用于定位，不作为正式规则源。公开仓库只记录 Errata 修正，不复制完整 Stat Block；取得合法 Core Rulebook / 相关卡片后再补私人运行资料。
 
 ## 4. 当前结论
 
