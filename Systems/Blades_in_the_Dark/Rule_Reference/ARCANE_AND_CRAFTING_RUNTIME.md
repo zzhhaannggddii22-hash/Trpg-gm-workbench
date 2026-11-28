@@ -1,8 +1,9 @@
 # Blades in the Dark｜Arcane & Crafting Runtime
 
 > system_id: `blades_in_the_dark`  
-> Source baseline: official Blades in the Dark SRD pages + Full Player's Kit v8.2 cross-check.  
-> Status: candidate runtime reference; exact Campaign core-book edition and errata remain to be locked.  
+> Primary source: user-provided Chinese core rulebook V1.3, corresponding to the 2017 English Digital Release v8.2; Rituals and Creations, PDF pp.228–231.  
+> Cross-checks: official Blades in the Dark SRD pages + Full Player's Kit v8.2.  
+> Status: candidate runtime reference; the source baseline is identified, but no Campaign has locked its ruleset.  
 > This is an original operational summary, not a reproduction of the rulebook.
 
 ## 1. Runtime routing
@@ -50,7 +51,7 @@ Do not add area to force by default. An entity can generate a powerful effect wh
 
 ### BLD-ARC-02｜Find a source and learn a ritual
 
-**Eligibility:** the PC needs the Ritual Special Ability to safely study/practice ritual sorcery. A PC with Ritual begins with one known ritual, defined with the GM. A PC without Ritual should not casually research or perform rituals; the official rule warns that such study leaves the character vulnerable to the powers being supplicated.
+**Eligibility:** a PC with the Ritual Special Ability begins with one known ritual, defined with the GM. The ability permits the PC to study or create rituals; without it, learning and practicing rituals can expose the character to harm from the powers being supplicated, so the core book advises against attempting it. Performing a ritual explicitly requires the Ritual ability.
 
 **Source first:** obtain a source through Score Payoff, theft, a contact, cultist access, ancient text, or a Long-Term Project. If the PC does not yet have access to a source, establishing that access is a separate fictional obstacle/project.
 
@@ -72,8 +73,8 @@ These answers form the ritual's reusable specification. If a new source, new pur
 **Execution**
 1. Confirm the ritual's intended effect and the current circumstances. Ritual performance is a unique event; do not assume it is a perfectly repeatable spell button.
 2. Spend at least one Downtime Activity. Very powerful or far-reaching rituals may require two or more.
-3. Apply the previously established Stress cost, using Magnitude as the guideline. A ritual's actual cost is set during its definition; do not recompute it mechanically from a single magnitude number every time.
-4. Longer casting time can reduce Stress cost. Use the Magnitude duration examples as a guide; the official guidance generally does not reduce casting below about an hour. Longer casting can create exposure, delay, or a chance for targets to react.
+3. Apply Stress according to the ritual's established Magnitude and definition. Magnitude is the GM's guideline, not a universal arithmetic formula; the stated cost may be higher or lower to fit the ritual. Some Crew Claims or Special Abilities can reduce it.
+4. Casting time is part of the Magnitude judgment: use the duration examples in the Magnitude table when setting the cost. The core book says a ritual generally takes at least about one hour; do not apply a separate automatic discount merely because the caster spends longer. Longer casting may also create exposure, delay, or a chance for targets to react.
 5. Apply any additional price already defined: rare materials, sacrifice, a target's participation, a site, or a dire Clock.
 6. If performance is dangerous/troublesome, make an Action Roll (usually Attune) to resolve the danger and its consequences.
 7. If the effect's degree or success is uncertain, make a Fortune Roll. For a Downtime Fortune Roll, Coin may be spent 1-for-1 to raise the result level after the roll.
@@ -182,7 +183,12 @@ Need an occult effect?
        └─ Existing item + new function → modification Quality threshold
 ```
 
-## 9. Official source cross-check
+## 9. Source cross-check and version notes
+
+**Primary local source:** user-provided *核心规则书-中文版-v1.3.pdf*, PDF pp.228–231 (Rituals, Creations, Invention, Crafting, Modification, Drawbacks). Key checks for this revision:
+- PDF p.228: ritual source, learning project, eight-segment clock, ritual questions, and warning for PCs without Ritual.
+- PDF p.229: Ritual ability prerequisite for performance; activity count; Magnitude-guided Stress cost; duration as part of cost assessment; Action Roll for danger; Fortune Roll for uncertain effect; Coin may raise a Downtime Fortune Roll result level 1-for-1; each performance is a distinct event.
+- PDF pp.230–231: invention questions, eight-segment project, special designs granted by relevant abilities, Crafting roll and Quality table, Workshop/Coin modifiers, Modification thresholds, and Drawbacks.
 
 - [Magnitude](https://bladesinthedark.com/magnitude)
 - [Rituals](https://bladesinthedark.com/rituals)
