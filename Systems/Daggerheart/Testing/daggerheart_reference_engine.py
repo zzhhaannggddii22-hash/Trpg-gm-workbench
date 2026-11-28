@@ -333,6 +333,59 @@ def end_gm_turn(state):
 
 
 
+
+ADVERSARY_BP_COST = {
+    "social": 1, "support": 1,
+    "horde": 2, "ranged": 2, "skulk": 2, "standard": 2,
+    "leader": 3, "bruiser": 4, "solo": 5,
+}
+
+
+def adversary_bp_cost(adversary_type, pc_count=None, minion_count=None):
+    kind = adversary_type.lower()
+    if kind == "minions":
+        if pc_count is None or minion_count != pc_count:
+            raise ValueError("The 1 BP Minion group must contain one Minion per PC")
+        return 1
+    if kind not in ADVERSARY_BP_COST:
+        raise ValueError("Unknown Adversary Type")
+    return ADVERSARY_BP_COST[kind]
+
+
+def calculate_encounter_budget(pc_count, adversary_types, light=False,
+                               all_damage_boosted=False, has_lower_tier_enemy=False,
+                               harder=False):
+    if pc_count < 1:
+        raise ValueError("Encounter must include at least one PC")
+    types = [kind.lower() for kind in adversary_types]
+    base = 3 * pc_count + 2
+    adjustments = {}
+    if light:
+        adjustments["light_or_short"] = -1
+    if types.count("solo") >= 2:
+        adjustments["two_or_more_solos"] = -2
+    if all_damage_boosted:
+        adjustments["all_enemy_damage_boosted"] = -2
+    if has_lower_tier_enemy:
+        adjustments["lower_tier_enemy"] = 1
+    if not any(kind in {"bruiser", "horde", "leader", "solo"} for kind in types):
+        adjustments["no_major_type"] = 1
+    if harder:
+        adjustments["harder_or_longer"] = 2
+    return {"base": base, "adjustments": adjustments,
+            "budget": base + sum(adjustments.values())}
+
+
+def encounter_bp_total(entries, pc_count):
+    total = 0
+    for entry in entries:
+        total += adversary_bp_cost(
+            entry["type"], pc_count=pc_count, minion_count=entry.get("count")
+        )
+    return total
+
+
+
 def advantage_state(advantage_sources, disadvantage_sources):
     net = advantage_sources - disadvantage_sources
     return "advantage" if net > 0 else "disadvantage" if net < 0 else "none"
@@ -1060,6 +1113,38 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         result = apply_downtime_move({}, "pc-1", PC(), "tend_to_wounds", "long", roll=4)
         self.assertEqual((result["allowed"], result["reason"]), (False, "move_not_available_for_rest"))
 
+
+
+    def test_93_encounter_budget_base_is_three_per_pc_plus_two(self):
+        self.assertEqual(calculate_encounter_budget(1, [])["budget"], 5)
+        self.assertEqual(calculate_encounter_budget(4, ["solo"])["budget"], 14)
+
+    def test_94_encounter_budget_adjustments_stack(self):
+        result = calculate_encounter_budget(
+            3, ["solo", "solo"], light=True, all_damage_boosted=True,
+            has_lower_tier_enemy=True, harder=True
+        )
+        self.assertEqual(result["base"], 11)
+        self.assertEqual(result["budget"], 9)
+
+    def test_95_adversary_type_battle_point_costs(self):
+        costs = [adversary_bp_cost(x) for x in
+                 ["social", "support", "horde", "ranged", "skulk", "standard", "leader", "bruiser", "solo"]]
+        self.assertEqual(costs, [1, 1, 2, 2, 2, 2, 3, 4, 5])
+
+    def test_96_minion_group_costs_one_bp_only_at_pc_count(self):
+        self.assertEqual(adversary_bp_cost("minions", pc_count=3, minion_count=3), 1)
+        with self.assertRaises(ValueError):
+            adversary_bp_cost("minions", pc_count=3, minion_count=2)
+
+    def test_97_encounter_cost_sums_and_can_exceed_budget(self):
+        entries = [{"type": "horde"}, {"type": "standard"}, {"type": "solo"}]
+        self.assertEqual(encounter_bp_total(entries, pc_count=2), 9)
+        self.assertGreater(encounter_bp_total(entries, 2), calculate_encounter_budget(2, ["horde", "standard", "solo"])["budget"])
+
+    def test_98_encounter_without_bruiser_horde_leader_or_solo_gets_one_bp_adjustment(self):
+        self.assertEqual(calculate_encounter_budget(2, ["standard", "ranged"])["budget"], 9)
+        self.assertEqual(calculate_encounter_budget(2, ["leader", "standard"])["budget"], 8)
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
