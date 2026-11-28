@@ -91,3 +91,9 @@ clocks: []
 
 - [AUTOMATED_CANDIDATE_CHECKS_2026-11-28.md](./AUTOMATED_CANDIDATE_CHECKS_2026-11-28.md)：31 项文档不变量/确定性微模型检查 PASS。
 - 本轮没有完整规则引擎执行、全部 75 固定场景自动重放或真人短团测试；Armor 来源冲突 R-005 仍 OPEN。
+
+
+## 集成引擎模拟（子集）
+
+- [ENGINE_SIMULATION_REPORT_2026-11-28.md](./ENGINE_SIMULATION_REPORT_2026-11-28.md)；[Harness](./ENGINE_SIMULATION_V1.js)。本轮对 harness 逻辑进行独立 inline replay：23/23 通过，含 1,000 组 Heat 边界 fuzz 输入。
+- 提交的 standalone harness 源文件未在此聊天环境的 Node runtime 中直接执行；模拟覆盖有限，不应称为完整引擎认证。
