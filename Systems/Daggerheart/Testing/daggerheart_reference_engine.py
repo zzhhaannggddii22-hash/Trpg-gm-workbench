@@ -520,5 +520,12 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         )
         self.assertEqual((result["final_damage"], result["hp_marks"]), (0, 0))
 
+    def test_51_mixed_damage_can_use_different_defenses_per_type(self):
+        result = resolve_incoming_damage(
+            PC(), [{"amount": 11, "type": "phy"}, {"amount": 5, "type": "mag"}],
+            resistances={"phy"}, immunities={"mag"}
+        )
+        self.assertEqual((result["final_damage"], result["hp_marks"]), (6, 2))
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
