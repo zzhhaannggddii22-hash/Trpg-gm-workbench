@@ -57,9 +57,11 @@ runtime_dispatch:
 - [Rule_Reference/README.md](./Rule_Reference/README.md)：规则来源、版本与授权边界。
 - [Rule_Reference/CORE_RULE_INDEX.md](./Rule_Reference/CORE_RULE_INDEX.md)：按触发条件调用的核心规则索引与 Rule ID。
 - [Rule_Reference/CORE_RULES_RUNTIME.md](./Rule_Reference/CORE_RULES_RUNTIME.md)：骰型、Action/Position/Effect、后果、Score、Downtime、Crew/Faction 等可运行规则摘要。
+- [Rule_Reference/ARCANE_AND_CRAFTING_RUNTIME.md](./Rule_Reference/ARCANE_AND_CRAFTING_RUNTIME.md)：Magnitude、Ritual、Invention、Crafting、Modification、Drawbacks 的完整触发式流程。
 - [Rule_Reference/RULE_ISSUES.md](./Rule_Reference/RULE_ISSUES.md)：翻译差异、版本疑点与待核规则。
 - [Rule_Reference/GLOSSARY.md](./Rule_Reference/GLOSSARY.md)：规则术语与译名对照。
-- [Rule_Reference/PLAYBOOKS_AND_CREW_REFERENCE.md](./Rule_Reference/PLAYBOOKS_AND_CREW_REFERENCE.md)：七种核心 PC Playbook 与六种 Crew 的能力摘要及按需加载方式。
+- [Rule_Reference/PLAYBOOKS_AND_CREW_REFERENCE.md](./Rule_Reference/PLAYBOOKS_AND_CREW_REFERENCE.md)：七种核心 PC Playbook 与六种 Crew 的能力目录与摘要。
+- [Rule_Reference/ABILITY_RUNTIME_MATRIX.md](./Rule_Reference/ABILITY_RUNTIME_MATRIX.md)：核心 PC/Crew 能力的触发、效果、成本、作用范围与边界矩阵。
 - [Rule_Reference/CREW_CLAIMS_AND_STARTUP_REFERENCE.md](./Rule_Reference/CREW_CLAIMS_AND_STARTUP_REFERENCE.md)：六种 Crew 的创建、Hunting Grounds、起始升级、Claim Map 与专属 Claim 收益。
 - [Rule_Reference/STANDARD_ITEMS_AND_LOAD_REFERENCE.md](./Rule_Reference/STANDARD_ITEMS_AND_LOAD_REFERENCE.md)：核心装备、Load 与护甲携带规则速查。
 - [RUNTIME_PROTOCOL.md](./RUNTIME_PROTOCOL.md)：Free Play / Score / Downtime 的运行状态、调用步骤与持久化边界。
