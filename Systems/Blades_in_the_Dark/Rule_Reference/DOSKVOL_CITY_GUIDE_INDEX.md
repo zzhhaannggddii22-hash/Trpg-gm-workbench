@@ -84,8 +84,7 @@
 1. [DOSKVOL_DISTRICTS_REFERENCE.md](./DOSKVOL_DISTRICTS_REFERENCE.md)：12 个地区的特征值、场景定位与地区专属机会/修正；
 2. [DOSKVOL_FACTIONS_REFERENCE.md](./DOSKVOL_FACTIONS_REFERENCE.md)：13 个主要派系的层级、定位和运行字段。
 
-仍待拆分：
-3. `DOSKVOL_GM_TABLES_REFERENCE.md`：流言、人名、场景、刻痕与随机生成表。
+已完成 GM 工具索引：[DOSKVOL_GM_TABLES_REFERENCE.md](./DOSKVOL_GM_TABLES_REFERENCE.md)，覆盖街头流言、周度城市事件、地区奇事、恶欲满足者、街头/室内场景、NPC、幽灵/恶魔、邪教与 Score 生成工具。原书完整随机表仍保存在私人资料库。
 
 ## 6. 运行时原则
 
