@@ -62,6 +62,8 @@ GM 应让玩家理解失败会改变什么。不要把 Difficulty 调整当作�
 - 让 Spotlight 随自然注意力、规则触发与角色之间的行动机会流转。
 - 在一次玩家行动后，不必立即把焦点切给 GM；Success with Hope 通常由玩家继续推进，Success with Fear 和失败结果更容易触发 GM Move。
 - 不要连续把 Spotlight 给同一个 NPC / adversary，除非规则、Fear 或叙事局势确实支持。
+- GM 自然获得 Spotlight 后，首次让一个 Adversary 获得 Spotlight 不额外收费；每次额外敌人 Spotlight 花费 1 Fear。Relentless (X) 允许同一敌人多次获得 Spotlight，但不免除重复聚焦成本。
+- PC 持有 Spotlight 时，GM 花 1 Fear 才能打断并抢夺；额外 GM Move 另花 1 Fear；Fear Feature 按卡面独立支付。所有成本分开结算。
 - 重要 NPC/敌人可在一次行动中改变局势，但避免把 GM Turn 变成冗长的敌方连锁演算。
 
 ## 6. GM Moves 与 Fear
