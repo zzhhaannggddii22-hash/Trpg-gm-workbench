@@ -1,7 +1,7 @@
 # Core Rule Runtime Regression Matrix
 
-> 状态：TEST PLAN / NOT EXECUTED  
-> 本矩阵用于后续静态、合成、盲测与短场景验证。除标记为已执行的项目外，不能把预期结果当作实测结论。
+> 状态：PARTIALLY EXECUTED / DESK TEST  
+> DH-T01–DH-T15 已进行确定性桌面逻辑模拟（非代码自动测试）；DH-T16–DH-T45 仍未执行。详情见 [DESK_TEST_BATCH_01.md](./DESK_TEST_BATCH_01.md)。
 
 | ID | 场景 | 预期结果 / 关键断言 | 类型 |
 |---|---|---|---|
@@ -57,10 +57,10 @@
 |---|---|
 | 测试版本 | Core Set / SRD 2.0 (2026-08-25) |
 | 扩展范围 | CORE_ONLY |
-| 矩阵状态 | NOT EXECUTED |
-| 已执行测试 | 0 / 45 |
-| 已通过 | 0 |
+| 矩阵状态 | PARTIALLY EXECUTED (DESK TEST) |
+| 已执行测试 | 15 / 45 |
+| 已通过 | 15 (desk simulation) |
 | 已失败 | 0 |
 | 阻塞 | 0 |
 
-本矩阵是预期结果清单，不是测试报告。执行时为每项记录输入、原始骰值、适用 Rule ID、状态差分和证据。
+本矩阵仍是测试清单兼状态记录。DH-T01–DH-T15 的执行性质与输入记录见 DESK_TEST_BATCH_01.md；其余项目尚未执行。桌面逻辑模拟不等同于代码自动测试或完整规则书验收。
