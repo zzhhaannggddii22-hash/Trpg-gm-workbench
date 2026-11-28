@@ -32,3 +32,30 @@
 - 公开 Workbench 保存本地运行手册、规则索引、翻译问题和资源入口。
 - 官方 Player's Kit 和付费地图保留官方链接；不得把下载地址当作允许复制或公开分发的许可。
 - 用户决定启用某个社区模组或 Playbook 时，单独审查它的版本、授权、规则兼容性和设定范围。
+
+
+## 6. 官方规则网页与 GM 判断支持
+
+- [The Basics](https://bladesinthedark.com/basics/)：概述 Crew、PC、GM 的职责与一次 Session 的基本循环。适合做系统定位，不替代规则条文。
+- [The Core System](https://bladesinthedark.com/core-system)：汇总 GM/玩家在行动合理性、危险与效果、后果、是否掷骰等关键判断中的决策权分工。适合做规则裁定原则的直接引用入口。
+- [Action Roll](https://bladesinthedark.com/action-roll)：行动骰触发、Position、Effect、奖励骰和结算。
+- [Planning & Engagement](https://bladesinthedark.com/planning-engagement)：六种计划、细节、负载与参案骰。
+- [Progress Clocks](https://bladesinthedark.com/progress-clocks)：进度钟种类、命名原则、简单阻碍与复杂障碍边界。
+- [Downtime Activities](https://bladesinthedark.com/downtime-activities)：PC 休整活动、活动次数、花费与流程。
+- [Downtime Activities in Play](https://bladesinthedark.com/downtime-activities-play)：NPC/Faction Downtime 的推进方式，明确 GM 只推进当前感兴趣的派系，忽略其他派系并在重新关注时补进度。
+- [PC Playbook](https://bladesinthedark.com/character-playbook)：七种核心 PC Playbook 及角色规则入口。
+- [Crew Playbook](https://bladesinthedark.com/crew-playbook)：组织创建、Claims、Crew Special Abilities 与升级规则入口。
+- [GM Goals, Principles & Actions（历史快速入门 v7）](https://www.seannittner.com/wp-content/uploads/2016/08/blades_quickstart_v7.pdf)：较早版本的主持原则与 GM Moves 参考。作为主持风格/历史资料，不应覆盖当前版本的具体规则。
+
+## 7. 单玩家桌面适配调查
+
+目前在已检查的官方核心规则页、Downloads 与 Fan Creations 入口中，没有找到明确的官方“一名玩家 + GM”专用规则变体。核心设计仍以 Crew 为长期主角，并假定角色之间存在 Teamwork；因此单玩家运行不是简单删去其他 PC 即可完成的等价版本。
+
+未来如采用单玩家 Campaign，应把以下内容列为**待验证的桌面适配**，而非默认规则：
+- 玩家控制一个核心 PC，Crew 作为其经营的组织；其他 Crew 成员通过 Cohort、联系人和重要 NPC 出场；
+- Group Action / Assist / Protect 等多 PC 团队规则的实际适用范围；
+- PC 的压力、伤害、Downtime 负担是否会集中到单人；
+- Score 是否需要让 Crew Cohort / NPC 提供稳定的队伍能力，而不是替玩家直接解决核心选择；
+- 角色退场、入狱、Trauma 与 Crew 连续性如何在只有一名玩家角色时保持可玩性。
+
+不得为了弥补单 PC 的人数劣势，默默提高 PC 属性、免费发放额外行动、降低敌方 Tier 或改写 Crew 资源。需要修改时，逐项记录适配理由、影响和测试结果。
