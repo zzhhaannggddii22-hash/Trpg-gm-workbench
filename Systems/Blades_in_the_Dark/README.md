@@ -5,11 +5,11 @@
 > 作者：John Harper  
 > 出版商：Evil Hat Productions  
 > 中文译者：洪伟  
-> 状态：candidate（独立规则研究中；尚无正式 Campaign）
+> 状态：candidate（规则研究完成基础准备；已建立 Campaign 01 备团目录，等待玩家建团与实战验证）
 
 本目录是《暗影之刃》（Blades in the Dark）系统级资料的独立入口。仓库内以用户采用的名称“暗影之刃”称呼本系统；现有中文 SRD 使用的译名是“暗夜冷锋”。两者指向同一作品，不代表不同版本。
 
-本系统与 Triangle Agency、Cairn 完全隔离。当前只建立规则资料与研究入口，不创建 Campaign、不启用正式运行，也不把本系统机制并入通用 GM Runtime 或其他系统。
+本系统与 Triangle Agency、Cairn 完全隔离。系统规则仍处于 candidate；已按用户授权建立独立 Campaign 01 备团目录，但尚未开始游戏。Campaign 的建立不等于系统已 active，也不把本系统机制并入通用 GM Runtime 或其他系统。
 
 ```yaml
 system_id: blades_in_the_dark
@@ -89,6 +89,10 @@ runtime_dispatch:
 - [Research/CHINESE_SRD_SOURCE_REVIEW_2026-11-28.md](./Research/CHINESE_SRD_SOURCE_REVIEW_2026-11-28.md)：中文 SRD 来源审查。
 - [Research/EXTERNAL_RESOURCES.md](./Research/EXTERNAL_RESOURCES.md)：官方免费资料、社区扩展与额外资料入口。
 
+## Campaign
+
+- [Campaign 01｜灰烬与欠账](./Campaigns/DOSKVOL_01_ASH_AND_DEBTS/README.md)：多斯科沃开放式 Crew 战役；规则版本已绑定，战役状态、派系调用、NPC 名册、Score 机会生成、Session 01 准备与 GM-only 资料已建立。当前等待玩家任务卡、PC 与 Crew 建档；用户明确说“开始”前不启动游戏。
+
 ## 系统边界
 
 - 所有骰型、行动、属性、资源、后果、成长、案件流程与术语均以本系统自身规则为准。
@@ -111,7 +115,7 @@ runtime_dispatch:
 1. 未来 Campaign 必须锁定具体核心规则版本与勘误；中文 SRD 页面自身未提供清晰修订号。
 2. 七种核心 PC Playbook 与六种 Crew 的能力已建立触发式运行矩阵，但每项能力仍须在实际角色/组织建档时按所选版本卡面核对触发条件、成本、持续时间和例外；Veteran 来源、实际选中能力的完整卡面、升级/Claims 与具体公式/仪式效果仍需按实际战役版本回查。
 3. 75 条 Candidate 合成回归用例已通过；仍需补做独立跨系统隔离测试，并至少完成一次短团实测和复盘。
-4. 建立独立 Campaign Binding；在用户确认前，系统继续保持 candidate。
+4. Campaign 01 已建立独立 Campaign Binding；仍需完成玩家任务卡、PC/Crew 建档与首次战役 Preflight，系统继续保持 candidate。
 5. 普通 Armor 与 Special Armor 的恢复时序已按 V1.3 核心规则书分别处理；其他版本仍需重新核验，见 [R-005](./Rule_Reference/RULE_ISSUES.md#r-005resistance-与-armor-的时序)。
 6. 多斯科沃地区、派系和 GM 生成工具已有本地索引；仍待把重要 NPC、完整地区细节与派系当前情况按战役需求进一步拆分为可直接调用的战役资料。
 7. 红水之城仍是预览版；义警与利维坦之歌仍需按各自版本完成规则交叉核验与模块测试。
