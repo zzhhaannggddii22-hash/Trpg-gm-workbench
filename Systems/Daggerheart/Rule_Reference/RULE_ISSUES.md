@@ -124,3 +124,11 @@
 - 状态：PARTIALLY_MAPPED
 - Sledgehammer 的 Massive 特性是 Everyday Hero Starting Equipment 可选武器表的一部分，而不是标准 Core Tier 1 Weapon Tables。SRD 2.0 将其收录在 Supplemental Campaign Mechanics；公开数据单独隔离，默认不加载。
 - 其他不在 SRD 2.0 Core 数据表的 Errata 对象，不能因此推断缺失或失效；可能来自完整 Core Rulebook 示例、Campaign Frame 或未导入的可选章节。需要根据页码和章节归属逐项判断。
+
+## DH-I-013｜SRD 2.0 结构化导出中的 Buckler 文本字段误差
+
+- 状态：CORRECTED_IN_LOCAL_DATA
+- 来源：第三方 SRD 2.0 Markdown / JSON 导出将 Buckler 的 Deflecting 特性写成 `available Armor Score`。
+- 官方 SRD 2.0 Changelog 的修订文本为：标记一个 Armor Slot 后，获得等于当前可用 Armor Slots 数量的 Evasion 加值。
+- 处理：已将 `Reference_Data/Core_Set/weapons.json` 的 Buckler 文本修正为 `available Armor Slots`。
+- 意义：这证明结构化导出只能作为本地索引与数据加工底稿；高影响的能力文本仍须对照官方 SRD 原文，不得将第三方 JSON 视为无误的官方数据库。
