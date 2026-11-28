@@ -7,6 +7,7 @@
 - [Triangle Agency / 三角机构](./Triangle_Agency/README.md) — `system_id: triangle_agency`；当前正式实战规则版本为用户指定的中文 v22。
 - [Cairn /《石冢》](./Cairn/README.md) — `system_id: cairn`；Cairn Second Edition；第二套系统接入准备中，当前为 candidate，尚未开放正式运行。
 - [Blades in the Dark /《暗影之刃》（中文 SRD 译名：《暗夜冷锋》）](./Blades_in_the_Dark/README.md) — `system_id: blades_in_the_dark`；中文 SRD 修订号待核；独立研究中，当前为 candidate，尚未开放正式运行。
+- [Daggerheart /《匕首心》](./Daggerheart/README.md) — `system_id: daggerheart`；默认基线为 Core Set；官方 SRD v2.0 同时混合收录 Core Set 与 Hope & Fear，扩展默认隔离；当前为 candidate，尚未开放正式运行。
 
 ```yaml
 systems:
@@ -22,9 +23,20 @@ systems:
     system_entry: Systems/Blades_in_the_Dark/README.md
     ruleset_versions: ["Blades in the Dark SRD / 中文《暗夜冷锋》译本（修订号待核）"]
     status: candidate
+  - system_id: daggerheart
+    system_entry: Systems/Daggerheart/README.md
+    ruleset_versions:
+      - "Daggerheart Core Set"
+      - "Official SRD v2.0 (2026-08-25; Core + Hope & Fear mixed reference)"
+    default_expansion_scope: CORE_ONLY
+    status: candidate
 ```
 
-## 跨系统规则运行集成\n\n- [System Rule Runtime Integration Protocol](./SYSTEM_RULE_RUNTIME_INTEGRATION_PROTOCOL.md)：跨系统共享的规则运行集成契约。它只规定系统规则如何按触发进入运行、如何连接资源与世界状态，不包含任何具体游戏机制。\n\n## 接入约定
+## 跨系统规则运行集成
+
+- [System Rule Runtime Integration Protocol](./SYSTEM_RULE_RUNTIME_INTEGRATION_PROTOCOL.md)：跨系统共享的规则运行集成契约。它只规定系统规则如何按触发进入运行、如何连接资源与世界状态，不包含任何具体游戏机制。
+
+## 接入约定
 
 每个系统目录必须有 README，记录正式名称、system_id、规则版本、权威来源、状态、规则索引、专属 Skill 与适配边界。
 
