@@ -274,7 +274,7 @@ GM Move 是推动场景的工具，不是惩罚玩家的任意权力。后果必
 - 子职业、种族和社群卡不占 Loadout 上限，持续生效。
 - 每次休息开始、Downtime Moves 前，可免费在 Loadout 与 Vault 间调换卡牌。
 - 其他时间从 Vault 调回 Loadout，须标记该卡 Recall Cost 数量的 Stress；如 Loadout 已满，先免费把一张当前卡移入 Vault。
-- 升级新获得的 Domain Card 可免费立即放入 Loadout；若已满，仍需把另一张卡移入 Vault。升级时也可将一张已获得领域卡替换为一张等级相同或更低的新卡。升级时也可将一张已获得领域卡替换为一张等级相同或更低的新卡。
+- 升级新获得的 Domain Card 可免费立即放入 Loadout；若已满，仍需把另一张卡移入 Vault。升级时也可将一张已获得领域卡替换为一张等级相同或更低的新卡。
 - 用途次数限制按卡牌文本记录；某些特性根据 Trait 修正赋予次数，修正为 +0 或更低时得到 0 次。
 
 ## 18. DH-REST｜休息与 Downtime
@@ -387,13 +387,50 @@ Hope & Fear 对应数据单独放在 `Reference_Data/Hope_and_Fear/`，默认关
 
 ## 24. DH-LEVEL-UP｜成长与升级
 
-- GM 判断达到叙事里程碑时全队同步升级，通常约每 3 次 Session 一个里程碑；这是节奏指导，不是硬性计时。
+- GM 判断达到叙事里程碑时，全队同步升级；通常约每 3 次 Session 一个里程碑，这是节奏指导而非硬性计时。
 - 共 10 级、4 个 Tier：Tier 1 = Lv1；Tier 2 = Lv2–4；Tier 3 = Lv5–7；Tier 4 = Lv8–10。
-- Lv2、Lv5、Lv8 Tier Achievement：获得一个 +2 Experience、Proficiency 永久 +1；Lv5 和 Lv8 还清除此前标记的 Trait 提升限制。
-- 每次升级选择 2 个 Tier 当前或更低的未满 Advancement；有多格的选项可重复选择。某些选项（如提升 Proficiency 或 Multiclass）要求占用两个 Advancement 格。
-- 常见 Advancement：提升两个 Traits；增加 HP Slots；增加 Stress Slots；提升两个 Experiences；取得额外 Domain Card；提升 Evasion；取得下一张 Subclass Card（Foundation→Specialization→Mastery）；提升 Proficiency；Multiclass。
-- 每级提升所有 Damage Threshold 1；取得一张本级或更低等级的 Domain Card。
-- Multiclass 从 Lv5 开始：选择额外职业，获得其一个 Domain 与 Class Feature，并取得其一个 Subclass Foundation。来自新 Domain 的卡等级不得超过当前等级的一半（向上取整）；Multiclass 与 Subclass 升级存在规则规定的互斥/消耗格限制，按升级步骤逐项核验。
+
+### Step 1｜Tier Achievement
+
+达到对应等级时获得 Tier Achievement：
+- Lv2：获得一个 +2 Experience，并永久提高 Proficiency +1。
+- Lv5：获得一个 +2 Experience、Proficiency +1，并清除此前标记的 Trait 提升限制。
+- Lv8：获得一个 +2 Experience、Proficiency +1，并清除此前标记的 Trait 提升限制。
+
+### Step 2｜Advancements
+
+每次升级选择任意两个当前 Tier 或更低 Tier 中仍有空格的 Advancement。选中一项时标记它的一个格；多格项目可以重复选择。部分项目明确需要两个 Advancement 格。
+
+| Advancement | 效果 |
+|---|---|
+| Increase two Traits | 选择两个未标记 Traits，各永久 +1，并标记它们；在下一次 Tier Achievement 清除这些标记前，不能再次提升这两个 Traits |
+| Add HP Slots | 永久增加 HP 槽位 |
+| Add Stress Slots | 永久增加 Stress 槽位 |
+| Increase Experiences | 选择角色卡上的两个 Experiences，各永久 +1 |
+| Additional Domain Card | 额外取得一张符合等级和职业 Domain 限制的领域卡 |
+| Increase Evasion | Evasion 永久 +1 |
+| Upgraded Subclass Card | 若只有 Foundation，取得 Specialization；已有 Specialization，则取得 Mastery；选择后划掉本 Tier 的 Multiclass 选项 |
+| Increase Proficiency | 填写一个 Proficiency 圆点，并使武器伤害骰数量 +1；必须占用两个 Advancement 格 |
+| Multiclass | 选择额外职业、取得其一个 Domain 与 Class Feature，加入 Multiclass Module，并取得该职业一个 Subclass Foundation；必须占用两个 Advancement 格 |
+
+### Step 3｜Damage Thresholds
+
+每次升级后，所有 Damage Threshold 均提高 1。
+
+### Step 4｜Domain Card
+
+每次升级取得一张本级或更低等级、属于角色可用职业 Domain 的领域卡。可放入 Loadout 或 Vault；若 Loadout 已满，新卡先放入 Vault，之后再按规则调换。升级时也可把一张已取得领域卡替换为一张等级相同或更低的新卡。
+
+### Multiclass 细则
+
+- Multiclass 从 Lv5 开始可选。
+- 选择额外 Class，取得该职业的一个 Domain 与 Class Feature；将 Multiclass Module 加入角色卡，并选择该职业一个 Subclass 的 Foundation 卡。
+- 若两个 Foundation 指定不同 Spellcast Trait，角色可在进行 Spellcast Roll 时选择使用其中一个。
+- 之后选择新 Domain Card 时，可以改选 Multiclass 时选择的 Domain；该 Domain 的卡等级不得超过当前角色等级的一半，向上取整。
+- 选择 Multiclass 后，划掉本 Tier 的 Upgraded Subclass Advancement，并划掉角色卡上所有其他 Multiclass Advancement 选项。
+- 选择 Upgraded Subclass Advancement 后，划掉本 Tier 的 Multiclass 选项。
+
+不得把 Tier Achievement、两项 Advancement、Damage Threshold +1 与 Step 4 领域卡获得合并成一个模糊的“升级加点”；这些步骤均须结算。
 
 ## 25. DH-DEATH｜死亡行动
 
@@ -441,84 +478,98 @@ PC 标记最后一个 HP 时立即进行 Death Move，选择一项：
 
 本版完成第一轮结构化和运行化，不代表全部条目已达到 VERIFIED_CORE 或 RUNTIME_TESTED。
 
+## 29. DH-STRESS｜Stress 与资源支付边界
+
+- Core Set 中每个职业起始拥有 6 个 Stress Slots；角色可通过升级、能力或其他效果增加槽位，最高 12。
+- 当角色标记最后一个 Stress Slot 时，立即获得 Vulnerable，直到至少清除 1 Stress。
+- 角色必须标记 Stress，但当前没有可标记的空槽时，改为标记 1 HP。
+- 如果某个 Move 的成本要求标记 Stress，而角色所有 Stress 槽已标记，则不能使用该 Move；不能把“改标记 1 HP”的通用规则当作支付该 Move 成本的替代方式。
+- PCs 通过 Downtime Moves、卡牌、能力与效果清除 Stress；恢复量和次数以对应文本为准。
+- 记录当前 Stress 槽上限、已标记数量、最后一个 Stress 触发的 Vulnerable 来源。若 Vulnerable 还有其他来源，清除 Stress 并不自动移除其他来源的 Vulnerable。
+
+## 30. DH-GENERAL｜通用结算与时序规则
+
+- **向上取整：** 需要把分数转成整数时，除非另有规则，向上取整；有歧义时倾向于 PC。
+- **重掷：** 特性允许重掷时，默认采用新结果，除非特性另有说明。
+- **Incoming Damage：** 单次攻击或单一伤害来源的总伤害，指标记 Armor Slots 之前的伤害总值。
+- **同时效果：** 多个效果的结算顺序未明确时，由控制这些效果的一方（玩家或 GM）决定顺序。
+- **效果叠加：** 除 Conditions、Advantage 和 Disadvantage 外，效果默认可叠加，除非特性说明不能叠加。
+- **持续法术：** 未明确机械终止条件的效果，持续至控制它的玩家选择结束、GM 依规则结束，或故事出现自然终止时机。
+- **资源重复支付：** 除非能力明确允许，不能在同一个掷骰的同一特性上重复花 Hope 或重复标记 Stress 来放大/重复同一效果。
+- **掷骰后使用能力：** 若能力允许在总值计算后调整掷骰结果，可在 GM 宣布成功/失败后、后果实际展开前使用；不能等后果发生或另一次掷骰开始后再补用。
+
+推荐结算顺序：先完成同一次掷骰的总值与成败判定，再处理允许事后修改结果的能力；随后进入后果、资源变化、GM Move 与其他触发。具体能力文本优先于通用顺序。
+
+## 31. DH-ADVERSARY-ACTIONS｜敌人行动、反应与非攻击检定
+
+### 普通敌人行动
+
+- Adversary 的常规行动默认不掷 Action Roll；除攻击掷骰和 Stat Block 明确写出的特殊行动外，其他尝试通常自动成功。
+- 如果敌人正在尝试某件事，而 PC 能够影响或抵抗其结果，应由相关 PC 进行 Reaction Roll，不要为了让敌人“也掷一次”而额外生成 GM d20。
+- 只有当任务特别戏剧化/困难，且 PC 无法影响其成败时，GM 才可为敌人安排独立 Action Roll 或 Reaction Roll。
+- 此类敌方独立检定使用单 d20；结果达到或超过该行动 Difficulty 即成功。GM 可在掷骰前花 Fear，加入敌人 Stat Block 中相关 Experience 修正。
+- 敌人进行独立检定时的 Advantage / Disadvantage：额外掷一枚 d20，优势取较高值，劣势取较低值。
+- 敌人对 PC 的标准攻击仍按 DH-ENEMY-ATTACK；不要混用普通敌方独立检定与攻击命中程序。
+
+### 敌人获得 Spotlight 后的常规行动
+
+在 GM Turn 中将 Spotlight 给某个敌人后，该敌人通常可以：
+- 移动至 Close 并作一次 Standard Attack；
+- 移动至 Close 并使用一项 Adversary Action；
+- 清除一项 Temporary Condition；
+- 单独冲刺至 Far 或 Very Far；
+- 执行符合当前虚构情境的其他行动。
+
+GM 可额外花费 Fear 将 Spotlight 给其他敌人。给敌人 Spotlight 的 Fear 支出与该敌人 Fear Feature 的成本分开结算；若启动 Fear Feature，需要再支付该 Feature 写明的 Fear。
+
+### 敌人状态和资源
+
+- 每名 Adversary 的 Stress 独立记录；要求 GM 标记 Stress 的 Feature，必须由该 Feature 所属敌人支付，不能从其他敌人或 GM Fear 池支付。
+- 若 Stat Block 有共享 Pool：Pool Token 由多个敌人共用，不放在单个敌人的 Stat Block 上；场景开始时为空，场景结束时清空。记录池名称与当前 Token 数。
+- Evolution 是满足触发条件时改变敌人的特性；通常会清除 HP / Stress、改变 Standard Attack 数值或赋予新 Feature。同一敌人的 Evolution 在同一场景最多触发一次，除非具体 Stat Block 明确另有规定。
+- 当敌人标记最后一个 HP 时，视为 Defeated；它可能死亡、昏迷、被俘、逃跑或失去战斗能力，具体结果由虚构情境与桌面共同决定，不应机械地把所有敌人写成死亡。
+
+## 32. DH-TAG-TEAM｜Tag Team 的补充结算
+
+- 每名玩家每 Session 可发起一次 Tag Team Roll；发起时花费 3 Hope。每名 PC 可以参与其他玩家发起的 Tag Team Roll，不受“每人只能参与一次”的限制。
+- 两名玩家分别进行独立 Action Roll；结算前选择其中一组结果应用于两名角色的共同动作，另一组结果不单独结算为额外行动。
+- 被选结果带 Hope 时，所有参与 PC 各获得 1 Hope；带 Fear 时，GM 获得的 Fear 数量等于参与 PC 数量。
+- 成功的 Tag Team 攻击：两名 PC 分别掷伤害，将伤害总值合并，作为单一伤害来源处理。
+- 若两人的攻击伤害类型不同（Physical / Magic），参与玩家选择最终造成的伤害类型。
+- Tag Team Roll 在追踪 Standard / Dynamic Countdown 或其他统计 Action Roll 次数的效果时，只算作一次 Action Roll。
+
+## 33. DH-EXTENDED-DOWNTIME｜延长休整
+
+当 GM 将游戏时间快速推进一段较长时期时：
+1. 通过 Montage 描述时间流逝和角色生活变化，不必把每一天拆成独立 Downtime 流程。
+2. GM 对每名 PC 各掷 1d6 并将结果相加，获得对应数量的 Fear。
+3. 按经过的时间与项目情境推进适用的 Long-term Countdowns。
+4. 记录 Projects、长期威胁、关系和资源变化；不要把未经过的具体场景自动补写成事实。
+5. 这不是额外的普通 Long Rest；HP、Stress、Armor 与使用次数的恢复仍按实际休息规则或明确的长期时间处理。
+
+## 34. DH-DEATH｜Death Move 触发边界
+
+- 当 PC 标记最后一个 HP 时，依 DH-DEATH 立即进行 Death Move。
+- 按规则文本选择 Blaze of Glory、Avoid Death 或 Risk It All；不要把死亡行动改成普通濒死检定，也不要自行增加第四种选项。
+- PC 死亡后创建替代角色的等级与队伍当前等级相同，除非明确桌面适配另有记录。
+
+## 35. DH-OPTIONAL｜可选规则与可选程序登记
+
+以下内容不是默认运行规则，只有 Campaign Binding 明确启用时才使用：
+
+- **Massive Damage：** 若角色一次受到的伤害达到其 Severe Threshold 的两倍，则标记 4 HP，而非通常的 3 HP。
+- **Falling and Collision Damage：** 可作为环境风险的指导值：从 Very Close 高度坠落造成 1d10+3 Physical Damage；从 Close 高度坠落造成 1d20+5 Physical Damage；从 Far 或 Very Far 高度坠落造成 1d100+15 Physical Damage，或由 GM 依情境裁定死亡。以危险速度撞上物体或其他角色时，造成 1d20+5 Direct Physical Damage。
+- **Moving and Fighting Underwater：** 水下攻击默认 Disadvantage。不能水下呼吸的角色使用 Standard Countdown (3) 追踪屏息；每次 PC 行动推进一次。角色在水下失败或掷出 Fear 时，GM 可花费 GM Move 额外推进一次；若为 Failure with Fear，则可额外推进两次。Countdown 结束后，角色每次行动都必须标记 1 Stress。
+- **Conflict Between PCs：** 先与相关玩家讨论并达成处理共识；不一定需要掷骰。若决定使用机制，攻击掷骰对抗目标 Evasion；其他冲突由发起者 Action Roll 对抗目标 Reaction Roll，发起者必须超过该 Reaction Roll 的总值才成功。
+- **Spotlight Tracker：** 见 §3，是可选行动经济辅助。
+- **Defined Ranges / Grid Map：** 见 §15，是可选距离映射。
+- **Supplemental Campaign Mechanics：** Everyday Hero、Western、Monster Hunting、Hex Crawl 等其他可选战役程序单独存放于 Reference_Data/Optional_Procedures，不默认加载。
+
+不要将可选程序自动变成 Core 默认规则。每个开关都应在 Campaign Binding 中记录。
+
 ## 36. DH-HOPE-FEATURE-TIMING｜希望特性与同次掷骰资源
 
 - 如果 PC 的 Action Roll 结果带 Hope，则该次掷骰获得的 Hope 可以立即用于该行动触发的 Hope Feature，包括支付其全部或部分 Hope 成本。
-- 这个时序是对通常“掷骰前声明资源和修正”规则的明确例外：只有该次 Hope 结果所生成的 Hope，才能依本条用于同次行动的 Hope Feature。
+- 这是对通常“掷骰前声明资源和修正”规则的明确例外：只有该次 Hope 结果所生成的 Hope，才能依本条用于同次行动的 Hope Feature。
 - 不得据此在结果出来后补报其他 Experiences、普通额外骰或未声明的资源效果；其他事后生效能力仍按其自身文本和 DH-GENERAL 处理。
 - Critical Success 视为 Hope 结果，因此其获得的 Hope 也符合本条。
-
-
-## 33. Adversary 伤害与生命状态（补充）
-
-- Adversary 的 Major / Severe Threshold 与 HP 直接读取 Stat Block；受到伤害后按与 PC 相同的阈值分档标记 1–3 HP：低于 Major 标记 1，达到 Major 标记 2，达到 Severe 标记 3。
-- Adversary 标记最后一个 HP 时即为 Defeated；其表现为失能、逃跑、被制服、死亡或其他状态，由桌面结合虚构决定。
-- Adversary 的 Stress 记录在 Stat Block 中，按其 Feature 或效果要求标记；不要把 PC 的 Vulnerable / Stress 耗尽规则擅自套到敌人身上，除非规则明确适用。
-- Adversary 没有默认 Armor Score / Armor Slots；若某个敌人有相关能力或效果，按其 Stat Block 明文处理。
-- PC 的 Armor Score 上限为 12；PC 的 HP 与 Stress Slots 上限也各为 12。
-
-## 34. Death Move 的叙事边界（补充）
-
-- 标记最后一个 HP 通常立即触发 Death Move。
-- 但若角色行为按世界逻辑会直接导致即时死亡（例如无保护跳入活火山），GM 可以裁定不触发 Death Move；这种重大后果必须在行动完成前明确告知玩家，并符合世界逻辑。
-- 这是基于虚构的裁定，不是 GM 在普通战斗中任意取消 Death Move 的权限。
-
-
-## 37. DH-STRESS｜压力耗尽
-
-- 所有 PC 初始有 6 Stress Slots；成长与效果可提高，最大 12。
-- 当角色标记最后一个 Stress 时，立即获得 Vulnerable，直到至少清除 1 Stress。
-- 当角色必须标记至少 1 Stress，但已无可标记 Stress 时，改为标记 1 HP。
-- 当角色所有 Stress 均已标记时，不能使用要求其标记 Stress 的 Move / Feature。
-
-## 38. DH-GENERAL｜通用规则边界
-
-- **Rounding Up：** 不使用小数；需要取整时一律向上取整，除非规则另有说明。遇到歧义时优先作有利于 PC 的解释。
-- **Reroll：** 能力允许重掷时，默认采用新结果，除非能力另有说明。
-- **Incoming Damage：** 指单次攻击或单一来源造成的总伤害，且以标记 Armor Slots 之前的总值为准。
-- **Simultaneous Effects：** 多个效果同时发生且规则未规定先后时，由控制这些效果的一方（玩家或 GM）决定结算顺序。
-- **Stacking：** 除 Conditions、Advantage / Disadvantage 外，效果默认可以叠加，除非条目另有说明。
-- **Ongoing Spell Effects：** 未注明机械结束条件的法术效果，在控制者选择结束或故事自然要求结束时终止；GM 可花 Fear 结束 Temporary Effect。
-- **Spending Resources：** 除非效果另有说明，不能在同一掷骰中对同一个 Feature 多次花 Hope 或标记 Stress 来叠加/重复其效果。
-- **Post-roll Features：** 若能力允许在结果汇总后影响掷骰，可在 GM 宣布成功/失败后、后果展开或下一次掷骰发生前使用。
-- **Massive Damage：** 单次伤害达到 Severe Threshold 两倍时标记 4 HP 而非 3 HP，是可选规则；默认 Core 运行不启用，除非 Campaign Binding 明确开启。
-
-## 39. 装备与敌人结算边界
-
-- PC 的 Armor Score 上限为 12；HP Slots 与 Stress Slots 上限也各为 12。
-- 卸下护甲时保留该护甲已标记的 Armor Slots；重新装备时恢复其状态。
-- Adversary 的 Major / Severe Threshold 与 HP 读取 Stat Block；受到伤害后按相同阈值分档标记 1–3 HP。标记最后一个 HP 即 Defeated，具体表现由虚构决定。
-- Adversary 没有默认 Armor Score / Armor Slots；若某个敌人有相关能力，按 Stat Block 明文处理。
-- Adversary 的 Stress 按其 Feature 或效果要求标记；不要擅自将 PC 的 Stress 耗尽规则套用到敌人。
-- Long Rest 被打断时只获得 Short Rest 收益；Short Rest 被打断则没有休息收益。
-- 角色行为若按世界逻辑会导致即时死亡，GM 可以在行动完成前明确告知重大后果并裁定不触发 Death Move；这不是普通战斗中任意取消 Death Move 的权限。
-
-
-## 37. DH-STRESS｜压力耗尽
-
-- 所有 PC 初始有 6 Stress Slots；成长与效果可提高，最大 12。
-- 当角色标记最后一个 Stress 时，立即获得 Vulnerable，直到至少清除 1 Stress。
-- 当角色必须标记至少 1 Stress，但已无可标记 Stress 时，改为标记 1 HP。
-- 当角色所有 Stress 均已标记时，不能使用要求其标记 Stress 的 Move / Feature。
-
-## 38. DH-GENERAL｜通用规则边界
-
-- **Rounding Up：** 不使用小数；需要取整时一律向上取整，除非规则另有说明。遇到歧义时优先作有利于 PC 的解释。
-- **Reroll：** 能力允许重掷时，默认采用新结果，除非能力另有说明。
-- **Incoming Damage：** 指单次攻击或单一来源造成的总伤害，且以标记 Armor Slots 之前的总值为准。
-- **Simultaneous Effects：** 多个效果同时发生且规则未规定先后时，由控制这些效果的一方（玩家或 GM）决定结算顺序。
-- **Stacking：** 除 Conditions、Advantage / Disadvantage 外，效果默认可以叠加，除非条目另有说明。
-- **Ongoing Spell Effects：** 未注明机械结束条件的法术效果，在控制者选择结束或故事自然要求结束时终止；GM 可花 Fear 结束 Temporary Effect。
-- **Spending Resources：** 除非效果另有说明，不能在同一掷骰中对同一个 Feature 多次花 Hope 或标记 Stress 来叠加/重复其效果。
-- **Post-roll Features：** 若能力允许在结果汇总后影响掷骰，可在 GM 宣布成功/失败后、后果展开或下一次掷骰发生前使用。
-- **Massive Damage：** 单次伤害达到 Severe Threshold 两倍时标记 4 HP 而非 3 HP，是可选规则；默认 Core 运行不启用，除非 Campaign Binding 明确开启。
-
-## 39. 装备与敌人结算边界
-
-- PC 的 Armor Score 上限为 12；HP Slots 与 Stress Slots 上限也各为 12。
-- 卸下护甲时保留该护甲已标记的 Armor Slots；重新装备时恢复其状态。
-- Adversary 的 Major / Severe Threshold 与 HP 读取 Stat Block；受到伤害后按相同阈值分档标记 1–3 HP。标记最后一个 HP 即 Defeated，具体表现由虚构决定。
-- Adversary 没有默认 Armor Score / Armor Slots；若某个敌人有相关能力，按 Stat Block 明文处理。
-- Adversary 的 Stress 按其 Feature 或效果要求标记；不要擅自将 PC 的 Stress 耗尽规则套用到敌人。
-- Long Rest 被打断时只获得 Short Rest 收益；Short Rest 被打断则没有休息收益。
-- 角色行为若按世界逻辑会导致即时死亡，GM 可以在行动完成前明确告知重大后果并裁定不触发 Death Move；这不是普通战斗中任意取消 Death Move 的权限。
