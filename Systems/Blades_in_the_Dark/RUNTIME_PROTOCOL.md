@@ -6,6 +6,8 @@
 
 ## 1. 目标与边界
 
+本协议是运行时的阶段与状态接口；实际主持行为以 [GM_SKILL.md](./GM_SKILL.md) 为主。GM Skill 负责“如何带团”，本协议负责“当前处于什么阶段、哪些状态需要更新、何时调用规则”。不要把本协议执行成逐项机械清单。
+
 - 系统规则只有在 Campaign Binding 锁定本系统后才可正式执行。
 - 运行阶段由 Free Play、Score、Downtime 循环组成。
 - 规则按触发调用；常规叙事不逐轮检查全部机制。
@@ -170,7 +172,7 @@ Free Play 不强制每个对话都掷骰，也不要求玩家在接到任务前�
 2. **Heat**：确定基础曝光与修正项；写入 Crew Heat。
 3. **Wanted Level**：Heat 达 9 时提升 Wanted，并清除/结转 Heat。
 4. **Entanglements**：按 Heat/Wanted 查表掷骰，并确定事件如何落到世界。
-5. **Downtime**：PC 进入活动选择；当前 candidate 按官方 Full Player's Kit v8.2 在 Downtime 阶段恢复 Armor 使用格。官方 SRD 网页的下一次 Score Load 恢复表述与此不同，属于未解决的来源时序差异；正式 Campaign 锁定版本后复核，见 [R-005](./Rule_Reference/RULE_ISSUES.md#r-005resistance-与-armor-的时序)。具有专属恢复说明的 Special Armor 能力按其文本在 Downtime 开始时恢复。
+5. **Downtime**：PC 进入活动选择。按 V1.3 核心规则书基准：普通 Armor / Heavy Armor 在下一次 Score 选择 Load 时恢复；Playbook Special Armor 按能力文本在 Downtime 开始时恢复。不得把两种恢复时点混为一谈，详见 [R-005](./Rule_Reference/RULE_ISSUES.md#r-005resistance-与-armor-的时序)。
 6. **NPC/Faction Downtime**：推动当前相关派系的计划和项目钟，选择合理的 1–2 个行动。
 7. 保存新的 Crew、PC、Faction、Clock 与 Score history 状态。
 
@@ -230,7 +232,16 @@ Downtime Activity 选择项：
 
 不得用别的系统的相似规则替代未知条款。
 
-## 12. 性能边界
+## 12. GM 行为调用
+
+- Free Play：优先呈现机遇、询问角色目标、让 NPC 按自身动机回应；不强迫每个场景进入掷骰。
+- Score：聚焦当前障碍与玩家行动；一次行动处理一个有意义的目标及其风险，不拆成无意义的微动作。
+- 任何行动骰前：按 GM Skill 检查目标、Action、Position、Effect、风险和可能后果。
+- 骰后：落实成果与后果，把改变写回当前状态，并交还玩家主动权。
+- 场景节奏：普通过程快切；重要关系、选择、危险和角色表达拉近镜头。不要用规则流程填满没有戏剧意义的空白。
+- 不预写 Score 结局，不为制造剧情而强行改变骰子结果或 NPC 动机。
+
+## 13. 性能边界
 
 - 新 Campaign / 新 Session：执行一次 Preflight，读取当前快照与需要的规则锚点。
 - 同一活动对话：复用已核验版本、PC/Crew Snapshot 和已知规则；不重复扫描全目录。
