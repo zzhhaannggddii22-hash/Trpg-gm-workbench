@@ -56,7 +56,7 @@
 - Errata：完成抽样核验，尚未穷尽。
 - 桌面逻辑模拟：64/64 已完成（非代码自动测试），其中 19 项 GM Move / Fear / 遭遇设计专项见 GM_DESK_SIMULATION_01.md。
 - 独立参考执行器：Run 01 为 42/42；Run 02 已在 2026-11-28 的 GitHub Actions 独立 Daggerheart Job 中以 51/51 通过（DH-REF-043–051 新增伤害交互回归全部通过），证据见 AUTOMATED_REFERENCE_EXECUTION_02.md。当前执行器只覆盖选定核心状态转移，不代表完整规则覆盖或生产 Runtime 验收。
-- 仓库整体 CI：本轮查询最新 main 提交的 combined status 未返回任何 status checks；此前记录的 4 个 Markdown 链接问题尚未重新核验，不将旧状态视为当前 CI 结论。
+- 仓库整体 CI：2026-11-28 最新 main Run 633 全绿。通用 `validate` Job 的 41 项回归测试、Roll Runtime Adapter 一致性测试、非 Markdown patch whitespace 检查均通过；独立 Daggerheart Job 的 51/51 参考执行器测试通过。此前 4 条失效路径与 8 个 Markdown 锚点已修复。
 - 内部 Blind Scenario 模拟：第一轮 3 场景已完成（GM_BLIND_SCENARIO_TEST_01.md）；第二轮社交、探索、战斗 3 场景复核已完成（GM_SCENARIO_REVALIDATION_02.md）；独立外部 Blind GM 测试：待执行。
 - 实际玩家短场景 Session：待执行。
 - 正式 Campaign：未建立。
