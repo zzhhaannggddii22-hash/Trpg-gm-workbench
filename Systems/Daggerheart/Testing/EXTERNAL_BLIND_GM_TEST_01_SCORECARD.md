@@ -1,6 +1,6 @@
 # External Blind GM Test 01 — Evaluator Scorecard
 
-<badge>Evaluator Only — Keep out of GM context</badge>
+**EVALUATOR ONLY — KEEP OUT OF GM CONTEXT**
 
 Score each item from 0 to 2:
 
