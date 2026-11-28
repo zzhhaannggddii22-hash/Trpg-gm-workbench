@@ -144,7 +144,7 @@
   - Spear / Longsword：Tier 1–4 伤害修正按 SRD Changelog 记录，数据正确。
   - Glowing Rings：Tier 1 伤害为 d10+2，数据正确。
   - Splintering Strike：已采用 SRD 2.0 的多目标伤害分配文本，数据正确。
-  - Buckler：第三方 JSON 曾误写 available Armor Score；已修正为 available Armor Slots。
+  - Buckler：SRD 2.0 PDF 第 67 页与当前 Core_Set/weapons.json 均写作 available Armor Score；网页 Changelog / 2025 Errata 文字为 available Armor Slots。按 PDF 运行基准保留 Armor Score，并将差异登记于 DH-I-016。
 - 结论：SRD 2.0 是本地数据更新基准，但第三方结构化导出仍可能有个别字段错误。继续按高影响条目抽样回查；不要将抽样结果表述为完整勘误验收。
 
 
