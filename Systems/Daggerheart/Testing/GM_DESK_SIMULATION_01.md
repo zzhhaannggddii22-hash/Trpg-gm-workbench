@@ -1,9 +1,9 @@
 # GM 专项桌面模拟记录 01
 
-> 测试范围：DH-GM-01–10、DH-GD-01–08  
+> 测试范围：DH-GM-01–10、DH-GD-01–09  
 > 规则范围：Daggerheart Core Set / SRD 2.0  
 > 执行方式：桌面逻辑模拟（非代码自动化、非真实桌面测试）  
-> 结果：18/18 通过本轮逻辑模拟；仍需实际短场景验证  
+> 结果：19/19 通过本轮逻辑模拟；仍需实际短场景验证  
 > 关联文档：GM_RUNTIME_FIELD_GUIDE.md、GM_DESIGN_FIELD_GUIDE.md、CORE_RULE_RUNTIME_REGRESSION.md
 
 ## A. GM Move / Fear / Spotlight
@@ -33,10 +33,11 @@
 | DH-GD-06 | Reaction 触发条件满足，但该敌人当前没有 Spotlight | Reaction 按其触发条件发生；不要求敌人先取得行动聚焦 | PASS |
 | DH-GD-07 | GM 想无成本打断 PC 当前 Spotlight 并执行 Move | 先区分当前 GM Turn 与玩家 Spotlight；若要打断玩家并夺取 Spotlight，按规则支付 Fear | PASS |
 | DH-GD-08 | Environment Feature 产生烟雾遮蔽并改变路线 | 环境改变视线、移动与选择；不把环境特性一律转换成伤害 | PASS |
+| DH-GD-09 | PC 成功完成行动，但 Success with Fear 的后果直接兑现 | 成功成果保留；后果严重度仍为次要，但可采用 Hard Move 形式；严重度与回应窗口分别判断 | PASS |
 
 ## C. 本轮发现与修正
 
-1. **Hope 结果的严重度**：官方 Core GM Guidance 明确建议 Hope 结果使用更柔和的 Move、Fear 结果使用更强硬的 Move。此前测试表中“Hope 结果下不机械禁止强 Move”的表述过宽，已修正为：本次回应优先 Soft Move；强硬后果须有独立触发或已成立的不可避免后果支持。
+1. **Hope 结果的严重度**：官方 Core GM Guidance 明确建议 Hope 结果使用 Soft Move、Fear 结果使用 Hard Move。必须将回应窗口与后果严重度分开：Success with Fear 仍是次要后果，但可采用更直接的 Hard Move 形式；Failure with Hope 是次要后果，并优先留出回应窗口。
 2. **Relentless 的 Fear 成本**：不能把特性上限理解为免费额外行动。首次敌人聚焦与后续重复/额外聚焦要区分；后续重复聚焦按规则支付 Fear，并受 X 次上限限制。运行手册已修正措辞。
 3. **GM 文章中的无成本打断观点**：社区战斗文章将 GM 的灵活叙事权解释得较宽；官方 Core GM Mechanics 明确列出花费 Fear 打断玩家、夺取 Spotlight。工程采用官方资源规则，不把社区作者解释升格为 Core 规则。
 4. **Success with Fear 的“不能比不行动更差”**：保留为社区主持建议，而不是硬性规则。正式运行检查的是成功成果是否保留、代价是否属于次要后果，以及重大后果是否有独立赌注/触发支持。
