@@ -37,6 +37,11 @@
 - [专属 GM Skill](./GM_SKILL.md)：Core Set 主持原则、场景节奏、GM Move、Fear、NPC 与战斗准备。
 - [常用规则检索表](./Rule_Reference/LOOKUP_TABLES.md)：六属性难度基准、敌人/环境 Tier、遭遇 BP、范围、休息和 Fear 预算。
 - [核心角色选项索引](./Rule_Reference/CHARACTER_OPTIONS_INDEX.md)：九职业、领域和子职业导航。
+- [领域卡索引](./Rule_Reference/DOMAIN_CARD_INDEX.md)：189 张 Core 领域卡按 Domain / Level 检索。
+- [武器索引](./Rule_Reference/WEAPON_INDEX.md)：183 件 Core 武器按 Tier / Primary / Secondary 检索。
+- [护甲索引](./Rule_Reference/ARMOR_INDEX.md)：34 件 Core 护甲的阈值与 Armor Score。
+- [物品与消耗品索引](./Rule_Reference/LOOT_INDEX.md)：Core 物品与消耗品 d12 表格检索。
+- [Beastform 索引](./Rule_Reference/BEASTFORM_INDEX.md)：24 种 Core Beastform 检索。
 - [敌人检索索引](./Rule_Reference/ADVERSARY_INDEX.md)：按 Tier 检索 Core 敌人。
 - [环境检索索引](./Rule_Reference/ENVIRONMENT_INDEX.md)：按 Tier 检索 Core 环境。
 - [装备检索索引](./Rule_Reference/GEAR_INDEX.md)：Core 武器、护甲、物品与消耗品。

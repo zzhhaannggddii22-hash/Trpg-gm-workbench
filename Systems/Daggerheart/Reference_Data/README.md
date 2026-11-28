@@ -67,6 +67,11 @@ JSON 结构沿用 SRD 2.0 结构化导出字段，尽量保留原始键名，方
 - [敌人检索索引](../Rule_Reference/ADVERSARY_INDEX.md)
 - [环境检索索引](../Rule_Reference/ENVIRONMENT_INDEX.md)
 - [核心角色选项索引](../Rule_Reference/CHARACTER_OPTIONS_INDEX.md)
+- [领域卡索引](../Rule_Reference/DOMAIN_CARD_INDEX.md)
+- [武器索引](../Rule_Reference/WEAPON_INDEX.md)
+- [护甲索引](../Rule_Reference/ARMOR_INDEX.md)
+- [物品与消耗品索引](../Rule_Reference/LOOT_INDEX.md)
+- [Beastform 索引](../Rule_Reference/BEASTFORM_INDEX.md)
 - [常用规则速查表](../Rule_Reference/LOOKUP_TABLES.md)
 - [核心运行手册](../Rule_Reference/CORE_RULES_RUNTIME.md)
 

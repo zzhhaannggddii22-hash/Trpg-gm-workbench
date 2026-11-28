@@ -46,7 +46,7 @@
 - 129 个 Core Adversaries、19 个 Core Environments。
 - 183 件 Core Weapons、34 件 Core Armor、60 个 Core Items、60 种 Core Consumables。
 
-详细数据见 [Reference_Data/README.md](../Reference_Data/README.md) 和 [CHARACTER_OPTIONS_INDEX.md](./CHARACTER_OPTIONS_INDEX.md)。
+详细数据见 [Reference_Data/README.md](../Reference_Data/README.md)、[CHARACTER_OPTIONS_INDEX.md](./CHARACTER_OPTIONS_INDEX.md)、[DOMAIN_CARD_INDEX.md](./DOMAIN_CARD_INDEX.md)、[WEAPON_INDEX.md](./WEAPON_INDEX.md)、[ARMOR_INDEX.md](./ARMOR_INDEX.md)、[LOOT_INDEX.md](./LOOT_INDEX.md) 与 [BEASTFORM_INDEX.md](./BEASTFORM_INDEX.md)。
 
 ## 不属于默认 Core Set 的内容
 
