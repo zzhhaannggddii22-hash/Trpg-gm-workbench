@@ -68,7 +68,7 @@ runtime_dispatch:
 - [GM_SKILL.md](./GM_SKILL.md)：本系统的主持原则、叙事和节奏要求。
 - [PREFLIGHT.md](./PREFLIGHT.md)：未来新 Campaign / 新 Session 的启动核验。
 - [Testing/](./Testing/CANDIDATE_VALIDATION_MANIFEST.md)：Candidate 验证边界与回归测试矩阵。
-- [Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md)、[第二轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R2.md) 与 [第三轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R3.md)：三轮共 61 个固定输入合成用例的执行记录；不等同于自动化测试或真人跑团验收。
+- [Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28.md)、[第二轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R2.md) 与 [第三轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R3.md) 及 [第四轮报告](./Testing/SYNTHETIC_EXECUTION_REPORT_2026-11-28_R4.md)：四轮共 75 个固定输入合成用例的执行记录；不等同于自动化测试或真人跑团验收。
 - [Research/CHINESE_SRD_SOURCE_REVIEW_2026-11-28.md](./Research/CHINESE_SRD_SOURCE_REVIEW_2026-11-28.md)：中文 SRD 来源审查。
 - [Research/EXTERNAL_RESOURCES.md](./Research/EXTERNAL_RESOURCES.md)：官方免费资料、社区扩展与额外资料入口。
 
@@ -85,13 +85,13 @@ runtime_dispatch:
 - 33 份中文 SRD Markdown 正文已镜像至用户私人资料库，供后续优先本地检索；公开仓库不放规则正文镜像。
 - 已建立系统专属核心规则索引、初版 Runtime Manual、Runtime Protocol、GM Skill、Preflight 和术语表。
 - 已建立七种核心 PC Playbook 与六种 Crew 的 Special Ability 初始索引；角色/组织只按实际选取的能力进行触发式加载。
-- 已建立来源与授权索引、额外资料目录、规则疑点登记，以及 Candidate 验证矩阵；61/61 固定输入合成用例已通过三轮人工推演。
+- 已建立来源与授权索引、额外资料目录、规则疑点登记，以及 Candidate 验证矩阵；75/75 固定输入合成用例已通过四轮人工推演。
 - 已将中文 SRD 与官方 Player's Kit v8.2 的关键流程做首轮交叉校对，并记录已发现的译文差异。
 
 仍待完成：
 1. 未来 Campaign 必须锁定具体核心规则版本与勘误；中文 SRD 页面自身未提供清晰修订号。
 2. 七种核心 PC Playbook 与六种 Crew 的能力已有初步摘要索引，但每项能力仍须在实际角色/组织建档时按所选版本卡面核对触发条件、成本、持续时间和例外；升级、Claims、Cohort、装备、仪式与打造条目也需要按实际战役范围继续补齐。
-3. 61 条 Candidate 合成回归用例已通过；仍需补做独立跨系统隔离测试，并至少完成一次短团实测和复盘。
+3. 75 条 Candidate 合成回归用例已通过；仍需补做独立跨系统隔离测试，并至少完成一次短团实测和复盘。
 4. 建立独立 Campaign Binding；在用户确认前，系统继续保持 candidate。
 
 因此，当前已形成可供进一步测试的规则运行草案，但尚不标记 active，也不用于任何正式 Campaign。
