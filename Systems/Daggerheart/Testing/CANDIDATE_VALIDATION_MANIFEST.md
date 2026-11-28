@@ -53,7 +53,9 @@
 - 初版规则运行手册：SOURCE_IMPORTED。
 - 结构化数据：SOURCE_IMPORTED，已按 Core / Hope & Fear 拆分。
 - Errata：完成抽样核验，尚未穷尽。
-- 自动化/人工回归：待执行。
+- 桌面逻辑模拟：45/45 已完成（非代码自动测试）。
+- 独立参考执行器：42/42 自动化用例通过；仅覆盖首批核心状态转移，不代表完整规则覆盖或生产 Runtime 验收。
+- 仓库整体 CI：当前因 4 个既有 Markdown 链接缺失而失败；Daggerheart 专项测试步骤成功执行。
 - Blind GM 测试：待执行。
 - Session 测试：待执行。
 - 正式 Campaign：未建立。
