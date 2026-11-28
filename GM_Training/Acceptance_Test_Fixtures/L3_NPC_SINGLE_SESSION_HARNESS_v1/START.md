@@ -1,9 +1,9 @@
 # START｜L3 NPC 单会话合成测试
 
 - Repository: zzhhaannggddii22-hash/Trpg-gm-workbench
-- Fixture ref: feat/runnable-single-session-narrative-harnesses-2026-11-26
+- Fixture ref: 3fe7137853b9ac3d6555662c6d644369df839fb3 (immutable main commit)
 - Fixture root: GM_Training/Acceptance_Test_Fixtures/L3_NPC_SINGLE_SESSION_HARNESS_v1/
-- Workbench commit under test: 83981a5f2a42d40170603804fc6995da21daaf61
+- Workbench commit under test: 3fe7137853b9ac3d6555662c6d644369df839fb3
 - Mode: SINGLE_SESSION_SELF_TEST
 - Canon: TEST_ONLY_NON_CANON
 
