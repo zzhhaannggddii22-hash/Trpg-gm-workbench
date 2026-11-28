@@ -269,6 +269,17 @@ active_abilities:
 
 不要在每次玩家发言时扫描全部能力。角色获得/更换能力时更新已选能力表；规则版本变化或能力原文不明确时回查该卡面。
 
+## 5-A. v8.2 核心能力覆盖说明
+
+本索引已对照官方 Full Player's Kit v8.2 中七本核心 PC Playbook 的能力列表建立选项摘要，包括：
+- Cutter：Vigorous；
+- Hound：Ghost Hunter、Survivor；
+- Leech：Venomous；
+- Lurk：Shadow；
+- Slide、Spider（包括 Functioning Vice）、Whisper。
+
+六种 Crew Type 的基础 Crew Ability 也已分别建表。该覆盖声明只表示 v8.2 能力选项目录已建立，不表示已逐项验证每个能力的所有边界组合。实际 Campaign 中选中的能力仍要依据该版角色卡/组织表核对成本、触发条件、持续时间、重置点和互相作用；可选 Ghost/Hull/Vampire、社区 Playbook 和其他扩展不在此核心列表内。
+
 ## 6. 来源与边界
 
 - [Official Full Player's Kit v8.2](https://bladesinthedark.com/sites/default/files/blades_playerkit_v8_2.pdf)
