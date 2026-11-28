@@ -1,7 +1,7 @@
 # Blades in the Dark｜Candidate Validation Manifest
 
 > system_id: `blades_in_the_dark`  
-> ruleset: 中文《暗夜冷锋》SRD（上游快照 2023-08-15；规则修订号待核）  
+> ruleset baseline: 中文《暗夜刀锋》核心规则书 V1.3（英文原版 2017 Digital Release v8.2）；中文 SRD 仅作辅助对照  
 > status: CANDIDATE_VALIDATION  
 > 本文件不是正式 Campaign Binding，不允许把测试状态写入任何正式战役。
 
@@ -73,6 +73,11 @@ clocks: []
 7. 做一次受控短团或真实短团，检查主持行为、信息公平、节奏和状态连续性。
 8. 记录失败样例并修订规则文件，再重复受影响测试。
 
+## 4-C. GM behavior regression cases
+
+- [GM_BEHAVIOR_REGRESSION_CASES.md](./GM_BEHAVIOR_REGRESSION_CASES.md)：18 个依据核心规则书 V1.3 PDF pp.199–207 GM 指南编写的 AI 主持行为案例，检查玩家能动性、信息公平、NPC 动机、节奏、镜头尺度和规则边界。
+- 当前状态：案例已建立，尚未完成人工逐项审阅、自动化执行或真人短团验证。
+
 ## 4-B. Special Armor ability regression cases
 
 - [ABILITY_SPECIAL_ARMOR_REGRESSION_CASES.md](./ABILITY_SPECIAL_ARMOR_REGRESSION_CASES.md)：12 个依据核心规则书 V1.3 PDF pp.88–93 与 R-005 编写的资源/触发边界案例。
@@ -99,10 +104,11 @@ clocks: []
 ## 自动化检查追加记录（2026-11-28）
 
 - [AUTOMATED_CANDIDATE_CHECKS_2026-11-28.md](./AUTOMATED_CANDIDATE_CHECKS_2026-11-28.md)：31 项文档不变量/确定性微模型检查 PASS。
-- 本轮没有完整规则引擎执行、全部 75 固定场景自动重放或真人短团测试；Armor 来源冲突 R-005 仍 OPEN。
+- 本轮没有完整规则引擎执行、全部 75 固定场景自动重放或真人短团测试。
+- Armor 恢复时序问题 R-005 已按核心规则书 V1.3 正文解决：普通 Armor / Heavy Armor 在下一次 Score 选择 Load 时恢复；Playbook Special Armor 按能力文本在 Downtime 开始时恢复。其他规则版本需重新核验。
 
 
-## 集成引擎模拟（子集）
+## 历史集成引擎模拟（有限子集；非 GM 验收）
 
-- [ENGINE_SIMULATION_REPORT_2026-11-28.md](./ENGINE_SIMULATION_REPORT_2026-11-28.md)；[Harness](./ENGINE_SIMULATION_V1.js)。本轮对 harness 逻辑进行独立 inline replay：23/23 通过，含 1,000 组 Heat 边界 fuzz 输入。
+- [ENGINE_SIMULATION_REPORT_2026-11-28.md](./ENGINE_SIMULATION_REPORT_2026-11-28.md)；[Harness](./ENGINE_SIMULATION_V1.js)。本轮对 harness 逻辑进行独立 inline replay：23/23 通过，含 1,000 组 Heat 边界 fuzz 输入。该结果只说明有限规则状态子集的人工 replay 通过，不证明 AI 能主持游戏。
 - 提交的 standalone harness 源文件未在此聊天环境的 Node runtime 中直接执行；模拟覆盖有限，不应称为完整引擎认证。
