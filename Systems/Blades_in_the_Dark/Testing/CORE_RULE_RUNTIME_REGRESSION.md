@@ -1,8 +1,8 @@
 # Blades in the Dark｜Core Runtime Regression Matrix
 
 > Fixture: BITD_CANDIDATE_V01  
-> Status: TEST CASES DEFINED / NOT YET RUN AS LIVE PLAY  
-> 结果记录区分：STATIC REVIEW、SYNTHETIC EXECUTION、LIVE PLAY。
+> Status: 18/54 SELECTED SYNTHETIC CASES EXECUTED; REMAINING CASES PENDING; LIVE PLAY NOT PERFORMED  
+> 结果记录区分：STATIC REVIEW、SYNTHETIC EXECUTION、LIVE PLAY。已执行的固定输入用例见 [Synthetic Execution Report](./SYNTHETIC_EXECUTION_REPORT_2026-11-28.md)。
 
 | ID | 输入/场景 | 预期规则行为 | 结果类型 |
 |---|---|---|---|
