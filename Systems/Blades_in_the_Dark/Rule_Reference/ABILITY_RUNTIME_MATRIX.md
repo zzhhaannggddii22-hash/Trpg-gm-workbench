@@ -203,6 +203,8 @@
 - If multiple sources affect the same rating, follow the full sheet's stacking/cap language; never exceed the stated max 3 unless another explicit rule (e.g. Mastery) permits it.
 
 ### 4.2 Special Armor abilities
+
+Source-grounded regression cases: [ABILITY_SPECIAL_ARMOR_REGRESSION_CASES.md](../Testing/ABILITY_SPECIAL_ARMOR_REGRESSION_CASES.md).
 - Trigger must match the named consequence or action category. A Special Armor box is not a universal Resistance roll.
 - Mark the Special Armor use when expended. For abilities that let it replace Push Yourself, choose one listed normal Push benefit (+1d, +1 Effect, or ignore a severe Harm penalty); the ability waives the usual 2 Stress. This is an alternative way to Push, not a free extra benefit.
 - For abilities that use Special Armor to resist an eligible consequence, resolve the ability's own wording: most listed abilities say the consequence is completely avoided, while Whisper's Warded says it cancels or reduces the severity. Do not generalize one ability's wording to another.
