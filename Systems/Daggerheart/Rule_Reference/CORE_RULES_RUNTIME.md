@@ -306,6 +306,8 @@ GM Move 是推动场景的工具，不是惩罚玩家的任意权力。后果必
 
 ## 19. DH-COUNTDOWN｜倒计时
 
+详细的 Countdown 类型、动态推进表、事件去重、项目推进与 GM Long-term Countdown 运行步骤见 [COUNTDOWN_AND_PROJECT_RUNTIME.md](./COUNTDOWN_AND_PROJECT_RUNTIME.md)。
+
 - Countdown 从起始值开始，每次推进减少 1；降至 0 时触发。
 - Standard Countdown：每次玩家进行 Action Roll 时减少 1。
 - Dynamic Countdown：依掷骰结果推进，单次最多推进 3。
