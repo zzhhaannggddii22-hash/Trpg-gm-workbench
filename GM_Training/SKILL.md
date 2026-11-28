@@ -45,6 +45,7 @@ metadata:
 - [角色模拟 Skill](./CHARACTER_SIMULATION_SKILL.md)
 - [叙事呈现 Skill](./NARRATIVE_PRESENTATION_SKILL.md)
 - [持续冒险运行协议](./CONTINUOUS_ADVENTURE_RUNTIME.md)：把玩家行动、场景、遭遇程序、环境连续性和同行者参与组织为同一段持续冒险；不覆盖系统/模组机制。
+- [Cairn EBB 实桌复盘与可迁移主持经验](./REVIEWS/2026-11-28_CAIRN_EBB_LIVE_SESSION_REVIEW.md)：记录一次真实桌面的主持质量反馈、通用主持经验、特定环节处理与 Cairn/EBB 专属边界；仅作训练证据，不替代权威运行规范。
 - [叙事质量基准](./NARRATIVE_QUALITY_BASELINE.md)：所有叙事专项与压力测试共用的质量底线、错误容忍度和校准标准。
 - [备团设计与第二轮审核](./12_PREP_DESIGN_AND_SECOND_PASS_REVIEW.md)
 - [备团到运行交接](./13_PREP_TO_RUNTIME_HANDOFF_STANDARD.md)
