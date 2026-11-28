@@ -352,7 +352,7 @@ def tick_down_countdown(state, event_id=None, amount=1):
 def short_rest(state, interrupted=False, fear_roll=0, gm=None):
     if interrupted:
         return {"completed": False, "refresh": False, "gm_fear_gained": 0}
-    if state.get("short_rests_since_long", 0) >= 2:
+    if state.get("short_rests_since_long", 0) >= 3:
         return {"completed": False, "refresh": False, "requires_long_rest": True}
     state["short_rests_since_long"] = state.get("short_rests_since_long", 0) + 1
     fear_before = gm.fear if gm is not None else 0
@@ -565,8 +565,8 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
     def test_24_interrupted_short_rest_has_no_refresh(self):
         self.assertFalse(short_rest({}, interrupted=True)["refresh"])
 
-    def test_25_third_consecutive_short_rest_requires_long_rest(self):
-        self.assertTrue(short_rest({"short_rests_since_long": 2})["requires_long_rest"])
+    def test_25_fourth_consecutive_short_rest_requires_long_rest(self):
+        self.assertTrue(short_rest({"short_rests_since_long": 3})["requires_long_rest"])
 
     def test_26_long_rest_resets_short_rest_counter_and_adds_fear(self):
         state, gm = {"short_rests_since_long": 2}, GM()
@@ -907,6 +907,23 @@ class TestDaggerheartReferenceExecutor(unittest.TestCase):
         result = spotlight_adversary(gm, state, "solo", relentless_limit=2)
         self.assertTrue(result["allowed"])
         self.assertEqual(state["enemy_spotlights"]["solo"], 1)
+
+
+    def test_72_third_short_rest_is_allowed_but_fourth_requires_long_rest(self):
+        state = {"short_rests_since_long": 2}
+        third = short_rest(state, fear_roll=1, gm=GM())
+        self.assertTrue(third["completed"])
+        self.assertEqual(state["short_rests_since_long"], 3)
+        fourth = short_rest(state, fear_roll=1, gm=GM())
+        self.assertTrue(fourth["requires_long_rest"])
+        self.assertEqual(state["short_rests_since_long"], 3)
+
+    def test_73_interrupted_short_rest_does_not_increment_streak(self):
+        state = {"short_rests_since_long": 2}
+        result = short_rest(state, interrupted=True, fear_roll=4, gm=GM())
+        self.assertFalse(result["completed"])
+        self.assertEqual(state["short_rests_since_long"], 2)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
