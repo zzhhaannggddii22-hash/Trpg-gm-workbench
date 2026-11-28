@@ -1,7 +1,7 @@
 # Blades in the Dark｜Core Runtime Regression Matrix
 
 > Fixture: BITD_CANDIDATE_V01  
-> Status: 54/54 SYNTHETIC CASES EXECUTED; LIVE PLAY NOT PERFORMED  
+> Status: 61/61 SYNTHETIC CASES EXECUTED; LIVE PLAY NOT PERFORMED  
 > 结果记录区分：STATIC REVIEW、SYNTHETIC EXECUTION、LIVE PLAY。已执行的固定输入用例见 [Synthetic Execution Report](./SYNTHETIC_EXECUTION_REPORT_2026-11-28.md)。
 
 | ID | 输入/场景 | 预期规则行为 | 结果类型 |
@@ -31,7 +31,7 @@
 | BLD-T23 | Crew Heat 为 8，获得 3 Heat | Wanted Level +1；Heat 清除并结转超额 2 Heat | Synthetic |
 | BLD-T24 | Wanted Level 为 0，掷 Entanglement | 掷 2d 取最低；根据 Heat 档读表 | Static / Synthetic |
 | BLD-T25 | Crew 有 3 Turf，Rep track 达 9 | 晋级阈值为 12-3=9；晋级后保留 Turf | Synthetic |
-| BLD-T26 | Crew 与某派系 Status -3 | 进入 War；每 Score +1 Heat、暂时失去 Hold、PC Downtime 变为每人 1 次，按规则处理恢复 | Synthetic |
+| BLD-T26 | Crew 与某派系 Status -3 | 进入 War；每 Score +1 Heat、暂时失去 Hold、PC Downtime 变为每人 1 次、产生 Coin 的 Claims 收入减半（向下取整），按规则处理恢复 | Synthetic |
 | BLD-T27 | 只与一个无关派系有关的城内新闻 | 不为了模拟世界而推进所有派系；只更新会影响 PC/Crew 的对象 | Static / Synthetic |
 | BLD-T28 | 当前桌绑定 Triangle Agency，玩家提到 Flashback | 识别其属于 Blades；不加载或执行 Blades 机制 | Cross-system |
 | BLD-T29 | 当前桌绑定 Cairn，玩家提到 Crew Tier | 不把 Tier/Heat/Downtime 资源移入 Cairn；只有明确切换系统才加载 | Cross-system |
@@ -61,13 +61,21 @@
 | BLD-T53 | PC Push Yourself 选择 +1d，再接受 Devil's Bargain | 不合法：同一额外骰来源只能二选一；改选 Push +1 Effect + Devil's Bargain +1d 才可组合 | Synthetic |
 | BLD-T54 | Lurk 拥有 Shadow，面对侦测/安保后果 | 可用 Special Armor 抵抗该类后果，或 Push Yourself 用于运动/潜行；其他后果不能泛化套用 | Synthetic |
 
+| BLD-T55 | Crew 招募 Gang / Expert Cohort，并派遣其执行 Type 匹配与不匹配的任务 | Gang Quality/Scale = Crew Tier；Expert Quality = Tier+1、Scale 0；Type 不匹配时 Quality 0；最多两个 Type | Synthetic |
+| BLD-T56 | 创建 Cohort 时选择 Edges / Flaws | 选择 1–2 个 Edge，并选择相同数量 Flaw；其影响按描述在虚构中体现，不自动变成通用数值加成 | Synthetic |
+| BLD-T57 | Cohort 先后承受 Weakened、Impaired、Broken、Dead，并进入 Downtime | Harm 逐级产生 Effect 降低、Quality -1d、无法行动、摧毁；Downtime 条件允许时恢复 1 级，PC 花 1 Activity 帮助则恢复 2 级 | Synthetic |
+| BLD-T58 | Cohort 被摧毁后 Crew 招募替代者 | 支付 Crew Tier+2 Coin，并花费 2 个 Downtime Activities；不得免费重置 Cohort | Synthetic |
+| BLD-T59 | Score 帮助/伤害多个 Faction，且任务完全低调 | 有明确受益/受损派系时按规则调整 Status；完全低调且无人知晓时通常不改变 Status | Synthetic |
+| BLD-T60 | Crew 与任意派系处于 War，拥有产生 Coin 的 Claim | War 期间此类 Claim 的 Coin 收入减半并向下取整；与 +1 Heat、-1 Hold、Downtime 活动减少分别记录 | Synthetic |
+| BLD-T61 | Downtime 推进当前关注派系的项目钟，另有暂时忽略的派系 | 只推进当前相关派系；需要追赶时以派系 Tier Fortune Roll，按 1–3/4–5/6/Critical 推进 1/2/3/5 格 | Synthetic |
+
 ## 结果登记
 
 | 验证阶段 | 日期 | 结果 | 证据 |
 |---|---|---|---|
 | Source review | 2026-11-28 | 已完成主要 SRD 章节校读与部分官方 v8.2 交叉核验 | 中文 SRD 私人镜像、官方 Player's Kit v8.2 |
 | Static document review | 2026-11-28 | 文档已建立，细节仍需第二轮审阅 | 本测试矩阵、Runtime、Index、Protocol |
-| Synthetic execution | 2026-11-28 | 54/54 固定输入用例完成两轮人工桌面推演；非自动化测试 | [首轮报告](./SYNTHETIC_EXECUTION_REPORT_2026-11-28.md)；[第二轮报告](./SYNTHETIC_EXECUTION_REPORT_2026-11-28_R2.md) |
+| Synthetic execution | 2026-11-28 | 61/61 固定输入用例完成三轮人工桌面推演；非自动化测试 | [首轮报告](./SYNTHETIC_EXECUTION_REPORT_2026-11-28.md)；[第二轮报告](./SYNTHETIC_EXECUTION_REPORT_2026-11-28_R2.md)；[第三轮报告](./SYNTHETIC_EXECUTION_REPORT_2026-11-28_R3.md) |
 | Live play | Pending | 尚无实战证据 | — |
 
 ## 当前开放风险
