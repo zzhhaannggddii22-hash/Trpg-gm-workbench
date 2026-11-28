@@ -42,6 +42,7 @@
 - [结构化规则与检索数据](./Reference_Data/README.md)：Core 与 Hope & Fear 分开的 JSON 数据集合。
 - [规则来源登记](./Rule_Reference/SOURCE_REGISTER.md)：官方、中文和社区资料。
 - [规则疑点登记](./Rule_Reference/RULE_ISSUES.md)：来源差异、版本疑点和未解决问题。
+- [Candidate 回归矩阵](./Rule_Reference/CANDIDATE_TEST_MATRIX.md)：高频规则与版本隔离测试用例（尚未执行）。
 - [术语表](./Rule_Reference/GLOSSARY.md)：中英术语与暂定工作译名。
 - [Hope & Fear 扩展隔离清单](./Expansions/Hope_and_Fear/README.md)：扩展默认关闭及启用条件。
 
