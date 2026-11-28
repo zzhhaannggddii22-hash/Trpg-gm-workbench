@@ -97,5 +97,6 @@ runtime_dispatch:
 2. 七种核心 PC Playbook 与六种 Crew 的能力已建立触发式运行矩阵，但每项能力仍须在实际角色/组织建档时按所选版本卡面核对触发条件、成本、持续时间和例外；Veteran 来源、实际选中能力的完整卡面、升级/Claims 与具体公式/仪式效果仍需按实际战役版本回查。
 3. 75 条 Candidate 合成回归用例已通过；仍需补做独立跨系统隔离测试，并至少完成一次短团实测和复盘。
 4. 建立独立 Campaign Binding；在用户确认前，系统继续保持 candidate。
+5. Armor 恢复时序存在官方资料表述差异：当前候选基线暂按 Full Player's Kit v8.2 在 Downtime 恢复；SRD 网页另有“选择下一次 Score 的 Load 时恢复”表述，见 [R-005](./Rule_Reference/RULE_ISSUES.md#r-005resistance-与-armor-的时序)。
 
 因此，当前已形成可供进一步测试的规则运行草案，但尚不标记 active，也不用于任何正式 Campaign。
