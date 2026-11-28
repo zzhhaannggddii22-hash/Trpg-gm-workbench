@@ -167,7 +167,7 @@ Crew Special Ability 是组织层面的持续规则，不只作用于某个 PC�
 | Ability | 运行摘要 |
 |---|---|
 | Dangerous（危险） | 每名 PC 可把 +1 Action Rating 加到 Hunt / Skirmish / Wreck 之一，最高 3 |
-| Blood Brothers（血盟兄弟） | 与 Cohort 并肩战斗时，Cohort 的 Teamwork 掷骰 +1d；所有 Cohort 免费获得 Thugs 类型 |
+| Blood Brothers（血盟兄弟） | 与 Cohort 并肩战斗时，Cohort 的 Teamwork（Setup / Group Action）掷骰 +1d；所有 Cohort 免费获得 Thugs 类型；原本为 Thugs 的 Cohort 改为额外获得一个 Type |
 | Door Kickers（破门者） | Assault Plan 的 Engagement +1d |
 | Fiends（恶魔） | 可将 Wanted Level 视为 Turf 数量；Wanted Level 上限为 4，Tier 提升最低 Rep 成本仍为 6 |
 | Forged in the Fire（烈火淬炼） | Crew 全体 PC 的 Resistance Roll +1d |
