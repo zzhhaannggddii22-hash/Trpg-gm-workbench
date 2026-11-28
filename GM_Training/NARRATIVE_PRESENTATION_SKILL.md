@@ -4,7 +4,7 @@ description: Present integrated TRPG scenes through space, environment, informat
 license: private-project
 metadata:
   author: Casey
-  version: "1.1"
+  version: "1.2"
   type: utility
   mode: application
   domain: tabletop-rpg-narrative
