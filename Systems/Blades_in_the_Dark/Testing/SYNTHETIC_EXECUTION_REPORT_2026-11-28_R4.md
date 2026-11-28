@@ -40,7 +40,7 @@ A pass means the fixed scenario was resolved consistently with the documented pr
 - Added a dedicated `ARCANE_AND_CRAFTING_RUNTIME.md` with Magnitude, Ritual source/learning/performance, Invention, Crafting, Modification, Drawbacks, and Alchemical item runtime procedures.
 - Added `ABILITY_RUNTIME_MATRIX.md` with trigger, effect, cost/scope, and boundary summaries for the seven core PC Playbooks and six core Crew Types.
 - Added runtime dispatch in `RUNTIME_PROTOCOL.md`: load ability/arcane references only when the relevant event occurs; do not scan the full catalogue on every player utterance.
-- Corrected the prior Armor timing mistake: official v8.2 places Armor recovery in Downtime; several Special Armor abilities specify restoration at the beginning of Downtime. The earlier claim that Downtime itself does not restore Armor was withdrawn and documented in R-005.
+- Corrected the prior Armor timing mistake: Full Player's Kit v8.2 places Armor recovery in Downtime; several Special Armor abilities specify restoration at the beginning of Downtime. The earlier claim that Downtime itself does not restore Armor was withdrawn. The official SRD Resistance & Armor webpage instead says recovery occurs when Load is chosen for the next Score; this source conflict is now explicitly left OPEN in R-005. The candidate baseline provisionally follows Player's Kit v8.2, not a claim that the two texts are equivalent.
 - Clarified Deadly's initial-creation exception and Fiends' Wanted/Turf/Rep limits.
 
 ## 4. Official source cross-checks
