@@ -109,6 +109,18 @@
 | DH-REF-058 | Adversary 清除 Temporary 条件 | 不占 Spotlight 不清除；用自身 Spotlight 清除并消费本次 Spotlight | Passed (Run 03) |
 | DH-REF-059 | 清除 Special Condition | 只有满足该效果规定的具体条件才可清除 | Passed (Run 03) |
 
+## 移动、视线与范围效果回归（新增代码用例；待自动复跑）
+
+| ID | 场景 | 关键断言 | 状态 |
+|---|---|---|---|
+| DH-REF-060 | PC 在 Action Roll 中移动 | 可在该行动中移动至 Close；更远距离不能免费并入该行动 | Pending rerun |
+| DH-REF-061 | PC 未进行 Action Roll 时重新定位 | 需成功完成 Agility Roll；失败不能安全重新定位 | Pending rerun |
+| DH-REF-062 | Adversary 移动 | Close 内移动可并入行动；移动至 Very Far 需要独立行动 | Pending rerun |
+| DH-REF-063 | 远程攻击遇到掩体 | 部分遮挡允许攻击但带 Disadvantage；完全遮挡阻断视线 | Pending rerun |
+| DH-REF-064 | Area of Effect 多目标 | 所有目标都须在同一个效果范围内原点的 Very Close 范围内 | Pending rerun |
+| DH-REF-065 | 远程攻击无视线 | 没有 Line of Sight 时不能进行远程攻击 | Pending rerun |
+| DH-REF-066 | Area of Effect 原点超出效果范围 | 即使目标彼此接近，原点不在效果范围内也无效 | Pending rerun |
+
 ## 自动化参考执行补充
 
 独立参考执行器 Run 01 为 42/42，Run 02 为 51/51，Run 03 为 59/59，均有 GitHub Actions 执行记录。Run 02 新增并通过 9 项伤害交互回归（DH-REF-043–051）；Run 03 再新增并通过 8 项条件状态生命周期回归（DH-REF-052–059），详见 `AUTOMATED_REFERENCE_EXECUTION_03.md`。这 59 项验证独立参考执行器与 Core Set 数据，不是生产 GM Runtime 的端到端测试。
